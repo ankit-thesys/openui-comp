@@ -2,6 +2,8 @@
 
 import clsx from "clsx";
 import type { CSSProperties } from "react";
+import { Fragment } from "react";
+import { styleRules } from "../../../../styles/css";
 import { calendarHeatmapStyles, names } from "../calendarHeatmap.styles";
 import type { CalendarSeparatorLabel } from "./separatorLayout";
 
@@ -98,21 +100,26 @@ export function CalendarSeparatorLabels({
   const styles = calendarHeatmapStyles;
   return (
     <>
-      {labels.map(({ col, quarter, year }) => (
-        <span
-          key={col}
-          className={clsx(styles.quarterLabel, names.quarterLabel)}
-          style={
-            {
-              "--_openui-calendar-heatmap-quarter-label-position": "absolute",
-              "--_openui-calendar-heatmap-quarter-label-top": "0px",
-              "--_openui-calendar-heatmap-quarter-label-left": `${gutterLeft + col * pitchX + (offsets[col] ?? 0)}px`,
-            } as CSSProperties
-          }
-        >
-          {format(quarter, year)}
-        </span>
-      ))}
+      {labels.map(({ col, quarter, year }) => {
+        const quarterLabelClass = clsx(styles.quarterLabel, names.quarterLabel);
+        return (
+          <Fragment key={col}>
+            <span
+              className={quarterLabelClass}
+              style={
+                {
+                  "--_openui-calendar-heatmap-quarter-label-position": "absolute",
+                  "--_openui-calendar-heatmap-quarter-label-top": "0px",
+                  "--_openui-calendar-heatmap-quarter-label-left": `${gutterLeft + col * pitchX + (offsets[col] ?? 0)}px`,
+                } as CSSProperties
+              }
+            >
+              {format(quarter, year)}
+            </span>
+            {styleRules(quarterLabelClass)}
+          </Fragment>
+        );
+      })}
     </>
   );
 }

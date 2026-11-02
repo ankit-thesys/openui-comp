@@ -2,6 +2,7 @@
 import { IconButton } from "@openuidev/react-components";
 import { renderToString } from "react-dom/server";
 import { describe, expect, it } from "vitest";
+import { withoutServedRules } from "../support/markup";
 
 const classesOf = (html: string, tag = "button") =>
   html.match(new RegExp(`<${tag}[^>]*class="([^"]*)"`))![1]!.split(" ");
@@ -67,9 +68,9 @@ describe("IconButton stable classes", () => {
   });
 
   it("renders no icon part without an icon", () => {
-    expect(renderToString(<IconButton icon={null} aria-label="Add" />)).not.toContain(
-      "openui-icon-button-icon",
-    );
+    expect(
+      withoutServedRules(renderToString(<IconButton icon={null} aria-label="Add" />)),
+    ).not.toContain("openui-icon-button-icon");
   });
 
   it("with asChild, puts the classes and the icon part on the child element", () => {

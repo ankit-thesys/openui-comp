@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { type ReactNode, useId, useRef } from "react";
+import { styleRules } from "../../../../../styles/css";
 import { useContainerSize } from "../../../hooks/core/useContainerSize";
 import { LegendStoreProvider } from "../legend/LegendStoreProvider";
 import { StackedLegend } from "./StackedLegend";
@@ -38,21 +39,27 @@ export function ChartWithStackedLegend({
   const { width: layoutWidth } = useContainerSize(ref, width);
   const isRow = layoutWidth >= STACKED_LEGEND_ROW_BREAKPOINT;
 
+  const layoutClass = clsx(styles.layout, names.layout, className);
+  const chartClass = clsx(styles.chart, names.chart);
+  const legendClass = clsx(styles.legend, names.legend);
   return (
     <LegendStoreProvider legendKey={legendKey}>
       <div
         ref={ref}
-        className={clsx(styles.layout, names.layout, className)}
+        className={layoutClass}
         data-orientation={isRow ? "horizontal" : "vertical"}
         style={{ width: toCssSize(width), height: toCssSize(height) }}
       >
-        <div className={clsx(styles.chart, names.chart)}>{children}</div>
-        <div className={clsx(styles.legend, names.legend)}>
+        <div className={chartClass}>{children}</div>
+        {styleRules(chartClass)}
+        <div className={legendClass}>
           {/* Side by side the list scrolls; stacked, the width drives show-more.
               Rows show each item's share. */}
           <StackedLegend format="percentage" containerWidth={isRow ? undefined : layoutWidth} />
         </div>
+        {styleRules(legendClass)}
       </div>
+      {styleRules(layoutClass)}
     </LegendStoreProvider>
   );
 }

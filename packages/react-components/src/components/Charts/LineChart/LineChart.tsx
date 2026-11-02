@@ -19,6 +19,7 @@ import { LineDotCrosshair } from "../shared/cartesian/LineDotCrosshair";
 import { findNearestDataIndex } from "../utils/mouseUtils";
 import { LineSeries } from "./parts/LineSeries";
 
+import { styleRules } from "../../../styles/css";
 import { CHART_CLASS_PREFIX } from "../utils/constants";
 import type { LineChartData, LineChartProps } from "./types";
 
@@ -32,19 +33,23 @@ export function LineChart<T extends LineChartData>(props: LineChartProps<T>) {
   const styles = lineChartStyles;
   const baseStyles = chartBaseStyles;
   if (!props.data || props.data.length === 0) {
+    const rootClass = clsx(
+      styles.root,
+      names.root,
+      names.variant[props.variant ?? "natural"],
+      baseStyles.empty,
+      baseNames.empty,
+      props.className,
+    );
+    const emptyTextClass = clsx(baseStyles.emptyText, baseNames.emptyText);
     return (
-      <div
-        className={clsx(
-          styles.root,
-          names.root,
-          names.variant[props.variant ?? "natural"],
-          baseStyles.empty,
-          baseNames.empty,
-          props.className,
-        )}
-      >
-        <span className={clsx(baseStyles.emptyText, baseNames.emptyText)}>No data available</span>
-      </div>
+      <>
+        <div className={rootClass}>
+          <span className={emptyTextClass}>No data available</span>
+          {styleRules(emptyTextClass)}
+        </div>
+        {styleRules(rootClass)}
+      </>
     );
   }
   return <LineChartImpl {...props} />;

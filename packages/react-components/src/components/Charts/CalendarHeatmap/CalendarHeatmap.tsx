@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import type { CSSProperties } from "react";
 import { useId, useMemo } from "react";
+import { styleRules } from "../../../styles/css";
 import { useEffectiveAnimation } from "../hooks";
 import { useCalendarHeatmapOrchestrator } from "../hooks/cartesian/useCalendarHeatmapOrchestrator";
 import { ChartShell } from "../shared/core/ChartShell";
@@ -159,116 +160,120 @@ export function CalendarHeatmap(props: CalendarHeatmapProps) {
       }
       isEmpty={orch.isEmpty}
     >
-      {() => (
-        <>
-          <div
-            className={clsx(styles.plot, names.plot)}
-            style={
-              {
-                "--_openui-calendar-heatmap-plot-position": "relative",
-                "--_openui-calendar-heatmap-plot-width": `${svgWidth}px`,
-              } as CSSProperties
-            }
-          >
-            <svg
-              className={clsx(styles.svg, names.svg)}
-              width={svgWidth}
-              height={svgHeight}
-              style={{ "--_openui-calendar-heatmap-svg-overflow": "visible" } as CSSProperties}
-              role="img"
-              aria-label="Calendar heatmap chart"
+      {() => {
+        const svgClass = clsx(styles.svg, names.svg);
+        return (
+          <>
+            <div
+              className={clsx(styles.plot, names.plot)}
+              style={
+                {
+                  "--_openui-calendar-heatmap-plot-position": "relative",
+                  "--_openui-calendar-heatmap-plot-width": `${svgWidth}px`,
+                } as CSSProperties
+              }
             >
-              <CalendarPatternDefs
-                baseId={patternBaseId}
-                levelStyles={orch.levelStyles}
-                levelColors={orch.levelColors}
-              />
+              <svg
+                className={svgClass}
+                width={svgWidth}
+                height={svgHeight}
+                style={{ "--_openui-calendar-heatmap-svg-overflow": "visible" } as CSSProperties}
+                role="img"
+                aria-label="Calendar heatmap chart"
+              >
+                <CalendarPatternDefs
+                  baseId={patternBaseId}
+                  levelStyles={orch.levelStyles}
+                  levelColors={orch.levelColors}
+                />
 
-              {showMonthLabels && (
-                <g className={names.group} transform={`translate(${gutterLeft}, 0)`}>
-                  <MonthAxis
-                    labels={orch.monthLabels}
+                {showMonthLabels && (
+                  <g className={names.group} transform={`translate(${gutterLeft}, 0)`}>
+                    <MonthAxis
+                      labels={orch.monthLabels}
+                      pitchX={pitchX}
+                      xOffsets={separators.offsets}
+                      y={monthLabelY}
+                    />
+                  </g>
+                )}
+
+                <g className={names.group} transform={`translate(0, ${gutterTop})`}>
+                  <WeekdayAxis ticks={orch.weekdayTicks} pitchY={pitchY} x={weekdayLabelX} />
+                </g>
+
+                <g
+                  className={names.group}
+                  transform={`translate(${gutterLeft}, ${gutterTop})`}
+                  onMouseLeave={orch.hover.handleMouseLeave}
+                >
+                  <CalendarCells
+                    cells={orch.cells}
+                    highlightedLevel={orch.hover.hoveredLevel}
                     pitchX={pitchX}
+                    pitchY={pitchY}
+                    cellW={cellW}
+                    cellH={cellH}
+                    gap={gap}
+                    levelFills={levelFills}
                     xOffsets={separators.offsets}
-                    y={monthLabelY}
+                    rowOpacity={rowOpacity}
+                    animate={animate}
+                    animationDuration={animationDuration}
+                    onCellMouseMove={orch.hover.handleCellMouseMove}
+                    onCellMouseLeave={orch.hover.handleMouseLeave}
+                    onClick={onClick}
+                  />
+                  <CalendarSeparators
+                    columns={separators.columns}
+                    offsets={separators.offsets}
+                    pitchX={pitchX}
+                    spacing={separators.spacing}
+                    gap={gap}
+                    plotHeight={plotHeight}
+                    stroke={columnSeparators?.stroke}
+                    dashed={columnSeparators?.dashed}
                   />
                 </g>
-              )}
+              </svg>
+              {styleRules(svgClass)}
 
-              <g className={names.group} transform={`translate(0, ${gutterTop})`}>
-                <WeekdayAxis ticks={orch.weekdayTicks} pitchY={pitchY} x={weekdayLabelX} />
-              </g>
+              <CalendarSeparatorLabels
+                labels={separators.labels}
+                offsets={separators.offsets}
+                pitchX={pitchX}
+                gutterLeft={gutterLeft}
+                format={labelFormat}
+              />
+            </div>
 
-              <g
-                className={names.group}
-                transform={`translate(${gutterLeft}, ${gutterTop})`}
-                onMouseLeave={orch.hover.handleMouseLeave}
-              >
-                <CalendarCells
-                  cells={orch.cells}
-                  highlightedLevel={orch.hover.hoveredLevel}
-                  pitchX={pitchX}
-                  pitchY={pitchY}
-                  cellW={cellW}
-                  cellH={cellH}
-                  gap={gap}
-                  levelFills={levelFills}
-                  xOffsets={separators.offsets}
-                  rowOpacity={rowOpacity}
-                  animate={animate}
-                  animationDuration={animationDuration}
-                  onCellMouseMove={orch.hover.handleCellMouseMove}
-                  onCellMouseLeave={orch.hover.handleMouseLeave}
-                  onClick={onClick}
-                />
-                <CalendarSeparators
-                  columns={separators.columns}
-                  offsets={separators.offsets}
-                  pitchX={pitchX}
-                  spacing={separators.spacing}
-                  gap={gap}
-                  plotHeight={plotHeight}
-                  stroke={columnSeparators?.stroke}
-                  dashed={columnSeparators?.dashed}
-                />
-              </g>
-            </svg>
+            {showLegend && (
+              <CalendarLegend
+                ref={orch.refs.legendRef}
+                variant={legendVariant === "gradient" ? "gradient" : "swatches"}
+                levelColors={orch.levelColors}
+                levelStyles={orch.levelStyles}
+                patternBaseId={patternBaseId}
+                labels={{
+                  less: legendLabels?.less ?? "Less",
+                  more: legendLabels?.more ?? "More",
+                }}
+                highlightedLevel={orch.hover.highlightedLevel}
+                onLevelEnter={handleLevelEnter}
+                onLevelLeave={handleLevelLeave}
+              />
+            )}
 
-            <CalendarSeparatorLabels
-              labels={separators.labels}
-              offsets={separators.offsets}
-              pitchX={pitchX}
-              gutterLeft={gutterLeft}
-              format={labelFormat}
-            />
-          </div>
-
-          {showLegend && (
-            <CalendarLegend
-              ref={orch.refs.legendRef}
-              variant={legendVariant === "gradient" ? "gradient" : "swatches"}
-              levelColors={orch.levelColors}
-              levelStyles={orch.levelStyles}
-              patternBaseId={patternBaseId}
-              labels={{
-                less: legendLabels?.less ?? "Less",
-                more: legendLabels?.more ?? "More",
-              }}
-              highlightedLevel={orch.hover.highlightedLevel}
-              onLevelEnter={handleLevelEnter}
-              onLevelLeave={handleLevelLeave}
-            />
-          )}
-
-          {shownTooltip && (
-            <ChartTooltip
-              label={shownTooltip.label}
-              items={shownTooltip.items}
-              viewportPosition={shownTooltip.viewportPosition}
-            />
-          )}
-        </>
-      )}
+            {shownTooltip && (
+              <ChartTooltip
+                label={shownTooltip.label}
+                items={shownTooltip.items}
+                viewportPosition={shownTooltip.viewportPosition}
+              />
+            )}
+          </>
+        );
+      }}
     </ChartShell>
   );
 }

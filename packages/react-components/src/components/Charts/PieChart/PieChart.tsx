@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { arc, pie, type PieArcDatum } from "d3-shape";
 import type { CSSProperties } from "react";
 import { useMemo } from "react";
+import { styleRules } from "../../../styles/css";
 import {
   type CategoricalSlice,
   useCategoricalChartOrchestrator,
@@ -175,60 +176,64 @@ function PieChartImpl<T extends PieChartData>(props: PieChartProps<T>) {
       isEmpty={orch.isEmpty}
       exportData={exportData}
     >
-      {() => (
-        <>
-          <div className={clsx(styles.svgWrapper, names.svgWrapper)}>
-            <svg
-              className={names.svg}
-              width={orch.dimensions.svgWidth}
-              height={orch.dimensions.svgHeight}
-              viewBox={`0 0 ${orch.dimensions.svgWidth} ${orch.dimensions.svgHeight}`}
-              role="img"
-              aria-label="Pie chart"
-            >
-              <g
-                className={clsx(styles.group, names.group)}
-                transform={`translate(${orch.dimensions.centerX}, ${orch.dimensions.centerY})`}
+      {() => {
+        const groupClass = clsx(styles.group, names.group);
+        return (
+          <>
+            <div className={clsx(styles.svgWrapper, names.svgWrapper)}>
+              <svg
+                className={names.svg}
+                width={orch.dimensions.svgWidth}
+                height={orch.dimensions.svgHeight}
+                viewBox={`0 0 ${orch.dimensions.svgWidth} ${orch.dimensions.svgHeight}`}
+                role="img"
+                aria-label="Pie chart"
               >
-                <PieSlices
-                  arcs={arcs}
-                  arcGenerator={arcGenerator}
-                  trackArcGenerator={donutArcs?.track}
-                  hitArcGenerator={donutArcs?.hit}
-                  slices={orch.data.visibleSlices}
-                  hoveredIndex={orch.hover.hoveredIndex}
-                  entrance={animate}
-                  staticRender={orch.isPrinting}
-                  data={orch.data.visibleRows}
-                  onMouseMove={orch.hover.handleMouseMove}
-                  onMouseLeave={orch.hover.handleMouseLeave}
-                  onClick={onClick}
-                />
-              </g>
-            </svg>
-          </div>
+                <g
+                  className={groupClass}
+                  transform={`translate(${orch.dimensions.centerX}, ${orch.dimensions.centerY})`}
+                >
+                  <PieSlices
+                    arcs={arcs}
+                    arcGenerator={arcGenerator}
+                    trackArcGenerator={donutArcs?.track}
+                    hitArcGenerator={donutArcs?.hit}
+                    slices={orch.data.visibleSlices}
+                    hoveredIndex={orch.hover.hoveredIndex}
+                    entrance={animate}
+                    staticRender={orch.isPrinting}
+                    data={orch.data.visibleRows}
+                    onMouseMove={orch.hover.handleMouseMove}
+                    onMouseLeave={orch.hover.handleMouseLeave}
+                    onClick={onClick}
+                  />
+                </g>
+              </svg>
+              {styleRules(groupClass)}
+            </div>
 
-          {showLegend && !orch.usesRemoteLegend && (
-            <DefaultLegend
-              ref={orch.refs.legendRef}
-              items={orch.data.legendItems}
-              containerWidth={orch.dimensions.containerWidth}
-              isExpanded={orch.legend.isLegendExpanded}
-              setIsExpanded={orch.legend.setIsLegendExpanded}
-              onItemClick={orch.data.toggleSlice}
-              hiddenSeries={orch.data.hiddenSlices}
-            />
-          )}
+            {showLegend && !orch.usesRemoteLegend && (
+              <DefaultLegend
+                ref={orch.refs.legendRef}
+                items={orch.data.legendItems}
+                containerWidth={orch.dimensions.containerWidth}
+                isExpanded={orch.legend.isLegendExpanded}
+                setIsExpanded={orch.legend.setIsLegendExpanded}
+                onItemClick={orch.data.toggleSlice}
+                hiddenSeries={orch.data.hiddenSlices}
+              />
+            )}
 
-          {orch.tooltip.tooltipPayload && orch.hover.mousePos && (
-            <ChartTooltip
-              label={orch.tooltip.tooltipPayload.label}
-              items={orch.tooltip.tooltipPayload.items}
-              viewportPosition={orch.hover.mousePos}
-            />
-          )}
-        </>
-      )}
+            {orch.tooltip.tooltipPayload && orch.hover.mousePos && (
+              <ChartTooltip
+                label={orch.tooltip.tooltipPayload.label}
+                items={orch.tooltip.tooltipPayload.items}
+                viewportPosition={orch.hover.mousePos}
+              />
+            )}
+          </>
+        );
+      }}
     </ChartShell>
   );
 }

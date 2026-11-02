@@ -5,6 +5,7 @@ import type { ScaleLinear } from "d3-scale";
 import React from "react";
 import { chartBaseStyles, names } from "../../chartBase.styles";
 
+import { styleRules } from "../../../../../styles/css";
 import type { CartesianChartOrchestrator } from "../../../hooks";
 import { MeasureFontScopeContext } from "../../../hooks/core/measureFontScope";
 import { CHART_CLASS_PREFIX } from "../../../utils/constants";
@@ -107,7 +108,10 @@ export function CartesianChartLayout(props: CartesianChartLayoutProps) {
           data-openui-chart={props.exportData ?? props.chartType}
         >
           {isFit && props.yAxisLabel && (
-            <div className={clsx(styles.yAxisLabel, names.yAxisLabel)}>{props.yAxisLabel}</div>
+            <>
+              <div className={clsx(styles.yAxisLabel, names.yAxisLabel)}>{props.yAxisLabel}</div>
+              {styleRules(clsx(styles.yAxisLabel, names.yAxisLabel))}
+            </>
           )}
 
           {orch.layout === "scroll" ? (
@@ -117,7 +121,10 @@ export function CartesianChartLayout(props: CartesianChartLayoutProps) {
           )}
 
           {isFit && props.xAxisLabel && (
-            <div className={clsx(styles.xAxisLabel, names.xAxisLabel)}>{props.xAxisLabel}</div>
+            <>
+              <div className={clsx(styles.xAxisLabel, names.xAxisLabel)}>{props.xAxisLabel}</div>
+              {styleRules(clsx(styles.xAxisLabel, names.xAxisLabel))}
+            </>
           )}
 
           {props.showLegend && (

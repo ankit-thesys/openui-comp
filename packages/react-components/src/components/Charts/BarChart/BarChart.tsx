@@ -23,6 +23,7 @@ import { BarSeries } from "./parts/BarSeries";
 import { Crosshair } from "./parts/Crosshair";
 import { HorizontalBarChartImpl } from "./parts/HorizontalBarChartImpl";
 
+import { styleRules } from "../../../styles/css";
 import { CHART_CLASS_PREFIX } from "../utils/constants";
 import type { BarChartData, BarChartProps } from "./types";
 
@@ -36,21 +37,25 @@ export function BarChart<T extends BarChartData>(props: BarChartProps<T>) {
   const styles = barChartStyles;
   const baseStyles = chartBaseStyles;
   if (!props.data || props.data.length === 0) {
+    const rootClass = clsx(
+      styles.root,
+      props.orientation === "horizontal" ? horizontalNames.root : names.root,
+      (props.orientation === "horizontal" ? horizontalNames : names).variant[
+        props.variant ?? "grouped"
+      ],
+      baseStyles.empty,
+      baseNames.empty,
+      props.className,
+    );
+    const emptyTextClass = clsx(baseStyles.emptyText, baseNames.emptyText);
     return (
-      <div
-        className={clsx(
-          styles.root,
-          props.orientation === "horizontal" ? horizontalNames.root : names.root,
-          (props.orientation === "horizontal" ? horizontalNames : names).variant[
-            props.variant ?? "grouped"
-          ],
-          baseStyles.empty,
-          baseNames.empty,
-          props.className,
-        )}
-      >
-        <span className={clsx(baseStyles.emptyText, baseNames.emptyText)}>No data available</span>
-      </div>
+      <>
+        <div className={rootClass}>
+          <span className={emptyTextClass}>No data available</span>
+          {styleRules(emptyTextClass)}
+        </div>
+        {styleRules(rootClass)}
+      </>
     );
   }
   if (props.orientation === "horizontal") {

@@ -3,7 +3,7 @@
 // so one component's rules cannot stand in for another's.
 import { renderToString } from "react-dom/server";
 import { describe, expect, it } from "vitest";
-import { migratedComponents } from "./contract/components";
+import { migratedComponents, otherChartContracts } from "./contract/components";
 
 // Components wired with styleRules. Each codemod batch adds its components; the contract ticket
 // replaces the list with every contract entry.
@@ -25,9 +25,17 @@ const wired = new Set([
   "DatePicker",
   "FormControl",
   "Label",
+  // Batch 3: charts (#183). The SVG charts (Charts, PieChart, RadarChart, RadialChart,
+  // FunnelChart, HeatmapChart, CalendarHeatmap) stay unwired: React does not hoist <style> inside
+  // <svg>, so their SVG classes need a decision beyond the codemod.
+  "SegmentedBar",
+  // Dependencies the charts render, wired by the same codemod run.
+  "IconButton",
+  "Separator",
 ]);
+const contracts = [...migratedComponents, ...otherChartContracts];
 const unwired = new Set(
-  migratedComponents.map((component) => component.folder).filter((folder) => !wired.has(folder)),
+  contracts.map((component) => component.folder).filter((folder) => !wired.has(folder)),
 );
 
 const GENERATED = /^go\d+$/;
@@ -52,12 +60,12 @@ function renderedClasses(html: string) {
 
 describe("server-rendered component rules", () => {
   it("lists only real contract entries as wired", () => {
-    const folders = new Set(migratedComponents.map((component) => component.folder));
+    const folders = new Set(contracts.map((component) => component.folder));
     expect([...wired].filter((folder) => !folders.has(folder))).toEqual([]);
-    expect(unwired.size).toBe(migratedComponents.length - wired.size);
+    expect(unwired.size).toBe(contracts.length - wired.size);
   });
 
-  for (const component of migratedComponents) {
+  for (const component of contracts) {
     if (unwired.has(component.folder)) continue;
     it(`${component.folder}: serves exactly the rendered classes, once each`, () => {
       const html = renderToString(<>{component.elements()}</>);
@@ -81,6 +89,11 @@ describe("server-rendered component rules", () => {
         "served twice",
       ).toEqual([]);
       for (const name of served) expect(text, `${name} has its rule`).toContain(`.${name}`);
+      // React renders <style> in place inside SVG, where browsers would not get it from hydration.
+      const inSvg = [...html.matchAll(/<svg[\s\S]*?<\/svg>/g)].filter(([svg]) =>
+        /<style/.test(svg!),
+      );
+      expect(inSvg.length, "no <style> inside <svg>").toBe(0);
     });
   }
 });

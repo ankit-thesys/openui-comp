@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import type { CSSProperties } from "react";
 import { useCallback, useMemo } from "react";
+import { styleRules } from "../../../styles/css";
 import { useEffectiveAnimation, useRadarChartOrchestrator } from "../hooks";
 import { ChartShell } from "../shared/core/ChartShell";
 import { DefaultLegend } from "../shared/core/DefaultLegend/DefaultLegend";
@@ -95,80 +96,84 @@ export function RadarChart<T extends RadarChartData>(props: RadarChartProps<T>) 
       }
       isEmpty={orch.isEmpty}
     >
-      {() => (
-        <>
-          <div className={clsx(styles.svgWrapper, names.svgWrapper)}>
-            <svg
-              className={clsx(styles.svg, names.svg)}
-              width={orch.dimensions.svgWidth}
-              height={orch.dimensions.svgHeight}
-              viewBox={`0 0 ${orch.dimensions.svgWidth} ${orch.dimensions.svgHeight}`}
-              role="img"
-              aria-label="Radar chart"
-            >
-              <g
-                className={names.group}
-                transform={`translate(${orch.dimensions.centerX}, ${orch.dimensions.centerY})`}
-                onMouseMove={mouseHandlers.handleMouseMove}
-                onMouseLeave={mouseHandlers.handleMouseLeave}
-                onTouchMove={mouseHandlers.handleTouchMove}
-                onTouchEnd={mouseHandlers.handleTouchEnd}
-                onClick={mouseHandlers.handleClick}
+      {() => {
+        const svgClass = clsx(styles.svg, names.svg);
+        return (
+          <>
+            <div className={clsx(styles.svgWrapper, names.svgWrapper)}>
+              <svg
+                className={svgClass}
+                width={orch.dimensions.svgWidth}
+                height={orch.dimensions.svgHeight}
+                viewBox={`0 0 ${orch.dimensions.svgWidth} ${orch.dimensions.svgHeight}`}
+                role="img"
+                aria-label="Radar chart"
               >
-                {showGrid && (
-                  <RadarGrid
-                    maxRadius={orch.dimensions.maxRadius}
-                    gridLevels={gridLevels}
-                    gridShape={gridShape}
+                <g
+                  className={names.group}
+                  transform={`translate(${orch.dimensions.centerX}, ${orch.dimensions.centerY})`}
+                  onMouseMove={mouseHandlers.handleMouseMove}
+                  onMouseLeave={mouseHandlers.handleMouseLeave}
+                  onTouchMove={mouseHandlers.handleTouchMove}
+                  onTouchEnd={mouseHandlers.handleTouchEnd}
+                  onClick={mouseHandlers.handleClick}
+                >
+                  {showGrid && (
+                    <RadarGrid
+                      maxRadius={orch.dimensions.maxRadius}
+                      gridLevels={gridLevels}
+                      gridShape={gridShape}
+                      numAxes={numAxes}
+                    />
+                  )}
+                  <RadarSeries
+                    data={data}
+                    dataKeys={orch.data.dataKeys}
+                    catKey={orch.data.catKey}
+                    radialScale={orch.dimensions.radialScale}
                     numAxes={numAxes}
+                    colorMap={orch.data.colorMap}
+                    fillOpacity={fillOpacity ?? (variant === "area" ? areaOpacity : 0)}
+                    showDots={showDots}
+                    dotRadius={dotRadius}
+                    hoveredIndex={orch.hover.hoveredIndex}
+                    animate={animate}
                   />
-                )}
-                <RadarSeries
-                  data={data}
-                  dataKeys={orch.data.dataKeys}
-                  catKey={orch.data.catKey}
-                  radialScale={orch.dimensions.radialScale}
-                  numAxes={numAxes}
-                  colorMap={orch.data.colorMap}
-                  fillOpacity={fillOpacity ?? (variant === "area" ? areaOpacity : 0)}
-                  showDots={showDots}
-                  dotRadius={dotRadius}
-                  hoveredIndex={orch.hover.hoveredIndex}
-                  animate={animate}
-                />
-                <RadarAxisLabels
-                  data={data}
-                  catKey={orch.data.catKey}
-                  numAxes={numAxes}
-                  maxRadius={orch.dimensions.maxRadius}
-                  chartSize={orch.dimensions.chartSize}
-                  containerWidth={orch.dimensions.containerWidth}
-                />
-              </g>
-            </svg>
-          </div>
+                  <RadarAxisLabels
+                    data={data}
+                    catKey={orch.data.catKey}
+                    numAxes={numAxes}
+                    maxRadius={orch.dimensions.maxRadius}
+                    chartSize={orch.dimensions.chartSize}
+                    containerWidth={orch.dimensions.containerWidth}
+                  />
+                </g>
+              </svg>
+              {styleRules(svgClass)}
+            </div>
 
-          {showLegend && (
-            <DefaultLegend
-              ref={orch.refs.legendRef}
-              items={orch.legend.legendItems}
-              containerWidth={orch.dimensions.containerWidth}
-              isExpanded={orch.legend.isLegendExpanded}
-              setIsExpanded={orch.legend.setIsLegendExpanded}
-              onItemClick={orch.legend.toggleSeries}
-              hiddenSeries={orch.legend.hiddenSeries}
-            />
-          )}
+            {showLegend && (
+              <DefaultLegend
+                ref={orch.refs.legendRef}
+                items={orch.legend.legendItems}
+                containerWidth={orch.dimensions.containerWidth}
+                isExpanded={orch.legend.isLegendExpanded}
+                setIsExpanded={orch.legend.setIsLegendExpanded}
+                onItemClick={orch.legend.toggleSeries}
+                hiddenSeries={orch.legend.hiddenSeries}
+              />
+            )}
 
-          {orch.tooltip.tooltipPayload && orch.hover.mousePos && (
-            <ChartTooltip
-              label={orch.tooltip.tooltipPayload.label}
-              items={orch.tooltip.tooltipPayload.items}
-              viewportPosition={orch.hover.mousePos}
-            />
-          )}
-        </>
-      )}
+            {orch.tooltip.tooltipPayload && orch.hover.mousePos && (
+              <ChartTooltip
+                label={orch.tooltip.tooltipPayload.label}
+                items={orch.tooltip.tooltipPayload.items}
+                viewportPosition={orch.hover.mousePos}
+              />
+            )}
+          </>
+        );
+      }}
     </ChartShell>
   );
 }

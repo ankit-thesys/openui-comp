@@ -137,9 +137,37 @@ function svgRoot(node) {
   return root;
 }
 
+/**
+ * True when `node` renders in SVG content whose `<svg>` is in another file: it or an ancestor in
+ * this file is an SVG-only element, with no `<foreignObject>` (HTML content) in between.
+ */
+function inForeignSvg(node) {
+  if (svgRoot(node)) return false;
+  for (let current = node; current; current = current.parent) {
+    if (!isElement(current)) continue;
+    const tag = tagOf(current);
+    if (tag === "foreignObject" && current !== node) return false;
+    if (SVG_ONLY.has(tag)) return true;
+  }
+  return false;
+}
+
+/** True when `node` has an SVG-only element among its JSX descendants (a component wrapping a <g>). */
+function wrapsSvg(node) {
+  let found = false;
+  node.forEachChild(function visit(child) {
+    if (found) return;
+    if (isElement(child) && tagOf(child) === "foreignObject") return;
+    if (isElement(child) && SVG_ONLY.has(tagOf(child))) found = true;
+    else child.forEachChild(visit);
+  });
+  return found;
+}
+
 // A Radix `asChild` parent or a `Slot` needs exactly one element child.
 const slots = (node) =>
-  isElement(node) && (attribute(node, "asChild") !== undefined || /^(.*\.)?Slot$/.test(tagOf(node)));
+  isElement(node) &&
+  (attribute(node, "asChild") !== undefined || /^(.*\.)?Slot$/.test(tagOf(node)));
 
 // Portal content never renders on the server, so the browser sheet alone styles it.
 function inPortal(node) {
@@ -202,7 +230,7 @@ function unwired(source) {
           : undefined;
       if (expression && references(expression, names) && !inPortal(node)) {
         const target = insertionTarget(node);
-        const orphanSvg = !svgRoot(node) && SVG_ONLY.has(tagOf(node));
+        const orphanSvg = inForeignSvg(node) || (!svgRoot(node) && wrapsSvg(node));
         if (orphanSvg)
           skipped.push(`${source.fileName}: <${tagOf(node)}> renders inside an <svg> elsewhere`);
         else if (!followingCalls(target).includes(expression.getText()))
@@ -361,10 +389,13 @@ function ensureImports(file, text) {
     if (!path.startsWith(".")) path = `./${path}`;
     add(`import { styleRules } from "${path}";`);
   }
-  if (/<Fragment key=/.test(next) && !/\bFragment\b[^;]*from "react"/.test(next)) {
+  // A value import: `import type { … }` cannot provide Fragment.
+  if (/<Fragment key=/.test(next) && !/import \{[^}]*\bFragment\b[^}]*\} from "react"/.test(next)) {
     const react = parse(file, next).statements.find(
       (statement) =>
-        ts.isImportDeclaration(statement) && statement.moduleSpecifier.getText() === '"react"',
+        ts.isImportDeclaration(statement) &&
+        statement.moduleSpecifier.getText() === '"react"' &&
+        !statement.importClause?.isTypeOnly,
     );
     const named = react?.importClause?.namedBindings;
     if (named && ts.isNamedImports(named)) {
