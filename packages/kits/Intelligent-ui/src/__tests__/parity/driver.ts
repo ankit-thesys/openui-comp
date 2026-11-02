@@ -92,7 +92,24 @@ export async function launch(): Promise<Browser> {
   return chromium.launch({ args: ["--enable-unsafe-swiftshader", "--use-gl=angle", "--use-angle=swiftshader"] });
 }
 
-export const settle = (page: Page, ms = 350) => page.waitForTimeout(ms);
+/**
+ * Waits, then lets any colour still fading (a chosen option, a hover) finish, so a reading isn't
+ * taken part-way: a busy machine can start a 0.2s transition late. Capped, in case one never ends.
+ */
+export async function settle(page: Page, ms = 350) {
+  await page.waitForTimeout(ms);
+  await page.evaluate(() =>
+    Promise.race([
+      Promise.allSettled(
+        document
+          .getAnimations()
+          .filter((animation) => animation instanceof CSSTransition)
+          .map((animation) => animation.finished),
+      ),
+      new Promise((resolve) => setTimeout(resolve, 2000)),
+    ]),
+  );
+}
 
 const NOW = new Date("2026-03-16T10:00:00Z");
 
