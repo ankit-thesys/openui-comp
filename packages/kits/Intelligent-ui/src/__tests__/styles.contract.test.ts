@@ -28,6 +28,16 @@ describe("style files", () => {
     expect(styleFiles.filter((path) => !/export const names\b/.test(read(path))).map(short)).toEqual([]);
   });
 
+  // react-components' own convention: button.styles.ts exports buttonStyles, not a bare `styles`.
+  it("export their rules as <name>Styles, like react-components", () => {
+    const problems = styleFiles.filter((path) => {
+      const text = read(path);
+      const stem = path.split("/").pop()!.replace(/\.styles\.ts$/, "");
+      return /^export const styles\b/m.test(text) || (/\bcss`/.test(text) && !new RegExp(`^export const ${stem}Styles\\b`, "m").test(text));
+    });
+    expect(problems.map(short)).toEqual([]);
+  });
+
   it("name every stable class openui-intelligent-*", () => {
     const problems = styleFiles.flatMap((path) => {
       const names = read(path).match(/export const names = \{[\s\S]*?\n\} as const/)?.[0] ?? "";
