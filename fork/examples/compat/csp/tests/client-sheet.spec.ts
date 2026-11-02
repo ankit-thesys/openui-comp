@@ -1,6 +1,7 @@
-// #1523 sends no server sheet: the browser writes every component rule after hydration.
-// The shared contract: default theme, console and hydration errors, one browser sheet, no
-// repeated rules, equal-weight override and the configured layer.
+// The server sends the rendered components' rules in React's hoisted tags (#178); the browser
+// writes the rest. The shared contract: default theme, console and hydration errors, at most one
+// browser sheet, no repeated rules across server and browser tags, equal-weight override and the
+// configured layer.
 import { expect, test } from "@playwright/test";
 import { smoke } from "../../shared/smoke";
 
@@ -12,7 +13,7 @@ for (const path of ["/?theme=light"]) {
     await smoke(page, expect, {
       path,
       layer: mode === "layered" ? "openui" : false,
-      serverSheets: 0,
+      serverSheets: true,
       ready: `[data-compat-ready][data-compat-mode="${mode}"]`,
       assertions: { console: false },
     });

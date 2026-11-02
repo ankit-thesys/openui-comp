@@ -1,3 +1,4 @@
+import "./configure";
 import type { ServerResponse } from "node:http";
 import { PassThrough } from "node:stream";
 import { renderToPipeableStream } from "react-dom/server";

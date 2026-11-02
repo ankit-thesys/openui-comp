@@ -7,7 +7,7 @@ if (mode !== "layered" && mode !== "unlayered") throw new Error(`Invalid mode: $
 test(`default theme and style contract (${mode})`, async ({ page }) => {
   await smoke(page, expect, {
     layer: mode === "layered" ? "openui" : false,
-    serverSheets: 0,
+    serverSheets: false,
     ready: `[data-compat-ready][data-compat-mode="${mode}"]`,
   });
 });

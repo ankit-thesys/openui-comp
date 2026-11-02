@@ -9,8 +9,8 @@ type Assertion = "console" | "styles" | "sheets" | "duplicates" | "override" | "
 export interface SmokeOptions {
   /** false also verifies that the component rules are unlayered. */
   layer: string | false;
-  /** Separate server tags (data-openui-styles or React's data-href), excluding #openui-styles. */
-  serverSheets?: 0 | 1;
+  /** Whether the server's hoisted component-rule tags (React's data-precedence="openui") exist. */
+  serverSheets?: boolean;
   path?: string;
   ready?: string;
   assertions?: Partial<Record<Assertion, boolean>>;
@@ -70,9 +70,10 @@ export async function smoke(page: Page, expect: Expect, options: SmokeOptions): 
     if (enabled("sheets") || enabled("duplicates") || enabled("layer")) {
       const sheets = await page.evaluate((configuredLayer) => {
         const browser = [...document.querySelectorAll<HTMLStyleElement>("style#openui-styles")];
+        // React's hoisted component-rule tags: one per flush, more on a streamed page.
         const server = [
           ...document.querySelectorAll<HTMLStyleElement>(
-            'style[data-openui-styles], style[data-href="openui-styles"]',
+            'style[data-precedence="openui"][data-href]',
           ),
         ].filter((tag) => tag.id !== "openui-styles");
         const seen = new Set<string>();
@@ -123,8 +124,8 @@ export async function smoke(page: Page, expect: Expect, options: SmokeOptions): 
       expect(sheets.ruleCount, "component sheets must contain parsed CSS rules").toBeGreaterThan(0);
       if (enabled("sheets")) {
         expect(sheets.browser, "at most one browser sheet").toBeLessThanOrEqual(1);
-        expect(sheets.server, "at most one server sheet").toBeLessThanOrEqual(1);
-        if (options.serverSheets !== undefined) expect(sheets.server).toBe(options.serverSheets);
+        if (options.serverSheets !== undefined)
+          expect(sheets.server > 0, "server component-rule tags").toBe(options.serverSheets);
       }
       if (enabled("duplicates")) expect(sheets.duplicates, "exact duplicate rules").toEqual([]);
       if (enabled("layer")) expect(sheets.wrongLayer, "rules in the wrong layer").toEqual([]);

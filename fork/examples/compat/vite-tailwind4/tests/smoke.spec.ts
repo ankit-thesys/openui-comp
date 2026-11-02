@@ -8,7 +8,7 @@ test("Tailwind 4 preflight, head recipe and utility precedence", async ({ page }
   // The unchanged fixed samples prove preflight preserves background, radius, font and padding.
   await smoke(page, expect, {
     layer: "openui",
-    serverSheets: 0,
+    serverSheets: false,
     ready: '[data-compat-ready][data-compat-mode="layered"]',
   });
 

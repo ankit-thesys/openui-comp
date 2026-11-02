@@ -16,7 +16,7 @@ test(`Button-only production bundle (${mode})`, async ({ page, request }) => {
 
   await smoke(page, expect, {
     layer: mode === "layered" ? "openui" : false,
-    serverSheets: 0,
+    serverSheets: false,
     ready: `[data-compat-ready][data-compat-mode="${mode}"]`,
     samples: defaultTheme
       .filter((sample) => sample.selector === ".openui-button")

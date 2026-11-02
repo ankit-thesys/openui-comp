@@ -1,3 +1,4 @@
+import "./configure";
 import { renderToString } from "react-dom/server";
 import { extractCss } from "goober";
 import { App } from "./app";

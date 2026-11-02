@@ -1,4 +1,4 @@
-// #1523 has no server sheet to read the layer from, so the browser configures it.
+// The layer and its order, set in code both the server and the browser run (#178).
 import { configureStyles } from "@openuidev/react-components";
 import { compatMode } from "./mode";
 
