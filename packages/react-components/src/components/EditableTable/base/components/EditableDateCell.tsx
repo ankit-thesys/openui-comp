@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { styleRules } from "../../../../styles/css";
 import { DatePicker } from "../../../DatePicker";
 import { useEditableCellKeyboard } from "../hooks/useEditableCellKeyboard";
 import { CellOutline } from "./CellOutline";
@@ -108,28 +109,32 @@ export const EditableDateCell: React.FC<CellRendererProps> = (props) => {
     onFinishEdit(true);
   };
 
+  const cellClass = clsx(cellStyles.cell, cellNames.cell);
   return (
-    <div
-      ref={cellRef}
-      className={clsx(cellStyles.cell, cellNames.cell)}
-      onClickCapture={handleClick}
-      onKeyDown={handleKeyDownWithPicker}
-      tabIndex={0}
-      data-state={isEditing ? "editing" : isSelected ? "selected" : "idle"}
-    >
-      <CellOutline isSelected={isSelected} isEditing={isEditing} />
-      <DatePicker
-        selectedSingleDate={editDate}
-        setSelectedSingleDate={handleDateChange}
-        mode="single"
-        isOpen={isEditing}
-        setIsOpen={(isOpen) => {
-          if (!isOpen) {
-            onFinishEdit(true);
-          }
-        }}
-      />
-    </div>
+    <>
+      <div
+        ref={cellRef}
+        className={cellClass}
+        onClickCapture={handleClick}
+        onKeyDown={handleKeyDownWithPicker}
+        tabIndex={0}
+        data-state={isEditing ? "editing" : isSelected ? "selected" : "idle"}
+      >
+        <CellOutline isSelected={isSelected} isEditing={isEditing} />
+        <DatePicker
+          selectedSingleDate={editDate}
+          setSelectedSingleDate={handleDateChange}
+          mode="single"
+          isOpen={isEditing}
+          setIsOpen={(isOpen) => {
+            if (!isOpen) {
+              onFinishEdit(true);
+            }
+          }}
+        />
+      </div>
+      {styleRules(cellClass)}
+    </>
   );
 };
 

@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { useCallback } from "react";
+import { drawLineStyles } from "../shared/animations/drawLine.styles";
 import { names as baseNames, chartBaseStyles } from "../shared/chartBase.styles";
 import { lineChartStyles, names } from "./lineChart.styles";
 
@@ -19,6 +20,7 @@ import { LineDotCrosshair } from "../shared/cartesian/LineDotCrosshair";
 import { findNearestDataIndex } from "../utils/mouseUtils";
 import { LineSeries } from "./parts/LineSeries";
 
+import { moduleClasses, styleRules } from "../../../styles/css";
 import { CHART_CLASS_PREFIX } from "../utils/constants";
 import type { LineChartData, LineChartProps } from "./types";
 
@@ -32,19 +34,23 @@ export function LineChart<T extends LineChartData>(props: LineChartProps<T>) {
   const styles = lineChartStyles;
   const baseStyles = chartBaseStyles;
   if (!props.data || props.data.length === 0) {
+    const rootClass = clsx(
+      styles.root,
+      names.root,
+      names.variant[props.variant ?? "natural"],
+      baseStyles.empty,
+      baseNames.empty,
+      props.className,
+    );
+    const emptyTextClass = clsx(baseStyles.emptyText, baseNames.emptyText);
     return (
-      <div
-        className={clsx(
-          styles.root,
-          names.root,
-          names.variant[props.variant ?? "natural"],
-          baseStyles.empty,
-          baseNames.empty,
-          props.className,
-        )}
-      >
-        <span className={clsx(baseStyles.emptyText, baseNames.emptyText)}>No data available</span>
-      </div>
+      <>
+        <div className={rootClass}>
+          <span className={emptyTextClass}>No data available</span>
+          {styleRules(emptyTextClass)}
+        </div>
+        {styleRules(rootClass)}
+      </>
     );
   }
   return <LineChartImpl {...props} />;
@@ -133,99 +139,102 @@ function LineChartImpl<T extends LineChartData>({
   });
 
   return (
-    <CartesianChartLayout
-      classes={{
-        ...names,
-        svg: clsx(styles.svg, names.svg),
-        group: clsx(styles.group, names.group),
-        containerInner: clsx(styles.containerInner, names.containerInner),
-        yAxisContainer: clsx(styles.yAxisContainer, names.yAxisContainer),
-        mainContainer: clsx(styles.mainContainer, names.mainContainer),
-        yTick: clsx(styles.yTick, names.yTick),
-        gridLine: clsx(styles.gridLine, names.gridLine),
-      }}
-      orch={orch}
-      yScale={yScale}
-      mouseHandlers={mouseHandlers}
-      classPrefix="line-chart"
-      chartType="line"
-      exportData={exportData}
-      ariaLabel="Line chart"
-      showYAxis={showYAxis}
-      grid={grid}
-      showLegend={showLegend}
-      xAxisLabel={xAxisLabel}
-      yAxisLabel={yAxisLabel}
-      yTickCount={yTickCount}
-      className={clsx(styles.root, names.root, names.variant[variant], className)}
-      defs={
-        <defs className={names.defs}>
-          <ClipDefs
-            className={names.clip}
-            rectClassName={names.clipRect}
-            chartId={orch.identity.chartId}
-            chartWidth={orch.dimensions.chartAreaWidth}
-            chartHeight={orch.dimensions.chartInnerHeight}
-          />
-        </defs>
-      }
-      series={
-        <>
-          <LineSeries
-            data={data}
-            dataKeys={orch.data.dataKeys}
-            xScale={xScale}
-            yScale={yScale}
-            variant={variant}
-            categoryKey={orch.data.catKey}
-            colors={orch.data.colorMap}
-            showDots={showDots}
-            dotRadius={dotRadius}
-            isAnimationActive={animate}
-          />
-          <LineDotCrosshair
-            hoveredIndex={orch.hover.hoveredIndex}
-            xScale={xScale}
-            yScale={yScale}
-            data={data}
-            dataKeys={orch.data.dataKeys}
-            categoryKey={orch.data.catKey}
-            colors={orch.data.colorMap}
-            chartHeight={orch.dimensions.chartInnerHeight}
-            getYValue={getYValue}
-            classes={{
-              ...names,
-              group: clsx(styles.group, names.group),
-              crosshairLine: clsx(styles.crosshairLine, names.crosshairLine),
-              activeDotOuter: clsx(styles.activeDotOuter, names.activeDotOuter),
-              activeDotInner: clsx(styles.activeDotInner, names.activeDotInner),
-            }}
+    <>
+      <CartesianChartLayout
+        classes={{
+          ...names,
+          svg: clsx(styles.svg, names.svg),
+          group: clsx(styles.group, names.group),
+          containerInner: clsx(styles.containerInner, names.containerInner),
+          yAxisContainer: clsx(styles.yAxisContainer, names.yAxisContainer),
+          mainContainer: clsx(styles.mainContainer, names.mainContainer),
+          yTick: clsx(styles.yTick, names.yTick),
+          gridLine: clsx(styles.gridLine, names.gridLine),
+        }}
+        orch={orch}
+        yScale={yScale}
+        mouseHandlers={mouseHandlers}
+        classPrefix="line-chart"
+        chartType="line"
+        exportData={exportData}
+        ariaLabel="Line chart"
+        showYAxis={showYAxis}
+        grid={grid}
+        showLegend={showLegend}
+        xAxisLabel={xAxisLabel}
+        yAxisLabel={yAxisLabel}
+        yTickCount={yTickCount}
+        className={clsx(styles.root, names.root, names.variant[variant], className)}
+        defs={
+          <defs className={names.defs}>
+            <ClipDefs
+              className={names.clip}
+              rectClassName={names.clipRect}
+              chartId={orch.identity.chartId}
+              chartWidth={orch.dimensions.chartAreaWidth}
+              chartHeight={orch.dimensions.chartInnerHeight}
+            />
+          </defs>
+        }
+        series={
+          <>
+            <LineSeries
+              data={data}
+              dataKeys={orch.data.dataKeys}
+              xScale={xScale}
+              yScale={yScale}
+              variant={variant}
+              categoryKey={orch.data.catKey}
+              colors={orch.data.colorMap}
+              showDots={showDots}
+              dotRadius={dotRadius}
+              isAnimationActive={animate}
+            />
+            <LineDotCrosshair
+              hoveredIndex={orch.hover.hoveredIndex}
+              xScale={xScale}
+              yScale={yScale}
+              data={data}
+              dataKeys={orch.data.dataKeys}
+              categoryKey={orch.data.catKey}
+              colors={orch.data.colorMap}
+              chartHeight={orch.dimensions.chartInnerHeight}
+              getYValue={getYValue}
+              classes={{
+                ...names,
+                group: clsx(styles.group, names.group),
+                crosshairLine: clsx(styles.crosshairLine, names.crosshairLine),
+                activeDotOuter: clsx(styles.activeDotOuter, names.activeDotOuter),
+                activeDotInner: clsx(styles.activeDotInner, names.activeDotInner),
+              }}
+              classPrefix={`${CHART_CLASS_PREFIX}-line-chart`}
+              crosshair={crosshair}
+              highlight={highlight}
+              activeDots={activeDots}
+            />
+          </>
+        }
+        xAxis={
+          <CartesianXAxis
+            mode={mode}
+            scale={xScale}
             classPrefix={`${CHART_CLASS_PREFIX}-line-chart`}
-            crosshair={crosshair}
-            highlight={highlight}
-            activeDots={activeDots}
+            classes={names}
+            tickClassName={clsx(styles.xTick, names.xTick)}
+            angledTickClassName={clsx(styles.xTickAngled, names.xTickAngled)}
+            tickVariant={orch.dimensions.tickVariant}
+            widthOfGroup={orch.dimensions.widthOfGroup}
+            labelHeight={orch.xAxis.xAxisHeight}
+            labelWidth={orch.xAxis.labelWidth}
+            maxLines={orch.xAxis.maxLines}
+            labelInterval={orch.dimensions.labelInterval}
+            angle={orch.xAxis.angle}
+            chartWidth={orch.dimensions.chartAreaWidth}
+            yAxisWidth={orch.dimensions.effectiveYAxisWidth}
           />
-        </>
-      }
-      xAxis={
-        <CartesianXAxis
-          mode={mode}
-          scale={xScale}
-          classPrefix={`${CHART_CLASS_PREFIX}-line-chart`}
-          classes={names}
-          tickClassName={clsx(styles.xTick, names.xTick)}
-          angledTickClassName={clsx(styles.xTickAngled, names.xTickAngled)}
-          tickVariant={orch.dimensions.tickVariant}
-          widthOfGroup={orch.dimensions.widthOfGroup}
-          labelHeight={orch.xAxis.xAxisHeight}
-          labelWidth={orch.xAxis.labelWidth}
-          maxLines={orch.xAxis.maxLines}
-          labelInterval={orch.dimensions.labelInterval}
-          angle={orch.xAxis.angle}
-          chartWidth={orch.dimensions.chartAreaWidth}
-          yAxisWidth={orch.dimensions.effectiveYAxisWidth}
-        />
-      }
-    />
+        }
+      />
+      {styleRules(moduleClasses(lineChartStyles, chartBaseStyles, drawLineStyles))}
+    </>
   );
 }

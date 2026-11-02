@@ -6,6 +6,7 @@ import { ChevronDown } from "lucide-react";
 import { forwardRef, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useMultipleRefs } from "../../../../hooks/useMultipleRefs";
+import { styleRules } from "../../../../styles/css";
 import { useTheme } from "../../../ThemeProvider";
 import { datePickerStyles, names } from "../../datePicker.styles";
 import { useDatePicker } from "../context/DatePickerContext";
@@ -20,21 +21,29 @@ const FloatingDateInput = () => {
       ? !!selectedDate
       : !!(selectedRange && selectedRange.from && selectedRange.to);
 
+  const triggerClass = clsx(styles.trigger, names.trigger);
+  const textClass = clsx(styles.text, names.text);
+  const iconClass = clsx(styles.icon, names.icon);
   return (
-    <div
-      className={clsx(styles.trigger, names.trigger)}
-      data-state={isOpen ? "open" : "closed"}
-      data-placeholder={!hasSelectedDate || undefined}
-      onClick={(e) => {
-        e.stopPropagation();
-        setIsOpen(!isOpen);
-      }}
-    >
-      <span className={clsx(styles.text, names.text)}>
-        {mode === "single" ? formatSingleDate(selectedDate) : formatDateRange(selectedRange)}
-      </span>
-      <ChevronDown size={16} className={clsx(styles.icon, names.icon)} />
-    </div>
+    <>
+      <div
+        className={triggerClass}
+        data-state={isOpen ? "open" : "closed"}
+        data-placeholder={!hasSelectedDate || undefined}
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsOpen(!isOpen);
+        }}
+      >
+        <span className={textClass}>
+          {mode === "single" ? formatSingleDate(selectedDate) : formatDateRange(selectedRange)}
+        </span>
+        {styleRules(textClass)}
+        <ChevronDown size={16} className={iconClass} />
+        {styleRules(iconClass)}
+      </div>
+      {styleRules(triggerClass)}
+    </>
   );
 };
 
@@ -61,9 +70,11 @@ const FloatingDatePicker = forwardRef<HTMLDivElement>((_, ref) => {
     return null;
   }
 
+  const referenceClass = clsx(styles.reference, names.reference);
   return (
     <>
-      <div ref={menuPositionDivRefs} className={clsx(styles.reference, names.reference)} />
+      <div ref={menuPositionDivRefs} className={referenceClass} />
+      {styleRules(referenceClass)}
       {createPortal(
         <div
           ref={floatingRef}
@@ -112,14 +123,14 @@ export const FloatingDatePickerRenderer = ({
     };
   }, [isOpen, setIsOpen]);
 
+  const rootClass = clsx(styles.root, names.root, names.mode[mode], className);
   return (
-    <div
-      ref={containerRef}
-      className={clsx(styles.root, names.root, names.mode[mode], className)}
-      style={style}
-    >
-      <FloatingDateInput />
-      <FloatingDatePicker ref={menuRef} />
-    </div>
+    <>
+      <div ref={containerRef} className={rootClass} style={style}>
+        <FloatingDateInput />
+        <FloatingDatePicker ref={menuRef} />
+      </div>
+      {styleRules(rootClass)}
+    </>
   );
 };

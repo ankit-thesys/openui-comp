@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { memo, useEffect, useRef, useState } from "react";
+import { styleRules } from "../../styles/css";
 import { IconWrapper } from "../_shared/icons";
 import { names, sourceFaviconImageStyles } from "./sourceFaviconImage.styles";
 
@@ -45,17 +46,21 @@ export const SourceFaviconImage = memo(({ height, width, url, alt }: SourceFavic
     return <IconWrapper name="globe" size={Math.max(height, width)} className={names.root} />;
   }
 
+  const rootClass = clsx(styles.root, names.root);
   return (
-    <img
-      ref={ref}
-      src={url}
-      alt={alt}
-      height={height}
-      width={width}
-      onLoad={onSuccess}
-      onError={onError}
-      className={clsx(styles.root, names.root)}
-    />
+    <>
+      <img
+        ref={ref}
+        src={url}
+        alt={alt}
+        height={height}
+        width={width}
+        onLoad={onSuccess}
+        onError={onError}
+        className={rootClass}
+      />
+      {styleRules(rootClass)}
+    </>
   );
 });
 

@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import React from "react";
+import { styleRules } from "../../styles/css";
 import { CheckBoxItemProps } from "../CheckBoxItem";
 import { checkBoxGroupStyles, names } from "./checkBoxGroup.styles";
 
@@ -17,20 +18,20 @@ interface CheckBoxGroupProps {
 const CheckBoxGroup = React.forwardRef<HTMLDivElement, CheckBoxGroupProps>((props, ref) => {
   const { children, className, style, variant = "clear" } = props;
   const styles = checkBoxGroupStyles;
+  const rootClass = clsx(
+    styles.root,
+    names.root,
+    styles.variant[variant],
+    names.variant[variant],
+    className,
+  );
   return (
-    <div
-      ref={ref}
-      className={clsx(
-        styles.root,
-        names.root,
-        styles.variant[variant],
-        names.variant[variant],
-        className,
-      )}
-      style={style}
-    >
-      {children}
-    </div>
+    <>
+      <div ref={ref} className={rootClass} style={style}>
+        {children}
+      </div>
+      {styleRules(rootClass)}
+    </>
   );
 });
 

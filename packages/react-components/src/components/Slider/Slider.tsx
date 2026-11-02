@@ -2,7 +2,8 @@
 
 import * as SliderPrimitive from "@radix-ui/react-slider";
 import clsx from "clsx";
-import { forwardRef, ReactNode, useState } from "react";
+import { forwardRef, Fragment, ReactNode, useState } from "react";
+import { styleRules } from "../../styles/css";
 import { names, sliderStyles } from "./slider.styles";
 
 const formatNumber = (num: number | undefined): string => {
@@ -68,16 +69,33 @@ export const Slider = forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>
 
     const isRange = valueToShow && valueToShow.length > 1;
 
-    const thumbs = (isRange ? valueToShow : [valueToShow[0]]).map((v, i) => (
-      <SliderPrimitive.Thumb key={i} className={clsx(styles.thumb, names.thumb)}>
-        <div className={clsx(styles.handle, names.handle)}>
-          <div className={clsx(styles.handleInner, names.handleInner)}>
-            <div className={clsx(styles.handleDot, names.handleDot)} />
-          </div>
-          {!disabled && <div className={clsx(styles.value, names.value)}>{formatNumber(v)}</div>}
-        </div>
-      </SliderPrimitive.Thumb>
-    ));
+    const thumbs = (isRange ? valueToShow : [valueToShow[0]]).map((v, i) => {
+      const thumbClass = clsx(styles.thumb, names.thumb);
+      const handleClass = clsx(styles.handle, names.handle);
+      const handleInnerClass = clsx(styles.handleInner, names.handleInner);
+      const handleDotClass = clsx(styles.handleDot, names.handleDot);
+      return (
+        <Fragment key={i}>
+          <SliderPrimitive.Thumb className={thumbClass}>
+            <div className={handleClass}>
+              <div className={handleInnerClass}>
+                <div className={handleDotClass} />
+                {styleRules(handleDotClass)}
+              </div>
+              {styleRules(handleInnerClass)}
+              {!disabled && (
+                <>
+                  <div className={clsx(styles.value, names.value)}>{formatNumber(v)}</div>
+                  {styleRules(clsx(styles.value, names.value))}
+                </>
+              )}
+            </div>
+            {styleRules(handleClass)}
+          </SliderPrimitive.Thumb>
+          {styleRules(thumbClass)}
+        </Fragment>
+      );
+    });
 
     const renderDots = () => {
       if (variant === "discrete" && step) {
@@ -91,64 +109,89 @@ export const Slider = forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>
             ? value >= (valueToShow?.[0] ?? min) && value <= (valueToShow?.[1] ?? max)
             : value <= currentValue;
 
+          const markClass = clsx(styles.mark, names.mark);
           return (
-            <div
-              key={value}
-              className={clsx(styles.mark, names.mark)}
-              data-state={isActive ? "active" : "inactive"}
-              style={{ left: `${position}%` }}
-            />
+            <Fragment key={value}>
+              <div
+                className={markClass}
+                data-state={isActive ? "active" : "inactive"}
+                style={{ left: `${position}%` }}
+              />
+              {styleRules(markClass)}
+            </Fragment>
           );
         });
       }
       return null;
     };
 
+    const wrapperClass = clsx(styles.wrapper, names.wrapper);
+    const containerWrapperClass = clsx(styles.containerWrapper, names.containerWrapper);
+    const containerClass = clsx(styles.container, names.container);
+    const rootClass = clsx(styles.root, names.root, names.variant[variant], className);
+    const trackClass = clsx(styles.track, names.track);
+    const rangeClass = clsx(styles.range, names.range);
+    const labelsClass = clsx(styles.labels, names.labels);
     return (
-      <div className={clsx(styles.wrapper, names.wrapper)}>
-        {leftContent && (
-          <div className={clsx(styles.leftContent, names.leftContent)}>{leftContent}</div>
-        )}
-        <div className={clsx(styles.containerWrapper, names.containerWrapper)}>
-          <div className={clsx(styles.container, names.container)}>
-            <SliderPrimitive.Root
-              ref={ref}
-              className={clsx(styles.root, names.root, names.variant[variant], className)}
-              {...props}
-              min={min}
-              max={max}
-              step={step}
-              value={valueToShow}
-              onValueChange={(val) => {
-                if (!isControlled) {
-                  setInternalValue(val);
-                }
-                onValueChange?.(val);
-              }}
-              minStepsBetweenThumbs={1}
-              disabled={disabled}
-              key={variant}
-              style={style}
-            >
-              <SliderPrimitive.Track className={clsx(styles.track, names.track)}>
-                <SliderPrimitive.Range
-                  className={clsx(styles.range, names.range)}
-                  data-at-min={!isRange && valueToShow?.[0] === min ? "" : undefined}
-                />
-                {variant === "discrete" && renderDots()}
-              </SliderPrimitive.Track>
-              {thumbs}
-            </SliderPrimitive.Root>
+      <>
+        <div className={wrapperClass}>
+          {leftContent && (
+            <>
+              <div className={clsx(styles.leftContent, names.leftContent)}>{leftContent}</div>
+              {styleRules(clsx(styles.leftContent, names.leftContent))}
+            </>
+          )}
+          <div className={containerWrapperClass}>
+            <div className={containerClass}>
+              <SliderPrimitive.Root
+                ref={ref}
+                className={rootClass}
+                {...props}
+                min={min}
+                max={max}
+                step={step}
+                value={valueToShow}
+                onValueChange={(val) => {
+                  if (!isControlled) {
+                    setInternalValue(val);
+                  }
+                  onValueChange?.(val);
+                }}
+                minStepsBetweenThumbs={1}
+                disabled={disabled}
+                key={variant}
+                style={style}
+              >
+                <SliderPrimitive.Track className={trackClass}>
+                  <SliderPrimitive.Range
+                    className={rangeClass}
+                    data-at-min={!isRange && valueToShow?.[0] === min ? "" : undefined}
+                  />
+                  {styleRules(rangeClass)}
+                  {variant === "discrete" && renderDots()}
+                </SliderPrimitive.Track>
+                {styleRules(trackClass)}
+                {thumbs}
+              </SliderPrimitive.Root>
+              {styleRules(rootClass)}
+            </div>
+            {styleRules(containerClass)}
+            <div className={labelsClass}>
+              <span className={names.label}>{formatNumber(min)}</span>
+              <span className={names.label}>{formatNumber(max)}</span>
+            </div>
+            {styleRules(labelsClass)}
           </div>
-          <div className={clsx(styles.labels, names.labels)}>
-            <span className={names.label}>{formatNumber(min)}</span>
-            <span className={names.label}>{formatNumber(max)}</span>
-          </div>
+          {styleRules(containerWrapperClass)}
+          {rightContent && (
+            <>
+              <div className={clsx(styles.leftContent, names.rightContent)}>{rightContent}</div>
+              {styleRules(clsx(styles.leftContent, names.rightContent))}
+            </>
+          )}
         </div>
-        {rightContent && (
-          <div className={clsx(styles.leftContent, names.rightContent)}>{rightContent}</div>
-        )}
-      </div>
+        {styleRules(wrapperClass)}
+      </>
     );
   },
 );

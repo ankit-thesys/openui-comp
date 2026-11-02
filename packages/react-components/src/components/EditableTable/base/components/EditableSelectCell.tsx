@@ -4,6 +4,7 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 import clsx from "clsx";
 import { Check, ChevronDown } from "lucide-react";
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { styleRules } from "../../../../styles/css";
 import { useTheme } from "../../../ThemeProvider";
 import { useEditableCellKeyboard } from "../hooks/useEditableCellKeyboard";
 import { CellOutline } from "./CellOutline";
@@ -112,58 +113,66 @@ export const EditableSelectCell: React.FC<CellRendererProps> = (props) => {
     }
   };
 
+  const cellClass = clsx(cellStyles.cell, cellNames.cell);
+  const triggerClass = clsx(styles.trigger, names.trigger);
+  const iconClass = clsx(styles.icon, names.icon);
   return (
-    <div
-      ref={cellRef}
-      className={clsx(cellStyles.cell, cellNames.cell)}
-      onClick={handleClick}
-      onKeyDown={handleKeyDownWithSelect}
-      tabIndex={0}
-      data-state={isEditing ? "editing" : isSelected ? "selected" : "idle"}
-    >
-      <CellOutline isSelected={isSelected} isEditing={isEditing} />
-      <SelectPrimitive.Root
-        value={editValue}
-        onValueChange={handleValueChange}
-        open={isEditing}
-        onOpenChange={handleOpenChange}
+    <>
+      <div
+        ref={cellRef}
+        className={cellClass}
+        onClick={handleClick}
+        onKeyDown={handleKeyDownWithSelect}
+        tabIndex={0}
+        data-state={isEditing ? "editing" : isSelected ? "selected" : "idle"}
       >
-        <SelectPrimitive.Trigger className={clsx(styles.trigger, names.trigger)}>
-          <span className={names.value}>
-            <SelectPrimitive.Value placeholder="Select an option" />
-          </span>
-          <SelectPrimitive.Icon asChild>
-            <ChevronDown className={clsx(styles.icon, names.icon)} />
-          </SelectPrimitive.Icon>
-        </SelectPrimitive.Trigger>
-        <SelectPrimitive.Portal>
-          <SelectPrimitive.Content
-            className={clsx(styles.content, names.content, portalThemeClassName)}
-            position="popper"
-            sideOffset={2}
-          >
-            <SelectPrimitive.Viewport className={clsx(styles.viewport, names.viewport)}>
-              {options.map((option) => (
-                <SelectPrimitive.Item
-                  key={option.value}
-                  value={option.value}
-                  className={clsx(styles.item, names.item)}
-                >
-                  <span className={clsx(styles.checkWrapper, names.checkWrapper)}>
-                    <SelectPrimitive.ItemIndicator className={names.indicator}>
-                      <Check className={clsx(styles.checkIcon, names.checkIcon)} />
-                    </SelectPrimitive.ItemIndicator>
-                  </span>
-                  <span className={names.itemText}>
-                    <SelectPrimitive.ItemText>{option.label}</SelectPrimitive.ItemText>
-                  </span>
-                </SelectPrimitive.Item>
-              ))}
-            </SelectPrimitive.Viewport>
-          </SelectPrimitive.Content>
-        </SelectPrimitive.Portal>
-      </SelectPrimitive.Root>
-    </div>
+        <CellOutline isSelected={isSelected} isEditing={isEditing} />
+        <SelectPrimitive.Root
+          value={editValue}
+          onValueChange={handleValueChange}
+          open={isEditing}
+          onOpenChange={handleOpenChange}
+        >
+          <SelectPrimitive.Trigger className={triggerClass}>
+            <span className={names.value}>
+              <SelectPrimitive.Value placeholder="Select an option" />
+            </span>
+            <SelectPrimitive.Icon asChild>
+              <ChevronDown className={iconClass} />
+            </SelectPrimitive.Icon>
+            {styleRules(iconClass)}
+          </SelectPrimitive.Trigger>
+          {styleRules(triggerClass)}
+          <SelectPrimitive.Portal>
+            <SelectPrimitive.Content
+              className={clsx(styles.content, names.content, portalThemeClassName)}
+              position="popper"
+              sideOffset={2}
+            >
+              <SelectPrimitive.Viewport className={clsx(styles.viewport, names.viewport)}>
+                {options.map((option) => (
+                  <SelectPrimitive.Item
+                    key={option.value}
+                    value={option.value}
+                    className={clsx(styles.item, names.item)}
+                  >
+                    <span className={clsx(styles.checkWrapper, names.checkWrapper)}>
+                      <SelectPrimitive.ItemIndicator className={names.indicator}>
+                        <Check className={clsx(styles.checkIcon, names.checkIcon)} />
+                      </SelectPrimitive.ItemIndicator>
+                    </span>
+                    <span className={names.itemText}>
+                      <SelectPrimitive.ItemText>{option.label}</SelectPrimitive.ItemText>
+                    </span>
+                  </SelectPrimitive.Item>
+                ))}
+              </SelectPrimitive.Viewport>
+            </SelectPrimitive.Content>
+          </SelectPrimitive.Portal>
+        </SelectPrimitive.Root>
+      </div>
+      {styleRules(cellClass)}
+    </>
   );
 };
 

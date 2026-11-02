@@ -9,6 +9,7 @@ import {
   isValidElement,
   ReactElement,
 } from "react";
+import { styleRules } from "../../styles/css";
 import { ListItemProps, ListItemSize, ListItemVariant } from "../ListItem";
 import { listBlockStyles, names } from "./listBlock.styles";
 
@@ -43,21 +44,21 @@ const ListBlock = forwardRef<HTMLDivElement, ListBlockProps>((props, ref) => {
     return child;
   });
 
+  const rootClass = clsx(
+    styles.root,
+    names.root,
+    styles.size[size],
+    names.size[size],
+    names.variant[variant],
+    className,
+  );
   return (
-    <div
-      ref={ref}
-      className={clsx(
-        styles.root,
-        names.root,
-        styles.size[size],
-        names.size[size],
-        names.variant[variant],
-        className,
-      )}
-      style={style}
-    >
-      {enhancedChildren}
-    </div>
+    <>
+      <div ref={ref} className={rootClass} style={style}>
+        {enhancedChildren}
+      </div>
+      {styleRules(rootClass)}
+    </>
   );
 });
 

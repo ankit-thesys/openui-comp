@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { forwardRef } from "react";
+import { styleRules } from "../../styles/css";
 import { metricIndicatorStyles, names } from "./metricIndicator.styles";
 
 export interface MetricIndicatorTrend {
@@ -34,44 +35,69 @@ const MetricIndicatorBase = forwardRef<HTMLDivElement, MetricIndicatorBaseProps>
     const isPositive = trend?.direction === "up";
     const isInline = variant === "inline";
 
+    const rootClass = clsx(
+      styles.root,
+      names.root,
+      styles.variant[variant],
+      names.variant[variant],
+      className,
+    );
+    const rowClass = clsx(styles.row, names.row);
+    const mainValueClass = clsx(styles.mainValue, names.mainValue);
     return (
-      <div
-        data-subtext={!!subtext || undefined}
-        ref={ref}
-        className={clsx(
-          styles.root,
-          names.root,
-          styles.variant[variant],
-          names.variant[variant],
-          className,
-        )}
-      >
-        <div className={clsx(styles.row, names.row)}>
-          <div className={clsx(styles.mainValue, names.mainValue)}>{value}</div>
-          {!isInline && previousValue && (
-            <div className={clsx(styles.previousValue, names.previousValue)}>{previousValue}</div>
-          )}
-          {trend && (
-            <div
-              className={clsx(
-                styles.trend,
-                names.trend,
-                styles.direction[trend.direction],
-                names.direction[trend.direction],
-              )}
-            >
-              {isPositive ? "+" : "-"}
-              {trend.value}%
-            </div>
-          )}
-          {isInline && subtext && (
-            <div className={clsx(styles.subtext, names.subtext)}>{subtext}</div>
+      <>
+        <div data-subtext={!!subtext || undefined} ref={ref} className={rootClass}>
+          <div className={rowClass}>
+            <div className={mainValueClass}>{value}</div>
+            {styleRules(mainValueClass)}
+            {!isInline && previousValue && (
+              <>
+                <div className={clsx(styles.previousValue, names.previousValue)}>
+                  {previousValue}
+                </div>
+                {styleRules(clsx(styles.previousValue, names.previousValue))}
+              </>
+            )}
+            {trend && (
+              <>
+                <div
+                  className={clsx(
+                    styles.trend,
+                    names.trend,
+                    styles.direction[trend.direction],
+                    names.direction[trend.direction],
+                  )}
+                >
+                  {isPositive ? "+" : "-"}
+                  {trend.value}%
+                </div>
+                {styleRules(
+                  clsx(
+                    styles.trend,
+                    names.trend,
+                    styles.direction[trend.direction],
+                    names.direction[trend.direction],
+                  ),
+                )}
+              </>
+            )}
+            {isInline && subtext && (
+              <>
+                <div className={clsx(styles.subtext, names.subtext)}>{subtext}</div>
+                {styleRules(clsx(styles.subtext, names.subtext))}
+              </>
+            )}
+          </div>
+          {styleRules(rowClass)}
+          {!isInline && subtext && (
+            <>
+              <div className={clsx(styles.subtext, names.subtext)}>{subtext}</div>
+              {styleRules(clsx(styles.subtext, names.subtext))}
+            </>
           )}
         </div>
-        {!isInline && subtext && (
-          <div className={clsx(styles.subtext, names.subtext)}>{subtext}</div>
-        )}
-      </div>
+        {styleRules(rootClass)}
+      </>
     );
   },
 );

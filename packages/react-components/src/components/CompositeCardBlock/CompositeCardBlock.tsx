@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { forwardRef, type ReactNode } from "react";
+import { styleRules } from "../../styles/css";
 import { InlineTypographyContext } from "../InlineMarkdownRenderer/InlineTypography";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
 import { compositeCardStyles, names } from "./card.styles";
@@ -31,38 +32,58 @@ export const CompositeCard = forwardRef<HTMLDivElement, CompositeCardProps>((pro
   const bodyItems = body ?? [];
   const hasFooter = Boolean(footer?.price || footer?.button);
 
+  const wrapperClass = clsx(names.wrapper, styles.wrapper);
+  const cardClass = clsx(
+    names.card,
+    styles.card,
+    clickable && [names.clickable.true, styles.clickable.true],
+    className,
+  );
   return (
-    <div className={clsx(names.wrapper, styles.wrapper)}>
-      <div
-        ref={ref}
-        className={clsx(
-          names.card,
-          styles.card,
-          clickable && [names.clickable.true, styles.clickable.true],
-          className,
-        )}
-        role={clickable ? "button" : undefined}
-        tabIndex={clickable ? 0 : undefined}
-        onClick={clickable ? onClick : undefined}
-        onKeyDown={clickable && onClick ? cardKeyDownHandler(onClick) : undefined}
-      >
-        {/* Inline markdown in the card keeps the surrounding text's typography. */}
-        <InlineTypographyContext.Provider value="inherit">
-          {header && <div className={clsx(names.header, styles.header)}>{header}</div>}
+    <>
+      <div className={wrapperClass}>
+        <div
+          ref={ref}
+          className={cardClass}
+          role={clickable ? "button" : undefined}
+          tabIndex={clickable ? 0 : undefined}
+          onClick={clickable ? onClick : undefined}
+          onKeyDown={clickable && onClick ? cardKeyDownHandler(onClick) : undefined}
+        >
+          {/* Inline markdown in the card keeps the surrounding text's typography. */}
+          <InlineTypographyContext.Provider value="inherit">
+            {header && (
+              <>
+                <div className={clsx(names.header, styles.header)}>{header}</div>
+                {styleRules(clsx(names.header, styles.header))}
+              </>
+            )}
 
-          {bodyItems.length > 0 && <div className={clsx(names.body, styles.body)}>{bodyItems}</div>}
+            {bodyItems.length > 0 && (
+              <>
+                <div className={clsx(names.body, styles.body)}>{bodyItems}</div>
+                {styleRules(clsx(names.body, styles.body))}
+              </>
+            )}
 
-          {hasFooter && (
-            <div className={clsx(names.footer, styles.footer)}>
-              <div className={clsx(names.footerContent, styles.footerContent)}>
-                {footer?.price ?? null}
-                {footer?.button ?? null}
-              </div>
-            </div>
-          )}
-        </InlineTypographyContext.Provider>
+            {hasFooter && (
+              <>
+                <div className={clsx(names.footer, styles.footer)}>
+                  <div className={clsx(names.footerContent, styles.footerContent)}>
+                    {footer?.price ?? null}
+                    {footer?.button ?? null}
+                  </div>
+                  {styleRules(clsx(names.footerContent, styles.footerContent))}
+                </div>
+                {styleRules(clsx(names.footer, styles.footer))}
+              </>
+            )}
+          </InlineTypographyContext.Provider>
+        </div>
+        {styleRules(cardClass)}
       </div>
-    </div>
+      {styleRules(wrapperClass)}
+    </>
   );
 });
 

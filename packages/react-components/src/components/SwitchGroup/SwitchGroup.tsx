@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { CSSProperties, forwardRef, ReactElement } from "react";
+import { styleRules } from "../../styles/css";
 import { SwitchItemProps } from "../SwitchItem";
 import { names, switchGroupStyles } from "./switchGroup.styles";
 
@@ -16,20 +17,20 @@ export interface SwitchGroupProps {
 const SwitchGroup = forwardRef<HTMLDivElement, SwitchGroupProps>((props, ref) => {
   const { children, className, style, variant = "clear" } = props;
   const styles = switchGroupStyles;
+  const rootClass = clsx(
+    styles.root,
+    names.root,
+    styles.variant[variant],
+    names.variant[variant],
+    className,
+  );
   return (
-    <div
-      ref={ref}
-      className={clsx(
-        styles.root,
-        names.root,
-        styles.variant[variant],
-        names.variant[variant],
-        className,
-      )}
-      style={style}
-    >
-      {children}
-    </div>
+    <>
+      <div ref={ref} className={rootClass} style={style}>
+        {children}
+      </div>
+      {styleRules(rootClass)}
+    </>
   );
 });
 

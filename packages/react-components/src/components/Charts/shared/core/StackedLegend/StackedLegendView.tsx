@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
+import { styleRules } from "../../../../../styles/css";
 import { Button } from "../../../../Button";
 import { IconButton } from "../../../../IconButton";
 import { Separator } from "../../../../Separator";
@@ -104,93 +105,128 @@ export const StackedLegendView = ({
   // needs the buttons. (The show-more path is gated separately on `isShowMore`.)
   const showScrollControls = isScrollable && isOverflowing;
 
+  const rootClass = clsx(styles.root, names.root, className);
+  const listClass = clsx(styles.list, names.list);
   return (
-    <div
-      className={clsx(styles.root, names.root, className)}
-      style={{
-        width: containerWidth ? `${containerWidth}px` : "100%",
-        ...style,
-      }}
-    >
-      {showScrollControls && (
-        <div className={clsx(styles.header, names.header)}>
-          {showTitle && (
-            <div className={clsx(styles.headerTitle, names.headerTitle)}>{items.length} labels</div>
-          )}
-          <div className={clsx(styles.headerButtons, names.headerButtons)}>
-            <IconButton
-              className={clsx(styles.scrollButton, names.scrollButton)}
-              onClick={() => scrollBy(-1)}
-              aria-label="Scroll legend up"
-              icon={<ChevronUp />}
-              variant="secondary"
-              size="extra-small"
-              disabled={!showUpButton}
-            />
-            <IconButton
-              className={clsx(styles.scrollButton, names.scrollButton)}
-              onClick={() => scrollBy(1)}
-              aria-label="Scroll legend down"
-              icon={<ChevronDown />}
-              variant="secondary"
-              size="extra-small"
-              disabled={!showDownButton}
-            />
-          </div>
-        </div>
-      )}
-
-      <div ref={listRef} className={clsx(styles.list, names.list)}>
-        {itemsToDisplay.map((item, index) => {
-          const isHidden = hiddenKeys?.has(item.key);
-          return (
-            <React.Fragment key={item.key}>
-              <div
-                className={clsx(styles.item, names.item)}
-                data-state={activeKey === item.key ? "active" : undefined}
-                data-clickable={onItemToggle ? "" : undefined}
-                style={
-                  {
-                    "--_openui-stacked-legend-item-opacity": isHidden ? 0.3 : 1,
-                  } as React.CSSProperties
-                }
-                onMouseEnter={() => onItemHover?.(item.key)}
-                onMouseLeave={() => onItemHover?.(null)}
-                onClick={onItemToggle ? () => onItemToggle(item.key) : undefined}
-              >
-                <div className={clsx(styles.label, names.label)}>
-                  <div className={clsx(styles.colorContainer, names.colorContainer)}>
-                    <div
-                      className={clsx(styles.color, names.color)}
-                      style={
-                        { "--_openui-stacked-legend-item-color": item.color } as React.CSSProperties
-                      }
-                    />
+    <>
+      <div
+        className={rootClass}
+        style={{
+          width: containerWidth ? `${containerWidth}px` : "100%",
+          ...style,
+        }}
+      >
+        {showScrollControls && (
+          <>
+            <div className={clsx(styles.header, names.header)}>
+              {showTitle && (
+                <>
+                  <div className={clsx(styles.headerTitle, names.headerTitle)}>
+                    {items.length} labels
                   </div>
-                  <div className={clsx(styles.labelText, names.labelText)}>{item.label}</div>
-                </div>
-                <div className={clsx(styles.value, names.value)}>
-                  {formatStackedValue(item.value, total, format)}
-                </div>
-              </div>
-              {index !== itemsToDisplay.length - 1 && separator && (
-                <Separator className={clsx(styles.separator, names.separator)} />
+                  {styleRules(clsx(styles.headerTitle, names.headerTitle))}
+                </>
               )}
-            </React.Fragment>
-          );
-        })}
-      </div>
+              <div className={clsx(styles.headerButtons, names.headerButtons)}>
+                <IconButton
+                  className={clsx(styles.scrollButton, names.scrollButton)}
+                  onClick={() => scrollBy(-1)}
+                  aria-label="Scroll legend up"
+                  icon={<ChevronUp />}
+                  variant="secondary"
+                  size="extra-small"
+                  disabled={!showUpButton}
+                />
+                {styleRules(clsx(styles.scrollButton, names.scrollButton))}
+                <IconButton
+                  className={clsx(styles.scrollButton, names.scrollButton)}
+                  onClick={() => scrollBy(1)}
+                  aria-label="Scroll legend down"
+                  icon={<ChevronDown />}
+                  variant="secondary"
+                  size="extra-small"
+                  disabled={!showDownButton}
+                />
+                {styleRules(clsx(styles.scrollButton, names.scrollButton))}
+              </div>
+              {styleRules(clsx(styles.headerButtons, names.headerButtons))}
+            </div>
+            {styleRules(clsx(styles.header, names.header))}
+          </>
+        )}
 
-      {isShowMore && items.length > LEGEND_ITEM_LIMIT && (
-        <Button
-          variant="secondary"
-          size="small"
-          onClick={() => setShowAll((v) => !v)}
-          className={clsx(styles.showMore, names.showMore)}
-        >
-          {showAll ? "Show less" : "Show more"}
-        </Button>
-      )}
-    </div>
+        <div ref={listRef} className={listClass}>
+          {itemsToDisplay.map((item, index) => {
+            const isHidden = hiddenKeys?.has(item.key);
+            const itemClass = clsx(styles.item, names.item);
+            const labelClass = clsx(styles.label, names.label);
+            const colorContainerClass = clsx(styles.colorContainer, names.colorContainer);
+            const colorClass = clsx(styles.color, names.color);
+            const labelTextClass = clsx(styles.labelText, names.labelText);
+            const valueClass = clsx(styles.value, names.value);
+            return (
+              <React.Fragment key={item.key}>
+                <div
+                  className={itemClass}
+                  data-state={activeKey === item.key ? "active" : undefined}
+                  data-clickable={onItemToggle ? "" : undefined}
+                  style={
+                    {
+                      "--_openui-stacked-legend-item-opacity": isHidden ? 0.3 : 1,
+                    } as React.CSSProperties
+                  }
+                  onMouseEnter={() => onItemHover?.(item.key)}
+                  onMouseLeave={() => onItemHover?.(null)}
+                  onClick={onItemToggle ? () => onItemToggle(item.key) : undefined}
+                >
+                  <div className={labelClass}>
+                    <div className={colorContainerClass}>
+                      <div
+                        className={colorClass}
+                        style={
+                          {
+                            "--_openui-stacked-legend-item-color": item.color,
+                          } as React.CSSProperties
+                        }
+                      />
+                      {styleRules(colorClass)}
+                    </div>
+                    {styleRules(colorContainerClass)}
+                    <div className={labelTextClass}>{item.label}</div>
+                    {styleRules(labelTextClass)}
+                  </div>
+                  {styleRules(labelClass)}
+                  <div className={valueClass}>{formatStackedValue(item.value, total, format)}</div>
+                  {styleRules(valueClass)}
+                </div>
+                {styleRules(itemClass)}
+                {index !== itemsToDisplay.length - 1 && separator && (
+                  <>
+                    <Separator className={clsx(styles.separator, names.separator)} />
+                    {styleRules(clsx(styles.separator, names.separator))}
+                  </>
+                )}
+              </React.Fragment>
+            );
+          })}
+        </div>
+        {styleRules(listClass)}
+
+        {isShowMore && items.length > LEGEND_ITEM_LIMIT && (
+          <>
+            <Button
+              variant="secondary"
+              size="small"
+              onClick={() => setShowAll((v) => !v)}
+              className={clsx(styles.showMore, names.showMore)}
+            >
+              {showAll ? "Show less" : "Show more"}
+            </Button>
+            {styleRules(clsx(styles.showMore, names.showMore))}
+          </>
+        )}
+      </div>
+      {styleRules(rootClass)}
+    </>
   );
 };

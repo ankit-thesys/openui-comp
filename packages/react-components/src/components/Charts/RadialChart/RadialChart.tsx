@@ -3,11 +3,13 @@
 import clsx from "clsx";
 import type { CSSProperties } from "react";
 import { useMemo } from "react";
+import { moduleClasses, styleRules } from "../../../styles/css";
 import {
   useCategoricalChartOrchestrator,
   useEffectiveAnimation,
   useExportChartData,
 } from "../hooks";
+import { fadeAppearStyles } from "../shared/animations/fadeAppear.styles";
 import { ChartShell } from "../shared/core/ChartShell";
 import { DefaultLegend } from "../shared/core/DefaultLegend/DefaultLegend";
 import { useResolvedLegendKey } from "../shared/core/legend/LegendStoreProvider";
@@ -110,89 +112,98 @@ function RadialChartImpl<T extends RadialChartData>(props: RadialChartProps<T>) 
     legend: showLegend,
   });
 
+  const rootClass = clsx(
+    styles.root,
+    names.root,
+    names.variant[variant],
+    isAnimationActive && names.isAnimationActive.true,
+    className,
+  );
   return (
-    <ChartShell
-      containerRef={orch.refs.containerRef}
-      className={clsx(
-        styles.root,
-        names.root,
-        names.variant[variant],
-        isAnimationActive && names.isAnimationActive.true,
-        className,
-      )}
-      style={
-        {
-          "--_openui-radial-chart-root-width": orch.style.containerStyle["width"],
-          "--_openui-radial-chart-root-height": orch.style.containerStyle["height"],
-        } as CSSProperties
-      }
-      isEmpty={orch.isEmpty}
-      exportData={exportData}
-    >
-      {() => (
-        <>
-          <div className={clsx(styles.svgWrapper, names.svgWrapper)}>
-            <svg
-              className={names.svg}
-              width={orch.dimensions.svgWidth}
-              height={orch.dimensions.svgHeight}
-              viewBox={`0 0 ${orch.dimensions.svgWidth} ${orch.dimensions.svgHeight}`}
-              role="img"
-              aria-label="Radial chart"
-            >
-              <g
-                className={names.group}
-                transform={`translate(${orch.dimensions.centerX}, ${orch.dimensions.centerY})`}
-              >
-                {showGrid && (
-                  <RadialGrid
-                    maxRadius={maxRadius}
-                    minRadius={minRadius}
-                    startAngle={startAngle}
-                    endAngle={endAngle}
-                  />
-                )}
-                <RadialBars
-                  slices={orch.data.visibleSlices}
-                  maxValue={maxValue}
-                  maxRadius={maxRadius}
-                  minRadius={minRadius}
-                  startAngle={startAngle}
-                  endAngle={endAngle}
-                  cornerRadius={cornerRadius}
-                  barGap={BAR_GAP}
-                  hoveredIndex={orch.hover.hoveredIndex}
-                  animate={animate}
-                  data={orch.data.visibleRows}
-                  onMouseMove={orch.hover.handleMouseMove}
-                  onMouseLeave={orch.hover.handleMouseLeave}
-                  onClick={onClick}
+    <>
+      <ChartShell
+        containerRef={orch.refs.containerRef}
+        className={rootClass}
+        style={
+          {
+            "--_openui-radial-chart-root-width": orch.style.containerStyle["width"],
+            "--_openui-radial-chart-root-height": orch.style.containerStyle["height"],
+          } as CSSProperties
+        }
+        isEmpty={orch.isEmpty}
+        exportData={exportData}
+      >
+        {() => {
+          const svgWrapperClass = clsx(styles.svgWrapper, names.svgWrapper);
+          return (
+            <>
+              <div className={svgWrapperClass}>
+                <svg
+                  className={names.svg}
+                  width={orch.dimensions.svgWidth}
+                  height={orch.dimensions.svgHeight}
+                  viewBox={`0 0 ${orch.dimensions.svgWidth} ${orch.dimensions.svgHeight}`}
+                  role="img"
+                  aria-label="Radial chart"
+                >
+                  <g
+                    className={names.group}
+                    transform={`translate(${orch.dimensions.centerX}, ${orch.dimensions.centerY})`}
+                  >
+                    {showGrid && (
+                      <RadialGrid
+                        maxRadius={maxRadius}
+                        minRadius={minRadius}
+                        startAngle={startAngle}
+                        endAngle={endAngle}
+                      />
+                    )}
+                    <RadialBars
+                      slices={orch.data.visibleSlices}
+                      maxValue={maxValue}
+                      maxRadius={maxRadius}
+                      minRadius={minRadius}
+                      startAngle={startAngle}
+                      endAngle={endAngle}
+                      cornerRadius={cornerRadius}
+                      barGap={BAR_GAP}
+                      hoveredIndex={orch.hover.hoveredIndex}
+                      animate={animate}
+                      data={orch.data.visibleRows}
+                      onMouseMove={orch.hover.handleMouseMove}
+                      onMouseLeave={orch.hover.handleMouseLeave}
+                      onClick={onClick}
+                    />
+                  </g>
+                </svg>
+              </div>
+              {styleRules(svgWrapperClass)}
+
+              {showLegend && !orch.usesRemoteLegend && (
+                <DefaultLegend
+                  ref={orch.refs.legendRef}
+                  items={orch.data.legendItems}
+                  containerWidth={orch.dimensions.containerWidth}
+                  isExpanded={orch.legend.isLegendExpanded}
+                  setIsExpanded={orch.legend.setIsLegendExpanded}
+                  onItemClick={orch.data.toggleSlice}
+                  hiddenSeries={orch.data.hiddenSlices}
                 />
-              </g>
-            </svg>
-          </div>
+              )}
 
-          {showLegend && !orch.usesRemoteLegend && (
-            <DefaultLegend
-              ref={orch.refs.legendRef}
-              items={orch.data.legendItems}
-              containerWidth={orch.dimensions.containerWidth}
-              isExpanded={orch.legend.isLegendExpanded}
-              setIsExpanded={orch.legend.setIsLegendExpanded}
-              onItemClick={orch.data.toggleSlice}
-              hiddenSeries={orch.data.hiddenSlices}
-            />
-          )}
-
-          {orch.tooltip.tooltipPayload && orch.hover.mousePos && (
-            <ChartTooltip
-              label={orch.tooltip.tooltipPayload.label}
-              items={orch.tooltip.tooltipPayload.items}
-              viewportPosition={orch.hover.mousePos}
-            />
-          )}
-        </>
-      )}
-    </ChartShell>
+              {orch.tooltip.tooltipPayload && orch.hover.mousePos && (
+                <ChartTooltip
+                  label={orch.tooltip.tooltipPayload.label}
+                  items={orch.tooltip.tooltipPayload.items}
+                  viewportPosition={orch.hover.mousePos}
+                />
+              )}
+            </>
+          );
+        }}
+      </ChartShell>
+      {styleRules(moduleClasses(radialChartStyles, fadeAppearStyles))}
+      {styleRules(rootClass)}
+    </>
   );
 }

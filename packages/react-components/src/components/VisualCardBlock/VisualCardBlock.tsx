@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { ChevronRight } from "lucide-react";
 import { forwardRef, type CSSProperties, type ReactNode } from "react";
+import { styleRules } from "../../styles/css";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
 import { toCssUrl } from "../_shared/utils/safeUrl";
 import { TagSurfaceContext } from "../Tag/TagSurface";
@@ -36,34 +37,51 @@ export const VisualCard = forwardRef<HTMLDivElement, VisualCardProps>((props, re
     ? ({ "--_openui-visual-card-image": backgroundImage } as CSSProperties)
     : undefined;
 
+  const cardClass = clsx(
+    names.card,
+    styles.card,
+    clickable && [names.clickable.true, styles.clickable.true],
+    className,
+  );
+  const topClass = clsx(names.top, styles.top);
+  const tagClass = clsx(names.tag, styles.tag);
   return (
-    <div
-      ref={ref}
-      className={clsx(
-        names.card,
-        styles.card,
-        clickable && [names.clickable.true, styles.clickable.true],
-        className,
-      )}
-      style={cardImageStyle}
-      aria-label={cardImageStyle ? bgImageAlt : undefined}
-      role={clickable ? "button" : undefined}
-      tabIndex={clickable ? 0 : undefined}
-      onClick={clickable ? onClick : undefined}
-      onKeyDown={clickable && onClick ? cardKeyDownHandler(onClick) : undefined}
-    >
-      <div className={clsx(names.top, styles.top)}>
-        <div className={clsx(names.tag, styles.tag)}>
-          <TagSurfaceContext.Provider value="image">{tag ?? null}</TagSurfaceContext.Provider>
-        </div>
-        {clickable && (
-          <div className={clsx(names.action, styles.action)} aria-hidden="true">
-            <ChevronRight size={16} className={clsx(names.actionIcon, styles.actionIcon)} />
+    <>
+      <div
+        ref={ref}
+        className={cardClass}
+        style={cardImageStyle}
+        aria-label={cardImageStyle ? bgImageAlt : undefined}
+        role={clickable ? "button" : undefined}
+        tabIndex={clickable ? 0 : undefined}
+        onClick={clickable ? onClick : undefined}
+        onKeyDown={clickable && onClick ? cardKeyDownHandler(onClick) : undefined}
+      >
+        <div className={topClass}>
+          <div className={tagClass}>
+            <TagSurfaceContext.Provider value="image">{tag ?? null}</TagSurfaceContext.Provider>
           </div>
-        )}
+          {styleRules(tagClass)}
+          {clickable && (
+            <>
+              <div className={clsx(names.action, styles.action)} aria-hidden="true">
+                <ChevronRight size={16} className={clsx(names.actionIcon, styles.actionIcon)} />
+                {styleRules(clsx(names.actionIcon, styles.actionIcon))}
+              </div>
+              {styleRules(clsx(names.action, styles.action))}
+            </>
+          )}
+        </div>
+        {styleRules(topClass)}
+        {body ? (
+          <>
+            <div className={clsx(names.bottom, styles.bottom)}>{body}</div>
+            {styleRules(clsx(names.bottom, styles.bottom))}
+          </>
+        ) : null}
       </div>
-      {body ? <div className={clsx(names.bottom, styles.bottom)}>{body}</div> : null}
-    </div>
+      {styleRules(cardClass)}
+    </>
   );
 });
 

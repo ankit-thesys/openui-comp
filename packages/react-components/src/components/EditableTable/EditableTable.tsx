@@ -21,7 +21,8 @@ import {
   RotateCcw,
   Type,
 } from "lucide-react";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { Fragment, useCallback, useEffect, useRef, useState } from "react";
+import { styleRules } from "../../styles/css";
 import { Button } from "../Button";
 import { IconButton } from "../IconButton";
 import { getCellRenderer } from "./base/components/cellRegistry";
@@ -365,102 +366,129 @@ export const EditableTable = React.forwardRef<HTMLDivElement, EditableTableProps
       container.scrollTo({ left: Math.max(0, prev), behavior: "smooth" });
     }, [columnLefts]);
 
+    const rootClass = clsx(styles.root, names.root, className);
+    const scrollClass = clsx(styles.scroll, names.scroll);
+    const tableClass = clsx(styles.table, names.table);
     return (
-      <div className={clsx(styles.root, names.root, className)} ref={tableRef} tabIndex={0}>
-        {isScrollable && (
-          <>
-            <div
-              className={clsx(styles.control, names.control)}
-              data-side="left"
-              data-disabled={!canScrollLeft}
-            >
-              <IconButton
-                aria-label="Scroll left"
-                size="small"
-                variant="secondary"
-                onClick={scrollToPrevColumn}
-                disabled={!canScrollLeft}
-                icon={<ChevronLeft className={names.icon} size={16} />}
-              />
-            </div>
-            <div
-              className={clsx(styles.control, names.control)}
-              data-side="right"
-              data-disabled={!canScrollRight}
-            >
-              <IconButton
-                aria-label="Scroll right"
-                size="small"
-                variant="secondary"
-                onClick={scrollToNextColumn}
-                disabled={!canScrollRight}
-                icon={<ChevronRight className={names.icon} size={16} />}
-              />
-            </div>
-          </>
-        )}
-        <div className={clsx(styles.scroll, names.scroll)} ref={scrollContainerRef}>
-          <table
-            className={clsx(styles.table, names.table)}
-            data-scrollable={isScrollable || undefined}
-          >
-            <thead className={names.tableHeader}>
-              {table.getHeaderGroups().map((headerGroup) => (
-                <tr key={headerGroup.id} className={names.headerRow}>
-                  {headerGroup.headers.map((header) => (
-                    <th
-                      key={header.id}
-                      className={clsx(styles.head, names.head)}
-                      style={
-                        {
-                          "--_openui-editable-table-column-width": `${header.getSize()}px`,
-                        } as React.CSSProperties
-                      }
-                    >
-                      <div className={clsx(styles.header, names.header)}>
-                        {header.isPlaceholder
-                          ? null
-                          : flexRender(header.column.columnDef.header, header.getContext())}
-                        <div className={clsx(styles.headerIcon, names.headerIcon)}>
-                          {headerIconForColumn(header.column)}
-                        </div>
-                      </div>
-                    </th>
-                  ))}
-                </tr>
-              ))}
-            </thead>
-            <tbody className={names.tableBody}>
-              {table.getRowModel().rows.map((row) => (
-                <tr key={row.id} className={clsx(styles.row, names.row)}>
-                  {row.getVisibleCells().map((cell) => (
-                    <td
-                      key={cell.id}
-                      className={clsx(styles.cell, names.cell)}
-                      style={
-                        {
-                          "--_openui-editable-table-column-width": `${cell.column.getSize()}px`,
-                        } as React.CSSProperties
-                      }
-                    >
-                      {flexRender(CellRenderer, {
-                        ...cell.getContext(),
-                        columns,
-                        selectedPosition,
-                        editingPosition,
-                        handleCellSelect,
-                        handleStartEdit,
-                        handleFinishEdit,
-                        handleNavigate,
-                      })}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      <>
+        <div className={rootClass} ref={tableRef} tabIndex={0}>
+          {isScrollable && (
+            <>
+              <div
+                className={clsx(styles.control, names.control)}
+                data-side="left"
+                data-disabled={!canScrollLeft}
+              >
+                <IconButton
+                  aria-label="Scroll left"
+                  size="small"
+                  variant="secondary"
+                  onClick={scrollToPrevColumn}
+                  disabled={!canScrollLeft}
+                  icon={<ChevronLeft className={names.icon} size={16} />}
+                />
+              </div>
+              {styleRules(clsx(styles.control, names.control))}
+              <div
+                className={clsx(styles.control, names.control)}
+                data-side="right"
+                data-disabled={!canScrollRight}
+              >
+                <IconButton
+                  aria-label="Scroll right"
+                  size="small"
+                  variant="secondary"
+                  onClick={scrollToNextColumn}
+                  disabled={!canScrollRight}
+                  icon={<ChevronRight className={names.icon} size={16} />}
+                />
+              </div>
+              {styleRules(clsx(styles.control, names.control))}
+            </>
+          )}
+          <div className={scrollClass} ref={scrollContainerRef}>
+            <table className={tableClass} data-scrollable={isScrollable || undefined}>
+              <thead className={names.tableHeader}>
+                {table.getHeaderGroups().map((headerGroup) => (
+                  <tr key={headerGroup.id} className={names.headerRow}>
+                    {headerGroup.headers.map((header) => {
+                      const headClass = clsx(styles.head, names.head);
+                      const headerClass = clsx(styles.header, names.header);
+                      const headerIconClass = clsx(styles.headerIcon, names.headerIcon);
+                      return (
+                        <Fragment key={header.id}>
+                          <th
+                            className={headClass}
+                            style={
+                              {
+                                "--_openui-editable-table-column-width": `${header.getSize()}px`,
+                              } as React.CSSProperties
+                            }
+                          >
+                            <div className={headerClass}>
+                              {header.isPlaceholder
+                                ? null
+                                : flexRender(header.column.columnDef.header, header.getContext())}
+                              <div className={headerIconClass}>
+                                {headerIconForColumn(header.column)}
+                              </div>
+                              {styleRules(headerIconClass)}
+                            </div>
+                            {styleRules(headerClass)}
+                          </th>
+                          {styleRules(headClass)}
+                        </Fragment>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </thead>
+              <tbody className={names.tableBody}>
+                {table.getRowModel().rows.map((row) => {
+                  const rowClass = clsx(styles.row, names.row);
+                  return (
+                    <Fragment key={row.id}>
+                      <tr className={rowClass}>
+                        {row.getVisibleCells().map((cell) => {
+                          const cellClass = clsx(styles.cell, names.cell);
+                          return (
+                            <Fragment key={cell.id}>
+                              <td
+                                className={cellClass}
+                                style={
+                                  {
+                                    "--_openui-editable-table-column-width": `${cell.column.getSize()}px`,
+                                  } as React.CSSProperties
+                                }
+                              >
+                                {flexRender(CellRenderer, {
+                                  ...cell.getContext(),
+                                  columns,
+                                  selectedPosition,
+                                  editingPosition,
+                                  handleCellSelect,
+                                  handleStartEdit,
+                                  handleFinishEdit,
+                                  handleNavigate,
+                                })}
+                              </td>
+                              {styleRules(cellClass)}
+                            </Fragment>
+                          );
+                        })}
+                      </tr>
+                      {styleRules(rowClass)}
+                    </Fragment>
+                  );
+                })}
+              </tbody>
+            </table>
+            {styleRules(tableClass)}
+          </div>
+          {styleRules(scrollClass)}
         </div>
-      </div>
+        {styleRules(rootClass)}
+      </>
     );
   },
 );
@@ -491,29 +519,35 @@ export const EditableTableChangesBar = ({
 }: EditableTableChangesBarProps) => {
   const styles = editableTableStyles;
   if (changedCellCount <= 0) return null;
+  const changesClass = clsx(styles.changes, names.changes, className);
+  const changesCountClass = clsx(styles.changesCount, names.changesCount);
+  const changesButtonsClass = clsx(styles.changesButtons, names.changesButtons);
   return (
-    <div className={clsx(styles.changes, names.changes, className)}>
-      <div className={clsx(styles.changesCount, names.changesCount)}>
-        {changedCellCount} changes made
+    <>
+      <div className={changesClass}>
+        <div className={changesCountClass}>{changedCellCount} changes made</div>
+        {styleRules(changesCountClass)}
+        <div className={changesButtonsClass}>
+          <Button
+            onClick={onReset}
+            variant="secondary"
+            size="small"
+            iconLeft={<RotateCcw className={names.icon} size={16} />}
+          >
+            {resetLabel}
+          </Button>
+          <Button
+            onClick={onSave}
+            variant="primary"
+            size="small"
+            iconLeft={<Check className={names.icon} size={16} />}
+          >
+            {saveLabel}
+          </Button>
+        </div>
+        {styleRules(changesButtonsClass)}
       </div>
-      <div className={clsx(styles.changesButtons, names.changesButtons)}>
-        <Button
-          onClick={onReset}
-          variant="secondary"
-          size="small"
-          iconLeft={<RotateCcw className={names.icon} size={16} />}
-        >
-          {resetLabel}
-        </Button>
-        <Button
-          onClick={onSave}
-          variant="primary"
-          size="small"
-          iconLeft={<Check className={names.icon} size={16} />}
-        >
-          {saveLabel}
-        </Button>
-      </div>
-    </div>
+      {styleRules(changesClass)}
+    </>
   );
 };

@@ -2,6 +2,8 @@
 
 import clsx from "clsx";
 import { useCallback, useMemo } from "react";
+import { drawLineStyles } from "../shared/animations/drawLine.styles";
+import { fadeAppearStyles } from "../shared/animations/fadeAppear.styles";
 import { names as baseNames, chartBaseStyles } from "../shared/chartBase.styles";
 import { areaChartStyles, names } from "./areaChart.styles";
 
@@ -20,6 +22,7 @@ import { findNearestDataIndex } from "../utils/mouseUtils";
 import { AreaSeries } from "./parts/AreaSeries";
 import { GradientDefs } from "./parts/GradientDefs";
 
+import { moduleClasses, styleRules } from "../../../styles/css";
 import { CHART_CLASS_PREFIX } from "../utils/constants";
 import type { AreaChartData, AreaChartProps } from "./types";
 
@@ -33,20 +36,24 @@ export function AreaChart<T extends AreaChartData>(props: AreaChartProps<T>) {
   const styles = areaChartStyles;
   const baseStyles = chartBaseStyles;
   if (!props.data || props.data.length === 0) {
+    const rootClass = clsx(
+      styles.root,
+      names.root,
+      names.variant[props.variant ?? "natural"],
+      (props.stacked ?? true) && names.stacked.true,
+      baseStyles.empty,
+      baseNames.empty,
+      props.className,
+    );
+    const emptyTextClass = clsx(baseStyles.emptyText, baseNames.emptyText);
     return (
-      <div
-        className={clsx(
-          styles.root,
-          names.root,
-          names.variant[props.variant ?? "natural"],
-          (props.stacked ?? true) && names.stacked.true,
-          baseStyles.empty,
-          baseNames.empty,
-          props.className,
-        )}
-      >
-        <span className={clsx(baseStyles.emptyText, baseNames.emptyText)}>No data available</span>
-      </div>
+      <>
+        <div className={rootClass}>
+          <span className={emptyTextClass}>No data available</span>
+          {styleRules(emptyTextClass)}
+        </div>
+        {styleRules(rootClass)}
+      </>
     );
   }
   return <AreaChartImpl {...props} />;
@@ -165,107 +172,116 @@ function AreaChartImpl<T extends AreaChartData>({
     yAxisLabel,
   });
 
+  const rootClass = clsx(
+    styles.root,
+    names.root,
+    names.variant[variant],
+    stacked && names.stacked.true,
+    className,
+  );
   return (
-    <CartesianChartLayout
-      classes={{
-        ...names,
-        svg: clsx(styles.svg, names.svg),
-        group: clsx(styles.group, names.group),
-        containerInner: clsx(styles.containerInner, names.containerInner),
-        yAxisContainer: clsx(styles.yAxisContainer, names.yAxisContainer),
-        mainContainer: clsx(styles.mainContainer, names.mainContainer),
-        yTick: clsx(styles.yTick, names.yTick),
-        gridLine: clsx(styles.gridLine, names.gridLine),
-      }}
-      orch={orch}
-      yScale={yScale}
-      mouseHandlers={mouseHandlers}
-      classPrefix="area-chart"
-      chartType="area"
-      exportData={exportData}
-      ariaLabel="Area chart"
-      showYAxis={showYAxis}
-      grid={grid}
-      showLegend={showLegend}
-      xAxisLabel={xAxisLabel}
-      yAxisLabel={yAxisLabel}
-      yTickCount={yTickCount}
-      className={clsx(
-        styles.root,
-        names.root,
-        names.variant[variant],
-        stacked && names.stacked.true,
-        className,
+    <>
+      <>
+        <CartesianChartLayout
+          classes={{
+            ...names,
+            svg: clsx(styles.svg, names.svg),
+            group: clsx(styles.group, names.group),
+            containerInner: clsx(styles.containerInner, names.containerInner),
+            yAxisContainer: clsx(styles.yAxisContainer, names.yAxisContainer),
+            mainContainer: clsx(styles.mainContainer, names.mainContainer),
+            yTick: clsx(styles.yTick, names.yTick),
+            gridLine: clsx(styles.gridLine, names.gridLine),
+          }}
+          orch={orch}
+          yScale={yScale}
+          mouseHandlers={mouseHandlers}
+          classPrefix="area-chart"
+          chartType="area"
+          exportData={exportData}
+          ariaLabel="Area chart"
+          showYAxis={showYAxis}
+          grid={grid}
+          showLegend={showLegend}
+          xAxisLabel={xAxisLabel}
+          yAxisLabel={yAxisLabel}
+          yTickCount={yTickCount}
+          className={rootClass}
+          defs={
+            <GradientDefs
+              negativeKeys={negativeKeys}
+              dataKeys={orch.data.dataKeys}
+              transformedKeys={orch.data.transformedKeys}
+              colors={orch.data.colorMap}
+              chartId={orch.identity.chartId}
+              chartWidth={orch.dimensions.chartAreaWidth}
+              chartHeight={orch.dimensions.chartInnerHeight}
+            />
+          }
+          series={
+            <>
+              <AreaSeries
+                data={data}
+                dataKeys={orch.data.dataKeys}
+                xScale={xScale}
+                yScale={yScale}
+                variant={variant}
+                stackedData={stackedData}
+                categoryKey={orch.data.catKey}
+                transformedKeys={orch.data.transformedKeys}
+                colors={orch.data.colorMap}
+                chartId={orch.identity.chartId}
+                isAnimationActive={animate}
+              />
+              <LineDotCrosshair
+                hoveredIndex={orch.hover.hoveredIndex}
+                xScale={xScale}
+                yScale={yScale}
+                data={data}
+                dataKeys={orch.data.dataKeys}
+                categoryKey={orch.data.catKey}
+                colors={orch.data.colorMap}
+                chartHeight={orch.dimensions.chartInnerHeight}
+                getYValue={getYValue}
+                classes={{
+                  ...names,
+                  group: clsx(styles.group, names.group),
+                  crosshairLine: clsx(styles.crosshairLine, names.crosshairLine),
+                  activeDotOuter: clsx(styles.activeDotOuter, names.activeDotOuter),
+                  activeDotInner: clsx(styles.activeDotInner, names.activeDotInner),
+                }}
+                classPrefix={`${CHART_CLASS_PREFIX}-area-chart`}
+                crosshair={crosshair}
+                highlight={highlight}
+                activeDots={activeDots}
+              />
+            </>
+          }
+          xAxis={
+            <CartesianXAxis
+              mode={mode}
+              scale={xScale}
+              classPrefix={`${CHART_CLASS_PREFIX}-area-chart`}
+              classes={names}
+              tickClassName={clsx(styles.xTick, names.xTick)}
+              angledTickClassName={clsx(styles.xTickAngled, names.xTickAngled)}
+              tickVariant={orch.dimensions.tickVariant}
+              widthOfGroup={orch.dimensions.widthOfGroup}
+              labelHeight={orch.xAxis.xAxisHeight}
+              labelWidth={orch.xAxis.labelWidth}
+              maxLines={orch.xAxis.maxLines}
+              labelInterval={orch.dimensions.labelInterval}
+              angle={orch.xAxis.angle}
+              chartWidth={orch.dimensions.chartAreaWidth}
+              yAxisWidth={orch.dimensions.effectiveYAxisWidth}
+            />
+          }
+        />
+        {styleRules(rootClass)}
+      </>
+      {styleRules(
+        moduleClasses(areaChartStyles, chartBaseStyles, drawLineStyles, fadeAppearStyles),
       )}
-      defs={
-        <GradientDefs
-          negativeKeys={negativeKeys}
-          dataKeys={orch.data.dataKeys}
-          transformedKeys={orch.data.transformedKeys}
-          colors={orch.data.colorMap}
-          chartId={orch.identity.chartId}
-          chartWidth={orch.dimensions.chartAreaWidth}
-          chartHeight={orch.dimensions.chartInnerHeight}
-        />
-      }
-      series={
-        <>
-          <AreaSeries
-            data={data}
-            dataKeys={orch.data.dataKeys}
-            xScale={xScale}
-            yScale={yScale}
-            variant={variant}
-            stackedData={stackedData}
-            categoryKey={orch.data.catKey}
-            transformedKeys={orch.data.transformedKeys}
-            colors={orch.data.colorMap}
-            chartId={orch.identity.chartId}
-            isAnimationActive={animate}
-          />
-          <LineDotCrosshair
-            hoveredIndex={orch.hover.hoveredIndex}
-            xScale={xScale}
-            yScale={yScale}
-            data={data}
-            dataKeys={orch.data.dataKeys}
-            categoryKey={orch.data.catKey}
-            colors={orch.data.colorMap}
-            chartHeight={orch.dimensions.chartInnerHeight}
-            getYValue={getYValue}
-            classes={{
-              ...names,
-              group: clsx(styles.group, names.group),
-              crosshairLine: clsx(styles.crosshairLine, names.crosshairLine),
-              activeDotOuter: clsx(styles.activeDotOuter, names.activeDotOuter),
-              activeDotInner: clsx(styles.activeDotInner, names.activeDotInner),
-            }}
-            classPrefix={`${CHART_CLASS_PREFIX}-area-chart`}
-            crosshair={crosshair}
-            highlight={highlight}
-            activeDots={activeDots}
-          />
-        </>
-      }
-      xAxis={
-        <CartesianXAxis
-          mode={mode}
-          scale={xScale}
-          classPrefix={`${CHART_CLASS_PREFIX}-area-chart`}
-          classes={names}
-          tickClassName={clsx(styles.xTick, names.xTick)}
-          angledTickClassName={clsx(styles.xTickAngled, names.xTickAngled)}
-          tickVariant={orch.dimensions.tickVariant}
-          widthOfGroup={orch.dimensions.widthOfGroup}
-          labelHeight={orch.xAxis.xAxisHeight}
-          labelWidth={orch.xAxis.labelWidth}
-          maxLines={orch.xAxis.maxLines}
-          labelInterval={orch.dimensions.labelInterval}
-          angle={orch.xAxis.angle}
-          chartWidth={orch.dimensions.chartAreaWidth}
-          yAxisWidth={orch.dimensions.effectiveYAxisWidth}
-        />
-      }
-    />
+    </>
   );
 }

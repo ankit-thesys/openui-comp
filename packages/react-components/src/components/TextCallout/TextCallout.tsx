@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import React from "react";
+import { styleRules } from "../../styles/css";
 import { names, textCalloutStyles } from "./textCallout.styles";
 
 type TextCalloutVariant = "neutral" | "info" | "warning" | "success" | "danger";
@@ -16,24 +17,34 @@ export const TextCallout = React.forwardRef<HTMLDivElement, TextCalloutProps>((p
   const styles = textCalloutStyles;
   const { className, variant = "neutral", title, description, ...rest } = props;
 
+  const rootClass = clsx(
+    styles.root,
+    names.root,
+    styles.variant[variant],
+    names.variant[variant],
+    className,
+  );
+  const contentClass = clsx(styles.content, names.content);
   return (
-    <div
-      ref={ref}
-      className={clsx(
-        styles.root,
-        names.root,
-        styles.variant[variant],
-        names.variant[variant],
-        className,
-      )}
-      {...rest}
-    >
-      <div className={clsx(styles.content, names.content)}>
-        {title && <span className={clsx(styles.title, names.title)}>{title}</span>}
-        {description && (
-          <span className={clsx(styles.description, names.description)}>{description}</span>
-        )}
+    <>
+      <div ref={ref} className={rootClass} {...rest}>
+        <div className={contentClass}>
+          {title && (
+            <>
+              <span className={clsx(styles.title, names.title)}>{title}</span>
+              {styleRules(clsx(styles.title, names.title))}
+            </>
+          )}
+          {description && (
+            <>
+              <span className={clsx(styles.description, names.description)}>{description}</span>
+              {styleRules(clsx(styles.description, names.description))}
+            </>
+          )}
+        </div>
+        {styleRules(contentClass)}
       </div>
-    </div>
+      {styleRules(rootClass)}
+    </>
   );
 });

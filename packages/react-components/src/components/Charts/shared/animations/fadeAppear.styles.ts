@@ -1,7 +1,7 @@
 import { css } from "../../../../styles/css";
 
 // The stable animation name and its keyframes are available on import.
-const fadeAppearClass = css`
+export const fadeAppearStyles = css`
   @keyframes openui-chart-fade-appear {
     from {
       opacity: 0;
@@ -12,4 +12,4 @@ const fadeAppearClass = css`
   }
 `;
 
-export const fadeAppearAnimation = fadeAppearClass && "openui-chart-fade-appear";
+export const fadeAppearAnimation = fadeAppearStyles && "openui-chart-fade-appear";

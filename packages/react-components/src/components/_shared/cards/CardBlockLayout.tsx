@@ -3,12 +3,14 @@
 import clsx from "clsx";
 import {
   forwardRef,
+  Fragment,
   type CSSProperties,
   type ForwardedRef,
   type HTMLAttributes,
   type KeyboardEvent,
   type ReactNode,
 } from "react";
+import { styleRules } from "../../../styles/css";
 import { cardBlockLayoutStyles, names } from "./cardBlockLayout.styles";
 import { getRowConfiguration, useCarouselMask } from "./smallCardBlockUtils";
 
@@ -62,74 +64,91 @@ function CardBlockLayoutInner<T>(
       } as CSSProperties)
     : undefined;
 
-  const renderCell = (item: T, index: number) => (
-    <div
-      key={itemKey?.(item, index) ?? `${cardType}-${index}`}
-      className={
-        layout === "carousel"
-          ? clsx(names.carouselItem, styles.carouselItem)
-          : clsx(names.item, styles.item)
-      }
-      data-span={count % 2 === 1 && index === count - 1 ? "full" : undefined}
-    >
-      {renderItem(item, index)}
-    </div>
-  );
+  const renderCell = (item: T, index: number) => {
+    const carouselItemClass =
+      layout === "carousel"
+        ? clsx(names.carouselItem, styles.carouselItem)
+        : clsx(names.item, styles.item);
+    return (
+      <Fragment key={itemKey?.(item, index) ?? `${cardType}-${index}`}>
+        <div
+          className={carouselItemClass}
+          data-span={count % 2 === 1 && index === count - 1 ? "full" : undefined}
+        >
+          {renderItem(item, index)}
+        </div>
+        {styleRules(carouselItemClass)}
+      </Fragment>
+    );
+  };
 
   let rowStartIndex = 0;
 
+  const rootClass = clsx(
+    names.root,
+    styles.root,
+    names.size[size],
+    styles.size[size],
+    names.layout[layout],
+    styles.layout[layout],
+    names.cardType[cardType],
+    styles.cardType[cardType],
+    responsive && [names.responsive.true, styles.responsive.true],
+    className,
+  );
   return (
-    <div
-      ref={ref}
-      className={clsx(
-        names.root,
-        styles.root,
-        names.size[size],
-        styles.size[size],
-        names.layout[layout],
-        styles.layout[layout],
-        names.cardType[cardType],
-        styles.cardType[cardType],
-        responsive && [names.responsive.true, styles.responsive.true],
-        className,
-      )}
-      data-card-type={cardType}
-      data-layout={layout}
-      data-count={count}
-      style={{ ...gapStyle, ...style }}
-      {...rest}
-    >
-      {layout === "carousel" ? (
-        <div
-          ref={scrollRef}
-          className={clsx(names.carousel, styles.carousel)}
-          data-mask={maskLeft ? (maskRight ? "both" : "left") : maskRight ? "right" : "none"}
-        >
-          <div className={clsx(names.track, styles.track)}>
-            {safeItems.map((item, index) => renderCell(item, index))}
-          </div>
-        </div>
-      ) : (
-        <div className={clsx(names.grid, styles.grid)}>
-          {getRowConfiguration(count, maxPerRow).map((itemsInRow, rowIndex) => {
-            const currentRowStartIndex = rowStartIndex;
-            rowStartIndex += itemsInRow;
-
-            return (
-              <div
-                key={`${cardType}-row-${rowIndex}`}
-                className={clsx(names.row, styles.row)}
-                data-columns={itemsInRow}
-              >
-                {safeItems
-                  .slice(currentRowStartIndex, currentRowStartIndex + itemsInRow)
-                  .map((item, columnIndex) => renderCell(item, currentRowStartIndex + columnIndex))}
+    <>
+      <div
+        ref={ref}
+        className={rootClass}
+        data-card-type={cardType}
+        data-layout={layout}
+        data-count={count}
+        style={{ ...gapStyle, ...style }}
+        {...rest}
+      >
+        {layout === "carousel" ? (
+          <>
+            <div
+              ref={scrollRef}
+              className={clsx(names.carousel, styles.carousel)}
+              data-mask={maskLeft ? (maskRight ? "both" : "left") : maskRight ? "right" : "none"}
+            >
+              <div className={clsx(names.track, styles.track)}>
+                {safeItems.map((item, index) => renderCell(item, index))}
               </div>
-            );
-          })}
-        </div>
-      )}
-    </div>
+              {styleRules(clsx(names.track, styles.track))}
+            </div>
+            {styleRules(clsx(names.carousel, styles.carousel))}
+          </>
+        ) : (
+          <>
+            <div className={clsx(names.grid, styles.grid)}>
+              {getRowConfiguration(count, maxPerRow).map((itemsInRow, rowIndex) => {
+                const currentRowStartIndex = rowStartIndex;
+                rowStartIndex += itemsInRow;
+
+                const rowClass = clsx(names.row, styles.row);
+                return (
+                  <Fragment key={`${cardType}-row-${rowIndex}`}>
+                    <div className={rowClass} data-columns={itemsInRow}>
+                      {safeItems
+                        .slice(currentRowStartIndex, currentRowStartIndex + itemsInRow)
+                        .map((item, columnIndex) =>
+                          renderCell(item, currentRowStartIndex + columnIndex),
+                        )}
+                    </div>
+                    {styleRules(rowClass)}
+                  </Fragment>
+                );
+              })}
+            </div>
+            {styleRules(clsx(names.grid, styles.grid))}
+          </>
+        )}
+      </div>
+      {styleRules(rootClass)}
+    </>
   );
 }
 

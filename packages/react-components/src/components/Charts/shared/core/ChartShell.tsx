@@ -4,6 +4,7 @@ import clsx from "clsx";
 import React from "react";
 import { chartBaseStyles, names } from "../chartBase.styles";
 
+import { styleRules } from "../../../../styles/css";
 import { MeasureFontScopeContext } from "../../hooks/core/measureFontScope";
 import { LabelTooltipProvider } from "./LabelTooltip/LabelTooltip";
 
@@ -55,6 +56,12 @@ export const ChartShell: React.FC<ChartShellProps> = ({
   children,
 }) => {
   const styles = chartBaseStyles;
+  const emptyClass = clsx(
+    !flat && classPrefix && `${classPrefix}-container`,
+    isEmpty && styles.empty,
+    isEmpty && names.empty,
+    className,
+  );
   return (
     <LabelTooltipProvider>
       {/* Measurement-font scope: children measuring text (axis label sheets,
@@ -67,22 +74,21 @@ export const ChartShell: React.FC<ChartShellProps> = ({
       >
         <div
           ref={containerRef}
-          className={clsx(
-            !flat && classPrefix && `${classPrefix}-container`,
-            isEmpty && styles.empty,
-            isEmpty && names.empty,
-            className,
-          )}
+          className={emptyClass}
           style={style}
           // PPTX-exporter contract attribute — not derived from the class prefix.
           data-openui-chart={exportData}
         >
           {isEmpty ? (
-            <span className={clsx(styles.emptyText, names.emptyText)}>No data available</span>
+            <>
+              <span className={clsx(styles.emptyText, names.emptyText)}>No data available</span>
+              {styleRules(clsx(styles.emptyText, names.emptyText))}
+            </>
           ) : (
             children()
           )}
         </div>
+        {styleRules(emptyClass)}
       </MeasureFontScopeContext.Provider>
     </LabelTooltipProvider>
   );

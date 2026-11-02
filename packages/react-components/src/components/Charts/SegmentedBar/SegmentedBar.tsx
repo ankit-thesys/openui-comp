@@ -2,7 +2,8 @@
 
 import clsx from "clsx";
 import type { CSSProperties } from "react";
-import React, { useCallback, useMemo, useRef, useState } from "react";
+import React, { Fragment, useCallback, useMemo, useRef, useState } from "react";
+import { styleRules } from "../../../styles/css";
 import { Separator } from "../../Separator";
 import { useTheme } from "../../ThemeProvider";
 import { useChartShell } from "../hooks/core/useChartShell";
@@ -159,103 +160,120 @@ export function SegmentedBar<T extends SegmentedBarData>({
 
   const activeSegment = activeIndex !== null ? segments[activeIndex] : undefined;
 
+  const rootClass = clsx(
+    styles.root,
+    names.root,
+    isAnimationActive && names.isAnimationActive.true,
+    animate && styles.isAnimationActive,
+    styles.legendVariant[legendVariant],
+    names.legendVariant[legendVariant],
+    legend && styles.legend,
+    legend && names.legend.true,
+    className,
+  );
   return (
-    <ChartShell
-      containerRef={containerRef}
-      className={clsx(
-        styles.root,
-        names.root,
-        isAnimationActive && names.isAnimationActive.true,
-        animate && styles.isAnimationActive,
-        styles.legendVariant[legendVariant],
-        names.legendVariant[legendVariant],
-        legend && styles.legend,
-        legend && names.legend.true,
-        className,
-      )}
-      style={style ?? {}}
-      isEmpty={isEmpty}
-    >
-      {() => (
-        <>
-          <div className={clsx(styles.track, names.track)} role="img" aria-label="Segmented bar">
-            {segments.map((segment, index) => {
-              const isActive = activeIndex === null || activeIndex === index;
-              return (
-                <div
-                  key={segment.key}
-                  className={clsx(styles.segment, names.segment)}
-                  style={
-                    {
-                      "--_openui-segmented-bar-segment-width": `${segment.percentage}%`,
-                      "--_openui-segmented-bar-segment-background-color": segment.color,
-                      "--_openui-segmented-bar-segment-opacity": isActive ? 1 : 0.5,
-                    } as CSSProperties
-                  }
-                  onMouseEnter={(e) => handleSegmentEnter(index, e)}
-                  onMouseLeave={clearHover}
-                >
-                  <div className={clsx(styles.segmentLine, names.segmentLine)} />
-                </div>
-              );
-            })}
-          </div>
-
-          {activeSegment && tooltipPosition && (
-            <ChartTooltip
-              label={activeSegment.label}
-              items={[
-                {
-                  name: "Value",
-                  value: numberTickFormatter(activeSegment.value),
-                  color: activeSegment.color,
-                },
-                {
-                  name: "Percentage",
-                  value: `${activeSegment.percentage.toFixed(1)}%`,
-                  color: activeSegment.color,
-                },
-              ]}
-              viewportPosition={tooltipPosition}
-              placement="top"
-            />
-          )}
-
-          {legend && legendVariant === "default" && (
+    <>
+      <ChartShell
+        containerRef={containerRef}
+        className={rootClass}
+        style={style ?? {}}
+        isEmpty={isEmpty}
+      >
+        {() => {
+          const trackClass = clsx(styles.track, names.track);
+          return (
             <>
-              <Separator />
-              <DefaultLegend
-                className={clsx(styles.defaultLegend, names.defaultLegend)}
-                ref={legendRef}
-                items={legendItems}
-                isExpanded={isLegendExpanded}
-                setIsExpanded={setIsLegendExpanded}
-                containerWidth={containerWidth}
-                style={{ "--_openui-segmented-bar-default-legend-padding-top": 0 } as CSSProperties}
-              />
-            </>
-          )}
+              <div className={trackClass} role="img" aria-label="Segmented bar">
+                {segments.map((segment, index) => {
+                  const isActive = activeIndex === null || activeIndex === index;
+                  const segmentClass = clsx(styles.segment, names.segment);
+                  const segmentLineClass = clsx(styles.segmentLine, names.segmentLine);
+                  return (
+                    <Fragment key={segment.key}>
+                      <div
+                        className={segmentClass}
+                        style={
+                          {
+                            "--_openui-segmented-bar-segment-width": `${segment.percentage}%`,
+                            "--_openui-segmented-bar-segment-background-color": segment.color,
+                            "--_openui-segmented-bar-segment-opacity": isActive ? 1 : 0.5,
+                          } as CSSProperties
+                        }
+                        onMouseEnter={(e) => handleSegmentEnter(index, e)}
+                        onMouseLeave={clearHover}
+                      >
+                        <div className={segmentLineClass} />
+                        {styleRules(segmentLineClass)}
+                      </div>
+                      {styleRules(segmentClass)}
+                    </Fragment>
+                  );
+                })}
+              </div>
+              {styleRules(trackClass)}
 
-          {legend && legendVariant === "stacked" && (
-            // Wrapper carries `legendRef` so `useChartShell`'s (required) legend
-            // measurement is attached in this mode too — the `default` variant
-            // attaches it via `DefaultLegend`. `StackedLegend` keeps its own
-            // class (and its `margin-top`), so the layout is unchanged.
-            <div ref={legendRef} className={names.legendWrapper}>
-              <StackedLegend
-                items={stackedLegendItems}
-                activeKey={hoveredKey}
-                onItemHover={handleLegendHover}
-                layout="showMore"
-                separator
-                showTitle={false}
-                containerWidth={containerWidth}
-                className={clsx(styles.stackedLegend, names.stackedLegend)}
-              />
-            </div>
-          )}
-        </>
-      )}
-    </ChartShell>
+              {activeSegment && tooltipPosition && (
+                <ChartTooltip
+                  label={activeSegment.label}
+                  items={[
+                    {
+                      name: "Value",
+                      value: numberTickFormatter(activeSegment.value),
+                      color: activeSegment.color,
+                    },
+                    {
+                      name: "Percentage",
+                      value: `${activeSegment.percentage.toFixed(1)}%`,
+                      color: activeSegment.color,
+                    },
+                  ]}
+                  viewportPosition={tooltipPosition}
+                  placement="top"
+                />
+              )}
+
+              {legend && legendVariant === "default" && (
+                <>
+                  <Separator />
+                  <DefaultLegend
+                    className={clsx(styles.defaultLegend, names.defaultLegend)}
+                    ref={legendRef}
+                    items={legendItems}
+                    isExpanded={isLegendExpanded}
+                    setIsExpanded={setIsLegendExpanded}
+                    containerWidth={containerWidth}
+                    style={
+                      { "--_openui-segmented-bar-default-legend-padding-top": 0 } as CSSProperties
+                    }
+                  />
+                  {styleRules(clsx(styles.defaultLegend, names.defaultLegend))}
+                </>
+              )}
+
+              {legend && legendVariant === "stacked" && (
+                // Wrapper carries `legendRef` so `useChartShell`'s (required) legend
+                // measurement is attached in this mode too — the `default` variant
+                // attaches it via `DefaultLegend`. `StackedLegend` keeps its own
+                // class (and its `margin-top`), so the layout is unchanged.
+                <div ref={legendRef} className={names.legendWrapper}>
+                  <StackedLegend
+                    items={stackedLegendItems}
+                    activeKey={hoveredKey}
+                    onItemHover={handleLegendHover}
+                    layout="showMore"
+                    separator
+                    showTitle={false}
+                    containerWidth={containerWidth}
+                    className={clsx(styles.stackedLegend, names.stackedLegend)}
+                  />
+                  {styleRules(clsx(styles.stackedLegend, names.stackedLegend))}
+                </div>
+              )}
+            </>
+          );
+        }}
+      </ChartShell>
+      {styleRules(rootClass)}
+    </>
   );
 }

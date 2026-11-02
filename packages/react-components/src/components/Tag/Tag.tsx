@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { CSSProperties, forwardRef, ReactNode, useContext } from "react";
+import { styleRules } from "../../styles/css";
 import { names, tagStyles } from "./tag.styles";
 import { TagSurfaceContext } from "./TagSurface";
 
@@ -31,25 +32,31 @@ export const Tag = forwardRef<HTMLDivElement, TagProps>((props, ref) => {
   const slotSurface = useContext(TagSurfaceContext);
   const surface = ownSurface ?? slotSurface;
   const css = tagStyles;
+  const rootClass = clsx(
+    css.root,
+    names.root,
+    css.size[size],
+    names.size[size],
+    css.variant[variant],
+    names.variant[variant],
+    surface && [css.surface[surface], names.surface[surface]],
+    className,
+  );
+  const textClass = clsx(css.text, names.text);
   return (
-    <div
-      ref={ref}
-      className={clsx(
-        css.root,
-        names.root,
-        css.size[size],
-        names.size[size],
-        css.variant[variant],
-        names.variant[variant],
-        surface && [css.surface[surface], names.surface[surface]],
-        className,
-      )}
-      style={styles}
-      {...attributes}
-    >
-      {icon && <span className={clsx(css.icon, names.icon)}>{icon}</span>}
-      <span className={clsx(css.text, names.text)}>{text}</span>
-    </div>
+    <>
+      <div ref={ref} className={rootClass} style={styles} {...attributes}>
+        {icon && (
+          <>
+            <span className={clsx(css.icon, names.icon)}>{icon}</span>
+            {styleRules(clsx(css.icon, names.icon))}
+          </>
+        )}
+        <span className={textClass}>{text}</span>
+        {styleRules(textClass)}
+      </div>
+      {styleRules(rootClass)}
+    </>
   );
 });
 

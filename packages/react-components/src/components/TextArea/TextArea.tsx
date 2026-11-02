@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import React, { forwardRef } from "react";
+import { styleRules } from "../../styles/css";
 import { useFormControlContext } from "../FormControl/context";
 import { names, textAreaStyles } from "./textArea.styles";
 
@@ -21,14 +22,18 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>((props, ref) => 
   const ctx = useFormControlContext();
   const resolvedHasError = hasError ?? ctx?.hasError ?? false;
 
+  const rootClass = clsx(styles.root, names.root, className);
   return (
-    <textarea
-      ref={ref}
-      className={clsx(styles.root, names.root, className)}
-      aria-invalid={resolvedHasError || undefined}
-      {...rest}
-      rows={rows}
-    />
+    <>
+      <textarea
+        ref={ref}
+        className={rootClass}
+        aria-invalid={resolvedHasError || undefined}
+        {...rest}
+        rows={rows}
+      />
+      {styleRules(rootClass)}
+    </>
   );
 });
 
