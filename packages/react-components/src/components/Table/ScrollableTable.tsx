@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { styleRules } from "../../styles/css";
 import { IconButton } from "../IconButton";
 import { names, scrollableTableStyles } from "./scrollableTable.styles";
 import { Table } from "./Table";
@@ -85,56 +86,64 @@ const ScrollableTable = React.forwardRef<HTMLTableElement, ScrollableTableProps>
       container.scrollTo({ left: Math.max(0, prev), behavior: "smooth" });
     }, []);
 
+    const wrapperClass = clsx(styles.wrapper, names.wrapper);
+    const rootClass = clsx(styles.root, names.root, className);
     return (
-      <div className={clsx(styles.wrapper, names.wrapper)} ref={wrapperRef} tabIndex={0}>
-        {isScrollable && (
-          <>
-            <div
-              className={clsx(styles.control, names.control)}
-              data-side="left"
-              data-disabled={!canScrollLeft}
-            >
-              <IconButton
-                aria-label="Scroll left"
-                size="small"
-                variant="secondary"
-                onClick={scrollToPrevColumn}
-                disabled={!canScrollLeft}
-                icon={<ChevronLeft className={names.icon} size={16} />}
-              />
-            </div>
-            <div
-              className={clsx(styles.control, names.control)}
-              data-side="right"
-              data-disabled={!canScrollRight}
-            >
-              <IconButton
-                aria-label="Scroll right"
-                size="small"
-                variant="secondary"
-                onClick={scrollToNextColumn}
-                disabled={!canScrollRight}
-                icon={<ChevronRight className={names.icon} size={16} />}
-              />
-            </div>
-          </>
-        )}
-        <Table
-          ref={ref}
-          containerRef={scrollContainerRef as React.RefObject<HTMLDivElement>}
-          containerClassName={clsx(
-            styles.scrollContainer,
-            names.scrollContainer,
-            containerClassName,
+      <>
+        <div className={wrapperClass} ref={wrapperRef} tabIndex={0}>
+          {isScrollable && (
+            <>
+              <div
+                className={clsx(styles.control, names.control)}
+                data-side="left"
+                data-disabled={!canScrollLeft}
+              >
+                <IconButton
+                  aria-label="Scroll left"
+                  size="small"
+                  variant="secondary"
+                  onClick={scrollToPrevColumn}
+                  disabled={!canScrollLeft}
+                  icon={<ChevronLeft className={names.icon} size={16} />}
+                />
+              </div>
+              {styleRules(clsx(styles.control, names.control))}
+              <div
+                className={clsx(styles.control, names.control)}
+                data-side="right"
+                data-disabled={!canScrollRight}
+              >
+                <IconButton
+                  aria-label="Scroll right"
+                  size="small"
+                  variant="secondary"
+                  onClick={scrollToNextColumn}
+                  disabled={!canScrollRight}
+                  icon={<ChevronRight className={names.icon} size={16} />}
+                />
+              </div>
+              {styleRules(clsx(styles.control, names.control))}
+            </>
           )}
-          containerStyle={containerStyle}
-          className={clsx(styles.root, names.root, className)}
-          data-scrollable={isScrollable || undefined}
-          {...tableProps}
-        >
-          {children}
-        </Table>
-      </div>
+          <Table
+            ref={ref}
+            containerRef={scrollContainerRef as React.RefObject<HTMLDivElement>}
+            containerClassName={clsx(
+              styles.scrollContainer,
+              names.scrollContainer,
+              containerClassName,
+            )}
+            containerStyle={containerStyle}
+            className={rootClass}
+            data-scrollable={isScrollable || undefined}
+            {...tableProps}
+          >
+            {children}
+          </Table>
+          {styleRules(rootClass)}
+        </div>
+        {styleRules(wrapperClass)}
+      </>
     );
   },
 );

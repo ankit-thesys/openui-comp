@@ -2,11 +2,18 @@ import { MarkDownRenderer } from "@openuidev/react-components";
 import { renderToString } from "react-dom/server";
 import remarkGfm from "remark-gfm";
 import { expect, it } from "vitest";
+import { withoutServedRules } from "../support/markup";
 
 it("defaults to clear and always emits the markdown variant modifier", () => {
   for (const variant of [undefined, "clear", "card", "sunk"] as const) {
-    const html = renderToString(
-      <MarkDownRenderer variant={variant} className="consumer-markdown" textMarkdown="Paragraph" />,
+    const html = withoutServedRules(
+      renderToString(
+        <MarkDownRenderer
+          variant={variant}
+          className="consumer-markdown"
+          textMarkdown="Paragraph"
+        />,
+      ),
     );
     const classes = html.match(/^<div class="([^"]*)"/)![1]!.split(" ");
     expect(classes).toEqual(

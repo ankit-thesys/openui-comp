@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { ChevronRight } from "lucide-react";
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
+import { styleRules } from "../../styles/css";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
 import { MetricIndicatorInline, type MetricIndicatorInlineProps } from "../MetricIndicator";
 import { names, overviewCardBlockStyles } from "./overviewCardBlock.styles";
@@ -58,35 +59,62 @@ const OverviewCardBlock = forwardRef<HTMLDivElement, OverviewCardBlockProps>((pr
       gap={gap}
       className={clsx(names.root, className)}
       itemKey={(item, index) => item.id ?? `overview-card-${index}`}
-      renderItem={(item, index) => (
-        <div
-          className={clsx(
-            styles.card,
-            names.card,
-            isClickable && [styles.clickable.true, names.clickable.true],
-          )}
-          role={isClickable ? "button" : undefined}
-          tabIndex={isClickable ? 0 : undefined}
-          onClick={isClickable ? () => onItemClick?.(item, index) : undefined}
-          onKeyDown={isClickable ? cardKeyDownHandler(() => onItemClick?.(item, index)) : undefined}
-        >
-          <div className={clsx(names.vertical, styles.vertical)}>
-            <div className={clsx(names.topRow, styles.topRow)}>
-              {item.top != null && <div className={clsx(names.top, styles.top)}>{item.top}</div>}
-              {isClickable && (
-                <div className={clsx(names.chevron, styles.chevron)} aria-hidden="true">
-                  <ChevronRight size={14} className={clsx(names.chevronIcon, styles.chevronIcon)} />
+      renderItem={(item, index) => {
+        const cardClass = clsx(
+          styles.card,
+          names.card,
+          isClickable && [styles.clickable.true, names.clickable.true],
+        );
+        const verticalClass = clsx(names.vertical, styles.vertical);
+        const topRowClass = clsx(names.topRow, styles.topRow);
+        return (
+          <>
+            <div
+              className={cardClass}
+              role={isClickable ? "button" : undefined}
+              tabIndex={isClickable ? 0 : undefined}
+              onClick={isClickable ? () => onItemClick?.(item, index) : undefined}
+              onKeyDown={
+                isClickable ? cardKeyDownHandler(() => onItemClick?.(item, index)) : undefined
+              }
+            >
+              <div className={verticalClass}>
+                <div className={topRowClass}>
+                  {item.top != null && (
+                    <>
+                      <div className={clsx(names.top, styles.top)}>{item.top}</div>
+                      {styleRules(clsx(names.top, styles.top))}
+                    </>
+                  )}
+                  {isClickable && (
+                    <>
+                      <div className={clsx(names.chevron, styles.chevron)} aria-hidden="true">
+                        <ChevronRight
+                          size={14}
+                          className={clsx(names.chevronIcon, styles.chevronIcon)}
+                        />
+                        {styleRules(clsx(names.chevronIcon, styles.chevronIcon))}
+                      </div>
+                      {styleRules(clsx(names.chevron, styles.chevron))}
+                    </>
+                  )}
                 </div>
-              )}
-            </div>
-            {item.bottom && (
-              <div className={clsx(names.bottom, styles.bottom)}>
-                <MetricIndicatorInline {...item.bottom} />
+                {styleRules(topRowClass)}
+                {item.bottom && (
+                  <>
+                    <div className={clsx(names.bottom, styles.bottom)}>
+                      <MetricIndicatorInline {...item.bottom} />
+                    </div>
+                    {styleRules(clsx(names.bottom, styles.bottom))}
+                  </>
+                )}
               </div>
-            )}
-          </div>
-        </div>
-      )}
+              {styleRules(verticalClass)}
+            </div>
+            {styleRules(cardClass)}
+          </>
+        );
+      }}
       {...rest}
     />
   );

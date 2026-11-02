@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { ChevronRight } from "lucide-react";
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
+import { styleRules } from "../../styles/css";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
 import { TextFitContext } from "../TextBlock/TextFit";
 import { TooltipWrapper } from "../TooltipWrapper";
@@ -72,54 +73,79 @@ const SnippetCardBlock = forwardRef<HTMLDivElement, SnippetCardBlockProps>((prop
       gap={gap}
       className={clsx(names.root, className)}
       itemKey={(item, index) => item.id ?? `snippet-card-${index}`}
-      renderItem={(item, index) => (
-        <div
-          className={clsx(
-            names.card,
-            styles.card,
-            isClickable && [names.clickable.true, styles.clickable.true],
-          )}
-          role={isClickable ? "button" : undefined}
-          tabIndex={isClickable ? 0 : undefined}
-          onClick={isClickable ? () => onItemClick?.(item, index) : undefined}
-          onKeyDown={isClickable ? cardKeyDownHandler(() => onItemClick?.(item, index)) : undefined}
-        >
-          {item.lhs != null && (
-            <TooltipWrapper
-              tooltipHeading={item.lhsTooltip?.heading}
-              tooltipContent={item.lhsTooltip?.content}
-              showOnlyWhenTruncated
-              headingSelector={TEXT_BLOCK_HEADING_SELECTOR}
-              contentSelector={TEXT_BLOCK_CONTENT_SELECTOR}
+      renderItem={(item, index) => {
+        const cardClass = clsx(
+          names.card,
+          styles.card,
+          isClickable && [names.clickable.true, styles.clickable.true],
+        );
+        const rhsClass = clsx(names.rhs, styles.rhs);
+        return (
+          <>
+            <div
+              className={cardClass}
+              role={isClickable ? "button" : undefined}
+              tabIndex={isClickable ? 0 : undefined}
+              onClick={isClickable ? () => onItemClick?.(item, index) : undefined}
+              onKeyDown={
+                isClickable ? cardKeyDownHandler(() => onItemClick?.(item, index)) : undefined
+              }
             >
-              <div className={clsx(names.lhs, styles.lhs)}>
-                <TextFitContext.Provider value={LHS_FIT}>{item.lhs}</TextFitContext.Provider>
+              {item.lhs != null && (
+                <>
+                  <TooltipWrapper
+                    tooltipHeading={item.lhsTooltip?.heading}
+                    tooltipContent={item.lhsTooltip?.content}
+                    showOnlyWhenTruncated
+                    headingSelector={TEXT_BLOCK_HEADING_SELECTOR}
+                    contentSelector={TEXT_BLOCK_CONTENT_SELECTOR}
+                  >
+                    <div className={clsx(names.lhs, styles.lhs)}>
+                      <TextFitContext.Provider value={LHS_FIT}>{item.lhs}</TextFitContext.Provider>
+                    </div>
+                  </TooltipWrapper>
+                  {styleRules(clsx(names.lhs, styles.lhs))}
+                </>
+              )}
+              <div className={rhsClass}>
+                {item.rhs != null ? (
+                  <>
+                    <TooltipWrapper
+                      tooltipHeading={item.rhsTooltip?.heading}
+                      tooltipContent={item.rhsTooltip?.content}
+                      showOnlyWhenTruncated
+                      headingSelector={TEXT_BLOCK_HEADING_SELECTOR}
+                      contentSelector={TEXT_BLOCK_CONTENT_SELECTOR}
+                    >
+                      <div className={clsx(names.rhsContent, styles.rhsContent)}>
+                        <TextFitContext.Provider value={RHS_FIT}>
+                          {item.rhs}
+                        </TextFitContext.Provider>
+                      </div>
+                    </TooltipWrapper>
+                    {styleRules(clsx(names.rhsContent, styles.rhsContent))}
+                  </>
+                ) : (
+                  isClickable && (
+                    <>
+                      <div className={clsx(names.chevron, styles.chevron)} aria-hidden="true">
+                        <ChevronRight
+                          size={14}
+                          className={clsx(names.chevronIcon, styles.chevronIcon)}
+                        />
+                        {styleRules(clsx(names.chevronIcon, styles.chevronIcon))}
+                      </div>
+                      {styleRules(clsx(names.chevron, styles.chevron))}
+                    </>
+                  )
+                )}
               </div>
-            </TooltipWrapper>
-          )}
-          <div className={clsx(names.rhs, styles.rhs)}>
-            {item.rhs != null ? (
-              <TooltipWrapper
-                tooltipHeading={item.rhsTooltip?.heading}
-                tooltipContent={item.rhsTooltip?.content}
-                showOnlyWhenTruncated
-                headingSelector={TEXT_BLOCK_HEADING_SELECTOR}
-                contentSelector={TEXT_BLOCK_CONTENT_SELECTOR}
-              >
-                <div className={clsx(names.rhsContent, styles.rhsContent)}>
-                  <TextFitContext.Provider value={RHS_FIT}>{item.rhs}</TextFitContext.Provider>
-                </div>
-              </TooltipWrapper>
-            ) : (
-              isClickable && (
-                <div className={clsx(names.chevron, styles.chevron)} aria-hidden="true">
-                  <ChevronRight size={14} className={clsx(names.chevronIcon, styles.chevronIcon)} />
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      )}
+              {styleRules(rhsClass)}
+            </div>
+            {styleRules(cardClass)}
+          </>
+        );
+      }}
       {...rest}
     />
   );

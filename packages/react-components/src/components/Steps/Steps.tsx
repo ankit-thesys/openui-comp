@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import React, { createContext, useContext } from "react";
+import { styleRules } from "../../styles/css";
 import { names, stepsStyles } from "./steps.styles";
 
 export interface StepsItemProps {
@@ -18,14 +19,20 @@ const StepNumberContext = createContext<number>(0);
 
 export const Steps: React.FC<StepsProps> = ({ children }) => {
   const styles = stepsStyles;
+  const rootClass = clsx(styles.root, names.root);
+  const listClass = clsx(styles.list, names.list);
   return (
-    <div className={clsx(styles.root, names.root)}>
-      <div className={clsx(styles.list, names.list)}>
-        {React.Children.map(children, (child, index) => (
-          <StepNumberContext.Provider value={index + 1}>{child}</StepNumberContext.Provider>
-        ))}
+    <>
+      <div className={rootClass}>
+        <div className={listClass}>
+          {React.Children.map(children, (child, index) => (
+            <StepNumberContext.Provider value={index + 1}>{child}</StepNumberContext.Provider>
+          ))}
+        </div>
+        {styleRules(listClass)}
       </div>
-    </div>
+      {styleRules(rootClass)}
+    </>
   );
 };
 
@@ -33,20 +40,36 @@ export const StepsItem: React.FC<StepsItemProps> = ({ title, details, number }) 
   const stepNumber = useContext(StepNumberContext);
 
   const styles = stepsStyles;
+  const itemClass = clsx(styles.item, names.item);
+  const connectorClass = clsx(styles.connector, names.connector);
+  const numberClass = clsx(styles.number, names.number);
+  const numberInnerClass = clsx(styles.numberInner, names.numberInner);
+  const connectorLineClass = clsx(styles.connectorLine, names.connectorLine);
+  const contentClass = clsx(styles.content, names.content);
+  const titleClass = clsx(styles.title, names.title);
+  const detailsClass = clsx(styles.details, names.details);
   return (
-    <div className={clsx(styles.item, names.item)}>
-      <div className={clsx(styles.connector, names.connector)}>
-        <div className={clsx(styles.number, names.number)}>
-          <div className={clsx(styles.numberInner, names.numberInner)}>
-            {Number.isInteger(number) ? number : stepNumber}
+    <>
+      <div className={itemClass}>
+        <div className={connectorClass}>
+          <div className={numberClass}>
+            <div className={numberInnerClass}>{Number.isInteger(number) ? number : stepNumber}</div>
+            {styleRules(numberInnerClass)}
           </div>
+          {styleRules(numberClass)}
+          <div className={connectorLineClass} />
+          {styleRules(connectorLineClass)}
         </div>
-        <div className={clsx(styles.connectorLine, names.connectorLine)} />
+        {styleRules(connectorClass)}
+        <div className={contentClass}>
+          <span className={titleClass}>{title}</span>
+          {styleRules(titleClass)}
+          <div className={detailsClass}>{details}</div>
+          {styleRules(detailsClass)}
+        </div>
+        {styleRules(contentClass)}
       </div>
-      <div className={clsx(styles.content, names.content)}>
-        <span className={clsx(styles.title, names.title)}>{title}</span>
-        <div className={clsx(styles.details, names.details)}>{details}</div>
-      </div>
-    </div>
+      {styleRules(itemClass)}
+    </>
   );
 };

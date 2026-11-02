@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { forwardRef, useContext } from "react";
+import { styleRules } from "../../styles/css";
 import { IconTag, type IconTagVariant } from "../IconTag";
 import { TextBlockView, type TextBlockOverflow, type TextBlockWidth } from "../TextBlock";
 import { TextFitContext } from "../TextBlock/TextFit";
@@ -60,39 +61,44 @@ export const IconText = forwardRef<HTMLDivElement, IconTextProps>(
     const overflow = ownOverflow ?? slot.overflow ?? "wrap";
     const width = ownWidth ?? slot.width;
     const styles = iconTextStyles;
+    const rootClass = clsx(
+      styles.root,
+      names.root,
+      styles.layout[layout],
+      names.layout[layout],
+      names.iconVariant[iconVariant],
+      bold && names.bold.true,
+      overflow && [styles.overflow[overflow], names.overflow[overflow]],
+      width && [styles.width[width], names.width[width]],
+      className,
+    );
+    const iconClass = clsx(styles.icon, names.icon);
+    const contentClass = clsx(styles.content, names.content);
     return (
-      <div
-        ref={ref}
-        className={clsx(
-          styles.root,
-          names.root,
-          styles.layout[layout],
-          names.layout[layout],
-          names.iconVariant[iconVariant],
-          bold && names.bold.true,
-          overflow && [styles.overflow[overflow], names.overflow[overflow]],
-          width && [styles.width[width], names.width[width]],
-          className,
-        )}
-      >
-        <IconTag
-          icon={icon}
-          variant={normalizeIconVariant(iconVariant)}
-          size="l"
-          className={clsx(styles.icon, names.icon)}
-        />
-        <div className={clsx(styles.content, names.content)}>
-          <TextBlockView
-            variant={bold ? "highlight-text-number-subtext" : "text-subtext"}
-            primary={title}
-            secondary={subtitle}
-            type="text"
-            size={layout === "horizontal" ? "xs" : "sm"}
-            overflow={overflow}
-            width={width}
+      <>
+        <div ref={ref} className={rootClass}>
+          <IconTag
+            icon={icon}
+            variant={normalizeIconVariant(iconVariant)}
+            size="l"
+            className={iconClass}
           />
+          {styleRules(iconClass)}
+          <div className={contentClass}>
+            <TextBlockView
+              variant={bold ? "highlight-text-number-subtext" : "text-subtext"}
+              primary={title}
+              secondary={subtitle}
+              type="text"
+              size={layout === "horizontal" ? "xs" : "sm"}
+              overflow={overflow}
+              width={width}
+            />
+          </div>
+          {styleRules(contentClass)}
         </div>
-      </div>
+        {styleRules(rootClass)}
+      </>
     );
   },
 );

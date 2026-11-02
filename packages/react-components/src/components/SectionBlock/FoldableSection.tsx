@@ -4,6 +4,7 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import clsx from "clsx";
 import { ChevronRight } from "lucide-react";
 import React, { forwardRef } from "react";
+import { styleRules } from "../../styles/css";
 import { IconButton } from "../IconButton";
 import { Separator } from "../Separator";
 import { foldableSectionStyles, names } from "./foldableSection.styles";
@@ -15,13 +16,12 @@ export const FoldableSectionRoot = forwardRef<
   FoldableSectionRootProps
 >(({ className, style, ...props }, ref) => {
   const styles = foldableSectionStyles;
+  const rootClass = clsx(styles.root, names.root, className);
   return (
-    <AccordionPrimitive.Root
-      ref={ref}
-      className={clsx(styles.root, names.root, className)}
-      style={style}
-      {...props}
-    />
+    <>
+      <AccordionPrimitive.Root ref={ref} className={rootClass} style={style} {...props} />
+      {styleRules(rootClass)}
+    </>
   );
 });
 FoldableSectionRoot.displayName = "FoldableSectionRoot";
@@ -39,14 +39,18 @@ export const FoldableSectionItem = forwardRef<
   FoldableSectionItemProps
 >(({ className, style, value, ...props }, ref) => {
   const styles = foldableSectionStyles;
+  const itemClass = clsx(styles.item, names.item, className);
   return (
-    <AccordionPrimitive.Item
-      ref={ref}
-      className={clsx(styles.item, names.item, className)}
-      style={style}
-      value={value}
-      {...props}
-    />
+    <>
+      <AccordionPrimitive.Item
+        ref={ref}
+        className={itemClass}
+        style={style}
+        value={value}
+        {...props}
+      />
+      {styleRules(itemClass)}
+    </>
   );
 });
 FoldableSectionItem.displayName = "FoldableSectionItem";
@@ -64,45 +68,63 @@ export const FoldableSectionTrigger = forwardRef<
   FoldableSectionTriggerProps
 >(({ className, style, text, ...props }, ref) => {
   const styles = foldableSectionStyles;
+  const headerClass = clsx(styles.header, names.header);
+  const triggerClass = clsx(styles.trigger, names.trigger, className);
+  const triggerContentWrapperClass = clsx(
+    styles.triggerContentWrapper,
+    names.triggerContentWrapper,
+  );
+  const triggerContentSeparatorClass = clsx(
+    styles.triggerContentSeparator,
+    names.triggerContentSeparator,
+  );
+  const triggerContentIconButtonWrapperClass = clsx(
+    styles.triggerContentIconButtonWrapper,
+    names.triggerContentIconButtonWrapper,
+  );
+  const triggerContentIconButtonClass = clsx(
+    styles.triggerContentIconButton,
+    names.triggerContentIconButton,
+  );
+  const triggerContentIconButtonIconClass = clsx(
+    styles.triggerContentIconButtonIcon,
+    names.triggerContentIconButtonIcon,
+  );
+  const triggerContentTextClass = clsx(styles.triggerContentText, names.triggerContentText);
   return (
-    <AccordionPrimitive.Header className={clsx(styles.header, names.header)}>
-      <AccordionPrimitive.Trigger
-        ref={ref}
-        className={clsx(styles.trigger, names.trigger, className)}
-        style={style}
-        {...props}
-      >
-        <div className={clsx(styles.triggerContentWrapper, names.triggerContentWrapper)}>
-          <Separator
-            className={clsx(styles.triggerContentSeparator, names.triggerContentSeparator)}
-          />
-          <div
-            className={clsx(
-              styles.triggerContentIconButtonWrapper,
-              names.triggerContentIconButtonWrapper,
-            )}
-          >
-            <IconButton
-              asChild
-              icon={
-                <ChevronRight
-                  className={clsx(
-                    styles.triggerContentIconButtonIcon,
-                    names.triggerContentIconButtonIcon,
-                  )}
-                />
-              }
-              size="3-extra-small"
-              variant="secondary"
-              className={clsx(styles.triggerContentIconButton, names.triggerContentIconButton)}
-            >
-              <span aria-hidden="true" />
-            </IconButton>
-            <div className={clsx(styles.triggerContentText, names.triggerContentText)}>{text}</div>
+    <>
+      <AccordionPrimitive.Header className={headerClass}>
+        <AccordionPrimitive.Trigger ref={ref} className={triggerClass} style={style} {...props}>
+          <div className={triggerContentWrapperClass}>
+            <Separator className={triggerContentSeparatorClass} />
+            {styleRules(triggerContentSeparatorClass)}
+            <div className={triggerContentIconButtonWrapperClass}>
+              <IconButton
+                asChild
+                icon={
+                  <>
+                    <ChevronRight className={triggerContentIconButtonIconClass} />
+                    {styleRules(triggerContentIconButtonIconClass)}
+                  </>
+                }
+                size="3-extra-small"
+                variant="secondary"
+                className={triggerContentIconButtonClass}
+              >
+                <span aria-hidden="true" />
+              </IconButton>
+              {styleRules(triggerContentIconButtonClass)}
+              <div className={triggerContentTextClass}>{text}</div>
+              {styleRules(triggerContentTextClass)}
+            </div>
+            {styleRules(triggerContentIconButtonWrapperClass)}
           </div>
-        </div>
-      </AccordionPrimitive.Trigger>
-    </AccordionPrimitive.Header>
+          {styleRules(triggerContentWrapperClass)}
+        </AccordionPrimitive.Trigger>
+        {styleRules(triggerClass)}
+      </AccordionPrimitive.Header>
+      {styleRules(headerClass)}
+    </>
   );
 });
 FoldableSectionTrigger.displayName = "FoldableSectionTrigger";
@@ -120,15 +142,14 @@ export const FoldableSectionContent = forwardRef<
   FoldableSectionContentProps
 >(({ className, style, children, ...props }, ref) => {
   const styles = foldableSectionStyles;
+  const contentClass = clsx(styles.content, names.content, className);
   return (
-    <AccordionPrimitive.Content
-      ref={ref}
-      className={clsx(styles.content, names.content, className)}
-      style={style}
-      {...props}
-    >
-      {children}
-    </AccordionPrimitive.Content>
+    <>
+      <AccordionPrimitive.Content ref={ref} className={contentClass} style={style} {...props}>
+        {children}
+      </AccordionPrimitive.Content>
+      {styleRules(contentClass)}
+    </>
   );
 });
 FoldableSectionContent.displayName = "FoldableSectionContent";

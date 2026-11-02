@@ -4,6 +4,7 @@ import * as TabsPrimitive from "@radix-ui/react-tabs";
 import clsx from "clsx";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { forwardRef, useCallback, useEffect, useRef, useState } from "react";
+import { styleRules } from "../../styles/css";
 import { IconButton } from "../IconButton";
 import { names as tabsNames, tabsStyles } from "./tabs.styles";
 import { names as contentNames, tabsContentStyles } from "./tabsContent.styles";
@@ -21,13 +22,12 @@ export interface TabsProps extends React.ComponentPropsWithoutRef<typeof TabsPri
 export const Tabs = forwardRef<React.ComponentRef<typeof TabsPrimitive.Root>, TabsProps>(
   ({ className, style, variant = "clear", ...props }, ref) => {
     const styles = tabsStyles;
+    const rootClass = clsx(styles.root, tabsNames.root, tabsNames.variant[variant], className);
     return (
-      <TabsPrimitive.Root
-        ref={ref}
-        className={clsx(styles.root, tabsNames.root, tabsNames.variant[variant], className)}
-        style={style}
-        {...props}
-      />
+      <>
+        <TabsPrimitive.Root ref={ref} className={rootClass} style={style} {...props} />
+        {styleRules(rootClass)}
+      </>
     );
   },
 );
@@ -154,63 +154,84 @@ export const TabsList = forwardRef<React.ComponentRef<typeof TabsPrimitive.List>
       }
     };
 
+    const containerClass = clsx(styles.container, listNames.container);
+    const rootClass = clsx(
+      styles.root,
+      styles.variant[variant],
+      listNames.root,
+      listNames.variant[variant],
+      className,
+    );
+    const indicatorClass = clsx(styles.indicator, listNames.indicator);
     return (
-      <div className={clsx(styles.container, listNames.container)}>
-        {showLeftButton && (
-          <div
-            className={clsx(styles.scrollButtonContainerLeft, listNames.scrollButtonContainerLeft)}
-          >
-            <IconButton
-              className={clsx(listNames.scrollButton, listNames.scrollLeft)}
-              onClick={scrollLeft}
-              aria-label="Scroll tabs left"
-              icon={<ChevronLeft />}
-              variant="secondary"
-              size="small"
-            />
-          </div>
-        )}
-
-        <TabsPrimitive.List
-          ref={(node) => {
-            if (typeof ref === "function") {
-              ref(node);
-            } else if (ref) {
-              ref.current = node;
-            }
-            listRef.current = node;
-          }}
-          className={clsx(
-            styles.root,
-            styles.variant[variant],
-            listNames.root,
-            listNames.variant[variant],
-            className,
+      <>
+        <div className={containerClass}>
+          {showLeftButton && (
+            <>
+              <div
+                className={clsx(
+                  styles.scrollButtonContainerLeft,
+                  listNames.scrollButtonContainerLeft,
+                )}
+              >
+                <IconButton
+                  className={clsx(listNames.scrollButton, listNames.scrollLeft)}
+                  onClick={scrollLeft}
+                  aria-label="Scroll tabs left"
+                  icon={<ChevronLeft />}
+                  variant="secondary"
+                  size="small"
+                />
+              </div>
+              {styleRules(
+                clsx(styles.scrollButtonContainerLeft, listNames.scrollButtonContainerLeft),
+              )}
+            </>
           )}
-          style={style}
-          {...props}
-        />
 
-        <div className={clsx(styles.indicator, listNames.indicator)} ref={indicatorRef} />
+          <TabsPrimitive.List
+            ref={(node) => {
+              if (typeof ref === "function") {
+                ref(node);
+              } else if (ref) {
+                ref.current = node;
+              }
+              listRef.current = node;
+            }}
+            className={rootClass}
+            style={style}
+            {...props}
+          />
+          {styleRules(rootClass)}
 
-        {showRightButton && (
-          <div
-            className={clsx(
-              styles.scrollButtonContainerRight,
-              listNames.scrollButtonContainerRight,
-            )}
-          >
-            <IconButton
-              className={clsx(listNames.scrollButton, listNames.scrollRight)}
-              onClick={scrollRight}
-              aria-label="Scroll tabs right"
-              icon={<ChevronRight />}
-              variant="secondary"
-              size="small"
-            />
-          </div>
-        )}
-      </div>
+          <div className={indicatorClass} ref={indicatorRef} />
+          {styleRules(indicatorClass)}
+
+          {showRightButton && (
+            <>
+              <div
+                className={clsx(
+                  styles.scrollButtonContainerRight,
+                  listNames.scrollButtonContainerRight,
+                )}
+              >
+                <IconButton
+                  className={clsx(listNames.scrollButton, listNames.scrollRight)}
+                  onClick={scrollRight}
+                  aria-label="Scroll tabs right"
+                  icon={<ChevronRight />}
+                  variant="secondary"
+                  size="small"
+                />
+              </div>
+              {styleRules(
+                clsx(styles.scrollButtonContainerRight, listNames.scrollButtonContainerRight),
+              )}
+            </>
+          )}
+        </div>
+        {styleRules(containerClass)}
+      </>
     );
   },
 );
@@ -234,25 +255,44 @@ export const TabsTrigger = forwardRef<
   TabsTriggerProps
 >(({ className, style, icon, text, subtext, image, value, ...props }, ref) => {
   const styles = tabsTriggerStyles;
+  const rootClass = clsx(styles.root, triggerNames.root, className);
+  const contentClass = clsx(styles.content, triggerNames.content);
   return (
-    <TabsPrimitive.Trigger
-      ref={ref}
-      className={clsx(styles.root, triggerNames.root, className)}
-      style={style}
-      value={value}
-      {...props}
-    >
-      {image && (
-        <span className={clsx(styles.image, triggerNames.image)}>
-          <img className={clsx(styles.img, triggerNames.img)} src={image} alt="" />
+    <>
+      <TabsPrimitive.Trigger ref={ref} className={rootClass} style={style} value={value} {...props}>
+        {image && (
+          <>
+            <span className={clsx(styles.image, triggerNames.image)}>
+              <img className={clsx(styles.img, triggerNames.img)} src={image} alt="" />
+              {styleRules(clsx(styles.img, triggerNames.img))}
+            </span>
+            {styleRules(clsx(styles.image, triggerNames.image))}
+          </>
+        )}
+        {icon && (
+          <>
+            <span className={clsx(styles.icon, triggerNames.icon)}>{icon}</span>
+            {styleRules(clsx(styles.icon, triggerNames.icon))}
+          </>
+        )}
+        <span className={contentClass}>
+          {text && (
+            <>
+              <span className={clsx(styles.text, triggerNames.text)}>{text}</span>
+              {styleRules(clsx(styles.text, triggerNames.text))}
+            </>
+          )}
+          {subtext && (
+            <>
+              <span className={clsx(styles.subtext, triggerNames.subtext)}>{subtext}</span>
+              {styleRules(clsx(styles.subtext, triggerNames.subtext))}
+            </>
+          )}
         </span>
-      )}
-      {icon && <span className={clsx(styles.icon, triggerNames.icon)}>{icon}</span>}
-      <span className={clsx(styles.content, triggerNames.content)}>
-        {text && <span className={clsx(styles.text, triggerNames.text)}>{text}</span>}
-        {subtext && <span className={clsx(styles.subtext, triggerNames.subtext)}>{subtext}</span>}
-      </span>
-    </TabsPrimitive.Trigger>
+        {styleRules(contentClass)}
+      </TabsPrimitive.Trigger>
+      {styleRules(rootClass)}
+    </>
   );
 });
 
@@ -271,15 +311,16 @@ export const TabsContent = forwardRef<
   TabsContentProps
 >(({ className, style, children, ...props }, ref) => {
   const styles = tabsContentStyles;
+  const rootClass = clsx(styles.root, contentNames.root, className);
+  const innerClass = clsx(styles.inner, contentNames.inner);
   return (
-    <TabsPrimitive.Content
-      ref={ref}
-      className={clsx(styles.root, contentNames.root, className)}
-      style={style}
-      {...props}
-    >
-      <div className={clsx(styles.inner, contentNames.inner)}>{children}</div>
-    </TabsPrimitive.Content>
+    <>
+      <TabsPrimitive.Content ref={ref} className={rootClass} style={style} {...props}>
+        <div className={innerClass}>{children}</div>
+        {styleRules(innerClass)}
+      </TabsPrimitive.Content>
+      {styleRules(rootClass)}
+    </>
   );
 });
 

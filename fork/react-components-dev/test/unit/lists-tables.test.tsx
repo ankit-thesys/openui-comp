@@ -18,6 +18,7 @@ import {
 } from "@openuidev/react-components";
 import { renderToString } from "react-dom/server";
 import { expect, it } from "vitest";
+import { withoutServedRules } from "../support/markup";
 
 it("ListItem exposes default axes on the consumer root and classes on owned parts", () => {
   const html = renderToString(<ListItem title="First" />);
@@ -90,14 +91,16 @@ it("Table head and cell expose default and explicit alignment axes on their root
 });
 
 it("ScrollableTable exposes its root and measures width through state instead of inline styles", () => {
-  const html = renderToString(
-    <ScrollableTable>
-      <TableBody>
-        <TableRow>
-          <TableCell>Cell</TableCell>
-        </TableRow>
-      </TableBody>
-    </ScrollableTable>,
+  const html = withoutServedRules(
+    renderToString(
+      <ScrollableTable>
+        <TableBody>
+          <TableRow>
+            <TableCell>Cell</TableCell>
+          </TableRow>
+        </TableBody>
+      </ScrollableTable>,
+    ),
   );
   expect(html).toMatch(/<table[^>]*class="[^"]*openui-scrollable-table/);
   expect(html).not.toContain("data-scrollable");

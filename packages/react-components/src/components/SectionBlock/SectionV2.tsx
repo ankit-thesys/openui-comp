@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import React from "react";
+import { styleRules } from "../../styles/css";
 import { Separator } from "../Separator";
 import { names, sectionStyles } from "./sectionV2.styles";
 
@@ -12,15 +13,27 @@ interface SectionV2Props {
 
 export const SectionV2 = ({ trigger, children }: SectionV2Props) => {
   const styles = sectionStyles;
+  const rootClass = clsx(styles.root, names.root);
+  const wrapperClass = clsx(styles.wrapper, names.wrapper);
+  const headerClass = clsx(styles.header, names.header);
+  const headerTriggerClass = clsx(styles.headerTrigger, names.headerTrigger);
+  const contentClass = clsx(styles.content, names.content);
   return (
-    <div className={clsx(styles.root, names.root)}>
-      <div className={clsx(styles.wrapper, names.wrapper)}>
-        <Separator orientation="horizontal" />
-        <div className={clsx(styles.header, names.header)}>
-          <div className={clsx(styles.headerTrigger, names.headerTrigger)}>{trigger}</div>
+    <>
+      <div className={rootClass}>
+        <div className={wrapperClass}>
+          <Separator orientation="horizontal" />
+          <div className={headerClass}>
+            <div className={headerTriggerClass}>{trigger}</div>
+            {styleRules(headerTriggerClass)}
+          </div>
+          {styleRules(headerClass)}
+          <div className={contentClass}>{children}</div>
+          {styleRules(contentClass)}
         </div>
-        <div className={clsx(styles.content, names.content)}>{children}</div>
+        {styleRules(wrapperClass)}
       </div>
-    </div>
+      {styleRules(rootClass)}
+    </>
   );
 };

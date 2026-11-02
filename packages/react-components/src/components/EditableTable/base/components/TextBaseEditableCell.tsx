@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { Info, Link } from "lucide-react";
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { styleRules } from "../../../../styles/css";
 import { safeUrl } from "../../../_shared/utils/safeUrl";
 import { TooltipWrapper } from "../../../TooltipWrapper";
 import { useEditableCellKeyboard } from "../hooks/useEditableCellKeyboard";
@@ -114,15 +115,19 @@ export const TextBaseEditableCell: React.FC<TextBaseEditableCellProps> = ({
 
   const renderContent = () => {
     if (isEditing) {
+      const inputClass = clsx(cellStyles.input, cellNames.input);
       return (
-        <input
-          ref={inputRef}
-          type={inputType}
-          value={editValue}
-          onChange={(e) => setEditValue(e.target.value)}
-          onKeyDown={handleKeyDown}
-          className={clsx(cellStyles.input, cellNames.input)}
-        />
+        <>
+          <input
+            ref={inputRef}
+            type={inputType}
+            value={editValue}
+            onChange={(e) => setEditValue(e.target.value)}
+            onKeyDown={handleKeyDown}
+            className={inputClass}
+          />
+          {styleRules(inputClass)}
+        </>
       );
     }
     const display = renderDisplay ? renderDisplay(value) : (value ?? "");
@@ -130,62 +135,79 @@ export const TextBaseEditableCell: React.FC<TextBaseEditableCellProps> = ({
       const rawHref = toDisplayString(value);
       const safeHref = safeUrl(rawHref);
       const isValid = isValidUrl(rawHref) && safeHref !== undefined;
+      const urlContainerClass = clsx(cellStyles.urlContainer, cellNames.urlContainer);
+      const urlIconClass = clsx(cellStyles.urlIcon, cellNames.urlIcon);
       return (
-        <div className={clsx(cellStyles.urlContainer, cellNames.urlContainer)}>
-          <Link size={16} className={clsx(cellStyles.urlIcon, cellNames.urlIcon)} />
-          {safeHref ? (
-            <a
-              href={safeHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={clsx(cellStyles.url, cellNames.url)}
-              onClick={(e) => e.stopPropagation()}
-            >
-              {display}
-            </a>
-          ) : (
-            <span
-              className={clsx(cellStyles.url, cellNames.url)}
-              onClick={(e) => e.stopPropagation()}
-            >
-              {display}
-            </span>
-          )}
-          {!isValid && (
-            <TooltipWrapper tooltipContent="This might not be a valid URL" side="right">
-              <div className={cellNames.warningContainer}>
-                <Info size={16} className={clsx(cellStyles.warning, cellNames.warning)} />
-              </div>
-            </TooltipWrapper>
-          )}
-        </div>
+        <>
+          <div className={urlContainerClass}>
+            <Link size={16} className={urlIconClass} />
+            {styleRules(urlIconClass)}
+            {safeHref ? (
+              <>
+                <a
+                  href={safeHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={clsx(cellStyles.url, cellNames.url)}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {display}
+                </a>
+                {styleRules(clsx(cellStyles.url, cellNames.url))}
+              </>
+            ) : (
+              <>
+                <span
+                  className={clsx(cellStyles.url, cellNames.url)}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {display}
+                </span>
+                {styleRules(clsx(cellStyles.url, cellNames.url))}
+              </>
+            )}
+            {!isValid && (
+              <TooltipWrapper tooltipContent="This might not be a valid URL" side="right">
+                <div className={cellNames.warningContainer}>
+                  <Info size={16} className={clsx(cellStyles.warning, cellNames.warning)} />
+                  {styleRules(clsx(cellStyles.warning, cellNames.warning))}
+                </div>
+              </TooltipWrapper>
+            )}
+          </div>
+          {styleRules(urlContainerClass)}
+        </>
       );
     }
+    const textClass = clsx(
+      inputType === "text" ? cellStyles.text : cellStyles.number,
+      inputType === "text" ? cellNames.text : cellNames.number,
+    );
     return (
-      <span
-        className={clsx(
-          inputType === "text" ? cellStyles.text : cellStyles.number,
-          inputType === "text" ? cellNames.text : cellNames.number,
-        )}
-      >
-        {display}
-      </span>
+      <>
+        <span className={textClass}>{display}</span>
+        {styleRules(textClass)}
+      </>
     );
   };
 
+  const cellClass = clsx(cellStyles.cell, cellNames.cell);
   return (
-    <div
-      ref={cellRef}
-      className={clsx(cellStyles.cell, cellNames.cell)}
-      onClick={handleClick}
-      onKeyDown={handleKeyDown}
-      onBlur={handleContainerBlur}
-      tabIndex={0}
-      data-state={isEditing ? "editing" : isSelected ? "selected" : "idle"}
-    >
-      <CellOutline isSelected={isSelected} isEditing={isEditing} />
-      {renderContent()}
-    </div>
+    <>
+      <div
+        ref={cellRef}
+        className={cellClass}
+        onClick={handleClick}
+        onKeyDown={handleKeyDown}
+        onBlur={handleContainerBlur}
+        tabIndex={0}
+        data-state={isEditing ? "editing" : isSelected ? "selected" : "idle"}
+      >
+        <CellOutline isSelected={isSelected} isEditing={isEditing} />
+        {renderContent()}
+      </div>
+      {styleRules(cellClass)}
+    </>
   );
 };
 

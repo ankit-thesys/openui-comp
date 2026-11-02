@@ -5,6 +5,7 @@ import { memo, useEffect, useState } from "react";
 import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
+import { styleRules } from "../../styles/css";
 import { remarkCitations } from "../_shared/remark/remarkCitations";
 import { TextContentCitation } from "../Citation";
 import { InlineHeader } from "../InlineHeader";
@@ -52,51 +53,54 @@ export const TextContentWrapper = memo((props: TextContentWrapperProps) => {
     };
   }, []);
 
+  const rootClass = clsx(
+    styles.root,
+    names.root,
+    names.variant[props.variant ?? "clear"],
+    props.className,
+  );
   return (
-    <div
-      className={clsx(
-        styles.root,
-        names.root,
-        names.variant[props.variant ?? "clear"],
-        props.className,
-      )}
-      data-mode={mode}
-    >
-      {props.header && (
-        <InlineHeader heading={props.header.heading} description={props.header.description} />
-      )}
-      <MarkDownRenderer
-        textMarkdown={props.textMarkdown}
-        variant={props.variant}
-        listLeadIn="spaced"
-        options={{
-          remarkPlugins: [
-            // singleTilde: false → only ~~double tildes~~ render as strikethrough.
-            // A lone ~ (e.g. "~$886K" meaning "approximately") stays literal instead
-            // of being parsed as a strikethrough delimiter, which otherwise strikes
-            // through everything between two such tildes in a sentence.
-            [remarkGfm, { singleTilde: false }],
-            [remarkMath, { singleDollarTextMath: false }],
-            [remarkBreaks, { breaks: true }],
-            remarkCitations,
-          ],
-          rehypePlugins: rehypeKatex ? [rehypeKatex] : [],
-          components: {
-            span: ({ node, className, ...rest }) => (
-              <TextContentCitation
-                node={node}
-                {...rest}
-                className={clsx(
+    <>
+      <div className={rootClass} data-mode={mode}>
+        {props.header && (
+          <InlineHeader heading={props.header.heading} description={props.header.description} />
+        )}
+        <MarkDownRenderer
+          textMarkdown={props.textMarkdown}
+          variant={props.variant}
+          listLeadIn="spaced"
+          options={{
+            remarkPlugins: [
+              // singleTilde: false → only ~~double tildes~~ render as strikethrough.
+              // A lone ~ (e.g. "~$886K" meaning "approximately") stays literal instead
+              // of being parsed as a strikethrough delimiter, which otherwise strikes
+              // through everything between two such tildes in a sentence.
+              [remarkGfm, { singleTilde: false }],
+              [remarkMath, { singleDollarTextMath: false }],
+              [remarkBreaks, { breaks: true }],
+              remarkCitations,
+            ],
+            rehypePlugins: rehypeKatex ? [rehypeKatex] : [],
+            components: {
+              span: ({ node, className, ...rest }) => {
+                const splitClass = clsx(
                   className,
                   className?.split(" ").includes("katex") && [styles.math, names.math],
-                )}
-              />
-            ),
-          },
-        }}
-        className={names.markdown}
-      />
-    </div>
+                );
+                return (
+                  <>
+                    <TextContentCitation node={node} {...rest} className={splitClass} />
+                    {styleRules(splitClass)}
+                  </>
+                );
+              },
+            },
+          }}
+          className={names.markdown}
+        />
+      </div>
+      {styleRules(rootClass)}
+    </>
   );
 });
 

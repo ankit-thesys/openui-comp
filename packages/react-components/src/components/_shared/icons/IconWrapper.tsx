@@ -2,6 +2,7 @@
 
 import type { LucideIcon } from "lucide-react";
 import { useEffect, useState } from "react";
+import { styleRules } from "../../../styles/css";
 import { getFallbackIconName } from "./categoryFallbacks";
 import { getIconImport } from "./dynamicIconImports";
 
@@ -73,5 +74,11 @@ export const IconWrapper = ({ name, category, ...props }: IconWrapperProps) => {
     return null;
   }
 
-  return <IconComponent size={14} {...props} />;
+  // Only a rendered icon carries the className, so only then are its rules sent.
+  return (
+    <>
+      <IconComponent size={14} {...props} />
+      {styleRules(props.className)}
+    </>
+  );
 };

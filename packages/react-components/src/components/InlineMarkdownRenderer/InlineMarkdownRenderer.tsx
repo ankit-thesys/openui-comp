@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { memo, ReactNode, useContext } from "react";
 import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
+import { styleRules } from "../../styles/css";
 import { remarkCitations } from "../_shared/remark/remarkCitations";
 import { TextContentCitation } from "../Citation";
 import { MarkDownRenderer } from "../MarkDownRenderer";
@@ -41,41 +42,45 @@ export const InlineMarkdownRenderer = memo(
       return null;
     }
 
+    const rootClass = clsx(
+      styles.root,
+      names.root,
+      typography && names.typography[typography],
+      className,
+    );
+    const contentClass = clsx(styles.content, names.content);
     return (
-      <span
-        className={clsx(
-          styles.root,
-          names.root,
-          typography && names.typography[typography],
-          className,
-        )}
-      >
-        <MarkDownRenderer
-          className={clsx(styles.content, names.content)}
-          typography={typography}
-          textMarkdown={content}
-          options={{
-            remarkPlugins: [
-              remarkCitations,
-              [remarkBreaks, { breaks: false }],
-              [remarkGfm, { singleTilde: false }],
-            ],
-            components: {
-              p: Fragment,
-              h1: Fragment,
-              h2: Fragment,
-              h3: Fragment,
-              h4: Fragment,
-              h5: Fragment,
-              h6: Fragment,
-              ul: Fragment,
-              ol: Fragment,
-              li: Fragment,
-              span: TextContentCitation,
-            },
-          }}
-        />
-      </span>
+      <>
+        <span className={rootClass}>
+          <MarkDownRenderer
+            className={contentClass}
+            typography={typography}
+            textMarkdown={content}
+            options={{
+              remarkPlugins: [
+                remarkCitations,
+                [remarkBreaks, { breaks: false }],
+                [remarkGfm, { singleTilde: false }],
+              ],
+              components: {
+                p: Fragment,
+                h1: Fragment,
+                h2: Fragment,
+                h3: Fragment,
+                h4: Fragment,
+                h5: Fragment,
+                h6: Fragment,
+                ul: Fragment,
+                ol: Fragment,
+                li: Fragment,
+                span: TextContentCitation,
+              },
+            }}
+          />
+          {styleRules(contentClass)}
+        </span>
+        {styleRules(rootClass)}
+      </>
     );
   },
 );

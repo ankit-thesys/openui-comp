@@ -12,6 +12,7 @@ import {
 import ReactMarkdown, { Components, type Options } from "react-markdown";
 import oneLight from "react-syntax-highlighter/dist/cjs/styles/prism/one-light";
 import vscDarkPlus from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus";
+import { styleRules } from "../../styles/css";
 import { CodeBlock } from "../CodeBlock";
 import {
   Table,
@@ -98,42 +99,51 @@ export const MarkDownRenderer = memo((props: MarkDownRendererProps) => {
       if (match || (!className && String(children).includes("\n"))) {
         const language = match?.[1] ?? "text";
         const codeString = String(children).trim();
+        const codeBlockClass = clsx(styles.codeBlock, names.codeBlock);
         return (
-          <CodeBlock
-            language={language}
-            codeString={codeString}
-            theme={theme}
-            className={clsx(styles.codeBlock, names.codeBlock)}
-            syntaxHighlighterClassName=""
-          />
+          <>
+            <CodeBlock
+              language={language}
+              codeString={codeString}
+              theme={theme}
+              className={codeBlockClass}
+              syntaxHighlighterClassName=""
+            />
+            {styleRules(codeBlockClass)}
+          </>
         );
       }
 
+      const codeClass = clsx(
+        styles.code,
+        names.code,
+        typography && [styles.codeTypography[typography], names.codeTypography[typography]],
+        className,
+      );
       return (
-        <QuotableCode
-          className={clsx(
-            styles.code,
-            names.code,
-            typography && [styles.codeTypography[typography], names.codeTypography[typography]],
-            className,
-          )}
-          {...props}
-        >
-          {children}
-        </QuotableCode>
+        <>
+          <QuotableCode className={codeClass} {...props}>
+            {children}
+          </QuotableCode>
+          {styleRules(codeClass)}
+        </>
       );
     },
     a({ href, children, ...props }) {
+      const linkClass = clsx(styles.link, names.link);
       return (
-        <QuotableLink
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={clsx(styles.link, names.link)}
-          {...props}
-        >
-          {children}
-        </QuotableLink>
+        <>
+          <QuotableLink
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkClass}
+            {...props}
+          >
+            {children}
+          </QuotableLink>
+          {styleRules(linkClass)}
+        </>
       );
     },
     table: ({ node: _node, className, ...props }) => (
@@ -162,19 +172,21 @@ export const MarkDownRenderer = memo((props: MarkDownRendererProps) => {
     components: { ...components, ...props.options?.components, blockquote },
   };
 
+  const rootClass = clsx(
+    styles.root,
+    styles.variant[variant],
+    names.root,
+    names.variant[variant],
+    typography && [styles.typography[typography], names.typography[typography]],
+    listLeadIn && [styles.listLeadIn[listLeadIn], names.listLeadIn[listLeadIn]],
+    props.className,
+  );
   return (
-    <div
-      className={clsx(
-        styles.root,
-        styles.variant[variant],
-        names.root,
-        names.variant[variant],
-        typography && [styles.typography[typography], names.typography[typography]],
-        listLeadIn && [styles.listLeadIn[listLeadIn], names.listLeadIn[listLeadIn]],
-        props.className,
-      )}
-    >
-      <ReactMarkdown {...markdownProps}>{props.textMarkdown}</ReactMarkdown>
-    </div>
+    <>
+      <div className={rootClass}>
+        <ReactMarkdown {...markdownProps}>{props.textMarkdown}</ReactMarkdown>
+      </div>
+      {styleRules(rootClass)}
+    </>
   );
 });

@@ -1,7 +1,8 @@
 "use client";
 
 import clsx from "clsx";
-import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
+import { forwardRef, Fragment, type HTMLAttributes, type ReactNode } from "react";
+import { styleRules } from "../../styles/css";
 import { InlineMarkdownRenderer } from "../InlineMarkdownRenderer";
 import { getRowConfiguration } from "../_shared/cards/smallCardBlockUtils";
 import { names, optionCardsStyles } from "./optionCards.styles";
@@ -48,83 +49,113 @@ const OptionCards = forwardRef<HTMLDivElement, OptionCardsProps>((props, ref) =>
   const rowConfiguration = getRowConfiguration(renderableItems.length, 3);
   let cardIndex = 0;
 
+  const rootClass = clsx(styles.root, names.root, className);
+  const gridClass = clsx(names.grid, styles.grid);
   return (
-    <div
-      ref={ref}
-      className={clsx(styles.root, names.root, className)}
-      role={type === "single" ? "radiogroup" : "group"}
-      {...rest}
-    >
-      <div className={clsx(names.grid, styles.grid)}>
-        {rowConfiguration.map((itemsInRow, rowIndex) => {
-          const rowItems = renderableItems.slice(cardIndex, cardIndex + itemsInRow);
-          cardIndex += itemsInRow;
+    <>
+      <div
+        ref={ref}
+        className={rootClass}
+        role={type === "single" ? "radiogroup" : "group"}
+        {...rest}
+      >
+        <div className={gridClass}>
+          {rowConfiguration.map((itemsInRow, rowIndex) => {
+            const rowItems = renderableItems.slice(cardIndex, cardIndex + itemsInRow);
+            cardIndex += itemsInRow;
 
-          return (
-            <div
-              key={`option-cards-row-${rowIndex}`}
-              className={clsx(names.row, styles.row)}
-              data-columns={itemsInRow}
-            >
-              {rowItems.map((item, columnIndex) => {
-                const isSelected = selected.includes(item.value);
-                const isDisabled = disabled || item.disabled === true;
-                const hasTopContent = item.topContent != null;
-                const topVariant = item.topContentVariant ?? "icon";
+            const rowClass = clsx(names.row, styles.row);
+            return (
+              <Fragment key={`option-cards-row-${rowIndex}`}>
+                <div className={rowClass} data-columns={itemsInRow}>
+                  {rowItems.map((item, columnIndex) => {
+                    const isSelected = selected.includes(item.value);
+                    const isDisabled = disabled || item.disabled === true;
+                    const hasTopContent = item.topContent != null;
+                    const topVariant = item.topContentVariant ?? "icon";
 
-                return (
-                  <div
-                    key={item.value}
-                    className={clsx(names.item, styles.item)}
-                    data-span={
-                      renderableItems.length % 2 === 1 &&
-                      rowIndex === rowConfiguration.length - 1 &&
-                      columnIndex === rowItems.length - 1
-                        ? "full"
-                        : undefined
-                    }
-                  >
-                    <button
-                      type="button"
-                      role={type === "single" ? "radio" : "checkbox"}
-                      aria-checked={isSelected}
-                      disabled={isDisabled}
-                      className={clsx(names.card, styles.card)}
-                      onClick={() => onToggle?.(item.value)}
-                    >
-                      <div className={clsx(names.content, styles.content)}>
-                        {hasTopContent ? (
-                          <div
-                            className={clsx(
-                              names.top,
-                              styles.top,
-                              names.topContentVariant[topVariant],
-                              styles.topContentVariant[topVariant],
-                            )}
+                    const itemClass = clsx(names.item, styles.item);
+                    const cardClass = clsx(names.card, styles.card);
+                    const contentClass = clsx(names.content, styles.content);
+                    const textClass = clsx(names.text, styles.text);
+                    const titleClass = clsx(names.title, styles.title);
+                    return (
+                      <Fragment key={item.value}>
+                        <div
+                          className={itemClass}
+                          data-span={
+                            renderableItems.length % 2 === 1 &&
+                            rowIndex === rowConfiguration.length - 1 &&
+                            columnIndex === rowItems.length - 1
+                              ? "full"
+                              : undefined
+                          }
+                        >
+                          <button
+                            type="button"
+                            role={type === "single" ? "radio" : "checkbox"}
+                            aria-checked={isSelected}
+                            disabled={isDisabled}
+                            className={cardClass}
+                            onClick={() => onToggle?.(item.value)}
                           >
-                            {item.topContent}
-                          </div>
-                        ) : null}
-                        <div className={clsx(names.text, styles.text)}>
-                          <div className={clsx(names.title, styles.title)}>
-                            <InlineMarkdownRenderer content={item.title} />
-                          </div>
-                          {item.subtitle ? (
-                            <div className={clsx(names.subtitle, styles.subtitle)}>
-                              <InlineMarkdownRenderer content={item.subtitle} />
+                            <div className={contentClass}>
+                              {hasTopContent ? (
+                                <>
+                                  <div
+                                    className={clsx(
+                                      names.top,
+                                      styles.top,
+                                      names.topContentVariant[topVariant],
+                                      styles.topContentVariant[topVariant],
+                                    )}
+                                  >
+                                    {item.topContent}
+                                  </div>
+                                  {styleRules(
+                                    clsx(
+                                      names.top,
+                                      styles.top,
+                                      names.topContentVariant[topVariant],
+                                      styles.topContentVariant[topVariant],
+                                    ),
+                                  )}
+                                </>
+                              ) : null}
+                              <div className={textClass}>
+                                <div className={titleClass}>
+                                  <InlineMarkdownRenderer content={item.title} />
+                                </div>
+                                {styleRules(titleClass)}
+                                {item.subtitle ? (
+                                  <>
+                                    <div className={clsx(names.subtitle, styles.subtitle)}>
+                                      <InlineMarkdownRenderer content={item.subtitle} />
+                                    </div>
+                                    {styleRules(clsx(names.subtitle, styles.subtitle))}
+                                  </>
+                                ) : null}
+                              </div>
+                              {styleRules(textClass)}
                             </div>
-                          ) : null}
+                            {styleRules(contentClass)}
+                          </button>
+                          {styleRules(cardClass)}
                         </div>
-                      </div>
-                    </button>
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })}
+                        {styleRules(itemClass)}
+                      </Fragment>
+                    );
+                  })}
+                </div>
+                {styleRules(rowClass)}
+              </Fragment>
+            );
+          })}
+        </div>
+        {styleRules(gridClass)}
       </div>
-    </div>
+      {styleRules(rootClass)}
+    </>
   );
 });
 

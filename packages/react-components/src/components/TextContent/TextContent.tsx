@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { CSSProperties, ReactNode } from "react";
+import { styleRules } from "../../styles/css";
 import { names, textContentStyles } from "./textContent.styles";
 
 export type TextContentVariant = "clear" | "card" | "sunk";
@@ -17,19 +18,20 @@ const TextContent = (props: TextContentProps) => {
   const { children, variant = "sunk", className, style } = props;
 
   const css = textContentStyles;
+  const rootClass = clsx(
+    css.root,
+    names.root,
+    css.variant[variant],
+    names.variant[variant],
+    className,
+  );
   return (
-    <div
-      className={clsx(
-        css.root,
-        names.root,
-        css.variant[variant],
-        names.variant[variant],
-        className,
-      )}
-      style={style}
-    >
-      {children}
-    </div>
+    <>
+      <div className={rootClass} style={style}>
+        {children}
+      </div>
+      {styleRules(rootClass)}
+    </>
   );
 };
 

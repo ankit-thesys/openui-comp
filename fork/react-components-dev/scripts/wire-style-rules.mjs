@@ -17,6 +17,8 @@
 //   goes after the outermost `<svg>`; a Radix `asChild` parent or `Slot` takes one element child,
 //   so the call goes after that parent.
 // - Elements in a portal (`*.Portal`, `createPortal`) never render on the server: no call.
+// - A component that calls Children.only (TooltipWrapper) is treated like a slotting parent, and
+//   one that wires its own className (IconWrapper) is skipped.
 import { execFileSync } from "node:child_process";
 import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join, relative, resolve } from "node:path";
@@ -137,9 +139,18 @@ function svgRoot(node) {
   return root;
 }
 
-// A Radix `asChild` parent or a `Slot` needs exactly one element child.
+// A Radix `asChild` parent, a `Slot`, or a component that calls Children.only needs exactly one
+// element child.
+const SINGLE_CHILD = new Set(["TooltipWrapper"]);
 const slots = (node) =>
-  isElement(node) && (attribute(node, "asChild") !== undefined || /^(.*\.)?Slot$/.test(tagOf(node)));
+  isElement(node) &&
+  (attribute(node, "asChild") !== undefined ||
+    /^(.*\.)?Slot$/.test(tagOf(node)) ||
+    SINGLE_CHILD.has(tagOf(node)));
+
+// Components that wire the className they are given next to the element they render, which may
+// render nothing on the server (IconWrapper before its icon loads).
+const SELF_WIRED = new Set(["IconWrapper"]);
 
 // Portal content never renders on the server, so the browser sheet alone styles it.
 function inPortal(node) {
@@ -161,6 +172,9 @@ function insertionTarget(element) {
   return target;
 }
 
+// Code compared without whitespace or trailing commas, so a call a formatter rewrapped still matches.
+const sameCode = (code) => code.replace(/\s+/g, "").replace(/,(?=[)\]}])/g, "");
+
 /**
  * The styleRules calls directly after `node` among its JSX siblings, and where the last one ends,
  * so a new call goes after them, keeping document order.
@@ -180,7 +194,7 @@ function followingCalls(node) {
       ts.isCallExpression(child.expression) &&
       child.expression.expression.getText() === "styleRules"
     ) {
-      calls.push(child.expression.arguments.map((arg) => arg.getText()).join(", "));
+      calls.push(sameCode(child.expression.arguments.map((arg) => arg.getText()).join(",")));
       calls.end = child.getEnd();
       continue;
     }
@@ -200,12 +214,17 @@ function unwired(source) {
         className?.initializer && ts.isJsxExpression(className.initializer)
           ? className.initializer.expression
           : undefined;
-      if (expression && references(expression, names) && !inPortal(node)) {
+      if (
+        expression &&
+        references(expression, names) &&
+        !inPortal(node) &&
+        !SELF_WIRED.has(tagOf(node))
+      ) {
         const target = insertionTarget(node);
         const orphanSvg = !svgRoot(node) && SVG_ONLY.has(tagOf(node));
         if (orphanSvg)
           skipped.push(`${source.fileName}: <${tagOf(node)}> renders inside an <svg> elsewhere`);
-        else if (!followingCalls(target).includes(expression.getText()))
+        else if (!followingCalls(target).includes(sameCode(expression.getText())))
           found.push({ element: node, expression, target });
       }
     }

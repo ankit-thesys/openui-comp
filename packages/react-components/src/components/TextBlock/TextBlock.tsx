@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { forwardRef, useContext } from "react";
+import { styleRules } from "../../styles/css";
 import { InlineMarkdownRenderer } from "../InlineMarkdownRenderer";
 import { names, textBlockStyles } from "./textBlock.styles";
 import { TextFitContext } from "./TextFit";
@@ -88,43 +89,55 @@ export const TextBlockView = forwardRef<HTMLDivElement, TextBlockViewProps>(
         ? ({ "--_openui-text-block-secondary-max-lines": secondaryMaxLines } as React.CSSProperties)
         : undefined;
 
+    const rootClass = clsx(
+      styles.root,
+      names.root,
+      styles.variant[variant],
+      names.variant[variant],
+      styles.size[size],
+      names.size[size],
+      styles.align[align],
+      names.align[align],
+      styles.type[type],
+      names.type[type],
+      overflow && [styles.overflow[overflow], names.overflow[overflow]],
+      width && [styles.width[width], names.width[width]],
+      className,
+    );
+    const primaryClass = clsx(styles.primary, names.primary);
     return (
-      <div
-        ref={ref}
-        className={clsx(
-          styles.root,
-          names.root,
-          styles.variant[variant],
-          names.variant[variant],
-          styles.size[size],
-          names.size[size],
-          styles.align[align],
-          names.align[align],
-          styles.type[type],
-          names.type[type],
-          overflow && [styles.overflow[overflow], names.overflow[overflow]],
-          width && [styles.width[width], names.width[width]],
-          className,
-        )}
-      >
-        <InlineMarkdownRenderer content={primary} className={clsx(styles.primary, names.primary)} />
-        {secondary &&
-          (secondaryStyle ? (
-            // The line-clamp style needs its own block element — the markdown
-            // renderer has no style passthrough.
-            <div className={secondaryClassName} data-clamped="true" style={secondaryStyle}>
-              <InlineMarkdownRenderer content={secondary} />
-            </div>
-          ) : (
-            <InlineMarkdownRenderer content={secondary} className={secondaryClassName} />
-          ))}
-        {tertiary && (
-          <InlineMarkdownRenderer
-            content={tertiary}
-            className={clsx(styles.tertiary, names.tertiary)}
-          />
-        )}
-      </div>
+      <>
+        <div ref={ref} className={rootClass}>
+          <InlineMarkdownRenderer content={primary} className={primaryClass} />
+          {styleRules(primaryClass)}
+          {secondary &&
+            (secondaryStyle ? (
+              // The line-clamp style needs its own block element — the markdown
+              // renderer has no style passthrough.
+              <>
+                <div className={secondaryClassName} data-clamped="true" style={secondaryStyle}>
+                  <InlineMarkdownRenderer content={secondary} />
+                </div>
+                {styleRules(secondaryClassName)}
+              </>
+            ) : (
+              <>
+                <InlineMarkdownRenderer content={secondary} className={secondaryClassName} />
+                {styleRules(secondaryClassName)}
+              </>
+            ))}
+          {tertiary && (
+            <>
+              <InlineMarkdownRenderer
+                content={tertiary}
+                className={clsx(styles.tertiary, names.tertiary)}
+              />
+              {styleRules(clsx(styles.tertiary, names.tertiary))}
+            </>
+          )}
+        </div>
+        {styleRules(rootClass)}
+      </>
     );
   },
 );

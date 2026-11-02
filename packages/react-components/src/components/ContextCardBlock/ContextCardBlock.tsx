@@ -3,6 +3,7 @@
 import clsx from "clsx";
 import { ChevronRight } from "lucide-react";
 import { forwardRef, type CSSProperties, type ReactNode } from "react";
+import { styleRules } from "../../styles/css";
 import { InlineMarkdownRenderer } from "../InlineMarkdownRenderer";
 import { TagSurfaceContext } from "../Tag/TagSurface";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
@@ -40,57 +41,83 @@ export const ContextCard = forwardRef<HTMLDivElement, ContextCardProps>((props, 
 
   const titleContent =
     title == null || title === "" ? null : typeof title === "string" ? (
-      <span className={clsx(names.title, styles.title)}>{title}</span>
+      <>
+        <span className={clsx(names.title, styles.title)}>{title}</span>
+        {styleRules(clsx(names.title, styles.title))}
+      </>
     ) : (
-      <div className={clsx(names.tagWrapper, styles.tagWrapper)}>
-        <div className={clsx(names.tag, styles.tag)}>{title}</div>
-      </div>
+      <>
+        <div className={clsx(names.tagWrapper, styles.tagWrapper)}>
+          <div className={clsx(names.tag, styles.tag)}>{title}</div>
+          {styleRules(clsx(names.tag, styles.tag))}
+        </div>
+        {styleRules(clsx(names.tagWrapper, styles.tagWrapper))}
+      </>
     );
 
+  const cardClass = clsx(
+    names.card,
+    styles.card,
+    names.bgColor[backgroundColor],
+    styles.bgColor[backgroundColor],
+    clickable && [names.clickable.true, styles.clickable.true],
+    className,
+  );
+  const verticalClass = clsx(names.vertical, styles.vertical);
+  const topClass = clsx(names.top, styles.top);
   return (
-    <div
-      ref={ref}
-      className={clsx(
-        names.card,
-        styles.card,
-        names.bgColor[backgroundColor],
-        styles.bgColor[backgroundColor],
-        clickable && [names.clickable.true, styles.clickable.true],
-        className,
-      )}
-      data-background-image={Boolean(backgroundImage) || undefined}
-      style={
-        backgroundImage
-          ? ({ "--_openui-context-card-image": backgroundImage } as CSSProperties)
-          : undefined
-      }
-      aria-label={backgroundImage ? bgImageAlt : undefined}
-      role={clickable ? "button" : undefined}
-      tabIndex={clickable ? 0 : undefined}
-      onClick={clickable ? onClick : undefined}
-      onKeyDown={clickable && onClick ? cardKeyDownHandler(onClick) : undefined}
-    >
-      {/* Tags over the background image take the overlay surface. */}
-      <TagSurfaceContext.Provider value={backgroundImage ? "image" : undefined}>
-        <div className={clsx(names.vertical, styles.vertical)}>
-          <div className={clsx(names.top, styles.top)}>
-            {titleContent}
-            {clickable && (
-              <div className={clsx(names.chevron, styles.chevron)} aria-hidden="true">
-                <ChevronRight size={16} className={clsx(names.chevronIcon, styles.chevronIcon)} />
-              </div>
+    <>
+      <div
+        ref={ref}
+        className={cardClass}
+        data-background-image={Boolean(backgroundImage) || undefined}
+        style={
+          backgroundImage
+            ? ({ "--_openui-context-card-image": backgroundImage } as CSSProperties)
+            : undefined
+        }
+        aria-label={backgroundImage ? bgImageAlt : undefined}
+        role={clickable ? "button" : undefined}
+        tabIndex={clickable ? 0 : undefined}
+        onClick={clickable ? onClick : undefined}
+        onKeyDown={clickable && onClick ? cardKeyDownHandler(onClick) : undefined}
+      >
+        {/* Tags over the background image take the overlay surface. */}
+        <TagSurfaceContext.Provider value={backgroundImage ? "image" : undefined}>
+          <div className={verticalClass}>
+            <div className={topClass}>
+              {titleContent}
+              {clickable && (
+                <>
+                  <div className={clsx(names.chevron, styles.chevron)} aria-hidden="true">
+                    <ChevronRight
+                      size={16}
+                      className={clsx(names.chevronIcon, styles.chevronIcon)}
+                    />
+                    {styleRules(clsx(names.chevronIcon, styles.chevronIcon))}
+                  </div>
+                  {styleRules(clsx(names.chevron, styles.chevron))}
+                </>
+              )}
+            </div>
+            {styleRules(topClass)}
+            {body && (
+              <>
+                <div className={clsx(names.bottom, styles.bottom)}>
+                  <div className={clsx(names.body, styles.body)}>
+                    <InlineMarkdownRenderer content={body} />
+                  </div>
+                  {styleRules(clsx(names.body, styles.body))}
+                </div>
+                {styleRules(clsx(names.bottom, styles.bottom))}
+              </>
             )}
           </div>
-          {body && (
-            <div className={clsx(names.bottom, styles.bottom)}>
-              <div className={clsx(names.body, styles.body)}>
-                <InlineMarkdownRenderer content={body} />
-              </div>
-            </div>
-          )}
-        </div>
-      </TagSurfaceContext.Provider>
-    </div>
+          {styleRules(verticalClass)}
+        </TagSurfaceContext.Provider>
+      </div>
+      {styleRules(cardClass)}
+    </>
   );
 });
 
