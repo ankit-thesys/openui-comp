@@ -112,17 +112,18 @@ function RadialChartImpl<T extends RadialChartData>(props: RadialChartProps<T>) 
     legend: showLegend,
   });
 
+  const rootClass = clsx(
+    styles.root,
+    names.root,
+    names.variant[variant],
+    isAnimationActive && names.isAnimationActive.true,
+    className,
+  );
   return (
     <>
       <ChartShell
         containerRef={orch.refs.containerRef}
-        className={clsx(
-          styles.root,
-          names.root,
-          names.variant[variant],
-          isAnimationActive && names.isAnimationActive.true,
-          className,
-        )}
+        className={rootClass}
         style={
           {
             "--_openui-radial-chart-root-width": orch.style.containerStyle["width"],
@@ -132,72 +133,77 @@ function RadialChartImpl<T extends RadialChartData>(props: RadialChartProps<T>) 
         isEmpty={orch.isEmpty}
         exportData={exportData}
       >
-        {() => (
-          <>
-            <div className={clsx(styles.svgWrapper, names.svgWrapper)}>
-              <svg
-                className={names.svg}
-                width={orch.dimensions.svgWidth}
-                height={orch.dimensions.svgHeight}
-                viewBox={`0 0 ${orch.dimensions.svgWidth} ${orch.dimensions.svgHeight}`}
-                role="img"
-                aria-label="Radial chart"
-              >
-                <g
-                  className={names.group}
-                  transform={`translate(${orch.dimensions.centerX}, ${orch.dimensions.centerY})`}
+        {() => {
+          const svgWrapperClass = clsx(styles.svgWrapper, names.svgWrapper);
+          return (
+            <>
+              <div className={svgWrapperClass}>
+                <svg
+                  className={names.svg}
+                  width={orch.dimensions.svgWidth}
+                  height={orch.dimensions.svgHeight}
+                  viewBox={`0 0 ${orch.dimensions.svgWidth} ${orch.dimensions.svgHeight}`}
+                  role="img"
+                  aria-label="Radial chart"
                 >
-                  {showGrid && (
-                    <RadialGrid
+                  <g
+                    className={names.group}
+                    transform={`translate(${orch.dimensions.centerX}, ${orch.dimensions.centerY})`}
+                  >
+                    {showGrid && (
+                      <RadialGrid
+                        maxRadius={maxRadius}
+                        minRadius={minRadius}
+                        startAngle={startAngle}
+                        endAngle={endAngle}
+                      />
+                    )}
+                    <RadialBars
+                      slices={orch.data.visibleSlices}
+                      maxValue={maxValue}
                       maxRadius={maxRadius}
                       minRadius={minRadius}
                       startAngle={startAngle}
                       endAngle={endAngle}
+                      cornerRadius={cornerRadius}
+                      barGap={BAR_GAP}
+                      hoveredIndex={orch.hover.hoveredIndex}
+                      animate={animate}
+                      data={orch.data.visibleRows}
+                      onMouseMove={orch.hover.handleMouseMove}
+                      onMouseLeave={orch.hover.handleMouseLeave}
+                      onClick={onClick}
                     />
-                  )}
-                  <RadialBars
-                    slices={orch.data.visibleSlices}
-                    maxValue={maxValue}
-                    maxRadius={maxRadius}
-                    minRadius={minRadius}
-                    startAngle={startAngle}
-                    endAngle={endAngle}
-                    cornerRadius={cornerRadius}
-                    barGap={BAR_GAP}
-                    hoveredIndex={orch.hover.hoveredIndex}
-                    animate={animate}
-                    data={orch.data.visibleRows}
-                    onMouseMove={orch.hover.handleMouseMove}
-                    onMouseLeave={orch.hover.handleMouseLeave}
-                    onClick={onClick}
-                  />
-                </g>
-              </svg>
-            </div>
+                  </g>
+                </svg>
+              </div>
+              {styleRules(svgWrapperClass)}
 
-            {showLegend && !orch.usesRemoteLegend && (
-              <DefaultLegend
-                ref={orch.refs.legendRef}
-                items={orch.data.legendItems}
-                containerWidth={orch.dimensions.containerWidth}
-                isExpanded={orch.legend.isLegendExpanded}
-                setIsExpanded={orch.legend.setIsLegendExpanded}
-                onItemClick={orch.data.toggleSlice}
-                hiddenSeries={orch.data.hiddenSlices}
-              />
-            )}
+              {showLegend && !orch.usesRemoteLegend && (
+                <DefaultLegend
+                  ref={orch.refs.legendRef}
+                  items={orch.data.legendItems}
+                  containerWidth={orch.dimensions.containerWidth}
+                  isExpanded={orch.legend.isLegendExpanded}
+                  setIsExpanded={orch.legend.setIsLegendExpanded}
+                  onItemClick={orch.data.toggleSlice}
+                  hiddenSeries={orch.data.hiddenSlices}
+                />
+              )}
 
-            {orch.tooltip.tooltipPayload && orch.hover.mousePos && (
-              <ChartTooltip
-                label={orch.tooltip.tooltipPayload.label}
-                items={orch.tooltip.tooltipPayload.items}
-                viewportPosition={orch.hover.mousePos}
-              />
-            )}
-          </>
-        )}
+              {orch.tooltip.tooltipPayload && orch.hover.mousePos && (
+                <ChartTooltip
+                  label={orch.tooltip.tooltipPayload.label}
+                  items={orch.tooltip.tooltipPayload.items}
+                  viewportPosition={orch.hover.mousePos}
+                />
+              )}
+            </>
+          );
+        }}
       </ChartShell>
       {styleRules(moduleClasses(radialChartStyles, fadeAppearStyles))}
+      {styleRules(rootClass)}
     </>
   );
 }

@@ -84,13 +84,14 @@ export function ScatterChart(props: ScatterChartProps) {
     scales: { xScale, yScale },
   } = orch;
 
+  const rootClass = clsx(styles.root, names.root, className);
   return (
     <>
       <ChartShell
         flat
         containerRef={orch.refs.containerRef}
         classPrefix={names.root}
-        className={clsx(styles.root, names.root, className)}
+        className={rootClass}
         style={orch.style.containerStyle}
         isEmpty={orch.isEmpty}
       >
@@ -205,6 +206,7 @@ export function ScatterChart(props: ScatterChartProps) {
         }}
       </ChartShell>
       {styleRules(moduleClasses(scatterChartStyles, chartBaseStyles))}
+      {styleRules(rootClass)}
     </>
   );
 }

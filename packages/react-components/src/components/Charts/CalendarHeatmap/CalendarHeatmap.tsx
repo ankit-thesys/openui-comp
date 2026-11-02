@@ -136,18 +136,19 @@ export function CalendarHeatmap(props: CalendarHeatmapProps) {
 
   const labelFormat = columnSeparators?.labelFormat ?? defaultQuarterLabel;
 
+  const rootClass = clsx(
+    styles.root,
+    names.root,
+    names.layout[layout],
+    names.legendVariant[legendVariant],
+    isAnimationActive && names.isAnimationActive.true,
+    className,
+  );
   return (
     <>
       <ChartShell
         containerRef={orch.refs.containerRef}
-        className={clsx(
-          styles.root,
-          names.root,
-          names.layout[layout],
-          names.legendVariant[legendVariant],
-          isAnimationActive && names.isAnimationActive.true,
-          className,
-        )}
+        className={rootClass}
         style={
           {
             "--_openui-calendar-heatmap-root-width": orch.style.containerStyle["width"],
@@ -163,10 +164,11 @@ export function CalendarHeatmap(props: CalendarHeatmapProps) {
       >
         {() => {
           const svgClass = clsx(styles.svg, names.svg);
+          const plotClass = clsx(styles.plot, names.plot);
           return (
             <>
               <div
-                className={clsx(styles.plot, names.plot)}
+                className={plotClass}
                 style={
                   {
                     "--_openui-calendar-heatmap-plot-position": "relative",
@@ -247,6 +249,7 @@ export function CalendarHeatmap(props: CalendarHeatmapProps) {
                   format={labelFormat}
                 />
               </div>
+              {styleRules(plotClass)}
 
               {showLegend && (
                 <CalendarLegend
@@ -277,6 +280,7 @@ export function CalendarHeatmap(props: CalendarHeatmapProps) {
         }}
       </ChartShell>
       {styleRules(moduleClasses(calendarHeatmapStyles))}
+      {styleRules(rootClass)}
     </>
   );
 }

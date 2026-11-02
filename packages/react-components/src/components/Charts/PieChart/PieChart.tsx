@@ -156,18 +156,19 @@ function PieChartImpl<T extends PieChartData>(props: PieChartProps<T>) {
     legend: showLegend,
   });
 
+  const rootClass = clsx(
+    styles.root,
+    names.root,
+    names.variant[variant],
+    names.appearance[appearance],
+    isAnimationActive && names.isAnimationActive.true,
+    className,
+  );
   return (
     <>
       <ChartShell
         containerRef={orch.refs.containerRef}
-        className={clsx(
-          styles.root,
-          names.root,
-          names.variant[variant],
-          names.appearance[appearance],
-          isAnimationActive && names.isAnimationActive.true,
-          className,
-        )}
+        className={rootClass}
         style={
           {
             "--_openui-pie-chart-root-width": orch.style.containerStyle["width"],
@@ -179,9 +180,10 @@ function PieChartImpl<T extends PieChartData>(props: PieChartProps<T>) {
       >
         {() => {
           const groupClass = clsx(styles.group, names.group);
+          const svgWrapperClass = clsx(styles.svgWrapper, names.svgWrapper);
           return (
             <>
-              <div className={clsx(styles.svgWrapper, names.svgWrapper)}>
+              <div className={svgWrapperClass}>
                 <svg
                   className={names.svg}
                   width={orch.dimensions.svgWidth}
@@ -212,6 +214,7 @@ function PieChartImpl<T extends PieChartData>(props: PieChartProps<T>) {
                 </svg>
                 {styleRules(groupClass)}
               </div>
+              {styleRules(svgWrapperClass)}
 
               {showLegend && !orch.usesRemoteLegend && (
                 <DefaultLegend
@@ -237,6 +240,7 @@ function PieChartImpl<T extends PieChartData>(props: PieChartProps<T>) {
         }}
       </ChartShell>
       {styleRules(moduleClasses(pieChartStyles))}
+      {styleRules(rootClass)}
     </>
   );
 }

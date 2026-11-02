@@ -71,17 +71,18 @@ export function HeatmapChart<T extends HeatmapChartData>(props: HeatmapChartProp
     scales: { xScale, yScale, colorScale },
   } = orch;
 
+  const rootClass = clsx(
+    styles.root,
+    names.root,
+    names.rampMode[rampMode],
+    isAnimationActive && names.isAnimationActive.true,
+    className,
+  );
   return (
     <>
       <ChartShell
         containerRef={orch.refs.containerRef}
-        className={clsx(
-          styles.root,
-          names.root,
-          names.rampMode[rampMode],
-          isAnimationActive && names.isAnimationActive.true,
-          className,
-        )}
+        className={rootClass}
         style={
           {
             "--_openui-heatmap-chart-root-width": orch.style.containerStyle["width"],
@@ -194,6 +195,7 @@ export function HeatmapChart<T extends HeatmapChartData>(props: HeatmapChartProp
         }}
       </ChartShell>
       {styleRules(moduleClasses(heatmapChartStyles, fadeAppearStyles))}
+      {styleRules(rootClass)}
     </>
   );
 }

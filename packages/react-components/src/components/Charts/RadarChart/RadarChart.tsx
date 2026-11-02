@@ -77,18 +77,19 @@ export function RadarChart<T extends RadarChartData>(props: RadarChartProps<T>) 
     [createMouseHandlers, findIndex],
   );
 
+  const rootClass = clsx(
+    styles.root,
+    names.root,
+    names.variant[variant],
+    names.gridShape[gridShape],
+    isAnimationActive && names.isAnimationActive.true,
+    className,
+  );
   return (
     <>
       <ChartShell
         containerRef={orch.refs.containerRef}
-        className={clsx(
-          styles.root,
-          names.root,
-          names.variant[variant],
-          names.gridShape[gridShape],
-          isAnimationActive && names.isAnimationActive.true,
-          className,
-        )}
+        className={rootClass}
         style={
           {
             "--_openui-radar-chart-root-width": orch.style.containerStyle["width"],
@@ -99,9 +100,10 @@ export function RadarChart<T extends RadarChartData>(props: RadarChartProps<T>) 
       >
         {() => {
           const svgClass = clsx(styles.svg, names.svg);
+          const svgWrapperClass = clsx(styles.svgWrapper, names.svgWrapper);
           return (
             <>
-              <div className={clsx(styles.svgWrapper, names.svgWrapper)}>
+              <div className={svgWrapperClass}>
                 <svg
                   className={svgClass}
                   width={orch.dimensions.svgWidth}
@@ -152,6 +154,7 @@ export function RadarChart<T extends RadarChartData>(props: RadarChartProps<T>) 
                 </svg>
                 {styleRules(svgClass)}
               </div>
+              {styleRules(svgWrapperClass)}
 
               {showLegend && (
                 <DefaultLegend
@@ -177,6 +180,7 @@ export function RadarChart<T extends RadarChartData>(props: RadarChartProps<T>) 
         }}
       </ChartShell>
       {styleRules(moduleClasses(radarChartStyles))}
+      {styleRules(rootClass)}
     </>
   );
 }
