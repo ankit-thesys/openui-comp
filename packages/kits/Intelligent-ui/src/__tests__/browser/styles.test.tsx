@@ -340,3 +340,17 @@ describe("on a coloured card", () => {
     });
   }
 });
+
+describe.each(THEMES)("a danger Button in %s", (theme) => {
+  it("colours an outline label, keeps its border neutral, and keeps a solid label readable", async () => {
+    const container = await renderProgram(
+      `root = Row([Button("Edit", null, "outline"), Button("Remove", null, "outline", "danger"), Button("Delete", null, "solid", "danger")])`,
+      { theme },
+    );
+    const [edit, remove, del] = ["Edit", "Remove", "Delete"].map((name) => byText(container, name).closest<HTMLElement>("button")!);
+    const danger = style(container).getPropertyValue("--openui-text-danger-primary").trim();
+    expect(distance(style(remove!).color, danger)).toBeLessThan(12);
+    expect(style(remove!).borderTopColor).toBe(style(edit!).borderTopColor);
+    expect(distance(style(del!).color, style(del!).backgroundColor)).toBeGreaterThan(120);
+  });
+});
