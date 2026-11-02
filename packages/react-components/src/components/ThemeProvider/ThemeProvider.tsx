@@ -112,6 +112,16 @@ function cssSafeId(id: string): string {
   return id.replace(/[^a-zA-Z0-9-_]/g, "");
 }
 
+// The precedence of theme variables in React's hoisted tags on the server.
+const THEME_PRECEDENCE = "openui-theme";
+
+// A theme's hoisted-tag name, from its rule text, so React writes an equal theme once.
+function themeHref(rule: string): string {
+  let hash = 5381;
+  for (let index = 0; index < rule.length; index++) hash = (hash * 33) ^ rule.charCodeAt(index);
+  return `openui-theme-${(hash >>> 0).toString(36)}`;
+}
+
 function validateThemeObject(themeObj: Theme, propName: string) {
   for (const [key, value] of Object.entries(themeObj)) {
     if (value !== undefined && typeof value !== "string" && !Array.isArray(value)) {
@@ -239,13 +249,27 @@ export const ThemeProvider = ({
   const styleSelector = useAutoScope ? `.${scopedClassName}` : effectiveCssSelector;
 
   // Preserve the existing unlayered theme variables and portal selectors.
+  const rule = `${styleSelector}, .${portalClassName} { ${cssVarsString} }`;
+  const href = themeHref(rule);
   useInsertionEffect(() => {
     const style = createStyleTag();
     style.setAttribute("data-openui-theme", id);
-    style.textContent = `${styleSelector}, .${portalClassName} { ${cssVarsString} }`;
+    style.textContent = rule;
     document.head.appendChild(style);
+    // The server's hoisted copy of this theme, if any, gives way to the tag this effect owns.
+    document
+      .querySelectorAll(`style[data-precedence="${THEME_PRECEDENCE}"][data-href~="${href}"]`)
+      .forEach((served) => served.remove());
     return () => style.remove();
-  }, [cssVarsString, styleSelector, portalClassName, id]);
+  }, [rule, href, id]);
+
+  // On the server, React hoists the theme into <head>; browsers render nothing here.
+  const served =
+    typeof window === "undefined" ? (
+      <style href={href} precedence={THEME_PRECEDENCE}>
+        {rule}
+      </style>
+    ) : null;
 
   // ---------------------------------------------------------------------------
   // Render
@@ -253,6 +277,7 @@ export const ThemeProvider = ({
   return (
     <InternalContext.Provider value={internalValue}>
       <ThemeContext.Provider value={contextValue}>
+        {served}
         {useAutoScope ? (
           <div className={scopedClassName} style={{ display: "contents" }}>
             {children}
