@@ -48,6 +48,10 @@ createServer(async (req, res) => {
     }
     return streamPage(res, searchParams.get("layer") === "openui" ? "openui" : undefined);
   }
+  if (pathname === "/server-rules.html") {
+    const { serverRulesPage } = await import("./.fixtures/server/server-rules-server.mjs");
+    return serverRulesPage(res);
+  }
   // Only bare names are served, so requests cannot reach outside the fixture directories.
   const html = pathname.match(/^\/([\w-]+)\.html$/);
   if (html)

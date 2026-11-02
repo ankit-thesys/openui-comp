@@ -80,6 +80,34 @@ async function exercise(page: Page) {
   }
 }
 
+// Every tag that carries component rules or token defaults: the browser's own tags (`openui-*`)
+// and React's hoisted tags from a server render (data-precedence="openui" / "openui-defaults").
+async function sheetsOn(page: Page) {
+  return page.evaluate(() => {
+    const tags = new Set<HTMLStyleElement>([
+      ...document.querySelectorAll<HTMLStyleElement>('style[id^="openui-"]'),
+      ...document.querySelectorAll<HTMLStyleElement>('style[data-precedence^="openui"]'),
+    ]);
+    return [...tags].map((tag, index) => ({
+      id: tag.id || `${tag.dataset["precedence"]}#${index} [${tag.dataset["href"] ?? ""}]`,
+      server: tag.hasAttribute("data-href"),
+      text: tag.textContent ?? "",
+    }));
+  });
+}
+
+function repeatsIn(sheets: Array<{ id: string; text: string }>) {
+  const seen = new Map<string, string>();
+  const repeated: string[] = [];
+  for (const sheet of sheets)
+    for (const block of blocksOf(sheet.text)) {
+      if (seen.has(block))
+        repeated.push(`${seen.get(block)} + ${sheet.id}: ${block.slice(0, 160)}`);
+      else seen.set(block, sheet.id);
+    }
+  return { repeated, blocks: seen.size };
+}
+
 for (const name of pages) {
   test(`${name} writes every component rule once`, async ({ page }) => {
     const url = name.includes(".html") ? `/${name}` : `/${name}.html`;
@@ -87,24 +115,57 @@ for (const name of pages) {
     await settle(page);
     await exercise(page);
     await settle(page);
-    const sheets = await page.evaluate(() =>
-      [...document.querySelectorAll("style")]
-        .filter((tag) => tag.id.startsWith("openui-"))
-        .map((tag) => ({ id: tag.id, text: tag.textContent ?? "" })),
-    );
+    const sheets = await sheetsOn(page);
     expect(sheets.filter((sheet) => sheet.id === "openui-styles")).toHaveLength(1);
-    const seen = new Map<string, string>();
-    const repeated: string[] = [];
-    for (const sheet of sheets)
-      for (const block of blocksOf(sheet.text)) {
-        if (seen.has(block))
-          repeated.push(`${seen.get(block)} + ${sheet.id}: ${block.slice(0, 160)}`);
-        else seen.set(block, sheet.id);
-      }
+    const { repeated, blocks } = repeatsIn(sheets);
     expect(repeated).toEqual([]);
-    expect(seen.size).toBeGreaterThan(0);
+    expect(blocks).toBeGreaterThan(0);
   });
 }
+
+// A server-rendered document (#178): the shell's hoisted tags, a Suspense boundary's streamed
+// tags and the browser sheet together carry each rule once, through hydration and interaction.
+test("a server-rendered, streamed page writes every component rule once", async ({ page }) => {
+  const errors: string[] = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  page.on("console", (message) => {
+    if (message.type() === "error") errors.push(message.text());
+  });
+  await page.goto("/server-rules.html");
+  await expect(page.getByTestId("late")).toBeVisible();
+  await expect(page.locator("main")).toHaveAttribute("data-hydrated", "true");
+  await settle(page);
+  await exercise(page);
+  await settle(page);
+  const sheets = await sheetsOn(page);
+  // The shell's tags and the boundary's tags both arrived from the server.
+  expect(
+    sheets.filter((sheet) => sheet.server && sheet.id.startsWith("openui#")).length,
+  ).toBeGreaterThanOrEqual(2);
+  expect(sheets.filter((sheet) => sheet.id === "openui-styles")).toHaveLength(1);
+  const { repeated, blocks } = repeatsIn(sheets);
+  expect(repeated).toEqual([]);
+  expect(blocks).toBeGreaterThan(0);
+  // Server-rendered Buttons are styled.
+  await expect(page.getByTestId("late")).toHaveCSS("cursor", "pointer");
+  expect(errors).toEqual([]);
+});
+
+test("the check finds a server rule repeated in the browser sheet", async ({ page }) => {
+  await page.goto("/server-rules.html");
+  await expect(page.locator("main")).toHaveAttribute("data-hydrated", "true");
+  await settle(page);
+  // Plant one class's served rule in the browser sheet, as a write that ignored the server would.
+  await page.evaluate(() => {
+    const served = document.querySelector('style[data-precedence="openui"][data-href]')!;
+    const name = served.getAttribute("data-href")!.split(" ")[0]!;
+    const rule = served.textContent!.match(new RegExp(`\\.${name}\\{[^}]*\\}`))![0];
+    document.getElementById("openui-styles")!.append(rule);
+  });
+  const { repeated } = repeatsIn(await sheetsOn(page));
+  expect(repeated).toHaveLength(1);
+  expect(repeated[0]).toContain("openui-styles");
+});
 
 test("the check finds a rule repeated in a second write or another tag", () => {
   const first = blocksOf("@layer openui{.go1{color:red}@media (min-width:1px){.go2{color:blue}}}");

@@ -53,6 +53,7 @@ const fixtures = [
   "ssr-hydrate",
   "document-hydrate",
   "streaming",
+  "server-rules",
   "sheet",
   "sheet-csp",
   "import-registration",
@@ -253,7 +254,7 @@ export default async function buildFixtures() {
     throw new Error("Build @openuidev/react-ui first: pnpm --filter @openuidev/react-ui... build");
   await bundle(entries(["bench-react-ui"]), "@openuidev/react-components", false);
   await bundle(
-    entries(["bench-server", "migrated-server", "streaming-server"]),
+    entries(["bench-server", "migrated-server", "streaming-server", "server-rules-server"]),
     "@openuidev/react-components",
     false,
     "node",
