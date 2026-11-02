@@ -5,10 +5,29 @@ import { renderToString } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { migratedComponents } from "./contract/components";
 
-// Components not yet wired with styleRules. Each codemod batch removes its components; the
-// contract ticket deletes the list.
+// Components wired with styleRules. Each codemod batch adds its components; the contract ticket
+// replaces the list with every contract entry.
+const wired = new Set([
+  "Button",
+  // Batch 1: form controls (#181).
+  "Input",
+  "TextArea",
+  "Select",
+  "CheckBoxGroup",
+  "CheckBoxItem",
+  "RadioGroup",
+  "RadioItem",
+  "SwitchGroup",
+  "SwitchItem",
+  "ToggleGroup",
+  "ToggleItem",
+  "Slider",
+  "DatePicker",
+  "FormControl",
+  "Label",
+]);
 const unwired = new Set(
-  migratedComponents.map((component) => component.folder).filter((folder) => folder !== "Button"),
+  migratedComponents.map((component) => component.folder).filter((folder) => !wired.has(folder)),
 );
 
 const GENERATED = /^go\d+$/;
@@ -32,9 +51,10 @@ function renderedClasses(html: string) {
 }
 
 describe("server-rendered component rules", () => {
-  it("lists only real contract entries as unwired", () => {
-    expect(unwired.has("Button")).toBe(false);
-    expect(unwired.size).toBe(migratedComponents.length - 1);
+  it("lists only real contract entries as wired", () => {
+    const folders = new Set(migratedComponents.map((component) => component.folder));
+    expect([...wired].filter((folder) => !folders.has(folder))).toEqual([]);
+    expect(unwired.size).toBe(migratedComponents.length - wired.size);
   });
 
   for (const component of migratedComponents) {
