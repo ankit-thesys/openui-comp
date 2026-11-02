@@ -50,7 +50,7 @@ createServer(async (req, res) => {
   }
   if (pathname === "/server-rules.html") {
     const { serverRulesPage } = await import("./.fixtures/server/server-rules-server.mjs");
-    return serverRulesPage(res);
+    return serverRulesPage(res, searchParams.has("empty-shell"));
   }
   // Only bare names are served, so requests cannot reach outside the fixture directories.
   const html = pathname.match(/^\/([\w-]+)\.html$/);

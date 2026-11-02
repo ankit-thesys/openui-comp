@@ -38,4 +38,19 @@ if (typeof document !== "undefined" && !servedDefaults()) {
   sheet.setAttribute("data-precedence", DEFAULTS_PRECEDENCE);
   const rule = `@layer openui-defaults{:where(:root){${themeToCssVars({ ...defaultLightTheme })}}}`;
   if (!(sheet.textContent ?? "").includes(rule)) sheet.append(rule);
+
+  // A server-rendered page still streaming may yet send the defaults with a Suspense boundary, when
+  // its shell rendered no component. Once the document is complete, the browser's copy goes.
+  if (document.readyState === "loading") {
+    const copy = sheet;
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+        if (!servedDefaults()) return;
+        order.remove();
+        copy.remove();
+      },
+      { once: true },
+    );
+  }
 }

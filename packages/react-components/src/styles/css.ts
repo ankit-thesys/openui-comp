@@ -33,6 +33,8 @@ type Store = {
   considered: number;
   // Classes the browser sheet holds.
   browserClasses: string[];
+  // Whether the browser will drop streamed classes from its sheet once the document is complete.
+  dropScheduled: boolean;
 };
 
 // One store per page, shared by every copy of this module (an ESM and a CJS build, or two
@@ -52,6 +54,7 @@ store.keyframes ??= {};
 store.order ??= [];
 store.considered ??= 0;
 store.browserClasses ??= [];
+store.dropScheduled ??= false;
 store.configured ??= false;
 
 // Goober 2.1.19 also tells the browser from the server by `window`.
@@ -120,10 +123,12 @@ function write() {
   tag.append(wrap(fresh));
   store.emitted = true;
   store.emittedLayer = store.layer;
-  // A server-rendered page still streaming may yet send Suspense boundaries' tags with classes
-  // written here; once it is complete, the sheet drops them.
-  if (document.readyState === "loading" && document.querySelector(hoistedTags(PRECEDENCE)))
+  // A page still loading may yet stream Suspense boundaries' tags with classes written here, even
+  // when its shell sent none; once it is complete, the sheet drops them.
+  if (document.readyState === "loading" && !store.dropScheduled) {
+    store.dropScheduled = true;
     document.addEventListener("DOMContentLoaded", dropServedClasses, { once: true });
+  }
 }
 
 // Rewrites the browser sheet without the classes the server has since sent. The sheet is otherwise

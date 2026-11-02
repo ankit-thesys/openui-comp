@@ -6,7 +6,7 @@ const ci = !!process.env["CI"];
 export default defineConfig({
   testDir: "test/browser",
   // Server rendering is not in this build; these specs test only it.
-  testIgnore: ["ssr.spec.ts", "document.spec.ts", "streaming.spec.ts", "bench.hydration.spec.ts"],
+  testIgnore: ["ssr.spec.ts", "document.spec.ts", "streaming.spec.ts"],
   globalSetup: "./test/browser/build-fixtures.ts",
   forbidOnly: ci,
   reporter: ci ? "github" : "list",

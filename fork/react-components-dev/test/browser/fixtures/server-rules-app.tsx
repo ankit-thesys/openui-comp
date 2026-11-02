@@ -2,8 +2,9 @@ import { Button } from "openui-under-test";
 import { Suspense, useEffect, useState } from "react";
 
 // A whole document React renders: Button in the shell, and a Button variant the shell does not use
-// inside a Suspense boundary, so its rules stream with the boundary (#178).
-export function ServerRulesApp({ wait }: { wait?: () => void }) {
+// inside a Suspense boundary, so its rules stream with the boundary (#178). With `emptyShell` the
+// shell renders no component, so the token defaults also arrive only with the boundary.
+export function ServerRulesApp({ wait, emptyShell }: { wait?: () => void; emptyShell?: boolean }) {
   const [hydrated, setHydrated] = useState(false);
   const [more, setMore] = useState(false);
   useEffect(() => setHydrated(true), []);
@@ -23,9 +24,11 @@ export function ServerRulesApp({ wait }: { wait?: () => void }) {
       </head>
       <body>
         <main data-hydrated={hydrated}>
-          <Button data-testid="early" onClick={() => setMore(true)}>
-            Early component
-          </Button>
+          {emptyShell ? null : (
+            <Button data-testid="early" onClick={() => setMore(true)}>
+              Early component
+            </Button>
+          )}
           <Suspense fallback={<p data-testid="fallback">Waiting</p>}>
             <Late />
           </Suspense>

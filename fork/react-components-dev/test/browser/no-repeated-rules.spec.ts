@@ -151,6 +151,23 @@ test("a server-rendered, streamed page writes every component rule once", async 
   expect(errors).toEqual([]);
 });
 
+// The shell renders no component, so the token defaults arrive only with the streamed boundary,
+// after the browser wrote its own: the page keeps one copy.
+test("a page whose components all stream writes the token defaults once", async ({ page }) => {
+  await page.goto("/server-rules.html?empty-shell");
+  await expect(page.getByTestId("late")).toBeVisible();
+  await expect(page.locator("main")).toHaveAttribute("data-hydrated", "true");
+  await settle(page);
+  const copies = await page.evaluate(
+    () =>
+      [...document.querySelectorAll("style")].filter((tag) =>
+        (tag.textContent ?? "").includes(":where(:root){--openui-"),
+      ).length,
+  );
+  expect(copies).toBe(1);
+  await expect(page.getByTestId("late")).toHaveCSS("cursor", "pointer");
+});
+
 test("the check finds a server rule repeated in the browser sheet", async ({ page }) => {
   await page.goto("/server-rules.html");
   await expect(page.locator("main")).toHaveAttribute("data-hydrated", "true");
