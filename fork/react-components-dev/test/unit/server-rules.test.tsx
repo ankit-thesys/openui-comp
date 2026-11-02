@@ -6,94 +6,13 @@ import { renderToString } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { migratedComponents, otherChartContracts } from "./contract/components";
 
-// Components wired with styleRules. Each codemod batch adds its components; the contract ticket
-// replaces the list with every contract entry.
-const wired = new Set([
-  "Button",
-  // Batch 1: form controls (#181).
-  "Input",
-  "TextArea",
-  "Select",
-  "CheckBoxGroup",
-  "CheckBoxItem",
-  "RadioGroup",
-  "RadioItem",
-  "SwitchGroup",
-  "SwitchItem",
-  "ToggleGroup",
-  "ToggleItem",
-  "Slider",
-  "DatePicker",
-  "FormControl",
-  "Label",
-  // Batch 2: content and layout (#182). SectionBlock, MarkDownRenderer and Table compose
-  // IconButton or CodeBlock, so they join with batch 4 (#184); SharedBase is checked through the
-  // components that compose it.
-  "Card",
-  "CardHeader",
-  "CompositeCardBlock",
-  "ContextCardBlock",
-  "OverviewCardBlock",
-  "SnippetCardBlock",
-  "VisualCardBlock",
-  "Tabs",
-  "Accordion",
-  "Steps",
-  "EditableTable",
-  "ListBlock",
-  "ListItem",
-  "EntityList",
-  "TextBlock",
-  "TextCallout",
-  "TextContent",
-  "TextContentWrapper",
-  "InlineMarkdownRenderer",
-  "InlineHeader",
-  "Callout",
-  "Tag",
-  "TagBlock",
-  "IconTag",
-  "IconText",
-  "MetricIndicator",
-  "OptionCards",
-  // Batch 3: charts (#183), with each chart's focused contract.
-  "Charts",
-  "PieChart",
-  "RadarChart",
-  "RadialChart",
-  "FunnelChart",
-  "HeatmapChart",
-  "CalendarHeatmap",
-  "SegmentedBar",
-  // Dependencies the charts render, wired by the same codemod run.
-  "IconButton",
-  "Separator",
-  // Batch 4: media and everything else (#184). Modal renders nothing on the server.
-  "Buttons",
-  "Calendar",
-  "Carousel",
-  "Chips",
-  "Citation",
-  "CodeBlock",
-  "DotMatrixLoader",
-  "Image",
-  "ImageBlock",
-  "ImageGallery",
-  "Skeleton",
-  "SourceFaviconImage",
-  "Sources",
-  "TooltipWrapper",
-  // Composed families, wired once their dependencies were (IconButton, CodeBlock, TextBlock).
-  "SectionBlock",
-  "MarkDownRenderer",
-  "Table",
-  "ImageText",
-  "ImageTextLarge",
+// Every contract entry serves exactly its rendered classes. These render no component markup on
+// the server, so they have nothing to serve; the browser sheet styles them once they open.
+const noServerMarkup = new Set([
+  // Modal renders its dialog in a portal, which servers do not render.
+  "Modal",
 ]);
 const contracts = [...migratedComponents, ...otherChartContracts];
-const unwired = new Set(
-  contracts.map((component) => component.folder).filter((folder) => !wired.has(folder)),
-);
 
 const GENERATED = /^go\d+$/;
 
@@ -153,14 +72,21 @@ function renderedClasses(html: string) {
 }
 
 describe("server-rendered component rules", () => {
-  it("lists only real contract entries as wired", () => {
+  it("lists only real contract entries as rendering no server markup", () => {
     const folders = new Set(contracts.map((component) => component.folder));
-    expect([...wired].filter((folder) => !folders.has(folder))).toEqual([]);
-    expect(unwired.size).toBe(contracts.length - wired.size);
+    expect([...noServerMarkup].filter((folder) => !folders.has(folder))).toEqual([]);
   });
 
+  for (const folder of noServerMarkup) {
+    it(`${folder}: renders no generated classes on the server`, () => {
+      const component = contracts.find((entry) => entry.folder === folder)!;
+      const html = renderToString(<>{component.elements()}</>);
+      expect([...renderedClasses(html)], "wire it and remove it from noServerMarkup").toEqual([]);
+    });
+  }
+
   for (const component of contracts) {
-    if (unwired.has(component.folder)) continue;
+    if (noServerMarkup.has(component.folder)) continue;
     it(`${component.folder}: serves exactly the rendered classes, once each`, () => {
       const html = renderToString(<>{component.elements()}</>);
       const tags = servedTags(html);
