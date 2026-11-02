@@ -2,17 +2,27 @@ import { defaultLightTheme } from "../components/ThemeProvider/defaultTheme";
 import { themeToCssVars } from "../components/ThemeProvider/utils";
 import { createStyleTag } from "./styleTag";
 
-if (typeof document !== "undefined") {
+// The token defaults as one rule, which server renders send in their own hoisted tag.
+export const DEFAULTS_HREF = "openui-defaults";
+export const DEFAULTS_PRECEDENCE = "openui-defaults";
+export const DEFAULTS_RULE = `@layer openui-defaults;@layer openui-defaults{:where(:root){${themeToCssVars({ ...defaultLightTheme })}}}`;
+
+// A server render already sent the defaults, in the hoisted tag React wrote.
+const servedDefaults = () =>
+  document.querySelector(
+    `style[data-precedence="${DEFAULTS_PRECEDENCE}"][data-href~="${DEFAULTS_HREF}"]`,
+  );
+
+if (typeof document !== "undefined" && !servedDefaults()) {
   // These tags go first in <head>, before React hydrates a server-rendered document (React Router,
   // TanStack Start, Next). React hydrates <head> by position and would match the app's own first
   // <style> against them, failing on the text; it skips styles marked `data-precedence`, its own
   // hoisted-sheet marker, and keeps them when it re-renders the document.
-  const precedence = "openui-defaults";
 
   // Establish the defaults layer before host layers, regardless of import order.
   const order = createStyleTag();
   order.setAttribute("data-openui-layer-order", "");
-  order.setAttribute("data-precedence", precedence);
+  order.setAttribute("data-precedence", DEFAULTS_PRECEDENCE);
   order.textContent = "@layer openui-defaults;";
   document.head.prepend(order);
 
@@ -25,7 +35,22 @@ if (typeof document !== "undefined") {
     sheet.id = "openui-defaults";
     order.after(sheet);
   }
-  sheet.setAttribute("data-precedence", precedence);
+  sheet.setAttribute("data-precedence", DEFAULTS_PRECEDENCE);
   const rule = `@layer openui-defaults{:where(:root){${themeToCssVars({ ...defaultLightTheme })}}}`;
   if (!(sheet.textContent ?? "").includes(rule)) sheet.append(rule);
+
+  // A server-rendered page still streaming may yet send the defaults with a Suspense boundary, when
+  // its shell rendered no component. Once the document is complete, the browser's copy goes.
+  if (document.readyState === "loading") {
+    const copy = sheet;
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+        if (!servedDefaults()) return;
+        order.remove();
+        copy.remove();
+      },
+      { once: true },
+    );
+  }
 }

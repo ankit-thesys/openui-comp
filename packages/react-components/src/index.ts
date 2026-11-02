@@ -4,6 +4,7 @@ export {
   configureStyles,
   css,
   keyframes,
+  styleRules,
   type ConfigureStylesOptions,
   type Css,
   type Keyframes,
