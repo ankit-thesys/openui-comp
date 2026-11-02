@@ -1,7 +1,7 @@
 import { OpenUIClient } from "@openuidev/server";
 import spec from "../generated/spec.json";
 import { dataTools, osv } from "./data";
-import { dashboardExamples, dashboardRules } from "./shadcn-genui/prompt";
+import { dashboardExamples, dashboardRules } from "./dashboard-prompt";
 
 // OpenUI Cloud, or your own deployment of it, such as a local stack at http://localhost:3102.
 export const baseUrl = (process.env.THESYS_BASE_URL || "https://api.thesys.dev").replace(

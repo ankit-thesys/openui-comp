@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { DashboardThemeProvider } from "@openuidev/dashboard-kit";
 import { LiveArtifactRenderer, useArtifactRenderer } from "@openuidev/react-ui/cloud";
 import {
   AlertTriangle,
@@ -15,7 +16,7 @@ import {
   RotateCw,
   X,
 } from "lucide-react";
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, useSyncExternalStore, type ReactNode } from "react";
 import { library } from "../library";
 
 // The slots used below, by their short names.
@@ -48,7 +49,8 @@ type DashboardProps = DashboardSource & {
  * One live dashboard. LiveArtifactRenderer streams it from OpenUI Cloud and runs its Query()
  * calls through /api/interpreter. Each slot here uses one of the three slot modes: omit it for
  * the default, pass props to adjust the default, or pass children to replace it. Here every
- * part is replaced with shadcn/ui, so the renderer needs none of react-ui's styles.
+ * part is replaced with shadcn/ui, so the renderer needs none of react-ui's styles. The
+ * dashboard itself is the dashboard kit's, themed by DashboardThemeProvider in the system's mode.
  */
 export function Dashboard({
   isOpen,
@@ -58,6 +60,7 @@ export function Dashboard({
   preview,
   ...source
 }: DashboardProps) {
+  const mode = useSystemMode();
   return (
     <LiveArtifactRenderer
       {...source}
@@ -71,34 +74,53 @@ export function Dashboard({
       <Preview>{preview}</Preview>
       {/* Children: our own frame, built from the chrome's parts. */}
       <Chrome>
-        <div className="flex h-full w-full flex-col bg-background">
-          <header className="flex h-14 shrink-0 items-center gap-3 border-b px-4">
-            <span className="flex size-8 shrink-0 items-center justify-center rounded-lg border bg-muted/50">
-              <LayoutDashboard className="size-4" />
-            </span>
-            {/* Props: the default title, styled. */}
-            <ChromeTitle className="min-w-0 flex-1 truncate text-sm font-semibold" />
-            {/* Always shown, so it sits in the bar rather than in ChromeLoader (shown only while loading). */}
-            <StatusBadge />
-            <ChromeActions>
-              <EditButton onEdit={onEdit} />
-              <CloseButton>
-                <PanelCloseButton />
-              </CloseButton>
-            </ChromeActions>
-          </header>
-          <Content className="relative min-h-0 flex-1 overflow-y-auto bg-muted/30 p-4 sm:p-6">
-            <Loading>
-              <DashboardLoading />
-            </Loading>
-            <ErrorSlot>
-              <DashboardError />
-            </ErrorSlot>
-          </Content>
-        </div>
+        {/* Inside the chrome, so the theme's class sits around the panel the chrome renders in. */}
+        <DashboardThemeProvider mode={mode}>
+          <div className="flex h-full w-full flex-col bg-background">
+            <header className="flex h-14 shrink-0 items-center gap-3 border-b px-4">
+              <span className="flex size-8 shrink-0 items-center justify-center rounded-lg border bg-muted/50">
+                <LayoutDashboard className="size-4" />
+              </span>
+              {/* Props: the default title, styled. */}
+              <ChromeTitle className="min-w-0 flex-1 truncate text-sm font-semibold" />
+              {/* Always shown, so it sits in the bar rather than in ChromeLoader (shown only while loading). */}
+              <StatusBadge />
+              <ChromeActions>
+                <EditButton onEdit={onEdit} />
+                <CloseButton>
+                  <PanelCloseButton />
+                </CloseButton>
+              </ChromeActions>
+            </header>
+            <Content className="relative min-h-0 flex-1 overflow-y-auto bg-muted/30 p-4 sm:p-6">
+              <Loading>
+                <DashboardLoading />
+              </Loading>
+              <ErrorSlot>
+                <DashboardError />
+              </ErrorSlot>
+            </Content>
+          </div>
+        </DashboardThemeProvider>
       </Chrome>
     </LiveArtifactRenderer>
   );
+}
+
+const darkQuery = "(prefers-color-scheme: dark)";
+
+/** The system's light or dark mode, as the app's own colors follow it (globals.css). */
+function useSystemMode(): "light" | "dark" {
+  const dark = useSyncExternalStore(
+    (onChange) => {
+      const query = window.matchMedia(darkQuery);
+      query.addEventListener("change", onChange);
+      return () => query.removeEventListener("change", onChange);
+    },
+    () => window.matchMedia(darkQuery).matches,
+    () => false,
+  );
+  return dark ? "dark" : "light";
 }
 
 type Status = { label: string; tone: "live" | "busy" | "error" | "done" };
