@@ -154,12 +154,16 @@ function inForeignSvg(node) {
   return false;
 }
 
-/** True when `node` has an SVG-only element among its JSX descendants (a component wrapping a <g>). */
+/**
+ * True when `node` has an SVG-only element among its JSX descendants outside any nested <svg> (a
+ * component wrapping a <g>).
+ */
 function wrapsSvg(node) {
   let found = false;
   node.forEachChild(function visit(child) {
     if (found) return;
-    if (isElement(child) && tagOf(child) === "foreignObject") return;
+    // Inside <foreignObject> is HTML; a nested <svg> is a complete SVG of its own (an icon).
+    if (isElement(child) && (tagOf(child) === "foreignObject" || tagOf(child) === "svg")) return;
     if (isElement(child) && SVG_ONLY.has(tagOf(child))) found = true;
     else child.forEachChild(visit);
   });
