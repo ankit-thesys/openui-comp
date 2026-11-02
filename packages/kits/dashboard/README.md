@@ -8,22 +8,31 @@ Rendering comes from `@openuidev/react-components`, which is a required peer.
 ## Install
 
 ```sh
-pnpm add @openuidev/dashboard-kit@0.0.0-beta.0 @openuidev/react-components@0.0.0-beta.0
+pnpm add @openuidev/dashboard-kit@0.0.0-beta.0 @openuidev/react-components@0.0.1
 ```
 
 `@openuidev/react-components`, `@openuidev/react-lang`, `react`, `react-dom` and
-`zod` are peer dependencies.
+`zod` are peer dependencies. `@openuidev/react-components` also needs `zustand`.
 
 ## Usage
 
-```ts
-import {
-  openuiDashboardLibrary,
-  openuiDashboardPromptOptions,
-} from "@openuidev/dashboard-kit/lib";
+Build the system prompt ahead of time with the CLI. Don't call
+`openuiDashboardLibrary.prompt()` in a Next.js API route: `/lib` includes the React
+components, and they crash in a server route with `createContext is not a function`.
 
-const systemPrompt = openuiDashboardLibrary.prompt(openuiDashboardPromptOptions);
+```ts
+// src/lib/dashboard-library.ts
+export {
+  openuiDashboardLibrary as library,
+  openuiDashboardPromptOptions as promptOptions,
+} from "@openuidev/dashboard-kit/lib";
 ```
+
+```bash
+npx @openuidev/cli generate src/lib/dashboard-library.ts --out src/generated/system-prompt.txt
+```
+
+Read that file in your route and send it as the system message.
 
 Then render a model's response with `Renderer` from `@openuidev/react-lang`:
 
@@ -34,7 +43,21 @@ Then render a model's response with `Renderer` from `@openuidev/react-lang`:
 - `/lib` exports the five AI-integration values plus `dashboardComponents`.
 - The root entrypoint exports the standalone React components, such as `Dashboard`,
   `Section`, `CardRow` and `DashboardThemeProvider`.
-- Components style themselves with goober, so there is no stylesheet to import.
+- Components style themselves through react-components' `css`, so there is no stylesheet to
+  import. Their rules go into the same `<style id="openui-styles">` tag as react-components',
+  after them, and follow `configureStyles({ layer })` if you set one.
+
+### Dark mode
+
+The dashboard takes its mode from a `ThemeProvider` in `@openuidev/react-components`. The
+`theme` you give `AgentInterface` belongs to `@openuidev/react-ui` and doesn't reach it, so wrap
+the chat as well:
+
+```tsx
+<ThemeProvider mode={mode}>
+  <AgentInterface theme={{ mode }} {...props} />
+</ThemeProvider>
+```
 
 ## Styling
 
@@ -54,18 +77,28 @@ Styles follow the same flat contract as `@openuidev/react-components`:
 
 Root component is `Dashboard`. 48 components in 6 groups:
 
-| Group | Components |
-|---|---|
-| Dashboard Layout | `Dashboard`, `DashboardHeader`, `Section`, `FilterBar`, `FilterSelect`, `FilterMultiSelect`, `DatePicker`, `CardRow`, `IconButton` |
-| Shell Cards | `SmallCard`, `MediumCard`, `LargeCard`, `DashboardCardHeader`, `IconTag`, `IconText`, `TextBlock`, `List`, `ListItem`, `EntityList`, `Callout`, `Button`, `ButtonGroup`, `Select`, `SelectItem`, `ImageBlock`, `Tag`, `TagBlock`, `TextContent`, `MarkDownRenderer`, `TextCallout` |
-| Metrics | `MetricIndicator`, `OverviewCardItem`, `OverviewCardBlock` |
-| Charts | `LineChart`, `BarChart`, `AreaChart`, `HorizontalBarChart`, `RadarChart`, `ScatterChart`, `RadialChart`, `PieChart` |
-| Data Display | `Table`, `Col` |
-| Primitives | `Icon`, `IconTag`, `IconText`, `TextBlock` |
+| Group            | Components                                                                                                                                                                                                                                                                         |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Dashboard Layout | `Dashboard`, `DashboardHeader`, `Section`, `FilterBar`, `FilterSelect`, `FilterMultiSelect`, `DatePicker`, `CardRow`, `IconButton`                                                                                                                                                 |
+| Shell Cards      | `SmallCard`, `MediumCard`, `LargeCard`, `DashboardCardHeader`, `IconTag`, `IconText`, `TextBlock`, `List`, `ListItem`, `EntityList`, `Callout`, `Button`, `ButtonGroup`, `Select`, `SelectItem`, `ImageBlock`, `Tag`, `TagBlock`, `TextContent`, `MarkDownRenderer`, `TextCallout` |
+| Metrics          | `MetricIndicator`, `OverviewCardItem`, `OverviewCardBlock`                                                                                                                                                                                                                         |
+| Charts           | `LineChart`, `BarChart`, `AreaChart`, `HorizontalBarChart`, `RadarChart`, `ScatterChart`, `RadialChart`, `PieChart`                                                                                                                                                                |
+| Data Display     | `Table`, `Col`                                                                                                                                                                                                                                                                     |
+| Primitives       | `Icon`, `IconTag`, `IconText`, `TextBlock`                                                                                                                                                                                                                                         |
 
 `Series`, `ScatterSeries`, `Point` and `Slice` are registered as chart data
 helpers and are described through the chart signatures rather than their own
 group.
+
+## Filters
+
+The prompt teaches the model to bind each `FilterSelect` to a `$variable` and read values from it,
+such as `data[$region].revenue`, so filters change the dashboard with no backend. Those values are
+written by the model, so they are placeholders. For live data, give the model your own tools so it
+can pass `$region` to `Query`. The kit can't supply those.
+
+Without tools, the model uses `FilterSelect` even when asked for a date picker or several ticked
+options, because written values can't follow them.
 
 ## What makes it a dashboard library
 
@@ -84,8 +117,21 @@ The component list matters less than the **layout grammar** the groups carry as
   `Separator`, `CodeBlock` or `Form` inside `MediumCard` or `LargeCard`.
 
 That grammar is why this library is smaller than a general component set — 48
-components and a ~18,000-character system prompt — while producing dashboards
+components and a ~22,000-character system prompt — while producing dashboards
 rather than a vertical stack of cards.
+
+## Tests
+
+```bash
+pnpm test                               # library, prompt and style rules
+pnpm exec playwright install chromium   # once
+pnpm test:browser                       # rendering, computed styles, layout and clicks
+pnpm test:update                        # accept an intended change, then review the diff
+```
+
+Run them from `packages/kits/dashboard`, after building `@openuidev/react-lang`. They use the
+published `@openuidev/react-components`. `pnpm test` also runs in this package's `ci` script. The
+browser tests don't run in CI yet.
 
 ## Provenance
 
@@ -96,5 +142,5 @@ onto `@openuidev/react-components`. Two deliberate changes:
 - `Table` and `Col` are real component definitions rather than a string lookup
   into the legacy `openuiLibrary` registry, so they are no longer typed
   `DefinedComponent | undefined` and the kit does not depend on the old library.
-- The Sass is gone: styles are rewritten flat in goober, and the `c1-` class prefix
+- The Sass is gone: styles are rewritten flat with react-components' `css`, and the `c1-` class prefix
   is now `openui-dashboard-`.
