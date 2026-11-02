@@ -71,6 +71,11 @@ describe("the source", () => {
     expect(read(join(src, "shared/tokens.ts"))).toContain('import "./theme"');
   });
 
+  it("writes its rules with react-components' css, so they share its style tag and layer", () => {
+    // The theme is the one exception: it needs goober's glob, which react-components doesn't export.
+    expect(offenders(sourceFiles, /from "goober"/)).toEqual(["shared/theme.ts"]);
+  });
+
   it("uses !important only in the photo row", () => {
     expect(offenders(styleFiles, /!important/)).toEqual(["components/Row/row.styles.ts"]);
   });

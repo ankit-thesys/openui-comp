@@ -205,3 +205,50 @@ describe("known problems", () => {
     expect(box(inner!).right).toBeLessThanOrEqual(box(outer!).right);
   });
 });
+
+describe("Carousel arrows", () => {
+  for (const theme of THEMES) {
+    it(`sit inside the carousel, round and frosted, with no square backing (${theme})`, async () => {
+      const container = await renderProgram(program("primitives"), { theme });
+      const carousel = one(container, ".openui-intelligent-carousel");
+      const holder = one(carousel, ".openui-carousel-button-right");
+      const arrow = one(holder, "button");
+      const [outer, inner] = [box(carousel), box(holder)];
+      // Wholly inside, so a chat bubble that hides overflow can't cut it.
+      expect(inner.left).toBeGreaterThanOrEqual(outer.left);
+      expect(inner.right).toBeLessThanOrEqual(outer.right);
+      expect(rgba(style(holder).backgroundColor)[3]).toBe(0);
+      expect(style(arrow).borderRadius).toBe("9999px");
+      expect(box(arrow).width).toBe(34);
+      // Frosted: a see-through fill of the page colour, not none and not solid.
+      const [, , , alpha] = rgba(style(arrow).backgroundColor);
+      expect(alpha).toBeGreaterThan(100);
+      expect(alpha).toBeLessThan(255);
+      expect(style(arrow).backdropFilter).toContain("blur");
+    });
+  }
+});
+
+describe("List labels", () => {
+  const timeline = `root = List([ListItem("Kennin-ji", "Sit beside the rock garden", "Early afternoon"), ListItem("Gion", "Walk the lanes", "4pm"), ListItem("Dinner", "Pontocho", "Evening and late night")], "bullet", true)`;
+
+  for (const theme of THEMES) {
+    it(`wrap inside their lane instead of running into the timeline's dot (${theme})`, async () => {
+      const container = await renderProgram(timeline, { theme });
+      const labels = [...container.querySelectorAll<HTMLElement>(".openui-intelligent-list-marker--kind-text")];
+      expect(labels).toHaveLength(3);
+      for (const label of labels) {
+        // Nothing spills out of the lane, so the text stays clear of the dot just past it.
+        expect(label.scrollWidth).toBeLessThanOrEqual(label.clientWidth);
+        const range = document.createRange();
+        range.selectNodeContents(label);
+        expect(range.getBoundingClientRect().right).toBeLessThanOrEqual(box(label).right + 0.5);
+      }
+      // A short label still sits on one line, level with its title.
+      const short = labels[1]!;
+      const title = short.parentElement!.querySelector(".openui-intelligent-list-title")!;
+      expect(Math.abs(box(short).top - box(title).top)).toBeLessThan(4);
+      expect(box(short).height).toBeLessThan(26);
+    });
+  }
+});
