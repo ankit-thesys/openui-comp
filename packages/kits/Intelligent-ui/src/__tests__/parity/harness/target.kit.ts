@@ -3,8 +3,9 @@ export { demoTools } from "../../../lib/demo-data";
 export { library, runLibraryAction } from "../../../lib";
 export { ThemeProvider as Provider } from "@openuidev/react-components";
 
+// The page colours itself from ThemeProvider's tokens, as a host page does: the kit sets no variables of its own.
 export const vars = {
-  canvas: "--openui-intelligent-canvas",
-  ink: "--openui-intelligent-ink",
-  font: "--openui-intelligent-font",
+  canvas: "--openui-foreground",
+  ink: "--openui-text-neutral-primary",
+  font: "--openui-font-body",
 };

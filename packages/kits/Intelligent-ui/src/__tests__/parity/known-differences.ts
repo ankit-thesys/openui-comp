@@ -70,20 +70,25 @@ export const needsFix: Rule[] = [
     match: (d) =>
       d.mode === "plain-1280" && ["control-size", "control-text-color", "media-size", "page-height"].includes(d.kind),
   },
-  {
-    id: "dark-ink",
-    summary:
-      "In dark mode the kit's neutrals ignore a ThemeProvider below the page root: ink is #ececec, not the provider's #fafafa",
-    match: (d) =>
-      isOneOf(
-        d,
-        ["text-color", "control-text-color", "control-fill", "control-border"],
-        [["fafafa", "ececec"], ["ffffff14", "f2f2f214"], ["ffffff0a", "e6e6e60a"]],
-      ),
-  },
 ];
 
+/** The source app's own status colours, light and dark: text, badge text and soft tints. */
+const SOURCE_STATUS = new Set([
+  "00805d", "edf9f2", "8a5300", "ffefc7", "c1322c", "fff0ee", "7040c1", "f4f0ff", "b7377c", "fff0f6",
+  "1f6b4f", "e8f3ec", "9f3a33", "f8e8e5", "5d4596", "efebf7", "94456d", "f7eaf1",
+  "5bcf9c", "13291f", "f0b84f", "30250f", "ff7d74", "3a1b19", "b49cff", "261f3a", "f28cc0", "371b2a",
+  "8fd3b2", "e6c27c", "f0a39b", "c3b2f0", "eeaacb", "50b48224", "dcaa5024", "e66e6424", "a082f024", "e682b424",
+]);
+
 export const accepted: Rule[] = [
+  {
+    id: "status-palette",
+    summary:
+      "Success, warning, danger, purple and pink come from react-components' ThemeProvider, so they follow its mode and an app's theme, not the source app's own palette",
+    match: (d) =>
+      ["text-color", "control-text-color", "control-fill", "control-border"].includes(d.kind) &&
+      SOURCE_STATUS.has(String(d.source)),
+  },
   {
     id: "native-checkbox",
     summary: "The source draws native checkboxes, whose box isn't in their CSS, so only the kit reports one",
