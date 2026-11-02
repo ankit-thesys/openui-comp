@@ -16,9 +16,9 @@
 // - React renders `<style>` in place inside SVG, so for an SVG element or its descendants the call
 //   goes after the outermost `<svg>`; a Radix `asChild` parent or `Slot` takes one element child,
 //   so the call goes after that parent.
-// - Elements in a portal (`*.Portal`, `createPortal`) never render on the server: no call.
-// - A component that calls Children.only (TooltipWrapper) is treated like a slotting parent, and
-//   one that wires its own className (IconWrapper) is skipped.
+// - Elements in a portal (`*.Portal`, `createPortal`) never render on the server: no call. Nor do
+//   components that render only after an effect, such as `IconWrapper`.
+// - A component that calls Children.only (TooltipWrapper) is treated like a slotting parent.
 import { execFileSync } from "node:child_process";
 import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join, relative, resolve } from "node:path";
@@ -179,9 +179,16 @@ const slots = (node) =>
     /^(.*\.)?Slot$/.test(tagOf(node)) ||
     SINGLE_CHILD.has(tagOf(node)));
 
-// Components that wire the className they are given next to the element they render, which may
-// render nothing on the server (IconWrapper before its icon loads).
-const SELF_WIRED = new Set(["IconWrapper"]);
+// Components whose class never reaches server markup: they render nothing until an effect runs,
+// or only inside a portal another file opens (Select's content and its parts).
+const CLIENT_ONLY = new Set([
+  "IconWrapper",
+  "SelectContent",
+  "SelectGroup",
+  "SelectItem",
+  "SelectLabel",
+  "SelectSeparator",
+]);
 
 // Portal content never renders on the server, so the browser sheet alone styles it.
 function inPortal(node) {
@@ -249,7 +256,7 @@ function unwired(source) {
         expression &&
         references(expression, names) &&
         !inPortal(node) &&
-        !SELF_WIRED.has(tagOf(node))
+        !CLIENT_ONLY.has(tagOf(node))
       ) {
         const target = insertionTarget(node);
         const orphanSvg = inForeignSvg(node) || (!svgRoot(node) && wrapsSvg(node));

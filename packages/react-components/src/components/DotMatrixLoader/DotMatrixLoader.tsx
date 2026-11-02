@@ -1,7 +1,8 @@
 "use client";
 
 import clsx from "clsx";
-import { useEffect, useRef, type CSSProperties } from "react";
+import { Fragment, useEffect, useRef, type CSSProperties } from "react";
+import { styleRules } from "../../styles/css";
 import { dotMatrixLoaderStyles, names } from "./dotMatrixLoader.styles";
 
 /** Time for each trail to complete one revolution of its ring. */
@@ -104,33 +105,40 @@ export const DotMatrixLoader = ({
   for (let row = 0; row < gridSize; row++) {
     for (let col = 0; col < gridSize; col++) {
       const key = `${row}-${col}`;
+      const dotClass = clsx(styles.dot, names.dot);
       dots.push(
-        <span
-          key={key}
-          className={clsx(styles.dot, names.dot)}
-          ref={(el) => {
-            if (el) dotsRef.current.set(key, el);
-            else dotsRef.current.delete(key);
-          }}
-        />,
+        <Fragment key={key}>
+          <span
+            className={dotClass}
+            ref={(el) => {
+              if (el) dotsRef.current.set(key, el);
+              else dotsRef.current.delete(key);
+            }}
+          />
+          {styleRules(dotClass)}
+        </Fragment>,
       );
     }
   }
 
+  const rootClass = clsx(styles.root, names.root, names.variant[variant], className);
   return (
-    <div
-      className={clsx(styles.root, names.root, names.variant[variant], className)}
-      role="status"
-      aria-live="polite"
-      aria-label="Loading"
-      style={
-        {
-          "--_openui-dot-matrix-loader-grid-size": gridSize,
-          "--_openui-dot-matrix-loader-size": `${resolvedSize}px`,
-        } as CSSProperties
-      }
-    >
-      {dots}
-    </div>
+    <>
+      <div
+        className={rootClass}
+        role="status"
+        aria-live="polite"
+        aria-label="Loading"
+        style={
+          {
+            "--_openui-dot-matrix-loader-grid-size": gridSize,
+            "--_openui-dot-matrix-loader-size": `${resolvedSize}px`,
+          } as CSSProperties
+        }
+      >
+        {dots}
+      </div>
+      {styleRules(rootClass)}
+    </>
   );
 };

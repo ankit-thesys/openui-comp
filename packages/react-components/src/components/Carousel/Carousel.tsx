@@ -12,6 +12,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { styleRules } from "../../styles/css";
 import { IconButton } from "../IconButton";
 import { carouselStyles, names } from "./carousel.styles";
 
@@ -178,22 +179,21 @@ export const Carousel = forwardRef<CarouselRef, CarouselProps>(
       ],
     );
 
+    const rootClass = clsx(
+      styles.root,
+      names.root,
+      styles.variant[variant],
+      names.variant[variant],
+      noSnap && names.noSnap.true,
+      showButtons && names.showButtons.true,
+      className,
+    );
     return (
       <CarouselContext.Provider value={contextValue}>
-        <div
-          className={clsx(
-            styles.root,
-            names.root,
-            styles.variant[variant],
-            names.variant[variant],
-            noSnap && names.noSnap.true,
-            showButtons && names.showButtons.true,
-            className,
-          )}
-          {...props}
-        >
+        <div className={rootClass} {...props}>
           {children}
         </div>
+        {styleRules(rootClass)}
       </CarouselContext.Provider>
     );
   },
@@ -205,22 +205,29 @@ export const CarouselContent = forwardRef<HTMLDivElement, React.HTMLAttributes<H
     const { scrollDivRef, noSnap, isPrevVisible, isNextVisible } = useCarousel();
 
     const content = noSnap ? (
-      <div className={clsx(styles.contentWrapper, names.contentWrapper)}>{children}</div>
+      <>
+        <div className={clsx(styles.contentWrapper, names.contentWrapper)}>{children}</div>
+        {styleRules(clsx(styles.contentWrapper, names.contentWrapper))}
+      </>
     ) : (
       children
     );
 
+    const contentClass = clsx(styles.content, names.content, className);
     return (
-      <div
-        ref={scrollDivRef}
-        className={clsx(styles.content, names.content, className)}
-        data-mask={
-          isPrevVisible ? (isNextVisible ? "both" : "left") : isNextVisible ? "right" : "none"
-        }
-        {...props}
-      >
-        {content}
-      </div>
+      <>
+        <div
+          ref={scrollDivRef}
+          className={contentClass}
+          data-mask={
+            isPrevVisible ? (isNextVisible ? "both" : "left") : isNextVisible ? "right" : "none"
+          }
+          {...props}
+        >
+          {content}
+        </div>
+        {styleRules(contentClass)}
+      </>
     );
   },
 );
@@ -228,10 +235,14 @@ export const CarouselContent = forwardRef<HTMLDivElement, React.HTMLAttributes<H
 export const CarouselItem = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, children, ...props }, ref) => {
     const styles = carouselStyles;
+    const itemClass = clsx(styles.item, names.item, className);
     return (
-      <div ref={ref} className={clsx(styles.item, names.item, className)} {...props}>
-        {children}
-      </div>
+      <>
+        <div ref={ref} className={itemClass} {...props}>
+          {children}
+        </div>
+        {styleRules(itemClass)}
+      </>
     );
   },
 );
@@ -245,19 +256,23 @@ export const CarouselPrevious = forwardRef<
 
   if (!isPrevVisible || !showButtons) return null;
 
+  const buttonClass = clsx(styles.button, names.button, styles.left, names.left);
   return (
-    <div className={clsx(styles.button, names.button, styles.left, names.left)}>
-      <IconButton
-        ref={ref}
-        className={clsx(names.previous, className)}
-        shape="square"
-        variant="secondary"
-        size="small"
-        onClick={() => scroll("left")}
-        style={style}
-        {...props}
-      />
-    </div>
+    <>
+      <div className={buttonClass}>
+        <IconButton
+          ref={ref}
+          className={clsx(names.previous, className)}
+          shape="square"
+          variant="secondary"
+          size="small"
+          onClick={() => scroll("left")}
+          style={style}
+          {...props}
+        />
+      </div>
+      {styleRules(buttonClass)}
+    </>
   );
 });
 
@@ -268,19 +283,23 @@ export const CarouselNext = forwardRef<HTMLButtonElement, React.ComponentProps<t
 
     if (!isNextVisible || !showButtons) return null;
 
+    const buttonClass = clsx(styles.button, names.button, styles.right, names.right);
     return (
-      <div className={clsx(styles.button, names.button, styles.right, names.right)}>
-        <IconButton
-          ref={ref}
-          className={clsx(names.next, className)}
-          shape="square"
-          variant="secondary"
-          size="small"
-          onClick={() => scroll("right")}
-          style={style}
-          {...props}
-        />
-      </div>
+      <>
+        <div className={buttonClass}>
+          <IconButton
+            ref={ref}
+            className={clsx(names.next, className)}
+            shape="square"
+            variant="secondary"
+            size="small"
+            onClick={() => scroll("right")}
+            style={style}
+            {...props}
+          />
+        </div>
+        {styleRules(buttonClass)}
+      </>
     );
   },
 );

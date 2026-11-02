@@ -5,10 +5,11 @@ import React, { createContext, forwardRef, useContext, useRef } from "react";
 import { Day, DayPicker, type DayProps } from "react-day-picker";
 import { useLayoutContext } from "../../context/LayoutContext";
 import { useMultipleRefs } from "../../hooks/useMultipleRefs";
+import { styleRules } from "../../styles/css";
 import { calendarStyles, names } from "./calendar.styles";
 import { CalendarDefaultsContext } from "./CalendarDefaultsContext";
 import { MonthsDropdown, YearsDropdown } from "./components/helperComponents";
-import { getDayPickerStyles } from "./utils/styles";
+import { getDayPickerStyles, renderedDayPickerClasses } from "./utils/styles";
 
 const CalendarContext = createContext<{
   mode: CalendarProps["mode"];
@@ -54,20 +55,23 @@ export const Calendar = forwardRef<HTMLDivElement, CalendarProps>(
     const components = mergeDefaults
       ? { ...commonProps.components, ...props.components }
       : (props.components ?? commonProps.components);
+    const rootClass = clsx(names.root, styles.layout[layout], names.layout[layout], className);
+    const dayPickerClasses = { ...getDayPickerStyles(styles), ...classNames };
     return (
-      <div
-        ref={assignRef}
-        className={clsx(names.root, styles.layout[layout], names.layout[layout], className)}
-      >
-        <CalendarContext.Provider value={{ mode: props.mode, Day: props.components?.Day ?? Day }}>
-          <DayPicker
-            {...commonProps}
-            {...props}
-            components={{ ...components, Day: CalendarDay }}
-            classNames={{ ...getDayPickerStyles(styles), ...classNames }}
-          />
-        </CalendarContext.Provider>
-      </div>
+      <>
+        <div ref={assignRef} className={rootClass}>
+          <CalendarContext.Provider value={{ mode: props.mode, Day: props.components?.Day ?? Day }}>
+            <DayPicker
+              {...commonProps}
+              {...props}
+              components={{ ...components, Day: CalendarDay }}
+              classNames={dayPickerClasses}
+            />
+          </CalendarContext.Provider>
+        </div>
+        {styleRules(rootClass)}
+        {styleRules(...renderedDayPickerClasses(dayPickerClasses, { ...commonProps, ...props }))}
+      </>
     );
   },
 );

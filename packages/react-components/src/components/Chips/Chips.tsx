@@ -1,7 +1,8 @@
 "use client";
 
 import clsx from "clsx";
-import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
+import { forwardRef, Fragment, type HTMLAttributes, type ReactNode } from "react";
+import { styleRules } from "../../styles/css";
 import { chipsStyles, names } from "./chips.styles";
 
 export type ChipsSelectionType = "single" | "multiple";
@@ -40,34 +41,48 @@ const Chips = forwardRef<HTMLDivElement, ChipsProps>((props, ref) => {
   // Items without a value have no stable identity to select or toggle by.
   const renderableItems = (items ?? []).filter((item) => Boolean(item?.value));
 
+  const rootClass = clsx(styles.root, names.root, className);
   return (
-    <div
-      ref={ref}
-      className={clsx(styles.root, names.root, className)}
-      role="listbox"
-      aria-multiselectable={type === "multiple"}
-      {...rest}
-    >
-      {renderableItems.map((item) => {
-        const isSelected = selected.includes(item.value);
-        const isDisabled = disabled || item.disabled === true;
+    <>
+      <div
+        ref={ref}
+        className={rootClass}
+        role="listbox"
+        aria-multiselectable={type === "multiple"}
+        {...rest}
+      >
+        {renderableItems.map((item) => {
+          const isSelected = selected.includes(item.value);
+          const isDisabled = disabled || item.disabled === true;
 
-        return (
-          <button
-            key={item.value}
-            type="button"
-            role="option"
-            aria-selected={isSelected}
-            disabled={isDisabled}
-            className={clsx(styles.item, names.item)}
-            onClick={() => onToggle?.(item.value)}
-          >
-            {item.icon ? <span className={clsx(styles.icon, names.icon)}>{item.icon}</span> : null}
-            <span className={clsx(styles.text, names.text)}>{item.label}</span>
-          </button>
-        );
-      })}
-    </div>
+          const itemClass = clsx(styles.item, names.item);
+          const textClass = clsx(styles.text, names.text);
+          return (
+            <Fragment key={item.value}>
+              <button
+                type="button"
+                role="option"
+                aria-selected={isSelected}
+                disabled={isDisabled}
+                className={itemClass}
+                onClick={() => onToggle?.(item.value)}
+              >
+                {item.icon ? (
+                  <>
+                    <span className={clsx(styles.icon, names.icon)}>{item.icon}</span>
+                    {styleRules(clsx(styles.icon, names.icon))}
+                  </>
+                ) : null}
+                <span className={textClass}>{item.label}</span>
+                {styleRules(textClass)}
+              </button>
+              {styleRules(itemClass)}
+            </Fragment>
+          );
+        })}
+      </div>
+      {styleRules(rootClass)}
+    </>
   );
 });
 

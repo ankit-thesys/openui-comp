@@ -5,6 +5,7 @@ import { CheckCheck, Copy } from "lucide-react";
 import { useState, type ComponentProps } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import vscDarkPlus from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus";
+import { styleRules } from "../../styles/css";
 import { IconButton } from "../IconButton";
 import { codeBlockCopyButtonStyles, codeBlockStyles, names } from "./codeBlock.styles";
 
@@ -14,7 +15,13 @@ const defaultTokenTheme = { ...vscDarkPlus, 'pre[class*="language-"]': {} };
 
 function CopyButton({ className, ...props }: ComponentProps<"button">) {
   const styles = codeBlockCopyButtonStyles;
-  return <button {...props} className={clsx(styles.root, names.copyButton, className)} />;
+  const rootClass = clsx(styles.root, names.copyButton, className);
+  return (
+    <>
+      <button {...props} className={rootClass} />
+      {styleRules(rootClass)}
+    </>
+  );
 }
 
 export interface CodeBlockProps {
@@ -49,34 +56,35 @@ export const CodeBlock = ({
     setTimeout(() => setCopied(false), 1000);
   };
 
+  const rootClass = clsx(styles.root, names.root, className);
+  const defaultFrameClass =
+    syntaxHighlighterClassName ??
+    clsx(useDefaultFrame && styles.defaultFrame, styles.syntaxHighlighter, names.syntaxHighlighter);
   return (
-    <div className={clsx(styles.root, names.root, className)}>
-      <IconButton
-        onClick={handleCopy}
-        variant="secondary"
-        size={"small"}
-        asChild
-        data-state={copied ? "copied" : "idle"}
-        icon={copied ? <CheckCheck /> : <Copy />}
-        aria-label={copied ? "Copied to clipboard" : "Copy code"}
-      >
-        <CopyButton />
-      </IconButton>
-      <SyntaxHighlighter
-        style={theme ?? (useDefaultFrame ? defaultTokenTheme : vscDarkPlus)}
-        language={language}
-        PreTag="div"
-        className={
-          syntaxHighlighterClassName ??
-          clsx(
-            useDefaultFrame && styles.defaultFrame,
-            styles.syntaxHighlighter,
-            names.syntaxHighlighter,
-          )
-        }
-      >
-        {codeString}
-      </SyntaxHighlighter>
-    </div>
+    <>
+      <div className={rootClass}>
+        <IconButton
+          onClick={handleCopy}
+          variant="secondary"
+          size={"small"}
+          asChild
+          data-state={copied ? "copied" : "idle"}
+          icon={copied ? <CheckCheck /> : <Copy />}
+          aria-label={copied ? "Copied to clipboard" : "Copy code"}
+        >
+          <CopyButton />
+        </IconButton>
+        <SyntaxHighlighter
+          style={theme ?? (useDefaultFrame ? defaultTokenTheme : vscDarkPlus)}
+          language={language}
+          PreTag="div"
+          className={defaultFrameClass}
+        >
+          {codeString}
+        </SyntaxHighlighter>
+        {styleRules(defaultFrameClass)}
+      </div>
+      {styleRules(rootClass)}
+    </>
   );
 };

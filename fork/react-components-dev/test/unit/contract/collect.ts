@@ -1,6 +1,7 @@
-import { getComponentStyles } from "../../support/sheet";
 import type { ReactElement } from "react";
 import { renderToString } from "react-dom/server";
+import { withoutServedRules } from "../../support/markup";
+import { getComponentStyles } from "../../support/sheet";
 import { indexOutsideStrings, matchingBrace } from "./checks";
 
 /**
@@ -13,7 +14,7 @@ export function renderAndCollect(
   render = renderToString,
 ): { html: string; css: string } {
   const before = getComponentStyles();
-  const html = elements.map((element) => render(element)).join("");
+  const html = elements.map((element) => withoutServedRules(render(element))).join("");
   return { html, css: cssFor(html, getComponentStyles(), before) };
 }
 

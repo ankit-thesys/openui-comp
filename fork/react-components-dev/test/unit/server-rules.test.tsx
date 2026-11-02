@@ -68,6 +68,27 @@ const wired = new Set([
   // Dependencies the charts render, wired by the same codemod run.
   "IconButton",
   "Separator",
+  // Batch 4: media and everything else (#184). Modal renders nothing on the server.
+  "Buttons",
+  "Calendar",
+  "Carousel",
+  "Chips",
+  "Citation",
+  "CodeBlock",
+  "DotMatrixLoader",
+  "Image",
+  "ImageBlock",
+  "ImageGallery",
+  "Skeleton",
+  "SourceFaviconImage",
+  "Sources",
+  "TooltipWrapper",
+  // Composed families, wired once their dependencies were (IconButton, CodeBlock, TextBlock).
+  "SectionBlock",
+  "MarkDownRenderer",
+  "Table",
+  "ImageText",
+  "ImageTextLarge",
 ]);
 const contracts = [...migratedComponents, ...otherChartContracts];
 const unwired = new Set(

@@ -1,7 +1,8 @@
 "use client";
 
 import clsx from "clsx";
-import React, { useCallback, useMemo, useState } from "react";
+import React, { Fragment, useCallback, useMemo, useState } from "react";
+import { styleRules } from "../../styles/css";
 import { Button } from "../Button";
 import { GalleryModal } from "./GalleryModal";
 import { imageGalleryStyles, names } from "./imageGallery.styles";
@@ -60,40 +61,56 @@ export const ImageGallery: React.FC<OpenUIGalleryProps> = ({ images }) => {
     setSelectedImageIndex(index);
   }, []);
 
+  const rootClass = clsx(styles.root, names.root);
+  const gridClass = clsx(styles.grid, names.grid);
   return (
-    <div className={clsx(styles.root, names.root)} data-layout={layoutClass}>
-      <div className={clsx(styles.grid, names.grid)}>
-        {visibleImages.map((image, index) => (
-          <div
-            key={index}
-            className={clsx(styles.image, names.image)}
-            data-position={index + 1}
-            onClick={() => handleImageClick(index)}
-          >
-            <img
-              className={clsx(styles.img, names.img)}
-              src={image.src}
-              alt={image.alt || `Gallery image ${index + 1}`}
-            />
-          </div>
-        ))}
-        {shouldShowButton && (
-          <div className={clsx(styles.showAll, names.showAll)}>
-            <Button variant="primary" size="small" onClick={toggleShowAll}>
-              Show All
-            </Button>
-          </div>
+    <>
+      <div className={rootClass} data-layout={layoutClass}>
+        <div className={gridClass}>
+          {visibleImages.map((image, index) => {
+            const imageClass = clsx(styles.image, names.image);
+            const imgClass = clsx(styles.img, names.img);
+            return (
+              <Fragment key={index}>
+                <div
+                  className={imageClass}
+                  data-position={index + 1}
+                  onClick={() => handleImageClick(index)}
+                >
+                  <img
+                    className={imgClass}
+                    src={image.src}
+                    alt={image.alt || `Gallery image ${index + 1}`}
+                  />
+                  {styleRules(imgClass)}
+                </div>
+                {styleRules(imageClass)}
+              </Fragment>
+            );
+          })}
+          {shouldShowButton && (
+            <>
+              <div className={clsx(styles.showAll, names.showAll)}>
+                <Button variant="primary" size="small" onClick={toggleShowAll}>
+                  Show All
+                </Button>
+              </div>
+              {styleRules(clsx(styles.showAll, names.showAll))}
+            </>
+          )}
+        </div>
+        {styleRules(gridClass)}
+
+        {showAll && (
+          <GalleryModal
+            images={images}
+            selectedImageIndex={selectedImageIndex}
+            setSelectedImageIndex={setSelectedImageIndexMemoized}
+            onClose={toggleShowAll}
+          />
         )}
       </div>
-
-      {showAll && (
-        <GalleryModal
-          images={images}
-          selectedImageIndex={selectedImageIndex}
-          setSelectedImageIndex={setSelectedImageIndexMemoized}
-          onClose={toggleShowAll}
-        />
-      )}
-    </div>
+      {styleRules(rootClass)}
+    </>
   );
 };
