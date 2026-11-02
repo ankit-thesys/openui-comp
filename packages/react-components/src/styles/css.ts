@@ -25,6 +25,8 @@ type Store = {
   layerOrder: string | undefined;
   // Whether this page called configureStyles; if not, the browser takes the server's layers.
   configured: boolean;
+  // Returns the current request's style nonce for server tags.
+  nonce?: (() => string | undefined) | undefined;
   // Each generated class's own rule text, and which of those classes are keyframes.
   classes: Record<string, string>;
   keyframes: Record<string, true>;
@@ -202,8 +204,12 @@ export const css: Css = recording(gooberCss.bind({ target }), false);
 // Goober's exported keyframes is already bound, so rebinding it would discard our target.
 export const keyframes: Keyframes = recording(gooberCss.bind({ target, k: 1 }), true);
 
+/** The current request's style nonce, from `configureStyles({ nonce })`, for server tags. */
+export const serverNonce = (): string | undefined => store.nonce?.();
+
+// React keeps a hoisted tag's rules only when its nonce matches the render's `nonce.style`.
 const hoisted = (href: string, precedence: string, text: string) =>
-  createElement("style", { key: href, href, precedence }, text);
+  createElement("style", { key: href, href, precedence, nonce: serverNonce() }, text);
 
 type StyleModule = string | { readonly [key: string]: StyleModule };
 
@@ -259,6 +265,12 @@ export type ConfigureStylesOptions = {
    * in <head>.
    */
   order?: string;
+  /**
+   * Returns the current request's CSP style nonce, the one passed to React's server render as
+   * `nonce: { style }`, for the tags server renders hoist. Read it from request-scoped storage
+   * (such as AsyncLocalStorage) so concurrent requests each get their own.
+   */
+  nonce?: () => string | undefined;
 };
 
 // Bundlers replace `process.env.NODE_ENV` but leave `process` undefined, so a `typeof process`
@@ -304,5 +316,6 @@ export function configureStyles(options: ConfigureStylesOptions): void {
   }
   store.layer = options.layer;
   store.layerOrder = order?.join(", ");
+  store.nonce = options.nonce;
   store.configured = true;
 }

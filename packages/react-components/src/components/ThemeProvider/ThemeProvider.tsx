@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useId, useInsertionEffect, useMemo } from "react";
+import { serverNonce } from "../../styles/css";
 import { createStyleTag } from "../../styles/styleTag";
 import { defaultDarkTheme, defaultLightTheme } from "./defaultTheme";
 import { Theme, ThemeMode } from "./types";
@@ -266,7 +267,7 @@ export const ThemeProvider = ({
   // On the server, React hoists the theme into <head>; browsers render nothing here.
   const served =
     typeof window === "undefined" ? (
-      <style href={href} precedence={THEME_PRECEDENCE}>
+      <style href={href} precedence={THEME_PRECEDENCE} nonce={serverNonce()}>
         {rule}
       </style>
     ) : null;

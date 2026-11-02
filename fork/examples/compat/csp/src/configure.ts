@@ -1,5 +1,9 @@
 // The layer and its order, set in code both the server and the browser run (#178).
-import { configureStyles } from "@openuidev/react-components";
+import { configureStyles, type ConfigureStylesOptions } from "@openuidev/react-components";
 
-if (__COMPAT_MODE__ === "layered")
-  configureStyles({ layer: "openui", order: "theme, base, openui, components, utilities" });
+export const layers: ConfigureStylesOptions =
+  __COMPAT_MODE__ === "layered"
+    ? { layer: "openui", order: "theme, base, openui, components, utilities" }
+    : {};
+
+configureStyles(layers);
