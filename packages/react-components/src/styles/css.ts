@@ -21,6 +21,10 @@ type Store = {
   emittedLayer: string | undefined;
   scheduled: boolean;
   layer: string | undefined;
+  // The app's whole layer order, declared before any component layer.
+  layerOrder: string | undefined;
+  // Whether this page called configureStyles; if not, the browser takes the server's layers.
+  configured: boolean;
   // Each generated class's own rule text, and which of those classes are keyframes.
   classes: Record<string, string>;
   keyframes: Record<string, true>;
@@ -45,6 +49,7 @@ store.classes ??= {};
 store.keyframes ??= {};
 store.order ??= [];
 store.considered ??= 0;
+store.configured ??= false;
 
 // Goober 2.1.19 also tells the browser from the server by `window`.
 const inBrowser = () => typeof window === "object";
@@ -65,8 +70,20 @@ function servedClasses(): Record<string, true> {
   return found;
 }
 
+// The layer and layer order a server render used, read from its tags' text: the token defaults
+// open with the order statement, and component rules sit in `@layer <name>{…}` blocks.
+function adoptServerLayers() {
+  const defaults = document.querySelector(hoistedTags(DEFAULTS_PRECEDENCE))?.textContent ?? "";
+  const order = /^@layer ([^;{]+);/.exec(defaults)?.[1];
+  if (order && order !== DEFAULTS_HREF) store.layerOrder = order;
+  const rules = document.querySelector(hoistedTags(PRECEDENCE))?.textContent ?? "";
+  const layer = /^@layer ([^\s{;]+)\{/.exec(rules)?.[1];
+  if (layer) store.layer = layer;
+}
+
 function write() {
   store.scheduled = false;
+  if (!store.configured) adoptServerLayers();
   const served = servedClasses();
   let fresh = "";
   for (; store.considered < store.order.length; store.considered++) {
@@ -81,6 +98,8 @@ function write() {
     tag = createStyleTag();
     tag.id = SHEET_ID;
     tag.setAttribute("data-precedence", PRECEDENCE);
+    // The layer order goes before the first layer block, wherever the tag sits.
+    if (store.layerOrder) tag.append(`@layer ${store.layerOrder};`);
     // After the server's component rules, else the token defaults, else first in <head>.
     const tags = document.querySelectorAll(hoistedTags(PRECEDENCE));
     const anchor =
@@ -177,7 +196,11 @@ export function styleRules(...classNames: Array<string | false | null | undefine
   for (const className of classNames) if (className) className.split(" ").forEach(add);
   if (!names.length) return null;
   return [
-    hoisted(DEFAULTS_HREF, DEFAULTS_PRECEDENCE, DEFAULTS_RULE),
+    hoisted(
+      DEFAULTS_HREF,
+      DEFAULTS_PRECEDENCE,
+      (store.layerOrder ? `@layer ${store.layerOrder};` : "") + DEFAULTS_RULE,
+    ),
     ...names.map((name) => hoisted(name, PRECEDENCE, wrap(store.classes[name]!))),
   ];
 }
@@ -185,6 +208,12 @@ export function styleRules(...classNames: Array<string | false | null | undefine
 export type ConfigureStylesOptions = {
   /** App-wide cascade layer, or undefined for unlayered component rules. */
   layer?: string;
+  /**
+   * The app's whole layer order, such as `"theme, base, openui, components, utilities"`. Declared
+   * before any component layer, on the server and in the browser, since component rules go first
+   * in <head>.
+   */
+  order?: string;
 };
 
 // Bundlers replace `process.env.NODE_ENV` but leave `process` undefined, so a `typeof process`
@@ -208,6 +237,15 @@ export function configureStyles(options: ConfigureStylesOptions): void {
     }
     return;
   }
+  const order = options.order?.split(",").map((name) => name.trim());
+  if (order && !order.every((name) => LAYER_NAME.test(name))) {
+    if (development()) {
+      console.warn(
+        `[OpenUI] configureStyles order "${options.order}" is not a list of cascade layer names. It is ignored.`,
+      );
+    }
+    return;
+  }
   if (
     store.emitted &&
     options.layer !== store.layer &&
@@ -220,4 +258,6 @@ export function configureStyles(options: ConfigureStylesOptions): void {
     );
   }
   store.layer = options.layer;
+  store.layerOrder = order?.join(", ");
+  store.configured = true;
 }

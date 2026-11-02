@@ -2,4 +2,5 @@
 import { configureStyles } from "@openuidev/react-components";
 import { layered } from "./compat";
 
-if (layered) configureStyles({ layer: "openui" });
+if (layered)
+  configureStyles({ layer: "openui", order: "theme, base, openui, components, utilities" });

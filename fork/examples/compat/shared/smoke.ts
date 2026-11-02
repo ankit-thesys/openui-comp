@@ -81,6 +81,8 @@ export async function smoke(page: Page, expect: Expect, options: SmokeOptions): 
         let ruleCount = 0;
         const walk = (rules: CSSRuleList, layer: string, context: string[]) => {
           for (const rule of rules) {
+            // An order statement (`@layer a, b;`) holds no rules.
+            if (rule instanceof CSSLayerStatementRule) continue;
             if (rule instanceof CSSLayerBlockRule) {
               walk(rule.cssRules, [layer, rule.name].filter(Boolean).join("."), context);
             } else if (rule instanceof CSSGroupingRule) {
