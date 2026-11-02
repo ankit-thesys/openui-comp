@@ -4,6 +4,7 @@ import clsx from "clsx";
 import debounce from "lodash-es/debounce.js";
 import { AlertCircle } from "lucide-react";
 import { ChangeEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { styleRules } from "../../styles/css";
 import { Input } from "../Input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../Select";
 import { Slider, SliderProps } from "./Slider";
@@ -43,35 +44,45 @@ const ValueInput = ({
     }
   }, [value, isFocused]);
 
+  const validatedInputClass = clsx(styles.validatedInput, names.validatedInput);
+  const inputClass = clsx(inputCss.input, names.input);
   return (
-    <div className={clsx(styles.validatedInput, names.validatedInput)}>
-      <Input
-        type="text"
-        value={inputValue}
-        onChange={(e: ChangeEvent<HTMLInputElement>) => {
-          const { value: newValue } = e.target;
-          setInputValue(newValue);
+    <>
+      <div className={validatedInputClass}>
+        <Input
+          type="text"
+          value={inputValue}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => {
+            const { value: newValue } = e.target;
+            setInputValue(newValue);
 
-          if (!isNaN(Number(newValue))) {
-            onChange(Number(newValue));
-          }
-        }}
-        className={clsx(inputCss.input, names.input)}
-        hasError={Boolean(error)}
-        disabled={disabled}
-        onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
-      />
-    </div>
+            if (!isNaN(Number(newValue))) {
+              onChange(Number(newValue));
+            }
+          }}
+          className={inputClass}
+          hasError={Boolean(error)}
+          disabled={disabled}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+        />
+        {styleRules(inputClass)}
+      </div>
+      {styleRules(validatedInputClass)}
+    </>
   );
 };
 
 const BlockSelectTrigger = () => {
   const styles = sliderBlockSelectStyles;
+  const triggerClass = clsx(styles.trigger, names.selectTrigger);
   return (
-    <SelectTrigger className={clsx(styles.trigger, names.selectTrigger)}>
-      <SelectValue />
-    </SelectTrigger>
+    <>
+      <SelectTrigger className={triggerClass}>
+        <SelectValue />
+      </SelectTrigger>
+      {styleRules(triggerClass)}
+    </>
   );
 };
 
@@ -152,104 +163,126 @@ export const SliderBlock = (props: SliderBlockProps) => {
         (_, i) => min + i * effectiveStep,
       );
       return isRange ? (
-        <div className={clsx(styles.controls, names.controls)} data-range="">
-          <div className={clsx(styles.controlContainer, names.selectContainer)}>
+        <>
+          <div className={clsx(styles.controls, names.controls)} data-range="">
+            <div className={clsx(styles.controlContainer, names.selectContainer)}>
+              <Select
+                value={String(value[0])}
+                disabled={disabled}
+                onValueChange={(val) =>
+                  setValueAndCommit([Number(val), value[1] ?? max].sort((a, b) => a - b))
+                }
+              >
+                <BlockSelectTrigger />
+                <SelectContent>
+                  {allOptions
+                    .filter((o) => o < (value[1] ?? max))
+                    .map((o) => (
+                      <SelectItem key={o} value={String(o)}>
+                        {String(o)}
+                      </SelectItem>
+                    ))}
+                </SelectContent>
+              </Select>
+              <div className={clsx(styles.separator, names.separator)} />
+              {styleRules(clsx(styles.separator, names.separator))}
+              <Select
+                value={String(value[1])}
+                disabled={disabled}
+                onValueChange={(val) =>
+                  setValueAndCommit([value[0] ?? min, Number(val)].sort((a, b) => a - b))
+                }
+              >
+                <BlockSelectTrigger />
+                <SelectContent>
+                  {allOptions
+                    .filter((o) => o > (value[0] ?? min))
+                    .map((o) => (
+                      <SelectItem key={o} value={String(o)}>
+                        {String(o)}
+                      </SelectItem>
+                    ))}
+                </SelectContent>
+              </Select>
+            </div>
+            {styleRules(clsx(styles.controlContainer, names.selectContainer))}
+          </div>
+          {styleRules(clsx(styles.controls, names.controls))}
+        </>
+      ) : (
+        <>
+          <div className={clsx(styles.controls, names.controls)}>
             <Select
               value={String(value[0])}
               disabled={disabled}
-              onValueChange={(val) =>
-                setValueAndCommit([Number(val), value[1] ?? max].sort((a, b) => a - b))
-              }
+              onValueChange={(val) => setValueAndCommit([Number(val)])}
             >
               <BlockSelectTrigger />
               <SelectContent>
-                {allOptions
-                  .filter((o) => o < (value[1] ?? max))
-                  .map((o) => (
-                    <SelectItem key={o} value={String(o)}>
-                      {String(o)}
-                    </SelectItem>
-                  ))}
-              </SelectContent>
-            </Select>
-            <div className={clsx(styles.separator, names.separator)} />
-            <Select
-              value={String(value[1])}
-              disabled={disabled}
-              onValueChange={(val) =>
-                setValueAndCommit([value[0] ?? min, Number(val)].sort((a, b) => a - b))
-              }
-            >
-              <BlockSelectTrigger />
-              <SelectContent>
-                {allOptions
-                  .filter((o) => o > (value[0] ?? min))
-                  .map((o) => (
-                    <SelectItem key={o} value={String(o)}>
-                      {String(o)}
-                    </SelectItem>
-                  ))}
+                {allOptions.map((o) => (
+                  <SelectItem key={o} value={String(o)}>
+                    {String(o)}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </div>
-        </div>
-      ) : (
-        <div className={clsx(styles.controls, names.controls)}>
-          <Select
-            value={String(value[0])}
-            disabled={disabled}
-            onValueChange={(val) => setValueAndCommit([Number(val)])}
-          >
-            <BlockSelectTrigger />
-            <SelectContent>
-              {allOptions.map((o) => (
-                <SelectItem key={o} value={String(o)}>
-                  {String(o)}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
+          {styleRules(clsx(styles.controls, names.controls))}
+        </>
       );
     } else {
       return isRange ? (
-        <div className={clsx(styles.controls, names.controls)} data-range="">
-          <div className={clsx(styles.controlContainer, names.inputContainer)}>
+        <>
+          <div className={clsx(styles.controls, names.controls)} data-range="">
+            <div className={clsx(styles.controlContainer, names.inputContainer)}>
+              <ValueInput
+                value={value[0] ?? min}
+                onChange={(newMin) => setValueAndCommit([newMin, value[1] ?? max])}
+                error={minError}
+                disabled={disabled}
+              />
+              <div className={clsx(styles.separator, names.separator)} />
+              {styleRules(clsx(styles.separator, names.separator))}
+              <ValueInput
+                value={value[1] ?? max}
+                onChange={(newMax) => setValueAndCommit([value[0] ?? min, newMax])}
+                error={maxError}
+                disabled={disabled}
+              />
+            </div>
+            {styleRules(clsx(styles.controlContainer, names.inputContainer))}
+            {(minError || maxError) && (
+              <>
+                <div className={clsx(styles.error, names.error)}>
+                  <AlertCircle size={14} className={names.errorIcon} /> {minError || maxError}
+                </div>
+                {styleRules(clsx(styles.error, names.error))}
+              </>
+            )}
+          </div>
+          {styleRules(clsx(styles.controls, names.controls))}
+        </>
+      ) : (
+        <>
+          <div className={clsx(styles.controls, names.controls)}>
             <ValueInput
               value={value[0] ?? min}
-              onChange={(newMin) => setValueAndCommit([newMin, value[1] ?? max])}
+              onChange={(newVal) => setValueAndCommit([newVal])}
               error={minError}
               disabled={disabled}
             />
-            <div className={clsx(styles.separator, names.separator)} />
-            <ValueInput
-              value={value[1] ?? max}
-              onChange={(newMax) => setValueAndCommit([value[0] ?? min, newMax])}
-              error={maxError}
-              disabled={disabled}
-            />
+            {minError && (
+              <>
+                <div className={clsx(styles.error, names.error)}>
+                  <AlertCircle size={14} className={names.errorIcon} />
+                  {minError}
+                </div>
+                {styleRules(clsx(styles.error, names.error))}
+              </>
+            )}
           </div>
-          {(minError || maxError) && (
-            <div className={clsx(styles.error, names.error)}>
-              <AlertCircle size={14} className={names.errorIcon} /> {minError || maxError}
-            </div>
-          )}
-        </div>
-      ) : (
-        <div className={clsx(styles.controls, names.controls)}>
-          <ValueInput
-            value={value[0] ?? min}
-            onChange={(newVal) => setValueAndCommit([newVal])}
-            error={minError}
-            disabled={disabled}
-          />
-          {minError && (
-            <div className={clsx(styles.error, names.error)}>
-              <AlertCircle size={14} className={names.errorIcon} />
-              {minError}
-            </div>
-          )}
-        </div>
+          {styleRules(clsx(styles.controls, names.controls))}
+        </>
       );
     }
   }, [
@@ -270,29 +303,39 @@ export const SliderBlock = (props: SliderBlockProps) => {
   const hasError =
     !isStreaming && !isDiscrete && (isRange ? Boolean(minError || maxError) : Boolean(minError));
 
+  const rootClass = clsx(styles.root, names.root, names.variant[variant]);
+  const headerClass = clsx(styles.header, names.header);
+  const labelClass = clsx(styles.label, names.label);
+  const contentClass = clsx(styles.content, names.content);
   return (
-    <div className={clsx(styles.root, names.root, names.variant[variant])}>
-      <div className={clsx(styles.header, names.header)} data-invalid={hasError || undefined}>
-        <span className={clsx(styles.label, names.label)}>{label}</span>
-        {controlElements}
+    <>
+      <div className={rootClass}>
+        <div className={headerClass} data-invalid={hasError || undefined}>
+          <span className={labelClass}>{label}</span>
+          {styleRules(labelClass)}
+          {controlElements}
+        </div>
+        {styleRules(headerClass)}
+        <div className={contentClass}>
+          <Slider
+            {...sliderProps}
+            value={value}
+            onValueChange={(v) => {
+              setValueAndCommit([...v].sort((a, b) => a - b));
+            }}
+            min={min}
+            max={max}
+            step={effectiveStep}
+            // Dots are the only thing `variant` drives; `step` still reaches the
+            // primitive, so suppressing them mid-stream keeps snapping intact.
+            variant={isStreaming ? "continuous" : variant}
+            name={name}
+            disabled={disabled}
+          />
+        </div>
+        {styleRules(contentClass)}
       </div>
-      <div className={clsx(styles.content, names.content)}>
-        <Slider
-          {...sliderProps}
-          value={value}
-          onValueChange={(v) => {
-            setValueAndCommit([...v].sort((a, b) => a - b));
-          }}
-          min={min}
-          max={max}
-          step={effectiveStep}
-          // Dots are the only thing `variant` drives; `step` still reaches the
-          // primitive, so suppressing them mid-stream keeps snapping intact.
-          variant={isStreaming ? "continuous" : variant}
-          name={name}
-          disabled={disabled}
-        />
-      </div>
-    </div>
+      {styleRules(rootClass)}
+    </>
   );
 };

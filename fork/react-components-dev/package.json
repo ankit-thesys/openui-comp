@@ -19,7 +19,8 @@
     "format:fix": "prettier --write ../../packages/react-components/src ./test",
     "ci": "pnpm --filter @openuidev/react-components run typecheck && pnpm --filter @openuidev/react-components run lint:check && tsc -p tsconfig.test.json && pnpm run test && pnpm run format:check",
     "css:check": "node scripts/css-snapshot.mjs",
-    "css:record": "node scripts/css-snapshot.mjs --record"
+    "css:record": "node scripts/css-snapshot.mjs --record",
+    "wire:rules": "node scripts/wire-style-rules.mjs"
   },
   "devDependencies": {
     "@openuidev/react-components": "workspace:*",

@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import React, { forwardRef } from "react";
+import { styleRules } from "../../../styles/css";
 import { useFormControlContext } from "../context";
 import { hintStyles, names } from "./hint.styles";
 
@@ -17,16 +18,20 @@ const Hint = forwardRef<HTMLDivElement, HintProps>(
     const styles = hintStyles;
     const ctx = useFormControlContext();
     const resolvedHasError = hasError ?? ctx?.hasError ?? false;
+    const rootClass = clsx(styles.root, names.root, className);
     return (
-      <div
-        ref={ref}
-        className={clsx(styles.root, names.root, className)}
-        data-invalid={resolvedHasError || undefined}
-        style={style}
-        {...props}
-      >
-        {children}
-      </div>
+      <>
+        <div
+          ref={ref}
+          className={rootClass}
+          data-invalid={resolvedHasError || undefined}
+          style={style}
+          {...props}
+        >
+          {children}
+        </div>
+        {styleRules(rootClass)}
+      </>
     );
   },
 );

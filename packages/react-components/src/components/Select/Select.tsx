@@ -4,6 +4,7 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 import clsx from "clsx";
 import { Check, ChevronDown } from "lucide-react";
 import React, { createContext, forwardRef, useContext, useEffect, useMemo, useState } from "react";
+import { styleRules } from "../../styles/css";
 import { useTheme } from "../ThemeProvider";
 import { names, selectStyles } from "./select.styles";
 
@@ -42,12 +43,12 @@ export const SelectGroup = forwardRef<
   SelectGroupProps
 >(({ className, ...props }, ref) => {
   const styles = selectStyles;
+  const groupClass = clsx(styles.group, names.group, className);
   return (
-    <SelectPrimitive.Group
-      ref={ref}
-      className={clsx(styles.group, names.group, className)}
-      {...props}
-    />
+    <>
+      <SelectPrimitive.Group ref={ref} className={groupClass} {...props} />
+      {styleRules(groupClass)}
+    </>
   );
 });
 
@@ -78,26 +79,29 @@ export const SelectTrigger = forwardRef<
   useEffect(() => {
     if (sizeContext && sizeContext.size !== resolvedSize) sizeContext.setSize(resolvedSize);
   }, [resolvedSize, sizeContext]);
+  const triggerClass = clsx(
+    styles.trigger,
+    names.trigger,
+    styles.size[resolvedSize],
+    names.size[resolvedSize],
+    hideDropdownIcon && names.hideDropdownIcon.true,
+    className,
+  );
   return (
-    <SelectPrimitive.Trigger
-      ref={ref}
-      className={clsx(
-        styles.trigger,
-        names.trigger,
-        styles.size[resolvedSize],
-        names.size[resolvedSize],
-        hideDropdownIcon && names.hideDropdownIcon.true,
-        className,
-      )}
-      {...props}
-    >
-      {children}
-      {!hideDropdownIcon && (
-        <SelectPrimitive.Icon asChild>
-          <ChevronDown className={clsx(styles.triggerIcon, names.triggerIcon)} />
-        </SelectPrimitive.Icon>
-      )}
-    </SelectPrimitive.Trigger>
+    <>
+      <SelectPrimitive.Trigger ref={ref} className={triggerClass} {...props}>
+        {children}
+        {!hideDropdownIcon && (
+          <>
+            <SelectPrimitive.Icon asChild>
+              <ChevronDown className={clsx(styles.triggerIcon, names.triggerIcon)} />
+            </SelectPrimitive.Icon>
+            {styleRules(clsx(styles.triggerIcon, names.triggerIcon))}
+          </>
+        )}
+      </SelectPrimitive.Trigger>
+      {styleRules(triggerClass)}
+    </>
   );
 });
 
@@ -177,12 +181,12 @@ export const SelectLabel = forwardRef<
   SelectLabelProps
 >(({ className, ...props }, ref) => {
   const styles = selectStyles;
+  const labelClass = clsx(styles.label, names.label, className);
   return (
-    <SelectPrimitive.Label
-      ref={ref}
-      className={clsx(styles.label, names.label, className)}
-      {...props}
-    />
+    <>
+      <SelectPrimitive.Label ref={ref} className={labelClass} {...props} />
+      {styleRules(labelClass)}
+    </>
   );
 });
 
@@ -196,29 +200,33 @@ export const SelectItem = forwardRef<
   SelectItemProps
 >(({ className, children, showTick = true, textValue, ...props }, ref) => {
   const styles = selectStyles;
+  const itemClass = clsx(
+    styles.item,
+    names.item,
+    showTick && [styles.showTick, names.showTick.true],
+    className,
+  );
   return (
-    <SelectPrimitive.Item
-      ref={ref}
-      className={clsx(
-        styles.item,
-        names.item,
-        showTick && [styles.showTick, names.showTick.true],
-        className,
-      )}
-      {...props}
-    >
-      {showTick && (
-        <span className={clsx(styles.checkWrapper, names.checkWrapper)}>
-          <SelectPrimitive.ItemIndicator className={names.indicator}>
-            <Check className={clsx(styles.checkIcon, names.checkIcon)} />
-          </SelectPrimitive.ItemIndicator>
-        </span>
-      )}
-      <SelectPrimitive.ItemText asChild>
-        <span className={names.itemText}>{children}</span>
-      </SelectPrimitive.ItemText>
-      {textValue && <span className={names.textValue}>{textValue}</span>}
-    </SelectPrimitive.Item>
+    <>
+      <SelectPrimitive.Item ref={ref} className={itemClass} {...props}>
+        {showTick && (
+          <>
+            <span className={clsx(styles.checkWrapper, names.checkWrapper)}>
+              <SelectPrimitive.ItemIndicator className={names.indicator}>
+                <Check className={clsx(styles.checkIcon, names.checkIcon)} />
+                {styleRules(clsx(styles.checkIcon, names.checkIcon))}
+              </SelectPrimitive.ItemIndicator>
+            </span>
+            {styleRules(clsx(styles.checkWrapper, names.checkWrapper))}
+          </>
+        )}
+        <SelectPrimitive.ItemText asChild>
+          <span className={names.itemText}>{children}</span>
+        </SelectPrimitive.ItemText>
+        {textValue && <span className={names.textValue}>{textValue}</span>}
+      </SelectPrimitive.Item>
+      {styleRules(itemClass)}
+    </>
   );
 });
 
@@ -230,11 +238,11 @@ export const SelectSeparator = forwardRef<
   SelectSeparatorProps
 >(({ className, ...props }, ref) => {
   const styles = selectStyles;
+  const separatorClass = clsx(styles.separator, names.separator, className);
   return (
-    <SelectPrimitive.Separator
-      ref={ref}
-      className={clsx(styles.separator, names.separator, className)}
-      {...props}
-    />
+    <>
+      <SelectPrimitive.Separator ref={ref} className={separatorClass} {...props} />
+      {styleRules(separatorClass)}
+    </>
   );
 });

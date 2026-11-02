@@ -3,6 +3,7 @@
 import * as LabelPrimitive from "@radix-ui/react-label";
 import clsx from "clsx";
 import React, { forwardRef } from "react";
+import { styleRules } from "../../styles/css";
 import { labelStyles, names } from "./label.styles";
 
 export interface LabelProps extends React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> {
@@ -16,19 +17,26 @@ export interface LabelProps extends React.ComponentPropsWithoutRef<typeof LabelP
 const Label = forwardRef<HTMLLabelElement, LabelProps>(
   ({ children, className, style, disabled, required, ...props }, ref) => {
     const styles = labelStyles;
+    const rootClass = clsx(styles.root, names.root, className);
     return (
-      <LabelPrimitive.Root
-        ref={ref}
-        className={clsx(styles.root, names.root, className)}
-        aria-disabled={disabled || undefined}
-        style={style}
-        {...props}
-      >
-        {children}
-        {required && (
-          <span className={clsx(styles.requiredAsterisk, names.requiredAsterisk)}>*</span>
-        )}
-      </LabelPrimitive.Root>
+      <>
+        <LabelPrimitive.Root
+          ref={ref}
+          className={rootClass}
+          aria-disabled={disabled || undefined}
+          style={style}
+          {...props}
+        >
+          {children}
+          {required && (
+            <>
+              <span className={clsx(styles.requiredAsterisk, names.requiredAsterisk)}>*</span>
+              {styleRules(clsx(styles.requiredAsterisk, names.requiredAsterisk))}
+            </>
+          )}
+        </LabelPrimitive.Root>
+        {styleRules(rootClass)}
+      </>
     );
   },
 );
