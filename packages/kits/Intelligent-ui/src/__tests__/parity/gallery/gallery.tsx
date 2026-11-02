@@ -2,7 +2,7 @@ import { ThemeProvider } from "@openuidev/react-components";
 import { Renderer } from "@openuidev/react-lang";
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { createRoot } from "react-dom/client";
-import { demoTools } from "../../../lib/demo-data";
+import { demoTools } from "../../../lib/demo";
 import { library, runLibraryAction } from "../../../lib";
 import programs from "../fixtures/programs.json";
 

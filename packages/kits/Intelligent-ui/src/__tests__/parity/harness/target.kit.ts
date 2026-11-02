@@ -1,5 +1,5 @@
 // Demo tools are internal: the kit only exports their specs. The source app passes the same ones.
-export { demoTools } from "../../../lib/demo-data";
+export { demoTools } from "../../../lib/demo";
 export { library, runLibraryAction } from "../../../lib";
 export { ThemeProvider as Provider } from "@openuidev/react-components";
 

@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it } from "vitest";
-import { mapColor } from "../../components/Map/map-utils";
+import { mapColor } from "../../components/Map/parts/mapUtils";
 import { program, small } from "../helpers/cases";
 import { addCss, box, byText, cleanup, distance, inkAt, one, renderProgram, rgba, settle, style } from "../helpers/render";
 

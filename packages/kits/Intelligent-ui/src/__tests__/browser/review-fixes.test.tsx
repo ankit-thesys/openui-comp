@@ -7,7 +7,7 @@ import { commands, userEvent } from "vitest/browser";
 import { Code } from "../../components/Code";
 import { HtmlView } from "../../components/HtmlView";
 import { MapView } from "../../components/Map";
-import { rasterStyle, vectorStyle } from "../../components/Map/basemap";
+import { rasterStyle, vectorStyle } from "../../components/Map/parts/basemap";
 import { Popover } from "../../components/Popover";
 import { RadioGroup } from "../../components/RadioGroup";
 import { one, settle } from "../helpers/render";

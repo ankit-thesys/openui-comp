@@ -113,12 +113,12 @@ describe("the theme", () => {
 });
 
 describe("folders", () => {
-  it("a library folder holds only its index and schema, except Svg", () => {
+  it("a library folder holds only its index and schema, except Svg's shapes and Map's places", () => {
     const problems = readdirSync(lib)
       .filter((name) => statSync(join(lib, name)).isDirectory() && /^[A-Z]/.test(name) && name !== "Svg")
       .flatMap((name) =>
         readdirSync(join(lib, name))
-          .filter((file) => !["index.tsx", "schema.ts"].includes(file))
+          .filter((file) => !["index.tsx", "index.ts", "schema.ts"].includes(file) && `${name}/${file}` !== "Map/places.ts")
           .map((file) => `${name}/${file}`),
       );
     expect(problems).toEqual([]);

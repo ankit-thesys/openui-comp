@@ -3,7 +3,7 @@ import { ThemeProvider } from "@openuidev/react-components";
 import { Renderer, type ActionEvent } from "@openuidev/react-lang";
 import { createRoot, type Root } from "react-dom/client";
 import { commands } from "vitest/browser";
-import { demoTools } from "../../lib/demo-data";
+import { demoTools } from "../../lib/demo";
 import { library, runLibraryAction } from "../../lib";
 // The reset the source app has on its pages, so these tests see the page the kit was designed for.
 import reset from "../parity/harness/public/globals.css?inline";
