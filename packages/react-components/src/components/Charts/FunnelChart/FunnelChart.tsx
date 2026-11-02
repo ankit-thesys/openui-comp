@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import type { CSSProperties } from "react";
-import { styleRules } from "../../../styles/css";
+import { moduleClasses, styleRules } from "../../../styles/css";
 import { useEffectiveAnimation } from "../hooks";
 import { useFunnelChartOrchestrator } from "../hooks/cartesian/useFunnelChartOrchestrator";
 import { ChartShell } from "../shared/core/ChartShell";
@@ -72,83 +72,86 @@ export function FunnelChart<T extends FunnelChartData>(props: FunnelChartProps<T
   );
   return (
     <>
-      <ChartShell
-        containerRef={orch.refs.containerRef}
-        className={rootClass}
-        style={
-          {
-            "--_openui-funnel-chart-root-width": orch.style.containerStyle["width"],
-            "--_openui-funnel-chart-root-height": orch.style.containerStyle["height"],
-          } as CSSProperties
-        }
-        isEmpty={orch.isEmpty}
-      >
-        {() => {
-          const svgClass = clsx(styles.svg, names.svg);
-          return (
-            <>
-              <svg
-                className={svgClass}
-                width={W}
-                height={H}
-                viewBox={`0 0 ${W} ${H}`}
-                style={{ "--_openui-funnel-chart-svg-overflow": "visible" } as CSSProperties}
-                role="img"
-                aria-label="Funnel chart"
-              >
-                {W > 0 && H > 0 && (
-                  <FunnelStages
-                    stages={orch.data.visibleStages}
-                    rows={orch.data.visibleRows}
-                    orientation={orientation}
-                    edges={edges}
-                    layers={layers}
-                    W={W}
-                    H={H}
-                    ringW={ringW}
-                    ringH={ringH}
-                    labelColWidth={labelColWidth}
-                    labelAngle={labelAngle}
-                    angledLabelMaxWidth={angledLabelMaxWidth}
-                    gap={STAGE_GAP}
-                    showLabels={showLabels}
-                    showValues={showValues}
-                    showPercentage={showPercentage}
-                    animate={animate}
-                    staticRender={orch.isPrinting}
-                    hoveredIndex={orch.hover.hoveredIndex}
-                    onMouseMove={orch.hover.handleMouseMove}
-                    onMouseLeave={orch.hover.handleMouseLeave}
-                    onClick={onClick}
+      <>
+        <ChartShell
+          containerRef={orch.refs.containerRef}
+          className={rootClass}
+          style={
+            {
+              "--_openui-funnel-chart-root-width": orch.style.containerStyle["width"],
+              "--_openui-funnel-chart-root-height": orch.style.containerStyle["height"],
+            } as CSSProperties
+          }
+          isEmpty={orch.isEmpty}
+        >
+          {() => {
+            const svgClass = clsx(styles.svg, names.svg);
+            return (
+              <>
+                <svg
+                  className={svgClass}
+                  width={W}
+                  height={H}
+                  viewBox={`0 0 ${W} ${H}`}
+                  style={{ "--_openui-funnel-chart-svg-overflow": "visible" } as CSSProperties}
+                  role="img"
+                  aria-label="Funnel chart"
+                >
+                  {W > 0 && H > 0 && (
+                    <FunnelStages
+                      stages={orch.data.visibleStages}
+                      rows={orch.data.visibleRows}
+                      orientation={orientation}
+                      edges={edges}
+                      layers={layers}
+                      W={W}
+                      H={H}
+                      ringW={ringW}
+                      ringH={ringH}
+                      labelColWidth={labelColWidth}
+                      labelAngle={labelAngle}
+                      angledLabelMaxWidth={angledLabelMaxWidth}
+                      gap={STAGE_GAP}
+                      showLabels={showLabels}
+                      showValues={showValues}
+                      showPercentage={showPercentage}
+                      animate={animate}
+                      staticRender={orch.isPrinting}
+                      hoveredIndex={orch.hover.hoveredIndex}
+                      onMouseMove={orch.hover.handleMouseMove}
+                      onMouseLeave={orch.hover.handleMouseLeave}
+                      onClick={onClick}
+                    />
+                  )}
+                </svg>
+                {styleRules(svgClass)}
+
+                {showLegend && (
+                  <DefaultLegend
+                    ref={orch.refs.legendRef}
+                    items={orch.data.legendItems}
+                    containerWidth={orch.dimensions.containerWidth}
+                    isExpanded={orch.legend.isLegendExpanded}
+                    setIsExpanded={orch.legend.setIsLegendExpanded}
+                    onItemClick={orch.data.toggleStage}
+                    hiddenSeries={orch.data.hiddenStages}
                   />
                 )}
-              </svg>
-              {styleRules(svgClass)}
 
-              {showLegend && (
-                <DefaultLegend
-                  ref={orch.refs.legendRef}
-                  items={orch.data.legendItems}
-                  containerWidth={orch.dimensions.containerWidth}
-                  isExpanded={orch.legend.isLegendExpanded}
-                  setIsExpanded={orch.legend.setIsLegendExpanded}
-                  onItemClick={orch.data.toggleStage}
-                  hiddenSeries={orch.data.hiddenStages}
-                />
-              )}
-
-              {orch.tooltip.tooltipPayload && orch.hover.mousePos && (
-                <ChartTooltip
-                  label={orch.tooltip.tooltipPayload.label}
-                  items={orch.tooltip.tooltipPayload.items}
-                  viewportPosition={orch.hover.mousePos}
-                />
-              )}
-            </>
-          );
-        }}
-      </ChartShell>
-      {styleRules(rootClass)}
+                {orch.tooltip.tooltipPayload && orch.hover.mousePos && (
+                  <ChartTooltip
+                    label={orch.tooltip.tooltipPayload.label}
+                    items={orch.tooltip.tooltipPayload.items}
+                    viewportPosition={orch.hover.mousePos}
+                  />
+                )}
+              </>
+            );
+          }}
+        </ChartShell>
+        {styleRules(rootClass)}
+      </>
+      {styleRules(moduleClasses(funnelChartStyles))}
     </>
   );
 }

@@ -3,9 +3,10 @@
 import clsx from "clsx";
 import type { CSSProperties } from "react";
 import { useRef } from "react";
+import { chartBaseStyles } from "../../shared/chartBase.styles";
 import { horizontalBarChartStyles, names } from "../horizontalBarChart.styles";
 
-import { styleRules } from "../../../../styles/css";
+import { moduleClasses, styleRules } from "../../../../styles/css";
 import { useHorizontalBarChartOrchestrator } from "../../hooks/cartesian/useHorizontalBarChartOrchestrator";
 import { useExportChartData } from "../../hooks/core/useExportChartData";
 import { NumericXAxis } from "../../shared/cartesian/axes/NumericXAxis";
@@ -127,127 +128,130 @@ export function HorizontalBarChartImpl<T extends BarChartData>(props: BarChartPr
   );
   return (
     <>
-      <ChartShell
-        flat
-        containerRef={shellContainerRef}
-        classPrefix={names.root}
-        className={rootClass}
-        style={containerStyle as CSSProperties}
-        isEmpty={isEmpty}
-        exportData={exportData}
-      >
-        {() => {
-          const containerInnerWrapperClass = clsx(
-            styles.containerInnerWrapper,
-            names.containerInnerWrapper,
-          );
-          const containerInnerClass = clsx(styles.containerInner, names.containerInner);
-          const mainContainerClass = clsx(styles.mainContainer, names.mainContainer);
-          const xAxisContainerClass = clsx(styles.xAxisContainer, names.xAxisContainer);
-          return (
-            <>
-              <div className={containerInnerWrapperClass} style={{ height: chartHeight }}>
-                <div ref={containerRef} className={containerInnerClass}>
-                  <div
-                    ref={scrollBodyRef}
-                    className={mainContainerClass}
-                    onScroll={scroll.onScroll}
-                  >
-                    <svg
-                      className={names.svg}
-                      width="100%"
-                      height={svgHeight}
-                      role="img"
-                      aria-label="Horizontal bar chart"
-                      onMouseMove={hover.onMouseMove}
-                      onMouseLeave={hover.onMouseLeave}
+      <>
+        <ChartShell
+          flat
+          containerRef={shellContainerRef}
+          classPrefix={names.root}
+          className={rootClass}
+          style={containerStyle as CSSProperties}
+          isEmpty={isEmpty}
+          exportData={exportData}
+        >
+          {() => {
+            const containerInnerWrapperClass = clsx(
+              styles.containerInnerWrapper,
+              names.containerInnerWrapper,
+            );
+            const containerInnerClass = clsx(styles.containerInner, names.containerInner);
+            const mainContainerClass = clsx(styles.mainContainer, names.mainContainer);
+            const xAxisContainerClass = clsx(styles.xAxisContainer, names.xAxisContainer);
+            return (
+              <>
+                <div className={containerInnerWrapperClass} style={{ height: chartHeight }}>
+                  <div ref={containerRef} className={containerInnerClass}>
+                    <div
+                      ref={scrollBodyRef}
+                      className={mainContainerClass}
+                      onScroll={scroll.onScroll}
                     >
-                      {grid && (
-                        <VerticalGrid
-                          lineClassName={clsx(styles.gridLine, names.gridLine)}
-                          xScale={valueScale}
-                          chartWidth={chartWidth}
-                          chartHeight={svgHeight}
-                          className={names.gridVertical}
-                        />
-                      )}
+                      <svg
+                        className={names.svg}
+                        width="100%"
+                        height={svgHeight}
+                        role="img"
+                        aria-label="Horizontal bar chart"
+                        onMouseMove={hover.onMouseMove}
+                        onMouseLeave={hover.onMouseLeave}
+                      >
+                        {grid && (
+                          <VerticalGrid
+                            lineClassName={clsx(styles.gridLine, names.gridLine)}
+                            xScale={valueScale}
+                            chartWidth={chartWidth}
+                            chartHeight={svgHeight}
+                            className={names.gridVertical}
+                          />
+                        )}
 
-                      {/* Hovered-row highlight band — mounted BEHIND the rows so
+                        {/* Hovered-row highlight band — mounted BEHIND the rows so
                       the bars/labels paint over it. Springs on Y between rows
                       (the transpose of the vertical BarChart's column
                       crosshair). */}
-                      <HorizontalCrosshair
-                        hoveredIndex={hover.hoveredIndex}
-                        rowOffsets={rowOffsets}
-                        groupHeight={groupHeight}
-                        chartWidth={chartWidth}
-                      />
+                        <HorizontalCrosshair
+                          hoveredIndex={hover.hoveredIndex}
+                          rowOffsets={rowOffsets}
+                          groupHeight={groupHeight}
+                          chartWidth={chartWidth}
+                        />
 
-                      <HorizontalBarSeries
-                        rows={rows}
-                        labelHeight={labelHeight}
-                        chartWidth={chartWidth}
-                        hoveredCategory={hover.hoveredCategory}
-                        isAnimationActive={isAnimationActive}
-                        isPrinting={isPrinting}
-                      />
-                    </svg>
-                  </div>
-                  {styleRules(mainContainerClass)}
+                        <HorizontalBarSeries
+                          rows={rows}
+                          labelHeight={labelHeight}
+                          chartWidth={chartWidth}
+                          hoveredCategory={hover.hoveredCategory}
+                          isAnimationActive={isAnimationActive}
+                          isPrinting={isPrinting}
+                        />
+                      </svg>
+                    </div>
+                    {styleRules(mainContainerClass)}
 
-                  <div className={xAxisContainerClass}>
-                    <svg className={names.svg} width="100%" height={X_AXIS_HEIGHT}>
-                      <NumericXAxis
-                        scale={valueScale}
-                        chartWidth={chartWidth}
-                        height={X_AXIS_HEIGHT}
-                        className={names.xAxis}
-                        tickClassName={clsx(styles.xTick, names.xTick)}
-                        edgeAlign
-                      />
-                    </svg>
+                    <div className={xAxisContainerClass}>
+                      <svg className={names.svg} width="100%" height={X_AXIS_HEIGHT}>
+                        <NumericXAxis
+                          scale={valueScale}
+                          chartWidth={chartWidth}
+                          height={X_AXIS_HEIGHT}
+                          className={names.xAxis}
+                          tickClassName={clsx(styles.xTick, names.xTick)}
+                          edgeAlign
+                        />
+                      </svg>
+                    </div>
+                    {styleRules(xAxisContainerClass)}
                   </div>
-                  {styleRules(xAxisContainerClass)}
+                  {styleRules(containerInnerClass)}
+
+                  {scroll.needsScroll && (
+                    <ScrollButtonsVertical
+                      canScrollUp={scroll.canUp}
+                      canScrollDown={scroll.canDown}
+                      onScrollUp={scroll.onScrollUp}
+                      onScrollDown={scroll.onScrollDown}
+                    />
+                  )}
                 </div>
-                {styleRules(containerInnerClass)}
+                {styleRules(containerInnerWrapperClass)}
 
-                {scroll.needsScroll && (
-                  <ScrollButtonsVertical
-                    canScrollUp={scroll.canUp}
-                    canScrollDown={scroll.canDown}
-                    onScrollUp={scroll.onScrollUp}
-                    onScrollDown={scroll.onScrollDown}
+                {showLegend && (
+                  <DefaultLegend
+                    ref={legendRef}
+                    items={legendItems}
+                    containerWidth={chartWidth}
+                    isExpanded={legendControls.isLegendExpanded}
+                    setIsExpanded={legendControls.setIsLegendExpanded}
+                    onItemClick={legendControls.toggleSeries}
+                    hiddenSeries={legendControls.hiddenSeries}
+                    xAxisLabel={xAxisLabel}
+                    yAxisLabel={yAxisLabel}
                   />
                 )}
-              </div>
-              {styleRules(containerInnerWrapperClass)}
 
-              {showLegend && (
-                <DefaultLegend
-                  ref={legendRef}
-                  items={legendItems}
-                  containerWidth={chartWidth}
-                  isExpanded={legendControls.isLegendExpanded}
-                  setIsExpanded={legendControls.setIsLegendExpanded}
-                  onItemClick={legendControls.toggleSeries}
-                  hiddenSeries={legendControls.hiddenSeries}
-                  xAxisLabel={xAxisLabel}
-                  yAxisLabel={yAxisLabel}
-                />
-              )}
-
-              {tooltip.payload && tooltip.position && (
-                <ChartTooltip
-                  label={tooltip.payload.label}
-                  items={tooltip.payload.items}
-                  viewportPosition={tooltip.position}
-                />
-              )}
-            </>
-          );
-        }}
-      </ChartShell>
-      {styleRules(rootClass)}
+                {tooltip.payload && tooltip.position && (
+                  <ChartTooltip
+                    label={tooltip.payload.label}
+                    items={tooltip.payload.items}
+                    viewportPosition={tooltip.position}
+                  />
+                )}
+              </>
+            );
+          }}
+        </ChartShell>
+        {styleRules(rootClass)}
+      </>
+      {styleRules(moduleClasses(horizontalBarChartStyles, chartBaseStyles))}
     </>
   );
 }

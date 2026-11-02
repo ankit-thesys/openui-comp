@@ -2,9 +2,10 @@
 
 import clsx from "clsx";
 import type { CSSProperties } from "react";
-import { styleRules } from "../../../styles/css";
+import { moduleClasses, styleRules } from "../../../styles/css";
 import { useEffectiveAnimation } from "../hooks";
 import { useHeatmapChartOrchestrator } from "../hooks/cartesian/useHeatmapChartOrchestrator";
+import { fadeAppearStyles } from "../shared/animations/fadeAppear.styles";
 import { XAxis } from "../shared/cartesian/axes/XAxis";
 import { ChartShell } from "../shared/core/ChartShell";
 import { DefaultLegend } from "../shared/core/DefaultLegend/DefaultLegend";
@@ -71,125 +72,128 @@ export function HeatmapChart<T extends HeatmapChartData>(props: HeatmapChartProp
   } = orch;
 
   return (
-    <ChartShell
-      containerRef={orch.refs.containerRef}
-      className={clsx(
-        styles.root,
-        names.root,
-        names.rampMode[rampMode],
-        isAnimationActive && names.isAnimationActive.true,
-        className,
-      )}
-      style={
-        {
-          "--_openui-heatmap-chart-root-width": orch.style.containerStyle["width"],
-          "--_openui-heatmap-chart-root-height": orch.style.containerStyle["height"],
-        } as CSSProperties
-      }
-      isEmpty={orch.isEmpty}
-    >
-      {() => {
-        const svgClass = clsx(styles.svg, names.svg);
-        return (
-          <>
-            <svg
-              className={svgClass}
-              width={totalSvgWidth}
-              height={totalSvgHeight}
-              style={{ "--_openui-heatmap-chart-svg-overflow": "visible" } as CSSProperties}
-              role="img"
-              aria-label="Heatmap chart"
-            >
-              {showYAxis && (
-                <g className={names.group} transform={`translate(0, ${marginTop})`}>
-                  <HeatmapYAxis scale={yScale} width={effectiveYAxisWidth} />
+    <>
+      <ChartShell
+        containerRef={orch.refs.containerRef}
+        className={clsx(
+          styles.root,
+          names.root,
+          names.rampMode[rampMode],
+          isAnimationActive && names.isAnimationActive.true,
+          className,
+        )}
+        style={
+          {
+            "--_openui-heatmap-chart-root-width": orch.style.containerStyle["width"],
+            "--_openui-heatmap-chart-root-height": orch.style.containerStyle["height"],
+          } as CSSProperties
+        }
+        isEmpty={orch.isEmpty}
+      >
+        {() => {
+          const svgClass = clsx(styles.svg, names.svg);
+          return (
+            <>
+              <svg
+                className={svgClass}
+                width={totalSvgWidth}
+                height={totalSvgHeight}
+                style={{ "--_openui-heatmap-chart-svg-overflow": "visible" } as CSSProperties}
+                role="img"
+                aria-label="Heatmap chart"
+              >
+                {showYAxis && (
+                  <g className={names.group} transform={`translate(0, ${marginTop})`}>
+                    <HeatmapYAxis scale={yScale} width={effectiveYAxisWidth} />
+                  </g>
+                )}
+
+                <g
+                  className={names.group}
+                  transform={`translate(${effectiveYAxisWidth}, ${marginTop})`}
+                  onMouseLeave={orch.hover.handleMouseLeave}
+                >
+                  <rect
+                    className={names.hitbox}
+                    width={chartAreaWidth}
+                    height={chartInnerHeight}
+                    fill="transparent"
+                  />
+
+                  <HeatmapCells
+                    data={data}
+                    catKey={orch.data.catKey}
+                    columnKeys={orch.data.columnKeys}
+                    visibleRowKeys={orch.data.visibleRowKeys}
+                    xScale={xScale}
+                    yScale={yScale}
+                    colorScale={colorScale}
+                    cellGap={cellGap}
+                    cellRadius={cellRadius}
+                    showCellLabels={showCellLabels}
+                    animate={animate}
+                    onCellMouseMove={orch.hover.handleCellMouseMove}
+                    onCellMouseLeave={orch.hover.handleMouseLeave}
+                    onClick={onClick}
+                  />
                 </g>
+
+                <g
+                  className={names.group}
+                  transform={`translate(${effectiveYAxisWidth}, ${chartInnerHeight + marginTop})`}
+                >
+                  <XAxis
+                    partClassNames={{
+                      root: names.xAxis,
+                      tick: clsx(styles.xTick, names.xTick),
+                      textLine: names.textLine,
+                      group: names.group,
+                      hitbox: names.hitbox,
+                    }}
+                    classPrefix={CLASS_PREFIX}
+                    scale={xScale}
+                    tickVariant="singleLine"
+                    labelHeight={xAxisHeight}
+                    labelInterval={orch.dimensions.labelInterval}
+                  />
+                </g>
+              </svg>
+              {styleRules(svgClass)}
+
+              {showColorScale && (
+                <HeatmapColorScale
+                  ref={orch.refs.colorScaleRef}
+                  buckets={orch.colorScaleLegend.buckets}
+                  domainMin={orch.colorScaleLegend.domainMin}
+                  domainMax={orch.colorScaleLegend.domainMax}
+                  diverging={rampMode === "diverging"}
+                />
               )}
 
-              <g
-                className={names.group}
-                transform={`translate(${effectiveYAxisWidth}, ${marginTop})`}
-                onMouseLeave={orch.hover.handleMouseLeave}
-              >
-                <rect
-                  className={names.hitbox}
-                  width={chartAreaWidth}
-                  height={chartInnerHeight}
-                  fill="transparent"
+              {showLegend && (
+                <DefaultLegend
+                  ref={orch.refs.legendRef}
+                  items={orch.legend.legendItems}
+                  containerWidth={orch.dimensions.containerWidth}
+                  isExpanded={orch.legend.isLegendExpanded}
+                  setIsExpanded={orch.legend.setIsLegendExpanded}
+                  onItemClick={orch.data.toggleRow}
+                  hiddenSeries={orch.data.hiddenRows}
                 />
+              )}
 
-                <HeatmapCells
-                  data={data}
-                  catKey={orch.data.catKey}
-                  columnKeys={orch.data.columnKeys}
-                  visibleRowKeys={orch.data.visibleRowKeys}
-                  xScale={xScale}
-                  yScale={yScale}
-                  colorScale={colorScale}
-                  cellGap={cellGap}
-                  cellRadius={cellRadius}
-                  showCellLabels={showCellLabels}
-                  animate={animate}
-                  onCellMouseMove={orch.hover.handleCellMouseMove}
-                  onCellMouseLeave={orch.hover.handleMouseLeave}
-                  onClick={onClick}
+              {orch.tooltip.tooltipPayload && orch.hover.mousePos && (
+                <ChartTooltip
+                  label={orch.tooltip.tooltipPayload.label}
+                  items={orch.tooltip.tooltipPayload.items}
+                  viewportPosition={orch.hover.mousePos}
                 />
-              </g>
-
-              <g
-                className={names.group}
-                transform={`translate(${effectiveYAxisWidth}, ${chartInnerHeight + marginTop})`}
-              >
-                <XAxis
-                  partClassNames={{
-                    root: names.xAxis,
-                    tick: clsx(styles.xTick, names.xTick),
-                    textLine: names.textLine,
-                    group: names.group,
-                    hitbox: names.hitbox,
-                  }}
-                  classPrefix={CLASS_PREFIX}
-                  scale={xScale}
-                  tickVariant="singleLine"
-                  labelHeight={xAxisHeight}
-                  labelInterval={orch.dimensions.labelInterval}
-                />
-              </g>
-            </svg>
-            {styleRules(svgClass)}
-
-            {showColorScale && (
-              <HeatmapColorScale
-                ref={orch.refs.colorScaleRef}
-                buckets={orch.colorScaleLegend.buckets}
-                domainMin={orch.colorScaleLegend.domainMin}
-                domainMax={orch.colorScaleLegend.domainMax}
-                diverging={rampMode === "diverging"}
-              />
-            )}
-
-            {showLegend && (
-              <DefaultLegend
-                ref={orch.refs.legendRef}
-                items={orch.legend.legendItems}
-                containerWidth={orch.dimensions.containerWidth}
-                isExpanded={orch.legend.isLegendExpanded}
-                setIsExpanded={orch.legend.setIsLegendExpanded}
-                onItemClick={orch.data.toggleRow}
-                hiddenSeries={orch.data.hiddenRows}
-              />
-            )}
-
-            {orch.tooltip.tooltipPayload && orch.hover.mousePos && (
-              <ChartTooltip
-                label={orch.tooltip.tooltipPayload.label}
-                items={orch.tooltip.tooltipPayload.items}
-                viewportPosition={orch.hover.mousePos}
-              />
-            )}
-          </>
-        );
-      }}
-    </ChartShell>
+              )}
+            </>
+          );
+        }}
+      </ChartShell>
+      {styleRules(moduleClasses(heatmapChartStyles, fadeAppearStyles))}
+    </>
   );
 }

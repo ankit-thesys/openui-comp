@@ -2,9 +2,10 @@
 
 import clsx from "clsx";
 import { useMemo } from "react";
+import { chartBaseStyles } from "../shared/chartBase.styles";
 import { names, scatterChartStyles } from "./scatterChart.styles";
 
-import { styleRules } from "../../../styles/css";
+import { moduleClasses, styleRules } from "../../../styles/css";
 import { useEffectiveAnimation, useScatterChartOrchestrator } from "../hooks";
 import { NumericXAxis } from "../shared/cartesian/axes/NumericXAxis";
 import { YAxis } from "../shared/cartesian/axes/YAxis";
@@ -84,123 +85,126 @@ export function ScatterChart(props: ScatterChartProps) {
   } = orch;
 
   return (
-    <ChartShell
-      flat
-      containerRef={orch.refs.containerRef}
-      classPrefix={names.root}
-      className={clsx(styles.root, names.root, className)}
-      style={orch.style.containerStyle}
-      isEmpty={orch.isEmpty}
-    >
-      {() => {
-        const svgClass = clsx(styles.svg, names.svg);
-        return (
-          <>
-            <svg
-              className={svgClass}
-              width={totalSvgWidth}
-              height={totalSvgHeight}
-              role="img"
-              aria-label="Scatter chart"
-            >
-              {showYAxis && (
-                <g className={names.group} transform={`translate(0, ${marginTop})`}>
-                  <YAxis
-                    scale={yScale}
-                    width={effectiveYAxisWidth}
-                    chartHeight={chartInnerHeight}
-                    className={names.yAxis}
-                    tickClassName={clsx(styles.yTick, names.yTick)}
+    <>
+      <ChartShell
+        flat
+        containerRef={orch.refs.containerRef}
+        classPrefix={names.root}
+        className={clsx(styles.root, names.root, className)}
+        style={orch.style.containerStyle}
+        isEmpty={orch.isEmpty}
+      >
+        {() => {
+          const svgClass = clsx(styles.svg, names.svg);
+          return (
+            <>
+              <svg
+                className={svgClass}
+                width={totalSvgWidth}
+                height={totalSvgHeight}
+                role="img"
+                aria-label="Scatter chart"
+              >
+                {showYAxis && (
+                  <g className={names.group} transform={`translate(0, ${marginTop})`}>
+                    <YAxis
+                      scale={yScale}
+                      width={effectiveYAxisWidth}
+                      chartHeight={chartInnerHeight}
+                      className={names.yAxis}
+                      tickClassName={clsx(styles.yTick, names.yTick)}
+                    />
+                  </g>
+                )}
+
+                <g
+                  className={names.group}
+                  transform={`translate(${effectiveYAxisWidth}, ${marginTop})`}
+                  onMouseMove={orch.hover.handleMouseMove}
+                  onMouseLeave={orch.hover.handleMouseLeave}
+                  onTouchMove={orch.hover.handleTouchMove}
+                  onTouchEnd={orch.hover.handleTouchEnd}
+                  onClick={orch.hover.handleClick}
+                >
+                  <rect
+                    className={names.hitTarget}
+                    width={chartAreaWidth}
+                    height={chartInnerHeight}
+                    fill="transparent"
+                  />
+
+                  {showGrid && (
+                    <Grid
+                      lineClassName={clsx(styles.gridLine, names.gridLine)}
+                      yScale={yScale}
+                      chartWidth={chartAreaWidth}
+                      chartHeight={chartInnerHeight}
+                      className={names.grid}
+                    />
+                  )}
+
+                  {showVerticalGrid && (
+                    <VerticalGrid
+                      lineClassName={clsx(styles.gridLine, names.gridLine)}
+                      xScale={xScale}
+                      chartWidth={chartAreaWidth}
+                      chartHeight={chartInnerHeight}
+                      className={names.gridVertical}
+                    />
+                  )}
+
+                  <ScatterDots
+                    datasets={orch.data.visibleDatasets}
+                    xScale={xScale}
+                    yScale={yScale}
+                    colorMap={orch.data.colorMap}
+                    dotRadius={dotRadius}
+                    hoveredPoint={orch.hover.hoveredPoint}
+                    animate={animate}
                   />
                 </g>
+
+                <g
+                  className={names.group}
+                  transform={`translate(${effectiveYAxisWidth}, ${chartInnerHeight + marginTop})`}
+                >
+                  <NumericXAxis
+                    scale={xScale}
+                    chartWidth={chartAreaWidth}
+                    height={xAxisHeight}
+                    className={names.xAxis}
+                    tickClassName={clsx(styles.xTick, names.xTick)}
+                  />
+                </g>
+              </svg>
+              {styleRules(svgClass)}
+
+              {showLegend && (
+                <DefaultLegend
+                  ref={orch.refs.legendRef}
+                  items={orch.legend.legendItems}
+                  containerWidth={orch.dimensions.containerWidth}
+                  isExpanded={orch.legend.isLegendExpanded}
+                  setIsExpanded={orch.legend.setIsLegendExpanded}
+                  onItemClick={orch.legend.toggleSeries}
+                  hiddenSeries={orch.legend.hiddenSeries}
+                  xAxisLabel={xAxisLabel}
+                  yAxisLabel={yAxisLabel}
+                />
               )}
 
-              <g
-                className={names.group}
-                transform={`translate(${effectiveYAxisWidth}, ${marginTop})`}
-                onMouseMove={orch.hover.handleMouseMove}
-                onMouseLeave={orch.hover.handleMouseLeave}
-                onTouchMove={orch.hover.handleTouchMove}
-                onTouchEnd={orch.hover.handleTouchEnd}
-                onClick={orch.hover.handleClick}
-              >
-                <rect
-                  className={names.hitTarget}
-                  width={chartAreaWidth}
-                  height={chartInnerHeight}
-                  fill="transparent"
+              {orch.tooltip.tooltipPayload && orch.hover.mousePos && (
+                <ChartTooltip
+                  label={orch.tooltip.tooltipPayload.label}
+                  items={orch.tooltip.tooltipPayload.items}
+                  viewportPosition={orch.hover.mousePos}
                 />
-
-                {showGrid && (
-                  <Grid
-                    lineClassName={clsx(styles.gridLine, names.gridLine)}
-                    yScale={yScale}
-                    chartWidth={chartAreaWidth}
-                    chartHeight={chartInnerHeight}
-                    className={names.grid}
-                  />
-                )}
-
-                {showVerticalGrid && (
-                  <VerticalGrid
-                    lineClassName={clsx(styles.gridLine, names.gridLine)}
-                    xScale={xScale}
-                    chartWidth={chartAreaWidth}
-                    chartHeight={chartInnerHeight}
-                    className={names.gridVertical}
-                  />
-                )}
-
-                <ScatterDots
-                  datasets={orch.data.visibleDatasets}
-                  xScale={xScale}
-                  yScale={yScale}
-                  colorMap={orch.data.colorMap}
-                  dotRadius={dotRadius}
-                  hoveredPoint={orch.hover.hoveredPoint}
-                  animate={animate}
-                />
-              </g>
-
-              <g
-                className={names.group}
-                transform={`translate(${effectiveYAxisWidth}, ${chartInnerHeight + marginTop})`}
-              >
-                <NumericXAxis
-                  scale={xScale}
-                  chartWidth={chartAreaWidth}
-                  height={xAxisHeight}
-                  className={names.xAxis}
-                  tickClassName={clsx(styles.xTick, names.xTick)}
-                />
-              </g>
-            </svg>
-            {styleRules(svgClass)}
-
-            {showLegend && (
-              <DefaultLegend
-                ref={orch.refs.legendRef}
-                items={orch.legend.legendItems}
-                containerWidth={orch.dimensions.containerWidth}
-                isExpanded={orch.legend.isLegendExpanded}
-                setIsExpanded={orch.legend.setIsLegendExpanded}
-                onItemClick={orch.legend.toggleSeries}
-                hiddenSeries={orch.legend.hiddenSeries}
-                xAxisLabel={xAxisLabel}
-                yAxisLabel={yAxisLabel}
-              />
-            )}
-
-            {orch.tooltip.tooltipPayload && orch.hover.mousePos && (
-              <ChartTooltip
-                label={orch.tooltip.tooltipPayload.label}
-                items={orch.tooltip.tooltipPayload.items}
-                viewportPosition={orch.hover.mousePos}
-              />
-            )}
-          </>
-        );
-      }}
-    </ChartShell>
+              )}
+            </>
+          );
+        }}
+      </ChartShell>
+      {styleRules(moduleClasses(scatterChartStyles, chartBaseStyles))}
+    </>
   );
 }

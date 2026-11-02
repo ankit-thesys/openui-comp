@@ -1,6 +1,7 @@
 // Node seam: a server render carries the rules of the classes it rendered, and only those, in
 // React's hoisted component-rule tags (#178). Each contract entry's fixtures render on their own,
 // so one component's rules cannot stand in for another's.
+import { library } from "#paths";
 import { renderToString } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { migratedComponents, otherChartContracts } from "./contract/components";
@@ -25,9 +26,14 @@ const wired = new Set([
   "DatePicker",
   "FormControl",
   "Label",
-  // Batch 3: charts (#183). The SVG charts (Charts, PieChart, RadarChart, RadialChart,
-  // FunnelChart, HeatmapChart, CalendarHeatmap) stay unwired: React does not hoist <style> inside
-  // <svg>, so their SVG classes need a decision beyond the codemod.
+  // Batch 3: charts (#183), with each chart's focused contract.
+  "Charts",
+  "PieChart",
+  "RadarChart",
+  "RadialChart",
+  "FunnelChart",
+  "HeatmapChart",
+  "CalendarHeatmap",
   "SegmentedBar",
   // Dependencies the charts render, wired by the same codemod run.
   "IconButton",
@@ -39,6 +45,43 @@ const unwired = new Set(
 );
 
 const GENERATED = /^go\d+$/;
+
+// SVG-part modules. React renders <style> in place inside <svg>, so a chart's HTML root serves the
+// whole style modules its SVG subtree uses; only their classes may be served without rendering.
+// HTML elements stay exact.
+const svgPartModules: Array<[path: string, exported: string]> = [
+  ["shared/chartBase.styles", "chartBaseStyles"],
+  ["shared/animations/drawLine.styles", "drawLineStyles"],
+  ["shared/animations/fadeAppear.styles", "fadeAppearStyles"],
+  ["shared/mini/miniChart.styles", "miniChartStyles"],
+  ["LineChart/lineChart.styles", "lineChartStyles"],
+  ["AreaChart/areaChart.styles", "areaChartStyles"],
+  ["BarChart/barChart.styles", "barChartStyles"],
+  ["BarChart/horizontalBarChart.styles", "horizontalBarChartStyles"],
+  ["ScatterChart/scatterChart.styles", "scatterChartStyles"],
+  ["PieChart/pieChart.styles", "pieChartStyles"],
+  ["RadarChart/radarChart.styles", "radarChartStyles"],
+  ["RadialChart/radialChart.styles", "radialChartStyles"],
+  ["FunnelChart/funnelChart.styles", "funnelChartStyles"],
+  ["HeatmapChart/heatmapChart.styles", "heatmapChartStyles"],
+  ["CalendarHeatmap/calendarHeatmap.styles", "calendarHeatmapStyles"],
+  ["MiniLineChart/miniLineChart.styles", "miniLineChartStyles"],
+  ["MiniAreaChart/miniAreaChart.styles", "miniAreaChartStyles"],
+  ["MiniBarChart/miniBarChart.styles", "miniBarChartStyles"],
+];
+type StyleModule = string | { [key: string]: StyleModule };
+const svgPartClasses = new Set<string>();
+const collectClasses = (module: StyleModule) => {
+  if (typeof module === "string") module.split(" ").forEach((name) => svgPartClasses.add(name));
+  else Object.values(module).forEach(collectClasses);
+};
+for (const [path, exported] of svgPartModules) {
+  const module = (await import(library(`dist/components/Charts/${path}.mjs`))) as Record<
+    string,
+    StyleModule
+  >;
+  collectClasses(module[exported]!);
+}
 
 /** The hoisted component-rule tags in `html`: the classes each one serves, and its text. */
 function servedTags(html: string) {
@@ -81,14 +124,20 @@ describe("server-rendered component rules", () => {
         "rendered without a rule",
       ).toEqual([]);
       expect(
-        served.filter((name) => !used.has(name) && !keyframes.has(name)),
+        served.filter(
+          (name) => !used.has(name) && !keyframes.has(name) && !svgPartClasses.has(name),
+        ),
         "served but not rendered",
       ).toEqual([]);
       expect(
         served.filter((name, index) => served.indexOf(name) !== index),
         "served twice",
       ).toEqual([]);
-      for (const name of served) expect(text, `${name} has its rule`).toContain(`.${name}`);
+      // An SVG-part animation class holds only a named @keyframes, not a rule for itself.
+      for (const name of served)
+        if (!svgPartClasses.has(name)) expect(text, `${name} has its rule`).toContain(`.${name}`);
+      for (const [, name] of text.matchAll(/animation[^;}]*\b(openui-chart-[\w-]+)/g))
+        expect(text, `keyframes ${name} are served`).toContain(`@keyframes ${name}`);
       // React renders <style> in place inside SVG, where browsers would not get it from hydration.
       const inSvg = [...html.matchAll(/<svg[\s\S]*?<\/svg>/g)].filter(([svg]) =>
         /<style/.test(svg!),
