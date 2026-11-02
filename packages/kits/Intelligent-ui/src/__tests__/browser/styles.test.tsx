@@ -252,3 +252,82 @@ describe("List labels", () => {
     });
   }
 });
+
+describe("form fields share one size and look", () => {
+  // Input, Select and DatePicker sit side by side in a form, so one taller, rounder or darker
+  // field stands out. Every field-like control is compared against the Input.
+  const fields = `root = Form([Row([Input("", "Name"), Select("", ["10:00", "11:00"], "Time"), DatePicker("", "Date")])])`;
+  const look = (element: Element) => {
+    const s = style(element);
+    return {
+      height: Math.round(box(element).height),
+      paddingTop: s.paddingTop,
+      paddingLeft: s.paddingLeft,
+      radius: s.borderTopLeftRadius,
+      border: `${s.borderTopWidth} ${s.borderTopColor}`,
+      fill: s.backgroundColor,
+      shadow: s.boxShadow,
+      font: `${s.fontSize}/${s.lineHeight}`,
+    };
+  };
+  for (const theme of THEMES) {
+    it(`Input, Select and DatePicker match (${theme})`, async () => {
+      const container = await renderProgram(fields, { theme });
+      const input = one(container, "input.openui-input");
+      const select = one(container, ".openui-select-trigger");
+      const date = one(container, ".openui-date-picker-trigger");
+      expect(look(select)).toEqual(look(input));
+      expect(look(date)).toEqual(look(input));
+      // Empty, both arrows are muted like their placeholder; filled, both are ink.
+      const arrow = (element: Element) => style(one(element, "svg")).color;
+      expect(arrow(date)).toBe(arrow(select));
+    });
+
+    it(`filled Select and DatePicker match too (${theme})`, async () => {
+      const container = await renderProgram(
+        `root = Form([Row([Input("Ada", "Name"), Select("10:00", ["10:00", "11:00"], "Time"), DatePicker("2026-03-14", "Date")])])`,
+        { theme },
+      );
+      const input = one(container, "input.openui-input");
+      const select = one(container, ".openui-select-trigger");
+      const date = one(container, ".openui-date-picker-trigger");
+      expect(look(date)).toEqual(look(input));
+      expect(look(select)).toEqual(look(input));
+      expect(style(one(date, "svg")).color).toBe(style(one(select, "svg")).color);
+    });
+  }
+
+  it("TextArea shares their corners, border, fill and padding", async () => {
+    const container = await renderProgram(`root = Form([Input("", "Name"), TextArea("", "Notes")])`);
+    const { height: _input, ...input } = look(one(container, "input.openui-input"));
+    const { height: _area, ...area } = look(one(container, "textarea"));
+    expect(area).toEqual(input);
+  });
+});
+
+describe("on a coloured card", () => {
+  // A tile or card with its own colour switches its text to suit that colour. Whatever sits on that
+  // text colour (a selected tick, a solid button's label) has to switch with it, in either theme.
+  const beige = '"#e0d4b9"';
+  for (const theme of THEMES) {
+    it(`a selected Pressable's tick stays visible (${theme})`, async () => {
+      const container = await renderProgram(`root = Pressable([Title("Kale", "md"), Text("12-inch pot")], null, true, 4, ${beige})`, { theme });
+      const tile = one(container, ".openui-intelligent-pressable");
+      const circle = style(tile, "::before").backgroundColor;
+      const tick = style(tile, "::before").backgroundImage;
+      // The circle is dark on beige, so the tick drawn on it is white.
+      expect(distance(circle, "#0d0d0d")).toBeLessThan(30);
+      expect(tick).toContain("white");
+    });
+
+    it(`a solid Button's label stays readable (${theme})`, async () => {
+      const container = await renderProgram(`root = Box([Button("Pick")], "col", 0, 4, ${beige})`, { theme });
+      const button = one(container, ".openui-intelligent-button");
+      const fill = rgba(style(button).backgroundColor);
+      const label = rgba(style(button).color);
+      // Far apart in brightness: a dark label on a dark button is the bug.
+      const brightness = (c: number[]) => (c[0]! * 299 + c[1]! * 587 + c[2]! * 114) / 1000;
+      expect(Math.abs(brightness(fill) - brightness(label))).toBeGreaterThan(120);
+    });
+  }
+});
