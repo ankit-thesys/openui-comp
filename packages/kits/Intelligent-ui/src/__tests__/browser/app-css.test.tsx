@@ -45,10 +45,9 @@ describe("without a layer, the theme", () => {
     expect(read(scope)).toMatchObject({ title: blue, badge: blue, buttonFill: blue });
   });
 
-  it("takes the app's dark ink", async () => {
+  it("takes the app's dark text colour from ThemeProvider's darkTheme", async () => {
     const amber = "rgb(255, 200, 0)";
-    const scope = await renderProgram(page, { bare: true, theme: "dark" });
-    await appCss(`[data-theme="dark"] { --openui-intelligent-ink: ${amber}; }`);
+    const scope = await renderProgram(page, { theme: "dark", overrides: { textNeutralPrimary: amber } });
     expect(read(scope)).toMatchObject({ title: amber, badge: amber, buttonFill: amber });
   });
 });

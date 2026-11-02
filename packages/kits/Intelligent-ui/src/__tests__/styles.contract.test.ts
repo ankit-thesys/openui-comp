@@ -77,13 +77,8 @@ describe("the source", () => {
     expect(sourceFiles.filter((path) => path.endsWith(".css")).map(short)).toEqual([]);
   });
 
-  it("imports the theme where a single definition still gets it", () => {
-    expect(read(join(src, "shared/tokens.ts"))).toContain('import "./theme"');
-  });
-
   it("writes its rules with react-components' css, so they share its style tag and layer", () => {
-    // The theme is the one exception: it needs goober's glob, which react-components doesn't export.
-    expect(offenders(sourceFiles, /from "goober"/)).toEqual(["shared/theme.ts"]);
+    expect(offenders(sourceFiles, /from "goober"/)).toEqual([]);
   });
 
   it("uses !important only in the photo row", () => {
@@ -91,15 +86,29 @@ describe("the source", () => {
   });
 });
 
+// Colours come from react-components' ThemeProvider, as its own components' do.
 describe("the theme", () => {
-  const theme = read(join(src, "shared/theme.ts"));
+  const tokens = read(join(src, "shared/tokens.ts"));
 
-  it("sets dark neutrals at zero weight, so a host's rule still wins", () => {
-    expect(theme).toMatch(/:where\(\[data-theme="dark"\], :root\[data-openui-theme="dark"\]\)/);
+  it("is ThemeProvider's: the kit sets no global variables of its own", () => {
+    expect(offenders(sourceFiles, /\bglob`|:where\(:root|\[data-theme="(light|dark)"\]\s*[,{]/)).toEqual([]);
   });
 
-  it("has no @layer", () => {
-    expect(theme).not.toContain("@layer");
+  it("reads each status colour from ThemeProvider's token for it", () => {
+    for (const [kit, rc] of [
+      ["success", "text-success-primary"],
+      ["successSoft", "success-background"],
+      ["warning", "text-alert-primary"],
+      ["warningSoft", "alert-background"],
+      ["danger", "text-danger-primary"],
+      ["dangerSoft", "danger-background"],
+      ["purple", "text-purple-primary"],
+      ["purpleSoft", "purple-background"],
+      ["pink", "text-pink-primary"],
+      ["pinkSoft", "pink-background"],
+    ]) {
+      expect(tokens, kit).toMatch(new RegExp(`\\b${kit}: "var\\(--openui-intelligent-[a-z-]+, var\\(--openui-${rc},`));
+    }
   });
 });
 
@@ -124,7 +133,7 @@ describe("folders", () => {
 describe("package.json", () => {
   const pkg = JSON.parse(read(join(src, "../package.json"))) as {
     exports: Record<string, unknown>;
-    sideEffects: string[];
+    sideEffects: string[] | false;
     dependencies: Record<string, string>;
   };
 
@@ -132,11 +141,11 @@ describe("package.json", () => {
     expect(Object.keys(pkg.exports)).toEqual([".", "./lib"]);
   });
 
-  it("keeps the theme through tree-shaking", () => {
-    expect(pkg.sideEffects).toEqual(["**/shared/theme.*"]);
+  it("has nothing to keep through tree-shaking", () => {
+    expect(pkg.sideEffects).toBe(false);
   });
 
-  it("pins goober, because the styles depend on how it compiles selectors", () => {
-    expect(pkg.dependencies["goober"]).toBe("2.1.19");
+  it("leaves goober to react-components, whose css it uses", () => {
+    expect(pkg.dependencies["goober"]).toBeUndefined();
   });
 });

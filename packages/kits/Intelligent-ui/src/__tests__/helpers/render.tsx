@@ -54,6 +54,8 @@ type Options = {
   bare?: boolean;
   /** Sets the theme on the page itself, not on a wrapper around the output. */
   themeOnRoot?: boolean;
+  /** ThemeProvider's overrides for the theme in use. */
+  overrides?: Record<string, string>;
   onAction?: (event: ActionEvent) => void;
 };
 
@@ -63,7 +65,10 @@ export async function renderProgram(program: string, options: Options = {}) {
     isolated = true;
   }
   const theme = options.theme ?? "light";
-  if (!options.bare) addCss(`${reset}\nbody { font-family: "Inter", sans-serif; }`);
+  // A host page sets its own text and page colours from the theme, as the source app's does; react-components leaves them to it.
+  if (!options.bare) {
+    addCss(`${reset}\nbody { font-family: "Inter", sans-serif; color: var(--openui-text-neutral-primary); background: var(--openui-background); }`);
+  }
   document.documentElement.setAttribute("data-openui-theme", theme);
 
   const errors: string[] = [];
@@ -86,7 +91,8 @@ export async function renderProgram(program: string, options: Options = {}) {
       />
     </main>
   );
-  root.render(options.bare ? page : <ThemeProvider mode={theme}>{page}</ThemeProvider>);
+  const overrides = theme === "dark" ? { darkTheme: options.overrides } : { lightTheme: options.overrides };
+  root.render(options.bare ? page : <ThemeProvider mode={theme} {...overrides}>{page}</ThemeProvider>);
   await settle(/\bMap\(|Chart\(|HtmlView\(/.test(program) ? 700 : 200);
   await transitionsDone();
   return Object.assign(container, { renderErrors: errors });
@@ -149,5 +155,7 @@ export const distance = (a: string, b: string) => {
   return Math.max(...left.map((value, index) => Math.abs(value - right[index]!)));
 };
 
-/** The kit's ink where this element sits, whatever the theme. */
-export const inkAt = (element: Element) => style(element).getPropertyValue("--openui-intelligent-ink").trim();
+/** The kit's ink where this element sits, whatever the theme: an app's override, else react-components' text colour. */
+export const inkAt = (element: Element) =>
+  style(element).getPropertyValue("--openui-intelligent-ink").trim() ||
+  style(element).getPropertyValue("--openui-text-neutral-primary").trim();

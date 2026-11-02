@@ -28,6 +28,9 @@ function mount(ui: ReactNode, attributes: Record<string, string> = {}) {
   return host;
 }
 
+/** Renders new UI into the last mounted host, as a theme switch re-renders the app. */
+const rerender = (ui: ReactNode) => mounted.at(-1)!.root.render(ui);
+
 beforeAll(async () => {
   await commands.isolate();
 });
@@ -48,27 +51,33 @@ describe("Map, following the theme", () => {
 
   const styleGiven = (spy: ReturnType<typeof watchStyles>, index = -1) => spy.mock.calls.at(index)?.[0];
 
+  const inMode = (mode: "light" | "dark") => (
+    <ThemeProvider mode={mode}>
+      <MapView places={places} />
+    </ThemeProvider>
+  );
+
   it("switches to light on the first toggle after loading dark", async () => {
     const spy = watchStyles();
-    const host = mount(<MapView places={places} />, { "data-theme": "dark" });
+    mount(inMode("dark"));
     await vi.waitFor(() => expect(spy).toHaveBeenCalled(), { timeout: 5000 });
     await settle(300);
     expect(styleGiven(spy, 0)).toEqual(vectorStyle(true));
     spy.mockClear();
-    host.setAttribute("data-theme", "light");
+    rerender(inMode("light"));
     await settle(300);
     expect(styleGiven(spy)).toEqual(vectorStyle(false));
   });
 
   it("keeps raster tiles when the theme changes after falling back to them", async () => {
     const spy = watchStyles();
-    const host = mount(<MapView places={places} />, { "data-theme": "light" });
+    mount(inMode("light"));
     await vi.waitFor(() => expect(spy).toHaveBeenCalled(), { timeout: 5000 });
     const instance = spy.mock.contexts[0] as maplibre.Map;
     instance.fire("error", { error: new Error("The vector tiles are down") });
     expect(styleGiven(spy)).toEqual(rasterStyle(false));
     spy.mockClear();
-    host.setAttribute("data-theme", "dark");
+    rerender(inMode("dark"));
     await settle(300);
     expect(styleGiven(spy)).toEqual(rasterStyle(true));
   });
@@ -88,13 +97,17 @@ describe("Map, route status", () => {
   });
 });
 
-describe("following a theme set on the page", () => {
-  it("HtmlView follows data-openui-theme on the document", async () => {
-    document.documentElement.setAttribute("data-openui-theme", "light");
-    const host = mount(<HtmlView html="<p>Hello</p>" />);
+describe("following ThemeProvider's mode", () => {
+  it("HtmlView gives its document the same colour scheme", async () => {
+    const view = (mode: "light" | "dark") => (
+      <ThemeProvider mode={mode}>
+        <HtmlView html="<p>Hello</p>" />
+      </ThemeProvider>
+    );
+    const host = mount(view("light"));
     await settle(200);
     expect(one<HTMLIFrameElement>(host, "iframe").srcdoc).toContain("color-scheme:light");
-    document.documentElement.setAttribute("data-openui-theme", "dark");
+    rerender(view("dark"));
     await settle(200);
     expect(one<HTMLIFrameElement>(host, "iframe").srcdoc).toContain("color-scheme:dark");
   });

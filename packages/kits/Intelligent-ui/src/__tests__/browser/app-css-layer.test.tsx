@@ -69,24 +69,16 @@ describe("with the kit in the app's layer, the theme", () => {
     expect(read(scope)).toMatchObject({ title: blue, badge: blue, buttonFill: blue });
   });
 
-  // A [data-theme] wrapper sets the kit's ink again, so a light island in a dark page still reads.
-  it("keeps its own ink inside a [data-theme] wrapper, unless the app sets it there too", async () => {
-    let scope = await renderProgram(page, { bare: true });
+  // The kit sets no variables of its own, so nothing on a [data-theme] wrapper hides the app's.
+  it("takes the app's ink from :root inside a [data-theme] wrapper too", async () => {
+    const scope = await renderProgram(page, { bare: true });
     await appCss(`:root { --openui-intelligent-ink: ${blue}; }`);
-    expect(read(scope).title).toBe("oklch(0.097 0 0)");
-    cleanup();
-    removeAppCss();
-
-    scope = await renderProgram(page, { bare: true });
-    await appCss(`:root, [data-theme="light"] { --openui-intelligent-ink: ${blue}; }`);
     expect(read(scope).title).toBe(blue);
   });
 
-  it("takes the app's dark ink", async () => {
+  it("takes the app's dark text colour from ThemeProvider's darkTheme", async () => {
     const amber = "rgb(255, 200, 0)";
-    const scope = await renderProgram(page, { bare: true, theme: "dark" });
-    expect(read(scope).title).toBe("rgb(236, 236, 236)");
-    await appCss(`[data-theme="dark"] { --openui-intelligent-ink: ${amber}; }`);
-    expect(read(scope)).toMatchObject({ title: amber, badge: amber, buttonFill: amber });
+    const scope = await renderProgram(page, { theme: "dark", overrides: { textNeutralPrimary: amber } });
+    expect(read(scope)).toMatchObject({ title: amber, badge: amber });
   });
 });

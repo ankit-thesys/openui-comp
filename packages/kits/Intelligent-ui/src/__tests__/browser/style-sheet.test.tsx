@@ -15,10 +15,10 @@ describe("the kit's styles", () => {
     expect(shared.startsWith("@layer kit-test{")).toBe(true);
   });
 
-  it("leave goober's own tag with the theme and no component rules", async () => {
+  it("are all there is: no tag of the kit's own, and no global theme", async () => {
     await written();
-    expect(sheet("_goober")).toContain("--openui-intelligent-ink");
-    expect(sheet("_goober")).not.toMatch(/\.go[a-z0-9]+\{/);
+    expect(sheet("_goober")).not.toContain("openui-intelligent");
+    expect(getComputedStyle(document.documentElement).getPropertyValue("--openui-intelligent-ink")).toBe("");
   });
 });
 
@@ -39,15 +39,5 @@ describe("the theme", () => {
     }
   });
 
-  it("still switches to dark without the app's help", async () => {
-    await written();
-    const dark = document.body.appendChild(document.createElement("div"));
-    dark.setAttribute("data-theme", "dark");
-    try {
-      expect(ink(dark)).toBe("#ececec");
-      expect(ink(document.documentElement)).not.toBe("#ececec");
-    } finally {
-      dark.remove();
-    }
-  });
+
 });

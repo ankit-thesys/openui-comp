@@ -152,11 +152,20 @@ describe("Button", () => {
   });
 });
 
-describe("dark mode with no ThemeProvider", () => {
-  it("still goes dark from data-theme alone", async () => {
-    const container = await renderProgram(small.card, { bare: true, theme: "dark" });
-    expect(style(byText(container, "Heading")).color).toBe("rgb(236, 236, 236)");
-    expect(style(one(container, ".openui-intelligent-card")).backgroundColor).toBe("rgb(23, 23, 23)");
+describe("dark mode", () => {
+  // From ThemeProvider alone, as react-components' own components: no attribute on the page.
+  it("follows ThemeProvider's mode", async () => {
+    const container = await renderProgram(small.card, { theme: "dark" });
+    document.documentElement.removeAttribute("data-openui-theme");
+    await settle(50);
+    const card = one(container, ".openui-intelligent-card");
+    expect(rgba(style(byText(container, "Heading")).color)[0], "light text").toBeGreaterThan(200);
+    expect(rgba(style(card).backgroundColor)[0], "dark card").toBeLessThan(60);
+  });
+
+  it("takes an app's brand from ThemeProvider's darkTheme", async () => {
+    const container = await renderProgram(small.card, { theme: "dark", overrides: { textNeutralPrimary: "rgb(255, 200, 0)" } });
+    expect(style(byText(container, "Heading")).color).toBe("rgb(255, 200, 0)");
   });
 
   it("lets a host's own token win when the theme is set on the page", async () => {
