@@ -86,8 +86,8 @@ Flashcard(front: string | Node[], back: string | Node[], hint?: string) — Card
 Celebration(when: boolean) — Bursts confetti when its condition turns true, e.g. Celebration($score == 5) at the end of a quiz.
 
 ### Drawing
-Svg(children: Node[], viewBox: string, width?: Length, height?: Length) — A drawing for steps, parts, mechanisms, diagrams and layouts. Scales to its width; its shapes take expressions, so state can move them.
-G(children: Node[], transform?: string, opacity?: number) — Group; transform like "rotate(30 50 50)" or "translate(10 0)".
+Svg(children: (Circle | Ellipse | Rect | Line | Path | Polyline | Polygon | SvgText | G)[], viewBox: string, width?: Length, height?: Length) — A drawing for steps, parts, mechanisms, diagrams and layouts. Scales to its width; its shapes take expressions, so state can move them.
+G(children: (Circle | Ellipse | Rect | Line | Path | Polyline | Polygon | SvgText)[], transform?: string, opacity?: number) — Group; transform like "rotate(30 50 50)" or "translate(10 0)".
 Circle(cx: number, cy: number, r: number, fill?: Color, stroke?: Color, strokeWidth?: number, opacity?: number)
 Ellipse(cx: number, cy: number, rx: number, ry: number, fill?: Color, stroke?: Color, strokeWidth?: number, opacity?: number)
 Rect(x: number, y: number, width: number, height: number, fill?: Color, stroke?: Color, strokeWidth?: number, opacity?: number, rx?: number)

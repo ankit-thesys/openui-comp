@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { programs, small } from "../helpers/cases";
+import { programs } from "../helpers/cases";
 import { cleanup, renderProgram } from "../helpers/render";
 
 afterEach(() => {
@@ -34,13 +34,5 @@ describe("every program", () => {
   it.each(programs)("$id draws in dark mode with no errors", async ({ code }) => {
     const container = await renderProgram(code, { theme: "dark" });
     expect(container.renderErrors).toEqual([]);
-  });
-});
-
-describe("known problems", () => {
-  // These pass while the problem exists and fail once it's fixed, which is the reminder to delete them.
-  it.fails("a Badge inside Text is valid HTML", async () => {
-    const container = await renderProgram(small.badgeInText);
-    expect(container.querySelector("p div")).toBeNull();
   });
 });
