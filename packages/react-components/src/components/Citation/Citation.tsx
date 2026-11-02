@@ -3,7 +3,6 @@
 import * as Tooltip from "@radix-ui/react-tooltip";
 import clsx from "clsx";
 import { Key, memo } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { usePinnableTooltip } from "../_shared/hooks/usePinnableTooltip";
 import { IconWrapper } from "../_shared/icons";
 import { SourceWithFavicon } from "../Sources/SourceContext";
@@ -17,7 +16,7 @@ export interface CitationProps {
 }
 
 const MultiCitation = memo((props: CitationProps) => {
-  const styles = useStyles(citationStyles);
+  const styles = citationStyles;
   const { sources } = props;
   const { portalThemeClassName } = useTheme();
 

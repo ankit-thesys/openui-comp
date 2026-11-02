@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-sources",
@@ -8,7 +8,7 @@ export const names = {
   container: "openui-sources-item-container",
 } as const;
 
-export const listedSourcesStyles = (css: StyleCss) => ({
+export const listedSourcesStyles = {
   root: css`
     display: flex;
     flex-direction: column;
@@ -64,4 +64,4 @@ export const listedSourcesStyles = (css: StyleCss) => ({
     );
     --_openui-sources-item-hover-border: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));
   `,
-});
+};

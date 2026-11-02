@@ -4,7 +4,6 @@ import clsx from "clsx";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { useStyles } from "../../styles/useStyles";
 import { IconButton } from "../IconButton";
 import { useTheme } from "../ThemeProvider";
 import { galleryModalStyles, names } from "./galleryModal.styles";
@@ -23,7 +22,7 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
   setSelectedImageIndex,
   onClose,
 }) => {
-  const styles = useStyles(galleryModalStyles);
+  const styles = galleryModalStyles;
   const [scrollButtons, setScrollButtons] = useState({ showLeft: false, showRight: false });
   const carouselRef = useRef<HTMLDivElement>(null);
   const modalContentRef = useRef<HTMLDivElement>(null);

@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { forwardRef } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { InlineMarkdownRenderer } from "../InlineMarkdownRenderer";
 import { entityListStyles, names } from "./entityList.styles";
 
@@ -27,7 +26,7 @@ export interface EntityListProps {
 type RowType = "header" | "body" | "footer";
 
 function EntityListRowView({ row, rowType }: { row: EntityListRow; rowType: RowType }) {
-  const styles = useStyles(entityListStyles);
+  const styles = entityListStyles;
   const rightVariant = row.rightVariant ?? "text";
   return (
     <div className={clsx(styles.row, names.row, styles.rowType[rowType], names.rowType[rowType])}>
@@ -51,7 +50,7 @@ function EntityListRowView({ row, rowType }: { row: EntityListRow; rowType: RowT
 /** A two-column key/value list with optional header and footer rows. */
 export const EntityList = forwardRef<HTMLDivElement, EntityListProps>(
   ({ rows = [], size = "default", header, footer, className }, ref) => {
-    const styles = useStyles(entityListStyles);
+    const styles = entityListStyles;
     const showHeaderFooter = size === "default";
 
     return (

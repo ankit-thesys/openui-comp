@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 const body = `
   font: var(--openui-text-body-default, 400 16px/1.5 "Inter", sans-serif);
   letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);
@@ -20,7 +21,7 @@ export const names = {
     sunk: "openui-accordion--variant-sunk",
   },
 } as const;
-export const accordionStyles = (css: StyleCss) => ({
+export const accordionStyles = {
   root: css`
     box-sizing: border-box;
     border-radius: var(--openui-radius-2xl, 14px);
@@ -154,4 +155,4 @@ export const accordionStyles = (css: StyleCss) => ({
       --_openui-accordion-content-padding-bottom: var(--openui-space-m, 12px);
     `,
   },
-});
+};

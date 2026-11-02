@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import type { ScaleLinear } from "d3-scale";
 import React from "react";
-import { useStyles } from "../../../../../styles/useStyles";
 import { chartBaseStyles, names } from "../../chartBase.styles";
 
 import type { CartesianChartOrchestrator } from "../../../hooks";
@@ -84,7 +83,7 @@ export interface CartesianChartLayoutProps {
  * `ScrollBody`/`FitBody`.
  */
 export function CartesianChartLayout(props: CartesianChartLayoutProps) {
-  const styles = useStyles(chartBaseStyles);
+  const styles = chartBaseStyles;
   const { orch } = props;
   const prefix = `${CHART_CLASS_PREFIX}-${props.classPrefix}`;
 

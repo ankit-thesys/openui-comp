@@ -3,7 +3,6 @@
 import * as Tooltip from "@radix-ui/react-tooltip";
 import clsx from "clsx";
 import React, { cloneElement, isValidElement, useLayoutEffect, useRef, useState } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { useTheme } from "../ThemeProvider";
 import { names, tooltipWrapperStyles } from "./tooltipWrapper.styles";
 
@@ -35,7 +34,7 @@ export const TooltipWrapper = ({
   headingSelector,
   contentSelector,
 }: React.PropsWithChildren<TooltipWrapperProps>) => {
-  const styles = useStyles(tooltipWrapperStyles);
+  const styles = tooltipWrapperStyles;
   const { portalThemeClassName } = useTheme();
   const triggerRef = useRef<HTMLElement>(null);
   const [isHeadingTruncated, setIsHeadingTruncated] = useState(false);

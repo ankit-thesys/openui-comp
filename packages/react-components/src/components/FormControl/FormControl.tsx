@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import React, { forwardRef, useMemo } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { names as baseNames, baseStyles } from "../SharedBase/base.styles";
 import { FormControlProvider } from "./context";
 import { formControlStyles, names } from "./formControl.styles";
@@ -15,8 +14,8 @@ export interface FormControlProps {
 
 const FormControl = forwardRef<HTMLDivElement, FormControlProps>((props, ref) => {
   const { children, className, style, hasError = false } = props;
-  const styles = useStyles(formControlStyles);
-  const base = useStyles(baseStyles);
+  const styles = formControlStyles;
+  const base = baseStyles;
   const formControlContextValue = useMemo(() => ({ hasError }), [hasError]);
   return (
     <div

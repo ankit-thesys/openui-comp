@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import type { CSSProperties } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { names as pulseNames, skeletonPulseStyles } from "../SkeletonPulse/skeletonPulse.styles";
 import { names, pieChartSkeletonStyles } from "./pieChartSkeleton.styles";
 import { SkeletonBar } from "./SkeletonBar";
@@ -17,8 +16,8 @@ export function PieChartSkeleton({
   variant?: "pie" | "donut";
   appearance?: "circular" | "semiCircular";
 }) {
-  const styles = useStyles(pieChartSkeletonStyles);
-  const pulse = useStyles(skeletonPulseStyles);
+  const styles = pieChartSkeletonStyles;
+  const pulse = skeletonPulseStyles;
   const isSemi = appearance === "semiCircular";
   const chartClass = clsx(styles.shape, names.shape, pulse.root, pulseNames.root);
 

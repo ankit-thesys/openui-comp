@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import type { CSSProperties } from "react";
 import { useId, useMemo } from "react";
-import { useStyles } from "../../../styles/useStyles";
 import { useEffectiveAnimation } from "../hooks";
 import { useCalendarHeatmapOrchestrator } from "../hooks/cartesian/useCalendarHeatmapOrchestrator";
 import { ChartShell } from "../shared/core/ChartShell";
@@ -22,7 +21,7 @@ import type { CalendarHeatmapProps } from "./types";
 const defaultQuarterLabel = (quarter: number, year: number) => `Q${quarter} ${year}`;
 
 export function CalendarHeatmap(props: CalendarHeatmapProps) {
-  const styles = useStyles(calendarHeatmapStyles);
+  const styles = calendarHeatmapStyles;
   const {
     data,
     range,

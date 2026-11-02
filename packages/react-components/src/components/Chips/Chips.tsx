@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { chipsStyles, names } from "./chips.styles";
 
 export type ChipsSelectionType = "single" | "multiple";
@@ -36,7 +35,7 @@ const Chips = forwardRef<HTMLDivElement, ChipsProps>((props, ref) => {
     ...rest
   } = props;
 
-  const styles = useStyles(chipsStyles);
+  const styles = chipsStyles;
 
   // Items without a value have no stable identity to select or toggle by.
   const renderableItems = (items ?? []).filter((item) => Boolean(item?.value));

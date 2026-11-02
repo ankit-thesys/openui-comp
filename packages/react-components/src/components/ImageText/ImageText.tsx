@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { forwardRef, useContext } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { TextBlockView, type TextBlockOverflow, type TextBlockWidth } from "../TextBlock";
 import { TextFitContext } from "../TextBlock/TextFit";
 import { imageTextStyles, names } from "./imageText.styles";
@@ -50,7 +49,7 @@ export const ImageText = forwardRef<HTMLDivElement, ImageTextProps>(
     const slot = useContext(TextFitContext);
     const overflow = ownOverflow ?? slot.overflow ?? "wrap";
     const width = ownWidth ?? slot.width;
-    const styles = useStyles(imageTextStyles);
+    const styles = imageTextStyles;
     const altText = alt ?? title;
     const size = imageSize ?? (layout === "horizontal" ? 40 : undefined);
 

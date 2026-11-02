@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-carousel",
   content: "openui-carousel-content",
@@ -13,7 +14,7 @@ export const names = {
   noSnap: { true: "openui-carousel--no-snap" },
   showButtons: { true: "openui-carousel--show-buttons" },
 } as const;
-export const carouselStyles = (css: StyleCss) => ({
+export const carouselStyles = {
   root: css`
     position: relative;
     display: flex;
@@ -111,4 +112,4 @@ export const carouselStyles = (css: StyleCss) => ({
   right: css`
     right: -12px;
   `,
-});
+};

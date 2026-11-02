@@ -4,7 +4,6 @@ import clsx from "clsx";
 import debounce from "lodash-es/debounce.js";
 import { DetailedHTMLProps, SelectHTMLAttributes, useEffect, useState } from "react";
 import { ClassNames, CustomComponents, DropdownOption } from "react-day-picker";
-import { useStyles } from "../../../styles/useStyles";
 import {
   Select,
   SelectContent,
@@ -19,7 +18,7 @@ import { calendarDropdownStyles, names } from "../calendar.styles";
 import { getMonthName, getMonthNumber } from "../utils/helperFn";
 
 const CalendarSelectTrigger = ({ className, ...props }: SelectTriggerProps) => {
-  const styles = useStyles(calendarDropdownStyles);
+  const styles = calendarDropdownStyles;
   return (
     <SelectTrigger
       {...props}
@@ -31,7 +30,7 @@ const CalendarSelectContent = ({
   kind,
   ...props
 }: SelectContentProps & { kind: "months" | "years" }) => {
-  const styles = useStyles(calendarDropdownStyles);
+  const styles = calendarDropdownStyles;
   return (
     <SelectContent
       {...props}
@@ -47,7 +46,7 @@ const CalendarSelectContent = ({
   );
 };
 const CalendarSelectItem = (props: SelectItemProps) => {
-  const styles = useStyles(calendarDropdownStyles);
+  const styles = calendarDropdownStyles;
   return <SelectItem {...props} className={clsx(styles.selectItem, names.selectItem)} />;
 };
 

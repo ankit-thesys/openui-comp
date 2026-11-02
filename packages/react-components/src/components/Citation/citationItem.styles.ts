@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-citation-item",
@@ -8,7 +8,7 @@ export const names = {
   source: "openui-citation-item-source",
 } as const;
 
-export const citationItemStyles = (css: StyleCss) => ({
+export const citationItemStyles = {
   root: css`
     display: flex;
     align-items: center;
@@ -67,4 +67,4 @@ export const citationItemStyles = (css: StyleCss) => ({
     overflow: hidden;
     text-overflow: ellipsis;
   `,
-});
+};

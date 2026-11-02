@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-buttons",
@@ -8,7 +8,7 @@ export const names = {
   },
 } as const;
 
-export const buttonsStyles = (css: StyleCss) => ({
+export const buttonsStyles = {
   root: css`
     display: flex;
     width: 100%;
@@ -23,4 +23,4 @@ export const buttonsStyles = (css: StyleCss) => ({
       flex-direction: column;
     `,
   },
-});
+};

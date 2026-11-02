@@ -1,7 +1,6 @@
 "use client";
 
 import clsx from "clsx";
-import { useStyles } from "../../../../styles/useStyles";
 import { calendarHeatmapStyles, names } from "../calendarHeatmap.styles";
 interface WeekdayAxisProps {
   /** The rows that get a label (already filtered), with their weekday text. */
@@ -18,7 +17,7 @@ interface WeekdayAxisProps {
  * month gutter, so `row * pitchY` lines each label up with its cell row.
  */
 export function WeekdayAxis({ ticks, pitchY, x }: WeekdayAxisProps) {
-  const styles = useStyles(calendarHeatmapStyles);
+  const styles = calendarHeatmapStyles;
   return (
     <g className={names.group}>
       {ticks.map(({ row, label }) => (

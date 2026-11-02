@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   card: "openui-composite-card",
@@ -13,7 +13,7 @@ export const names = {
   },
 } as const;
 
-export const compositeCardStyles = (css: StyleCss) => ({
+export const compositeCardStyles = {
   card: css`
     display: flex;
     flex-direction: column;
@@ -76,4 +76,4 @@ export const compositeCardStyles = (css: StyleCss) => ({
     gap: var(--openui-space-s, 8px);
     width: 100%;
   `,
-});
+};

@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import { ChevronRight } from "lucide-react";
 import { forwardRef, type CSSProperties, type ReactNode } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { InlineMarkdownRenderer } from "../InlineMarkdownRenderer";
 import { TagSurfaceContext } from "../Tag/TagSurface";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
@@ -33,7 +32,7 @@ export interface ContextCardProps {
 
 /** A compact tinted card with a title (text or tag) and a bold markdown body. */
 export const ContextCard = forwardRef<HTMLDivElement, ContextCardProps>((props, ref) => {
-  const styles = useStyles(contextCardStyles);
+  const styles = contextCardStyles;
   const { item, clickable = false, onClick, className } = props;
   const { title, body, bgColor, bgImageSrc, bgImageAlt } = item;
   const backgroundImage = toCssUrl(bgImageSrc);

@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import type { CSSProperties } from "react";
 import React, { useCallback } from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import type { CalendarLeveledCell } from "../../hooks/cartesian/useCalendarHeatmapOrchestrator";
 import { entranceProps } from "../../utils/entranceUtils";
 import { calendarHeatmapStyles, names } from "../calendarHeatmap.styles";
@@ -67,7 +66,7 @@ export function CalendarCells({
   onCellMouseLeave,
   onClick,
 }: CalendarCellsProps) {
-  const styles = useStyles(calendarHeatmapStyles);
+  const styles = calendarHeatmapStyles;
   const handleClick = useCallback(
     (cell: CalendarLeveledCell) => {
       onClick?.(cell.date, cell.value);

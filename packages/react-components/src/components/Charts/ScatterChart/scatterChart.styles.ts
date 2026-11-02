@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../../styles/useStyles";
+import { css } from "../../../styles/css";
+
 import { centeredContainer, gridLine, zeroGridLine } from "../shared/chartBaseDeclarations";
 import { svgTickLabel } from "../shared/chartTypography";
 
@@ -19,7 +20,7 @@ export const names = {
   hitTarget: "openui-scatter-chart-hit-target",
 } as const;
 
-export const scatterChartStyles = (css: StyleCss) => ({
+export const scatterChartStyles = {
   svg: css`
     overflow: visible;
   `,
@@ -65,4 +66,4 @@ export const scatterChartStyles = (css: StyleCss) => ({
         var(--_openui-scatter-chart-dot-delay, 0s) forwards;
     }
   `,
-});
+};

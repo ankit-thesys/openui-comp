@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-steps",
   list: "openui-steps-list",
@@ -11,7 +12,7 @@ export const names = {
   title: "openui-steps-title",
   details: "openui-steps-details",
 } as const;
-export const stepsStyles = (css: StyleCss) => ({
+export const stepsStyles = {
   root: css`
     min-width: 280px;
     width: 100%;
@@ -86,4 +87,4 @@ export const stepsStyles = (css: StyleCss) => ({
     letter-spacing: var(--openui-text-body-default-letter-spacing, -0.01em);
     font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
   `,
-});
+};

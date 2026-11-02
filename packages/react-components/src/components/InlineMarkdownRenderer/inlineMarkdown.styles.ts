@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+import { markdownStyles } from "../MarkDownRenderer/markdown.styles";
 
 export const names = {
   root: "openui-inline-markdown-renderer",
@@ -9,7 +10,10 @@ export const names = {
   },
 } as const;
 
-export const inlineMarkdownStyles = (css: StyleCss) => ({
+// The value dependency keeps the composed renderer before this reset, including when bundled.
+Object.values(markdownStyles);
+
+export const inlineMarkdownStyles = {
   // The span is inline by default; leave display to callers such as TextBlock's hidden row.
   root: css`
     text-align: inherit;
@@ -24,4 +28,4 @@ export const inlineMarkdownStyles = (css: StyleCss) => ({
     margin: 0;
     padding: 0;
   `,
-});
+};

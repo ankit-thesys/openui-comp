@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import type { CSSProperties } from "react";
 import React from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import { numberTickFormatter } from "../../utils/styleUtils";
 import { heatmapChartStyles, names } from "../heatmapChart.styles";
 
@@ -36,7 +35,7 @@ interface HeatmapColorScaleProps {
  */
 export const HeatmapColorScale = React.forwardRef<HTMLDivElement, HeatmapColorScaleProps>(
   ({ buckets, domainMin, domainMax, diverging }, ref) => {
-    const styles = useStyles(heatmapChartStyles);
+    const styles = heatmapChartStyles;
     return (
       <div ref={ref} className={clsx(styles.colorScale, names.colorScale)}>
         <span className={clsx(styles.colorScaleLabel, names.colorScaleLabel)}>

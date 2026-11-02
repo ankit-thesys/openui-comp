@@ -3,7 +3,6 @@
 import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
 import clsx from "clsx";
 import { ReactElement } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { ToggleItemProps } from "../ToggleItem";
 import { names, toggleGroupStyles } from "./toggleGroup.styles";
 
@@ -16,7 +15,7 @@ export type ToggleGroupProps = RadixToggleGroupProps & {
 };
 
 export const ToggleGroup = ({ children, className, ...props }: ToggleGroupProps) => {
-  const styles = useStyles(toggleGroupStyles);
+  const styles = toggleGroupStyles;
   return (
     <ToggleGroupPrimitive.Root className={clsx(styles.root, names.root, className)} {...props}>
       {children}

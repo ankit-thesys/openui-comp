@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { useMemo } from "react";
-import { useStyles } from "../../../styles/useStyles";
 import { names, scatterChartStyles } from "./scatterChart.styles";
 
 import { useEffectiveAnimation, useScatterChartOrchestrator } from "../hooks";
@@ -17,7 +16,7 @@ import { ScatterDots } from "./parts/ScatterDots";
 import type { ScatterChartProps } from "./types";
 
 export function ScatterChart(props: ScatterChartProps) {
-  const styles = useStyles(scatterChartStyles);
+  const styles = scatterChartStyles;
   const {
     data,
     xAxisDataKey = "x",

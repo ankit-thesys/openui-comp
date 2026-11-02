@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { memo } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { SourceFaviconImage } from "../SourceFaviconImage";
 import { openSourceInNewTab, SourceWithFavicon } from "../Sources/SourceContext";
 import { citationItemStyles, names } from "./citationItem.styles";
@@ -12,7 +11,7 @@ export interface CitationItemProps extends SourceWithFavicon {
 }
 
 export const CitationItem = memo((props: CitationItemProps) => {
-  const styles = useStyles(citationItemStyles);
+  const styles = citationItemStyles;
   const { title, sourceName, onClick, faviconUrl, url } = props;
   const handleClick = () => {
     openSourceInNewTab(url);

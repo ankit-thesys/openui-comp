@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { InlineMarkdownRenderer } from "../InlineMarkdownRenderer";
 import { getRowConfiguration } from "../_shared/cards/smallCardBlockUtils";
 import { names, optionCardsStyles } from "./optionCards.styles";
@@ -33,7 +32,7 @@ export interface OptionCardsProps extends Omit<HTMLAttributes<HTMLDivElement>, "
 }
 
 const OptionCards = forwardRef<HTMLDivElement, OptionCardsProps>((props, ref) => {
-  const styles = useStyles(optionCardsStyles);
+  const styles = optionCardsStyles;
   const {
     items,
     selected = [],

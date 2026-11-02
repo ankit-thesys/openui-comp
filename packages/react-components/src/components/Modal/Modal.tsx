@@ -4,7 +4,6 @@ import clsx from "clsx";
 import { X } from "lucide-react";
 import React, { useCallback, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import { useStyles } from "../../styles/useStyles";
 import { useTheme } from "../ThemeProvider";
 import { modalStyles, names } from "./modal.styles";
 
@@ -23,7 +22,7 @@ export const Modal: React.FC<ModalProps> = ({
   size = "md",
   children,
 }) => {
-  const styles = useStyles(modalStyles);
+  const styles = modalStyles;
   const { portalThemeClassName } = useTheme();
   const contentRef = useRef<HTMLDivElement>(null);
 

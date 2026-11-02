@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { CSSProperties, forwardRef, ReactElement } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { SwitchItemProps } from "../SwitchItem";
 import { names, switchGroupStyles } from "./switchGroup.styles";
 
@@ -16,7 +15,7 @@ export interface SwitchGroupProps {
 
 const SwitchGroup = forwardRef<HTMLDivElement, SwitchGroupProps>((props, ref) => {
   const { children, className, style, variant = "clear" } = props;
-  const styles = useStyles(switchGroupStyles);
+  const styles = switchGroupStyles;
   return (
     <div
       ref={ref}

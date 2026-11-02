@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import type { CSSProperties } from "react";
 import React, { useCallback, useMemo, useRef, useState } from "react";
-import { useStyles } from "../../../styles/useStyles";
 import { Separator } from "../../Separator";
 import { useTheme } from "../../ThemeProvider";
 import { useChartShell } from "../hooks/core/useChartShell";
@@ -39,7 +38,7 @@ export function SegmentedBar<T extends SegmentedBarData>({
   className,
   style,
 }: SegmentedBarProps<T>) {
-  const styles = useStyles(segmentedBarStyles);
+  const styles = segmentedBarStyles;
   const containerRef = useRef<HTMLDivElement>(null);
   const legendRef = useRef<HTMLDivElement>(null);
 

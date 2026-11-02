@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import type { ScaleBand } from "d3-scale";
-import { useStyles } from "../../../../styles/useStyles";
 import { useCanvasContextForLabelSize } from "../../hooks/core/useCanvasContextForLabelSize";
 import { LabelTooltip } from "../../shared/core/LabelTooltip/LabelTooltip";
 import { truncateToWidth } from "../../utils/labelWrap";
@@ -26,7 +25,7 @@ interface HeatmapYAxisProps {
  * on truncation (the XAxis pattern). Needs a LabelTooltipProvider ancestor.
  */
 export function HeatmapYAxis({ scale, width }: HeatmapYAxisProps) {
-  const styles = useStyles(heatmapChartStyles);
+  const styles = heatmapChartStyles;
   const context = useCanvasContextForLabelSize();
   const maxTextWidth = Math.max(0, width - LABEL_PADDING);
 

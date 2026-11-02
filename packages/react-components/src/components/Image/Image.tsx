@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import React, { forwardRef, useState } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { imageStyles, names } from "./image.styles";
 
 type AspectRatioType = "1:1" | "3:2" | "3:4" | "4:3" | "16:9";
@@ -21,7 +20,7 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>((props, ref) => {
   const { src, alt, styles, className, aspectRatio = "3:2", scale = "fill", ...rest } = props;
   const [hasError, setHasError] = useState<boolean>(false);
 
-  const sheet = useStyles(imageStyles);
+  const sheet = imageStyles;
   const imageClasses = clsx(
     sheet.root,
     names.root,

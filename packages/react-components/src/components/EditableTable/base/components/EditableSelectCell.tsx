@@ -4,7 +4,6 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 import clsx from "clsx";
 import { Check, ChevronDown } from "lucide-react";
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import { useTheme } from "../../../ThemeProvider";
 import { useEditableCellKeyboard } from "../hooks/useEditableCellKeyboard";
 import { CellOutline } from "./CellOutline";
@@ -26,9 +25,9 @@ export const EditableSelectCell: React.FC<CellRendererProps> = (props) => {
     table,
   } = props;
 
-  const styles = useStyles(editableSelectCellStyles);
+  const styles = editableSelectCellStyles;
   const { portalThemeClassName } = useTheme();
-  const cellStyles = useStyles(editableCellStyles);
+  const cellStyles = editableCellStyles;
   const [editValue, setEditValue] = useState<string>((value as string) || "");
   const cellRef = useRef<HTMLDivElement>(null);
 

@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import type { CSSProperties } from "react";
 import { useCallback, useMemo } from "react";
-import { useStyles } from "../../../styles/useStyles";
 import { useEffectiveAnimation, useRadarChartOrchestrator } from "../hooks";
 import { ChartShell } from "../shared/core/ChartShell";
 import { DefaultLegend } from "../shared/core/DefaultLegend/DefaultLegend";
@@ -15,7 +14,7 @@ import { names, radarChartStyles } from "./radarChart.styles";
 import type { RadarChartData, RadarChartProps } from "./types";
 
 export function RadarChart<T extends RadarChartData>(props: RadarChartProps<T>) {
-  const styles = useStyles(radarChartStyles);
+  const styles = radarChartStyles;
   const {
     data,
     categoryKey,

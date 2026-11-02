@@ -4,7 +4,6 @@ import clsx from "clsx";
 import { arc, pie, type PieArcDatum } from "d3-shape";
 import type { CSSProperties } from "react";
 import { useMemo } from "react";
-import { useStyles } from "../../../styles/useStyles";
 import {
   type CategoricalSlice,
   useCategoricalChartOrchestrator,
@@ -49,7 +48,7 @@ export function PieChart<T extends PieChartData>(props: PieChartProps<T>) {
 }
 
 function PieChartImpl<T extends PieChartData>(props: PieChartProps<T>) {
-  const styles = useStyles(pieChartStyles);
+  const styles = pieChartStyles;
   const {
     data,
     categoryKey,

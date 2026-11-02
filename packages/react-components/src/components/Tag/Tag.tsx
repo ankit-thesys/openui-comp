@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { CSSProperties, forwardRef, ReactNode, useContext } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { names, tagStyles } from "./tag.styles";
 import { TagSurfaceContext } from "./TagSurface";
 
@@ -31,7 +30,7 @@ export const Tag = forwardRef<HTMLDivElement, TagProps>((props, ref) => {
   // A card's tag slot supplies the surface when the caller leaves it out.
   const slotSurface = useContext(TagSurfaceContext);
   const surface = ownSurface ?? slotSurface;
-  const css = useStyles(tagStyles);
+  const css = tagStyles;
   return (
     <div
       ref={ref}

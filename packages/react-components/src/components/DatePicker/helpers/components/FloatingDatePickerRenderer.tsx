@@ -6,7 +6,6 @@ import { ChevronDown } from "lucide-react";
 import { forwardRef, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useMultipleRefs } from "../../../../hooks/useMultipleRefs";
-import { useStyles } from "../../../../styles/useStyles";
 import { useTheme } from "../../../ThemeProvider";
 import { datePickerStyles, names } from "../../datePicker.styles";
 import { useDatePicker } from "../context/DatePickerContext";
@@ -14,7 +13,7 @@ import { formatDateRange, formatSingleDate } from "../utils/helperFn";
 import { DatepickerRenderer } from "./DatePickerRenderer";
 
 const FloatingDateInput = () => {
-  const styles = useStyles(datePickerStyles);
+  const styles = datePickerStyles;
   const { mode, selectedDate, selectedRange, isOpen, setIsOpen } = useDatePicker();
   const hasSelectedDate =
     mode === "single"
@@ -41,7 +40,7 @@ const FloatingDateInput = () => {
 
 const FloatingDatePicker = forwardRef<HTMLDivElement>((_, ref) => {
   const { isOpen } = useDatePicker();
-  const styles = useStyles(datePickerStyles);
+  const styles = datePickerStyles;
   const menuPositionDivRef = useRef<HTMLDivElement>(null);
   const { portalThemeClassName } = useTheme();
 
@@ -89,7 +88,7 @@ export const FloatingDatePickerRenderer = ({
   style?: React.CSSProperties;
 }) => {
   const { isOpen, setIsOpen, mode } = useDatePicker();
-  const styles = useStyles(datePickerStyles);
+  const styles = datePickerStyles;
   const menuRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 

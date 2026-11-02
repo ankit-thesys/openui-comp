@@ -1,7 +1,6 @@
 "use client";
 
 import clsx from "clsx";
-import { useStyles } from "../../../../styles/useStyles";
 import { useCanvasContextForLabelSize } from "../../hooks/core/useCanvasContextForLabelSize";
 import { LabelTooltip } from "../../shared/core/LabelTooltip/LabelTooltip";
 import type { ChartData } from "../../types";
@@ -47,7 +46,7 @@ export function RadarAxisLabels<T extends ChartData>({
   chartSize,
   containerWidth,
 }: RadarAxisLabelsProps<T>) {
-  const styles = useStyles(radarChartStyles);
+  const styles = radarChartStyles;
   const ctx = useCanvasContextForLabelSize();
   const lineHeight = parseLineHeight(ctx.font);
 

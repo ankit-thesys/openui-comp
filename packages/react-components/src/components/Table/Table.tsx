@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import React from "react";
-import { useStyles } from "../../styles/useStyles";
 import { names, tableStyles } from "./table.styles";
 import { names as cellNames, tableCellStyles } from "./tableCell.styles";
 import { names as headNames, tableHeadStyles } from "./tableHead.styles";
@@ -19,7 +18,7 @@ const Table = React.forwardRef<
     containerStyle?: React.CSSProperties;
   }
 >(({ className, containerRef, containerClassName, containerStyle, ...props }, ref) => {
-  const styles = useStyles(tableStyles);
+  const styles = tableStyles;
   return (
     <div
       ref={containerRef}
@@ -36,7 +35,6 @@ const TableHeader = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
 >(({ className, ...props }, ref) => {
-  useStyles(tableStyles);
   return <thead ref={ref} className={clsx(names.header, className)} {...props} />;
 });
 TableHeader.displayName = "TableHeader";
@@ -45,7 +43,6 @@ const TableBody = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
 >(({ className, ...props }, ref) => {
-  useStyles(tableStyles);
   return <tbody ref={ref} className={clsx(names.body, className)} {...props} />;
 });
 TableBody.displayName = "TableBody";
@@ -54,14 +51,14 @@ const TableFooter = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
 >(({ className, ...props }, ref) => {
-  const styles = useStyles(tableStyles);
+  const styles = tableStyles;
   return <tfoot ref={ref} className={clsx(styles.footer, names.footer, className)} {...props} />;
 });
 TableFooter.displayName = "TableFooter";
 
 const TableRow = React.forwardRef<HTMLTableRowElement, React.HTMLAttributes<HTMLTableRowElement>>(
   ({ className, ...props }, ref) => {
-    const styles = useStyles(tableStyles);
+    const styles = tableStyles;
     return <tr ref={ref} className={clsx(styles.row, names.row, className)} {...props} />;
   },
 );
@@ -74,7 +71,7 @@ export interface TableHeadProps extends React.ThHTMLAttributes<HTMLTableCellElem
 
 const TableHead = React.forwardRef<HTMLTableCellElement, TableHeadProps>(
   ({ className, children, icon, align, ...props }, ref) => {
-    const styles = useStyles(tableHeadStyles);
+    const styles = tableHeadStyles;
     return (
       <th
         ref={ref}
@@ -103,7 +100,7 @@ export interface TableCellProps extends React.TdHTMLAttributes<HTMLTableCellElem
 
 const TableCell = React.forwardRef<HTMLTableCellElement, TableCellProps>(
   ({ className, align, ...props }, ref) => {
-    const styles = useStyles(tableCellStyles);
+    const styles = tableCellStyles;
     return (
       <td
         ref={ref}

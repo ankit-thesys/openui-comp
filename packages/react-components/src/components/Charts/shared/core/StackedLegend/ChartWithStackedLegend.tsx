@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { type ReactNode, useId, useRef } from "react";
-import { useStyles } from "../../../../../styles/useStyles";
 import { useContainerSize } from "../../../hooks/core/useContainerSize";
 import { LegendStoreProvider } from "../legend/LegendStoreProvider";
 import { StackedLegend } from "./StackedLegend";
@@ -33,7 +32,7 @@ export function ChartWithStackedLegend({
   height?: number | string;
   className?: string;
 }) {
-  const styles = useStyles(stackedLegendStyles);
+  const styles = stackedLegendStyles;
   const legendKey = useId();
   const ref = useRef<HTMLDivElement>(null);
   const { width: layoutWidth } = useContainerSize(ref, width);

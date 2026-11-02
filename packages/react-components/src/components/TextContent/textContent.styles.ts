@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-text-content",
@@ -9,7 +9,7 @@ export const names = {
   },
 } as const;
 
-export const textContentStyles = (css: StyleCss) => ({
+export const textContentStyles = {
   root: css`
     box-sizing: border-box;
     color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
@@ -34,4 +34,4 @@ export const textContentStyles = (css: StyleCss) => ({
       border-color: var(--openui-border-default, oklch(0.097 0 0 / 0.06));
     `,
   },
-});
+};

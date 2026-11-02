@@ -4,9 +4,7 @@ import clsx from "clsx";
 import debounce from "lodash-es/debounce.js";
 import { AlertCircle } from "lucide-react";
 import { ChangeEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { Input } from "../Input";
-import { inputStyles } from "../Input/input.styles";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../Select";
 import { Slider, SliderProps } from "./Slider";
 import {
@@ -34,11 +32,8 @@ const ValueInput = ({
   error: string | undefined;
   disabled?: boolean;
 }) => {
-  // Input has no compound root in which to register composed styles. Register its factory
-  // first; Input reuses that render-time registration. No private variables are shared.
-  useStyles(inputStyles);
-  const inputCss = useStyles(sliderBlockInputStyles);
-  const styles = useStyles(sliderBlockStyles);
+  const inputCss = sliderBlockInputStyles;
+  const styles = sliderBlockStyles;
   const [inputValue, setInputValue] = useState<string | number>(value);
   const [isFocused, setIsFocused] = useState(false);
 
@@ -71,9 +66,8 @@ const ValueInput = ({
   );
 };
 
-// Select registers its defaults before rendering this part.
 const BlockSelectTrigger = () => {
-  const styles = useStyles(sliderBlockSelectStyles);
+  const styles = sliderBlockSelectStyles;
   return (
     <SelectTrigger className={clsx(styles.trigger, names.selectTrigger)}>
       <SelectValue />
@@ -95,7 +89,7 @@ export const SliderBlock = (props: SliderBlockProps) => {
     ...sliderProps
   } = props;
 
-  const styles = useStyles(sliderBlockStyles);
+  const styles = sliderBlockStyles;
   const [value, setValue] = useState(defaultValue ?? [min]);
 
   const { min: minError, max: maxError } = useMemo(() => {

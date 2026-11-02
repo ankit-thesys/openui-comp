@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { cloneElement, CSSProperties, forwardRef, ReactElement, ReactNode } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { ButtonProps } from "../Button";
 import { IconButtonProps } from "../IconButton";
 import { cardHeaderStyles, names } from "./cardHeader.styles";
@@ -19,7 +18,7 @@ export interface CardHeaderProps extends Omit<React.HTMLAttributes<HTMLDivElemen
 
 export const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>((props, ref) => {
   const { icon, title, subtitle, actions, className, styles: inlineStyles, ...rest } = props;
-  const styles = useStyles(cardHeaderStyles);
+  const styles = cardHeaderStyles;
   return (
     <div
       ref={ref}

@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import type { CSSProperties } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { names as pulseNames, skeletonPulseStyles } from "../SkeletonPulse/skeletonPulse.styles";
 import { names, skeletonBarStyles } from "./skeleton.styles";
 interface SkeletonBarProps {
@@ -12,8 +11,8 @@ interface SkeletonBarProps {
 }
 
 export function SkeletonBar({ height, width, borderRadius }: SkeletonBarProps) {
-  const styles = useStyles(skeletonBarStyles);
-  const pulse = useStyles(skeletonPulseStyles);
+  const styles = skeletonBarStyles;
+  const pulse = skeletonPulseStyles;
   return (
     <div
       className={clsx(styles.root, names.bar, pulse.root, pulseNames.root)}

@@ -9,7 +9,6 @@ import {
   type KeyboardEvent,
   type ReactNode,
 } from "react";
-import { useStyles } from "../../../styles/useStyles";
 import { cardBlockLayoutStyles, names } from "./cardBlockLayout.styles";
 import { getRowConfiguration, useCarouselMask } from "./smallCardBlockUtils";
 
@@ -37,7 +36,7 @@ function CardBlockLayoutInner<T>(
   props: CardBlockLayoutProps<T>,
   ref: ForwardedRef<HTMLDivElement>,
 ) {
-  const styles = useStyles(cardBlockLayoutStyles);
+  const styles = cardBlockLayoutStyles;
   const {
     size,
     cardType,

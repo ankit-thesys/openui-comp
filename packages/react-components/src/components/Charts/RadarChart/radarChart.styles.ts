@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../../styles/useStyles";
+import { css } from "../../../styles/css";
+
 import {
   activeDotInner,
   activeDotOuter,
@@ -42,76 +43,78 @@ export const names = {
   },
 } as const;
 
-// Register the entrance keyframes with the component, never on import.
-export const radarChartStyles = (css: StyleCss) => {
-  css`
-    @keyframes openui-radar-chart-appear {
-      from {
-        opacity: 0;
-        transform: scale(0.3);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+// Register entrance keyframes before the rules that reference them, on import.
+css`
+  @keyframes openui-radar-chart-appear {
+    from {
+      opacity: 0;
+      transform: scale(0.3);
     }
-  `;
-  return {
-    root: css`
-      ${centeredContainer}
-      width: var(--_openui-radar-chart-root-width, 100%);
-      height: var(--_openui-radar-chart-root-height, unset);
-    `,
-    svgWrapper: css`
-      ${centeredSvgWrapper}
-    `,
-    svg: css`
-      overflow: visible;
-    `,
-    gridRing: css`
-      stroke: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));
-      stroke-width: 1;
-    `,
-    gridSpoke: css`
-      stroke: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));
-      stroke-width: 1;
-    `,
-    polygonArea: css`
-      transition: opacity 0.2s ease;
-      animation-delay: var(--_openui-radar-chart-polygon-animation-delay, unset);
-    `,
-    polygonStroke: css`
-      fill: none;
-      stroke-width: 2;
-      animation-delay: var(--_openui-radar-chart-polygon-animation-delay, unset);
-    `,
-    dot: css`
-      stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
-      stroke-width: 1.5;
-      transition:
-        r 0.15s ease,
-        opacity 0.15s ease;
-      opacity: var(--_openui-radar-chart-dot-opacity, unset);
-    `,
-    activeDotOuter: css`
-      ${activeDotOuter}
-    `,
-    activeDotInner: css`
-      ${activeDotInner}
-    `,
-    activeDots: css`
-      pointer-events: none;
-    `,
-    axisLabel: css`
-      ${svgTickLabel}
-    `,
-    polygonIsAnimationActive: css`
-      @media (prefers-reduced-motion: no-preference) {
-        opacity: 0;
-        transform-origin: center center;
-        animation: openui-radar-chart-appear 0.5s ease-out forwards;
-        animation-delay: var(--_openui-radar-chart-polygon-animation-delay, 0s);
-      }
-    `,
-  };
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+`;
+export const radarChartStyles = {
+  root: css`
+    ${centeredContainer}
+    width: var(--_openui-radar-chart-root-width, 100%);
+    height: var(--_openui-radar-chart-root-height, unset);
+  `,
+  svgWrapper: css`
+    ${centeredSvgWrapper}
+  `,
+  svg: css`
+    overflow: visible;
+  `,
+  gridRing: css`
+    stroke: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));
+    stroke-width: 1;
+  `,
+  gridSpoke: css`
+    stroke: var(--openui-border-interactive, oklch(0.097 0 0 / 0.12));
+    stroke-width: 1;
+  `,
+  polygonArea: css`
+    transition: opacity 0.2s ease;
+    animation-delay: var(--_openui-radar-chart-polygon-animation-delay, unset);
+  `,
+  polygonStroke: css`
+    fill: none;
+    stroke-width: 2;
+    animation-delay: var(--_openui-radar-chart-polygon-animation-delay, unset);
+  `,
+  dot: css`
+    stroke: var(--openui-foreground, oklch(0.994 0 89.876 / 1));
+    stroke-width: 1.5;
+    transition:
+      r 0.15s ease,
+      opacity 0.15s ease;
+    opacity: var(--_openui-radar-chart-dot-opacity, unset);
+  `,
+  activeDotOuter: css`
+    /* RadarChart outer active dot. */
+    ${activeDotOuter}
+  `,
+  activeDotInner: css`
+    /* RadarChart inner active dot. */
+    ${activeDotInner}
+  `,
+  activeDots: css`
+    /* RadarChart active dots. */
+    pointer-events: none;
+  `,
+  axisLabel: css`
+    /* Radar and Heatmap tick labels. */
+    ${svgTickLabel}
+  `,
+  polygonIsAnimationActive: css`
+    @media (prefers-reduced-motion: no-preference) {
+      opacity: 0;
+      transform-origin: center center;
+      animation: openui-radar-chart-appear 0.5s ease-out forwards;
+      animation-delay: var(--_openui-radar-chart-polygon-animation-delay, 0s);
+    }
+  `,
 };

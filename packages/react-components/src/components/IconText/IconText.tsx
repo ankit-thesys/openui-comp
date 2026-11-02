@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { forwardRef, useContext } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { IconTag, type IconTagVariant } from "../IconTag";
 import { TextBlockView, type TextBlockOverflow, type TextBlockWidth } from "../TextBlock";
 import { TextFitContext } from "../TextBlock/TextFit";
@@ -60,7 +59,7 @@ export const IconText = forwardRef<HTMLDivElement, IconTextProps>(
     const slot = useContext(TextFitContext);
     const overflow = ownOverflow ?? slot.overflow ?? "wrap";
     const width = ownWidth ?? slot.width;
-    const styles = useStyles(iconTextStyles);
+    const styles = iconTextStyles;
     return (
       <div
         ref={ref}

@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-image-gallery",
   grid: "openui-image-gallery-grid",
@@ -6,7 +7,7 @@ export const names = {
   img: "openui-image-gallery-img",
   showAll: "openui-image-gallery-show-all",
 } as const;
-export const imageGalleryStyles = (css: StyleCss) => ({
+export const imageGalleryStyles = {
   root: css`
     display: flex;
     flex-direction: column;
@@ -105,4 +106,4 @@ export const imageGalleryStyles = (css: StyleCss) => ({
     bottom: 5px;
     right: 5px;
   `,
-});
+};

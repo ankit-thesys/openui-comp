@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { forwardRef } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { metricIndicatorStyles, names } from "./metricIndicator.styles";
 
 export interface MetricIndicatorTrend {
@@ -31,7 +30,7 @@ interface MetricIndicatorBaseProps extends MetricIndicatorWithStrikethroughProps
 
 const MetricIndicatorBase = forwardRef<HTMLDivElement, MetricIndicatorBaseProps>(
   ({ value, subtext, previousValue, trend, variant, className }, ref) => {
-    const styles = useStyles(metricIndicatorStyles);
+    const styles = metricIndicatorStyles;
     const isPositive = trend?.direction === "up";
     const isInline = variant === "inline";
 

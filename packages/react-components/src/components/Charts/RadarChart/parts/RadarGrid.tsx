@@ -1,7 +1,6 @@
 "use client";
 
 import clsx from "clsx";
-import { useStyles } from "../../../../styles/useStyles";
 import { radarAxisAngle } from "../../utils/polarUtils";
 import { names, radarChartStyles } from "../radarChart.styles";
 
@@ -20,7 +19,7 @@ function buildPolygonPoints(radius: number, numAxes: number): string {
 }
 
 export function RadarGrid({ maxRadius, gridLevels, gridShape, numAxes }: RadarGridProps) {
-  const styles = useStyles(radarChartStyles);
+  const styles = radarChartStyles;
   const levels = Array.from({ length: gridLevels }, (_, i) => ((i + 1) / gridLevels) * maxRadius);
 
   return (

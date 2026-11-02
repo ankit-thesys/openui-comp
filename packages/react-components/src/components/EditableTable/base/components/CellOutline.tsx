@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import React from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import { editableCellStyles, names } from "./editableCell.styles";
 
 export interface CellOutlineProps {
@@ -13,7 +12,7 @@ export interface CellOutlineProps {
 const SIDES = ["top", "bottom", "left", "right"] as const;
 
 export const CellOutline: React.FC<CellOutlineProps> = ({ isSelected, isEditing }) => {
-  const styles = useStyles(editableCellStyles);
+  const styles = editableCellStyles;
   return (
     <>
       {SIDES.map((side) => (

@@ -4,7 +4,6 @@ import clsx from "clsx";
 import type { ScaleLinear, ScalePoint } from "d3-scale";
 import type { CurveFactory } from "d3-shape";
 import React, { useMemo, useRef } from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import type { StackedData } from "../../hooks";
 import { AnimatedPath } from "../../shared/cartesian/AnimatedPath";
 import {
@@ -128,7 +127,7 @@ function AreaSeriesItem({
   gradientId: string;
   isAnimationActive?: boolean;
 }) {
-  const styles = useStyles(areaChartStyles);
+  const styles = areaChartStyles;
   const areaRef = useRef<SVGPathElement | null>(null);
   const lineRef = useRef<SVGPathElement | null>(null);
   const curveRef = useRef(curve);

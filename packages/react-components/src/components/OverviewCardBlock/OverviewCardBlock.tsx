@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import { ChevronRight } from "lucide-react";
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
 import { MetricIndicatorInline, type MetricIndicatorInlineProps } from "../MetricIndicator";
 import { names, overviewCardBlockStyles } from "./overviewCardBlock.styles";
@@ -32,7 +31,7 @@ export interface OverviewCardBlockProps extends Omit<HTMLAttributes<HTMLDivEleme
 }
 
 const OverviewCardBlock = forwardRef<HTMLDivElement, OverviewCardBlockProps>((props, ref) => {
-  const styles = useStyles(overviewCardBlockStyles);
+  const styles = overviewCardBlockStyles;
   const {
     items,
     layout = "grid",

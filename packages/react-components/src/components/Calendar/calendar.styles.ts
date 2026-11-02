@@ -1,6 +1,8 @@
-"use client";
+import { css } from "../../styles/css";
+import { selectStyles } from "../Select/select.styles";
 
-import type { StyleCss } from "../../styles/useStyles";
+// Retain a value dependency on Select's defaults before registering the owned dropdown rules.
+Object.values(selectStyles);
 
 export const names = {
   root: "openui-calendar",
@@ -54,7 +56,7 @@ const small = `
   font-variation-settings: var(--openui-font-variation-regular, "wght" 440);
 `;
 
-export const calendarStyles = (css: StyleCss) => ({
+export const calendarStyles = {
   content: css`
     --_openui-calendar-day-size: calc(var(--openui-space-2xl, 36px) + var(--openui-space-2xs, 4px));
     --_openui-calendar-cell-radius: var(--openui-radius-m, 8px);
@@ -219,7 +221,7 @@ export const calendarStyles = (css: StyleCss) => ({
       --_openui-calendar-dropdowns-gap: var(--openui-space-s, 8px);
     `,
   },
-});
+};
 
 const dropdown = `
   padding: var(--openui-space-2xs, 4px);
@@ -229,9 +231,8 @@ const dropdown = `
   box-shadow: var(--openui-shadow-m, 0 4px 6px -2px oklch(0 0 0 / 0.025), 0 2px 2px -2px oklch(0 0 0 / 0.05));
 `;
 
-// Register below Select (which registers its own factory at its public root), so these owned
-// classes compose on top of Select's public parts without importing its styles or private vars.
-export const calendarDropdownStyles = (css: StyleCss) => ({
+// Register after Select so these owned classes compose on top of its public parts.
+export const calendarDropdownStyles = {
   selectTrigger: css`
     ${label}
     min-height: calc(var(--openui-space-l, 18px) + var(--openui-space-s, 8px));
@@ -284,4 +285,4 @@ export const calendarDropdownStyles = (css: StyleCss) => ({
       color: var(--openui-text-neutral-primary, oklch(0.097 0 0 / 1));
     }
   `,
-});
+};

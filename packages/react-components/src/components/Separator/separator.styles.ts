@@ -1,6 +1,7 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = { root: "openui-separator" } as const;
-export const separatorStyles = (css: StyleCss) => ({
+export const separatorStyles = {
   root: css`
     background-color: var(--openui-border-default, oklch(0.097 0 0 / 0.06));
     &[data-orientation="horizontal"] {
@@ -12,4 +13,4 @@ export const separatorStyles = (css: StyleCss) => ({
       height: 100%;
     }
   `,
-});
+};

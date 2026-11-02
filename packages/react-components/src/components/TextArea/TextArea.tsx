@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import React, { forwardRef } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { useFormControlContext } from "../FormControl/context";
 import { names, textAreaStyles } from "./textArea.styles";
 
@@ -18,7 +17,7 @@ export interface TextAreaProps extends Omit<
 
 const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>((props, ref) => {
   const { className, rows = 3, hasError, ...rest } = props;
-  const styles = useStyles(textAreaStyles);
+  const styles = textAreaStyles;
   const ctx = useFormControlContext();
   const resolvedHasError = hasError ?? ctx?.hasError ?? false;
 

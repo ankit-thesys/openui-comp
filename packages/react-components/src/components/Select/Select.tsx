@@ -4,7 +4,6 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 import clsx from "clsx";
 import { Check, ChevronDown } from "lucide-react";
 import React, { createContext, forwardRef, useContext, useEffect, useMemo, useState } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { useTheme } from "../ThemeProvider";
 import { names, selectStyles } from "./select.styles";
 
@@ -20,7 +19,6 @@ export interface SelectProps extends React.ComponentPropsWithoutRef<typeof Selec
   size?: SelectSize;
 }
 export const Select = ({ size = "md", ...props }: SelectProps) => {
-  useStyles(selectStyles);
   const [currentSize, setCurrentSize] = useState<SelectSize>(size);
   useEffect(() => {
     setCurrentSize(size);
@@ -43,7 +41,7 @@ export const SelectGroup = forwardRef<
   React.ComponentRef<typeof SelectPrimitive.Group>,
   SelectGroupProps
 >(({ className, ...props }, ref) => {
-  const styles = useStyles(selectStyles);
+  const styles = selectStyles;
   return (
     <SelectPrimitive.Group
       ref={ref}
@@ -74,7 +72,7 @@ export const SelectTrigger = forwardRef<
   React.ComponentRef<typeof SelectPrimitive.Trigger>,
   SelectTriggerProps
 >(({ className, children, hideDropdownIcon, size, ...props }, ref) => {
-  const styles = useStyles(selectStyles);
+  const styles = selectStyles;
   const sizeContext = useSelectSizeContext();
   const resolvedSize = size ?? sizeContext?.size ?? "md";
   useEffect(() => {
@@ -128,7 +126,7 @@ export const SelectContent = forwardRef<
     },
     ref,
   ) => {
-    const styles = useStyles(selectStyles);
+    const styles = selectStyles;
     const { portalThemeClassName } = useTheme();
     const size = useSelectSizeContext()?.size ?? "md";
     return (
@@ -178,7 +176,7 @@ export const SelectLabel = forwardRef<
   React.ComponentRef<typeof SelectPrimitive.Label>,
   SelectLabelProps
 >(({ className, ...props }, ref) => {
-  const styles = useStyles(selectStyles);
+  const styles = selectStyles;
   return (
     <SelectPrimitive.Label
       ref={ref}
@@ -197,7 +195,7 @@ export const SelectItem = forwardRef<
   React.ComponentRef<typeof SelectPrimitive.Item>,
   SelectItemProps
 >(({ className, children, showTick = true, textValue, ...props }, ref) => {
-  const styles = useStyles(selectStyles);
+  const styles = selectStyles;
   return (
     <SelectPrimitive.Item
       ref={ref}
@@ -231,7 +229,7 @@ export const SelectSeparator = forwardRef<
   React.ComponentRef<typeof SelectPrimitive.Separator>,
   SelectSeparatorProps
 >(({ className, ...props }, ref) => {
-  const styles = useStyles(selectStyles);
+  const styles = selectStyles;
   return (
     <SelectPrimitive.Separator
       ref={ref}

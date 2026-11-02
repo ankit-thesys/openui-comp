@@ -3,7 +3,6 @@
 import * as Radio from "@radix-ui/react-radio-group";
 import clsx from "clsx";
 import { CSSProperties, forwardRef, ReactElement } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { RadioItemProps } from "../RadioItem";
 import { names, radioGroupStyles } from "./radioGroup.styles";
 
@@ -17,7 +16,7 @@ interface RadioGroupProps extends Radio.RadioGroupProps {
 
 const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>((props, ref) => {
   const { children, className, style, variant = "clear", ...rest } = props;
-  const styles = useStyles(radioGroupStyles);
+  const styles = radioGroupStyles;
   return (
     <Radio.Root
       ref={ref}

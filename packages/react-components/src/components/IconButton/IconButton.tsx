@@ -3,7 +3,6 @@
 import { Slot, Slottable } from "@radix-ui/react-slot";
 import clsx from "clsx";
 import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { iconButtonStyles, names } from "./iconButton.styles";
 
 type IconButtonVariant = "primary" | "secondary" | "tertiary";
@@ -40,7 +39,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props,
     children,
     ...rest
   } = props;
-  const styles = useStyles(iconButtonStyles);
+  const styles = iconButtonStyles;
 
   const Comp = asChild ? Slot : "button";
 

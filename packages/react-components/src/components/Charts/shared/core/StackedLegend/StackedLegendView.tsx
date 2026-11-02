@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
-import { useStyles } from "../../../../../styles/useStyles";
 import { Button } from "../../../../Button";
 import { IconButton } from "../../../../IconButton";
 import { Separator } from "../../../../Separator";
@@ -48,7 +47,7 @@ export const StackedLegendView = ({
   className,
   style,
 }: StackedLegendViewProps) => {
-  const styles = useStyles(stackedLegendStyles);
+  const styles = stackedLegendStyles;
   const listRef = useRef<HTMLDivElement>(null);
   const [showUpButton, setShowUpButton] = useState(false);
   const [showDownButton, setShowDownButton] = useState(false);

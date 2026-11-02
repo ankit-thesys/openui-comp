@@ -4,7 +4,6 @@ import clsx from "clsx";
 import type { ScaleBand, ScaleQuantize } from "d3-scale";
 import type { CSSProperties } from "react";
 import React, { useCallback } from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import type { HoveredHeatmapCell } from "../../hooks/cartesian/useHeatmapChartOrchestrator";
 import { heatmapCellValue } from "../../hooks/cartesian/useHeatmapChartOrchestrator";
 import { useCanvasContextForLabelSize } from "../../hooks/core/useCanvasContextForLabelSize";
@@ -78,7 +77,7 @@ export function HeatmapCells<T extends Record<string, string | number>>({
   onCellMouseLeave,
   onClick,
 }: HeatmapCellsProps<T>) {
-  const styles = useStyles(heatmapChartStyles);
+  const styles = heatmapChartStyles;
   const hydrated = useHydrated();
   const context = useCanvasContextForLabelSize();
 

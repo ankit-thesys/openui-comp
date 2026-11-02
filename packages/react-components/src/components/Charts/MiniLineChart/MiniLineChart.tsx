@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { line } from "d3-shape";
-import { useStyles } from "../../../styles/useStyles";
 import { useEffectiveAnimation } from "../hooks/core/useEffectiveAnimation";
 import { MiniChartFrame } from "../shared/mini/MiniChartFrame";
 import {
@@ -29,7 +28,7 @@ export function MiniLineChart({
   className,
   lineColor,
 }: MiniLineChartProps) {
-  const styles = useStyles(miniLineChartStyles);
+  const styles = miniLineChartStyles;
   const animate = useEffectiveAnimation(isAnimationActive);
   const [color = ""] = useChartPalette({
     customPalette: customPalette ?? (lineColor ? [lineColor] : undefined),

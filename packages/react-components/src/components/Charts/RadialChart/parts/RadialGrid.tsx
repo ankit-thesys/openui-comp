@@ -1,7 +1,6 @@
 "use client";
 
 import clsx from "clsx";
-import { useStyles } from "../../../../styles/useStyles";
 import { names, radialChartStyles } from "../radialChart.styles";
 interface RadialGridProps {
   maxRadius: number;
@@ -18,7 +17,7 @@ export function RadialGrid({
   startAngle,
   endAngle,
 }: RadialGridProps) {
-  const styles = useStyles(radialChartStyles);
+  const styles = radialChartStyles;
   const isSemiCircular = endAngle - startAngle < 2 * Math.PI;
 
   return (

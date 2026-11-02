@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { forwardRef, type ReactNode } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { InlineTypographyContext } from "../InlineMarkdownRenderer/InlineTypography";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
 import { compositeCardStyles, names } from "./card.styles";
@@ -26,7 +25,7 @@ export interface CompositeCardProps {
 
 /** A bordered card with header, stacked body content and a price/button footer. */
 export const CompositeCard = forwardRef<HTMLDivElement, CompositeCardProps>((props, ref) => {
-  const styles = useStyles(compositeCardStyles);
+  const styles = compositeCardStyles;
   const { item, clickable = false, onClick, className } = props;
   const { header, body, footer } = item;
   const bodyItems = body ?? [];

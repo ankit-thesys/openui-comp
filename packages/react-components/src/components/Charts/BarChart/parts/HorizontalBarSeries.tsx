@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import React from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import { useTheme } from "../../../ThemeProvider";
 import { horizontalBarChartStyles, names } from "../horizontalBarChart.styles";
 
@@ -67,7 +66,7 @@ export const HorizontalBarSeries: React.FC<HorizontalBarSeriesProps> = React.mem
     // Theme-mode-aware internal-line color — light surfaces get the faint white
     // line, dark surfaces the faint black one (openui's horizontal look). Read
     // the same way the heatmap orchestrator reads it.
-    const styles = useStyles(horizontalBarChartStyles);
+    const styles = horizontalBarChartStyles;
     const { mode } = useTheme();
     const internalLineColor = mode === "dark" ? INTERNAL_LINE_DARK : INTERNAL_LINE_LIGHT;
 

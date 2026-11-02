@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { memo } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { SourceFaviconImage } from "../SourceFaviconImage";
 import { openSourceInNewTab, SourceWithFavicon } from "./SourceContext";
 import { names, sourcesItemStyles } from "./sourcesItem.styles";
@@ -13,7 +12,7 @@ export interface SourcesItemComponentProps extends SourceWithFavicon {
 }
 
 export const ListedSourceItem = memo((props: SourcesItemComponentProps) => {
-  const styles = useStyles(sourcesItemStyles);
+  const styles = sourcesItemStyles;
   const { title, sourceName, onClick, faviconUrl, url, sourceId } = props;
   const handleClick = () => {
     openSourceInNewTab(url);

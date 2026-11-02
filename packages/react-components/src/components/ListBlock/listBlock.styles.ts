@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-list-block",
   size: { default: "openui-list-block--size-default", small: "openui-list-block--size-small" },
@@ -8,7 +9,7 @@ export const names = {
     image: "openui-list-block--variant-image",
   },
 } as const;
-export const listBlockStyles = (css: StyleCss) => ({
+export const listBlockStyles = {
   root: css`
     box-sizing: border-box;
     display: flex;
@@ -25,4 +26,4 @@ export const listBlockStyles = (css: StyleCss) => ({
       --_openui-list-block-gap: var(--openui-space-m, 12px);
     `,
   },
-});
+};

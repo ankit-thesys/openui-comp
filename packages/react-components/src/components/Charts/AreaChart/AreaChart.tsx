@@ -2,9 +2,6 @@
 
 import clsx from "clsx";
 import { useCallback, useMemo } from "react";
-import { useStyles } from "../../../styles/useStyles";
-import { drawLineStyles } from "../shared/animations/drawLine.styles";
-import { fadeAppearStyles } from "../shared/animations/fadeAppear.styles";
 import { names as baseNames, chartBaseStyles } from "../shared/chartBase.styles";
 import { areaChartStyles, names } from "./areaChart.styles";
 
@@ -33,8 +30,8 @@ import type { AreaChartData, AreaChartProps } from "./types";
  * otherwise break the Rules of Hooks).
  */
 export function AreaChart<T extends AreaChartData>(props: AreaChartProps<T>) {
-  const styles = useStyles(areaChartStyles);
-  const baseStyles = useStyles(chartBaseStyles);
+  const styles = areaChartStyles;
+  const baseStyles = chartBaseStyles;
   if (!props.data || props.data.length === 0) {
     return (
       <div
@@ -85,9 +82,7 @@ function AreaChartImpl<T extends AreaChartData>({
   activeDots = true,
   yTickCount,
 }: AreaChartProps<T>) {
-  const styles = useStyles(areaChartStyles);
-  useStyles(drawLineStyles);
-  useStyles(fadeAppearStyles);
+  const styles = areaChartStyles;
   const animate = useEffectiveAnimation(isAnimationActive);
   const mode = condensed ? "fit" : "scroll";
 

@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import React from "react";
-import { useStyles } from "../../styles/useStyles";
 import { useFormControlContext } from "../FormControl/context";
 import { inputStyles, names } from "./input.styles";
 
@@ -15,7 +14,7 @@ export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElem
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, styles, size = "medium", hasError, ...props }, ref) => {
-    const css = useStyles(inputStyles);
+    const css = inputStyles;
     const ctx = useFormControlContext();
     const resolvedHasError = hasError ?? ctx?.hasError ?? false;
     return (

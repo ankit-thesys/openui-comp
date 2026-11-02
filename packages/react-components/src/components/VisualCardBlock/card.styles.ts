@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   card: "openui-visual-card",
@@ -13,7 +13,7 @@ export const names = {
   },
 } as const;
 
-export const visualCardStyles = (css: StyleCss) => ({
+export const visualCardStyles = {
   card: css`
     /* react-ui's content-box sizing, declared so a page's box-sizing reset (Tailwind's preflight, for
        one) cannot change the geometry. */
@@ -113,4 +113,4 @@ export const visualCardStyles = (css: StyleCss) => ({
     width: 16px;
     height: 16px;
   `,
-});
+};

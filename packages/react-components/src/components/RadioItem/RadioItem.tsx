@@ -3,7 +3,6 @@
 import * as Radio from "@radix-ui/react-radio-group";
 import clsx from "clsx";
 import { CSSProperties, forwardRef, ReactNode, useId } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { names, radioItemStyles } from "./radioItem.styles";
 
 export interface RadioItemProps {
@@ -19,7 +18,7 @@ export interface RadioItemProps {
 const RadioItem = forwardRef<HTMLButtonElement, RadioItemProps>((props, ref) => {
   const { label, description, className, style, disabled, required, value } = props;
   const id = useId();
-  const styles = useStyles(radioItemStyles);
+  const styles = radioItemStyles;
   return (
     <label htmlFor={id} className={clsx(styles.container, names.container)}>
       <Radio.Item

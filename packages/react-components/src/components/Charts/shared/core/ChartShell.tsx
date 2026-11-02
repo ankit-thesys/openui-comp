@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import React from "react";
-import { useStyles } from "../../../../styles/useStyles";
 import { chartBaseStyles, names } from "../chartBase.styles";
 
 import { MeasureFontScopeContext } from "../../hooks/core/measureFontScope";
@@ -55,7 +54,7 @@ export const ChartShell: React.FC<ChartShellProps> = ({
   exportData,
   children,
 }) => {
-  const styles = useStyles(chartBaseStyles);
+  const styles = chartBaseStyles;
   return (
     <LabelTooltipProvider>
       {/* Measurement-font scope: children measuring text (axis label sheets,

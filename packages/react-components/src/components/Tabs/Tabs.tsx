@@ -4,7 +4,6 @@ import * as TabsPrimitive from "@radix-ui/react-tabs";
 import clsx from "clsx";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { forwardRef, useCallback, useEffect, useRef, useState } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { IconButton } from "../IconButton";
 import { names as tabsNames, tabsStyles } from "./tabs.styles";
 import { names as contentNames, tabsContentStyles } from "./tabsContent.styles";
@@ -21,7 +20,7 @@ export interface TabsProps extends React.ComponentPropsWithoutRef<typeof TabsPri
 
 export const Tabs = forwardRef<React.ComponentRef<typeof TabsPrimitive.Root>, TabsProps>(
   ({ className, style, variant = "clear", ...props }, ref) => {
-    const styles = useStyles(tabsStyles);
+    const styles = tabsStyles;
     return (
       <TabsPrimitive.Root
         ref={ref}
@@ -46,7 +45,7 @@ export interface TabsListProps extends React.ComponentPropsWithoutRef<typeof Tab
 
 export const TabsList = forwardRef<React.ComponentRef<typeof TabsPrimitive.List>, TabsListProps>(
   ({ className, style, variant = "title", ...props }, ref) => {
-    const styles = useStyles(tabsListStyles);
+    const styles = tabsListStyles;
     const listRef = useRef<HTMLDivElement>(null);
     const indicatorRef = useRef<HTMLDivElement>(null);
     const [showLeftButton, setShowLeftButton] = useState(false);
@@ -234,7 +233,7 @@ export const TabsTrigger = forwardRef<
   React.ComponentRef<typeof TabsPrimitive.Trigger>,
   TabsTriggerProps
 >(({ className, style, icon, text, subtext, image, value, ...props }, ref) => {
-  const styles = useStyles(tabsTriggerStyles);
+  const styles = tabsTriggerStyles;
   return (
     <TabsPrimitive.Trigger
       ref={ref}
@@ -271,7 +270,7 @@ export const TabsContent = forwardRef<
   React.ComponentRef<typeof TabsPrimitive.Content>,
   TabsContentProps
 >(({ className, style, children, ...props }, ref) => {
-  const styles = useStyles(tabsContentStyles);
+  const styles = tabsContentStyles;
   return (
     <TabsPrimitive.Content
       ref={ref}

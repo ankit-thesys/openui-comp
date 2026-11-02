@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import { ChevronRight } from "lucide-react";
 import { forwardRef, type CSSProperties, type ReactNode } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { CardBlockLayout, cardKeyDownHandler } from "../_shared/cards/CardBlockLayout";
 import { toCssUrl } from "../_shared/utils/safeUrl";
 import { TagSurfaceContext } from "../Tag/TagSurface";
@@ -29,7 +28,7 @@ export interface VisualCardProps {
 
 /** A photo-first card: background image with gradient, a tag on top and a body panel at the bottom. */
 export const VisualCard = forwardRef<HTMLDivElement, VisualCardProps>((props, ref) => {
-  const styles = useStyles(visualCardStyles);
+  const styles = visualCardStyles;
   const { item, clickable = false, onClick, className } = props;
   const { tag, body, bgImageSrc, bgImageAlt } = item;
   const backgroundImage = toCssUrl(bgImageSrc);

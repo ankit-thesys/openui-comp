@@ -1,4 +1,4 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
 
 export const names = {
   root: "openui-text-block",
@@ -46,7 +46,7 @@ export const names = {
 
 // Sizes supply typography choices; variants and type select them through private variables.
 // Heading shorthands reset font variation to normal, matching the original font declarations.
-export const textBlockStyles = (css: StyleCss) => ({
+export const textBlockStyles = {
   root: css`
     display: flex;
     flex-direction: column;
@@ -87,11 +87,14 @@ export const textBlockStyles = (css: StyleCss) => ({
   tertiary: css`
     display: none;
   `,
+  // Keep tone bodies unique: shared Goober hashes can otherwise register before secondary.
   secondaryTone: {
     positive: css`
+      /* TextBlock secondary positive tone. */
       color: var(--openui-text-success-primary, oklch(0.448 0.108 151.328 / 1));
     `,
     negative: css`
+      /* TextBlock secondary negative tone. */
       color: var(--openui-text-danger-primary, oklch(0.505 0.19 27.518 / 1));
     `,
   },
@@ -723,4 +726,4 @@ export const textBlockStyles = (css: StyleCss) => ({
       width: 100%;
     `,
   },
-});
+};

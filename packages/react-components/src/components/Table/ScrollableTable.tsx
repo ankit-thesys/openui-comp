@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { IconButton } from "../IconButton";
 import { names, scrollableTableStyles } from "./scrollableTable.styles";
 import { Table } from "./Table";
@@ -15,7 +14,7 @@ export interface ScrollableTableProps extends React.HTMLAttributes<HTMLTableElem
 
 const ScrollableTable = React.forwardRef<HTMLTableElement, ScrollableTableProps>(
   ({ className, containerClassName, containerStyle, children, ...tableProps }, ref) => {
-    const styles = useStyles(scrollableTableStyles);
+    const styles = scrollableTableStyles;
     const wrapperRef = useRef<HTMLDivElement>(null);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 

@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../styles/useStyles";
+import { css } from "../../styles/css";
+
 export const names = {
   root: "openui-icon-text",
   content: "openui-icon-text-content",
@@ -24,7 +25,7 @@ export const names = {
     soft: "openui-icon-text--icon-variant-soft",
   },
 } as const;
-export const iconTextStyles = (css: StyleCss) => ({
+export const iconTextStyles = {
   root: css`
     display: flex;
     gap: var(--openui-space-m, 12px);
@@ -63,4 +64,4 @@ export const iconTextStyles = (css: StyleCss) => ({
       width: 100%;
     `,
   },
-});
+};

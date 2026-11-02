@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import React from "react";
-import { useStyles } from "../../styles/useStyles";
 import { cardStyles, names } from "./card.styles";
 
 type CardVariant = "clear" | "card" | "sunk";
@@ -16,7 +15,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 export const Card = React.forwardRef<HTMLDivElement, CardProps>((props, ref) => {
   const { className, children, variant = "card", width = "standard", ...rest } = props;
 
-  const styles = useStyles(cardStyles);
+  const styles = cardStyles;
   return (
     <div
       ref={ref}

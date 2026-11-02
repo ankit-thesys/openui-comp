@@ -3,10 +3,9 @@
 import clsx from "clsx";
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import React, { memo, useCallback, useState } from "react";
-import { useStyles } from "../../../../../styles/useStyles";
 import { Button } from "../../../../Button";
 import { type LegendItem } from "../../../types";
-import { defaultLegendStyles, names } from "./defaultLegend.styles";
+import { defaultLegendClasses, names } from "./defaultLegend.styles";
 import { useDefaultLegend } from "./hooks/useDefaultLegend";
 
 interface DefaultLegendProps {
@@ -39,7 +38,7 @@ const DefaultLegend = memo(
       },
       ref,
     ) => {
-      const styles = useStyles(defaultLegendStyles);
+      const styles = defaultLegendClasses;
       const [buttonWidth, setButtonWidth] = useState(0);
       const { displayItems, hasMoreItems, toggleButtonText } = useDefaultLegend({
         items,

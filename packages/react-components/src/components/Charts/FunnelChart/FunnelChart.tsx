@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import type { CSSProperties } from "react";
-import { useStyles } from "../../../styles/useStyles";
 import { useEffectiveAnimation } from "../hooks";
 import { useFunnelChartOrchestrator } from "../hooks/cartesian/useFunnelChartOrchestrator";
 import { ChartShell } from "../shared/core/ChartShell";
@@ -17,7 +16,7 @@ import type { FunnelChartData, FunnelChartProps } from "./types";
 const STAGE_GAP = 4;
 
 export function FunnelChart<T extends FunnelChartData>(props: FunnelChartProps<T>) {
-  const styles = useStyles(funnelChartStyles);
+  const styles = funnelChartStyles;
   const {
     data,
     categoryKey,

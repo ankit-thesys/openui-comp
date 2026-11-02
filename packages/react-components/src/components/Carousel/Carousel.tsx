@@ -12,7 +12,6 @@ import {
   useRef,
   useState,
 } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { IconButton } from "../IconButton";
 import { carouselStyles, names } from "./carousel.styles";
 
@@ -64,7 +63,7 @@ export const Carousel = forwardRef<CarouselRef, CarouselProps>(
     },
     ref,
   ) => {
-    const styles = useStyles(carouselStyles);
+    const styles = carouselStyles;
     const scrollDivRef = useRef<HTMLDivElement>(null);
     const [isPrevVisible, setIsPrevVisible] = useState(false);
     const [isNextVisible, setIsNextVisible] = useState(false);
@@ -202,7 +201,7 @@ export const Carousel = forwardRef<CarouselRef, CarouselProps>(
 
 export const CarouselContent = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, children, ...props }, _ref) => {
-    const styles = useStyles(carouselStyles);
+    const styles = carouselStyles;
     const { scrollDivRef, noSnap, isPrevVisible, isNextVisible } = useCarousel();
 
     const content = noSnap ? (
@@ -228,7 +227,7 @@ export const CarouselContent = forwardRef<HTMLDivElement, React.HTMLAttributes<H
 
 export const CarouselItem = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, children, ...props }, ref) => {
-    const styles = useStyles(carouselStyles);
+    const styles = carouselStyles;
     return (
       <div ref={ref} className={clsx(styles.item, names.item, className)} {...props}>
         {children}
@@ -241,7 +240,7 @@ export const CarouselPrevious = forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof IconButton>
 >(({ className, style, ...props }, ref) => {
-  const styles = useStyles(carouselStyles);
+  const styles = carouselStyles;
   const { scroll, showButtons, isPrevVisible } = useCarousel();
 
   if (!isPrevVisible || !showButtons) return null;
@@ -264,7 +263,7 @@ export const CarouselPrevious = forwardRef<
 
 export const CarouselNext = forwardRef<HTMLButtonElement, React.ComponentProps<typeof IconButton>>(
   ({ className, style, ...props }, ref) => {
-    const styles = useStyles(carouselStyles);
+    const styles = carouselStyles;
     const { scroll, showButtons, isNextVisible } = useCarousel();
 
     if (!isNextVisible || !showButtons) return null;

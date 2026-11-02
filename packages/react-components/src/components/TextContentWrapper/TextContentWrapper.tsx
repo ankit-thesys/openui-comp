@@ -5,7 +5,6 @@ import { memo, useEffect, useState } from "react";
 import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
-import { useStyles } from "../../styles/useStyles";
 import { remarkCitations } from "../_shared/remark/remarkCitations";
 import { TextContentCitation } from "../Citation";
 import { InlineHeader } from "../InlineHeader";
@@ -39,7 +38,7 @@ type RehypePlugin = NonNullable<
  * `CardSourceProvider`.
  */
 export const TextContentWrapper = memo((props: TextContentWrapperProps) => {
-  const styles = useStyles(textContentWrapperStyles);
+  const styles = textContentWrapperStyles;
   const { mode } = useTheme();
   const [rehypeKatex, setRehypeKatex] = useState<RehypePlugin | null>(null);
 

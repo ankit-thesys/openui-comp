@@ -1,4 +1,5 @@
-import type { StyleCss } from "../../../styles/useStyles";
+import { css } from "../../../styles/css";
+
 import { centeredContainer, centeredSvgWrapper } from "../shared/chartBaseDeclarations";
 
 /** Stable override targets for PieChart. */
@@ -24,58 +25,56 @@ export const names = {
   },
 } as const;
 
-// Register the entrance keyframes with the component, never on import.
-export const pieChartStyles = (css: StyleCss) => {
-  css`
-    @keyframes openui-pie-chart-appear {
-      from {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+// Register entrance keyframes before the rules that reference them, on import.
+css`
+  @keyframes openui-pie-chart-appear {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
     }
-  `;
-  return {
-    root: css`
-      ${centeredContainer}
-      width: var(--_openui-pie-chart-root-width, 100%);
-      height: var(--_openui-pie-chart-root-height, unset);
-    `,
-    svgWrapper: css`
-      ${centeredSvgWrapper}
-    `,
-    track: css`
-      fill: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
-      fill-opacity: var(--_openui-pie-chart-slice-fill-opacity, unset);
-      filter: var(--_openui-pie-chart-slice-filter, unset);
-      transition: var(--_openui-pie-chart-slice-transition, unset);
-      animation-delay: var(--_openui-pie-chart-slice-animation-delay, unset);
-      cursor: var(--_openui-pie-chart-slice-cursor, unset);
-    `,
-    sliceIsAnimationActive: css`
-      @media (prefers-reduced-motion: no-preference) {
-        opacity: 0;
-        transform-origin: center center;
-        animation: openui-pie-chart-appear 0.6s ease-out forwards;
-        animation-delay: var(--_openui-pie-chart-slice-animation-delay, 0s);
-      }
-    `,
-    hitbox: css`
-      pointer-events: var(--_openui-pie-chart-hitbox-pointer-events, unset);
-      cursor: var(--_openui-pie-chart-hitbox-cursor, unset);
-    `,
-    group: css`
-      pointer-events: var(--_openui-pie-chart-group-pointer-events, unset);
-    `,
-    slice: css`
-      fill-opacity: var(--_openui-pie-chart-slice-fill-opacity, unset);
-      filter: var(--_openui-pie-chart-slice-filter, unset);
-      transition: var(--_openui-pie-chart-slice-transition, unset);
-      animation-delay: var(--_openui-pie-chart-slice-animation-delay, unset);
-      cursor: var(--_openui-pie-chart-slice-cursor, unset);
-    `,
-  };
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+`;
+export const pieChartStyles = {
+  root: css`
+    ${centeredContainer}
+    width: var(--_openui-pie-chart-root-width, 100%);
+    height: var(--_openui-pie-chart-root-height, unset);
+  `,
+  svgWrapper: css`
+    ${centeredSvgWrapper}
+  `,
+  track: css`
+    fill: var(--openui-sunk, oklch(0.097 0 0 / 0.04));
+    fill-opacity: var(--_openui-pie-chart-slice-fill-opacity, unset);
+    filter: var(--_openui-pie-chart-slice-filter, unset);
+    transition: var(--_openui-pie-chart-slice-transition, unset);
+    animation-delay: var(--_openui-pie-chart-slice-animation-delay, unset);
+    cursor: var(--_openui-pie-chart-slice-cursor, unset);
+  `,
+  sliceIsAnimationActive: css`
+    @media (prefers-reduced-motion: no-preference) {
+      opacity: 0;
+      transform-origin: center center;
+      animation: openui-pie-chart-appear 0.6s ease-out forwards;
+      animation-delay: var(--_openui-pie-chart-slice-animation-delay, 0s);
+    }
+  `,
+  hitbox: css`
+    pointer-events: var(--_openui-pie-chart-hitbox-pointer-events, unset);
+    cursor: var(--_openui-pie-chart-hitbox-cursor, unset);
+  `,
+  group: css`
+    pointer-events: var(--_openui-pie-chart-group-pointer-events, unset);
+  `,
+  slice: css`
+    fill-opacity: var(--_openui-pie-chart-slice-fill-opacity, unset);
+    filter: var(--_openui-pie-chart-slice-filter, unset);
+    transition: var(--_openui-pie-chart-slice-transition, unset);
+    animation-delay: var(--_openui-pie-chart-slice-animation-delay, unset);
+    cursor: var(--_openui-pie-chart-slice-cursor, unset);
+  `,
 };

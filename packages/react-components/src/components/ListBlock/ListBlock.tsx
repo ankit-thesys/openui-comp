@@ -9,7 +9,6 @@ import {
   isValidElement,
   ReactElement,
 } from "react";
-import { useStyles } from "../../styles/useStyles";
 import { ListItemProps, ListItemSize, ListItemVariant } from "../ListItem";
 import { listBlockStyles, names } from "./listBlock.styles";
 
@@ -26,7 +25,7 @@ export interface ListBlockProps {
 const ListBlock = forwardRef<HTMLDivElement, ListBlockProps>((props, ref) => {
   const { children, variant = "number", size = "default", className, style } = props;
 
-  const styles = useStyles(listBlockStyles);
+  const styles = listBlockStyles;
   const childArray = Children.toArray(children);
   const listHasSubtitle = childArray.some(
     (child) => isValidElement(child) && !!(child as ReactElement<ListItemProps>).props.subtitle,
