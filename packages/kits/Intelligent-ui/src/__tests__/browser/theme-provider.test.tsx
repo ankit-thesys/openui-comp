@@ -2,7 +2,7 @@ import { ThemeProvider } from "@openuidev/react-components";
 import { Renderer } from "@openuidev/react-lang";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, describe, expect, it } from "vitest";
-import { IntelligentThemeProvider } from "../../components/IntelligentThemeProvider";
+import { IntelligentUiThemeProvider } from "../../components/IntelligentUiThemeProvider";
 import { library } from "../../lib";
 import { byText, cleanup, renderProgram, settle, style } from "../helpers/render";
 
@@ -16,7 +16,7 @@ afterEach(() => {
   document.querySelectorAll("[data-test-host]").forEach((host) => host.remove());
 });
 
-describe("IntelligentThemeProvider", () => {
+describe("IntelligentUiThemeProvider", () => {
   it("gives the library's root the source app's status colours, light and dark", async () => {
     let scope = await renderProgram(page);
     expect(badgeInk(scope, "Done")).toBe("rgb(0, 128, 93)");
@@ -74,9 +74,9 @@ describe("IntelligentThemeProvider", () => {
     const root = createRoot(host);
     roots.push(root);
     root.render(
-      <IntelligentThemeProvider mode="dark" darkTheme={{ textDangerPrimary: "rgb(250, 0, 0)" }}>
+      <IntelligentUiThemeProvider mode="dark" darkTheme={{ textDangerPrimary: "rgb(250, 0, 0)" }}>
         <Renderer response={page} library={library} isStreaming={false} />
-      </IntelligentThemeProvider>,
+      </IntelligentUiThemeProvider>,
     );
     await settle(300);
     expect(badgeInk(host, "Late")).toBe("rgb(250, 0, 0)");
