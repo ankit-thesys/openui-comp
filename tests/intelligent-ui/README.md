@@ -37,6 +37,19 @@ There are three places to extend:
 fails the run. `harness/network.ts` answers the library's `/api/...` routes and every outside request,
 so no run reaches the network. `host/mock-tools.ts` is the data the gallery's dashboards query.
 
+#203's specs drive the page the way a user does, by role, label and visible text:
+
+- `specs/interactions.spec.ts`: forms and their rules, the input controls, Popover, the map, the
+  study tools, and the review fixes from #160;
+- `specs/actions.spec.ts`: `@CopyToClipboard`, `@OpenUrl`, `@ToAssistant`, `@Reset`, and
+  `runLibraryAction` passing every other action on to the host;
+- `specs/streaming.spec.ts`: every program streamed in uneven chunks, with no console error;
+- `specs/functions.spec.ts`: the 59 `@functions` against `fixtures/function-answers.ts`, known answers
+  taken from outside the library.
+
+Their small programs are in `harness/behaviour-programs.ts`. `IU_PORT_OFFSET=1000` moves the host
+ports, so a second checkout can run at the same time.
+
 `legacy/` holds #160's suites until the tickets in its README port them.
 
 ## The rendering sweep (#201)

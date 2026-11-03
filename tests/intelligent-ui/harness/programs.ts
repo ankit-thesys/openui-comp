@@ -1,5 +1,6 @@
 import { examples } from "@openuidev/intelligent-ui-library";
 import gallery from "../fixtures/gallery.json" with { type: "json" };
+import { behaviourPrograms } from "./behaviour-programs";
 
 /**
  * Every program the host can render, by id. #160's 45 gallery programs come first, migrated to the
@@ -8,7 +9,7 @@ import gallery from "../fixtures/gallery.json" with { type: "json" };
  */
 export type Program = {
   id: string;
-  set: "gallery" | "example" | "regressions" | "theme" | "layout" | "self-test";
+  set: "gallery" | "example" | "regressions" | "theme" | "layout" | "self-test" | "behaviour";
   section: string;
   title: string;
   code: string;
@@ -108,6 +109,12 @@ export const programs: Program[] = [
   ...themeRoots,
   ...layout,
   ...selfTest,
+  // #203's behaviour programs, driven by specs/interactions, actions and functions.
+  ...behaviourPrograms.map((entry) => ({
+    ...entry,
+    set: "behaviour" as const,
+    section: "behaviour",
+  })),
 ];
 
 /**
@@ -117,7 +124,9 @@ export const programs: Program[] = [
 const DEFAULT = ["web-analytics"];
 
 export function selected(list: string | undefined): Program[] {
-  if (list === "all") return programs.filter((entry) => entry.set !== "self-test");
+  if (list === "all") {
+    return programs.filter((entry) => entry.set !== "self-test" && entry.set !== "behaviour");
+  }
   const ids = list ? list.split(",").map((id) => id.trim()) : DEFAULT;
   return ids.map((id) => {
     const found = programs.find((entry) => entry.id === id);

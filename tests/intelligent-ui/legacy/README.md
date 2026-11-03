@@ -17,9 +17,7 @@ in this table, and deleted from here when it is. #201 ported `browser/render.tes
 | `browser/app-css.test.tsx`, `browser/app-css-layer.test.tsx`, `browser/style-sheet.test.tsx`, `helpers/style-layer.ts` | a host's own CSS, layered or not, can restyle the output | not ported by #201: needs a host with an app stylesheet and a style layer |
 | `browser/icons.test.tsx` | icon stroke and size inside react-components' parts | not ported by #201: it mounts components directly, not a program |
 | `browser/schema-fixes.test.tsx` | schema fixes from the review rounds render | the rendering cases: `../specs/layout.spec.ts` (#201). The Svg signature case reads the prompt spec: #202 |
-| `browser/interactions.test.tsx` | forms, controls, Popover, Timer, Flashcard, clipboard | #203 |
-| `browser/review-fixes.test.tsx` | Map, Popover, RadioGroup, Code and HtmlView fixes | #203 |
-| `functions/*.test.ts` | the 59 `@functions` against the source app's answers | #203 |
+| `browser/review-fixes.test.tsx` | Map, Popover, RadioGroup, Code and HtmlView fixes | #203 ported Code, RadioGroup, Popover closing on page scroll and the one-place route status. Not ported: the Map and HtmlView cases that follow ThemeProvider's mode, Popover's nested theme, and Popover staying open while its own content scrolls |
 | `parity/` (driver, harness, gallery, fixtures, known differences) | the library against the source app | #204: ported to `../parity`; the live gallery is dropped, as the host serves each program |
 | `styles.contract.test.ts` | the package's source files: style-file names, class prefixes, folders | not ported: it reads the package's source, which #199's testing decisions rule out |
 

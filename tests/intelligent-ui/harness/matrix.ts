@@ -28,8 +28,12 @@ export const hosts: Host[] = reacts.flatMap((react) =>
 export const hostName = (host: Host) =>
   `react${host.react}-${host.theme}-${host.provider ? "provider" : "noprovider"}-${host.width}`;
 
-/** The port each React build is served on. */
-export const ports: Record<Host["react"], number> = { "19": 4319, "18": 4318 };
+/**
+ * The port each React build is served on. `IU_PORT_OFFSET` moves them, so two checkouts running at
+ * once don't reuse each other's servers.
+ */
+const offset = Number(process.env["IU_PORT_OFFSET"] ?? 0);
+export const ports: Record<Host["react"], number> = { "19": 4319 + offset, "18": 4318 + offset };
 
 export const hostUrl = (host: Host, program: string) => {
   const query = new URLSearchParams({
