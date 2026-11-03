@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parity harness</title>
+    <link rel="stylesheet" href="./fonts.css" />
+    <!-- The source app's global stylesheet. ?host=plain removes it and the theme provider: a bare page. -->
+    <link id="host-reset" rel="stylesheet" href="./globals.css" />
+    <script>
+      if (new URLSearchParams(location.search).get("host") === "plain") {
+        document.getElementById("host-reset").remove();
+        // A browser's default body margin would move everything and hide what actually differs.
+        document.write("<style>body { margin: 0; }</style>");
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./entry.tsx"></script>
+  </body>
+</html>
