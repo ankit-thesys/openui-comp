@@ -49,8 +49,9 @@ for (const program of programs.filter((entry) => entry.set !== "self-test")) {
 
     const state = await page.evaluate(() => window.__iu);
     const found = await failures({ page, state, console });
-    // The bad-input functions program reports its bad calls by design (specs/functions.spec.ts).
-    const expected = program.id === "behaviour-functions-null" ? ["no render errors"] : [];
+    // The two bad-input functions programs report their bad calls by design (specs/functions.spec.ts).
+    const reportsBadCalls = ["behaviour-functions-null", "behaviour-awkward"].includes(program.id);
+    const expected = reportsBadCalls ? ["no render errors"] : [];
     expect(
       found.map((entry) => entry.check),
       JSON.stringify(found),

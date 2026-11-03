@@ -7,6 +7,7 @@ import {
   RANDOM,
   type Answer,
 } from "../fixtures/function-answers";
+import { AWKWARD, optionSets } from "../harness/behaviour-programs";
 import type { Host } from "../harness/matrix";
 import { failures, render } from "../harness/render";
 
@@ -93,4 +94,86 @@ test("bad input makes a call null, and the Renderer says which call failed", asy
   for (const problem of found[0]!.problems) {
     expect(problem).toMatch(/^render error: runtime-error: .*@[A-Z][A-Za-z]+ threw: /);
   }
+});
+
+/** Clicks each named button and returns the context its @ToAssistant sent. */
+async function contexts(page: Page, names: string[]) {
+  const sent: Record<string, Record<string, unknown>> = {};
+  for (const name of names) {
+    await page.getByRole("button", { name, exact: true }).click();
+    const action = await page.evaluate(() => window.__iu.actions.at(-1));
+    expect(action?.humanFriendlyMessage).toBe(name);
+    sent[name] = ((action?.params as { context?: Record<string, unknown> }).context ??
+      {}) as Record<string, unknown>;
+  }
+  return sent;
+}
+
+test("awkward input never gives NaN, Infinity or broken text", async ({ page }) => {
+  const rendered = await render(page, host(), "behaviour-awkward");
+  const names = Object.keys(library.toJSONSchema().functions ?? {});
+  const sent = await contexts(page, names);
+  const bad: string[] = [];
+  const visit = (value: unknown, where: string) => {
+    if (typeof value === "number" && !Number.isFinite(value)) bad.push(`${where} is ${value}`);
+    else if (typeof value === "string" && /NaN|Infinity|undefined|\[object Object\]/.test(value)) {
+      bad.push(`${where} is "${value}"`);
+    } else if (value && typeof value === "object") {
+      for (const [key, inner] of Object.entries(value)) visit(inner, `${where}.${key}`);
+    }
+  };
+  for (const name of names) {
+    AWKWARD.forEach((input, index) => visit(sent[name]![`k${index}`], `@${name}(${input}, …)`));
+  }
+  expect(bad).toEqual([]);
+  // Bad calls are reported by the Renderer; nothing is thrown or logged.
+  rendered.state = await page.evaluate(() => window.__iu);
+  const found = await failures(rendered);
+  expect(found.filter((entry) => entry.check !== "no render errors")).toEqual([]);
+});
+
+test("every optional argument changes the result", async ({ page }) => {
+  const rendered = await render(page, host(), "behaviour-options");
+  expect(await failures(rendered)).toEqual([]);
+  const sent = await contexts(page, Object.keys(optionSets));
+  const same: string[] = [];
+  for (const [name, calls] of Object.entries(optionSets)) {
+    const values = calls.map((_, index) => JSON.stringify(sent[name]![`v${index}`] ?? null));
+    values.forEach((value, index) => {
+      if (value === "null") same.push(`${calls[index]} is null`);
+      values.slice(index + 1).forEach((other, offset) => {
+        if (other === value) same.push(`${calls[index]} = ${calls[index + offset + 1]} → ${value}`);
+      });
+    });
+  }
+  expect(same).toEqual([]);
+});
+
+test("the working-tool patterns compute and update", async ({ page }) => {
+  await page.addInitScript((value) => {
+    Math.random = () => value;
+  }, RANDOM);
+  const rendered = await render(page, host(), "behaviour-patterns");
+  const main = page.locator("main");
+  // 1000 at 5% a year: 1000 × 1.05ⁿ.
+  await expect(main).toContainText("Balances: 0:1000, 1:1050, 2:1102.5");
+  // A owes half the 30 and all the 10; B owes the other half.
+  await expect(main).toContainText("Shares: A owes 25, B owes 15");
+  // @Set steps run in order at click time: the name is appended before it is cleared.
+  await page.getByRole("button", { name: "Add person" }).click();
+  await expect(main).toContainText("People: You, Alex");
+  await expect(main).toContainText("Name: []");
+  // A nested @Each gives one button per item and person; each toggles one person on one item.
+  await page.getByRole("button", { name: "Wine B" }).click();
+  await page.getByRole("button", { name: "Mains A" }).click();
+  await expect(main).toContainText("Split: Mains=B; Wine=A+B");
+  // @Each over a @Range follows $state.
+  await page.getByRole("button", { name: "Four years" }).click();
+  await expect(main).toContainText("Balances: 0:1000, 1:1050, 2:1102.5, 3:1157.63, 4:1215.51");
+  // @Random inside @Set draws on the click: 0 + floor(0.5 × 3).
+  await expect(main).toContainText("Door -1");
+  await page.getByRole("button", { name: "Pick a door" }).click();
+  await expect(main).toContainText("Door 1");
+  rendered.state = await page.evaluate(() => window.__iu);
+  expect(await failures(rendered)).toEqual([]);
 });

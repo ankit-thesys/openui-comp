@@ -342,3 +342,81 @@ test.describe("study tools", () => {
     await checked();
   });
 });
+
+// #160's review-fixes suite, ported to the browser seam. Its Map and HtmlView theme cases follow
+// ThemeProvider's mode, which #201 covers.
+test.describe("review fixes", () => {
+  test("Code copies its code and tells a screen reader", async ({ page, context }) => {
+    await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+    await page.clock.install();
+    const checked = await open(page, "behaviour-code");
+    const copy = page.getByRole("button", { name: "Copy code" });
+    await copy.click();
+    await expect(page.getByRole("button", { name: "Copied" })).toBeVisible();
+    expect(await page.evaluate(() => navigator.clipboard.readText())).toBe("x = 1");
+    // A second click restarts the "Copied" time rather than ending it early.
+    await page.clock.runFor(1_000);
+    await page.getByRole("button", { name: "Copied" }).click();
+    await page.clock.runFor(700);
+    await expect(page.getByRole("button", { name: "Copied" })).toBeVisible();
+    await page.clock.runFor(1_500);
+    await expect(page.getByRole("button", { name: "Copy code" })).toBeVisible();
+    await checked();
+  });
+
+  test("Code says so when copying fails, with no unhandled rejection", async ({ page }) => {
+    await page.addInitScript(() => {
+      navigator.clipboard.writeText = () => Promise.reject(new Error("Not allowed"));
+      document.execCommand = () => false;
+    });
+    const checked = await open(page, "behaviour-code");
+    await page.getByRole("button", { name: "Copy code" }).click();
+    await expect(page.getByRole("button", { name: "Couldn't copy code" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Couldn't copy code" })).toContainText(
+      "Couldn't copy",
+    );
+    await checked();
+  });
+
+  test("a required RadioGroup tells a screen reader it is required, invalid and why", async ({
+    page,
+  }) => {
+    const checked = await open(page, "behaviour-radio-rules");
+    const groups = page.getByRole("radiogroup");
+    await expect(groups).toHaveCount(3);
+    for (const group of await groups.all()) {
+      await expect(group).toHaveAttribute("aria-required", "true");
+      await expect(group).not.toHaveAttribute("aria-invalid", "true");
+    }
+    await page.getByRole("button", { name: "Send" }).click();
+    expect(await actionCount(page)).toBe(0);
+    for (const group of await groups.all()) {
+      await expect(group).toHaveAttribute("aria-invalid", "true");
+      await expect(group).toHaveAccessibleDescription(/required/i);
+    }
+    await page.getByRole("radio", { name: "Beta" }).click();
+    await page.getByRole("radio", { name: /^Why/ }).click();
+    await page.getByRole("radio", { name: "Two" }).click();
+    for (const group of await groups.all()) {
+      await expect(group).not.toHaveAttribute("aria-invalid", "true");
+    }
+    await page.getByRole("button", { name: "Send" }).click();
+    expect(await actionCount(page)).toBe(1);
+    await checked();
+  });
+
+  test("Popover closes when the page scrolls", async ({ page }) => {
+    const checked = await open(page, "behaviour-popover-scroll");
+    await page.getByRole("button", { name: "the details" }).click();
+    await expect(page.getByRole("dialog")).toBeVisible();
+    await page.mouse.wheel(0, 600);
+    await expect(page.getByRole("dialog")).toHaveCount(0);
+    await checked();
+  });
+
+  test("a map with one place says nothing about a route", async ({ page }) => {
+    const checked = await open(page, "behaviour-map-one");
+    await expect(page.getByRole("status")).toHaveText("");
+    await checked();
+  });
+});
