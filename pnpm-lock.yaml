@@ -1244,15 +1244,9 @@ importers:
       react:
         specifier: ^19.0.0
         version: 19.2.4
-      react-18:
-        specifier: npm:react@18.3.1
-        version: react@18.3.1
       react-dom:
         specifier: ^19.0.0
         version: 19.2.4(react@19.2.4)
-      react-dom-18:
-        specifier: npm:react-dom@18.3.1
-        version: react-dom@18.3.1(react@19.2.4)
       zod:
         specifier: 'catalog:'
         version: 4.4.3
@@ -1269,6 +1263,12 @@ importers:
       '@types/react-dom':
         specifier: 'catalog:'
         version: 19.2.3(@types/react@19.2.17)
+      react-18:
+        specifier: npm:react@18.3.1
+        version: react@18.3.1
+      react-dom-18:
+        specifier: npm:react-dom@18.3.1
+        version: react-dom@18.3.1(react@19.2.4)
       typescript:
         specifier: 'catalog:'
         version: 5.9.3

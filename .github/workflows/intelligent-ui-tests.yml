@@ -5,7 +5,7 @@ on:
   push:
     branches: [claude/intelligent-ui-tests]
   pull_request:
-    # #196's branch, and the ticket branches (#201–#204) that land on this test branch.
+    # PRs into #196, and the ticket branches (#201-#204) into this test branch.
     branches: [claude/intelligent-kit-v2, claude/intelligent-ui-tests]
   workflow_dispatch:
 

@@ -17,9 +17,7 @@
     "@openuidev/react-components": "workspace:*",
     "@openuidev/react-lang": "workspace:*",
     "react": "^19.0.0",
-    "react-18": "npm:react@18.3.1",
     "react-dom": "^19.0.0",
-    "react-dom-18": "npm:react-dom@18.3.1",
     "zod": "catalog:"
   },
   "devDependencies": {
@@ -27,6 +25,8 @@
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
+    "react-18": "npm:react@18.3.1",
+    "react-dom-18": "npm:react-dom@18.3.1",
     "typescript": "catalog:",
     "vite": "^7.0.0"
   }
