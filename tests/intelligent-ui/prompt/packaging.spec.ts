@@ -1,6 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { spawnSync } from "node:child_process";
-import { readFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { createRequire } from "node:module";
 import { join } from "node:path";
 import { libraryDir, testsDir } from "./cli";
 
@@ -79,4 +80,54 @@ test.describe("the built package", () => {
     expect(readme).toContain("{ photos: [url, ...] }");
     expect(readme).toContain("{ images: [url, ...] }");
   });
+});
+
+test.describe("an app's TypeScript", () => {
+  const readme = () => readFileSync(join(libraryDir, "README.md"), "utf8");
+  // The README's code blocks that import the library: what an app copies first.
+  const samples = () =>
+    [...readme().matchAll(/^```(tsx?)\n([\s\S]*?)^```$/gm)]
+      .filter((match) => match[2]!.includes('"@openuidev/intelligent-ui-library"'))
+      .map((match) => ({ ext: match[1]!, code: match[2]! }));
+  const tsc = createRequire(join(testsDir, "package.json")).resolve("typescript/bin/tsc");
+
+  test("finds the README's samples", () => {
+    // The re-export for the CLI and the Renderer usage come first; later ones (configuration) follow.
+    expect(
+      samples()
+        .map((sample) => sample.ext)
+        .slice(0, 2),
+    ).toEqual(["ts", "tsx"]);
+  });
+
+  for (const resolution of ["Bundler", "NodeNext"]) {
+    test(`compiles the README's samples against the published types (${resolution})`, () => {
+      // Inside the test package, so the library resolves through its package.json to dist.
+      const dir = test.info().outputPath("consumer");
+      mkdirSync(dir, { recursive: true });
+      samples().forEach((sample, index) =>
+        writeFileSync(join(dir, `readme-${index + 1}.${sample.ext}`), sample.code),
+      );
+      writeFileSync(
+        join(dir, "tsconfig.json"),
+        JSON.stringify({
+          compilerOptions: {
+            strict: true,
+            noEmit: true,
+            jsx: "react-jsx",
+            target: "ES2022",
+            module: resolution === "Bundler" ? "ESNext" : "NodeNext",
+            moduleResolution: resolution,
+            // A syntax error in a published .d.ts is still reported; this skips type errors
+            // inside dependencies' own declarations (react-components' goober has one).
+            skipLibCheck: true,
+            types: [],
+          },
+          include: ["*.ts", "*.tsx"],
+        }),
+      );
+      const result = run(process.execPath, [tsc, "-p", dir], testsDir);
+      expect(result.status, result.output).toBe(0);
+    });
+  }
 });
