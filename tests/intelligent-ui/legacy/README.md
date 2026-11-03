@@ -22,10 +22,10 @@ in this table, and deleted from here when it is.
 | `browser/review-fixes.test.tsx` | Map, Popover, RadioGroup, Code and HtmlView fixes | #203 |
 | `functions/*.test.ts` | the 59 `@functions` against the source app's answers | #203 |
 | `library.test.ts`, `__snapshots__/prompt.txt` | component and function counts, the prompt snapshot, every program names real components | #202 |
-| `parity/` (driver, harness, gallery, fixtures, known differences) | the library against the source app | #204 |
+| `parity/` (driver, harness, gallery, fixtures, known differences) | the library against the source app | #204: ported to `../parity`; the live gallery is dropped, as the host serves each program |
 | `packaging.test.ts` | loads in plain Node, the street route's documented format | #199 stories 6–9; no ticket yet |
 | `styles.contract.test.ts` | the package's source files: style-file names, class prefixes, folders | not ported: it reads the package's source, which #199's testing decisions rule out |
 
-`parity/fixtures/programs.json` keeps PR 70's Chart signature, with the `currency` argument: it is
+`../parity/fixtures/programs.json` keeps PR 70's Chart signature, with the `currency` argument: it is
 what the source app renders. The library's copy, migrated to the current signature, is
 `../fixtures/gallery.json`.

@@ -33,7 +33,8 @@ export function colorDistance(a: string | null, b: string | null): number {
   return Math.max(...left.map((value, index) => Math.abs(value - right[index]!)));
 }
 
-const words = (list: { text: string }[]) => list.flatMap((item) => item.text.split(" ")).filter(Boolean);
+const words = (list: { text: string }[]) =>
+  list.flatMap((item) => item.text.split(" ")).filter(Boolean);
 
 function multisetDifference(a: string[], b: string[]) {
   const counts = new Map<string, number>();
@@ -70,11 +71,16 @@ const isHiddenInput = (control: Fingerprint["controls"][number]) =>
   (control.w <= 1 || control.h <= 1);
 
 /** A corner can't look rounder than half the box: 50 and 9999 on a short pill are the same pill. */
-const rounded = (box: { radius: number; w: number; h: number }) => Math.min(box.radius, box.w / 2, box.h / 2);
+const rounded = (box: { radius: number; w: number; h: number }) =>
+  Math.min(box.radius, box.w / 2, box.h / 2);
 
 const isNumeric = (word: string) => /\d/.test(word);
 
-function compareCharts(source: Fingerprint["charts"], kit: Fingerprint["charts"], add: (kind: string, subject: string, from: unknown, to: unknown) => void) {
+function compareCharts(
+  source: Fingerprint["charts"],
+  kit: Fingerprint["charts"],
+  add: (kind: string, subject: string, from: unknown, to: unknown) => void,
+) {
   if (source.length !== kit.length) add("chart-count", "chart", source.length, kit.length);
   source.forEach((a, index) => {
     const b = kit[index];
@@ -85,13 +91,26 @@ function compareCharts(source: Fingerprint["charts"], kit: Fingerprint["charts"]
     if (b.scrolls && !a.scrolls) add("chart-scrolls", subject, false, true);
     // Labels are the words: legends and categories. Ticks depend on the chart's scale, so only their format counts.
     const labels = (list: string[]) => list.filter((word) => !isNumeric(word));
-    for (const word of new Set(multisetDifference(labels(a.words), labels(b.words)))) add("chart-label-missing", word, word, null);
-    const marked = (list: string[], mark: RegExp) => list.some((word) => isNumeric(word) && mark.test(word));
-    if (marked(a.words, /[$€£]/) && !marked(b.words, /[$€£]/)) add("chart-no-currency", subject, a.words.filter(isNumeric).slice(0, 4), b.words.filter(isNumeric).slice(0, 4));
+    for (const word of new Set(multisetDifference(labels(a.words), labels(b.words))))
+      add("chart-label-missing", word, word, null);
+    const marked = (list: string[], mark: RegExp) =>
+      list.some((word) => isNumeric(word) && mark.test(word));
+    if (marked(a.words, /[$€£]/) && !marked(b.words, /[$€£]/))
+      add(
+        "chart-no-currency",
+        subject,
+        a.words.filter(isNumeric).slice(0, 4),
+        b.words.filter(isNumeric).slice(0, 4),
+      );
   });
 }
 
-export function compareVisual(program: string, mode: string, source: Fingerprint, kit: Fingerprint) {
+export function compareVisual(
+  program: string,
+  mode: string,
+  source: Fingerprint,
+  kit: Fingerprint,
+) {
   const out: Difference[] = [];
   const add = (kind: string, subject: string, from: unknown, to: unknown) =>
     out.push({ program, mode, kind, subject, source: from, kit: to });
@@ -109,7 +128,8 @@ export function compareVisual(program: string, mode: string, source: Fingerprint
   // Content first: every word the source shows should be on the page, however the markup splits it.
   const sourceWords = words(source.texts);
   const kitWords = words(kit.texts);
-  for (const word of multisetDifference(sourceWords, kitWords)) add("text-missing", word, word, null);
+  for (const word of multisetDifference(sourceWords, kitWords))
+    add("text-missing", word, word, null);
   for (const word of multisetDifference(kitWords, sourceWords)) add("text-extra", word, null, word);
 
   const text = pairUp(source.texts, kit.texts, (item) => item.text);
@@ -130,8 +150,10 @@ export function compareVisual(program: string, mode: string, source: Fingerprint
     kit.controls.filter((item) => !isHiddenInput(item)),
     controlKey,
   );
-  for (const item of controls.onlySource) add("control-missing", controlKey(item), controlKey(item), null);
-  for (const item of controls.onlyKit) add("control-extra", controlKey(item), null, controlKey(item));
+  for (const item of controls.onlySource)
+    add("control-missing", controlKey(item), controlKey(item), null);
+  for (const item of controls.onlyKit)
+    add("control-extra", controlKey(item), null, controlKey(item));
   for (const [a, b] of controls.pairs) {
     const subject = controlKey(a);
     if (Math.abs(a.w - b.w) > SIZE || Math.abs(a.h - b.h) > SIZE) {
@@ -139,9 +161,12 @@ export function compareVisual(program: string, mode: string, source: Fingerprint
     }
     if (Math.abs(a.x - b.x) > POSITION) add("control-position", subject, [a.x, a.y], [b.x, b.y]);
     if (colorDistance(a.bg, b.bg) > COLOR) add("control-fill", subject, a.bg, b.bg);
-    if (colorDistance(a.color, b.color) > COLOR) add("control-text-color", subject, a.color, b.color);
-    if (colorDistance(a.border, b.border) > COLOR) add("control-border", subject, a.border, b.border);
-    if (Math.abs(rounded(a) - rounded(b)) > RADIUS) add("control-radius", subject, a.radius, b.radius);
+    if (colorDistance(a.color, b.color) > COLOR)
+      add("control-text-color", subject, a.color, b.color);
+    if (colorDistance(a.border, b.border) > COLOR)
+      add("control-border", subject, a.border, b.border);
+    if (Math.abs(rounded(a) - rounded(b)) > RADIUS)
+      add("control-radius", subject, a.radius, b.radius);
     if (a.state !== b.state) add("control-state", subject, a.state, b.state);
     if ((a.href ?? "") !== (b.href ?? "")) add("control-href", subject, a.href, b.href);
   }
@@ -169,8 +194,10 @@ export function compareVisual(program: string, mode: string, source: Fingerprint
     }
     const [b] = remaining.splice(index, 1);
     if (colorDistance(a.bg, b!.bg) > COLOR) add("surface-fill", subject, a.bg, b!.bg);
-    if (colorDistance(a.border, b!.border) > COLOR) add("surface-border", subject, a.border, b!.border);
-    if (Math.abs(rounded(a) - rounded(b!)) > RADIUS) add("surface-radius", subject, a.radius, b!.radius);
+    if (colorDistance(a.border, b!.border) > COLOR)
+      add("surface-border", subject, a.border, b!.border);
+    if (Math.abs(rounded(a) - rounded(b!)) > RADIUS)
+      add("surface-radius", subject, a.radius, b!.radius);
     if (a.shadow !== b!.shadow) add("surface-shadow", subject, a.shadow, b!.shadow);
   }
   for (const b of remaining) add("surface-extra", `${b.w}x${b.h}`, null, { ...b });
@@ -191,10 +218,17 @@ export function compareFunctional(program: string, source: Interaction[], kit: I
   for (const [a, b] of pairs) {
     const subject = key(a);
     if (!sameList(a.added, b.added) || !sameList(a.removed, b.removed)) {
-      add("use-result", subject, { added: a.added, removed: a.removed }, { added: b.added, removed: b.removed });
+      add(
+        "use-result",
+        subject,
+        { added: a.added, removed: a.removed },
+        { added: b.added, removed: b.removed },
+      );
     }
-    if (JSON.stringify(a.actions) !== JSON.stringify(b.actions)) add("use-action", subject, a.actions, b.actions);
-    if (!sameList(a.clipboard, b.clipboard)) add("use-clipboard", subject, a.clipboard, b.clipboard);
+    if (JSON.stringify(a.actions) !== JSON.stringify(b.actions))
+      add("use-action", subject, a.actions, b.actions);
+    if (!sameList(a.clipboard, b.clipboard))
+      add("use-clipboard", subject, a.clipboard, b.clipboard);
     if (!sameList(a.errors, b.errors)) add("use-errors", subject, a.errors, b.errors);
     if (a.state !== b.state) add("use-state", subject, a.state, b.state);
   }
@@ -208,9 +242,14 @@ export function compareFlow(flow: string, source: FlowResult[], kit: FlowResult[
     const add = (kind: string, from: unknown, to: unknown) =>
       out.push({ program: flow, mode: "flow", kind, subject: a.step, source: from, kit: to });
     if (!sameList(a.added, b.added) || !sameList(a.removed, b.removed)) {
-      add("flow-result", { added: a.added, removed: a.removed }, { added: b.added, removed: b.removed });
+      add(
+        "flow-result",
+        { added: a.added, removed: a.removed },
+        { added: b.added, removed: b.removed },
+      );
     }
-    if (JSON.stringify(a.actions) !== JSON.stringify(b.actions)) add("flow-action", a.actions, b.actions);
+    if (JSON.stringify(a.actions) !== JSON.stringify(b.actions))
+      add("flow-action", a.actions, b.actions);
     if (!sameList(a.errors, b.errors)) add("flow-errors", a.errors, b.errors);
   });
   return out;
@@ -220,7 +259,14 @@ export function compareFlow(flow: string, source: FlowResult[], kit: FlowResult[
 export function compareSpec(source: unknown, kit: unknown) {
   const out: { path: string; source: unknown; kit: unknown }[] = [];
   const walk = (a: unknown, b: unknown, at: string) => {
-    if (a && b && typeof a === "object" && typeof b === "object" && !Array.isArray(a) && !Array.isArray(b)) {
+    if (
+      a &&
+      b &&
+      typeof a === "object" &&
+      typeof b === "object" &&
+      !Array.isArray(a) &&
+      !Array.isArray(b)
+    ) {
       const left = a as Record<string, unknown>;
       const right = b as Record<string, unknown>;
       // zod 4.6 writes a union as {type: [...]}, zod 4.4 as {anyOf: [{type}, ...]}.
@@ -230,8 +276,10 @@ export function compareSpec(source: unknown, kit: unknown) {
         if (JSON.stringify(same) === JSON.stringify(other)) return;
       }
       for (const name of new Set([...Object.keys(left), ...Object.keys(right)])) {
-        if (!(name in right)) out.push({ path: `${at}/${name}`, source: left[name], kit: undefined });
-        else if (!(name in left)) out.push({ path: `${at}/${name}`, source: undefined, kit: right[name] });
+        if (!(name in right))
+          out.push({ path: `${at}/${name}`, source: left[name], kit: undefined });
+        else if (!(name in left))
+          out.push({ path: `${at}/${name}`, source: undefined, kit: right[name] });
         else walk(left[name], right[name], `${at}/${name}`);
       }
       return;

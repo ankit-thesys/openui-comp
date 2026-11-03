@@ -1,55 +1,75 @@
-# Parity tests
+# Parity run (fork only)
 
-Is the kit the same as the real [open-intelligent-ui](https://github.com/thesysdev/open-intelligent-ui)
-app? These tests answer that in a real browser, using the app's own 45 gallery programs and prompt
-examples, which between them use all 55 components.
+Is the library the same as the real [open-intelligent-ui](https://github.com/thesysdev/open-intelligent-ui)
+app? This is #160's parity suite, ported for ankit-thesys/openui-comp#204 under #199. It renders the
+app's 45 gallery programs, which between them use all 55 components, on both sides in a real browser.
+
+The library side is the built package from `dist`, imported through its root exports only, with the
+test package host's mock Query tools (`../host/mock-tools.ts`) and network isolation
+(`../harness/network.ts`). It renders `../fixtures/gallery.json`, the gallery migrated to the current
+Chart signature. The source side renders `fixtures/programs.json`, which keeps PR 70's signature with
+its `currency` argument, because that is what the source app takes.
+
+## Run
+
+From the repository root, with the library built (`pnpm --filter @openuidev/intelligent-ui-tests build:library`)
+and Chromium installed (`pnpm --filter @openuidev/intelligent-ui-tests exec playwright install chromium`):
 
 ```sh
-pnpm exec playwright install chromium
-pnpm --filter @openuidev/intelligent-kit run test:parity
+PARITY_SOURCE=/path/to/open-intelligent-ui node tests/intelligent-ui/parity/run.ts
 ```
 
-It takes about 8 minutes, so it isn't part of `pnpm test`. Nothing reaches the network: photos, map
-tiles and the host's routes are answered locally, the same for both sides.
-
-## What it checks
-
-- **Library:** the same components, functions and actions as the app's spec.
-- **Looks:** each program at 1280px light, 1280px dark and 390px, plus a bare host page with no CSS
-  reset and no theme provider. The kit and the app build controls from different elements, so it
-  compares what a person sees, not the DOM: text, controls, media and charts, with their sizes and colours.
-- **Behaviour:** it uses every control of every program once, about 300 in all, and compares what
-  changed on the page and any action sent. Three longer flows check state across steps: filling in and
-  submitting a form, ticking a checklist, and running a timer.
-
-## Reading a failure
-
-Every known difference is a rule in [known-differences.ts](./known-differences.ts):
-
-- `needsFix` still looks wrong. Its test passes while the problem exists and fails once it's fixed,
-  which is your reminder to delete the rule.
-- `accepted` is on purpose or harmless, and the rule says why.
-- A difference no rule explains fails the test. Fix it, or add a rule and say why it's fine.
-
-Boxes and positions follow from other changes, so they get a budget per screen in
-`fixtures/layout-budget.json`, not a rule. The same file caps how many differences each rule may match,
-so a new bug can't hide behind a rule that's already there. After a deliberate change, update it with
-`PARITY_UPDATE=1 pnpm --filter @openuidev/intelligent-kit run test:parity`.
-
-## The baseline
-
-The tests compare against `fixtures/source-baseline.json`, so they need neither the app nor the network.
-To record it again, from a checkout of the app at the commit in `fixtures/SOURCE.json` with its
+`PARITY_SOURCE` is a checkout of the app at the commit in `fixtures/SOURCE.json`, with its
 dependencies installed:
 
 ```sh
-PARITY_SOURCE=/path/to/open-intelligent-ui node src/__tests__/parity/capture-source.ts
+git init open-intelligent-ui && cd open-intelligent-ui
+git remote add origin https://github.com/thesysdev/open-intelligent-ui.git
+git fetch --depth 1 origin <commit from fixtures/SOURCE.json> && git checkout FETCH_HEAD
+npm install --ignore-scripts
 ```
 
-## Seeing it
+Without `PARITY_SOURCE` the run still compares, but the review pile has no source screenshots.
+`PARITY_RUN=<name>` names the results folder (today's date by default), and `PARITY_PROGRAMS=a,b`
+runs only those programs, for a quick look. It needs Node 22.18 or later, which runs the TypeScript
+directly. Nothing reaches the network.
 
-`gallery/` renders every program from the kit, live, with a light and dark switch:
+## What it compares
+
+- **Library:** the same components, functions and actions as the app's spec.
+- **Looks:** each program at 1280px light, 1280px dark and 390px, plus a bare page with no CSS reset
+  and no ThemeProvider. It compares what a person sees, not the DOM: text, controls, media, surfaces
+  and charts, with their sizes and colours.
+- **Behaviour:** every control of every program once, and three flows: submitting a form, ticking a
+  checklist, and running a timer.
+
+The library is compared with the pinned `fixtures/source-baseline.json`, so the numbers don't move
+with the app's install. The fresh source capture gives the screenshots and says how far today's
+install has drifted from the baseline (`source-drift.json`).
+
+## Results: the review pile
+
+Every difference is a **judgement call**, never a failure: the run exits 0 whatever it finds. Each
+run writes `results/<run>/`:
+
+- `summary.md`: counts by program, kind and #160 rule, and the run's timings.
+- `review-pile.json`: one item per program and screen that differs, with both screenshots, the share
+  of pixels that differ, and its differences. `verdict` (`"probably fine"` or `"worth a look"`) and
+  `note` (one sentence) are left empty for the sorting session.
+- `differences.json`: every raw difference. Boxes and positions that follow from another change
+  (`follow-on`) and a map's camera (`map-motion`) are kept here but left out of the pile.
+- `shots/`: full-page screenshots of both sides, `<program>--<screen>.jpg`.
+- `library-capture.json`, `source-capture.json`: the raw captures, to compare the next run with.
+
+[known-differences.ts](./known-differences.ts) is #160's list of known differences. Here it only
+labels: each difference in the pile names the rule that already described it, and whether #160 marked
+it `needsFix` or `accepted`, so the sorting session can see what's new.
+
+## Recording the baseline again
 
 ```sh
-pnpm --filter @openuidev/intelligent-kit run gallery
+PARITY_SOURCE=/path/to/open-intelligent-ui node tests/intelligent-ui/parity/capture-source.ts
 ```
+
+writes `fixtures/source-baseline.json`. `PARITY_OUT` writes somewhere else, and `PARITY_SHOTS` saves
+screenshots.

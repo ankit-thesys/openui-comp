@@ -1,5 +1,5 @@
 import { Renderer } from "@openuidev/react-lang";
-// Vite points this at target.kit.ts, or at target.source.ts when capturing the source app.
+// Vite points this at target.library.tsx, or at target.source.ts when capturing the source app.
 // @ts-expect-error resolved by the harness's Vite config
 import { demoTools, library, Provider, runLibraryAction, vars } from "parity-target";
 import { useCallback } from "react";
@@ -42,7 +42,12 @@ function Page({ program, theme }: { program: string; theme: "light" | "dark" }) 
     bridge.errors = list.map((error) => `${error.code}: ${error.message}`);
   }, []);
   const onAction = useCallback(
-    (event: { type: string; humanFriendlyMessage?: string; formState?: unknown; params?: unknown }) => {
+    (event: {
+      type: string;
+      humanFriendlyMessage?: string;
+      formState?: unknown;
+      params?: unknown;
+    }) => {
       void runLibraryAction(event);
       bridge.actions.push({
         type: event.type,

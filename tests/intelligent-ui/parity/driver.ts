@@ -1,7 +1,7 @@
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { chromium, type Browser, type Page } from "@playwright/test";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { chromium, type Browser, type Page } from "@playwright/test";
 import { build, preview } from "vite";
 import { isolate } from "../harness/network.ts";
 
@@ -25,9 +25,15 @@ const PROGRAM_FILES: Record<Side, string> = {
   library: path.join(here, "../fixtures/gallery.json"),
 };
 const load = (side: Side): Program[] => JSON.parse(readFileSync(PROGRAM_FILES[side], "utf8"));
-export const programsFor: Record<Side, Program[]> = { source: load("source"), library: load("library") };
-/** Program ids, in the source's order. */
-export const programs: Program[] = programsFor.source;
+export const programsFor: Record<Side, Program[]> = {
+  source: load("source"),
+  library: load("library"),
+};
+/** Program ids, in the source's order. PARITY_PROGRAMS=a,b runs only those, for a quick look. */
+const only = process.env["PARITY_PROGRAMS"]?.split(",").map((id) => id.trim());
+export const programs: Program[] = programsFor.source.filter(
+  (program) => !only || only.includes(program.id),
+);
 const byId = (side: Side, id: string) => {
   const found = programsFor[side].find((program) => program.id === id);
   if (!found) throw new Error(`No program called "${id}" on the ${side} side`);
@@ -56,7 +62,9 @@ export const MODES: Mode[] = [
 export const SOURCE_MODES = MODES.filter((mode) => mode.host === "app");
 
 export async function launch(): Promise<Browser> {
-  return chromium.launch({ args: ["--enable-unsafe-swiftshader", "--use-gl=angle", "--use-angle=swiftshader"] });
+  return chromium.launch({
+    args: ["--enable-unsafe-swiftshader", "--use-gl=angle", "--use-angle=swiftshader"],
+  });
 }
 
 /**
@@ -81,7 +89,12 @@ export async function settle(page: Page, ms = 350) {
 const NOW = new Date("2026-03-16T10:00:00Z");
 
 /** `ticking` runs a clock the test can move forward. Otherwise the date stands still, so dates in a page match. */
-export async function openHarness(browser: Browser, baseUrl: string, mode: Mode, ticking = false): Promise<Page> {
+export async function openHarness(
+  browser: Browser,
+  baseUrl: string,
+  mode: Mode,
+  ticking = false,
+): Promise<Page> {
   const context = await browser.newContext({
     viewport: { width: mode.width, height: 900 },
     deviceScaleFactor: 1,
@@ -107,7 +120,10 @@ export async function openHarness(browser: Browser, baseUrl: string, mode: Mode,
 export async function mount(page: Page, program: Program, theme: Mode["theme"]) {
   await page.evaluate(
     ({ code, theme }) =>
-      (window as unknown as { __parity: { mount: (c: string, t: string) => void } }).__parity.mount(code, theme),
+      (window as unknown as { __parity: { mount: (c: string, t: string) => void } }).__parity.mount(
+        code,
+        theme,
+      ),
     { code: program.code, theme },
   );
   await settle(page, /Map\(|Chart\(|HtmlView\(/.test(program.code) ? 900 : 350);
@@ -222,7 +238,10 @@ export async function exercise(page: Page, program: Program): Promise<Interactio
       `window.__probe.indexOf(${JSON.stringify(control.role)}, ${JSON.stringify(control.name)}, ${nth})`,
     )) as number;
     if (index < 0) continue;
-    const at = (await page.evaluate(`window.__probe.locate(${index})`)) as { x: number; y: number } | null;
+    const at = (await page.evaluate(`window.__probe.locate(${index})`)) as {
+      x: number;
+      y: number;
+    } | null;
     if (!at) continue;
 
     if (control.role === "slider") {
@@ -275,7 +294,13 @@ type Step =
   | { type: [role: string, name: string, text: string] }
   | { advance: number };
 export type Flow = { id: string; program: string; steps: Step[] };
-export type FlowResult = { step: string; added: string[]; removed: string[]; actions: unknown[]; errors: string[] };
+export type FlowResult = {
+  step: string;
+  added: string[];
+  removed: string[];
+  actions: unknown[];
+  errors: string[];
+};
 
 /** Sequences a single click can't check: state carried from one step to the next. */
 export const FLOWS: Flow[] = [
@@ -313,7 +338,12 @@ export const FLOWS: Flow[] = [
   },
 ];
 
-export async function runFlow(browser: Browser, url: string, flow: Flow, side: Side): Promise<FlowResult[]> {
+export async function runFlow(
+  browser: Browser,
+  url: string,
+  flow: Flow,
+  side: Side,
+): Promise<FlowResult[]> {
   const page = await openHarness(browser, url, MODES[0]!, true);
   const program = byId(side, flow.program);
   await mount(page, program, "light");
@@ -327,20 +357,34 @@ export async function runFlow(browser: Browser, url: string, flow: Flow, side: S
     } else {
       const [role, name, text] = "click" in step ? [...step.click, undefined] : step.type;
       label = `${"click" in step ? "click" : "type in"} ${role} ${name}`;
-      const list = (await page.evaluate("window.__probe.controlList()")) as { role: string; name: string }[];
+      const list = (await page.evaluate("window.__probe.controlList()")) as {
+        role: string;
+        name: string;
+      }[];
       // A name can carry a current value, so a prefix is enough to find the control.
       const index = list.findIndex((item) => item.role === role && item.name.startsWith(name));
       if (index < 0) {
-        out.push({ step: label, added: [], removed: [], actions: [], errors: ["control not found"] });
+        out.push({
+          step: label,
+          added: [],
+          removed: [],
+          actions: [],
+          errors: ["control not found"],
+        });
         continue;
       }
-      const at = (await page.evaluate(`window.__probe.locate(${index})`)) as { x: number; y: number };
+      const at = (await page.evaluate(`window.__probe.locate(${index})`)) as {
+        x: number;
+        y: number;
+      };
       await page.mouse.click(at.x, at.y);
       if (text) await page.keyboard.type(text);
     }
     await settle(page, 250);
     const after = (await page.evaluate("window.__probe.words()")) as string[];
-    const bridge = (await page.evaluate("({ actions: window.__parity.actions, errors: window.__parity.errors })")) as {
+    const bridge = (await page.evaluate(
+      "({ actions: window.__parity.actions, errors: window.__parity.errors })",
+    )) as {
       actions: unknown[];
       errors: string[];
     };
@@ -381,7 +425,11 @@ export async function serveHarness(root: string, target: string, outDir: string)
       },
     },
   });
-  const server = await preview({ ...shared, build: { outDir }, preview: { port: 0, host: "127.0.0.1" } });
+  const server = await preview({
+    ...shared,
+    build: { outDir },
+    preview: { port: 0, host: "127.0.0.1" },
+  });
   const address = server.httpServer.address();
   const port = typeof address === "object" && address ? address.port : 0;
   return { url: `http://127.0.0.1:${port}`, close: () => server.close() };
@@ -429,4 +477,3 @@ export async function captureTarget(
 
 export const writeJson = (file: string, value: unknown) =>
   writeFileSync(file, `${JSON.stringify(value)}\n`);
-

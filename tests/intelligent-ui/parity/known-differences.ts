@@ -14,15 +14,18 @@ const is = (difference: Difference, kind: string, source: unknown, kit: unknown)
   difference.kind === kind && difference.source === source && difference.kit === kit;
 
 const isOneOf = (difference: Difference, kinds: string[], pairs: [unknown, unknown][]) =>
-  kinds.includes(difference.kind) && pairs.some(([source, kit]) => difference.source === source && difference.kit === kit);
+  kinds.includes(difference.kind) &&
+  pairs.some(([source, kit]) => difference.source === source && difference.kit === kit);
 
 /** Pages made taller or shorter by a chart, since charts have their own rule. */
-const CHART_PAGES = /^(primitives|savings|clt|web-analytics|roadtrip|drones|dash-sales|dash-support|chart|example-dashboard|gdp|monty)$/;
+const CHART_PAGES =
+  /^(primitives|savings|clt|web-analytics|roadtrip|drones|dash-sales|dash-support|chart|example-dashboard|gdp|monty)$/;
 
 export const needsFix: Rule[] = [
   {
     id: "chart-size",
-    summary: "Charts are a different size from the source, which changes the height of the page around them",
+    summary:
+      "Charts are a different size from the source, which changes the height of the page around them",
     match: (d) =>
       ["chart-height", "chart-width", "chart-scrolls"].includes(d.kind) ||
       (d.kind === "page-height" && CHART_PAGES.test(d.program)),
@@ -37,10 +40,19 @@ export const needsFix: Rule[] = [
     summary:
       "Table headers are grey and regular with no fill; the source's are ink and semibold on a tint. Tables are also shorter at phone width",
     match: (d) =>
-      (d.kind === "page-height" && d.mode === "light-390" && /^(table|bicycle|garden)$/.test(d.program)) ||
+      (d.kind === "page-height" &&
+        d.mode === "light-390" &&
+        /^(table|bicycle|garden)$/.test(d.program)) ||
       is(d, "text-size", 13, 14) ||
       is(d, "text-weight", 560, 400) ||
-      isOneOf(d, ["text-color"], [["030303", "03030399"], ["fafafa", "fafafa99"]]),
+      isOneOf(
+        d,
+        ["text-color"],
+        [
+          ["030303", "03030399"],
+          ["fafafa", "fafafa99"],
+        ],
+      ),
   },
   {
     id: "label-size",
@@ -49,18 +61,43 @@ export const needsFix: Rule[] = [
   },
   {
     id: "input-fill",
-    summary: "Input, Select and TextArea have a grey fill and are 4px shorter, from react-components; the source's are white",
+    summary:
+      "Input, Select and TextArea have a grey fill and are 4px shorter, from react-components; the source's are white",
     match: (d) =>
       (d.kind === "page-height" && /^(bill|inputs)$/.test(d.program)) ||
-      isOneOf(d, ["control-fill"], [["fdfdfd", "00000005"], ["171717", "ffffff05"]]) ||
-      isOneOf(d, ["control-border"], [["0000001a", "0000000f"], ["f5f5f51a", "ffffff0f"]]) ||
+      isOneOf(
+        d,
+        ["control-fill"],
+        [
+          ["fdfdfd", "00000005"],
+          ["171717", "ffffff05"],
+        ],
+      ) ||
+      isOneOf(
+        d,
+        ["control-border"],
+        [
+          ["0000001a", "0000000f"],
+          ["f5f5f51a", "ffffff0f"],
+        ],
+      ) ||
       (d.kind === "control-size" && /^textbox\|Anything else/.test(d.subject)),
   },
   {
     id: "icon-button-fill",
-    summary: "An outline IconButton has no fill, and a Carousel's arrow is plainer and sits further out",
+    summary:
+      "An outline IconButton has no fill, and a Carousel's arrow is plainer and sits further out",
     match: (d) =>
-      isOneOf(d, ["control-fill"], [["fdfdfd", null], ["fefefeb3", null], ["171717", null], ["1c1c1eb3", null]]) ||
+      isOneOf(
+        d,
+        ["control-fill"],
+        [
+          ["fdfdfd", null],
+          ["fefefeb3", null],
+          ["171717", null],
+          ["1c1c1eb3", null],
+        ],
+      ) ||
       (d.kind === "control-border" && /^button\|Next/.test(d.subject)),
   },
   {
@@ -68,16 +105,51 @@ export const needsFix: Rule[] = [
     summary:
       "On a page with no CSS reset, boxes inside a card spill about 16px past it: the kit relies on the host's box-sizing: border-box",
     match: (d) =>
-      d.mode === "plain-1280" && ["control-size", "control-text-color", "media-size", "page-height"].includes(d.kind),
+      d.mode === "plain-1280" &&
+      ["control-size", "control-text-color", "media-size", "page-height"].includes(d.kind),
   },
 ];
 
 /** The source app's own status colours, light and dark: text, badge text and soft tints. */
 const SOURCE_STATUS = new Set([
-  "00805d", "edf9f2", "8a5300", "ffefc7", "c1322c", "fff0ee", "7040c1", "f4f0ff", "b7377c", "fff0f6",
-  "1f6b4f", "e8f3ec", "9f3a33", "f8e8e5", "5d4596", "efebf7", "94456d", "f7eaf1",
-  "5bcf9c", "13291f", "f0b84f", "30250f", "ff7d74", "3a1b19", "b49cff", "261f3a", "f28cc0", "371b2a",
-  "8fd3b2", "e6c27c", "f0a39b", "c3b2f0", "eeaacb", "50b48224", "dcaa5024", "e66e6424", "a082f024", "e682b424",
+  "00805d",
+  "edf9f2",
+  "8a5300",
+  "ffefc7",
+  "c1322c",
+  "fff0ee",
+  "7040c1",
+  "f4f0ff",
+  "b7377c",
+  "fff0f6",
+  "1f6b4f",
+  "e8f3ec",
+  "9f3a33",
+  "f8e8e5",
+  "5d4596",
+  "efebf7",
+  "94456d",
+  "f7eaf1",
+  "5bcf9c",
+  "13291f",
+  "f0b84f",
+  "30250f",
+  "ff7d74",
+  "3a1b19",
+  "b49cff",
+  "261f3a",
+  "f28cc0",
+  "371b2a",
+  "8fd3b2",
+  "e6c27c",
+  "f0a39b",
+  "c3b2f0",
+  "eeaacb",
+  "50b48224",
+  "dcaa5024",
+  "e66e6424",
+  "a082f024",
+  "e682b424",
 ]);
 
 export const accepted: Rule[] = [
@@ -91,21 +163,27 @@ export const accepted: Rule[] = [
   },
   {
     id: "native-checkbox",
-    summary: "The source draws native checkboxes, whose box isn't in their CSS, so only the kit reports one",
+    summary:
+      "The source draws native checkboxes, whose box isn't in their CSS, so only the kit reports one",
     match: (d) =>
-      d.subject.startsWith("checkbox|") && ["control-fill", "control-border", "control-radius"].includes(d.kind),
+      d.subject.startsWith("checkbox|") &&
+      ["control-fill", "control-border", "control-radius"].includes(d.kind),
   },
   {
     id: "card-radios",
-    summary: "The source hides a native radio inside a card, and react-components makes the card itself the radio",
+    summary:
+      "The source hides a native radio inside a card, and react-components makes the card itself the radio",
     match: (d) => ["control-extra", "use-extra"].includes(d.kind) && d.program === "compare-phones",
   },
   {
     id: "date-picker",
-    summary: "DatePicker is react-components': a button with a calendar and a written date, not a native date field",
+    summary:
+      "DatePicker is react-components': a button with a calendar and a written date, not a native date field",
     match: (d) =>
       (["control-missing", "use-missing"].includes(d.kind) && d.subject === "date|Start date") ||
-      (d.kind === "text-extra" && d.program === "inputs" && ["Oct", "24,", "2026"].includes(d.subject)),
+      (d.kind === "text-extra" &&
+        d.program === "inputs" &&
+        ["Oct", "24,", "2026"].includes(d.subject)),
   },
   {
     id: "map-vector-tiles",
