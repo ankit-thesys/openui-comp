@@ -5,20 +5,23 @@
  */
 export type Host = {
   /** React major the host is built with. Each version is its own build, served on its own port. */
-  react: "19";
+  react: "19" | "18";
   theme: "light" | "dark";
   /** Whether the library's optional ThemeProvider wraps the output. */
   provider: boolean;
   width: number;
 };
 
-export const hosts: Host[] = [{ react: "19", theme: "light", provider: true, width: 1280 }];
+export const hosts: Host[] = [
+  { react: "19", theme: "light", provider: true, width: 1280 },
+  { react: "18", theme: "light", provider: true, width: 1280 },
+];
 
 export const hostName = (host: Host) =>
   `react${host.react}-${host.theme}-${host.provider ? "provider" : "noprovider"}-${host.width}`;
 
 /** The port each React build is served on. */
-export const ports: Record<Host["react"], number> = { "19": 4319 };
+export const ports: Record<Host["react"], number> = { "19": 4319, "18": 4318 };
 
 export const hostUrl = (host: Host, program: string) => {
   const query = new URLSearchParams({

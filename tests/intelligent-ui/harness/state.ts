@@ -11,11 +11,24 @@ export type HostState = {
   renderErrors: string[];
   /** Problems with the page itself, such as an unknown program id. */
   hostErrors: string[];
-  actions: { type: string; params: unknown }[];
+  /**
+   * Every action the Renderer handed to `onAction`, in order. `passedOn` is true when
+   * `runLibraryAction` returned null, so the host ran it itself (the README's pattern).
+   */
+  actions: {
+    type: string;
+    params: unknown;
+    humanFriendlyMessage: string;
+    formState?: Record<string, unknown>;
+    formName?: string;
+    passedOn: boolean;
+  }[];
 };
 
 declare global {
   interface Window {
     __iu: HostState;
+    /** With `stream=1`, replaces the response the Renderer is given, as a chat streams one in. */
+    __iuStream?: (response: string, streaming: boolean) => void;
   }
 }

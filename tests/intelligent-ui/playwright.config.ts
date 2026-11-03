@@ -32,6 +32,7 @@ export default defineConfig({
   })),
   webServer: reacts.map((react) => ({
     command: `pnpm build:host && pnpm exec vite preview --config host/vite.config.ts --port ${ports[react]} --strictPort`,
+    env: { IU_REACT: react },
     port: ports[react],
     reuseExistingServer: !process.env["CI"],
     timeout: 120_000,
