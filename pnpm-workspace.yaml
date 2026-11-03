@@ -2,6 +2,8 @@ packages:
   - "packages/*"
   - "packages/libraries/*"
   - "docs/"
+  # Fork-only test packages; outside packages/ so build:packages and the packages CI skip them.
+  - "tests/*"
   - "!templates/**"
 
 # Centralized dependency versions shared across packages.

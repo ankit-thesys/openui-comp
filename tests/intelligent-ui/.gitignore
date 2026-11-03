@@ -1,0 +1,3 @@
+.host-dist/
+test-results/
+playwright-report/
