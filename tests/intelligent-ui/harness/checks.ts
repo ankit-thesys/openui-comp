@@ -1,4 +1,5 @@
 import type { Page } from "@playwright/test";
+import { pageChecks } from "./page-checks";
 import type { HostState } from "./state";
 
 /**
@@ -42,6 +43,8 @@ export const checks: Check[] = [
     name: "no console errors",
     run: ({ console }) => console.map((message) => `console error: ${message}`),
   },
+  // Layout, text values and media: what a reader would see as broken (#201).
+  ...pageChecks,
 ];
 
 /** Starts collecting console errors and uncaught exceptions; call before the page loads. */
