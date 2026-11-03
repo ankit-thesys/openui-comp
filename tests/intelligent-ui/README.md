@@ -39,6 +39,19 @@ so no run reaches the network. `host/mock-tools.ts` is the data the gallery's da
 
 `legacy/` holds #160's suites until the tickets in its README port them.
 
+## The rendering sweep (#201)
+
+`specs/sweep.spec.ts` renders every gallery program, every prompt example and every past
+regression on all 16 hosts: React 19 and 18, light and dark, with and without ThemeProvider, at
+1280px and 390px. Each one goes through every check in `harness/checks.ts`; the page checks it
+adds (horizontal scroll, boxes sticking out of what they sit in, overlapping siblings, bad text
+values, broken images, empty drawings, maps without a canvas or pins) are in
+`harness/page-checks.ts`. It also checks that a `Card`, `Row` or `Box` root inside ThemeProvider
+gets the library's palette. `specs/layout.spec.ts` holds the layout checks ported from #160.
+
+`harness/sweep-reporter.ts` writes the pass/fail table to `sweep-report/sweep.md`, and to the job
+summary on GitHub Actions. `IU_REACT=18 pnpm host` serves the React 18 build by hand.
+
 ## The prompt seam and the package (#202)
 
 `playwright.prompt.config.ts` runs `prompt/` in Node, with no browser or host:

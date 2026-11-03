@@ -5,7 +5,8 @@ on:
   push:
     branches: [claude/intelligent-ui-tests]
   pull_request:
-    branches: [claude/intelligent-kit-v2]
+    # PRs into #196, and the ticket branches (#201-#204) into this test branch.
+    branches: [claude/intelligent-kit-v2, claude/intelligent-ui-tests]
   workflow_dispatch:
 
 permissions:
@@ -40,6 +41,9 @@ jobs:
       - name: Build the library and what it depends on
         run: pnpm build:library
 
+      - name: Typecheck the tests against the built types
+        run: pnpm typecheck
+
       - name: Install Chromium
         run: pnpm exec playwright install --with-deps chromium
 
@@ -54,4 +58,5 @@ jobs:
           path: |
             tests/intelligent-ui/playwright-report
             tests/intelligent-ui/test-results
+            tests/intelligent-ui/sweep-report
           retention-days: 14
