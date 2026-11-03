@@ -57,7 +57,7 @@ src/
   components/<Name>/                the kit's own React components, no openui-lang:
     <Name>.tsx  <name>.styles.ts  index.ts
     Map/parts/  Map/hooks/          the map's pieces and hooks, beside MapView.tsx
-    IntelligentThemeProvider/       the kit's ThemeProvider and its default themes
+    IntelligentUiThemeProvider/     the kit's ThemeProvider and its default themes
   shared/                           what both halves need:
     tokens.ts                       the tokens, read from ThemeProvider
     props.ts                        the model's prop values as CSS
@@ -167,7 +167,7 @@ the rest of the page:
 | their soft tints (badges, callouts) | `successBackground`, `alertBackground`, `dangerBackground`, `purpleBackground`, `pinkBackground` |
 | shadows | `shadowL`, `shadowS` |
 
-### IntelligentThemeProvider
+### IntelligentUiThemeProvider
 
 Like the dashboard kit's `DashboardThemeProvider`, the kit has its own provider: a
 react-components `ThemeProvider` that follows the outer one's mode and adds the kit's default
@@ -176,9 +176,9 @@ theme, the source app's status colours (`defaultIntelligentLightTheme`,
 to add. Use it yourself to set a mode or to change the kit's theme:
 
 ```tsx
-<IntelligentThemeProvider mode="dark" darkTheme={{ textDangerPrimary: "#ff5c5c" }}>
+<IntelligentUiThemeProvider mode="dark" darkTheme={{ textDangerPrimary: "#ff5c5c" }}>
   <Renderer response={program} library={library} />
-</IntelligentThemeProvider>
+</IntelligentUiThemeProvider>
 ```
 
 A token your own ThemeProvider sets stays yours; only tokens left at react-components' default take
