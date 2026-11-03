@@ -1,3 +1,7 @@
 .host-dist/
 test-results/
 playwright-report/
+
+# Secrets for the manual model run (models/generate.ts). Never commit them.
+.env
+.env.*
