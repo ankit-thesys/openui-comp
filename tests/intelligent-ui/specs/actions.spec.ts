@@ -1,13 +1,15 @@
 import { runLibraryAction } from "@openuidev/intelligent-ui-library";
 import { expect, test, type Page } from "@playwright/test";
-import type { Host } from "../harness/matrix";
+import { currentHost, onlyOnBehaviourHosts } from "../harness/behaviour-host";
 import { failures, render } from "../harness/render";
 
 /**
  * #203: the actions. The host's onAction follows the README: `runLibraryAction` first, and the host
  * runs whatever it returns null for. Each action record says which side ran it (`passedOn`).
  */
-const host = () => test.info().project.metadata["host"] as Host;
+const host = currentHost;
+
+test.beforeEach(onlyOnBehaviourHosts);
 
 const main = (page: Page) => page.locator("main");
 const actions = (page: Page) => page.evaluate(() => window.__iu.actions);

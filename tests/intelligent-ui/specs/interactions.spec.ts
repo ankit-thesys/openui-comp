@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import type { Host } from "../harness/matrix";
+import { currentHost, onlyOnBehaviourHosts } from "../harness/behaviour-host";
 import { failures, render } from "../harness/render";
 
 /**
@@ -7,7 +7,9 @@ import { failures, render } from "../harness/render";
  * text) on every host. Each test ends by running every check, so an interaction that logs an error
  * fails even when the page looks right.
  */
-const host = () => test.info().project.metadata["host"] as Host;
+const host = currentHost;
+
+test.beforeEach(onlyOnBehaviourHosts);
 
 const main = (page: Page) => page.locator("main");
 const lastAction = (page: Page) => page.evaluate(() => window.__iu.actions.at(-1) ?? null);

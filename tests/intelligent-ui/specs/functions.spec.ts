@@ -7,8 +7,8 @@ import {
   RANDOM,
   type Answer,
 } from "../fixtures/function-answers";
+import { currentHost, onlyOnBehaviourHosts } from "../harness/behaviour-host";
 import { AWKWARD, optionSets } from "../harness/behaviour-programs";
-import type { Host } from "../harness/matrix";
 import { failures, render } from "../harness/render";
 
 /**
@@ -16,7 +16,9 @@ import { failures, render } from "../harness/render";
  * Renderer in the host page. Each function's button hands its values to the host through
  * @ToAssistant's context, so they arrive exactly as the evaluator produced them.
  */
-const host = () => test.info().project.metadata["host"] as Host;
+const host = currentHost;
+
+test.beforeEach(onlyOnBehaviourHosts);
 
 // The answers are written for en-US and UTC, with the clock and Math.random pinned.
 test.use({ locale: "en-US", timezoneId: "UTC" });

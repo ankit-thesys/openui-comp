@@ -1,6 +1,7 @@
 import { expect, test } from "@playwright/test";
+import { currentHost, onlyOnBehaviourHosts } from "../harness/behaviour-host";
 import { watchConsole } from "../harness/checks";
-import { hostUrl, type Host } from "../harness/matrix";
+import { hostUrl } from "../harness/matrix";
 import { isolate } from "../harness/network";
 import { programs } from "../harness/programs";
 import { failures } from "../harness/render";
@@ -10,7 +11,9 @@ import { failures } from "../harness/render";
  * error at any point, and the finished program passes every check. Chunks are uneven, so cuts land
  * inside names, strings, numbers and argument lists.
  */
-const host = () => test.info().project.metadata["host"] as Host;
+const host = currentHost;
+
+test.beforeEach(onlyOnBehaviourHosts);
 
 /** Chunk lengths from a fixed seed, 1 to 48 characters, so every run cuts the same places. */
 function chunks(code: string) {
