@@ -55,12 +55,12 @@ ports, so a second checkout can run at the same time.
 ## The rendering sweep (#201)
 
 `specs/sweep.spec.ts` renders every gallery program, every prompt example and every past
-regression on all 16 hosts: React 19 and 18, light and dark, with and without ThemeProvider, at
-1280px and 390px. Each one goes through every check in `harness/checks.ts`; the page checks it
+regression on all 12 hosts: React 19 and 18; light and dark with react-components' ThemeProvider,
+and light with no provider; at 1280px and 390px. Each one goes through every check in `harness/checks.ts`; the page checks it
 adds (horizontal scroll, boxes sticking out of what they sit in, overlapping siblings, bad text
 values, broken images, empty drawings, maps without a canvas or pins) are in
-`harness/page-checks.ts`. It also checks that a `Card`, `Row` or `Box` root inside ThemeProvider
-gets the library's palette. `specs/layout.spec.ts` holds the layout checks ported from #160.
+`harness/page-checks.ts`. It also checks that every root inside ThemeProvider gets its palette, a
+`Col` root gets it with no provider, and a response keeps an app's own colours. `specs/layout.spec.ts` holds the layout checks ported from #160.
 
 `harness/sweep-reporter.ts` writes the pass/fail table to `sweep-report/sweep.md`, and to the job
 summary on GitHub Actions. `IU_REACT=18 pnpm host` serves the React 18 build by hand.

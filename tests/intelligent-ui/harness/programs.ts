@@ -51,7 +51,7 @@ const promptExamples: Program[] = examples.map((example, index) => {
 
 /**
  * The same content under each root the library allows, for the check that ThemeProvider themes
- * the output whatever its root is (#201). `Col` themes itself; the others rely on the provider.
+ * the output whatever its root is (#201). Without a provider, only `Col` themes itself.
  */
 const themeContent = `Badge("Good", "success"), Badge("Careful", "warning"), Text("Body")`;
 const themeRoots: Program[] = [

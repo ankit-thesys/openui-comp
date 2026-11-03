@@ -71,7 +71,7 @@ export default class SweepReporter implements Reporter {
       "# Rendering sweep",
       "",
       `${passed} passed, ${failed} failed: ${this.results.size} programs on ${columns.length} hosts. ` +
-        "TP is the library's ThemeProvider; no host has a CSS reset.",
+        "TP is react-components' ThemeProvider; no host has a CSS reset.",
       "",
       ...lines,
       "",

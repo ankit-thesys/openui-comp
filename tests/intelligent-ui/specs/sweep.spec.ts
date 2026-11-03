@@ -28,17 +28,16 @@ test.describe("sweep", () => {
 });
 
 /**
- * The library's status palette, from the source app's theme: a success and a warning Badge's text
- * on its background. react-components' own defaults are different colours.
+ * react-components' default status palette: a success and a warning Badge's text on its background.
  */
 const palette = {
   light: {
-    Good: "rgb(0, 128, 93) on rgb(237, 249, 242)",
-    Careful: "rgb(138, 83, 0) on rgb(255, 239, 199)",
+    Good: "oklch(0.448 0.108 151.328) on oklch(0.627 0.17 149.214 / 0.12)",
+    Careful: "oklch(0.476 0.103 61.907) on oklch(0.795 0.162 86.047 / 0.16)",
   },
   dark: {
-    Good: "rgb(91, 207, 156) on rgb(19, 41, 31)",
-    Careful: "rgb(240, 184, 79) on rgb(48, 37, 15)",
+    Good: "oklch(0.871 0.136 154.449) on oklch(0.627 0.17 149.214 / 0.12)",
+    Careful: "oklch(0.905 0.166 98.111) on oklch(0.795 0.162 86.047 / 0.16)",
   },
 };
 
@@ -60,16 +59,24 @@ const badgeColours = (page: Page) =>
   });
 
 test.describe("theme", () => {
-  // Inside ThemeProvider every root gets the palette; without it, only a Col root themes itself.
+  // Inside ThemeProvider every root gets the palette; without one, only a Col root themes itself.
   for (const root of ["col", "card", "row", "box"]) {
-    test(`a ${root} root gets the library's palette`, async ({ page }) => {
+    test(`a ${root} root gets the theme's palette`, async ({ page }) => {
       test.skip(
         root !== "col" && !host().provider,
-        "only a Col root themes itself without ThemeProvider",
+        "without ThemeProvider only a Col root themes itself",
       );
       const rendered = await render(page, host(), `theme-root-${root}`);
       expect(await failures(rendered)).toEqual([]);
       expect(await badgeColours(page)).toEqual(palette[host().theme]);
     });
   }
+
+  // A Col root used to bring a theme of its own and reset an app's colours inside the response.
+  test("a response keeps the app's own colours", async ({ page }) => {
+    test.skip(!host().provider, "only a page with ThemeProvider has colours of its own");
+    const rendered = await render(page, host(), "theme-root-col", { custom: "1" });
+    expect(await failures(rendered)).toEqual([]);
+    expect((await badgeColours(page)).Good).toMatch(/^rgb\(1, 2, 3\) on /);
+  });
 });

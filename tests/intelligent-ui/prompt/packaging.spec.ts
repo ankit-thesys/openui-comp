@@ -20,7 +20,7 @@ const run = (command: string, args: string[], cwd: string) => {
 
 test.describe("the built package", () => {
   test("imports in plain Node", () => {
-    const script = `const m = await import("@openuidev/intelligent-ui-library"); console.log(m.library.toSpec().root, typeof m.ThemeProvider);`;
+    const script = `const m = await import("@openuidev/intelligent-ui-library"); console.log(m.library.toSpec().root, typeof m.runLibraryAction);`;
     expect(run(process.execPath, ["--input-type=module", "-e", script], testsDir)).toMatchObject({
       status: 0,
       output: "Col function",
@@ -28,7 +28,7 @@ test.describe("the built package", () => {
   });
 
   test("requires in plain Node", () => {
-    const script = `const m = require("@openuidev/intelligent-ui-library"); console.log(m.library.toSpec().root, typeof m.ThemeProvider);`;
+    const script = `const m = require("@openuidev/intelligent-ui-library"); console.log(m.library.toSpec().root, typeof m.runLibraryAction);`;
     expect(run(process.execPath, ["-e", script], testsDir)).toMatchObject({
       status: 0,
       output: "Col function",

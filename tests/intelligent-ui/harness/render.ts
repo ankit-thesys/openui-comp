@@ -7,10 +7,15 @@ import { isolate } from "./network";
 const SETTLE_MS = 600;
 
 /** Loads one program on one host and waits for it to settle. */
-export async function render(page: Page, host: Host, program: string): Promise<Rendered> {
+export async function render(
+  page: Page,
+  host: Host,
+  program: string,
+  extra?: Record<string, string>,
+): Promise<Rendered> {
   const console = watchConsole(page);
   await isolate(page);
-  await page.goto(hostUrl(host, program));
+  await page.goto(hostUrl(host, program, extra));
   await page.waitForFunction(
     () => window.__iu?.rendered === true || window.__iu?.hostErrors.length > 0,
   );

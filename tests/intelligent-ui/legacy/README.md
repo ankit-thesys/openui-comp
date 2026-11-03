@@ -13,7 +13,7 @@ in this table, and deleted from here when it is. #201 ported `browser/render.tes
 | Suite | What it checks | Ported by |
 |---|---|---|
 | `browser/styles.test.tsx` | computed colours, spacing and type for each component | not ported by #201: it reads the library's class names and needs host options (an app's tokens and themes) the host doesn't have |
-| `browser/theme-provider.test.tsx` | ThemeProvider's palette, and roots other than `Col` | the palette for every root: `../specs/sweep.spec.ts` (#201). The rest tests the ThemeProvider f5fb4923 replaced |
+| `browser/theme-provider.test.tsx` | ThemeProvider's palette, and roots other than `Col` | the palette for every root: `../specs/sweep.spec.ts` (#201). The rest tests the library ThemeProvider, which bd3e08ee removed |
 | `browser/app-css.test.tsx`, `browser/app-css-layer.test.tsx`, `browser/style-sheet.test.tsx`, `helpers/style-layer.ts` | a host's own CSS, layered or not, can restyle the output | not ported by #201: needs a host with an app stylesheet and a style layer |
 | `browser/icons.test.tsx` | icon stroke and size inside react-components' parts | not ported by #201: it mounts components directly, not a program |
 | `browser/schema-fixes.test.tsx` | schema fixes from the review rounds render | the rendering cases: `../specs/layout.spec.ts` (#201). The Svg signature case reads the prompt spec: #202 |

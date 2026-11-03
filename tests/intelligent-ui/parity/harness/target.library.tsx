@@ -1,22 +1,18 @@
 // The library side of the parity run: only the package's root exports, resolved through its
 // package.json to the built `dist`, and the test package's host's own mock Query tools.
-import { library, runLibraryAction, ThemeProvider } from "@openuidev/intelligent-ui-library";
-import { ThemeProvider as AppThemeProvider } from "@openuidev/react-components";
+import { library, runLibraryAction } from "@openuidev/intelligent-ui-library";
+import { ThemeProvider } from "@openuidev/react-components";
 import type { ReactNode } from "react";
 
 export { demoTools } from "../../host/mock-tools.ts";
 export { library, runLibraryAction };
 
 /**
- * The same providers the test package's host gives the library: react-components' ThemeProvider
- * for the mode, and the library's optional ThemeProvider inside it. `?host=plain` leaves both out.
+ * The provider the test package's host gives the library: react-components' ThemeProvider for the
+ * mode. `?host=plain` leaves it out.
  */
 export function Provider({ mode, children }: { mode: "light" | "dark"; children: ReactNode }) {
-  return (
-    <AppThemeProvider mode={mode}>
-      <ThemeProvider>{children}</ThemeProvider>
-    </AppThemeProvider>
-  );
+  return <ThemeProvider mode={mode}>{children}</ThemeProvider>;
 }
 
 // The page colours itself from react-components' tokens, as a host page does.
