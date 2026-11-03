@@ -41,6 +41,9 @@ jobs:
       - name: Build the library and what it depends on
         run: pnpm build:library
 
+      - name: Typecheck the tests against the built types
+        run: pnpm typecheck
+
       - name: Install Chromium
         run: pnpm exec playwright install --with-deps chromium
 
@@ -55,4 +58,5 @@ jobs:
           path: |
             tests/intelligent-ui/playwright-report
             tests/intelligent-ui/test-results
+            tests/intelligent-ui/sweep-report
           retention-days: 14

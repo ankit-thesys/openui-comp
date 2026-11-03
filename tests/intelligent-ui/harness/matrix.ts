@@ -1,7 +1,8 @@
 /**
  * The host matrix: every way the host page is set up. Each entry is one Playwright project, so a
- * report names the host a failure happened on. The tracer runs one host; #201 adds React 18, dark
- * mode, no ThemeProvider and 390px by adding entries here.
+ * report names the host a failure happened on. It is every combination of a React version, a
+ * theme, the library's ThemeProvider or not, and a phone or desktop width. None of the hosts has a
+ * CSS reset (see host/index.html).
  */
 export type Host = {
   /** React major the host is built with. Each version is its own build, served on its own port. */
@@ -12,10 +13,17 @@ export type Host = {
   width: number;
 };
 
-export const hosts: Host[] = [
-  { react: "19", theme: "light", provider: true, width: 1280 },
-  { react: "18", theme: "light", provider: true, width: 1280 },
-];
+const reacts: Host["react"][] = ["19", "18"];
+const themes: Host["theme"][] = ["light", "dark"];
+const providers = [true, false];
+/** A desktop window and a phone. */
+export const widths = [1280, 390];
+
+export const hosts: Host[] = reacts.flatMap((react) =>
+  themes.flatMap((theme) =>
+    providers.flatMap((provider) => widths.map((width) => ({ react, theme, provider, width }))),
+  ),
+);
 
 export const hostName = (host: Host) =>
   `react${host.react}-${host.theme}-${host.provider ? "provider" : "noprovider"}-${host.width}`;

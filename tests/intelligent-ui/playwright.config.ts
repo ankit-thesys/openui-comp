@@ -13,7 +13,14 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env["CI"],
   retries: 0,
-  reporter: process.env["CI"] ? [["list"], ["html", { open: "never" }]] : "list",
+  // GitHub's runners have four cores; the sweep is several hundred page loads.
+  workers: process.env["CI"] ? 4 : undefined,
+  reporter: [
+    process.env["CI"] ? ["list"] : ["line"],
+    ...(process.env["CI"] ? [["html", { open: "never" }] as const] : []),
+    // The sweep's pass/fail table, in sweep-report/sweep.md and the job summary.
+    ["./harness/sweep-reporter.ts"],
+  ],
   timeout: 60_000,
   use: {
     trace: "retain-on-failure",
