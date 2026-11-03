@@ -1,0 +1,58 @@
+# Fork only: the Intelligent UI library's prompt seam and package checks (ankit-thesys/openui-comp#202,
+# #199 stories 6–9). Never merged upstream.
+name: Intelligent UI prompt and packaging
+
+on:
+  push:
+    branches: [claude/intelligent-ui-tests]
+  pull_request:
+    branches: [claude/intelligent-ui-tests, claude/intelligent-kit-v2]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: intelligent-ui-prompt-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  prompt:
+    name: Prompt seam and packaging
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: tests/intelligent-ui
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install dependencies from the frozen lockfile
+        run: pnpm install --frozen-lockfile
+
+      - name: Build the library and what it depends on
+        run: pnpm build:library
+
+      - name: Build the CLI
+        run: pnpm --filter "@openuidev/cli..." --workspace-concurrency=1 run build
+
+      - name: Check the prompt and the package
+        run: pnpm exec playwright test --config playwright.prompt.config.ts
+
+      # The render workflow runs every spec on pushes to the test branch, but not on pull requests into
+      # it, so a pull request renders the prompt's examples here.
+      - name: Install Chromium
+        if: ${{ github.event_name == 'pull_request' && github.base_ref == 'claude/intelligent-ui-tests' }}
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Render the prompt's examples
+        if: ${{ github.event_name == 'pull_request' && github.base_ref == 'claude/intelligent-ui-tests' }}
+        run: pnpm exec playwright test specs/examples.spec.ts

@@ -1,3 +1,4 @@
+import { examples } from "@openuidev/intelligent-ui-library";
 import gallery from "../fixtures/gallery.json" with { type: "json" };
 
 /**
@@ -7,7 +8,7 @@ import gallery from "../fixtures/gallery.json" with { type: "json" };
  */
 export type Program = {
   id: string;
-  set: "gallery" | "self-test";
+  set: "gallery" | "example" | "self-test";
   section: string;
   title: string;
   code: string;
@@ -35,8 +36,21 @@ const selfTest: Program[] = [
   },
 ].map((entry) => ({ ...entry, set: "self-test" as const, section: "self-test" }));
 
+/** The prompt's own examples (#202), from the library's root export: "Example N: title:" then the code. */
+const promptExamples: Program[] = examples.map((example, index) => {
+  const [heading = "", ...code] = example.trim().split("\n");
+  return {
+    id: `example-${index + 1}`,
+    set: "example",
+    section: "prompt examples",
+    title: heading.replace(/^Example \d+:\s*/, "").replace(/:$/, ""),
+    code: code.join("\n").trim(),
+  };
+});
+
 export const programs: Program[] = [
   ...(gallery as Omit<Program, "set">[]).map((entry) => ({ ...entry, set: "gallery" as const })),
+  ...promptExamples,
   ...selfTest,
 ];
 

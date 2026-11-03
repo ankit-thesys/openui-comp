@@ -38,3 +38,18 @@ fails the run. `harness/network.ts` answers the library's `/api/...` routes and 
 so no run reaches the network. `host/mock-tools.ts` is the data the gallery's dashboards query.
 
 `legacy/` holds #160's suites until the tickets in its README port them.
+
+## The prompt seam and the package (#202)
+
+`playwright.prompt.config.ts` runs `prompt/` in Node, with no browser or host:
+
+```bash
+pnpm --filter "@openuidev/cli..." run build
+pnpm --filter @openuidev/intelligent-ui-tests exec playwright test --config playwright.prompt.config.ts
+```
+
+- `prompt/prompt.spec.ts` runs `openui generate` on `prompt/entry.ts`, the README's one-line re-export. It checks that every component, `@function` and action is in the prompt, and that every example parses with a `Col` root and no errors, unresolved or orphaned nodes. It also checks that the CLI prints no warning beyond the Map's `import.meta` one, and that the prompt matches `prompt/__snapshots__/prompt.txt`. After a deliberate prompt change, rerun it with `--update-snapshots` and review the diff. `IU_CLI` points the run at another CLI build.
+- `prompt/library.spec.ts` checks the library's counts (55 components in 6 groups, 59 `@functions`, one action) through the root exports. It also checks that the gallery parses and names every component.
+- `prompt/packaging.spec.ts` checks the built package in plain Node (import and require), with publint and attw, and checks that `npm pack` holds only `dist` and the README.
+
+`.github/workflows/intelligent-ui-prompt.yml` runs these after a frozen install and a build. `specs/examples.spec.ts` renders the prompt's examples in the host, like the gallery.
