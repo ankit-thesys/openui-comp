@@ -51,3 +51,18 @@ gets the library's palette. `specs/layout.spec.ts` holds the layout checks porte
 
 `harness/sweep-reporter.ts` writes the pass/fail table to `sweep-report/sweep.md`, and to the job
 summary on GitHub Actions. `IU_REACT=18 pnpm host` serves the React 18 build by hand.
+
+## The prompt seam and the package (#202)
+
+`playwright.prompt.config.ts` runs `prompt/` in Node, with no browser or host:
+
+```bash
+pnpm --filter "@openuidev/cli..." run build
+pnpm --filter @openuidev/intelligent-ui-tests exec playwright test --config playwright.prompt.config.ts
+```
+
+- `prompt/prompt.spec.ts` runs `openui generate` on `prompt/entry.ts`, the README's one-line re-export. It checks that every component, `@function` and action is in the prompt, and that every example parses with a `Col` root and no errors, unresolved or orphaned nodes. It also checks that the CLI prints no warning beyond the Map's `import.meta` one, and that the prompt matches `prompt/__snapshots__/prompt.txt`. After a deliberate prompt change, rerun it with `--update-snapshots` and review the diff. `IU_CLI` points the run at another CLI build.
+- `prompt/library.spec.ts` checks the library's counts (55 components in 6 groups, 59 `@functions`, one action) through the root exports. It also checks that the gallery parses and names every component.
+- `prompt/packaging.spec.ts` checks the built package in plain Node (import and require), with publint and attw. It checks that `npm pack` holds only `dist` and the README, and that the README's TypeScript samples compile against the published types under Bundler and NodeNext resolution.
+
+`.github/workflows/intelligent-ui-prompt.yml` runs these after a frozen install and a build. `specs/examples.spec.ts` renders the prompt's examples in the host, like the gallery.

@@ -8,7 +8,7 @@ import gallery from "../fixtures/gallery.json" with { type: "json" };
  */
 export type Program = {
   id: string;
-  set: "gallery" | "examples" | "regressions" | "theme" | "layout" | "self-test";
+  set: "gallery" | "example" | "regressions" | "theme" | "layout" | "self-test";
   section: string;
   title: string;
   code: string;
@@ -36,14 +36,17 @@ const selfTest: Program[] = [
   },
 ].map((entry) => ({ ...entry, set: "self-test" as const, section: "self-test" }));
 
-/** The prompt's own examples, read from the library's root export so they're the ones it ships. */
-const promptExamples: Program[] = examples.map((code, index) => ({
-  id: `prompt-example-${index + 1}`,
-  set: "examples",
-  section: "prompt",
-  title: `The prompt's example ${index + 1}`,
-  code,
-}));
+/** The prompt's own examples (#202), from the library's root export: "Example N: title:" then the code. */
+const promptExamples: Program[] = examples.map((example, index) => {
+  const [heading = "", ...code] = example.trim().split("\n");
+  return {
+    id: `example-${index + 1}`,
+    set: "example",
+    section: "prompt examples",
+    title: heading.replace(/^Example \d+:\s*/, "").replace(/:$/, ""),
+    code: code.join("\n").trim(),
+  };
+});
 
 /**
  * The same content under each root the library allows, for the check that ThemeProvider themes

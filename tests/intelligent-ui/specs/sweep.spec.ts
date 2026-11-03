@@ -12,7 +12,7 @@ const host = () => test.info().project.metadata["host"] as Host;
 
 const sweep = process.env["IU_PROGRAMS"]
   ? selected(process.env["IU_PROGRAMS"])
-  : programs.filter((entry) => ["gallery", "examples", "regressions"].includes(entry.set));
+  : programs.filter((entry) => ["gallery", "example", "regressions"].includes(entry.set));
 
 test.describe("sweep", () => {
   for (const program of sweep) {
