@@ -1,20 +1,38 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
-import { createRequire } from "node:module";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { chromium, type Browser, type Page } from "playwright";
+import { chromium, type Browser, type Page } from "@playwright/test";
 import { build, preview } from "vite";
+import { isolate } from "../harness/network.ts";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const require = createRequire(import.meta.url);
 
 export const FIXTURES = path.join(here, "fixtures");
 export const HARNESS = path.join(here, "harness");
 
+/** Which side a capture is of: the source app, or the library's built package. */
+export type Side = "source" | "library";
+
 export type Program = { id: string; section: string; title: string; code: string };
-export const programs: Program[] = JSON.parse(
-  readFileSync(path.join(FIXTURES, "programs.json"), "utf8"),
-);
+
+/**
+ * The same 45 programs on both sides, by id. The source app renders #160's copy, which keeps PR 70's
+ * Chart signature with its `currency` argument; the library renders the test package's gallery,
+ * migrated to the current signature.
+ */
+const PROGRAM_FILES: Record<Side, string> = {
+  source: path.join(FIXTURES, "programs.json"),
+  library: path.join(here, "../fixtures/gallery.json"),
+};
+const load = (side: Side): Program[] => JSON.parse(readFileSync(PROGRAM_FILES[side], "utf8"));
+export const programsFor: Record<Side, Program[]> = { source: load("source"), library: load("library") };
+/** Program ids, in the source's order. */
+export const programs: Program[] = programsFor.source;
+const byId = (side: Side, id: string) => {
+  const found = programsFor[side].find((program) => program.id === id);
+  if (!found) throw new Error(`No program called "${id}" on the ${side} side`);
+  return found;
+};
 
 export type Mode = {
   id: string;
@@ -36,57 +54,6 @@ export const MODES: Mode[] = [
   { id: "plain-1280", width: 1280, theme: "light", host: "plain", baseline: "light-1280" },
 ];
 export const SOURCE_MODES = MODES.filter((mode) => mode.host === "app");
-
-const PHOTO = `<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640"><rect width="960" height="640" fill="#7d93a8"/><circle cx="480" cy="320" r="160" fill="#c9d4de"/></svg>`;
-const PIXEL = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN4+vjxfwAJFgPjZgoQ0QAAAABJRU5ErkJggg==";
-const STUB_PHOTOS = ["/stub-photo.svg?a", "/stub-photo.svg?b", "/stub-photo.svg?c", "/stub-photo.svg?d"];
-
-const json = (body: unknown) => ({
-  status: 200,
-  contentType: "application/json",
-  body: JSON.stringify(body),
-});
-
-/** No test reaches the network. Everything outside the harness is answered here, the same for both sides. */
-export async function isolate(page: Page) {
-  await page.route("**/*", async (route) => {
-    const url = new URL(route.request().url());
-    const local = url.hostname === "localhost" || url.hostname === "127.0.0.1";
-
-    if (local && url.pathname === "/stub-photo.svg") {
-      return route.fulfill({ status: 200, contentType: "image/svg+xml", body: PHOTO });
-    }
-    if (local && url.pathname.startsWith("/api/")) {
-      if (url.pathname === "/api/wiki") return route.fulfill(json({ photos: STUB_PHOTOS }));
-      if (url.pathname === "/api/image-search") return route.fulfill(json({ images: STUB_PHOTOS }));
-      if (url.pathname === "/api/street-route") {
-        const points = (url.searchParams.get("coords") ?? "").split(";").map((pair) => {
-          const [lng, lat] = pair.split(",").map(Number);
-          return [lat, lng];
-        });
-        return route.fulfill(json({ points }));
-      }
-      return route.fulfill({ status: 404, body: "" });
-    }
-    if (local) return route.continue();
-
-    const kind = route.request().resourceType();
-    if (kind === "image") {
-      return route.fulfill({ status: 200, contentType: "image/svg+xml", body: PHOTO });
-    }
-    if (url.hostname === "server.arcgisonline.com") {
-      return route.fulfill({ status: 200, contentType: "image/png", body: Buffer.from(PIXEL, "base64") });
-    }
-    if (url.hostname === "tiles.openfreemap.org") {
-      // A map with no features: the tile source resolves, and its tiles and glyphs are empty.
-      if (url.pathname === "/planet") {
-        return route.fulfill(json({ tilejson: "2.2.0", minzoom: 0, maxzoom: 14, tiles: ["https://tiles.openfreemap.org/planet/{z}/{x}/{y}.pbf"] }));
-      }
-      return route.fulfill({ status: 200, contentType: "application/x-protobuf", body: "" });
-    }
-    return route.abort();
-  });
-}
 
 export async function launch(): Promise<Browser> {
   return chromium.launch({ args: ["--enable-unsafe-swiftshader", "--use-gl=angle", "--use-angle=swiftshader"] });
@@ -346,9 +313,9 @@ export const FLOWS: Flow[] = [
   },
 ];
 
-export async function runFlow(browser: Browser, url: string, flow: Flow): Promise<FlowResult[]> {
+export async function runFlow(browser: Browser, url: string, flow: Flow, side: Side): Promise<FlowResult[]> {
   const page = await openHarness(browser, url, MODES[0]!, true);
-  const program = programs.find((item) => item.id === flow.program)!;
+  const program = byId(side, flow.program);
   await mount(page, program, "light");
   const before = (await page.evaluate("window.__probe.words()")) as string[];
   const out: FlowResult[] = [];
@@ -392,11 +359,27 @@ export async function serveHarness(root: string, target: string, outDir: string)
     publicDir: path.join(root, "public"),
     define: { "process.env": "{}" },
     esbuild: { jsx: "automatic" as const },
-    resolve: { alias: { "parity-target": target } },
+    resolve: {
+      alias: { "parity-target": target },
+      // One copy of React and the runtime, as the test package's host has.
+      dedupe: ["react", "react-dom", "@openuidev/react-lang", "@openuidev/react-components"],
+    },
   };
   await build({
     ...shared,
-    build: { outDir, emptyOutDir: true, minify: false, sourcemap: false, chunkSizeWarningLimit: 100000 },
+    build: {
+      outDir,
+      emptyOutDir: true,
+      minify: false,
+      sourcemap: false,
+      chunkSizeWarningLimit: 100000,
+      rollupOptions: {
+        // react-components and the library mark client files with "use client", which a SPA doesn't need.
+        onwarn(warning, warn) {
+          if (warning.code !== "MODULE_LEVEL_DIRECTIVE") warn(warning);
+        },
+      },
+    },
   });
   const server = await preview({ ...shared, build: { outDir }, preview: { port: 0, host: "127.0.0.1" } });
   const address = server.httpServer.address();
@@ -404,21 +387,28 @@ export async function serveHarness(root: string, target: string, outDir: string)
   return { url: `http://127.0.0.1:${port}`, close: () => server.close() };
 }
 
-export async function captureTarget(url: string, options: { modes?: Mode[]; screenshots?: string } = {}) {
+export async function captureTarget(
+  url: string,
+  options: { side: Side; modes?: Mode[]; screenshots?: string },
+) {
   const browser = await launch();
+  const list = programs.map((program) => byId(options.side, program.id));
   const visual: Record<string, Record<string, Fingerprint>> = {};
   const errors: Record<string, string[]> = {};
   for (const mode of options.modes ?? MODES) {
     const page = await openHarness(browser, url, mode);
-    for (const program of programs) {
+    for (const program of list) {
       await mount(page, program, mode.theme);
       (visual[program.id] ??= {})[mode.id] = await collect(page);
       const found = (await page.evaluate("window.__parity.errors")) as string[];
       if (found.length) errors[program.id] = found;
       if (options.screenshots) {
         mkdirSync(options.screenshots, { recursive: true });
+        // JPEG keeps a run's few hundred full-page screenshots small enough to commit.
         await page.screenshot({
-          path: path.join(options.screenshots, `${program.id}--${mode.id}.png`),
+          path: path.join(options.screenshots, `${program.id}--${mode.id}.jpg`),
+          type: "jpeg",
+          quality: 70,
           fullPage: true,
           animations: "disabled",
         });
@@ -428,11 +418,11 @@ export async function captureTarget(url: string, options: { modes?: Mode[]; scre
   }
   const page = await openHarness(browser, url, MODES[0]!);
   const functional: Record<string, Interaction[]> = {};
-  for (const program of programs) functional[program.id] = await exercise(page, program);
+  for (const program of list) functional[program.id] = await exercise(page, program);
   const spec = await page.evaluate("window.__parity.spec()");
   await page.context().close();
   const flows: Record<string, FlowResult[]> = {};
-  for (const flow of FLOWS) flows[flow.id] = await runFlow(browser, url, flow);
+  for (const flow of FLOWS) flows[flow.id] = await runFlow(browser, url, flow, options.side);
   await browser.close();
   return { visual, functional, flows, errors, spec };
 }
@@ -440,4 +430,3 @@ export async function captureTarget(url: string, options: { modes?: Mode[]; scre
 export const writeJson = (file: string, value: unknown) =>
   writeFileSync(file, `${JSON.stringify(value)}\n`);
 
-export { require };
