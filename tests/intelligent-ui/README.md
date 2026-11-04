@@ -37,7 +37,33 @@ There are three places to extend:
 fails the run. `harness/network.ts` answers the library's `/api/...` routes and every outside request,
 so no run reaches the network. `host/mock-tools.ts` is the data the gallery's dashboards query.
 
+#203's specs drive the page the way a user does, by role, label and visible text:
+
+- `specs/interactions.spec.ts`: forms and their rules, the input controls, Popover, the map, the
+  study tools, and the review fixes from #160;
+- `specs/actions.spec.ts`: `@CopyToClipboard`, `@OpenUrl`, `@ToAssistant`, `@Reset`, and
+  `runLibraryAction` passing every other action on to the host;
+- `specs/streaming.spec.ts`: every program streamed in uneven chunks, with no console error;
+- `specs/functions.spec.ts`: the 59 `@functions` against `fixtures/function-answers.ts`, known answers
+  taken from outside the library.
+
+Their small programs are in `harness/behaviour-programs.ts`. `IU_PORT_OFFSET=1000` moves the host
+ports, so a second checkout can run at the same time.
+
 `legacy/` holds #160's suites until the tickets in its README port them.
+
+## The rendering sweep (#201)
+
+`specs/sweep.spec.ts` renders every gallery program, every prompt example and every past
+regression on all 12 hosts: React 19 and 18; light and dark with react-components' ThemeProvider,
+and light with no provider; at 1280px and 390px. Each one goes through every check in `harness/checks.ts`; the page checks it
+adds (horizontal scroll, boxes sticking out of what they sit in, overlapping siblings, bad text
+values, broken images, empty drawings, maps without a canvas or pins) are in
+`harness/page-checks.ts`. It also checks that every root inside ThemeProvider gets its palette, a
+`Col` root gets it with no provider, and a response keeps an app's own colours. `specs/layout.spec.ts` holds the layout checks ported from #160.
+
+`harness/sweep-reporter.ts` writes the pass/fail table to `sweep-report/sweep.md`, and to the job
+summary on GitHub Actions. `IU_REACT=18 pnpm host` serves the React 18 build by hand.
 
 ## The prompt seam and the package (#202)
 
