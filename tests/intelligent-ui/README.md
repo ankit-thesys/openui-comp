@@ -79,3 +79,35 @@ pnpm --filter @openuidev/intelligent-ui-tests exec playwright test --config play
 - `prompt/packaging.spec.ts` checks the built package in plain Node (import and require), with publint and attw. It checks that `npm pack` holds only `dist` and the README, and that the README's TypeScript samples compile against the published types under Bundler and NodeNext resolution.
 
 `.github/workflows/intelligent-ui-prompt.yml` runs these after a frozen install and a build. `specs/examples.spec.ts` renders the prompt's examples in the host, like the gallery.
+
+## Model programs (#205, #206)
+
+`models/prompts.json` holds the 33 user prompts the maintainer approved in #205, 10 of them marked
+for Opus; `models/prompts.md` is the same list to read. `models/generate.ts` sends the system prompt
+the CLI generates (the same `prompt/cli.ts` the prompt seam uses) with each prompt to
+`claude-sonnet-5-5`, and the Opus ones to `claude-opus-5-5` too, and saves each answer as
+`fixtures/models/<model>/<id>.json`: the id, area, prompt, model, date, effort, stop reason, token
+usage, the system prompt's hash and the program text as the model wrote it.
+
+It is a manual command and calls a paid API, so CI never runs it (it refuses when `CI` is set). Build
+the library and the CLI first, then:
+
+```bash
+pnpm --filter @openuidev/intelligent-ui-tests build:library
+pnpm --filter "@openuidev/cli..." run build
+pnpm --filter @openuidev/intelligent-ui-tests generate:models --dry-run
+ANTHROPIC_API_KEY=… pnpm --filter @openuidev/intelligent-ui-tests generate:models
+```
+
+- The key comes only from `ANTHROPIC_API_KEY`. The script never prints it or writes it anywhere, and
+  `.env` files are ignored here.
+- `--dry-run` lists the requests and estimates the cost without calling the API.
+- `--only forms-01,maps-01` and `--model sonnet|opus` narrow a run; `--effort` (default `medium`) and
+  `--concurrency` (default 4) tune it.
+- Fixtures that exist are kept, so a stopped run resumes where it left off; `--force` redoes them.
+- Failed requests retry with backoff when they can (rate limits, overload, server and network
+  errors); a refusal, a response cut off at `max_tokens` or an empty one is reported and not saved.
+  The run ends with the count saved, failed and parsing cleanly, and the tokens and cost.
+
+`prompt/models.spec.ts` checks the prompt list, that every fixture names its prompt and model and
+holds no key, and that the script refuses to run in CI.

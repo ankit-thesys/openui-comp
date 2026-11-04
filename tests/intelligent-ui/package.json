@@ -9,7 +9,8 @@
     "build:host": "vite build --config host/vite.config.ts",
     "host": "vite --config host/vite.config.ts",
     "test": "playwright test",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "generate:models": "node models/generate.ts"
   },
   "dependencies": {
     "@openuidev/intelligent-ui-library": "workspace:*",
@@ -21,10 +22,12 @@
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "1.4.0",
     "@playwright/test": "1.56.1",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
+    "effect": "4.1.2",
     "react-18": "npm:react@18.3.1",
     "react-dom-18": "npm:react-dom@18.3.1",
     "typescript": "catalog:",

@@ -44,6 +44,9 @@ jobs:
       - name: Build the CLI
         run: pnpm --filter "@openuidev/cli..." --workspace-concurrency=1 run build
 
+      - name: Typecheck the test package
+        run: pnpm typecheck
+
       - name: Check the prompt and the package
         run: pnpm exec playwright test --config playwright.prompt.config.ts
 
