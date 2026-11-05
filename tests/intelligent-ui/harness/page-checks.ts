@@ -1,10 +1,9 @@
 import type { Check } from "./checks";
-import { programs } from "./programs";
 
 /**
  * The checks that read the rendered page (#201): what a reader would see as broken, whatever the
  * program. They look at the page's boxes, text and media, never at the library's own class names;
- * the only classes named are MapLibre's, the map's third-party renderer.
+ * the only class named is KaTeX's, the formula renderer's.
  *
  * The page code runs in the browser, so each check passes its own function to `page.evaluate`.
  */
@@ -13,8 +12,6 @@ import { programs } from "./programs";
 const TOLERANCE = 2;
 /** At most this many problems per check and program, so one bad layout doesn't bury the report. */
 const LIMIT = 8;
-
-const codeOf = (id: string) => programs.find((entry) => entry.id === id)?.code ?? "";
 
 export const pageChecks: Check[] = [
   {
@@ -69,11 +66,8 @@ export const pageChecks: Check[] = [
           };
           for (const element of host.querySelectorAll("*")) {
             if (problems.length >= limit) break;
-            // SVG drawings, maps, KaTeX formulas and iframes lay out their own insides.
-            if (
-              element.closest("svg, iframe, math, .katex, .maplibregl-map") &&
-              element.tagName !== "svg"
-            ) {
+            // SVG drawings, KaTeX formulas and iframes lay out their own insides.
+            if (element.closest("svg, iframe, math, .katex") && element.tagName !== "svg") {
               continue;
             }
             // Its container already sticks out, which says the same thing.
@@ -143,7 +137,7 @@ export const pageChecks: Check[] = [
           };
           for (const parent of [host, ...host.querySelectorAll("*")]) {
             if (problems.length >= limit) break;
-            if (parent.closest("svg, iframe, math, .katex, .maplibregl-map")) continue;
+            if (parent.closest("svg, iframe, math, .katex")) continue;
             const laid = children(parent).filter(inFlow);
             for (let i = 0; i < laid.length; i++) {
               for (let j = i + 1; j < laid.length; j++) {
@@ -180,7 +174,18 @@ export const pageChecks: Check[] = [
     run: ({ page }) =>
       page.evaluate(async () => {
         const images = [...document.getElementById("host")!.querySelectorAll("img")];
-        await Promise.all(images.map((image) => image.decode().catch(() => undefined)));
+        // A lazy image off screen never loads, and its decode() never settles: bring each one into
+        // view, and give up waiting after a few seconds rather than hang the run.
+        for (const image of images) image.scrollIntoView({ block: "nearest" });
+        await Promise.all(
+          images.map((image) =>
+            Promise.race([
+              image.decode().catch(() => undefined),
+              new Promise((resolve) => setTimeout(resolve, 5_000)),
+            ]),
+          ),
+        );
+        window.scrollTo(0, 0);
         return images
           .filter((image) => image.complete && image.naturalWidth === 0)
           .filter((image) => getComputedStyle(image).display !== "none")
@@ -193,7 +198,7 @@ export const pageChecks: Check[] = [
       page.evaluate(() => {
         const drawn = "path, rect, circle, ellipse, line, polyline, polygon, text, image, use";
         return [...document.getElementById("host")!.querySelectorAll("svg")]
-          .filter((svg) => !svg.closest(".maplibregl-map") && !svg.parentElement?.closest("svg"))
+          .filter((svg) => !svg.parentElement?.closest("svg"))
           .filter((svg) => {
             const box = svg.getBoundingClientRect();
             return box.width > 0 && box.height > 0;
@@ -207,42 +212,5 @@ export const pageChecks: Check[] = [
             return `an empty ${Math.round(box.width)}×${Math.round(box.height)}px drawing`;
           });
       }),
-  },
-  {
-    name: "maps draw",
-    run: async ({ page, state }) => {
-      const calls = codeOf(state.program).match(/\bMap\(/g)?.length ?? 0;
-      if (calls === 0) return [];
-      // A map loads its style and adds its pins after the first render; a busy machine is slower.
-      await page
-        .waitForFunction(
-          () => {
-            const maps = [...document.querySelectorAll("#host .maplibregl-map")];
-            return (
-              maps.length > 0 &&
-              maps.every(
-                (map) => map.querySelector("canvas") && map.querySelector(".maplibregl-marker"),
-              )
-            );
-          },
-          undefined,
-          { timeout: 10_000 },
-        )
-        .catch(() => undefined);
-      const maps = await page.evaluate(() =>
-        [...document.querySelectorAll("#host .maplibregl-map")].map((map) => {
-          const canvas = map.querySelector("canvas")?.getBoundingClientRect();
-          return {
-            canvas: canvas ? canvas.width > 0 && canvas.height > 0 : false,
-            markers: map.querySelectorAll(".maplibregl-marker").length,
-          };
-        }),
-      );
-      if (maps.length === 0) return ["the program has a Map, but no map was drawn"];
-      return maps.flatMap((map, index) => [
-        ...(map.canvas ? [] : [`map ${index + 1} has no canvas`]),
-        ...(map.markers > 0 ? [] : [`map ${index + 1} has no markers`]),
-      ]);
-    },
   },
 ];

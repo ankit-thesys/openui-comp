@@ -4,7 +4,7 @@ import { failures, render } from "../harness/render";
 
 /**
  * Layout that the sweep's general checks can't see, ported from #160's layout and schema-fixes
- * suites. Elements are found by their text, their tag or MapLibre's classes, never the library's.
+ * suites. Elements are found by their text or their tag, never the library's classes.
  */
 const host = () => test.info().project.metadata["host"] as Host;
 const phone = () => host().width < 768;
@@ -56,13 +56,6 @@ test("radio cards stack on a phone", async ({ page }) => {
   expect(new Set(tops).size).toBe(3);
 });
 
-test("a Map has a real size", async ({ page }) => {
-  await clean(page, "map");
-  const canvas = await page.locator("#host .maplibregl-canvas").first().boundingBox();
-  expect(canvas!.width).toBeGreaterThan(300);
-  expect(canvas!.height).toBeGreaterThan(200);
-});
-
 test("HtmlView sandboxes its page so it can't reach the host's", async ({ page }) => {
   await clean(page, "html");
   const frame = page.locator("#host iframe").first();
@@ -85,11 +78,6 @@ test("a Text given to an Svg shows below the drawing", async ({ page }) => {
   expect(await caption.evaluate((element) => element.closest("svg") === null)).toBe(true);
   const drawing = (await page.locator("#host svg").first().boundingBox())!;
   expect((await caption.boundingBox())!.y).toBeGreaterThanOrEqual(drawing.y + drawing.height - 1);
-});
-
-test("a MapMarker outside a Map shows as a labelled place", async ({ page }) => {
-  await clean(page, "layout-marker-outside-map");
-  await expect(page.getByText("Ferry Building")).toBeVisible();
 });
 
 test("a Badge inside Text keeps the HTML valid", async ({ page }) => {

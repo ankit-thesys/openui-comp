@@ -72,13 +72,21 @@ test.describe("the built package", () => {
     );
   });
 
-  test("documents the street route's format and what each route answers", () => {
-    // The README ships in the tarball, so it is part of what an app reads.
+  test("documents nothing the library no longer has", () => {
+    // The README ships in the tarball, so it is part of what an app reads. f9d86dd5 removed the map,
+    // the photo search and their server routes; a README still describing them would send an app
+    // to build routes nothing calls.
     const readme = readFileSync(join(libraryDir, "README.md"), "utf8");
-    expect(readme).toContain("lng,lat;lng,lat");
-    expect(readme).toContain("{ points: [[lat, lng], ...] }");
-    expect(readme).toContain("{ photos: [url, ...] }");
-    expect(readme).toContain("{ images: [url, ...] }");
+    for (const gone of [
+      "configureIntelligentKit",
+      "MapMarker",
+      "SearchImage",
+      "/api/",
+      "maplibre",
+    ]) {
+      expect(readme, gone).not.toContain(gone);
+    }
+    expect(readme).not.toMatch(/\bMap\(/);
   });
 });
 

@@ -3,9 +3,11 @@ import gallery from "../fixtures/gallery.json" with { type: "json" };
 import { behaviourPrograms } from "./behaviour-programs";
 
 /**
- * Every program the host can render, by id. #160's 45 gallery programs come first, migrated to the
- * current Chart signature (no `currency` argument). The prompt's examples (#202) and the saved
- * model programs (#199) are added here as further sets.
+ * Every program the host can render, by id. #160's gallery programs come first, migrated to the
+ * current Chart signature (no `currency` argument). Since f9d86dd5 there are 44: the map-only
+ * `map` program is gone, `route` and `roadtrip` lost their Map, and every SearchImage is an Image
+ * with a fixed picsum.photos URL. The prompt's examples (#202) and the saved model programs (#199)
+ * are added here as further sets.
  */
 export type Program = {
   id: string;
@@ -74,6 +76,20 @@ const regressions: Program[] = [
     title: "A donut given a short height, followed by text and a button (fixed in 4b498a9b)",
     code: `root = Col([Card([Title("Spending", "md"), Chart("donut", ${pieRows}, "k", ["v"], "percent", null, 140), Text("Text right under the donut"), Button("A button under it")])])`,
   },
+  {
+    id: "regression-loose-options",
+    title:
+      "Options written loosely: numbers, a label-only object, a null value and an empty one (fixed in f867a6c9)",
+    code: `root = Col([size, mode, pick, pref])
+$size = "15"
+$mode = "2"
+$pick = "Medium"
+$pref = "No preference"
+size = RadioGroup($size, [13, 15, 16], "Size")
+mode = SegmentedControl($mode, [1, 2, 3])
+pick = Select($pick, [{label: "Small"}, {label: "Medium"}, {value: null, label: "Any size"}, {}], "Pick")
+pref = RadioGroup($pref, [{value: null, label: "No preference"}, {value: "a", label: "Aisle"}, {value: null, label: null}], "Seat")`,
+  },
 ].map((entry) => ({ ...entry, set: "regressions" as const, section: "regressions" }));
 
 /** Small programs for the layout checks ported from #160's layout and schema-fixes suites. */
@@ -94,10 +110,6 @@ root = RadioGroup($pick, [{value: "a", label: "One", description: "The first"}, 
   {
     id: "layout-text-in-svg",
     code: `root = Svg([Circle(50, 50, 30), Text("A caption for the drawing")], "0 0 100 100", 120, 120)`,
-  },
-  {
-    id: "layout-marker-outside-map",
-    code: `root = Col([MapMarker("Ferry Building", 37.79, -122.39)])`,
   },
   { id: "layout-badge-in-text", code: `root = Text(["Status: ", Badge("Live", "success")])` },
 ].map((entry) => ({ ...entry, set: "layout" as const, section: "layout", title: entry.id }));

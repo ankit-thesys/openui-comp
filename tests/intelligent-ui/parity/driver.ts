@@ -3,7 +3,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { build, preview } from "vite";
-import { isolate } from "../harness/network.ts";
+import { isolate } from "./network.ts";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 

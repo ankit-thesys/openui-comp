@@ -185,7 +185,7 @@ test.describe("controls", () => {
   });
 });
 
-test.describe("Popover and the map", () => {
+test.describe("Popover", () => {
   test("Popover takes focus, closes on Escape and gives focus back", async ({ page }) => {
     const checked = await open(page, "behaviour-popover");
     const trigger = page.getByRole("button", { name: "the details" });
@@ -206,43 +206,6 @@ test.describe("Popover and the map", () => {
     await page.getByRole("button", { name: "the details" }).click();
     await page.getByRole("button", { name: "Inside" }).click();
     expect(await actionCount(page)).toBe(0);
-    await checked();
-  });
-
-  test("a map pin selects its place", async ({ page }) => {
-    const checked = await open(page, "map");
-    const pin = page.getByRole("button", { name: "Coit Tower" });
-    await expect(pin).not.toHaveAttribute("aria-pressed", "true");
-    await pin.click();
-    await expect(pin).toHaveAttribute("aria-pressed", "true");
-    await expect(main(page)).toContainText("Starting at Coit Tower");
-    await checked();
-  });
-
-  test("the map's Expand dialog traps focus, locks scroll and closes on Escape", async ({
-    page,
-  }) => {
-    const checked = await open(page, "map");
-    const expand = page.getByRole("button", { name: "Expand" });
-    await expand.click();
-    const dialog = page.getByRole("dialog");
-    await expect(dialog).toBeVisible();
-    const scrollLocked = () =>
-      page.evaluate(() => getComputedStyle(document.body).overflow === "hidden");
-    expect(await scrollLocked()).toBe(true);
-    const focusInside = () =>
-      dialog.evaluate((element) => element.contains(document.activeElement));
-    expect(await focusInside()).toBe(true);
-    for (let press = 0; press < 15; press++) {
-      await page.keyboard.press(press % 2 ? "Tab" : "Shift+Tab");
-      expect(await focusInside(), `focus after ${press + 1} tab presses`).toBe(true);
-    }
-    for (let press = 0; press < 15; press++) await page.keyboard.press("Tab");
-    expect(await focusInside()).toBe(true);
-    await page.keyboard.press("Escape");
-    await expect(dialog).toHaveCount(0);
-    expect(await scrollLocked()).toBe(false);
-    await expect(expand).toBeFocused();
     await checked();
   });
 });
@@ -345,8 +308,8 @@ test.describe("study tools", () => {
   });
 });
 
-// #160's review-fixes suite, ported to the browser seam. Its Map and HtmlView theme cases follow
-// ThemeProvider's mode, which #201 covers.
+// #160's review-fixes suite, ported to the browser seam. Its HtmlView theme case follows
+// ThemeProvider's mode, which #201 covers; its Map cases went with the Map in f9d86dd5.
 test.describe("review fixes", () => {
   test("Code copies its code and tells a screen reader", async ({ page, context }) => {
     await context.grantPermissions(["clipboard-read", "clipboard-write"]);
@@ -413,12 +376,6 @@ test.describe("review fixes", () => {
     await expect(page.getByRole("dialog")).toBeVisible();
     await page.mouse.wheel(0, 600);
     await expect(page.getByRole("dialog")).toHaveCount(0);
-    await checked();
-  });
-
-  test("a map with one place says nothing about a route", async ({ page }) => {
-    const checked = await open(page, "behaviour-map-one");
-    await expect(page.getByRole("status")).toHaveText("");
     await checked();
   });
 });

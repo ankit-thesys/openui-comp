@@ -7,8 +7,9 @@ import gallery from "../fixtures/gallery.json" with { type: "json" };
 const registered = Object.keys(library.components);
 
 test.describe("the library's surface", () => {
-  test("registers 55 components in 6 groups, with Col as root", () => {
-    expect(registered).toHaveLength(55);
+  test("registers 52 components in 6 groups, with Col as root", () => {
+    // 55 until f9d86dd5 removed Map, MapMarker and SearchImage.
+    expect(registered).toHaveLength(52);
     expect(library.root).toBe("Col");
     expect(componentGroups).toHaveLength(6);
   });

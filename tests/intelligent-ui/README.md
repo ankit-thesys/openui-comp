@@ -13,7 +13,7 @@ pnpm --filter @openuidev/intelligent-ui-tests exec playwright install chromium
 pnpm --filter @openuidev/intelligent-ui-tests test
 ```
 
-`IU_PROGRAMS=web-analytics,map` renders other gallery programs, and `IU_PROGRAMS=all` renders every
+`IU_PROGRAMS=web-analytics,images` renders other gallery programs, and `IU_PROGRAMS=all` renders every
 one. `pnpm --filter @openuidev/intelligent-ui-tests host` serves the host page for a look by hand:
 open `/?program=recipe&theme=dark&provider=0`.
 
@@ -34,12 +34,12 @@ There are three places to extend:
 
 `specs/render.spec.ts` renders each selected program on each host and runs every check.
 `specs/self-test.spec.ts` feeds the checks broken programs, so a check that stops catching problems
-fails the run. `harness/network.ts` answers the library's `/api/...` routes and every outside request,
-so no run reaches the network. `host/mock-tools.ts` is the data the gallery's dashboards query.
+fails the run. `harness/network.ts` answers every outside request, and fails images on reserved
+`.invalid` hosts so the library's broken-image placeholder is tested; no run reaches the network. `host/mock-tools.ts` is the data the gallery's dashboards query.
 
 #203's specs drive the page the way a user does, by role, label and visible text:
 
-- `specs/interactions.spec.ts`: forms and their rules, the input controls, Popover, the map, the
+- `specs/interactions.spec.ts`: forms and their rules, the input controls, Popover, the
   study tools, and the review fixes from #160;
 - `specs/actions.spec.ts`: `@CopyToClipboard`, `@OpenUrl`, `@ToAssistant`, `@Reset`, and
   `runLibraryAction` passing every other action on to the host;
@@ -58,9 +58,10 @@ ports, so a second checkout can run at the same time.
 regression on all 12 hosts: React 19 and 18; light and dark with react-components' ThemeProvider,
 and light with no provider; at 1280px and 390px. Each one goes through every check in `harness/checks.ts`; the page checks it
 adds (horizontal scroll, boxes sticking out of what they sit in, overlapping siblings, bad text
-values, broken images, empty drawings, maps without a canvas or pins) are in
+values, broken images, empty drawings) are in
 `harness/page-checks.ts`. It also checks that every root inside ThemeProvider gets its palette, a
-`Col` root gets it with no provider, and a response keeps an app's own colours. `specs/layout.spec.ts` holds the layout checks ported from #160.
+`Col` root gets it with no provider, and a response keeps an app's own colours. `specs/layout.spec.ts` holds the layout checks ported from #160, and
+`specs/options.spec.ts` checks options written loosely (numbers, label-only objects, null values).
 
 `harness/sweep-reporter.ts` writes the pass/fail table to `sweep-report/sweep.md`, and to the job
 summary on GitHub Actions. `IU_REACT=18 pnpm host` serves the React 18 build by hand.
@@ -74,8 +75,8 @@ pnpm --filter "@openuidev/cli..." run build
 pnpm --filter @openuidev/intelligent-ui-tests exec playwright test --config playwright.prompt.config.ts
 ```
 
-- `prompt/prompt.spec.ts` runs `openui generate` on `prompt/entry.ts`, the README's one-line re-export. It checks that every component, `@function` and action is in the prompt, and that every example parses with a `Col` root and no errors, unresolved or orphaned nodes. It also checks that the CLI prints no warning beyond the Map's `import.meta` one, and that the prompt matches `prompt/__snapshots__/prompt.txt`. After a deliberate prompt change, rerun it with `--update-snapshots` and review the diff. `IU_CLI` points the run at another CLI build.
-- `prompt/library.spec.ts` checks the library's counts (55 components in 6 groups, 59 `@functions`, one action) through the root exports. It also checks that the gallery parses and names every component.
+- `prompt/prompt.spec.ts` runs `openui generate` on `prompt/entry.ts`, the README's one-line re-export. It checks that every component, `@function` and action is in the prompt, and that every example parses with a `Col` root and no errors, unresolved or orphaned nodes. It also checks that the CLI prints no warnings, and that the prompt matches `prompt/__snapshots__/prompt.txt`. After a deliberate prompt change, rerun it with `--update-snapshots` and review the diff. `IU_CLI` points the run at another CLI build.
+- `prompt/library.spec.ts` checks the library's counts (52 components in 6 groups, 59 `@functions`, one action) through the root exports. It also checks that the gallery parses and names every component.
 - `prompt/packaging.spec.ts` checks the built package in plain Node (import and require), with publint and attw. It checks that `npm pack` holds only `dist` and the README, and that the README's TypeScript samples compile against the published types under Bundler and NodeNext resolution.
 
 `.github/workflows/intelligent-ui-prompt.yml` runs these after a frozen install and a build. `specs/examples.spec.ts` renders the prompt's examples in the host, like the gallery.

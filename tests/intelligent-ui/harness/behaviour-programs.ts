@@ -49,8 +49,6 @@ pills = RadioGroup($c, ["One", "Two"], "Pills", "pills", {required: true})`,
 
   "behaviour-popover-scroll": `root = Col([Row([Text("Read"), Popover("the details", [Text("Hidden content", "sm")])], 2), Box([], null, null, null, null, null, null, "100%", 2400)])`,
 
-  "behaviour-map-one": `root = Col([Map([MapMarker("Ferry Building", 37.7955, -122.3937)], true)])`,
-
   // The patterns the prompt teaches for working tools, from #160's patterns suite.
   "behaviour-patterns": `root = Col([Text("People: " + @Join($people)), Text("Name: [" + $name + "]"), add, toggles, Text("Split: " + @Join(@Each($items, "it", it.name + "=" + @Join(it.people, "+")), "; ")), Text("Shares: " + shares), Text("Balances: " + @Join(@Each(rows, "r", r.year + ":" + r.balance), ", ")), Button("Four years", @Set($years, 4)), Text("Door " + $door), Button("Pick a door", @Set($door, @Random(0, 2, true)))], 2)
 $people = ["You"]

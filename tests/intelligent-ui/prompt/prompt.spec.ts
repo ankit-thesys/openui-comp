@@ -14,12 +14,10 @@ test.describe("the CLI's system prompt", () => {
     expect(prompt.trimEnd()).toBe(library.prompt(promptOptions).trimEnd());
   });
 
-  test("prints no warning beyond MapLibre's import.meta one", () => {
-    // The Map resolves maplibre-gl's worker with import.meta.url, which esbuild empties in the CLI's cjs bundle.
-    const known = (warning: string) =>
-      /import\.meta/.test(warning) && /maplibre-gl-worker/.test(warning);
+  test("prints no warnings", () => {
+    // MapLibre's import.meta warning went with the Map in f9d86dd5, so none is expected now.
     const { output } = cli();
-    expect(warnings(output).filter((warning) => !known(warning))).toEqual([]);
+    expect(warnings(output)).toEqual([]);
     expect(output).not.toMatch(/\[ERROR\]/);
   });
 
@@ -84,7 +82,7 @@ test.describe("the prompt's examples", () => {
 
 test.describe("the checks themselves", () => {
   // A parser that stops finding things would let every check above pass, so feed it known input.
-  test("find every warning block, and keep only the known one out", () => {
+  test("find every warning block", () => {
     const output = [
       "Written System Prompt to out.txt",
       '▲ [WARNING] "import.meta" is not available with the "cjs" output format and will be empty [empty-import-meta]',

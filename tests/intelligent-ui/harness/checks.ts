@@ -51,7 +51,15 @@ export const checks: Check[] = [
 export function watchConsole(page: Page) {
   const logged: string[] = [];
   page.on("console", (message) => {
-    if (message.type() === "error") logged.push(message.text());
+    if (message.type() !== "error") return;
+    // The browser's own note when an image on a reserved `.invalid` host fails: the tests' broken
+    // URLs (see network.ts), meant to fail. A failed load anywhere else still counts.
+    const source = message.location().url;
+    const deliberate =
+      message.text().startsWith("Failed to load resource") &&
+      source !== "" &&
+      new URL(source).hostname.endsWith(".invalid");
+    if (!deliberate) logged.push(message.text());
   });
   page.on("pageerror", (error) => logged.push(`uncaught: ${error.message}`));
   return logged;
