@@ -1,5 +1,4 @@
 import { createLibrary, type Library } from "@openuidev/react-lang";
-import { actions } from "./Action";
 import { intelligentComponents } from "./defineComponents";
 import { functions } from "./functions";
 
@@ -82,10 +81,9 @@ export const componentGroups = [
  * `library.prompt()`.
  */
 // Typed by hand: inferred, the published declaration printed `undefined<…>`, which doesn't parse.
-export const library: Required<Library<(typeof actions)[number]>> = createLibrary({
+export const library: Required<Library> = createLibrary({
   root: "Col",
   components: intelligentComponents,
   functions,
-  actions,
   componentGroups,
 });

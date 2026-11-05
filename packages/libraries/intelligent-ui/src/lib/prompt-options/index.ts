@@ -7,14 +7,14 @@ import type { PromptOptions } from "@openuidev/react-lang";
  */
 
 export const exampleShoppingList = `root = Col([title, card])
-card = Card([stepper, list, copy])
+card = Card([stepper, list, clear])
 $guests = 4
 $got = []
 title = Title("Pasta night for " + @Plural($guests, "guest"), "lg")
 stepper = Row([IconButton("minus", @Set($guests, @Clamp($guests - 1, 1, 20)), "Fewer"), Text($guests + "", "lg", null, "semibold"), IconButton("plus", @Set($guests, @Clamp($guests + 1, 1, 20)), "More")], 3)
 lines = @Each(base, "i", {name: i.name, qty: @Round(i.qty * $guests / 4) + i.unit})
 list = Col(@Each(lines, "l", Pressable([Row([Icon(@Includes($got, l.name) ? "check-circle" : "circle", "sm"), Text(l.qty + " " + l.name, "sm", null, null, false, @Includes($got, l.name))], 2)], @Set($got, @Toggle($got, l.name)), @Includes($got, l.name), 2)), 1)
-copy = Button("Copy list", @CopyToClipboard(@Join(@Each(lines, "l", l.qty + " " + l.name), "\\n")), "outline", null, "sm", "copy")
+clear = Button("Clear ticks", @Set($got, []), "outline", null, "sm", "rotate-ccw", @Count($got) == 0)
 base = [{name: "spaghetti", qty: 400, unit: " g"}, {name: "tomatoes", qty: 6, unit: ""}, {name: "parmesan", qty: 80, unit: " g"}]`;
 
 export const exampleTrip = `root = Col([title, intro, facts, Title("Day by day", "md"), days, prefs])
@@ -60,7 +60,7 @@ export const additionalRules = [
 ];
 
 export const examples = [
-  `Example 1: A guest stepper that rescales a shopping list, with a checklist and a copy button:\n\n${exampleShoppingList}`,
+  `Example 1: A guest stepper that rescales a shopping list, with a checklist and a button that clears it:\n\n${exampleShoppingList}`,
   `Example 2: A composed trip answer: facts, day cards and a short form:\n\n${exampleTrip}`,
   `Example 3: Step-by-step instructions with a drawing for each step, driven by $step:\n\n${exampleSteps}`,
 ];

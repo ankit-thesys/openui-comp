@@ -10,5 +10,3 @@ export { componentGroups, library } from "./lib/library";
 export { additionalRules, examples, promptOptions } from "./lib/prompt-options";
 
 export { intelligentComponents } from "./lib/defineComponents";
-
-export { runLibraryAction } from "./lib/Action";
