@@ -23,7 +23,7 @@ tagSchemaId(length, "Length");
 
 export const radiusSchema = z.union([z.enum(["sm", "md", "lg", "xl", "full"]), z.number()]);
 tagSchemaId(radiusSchema, "Radius");
-/** How a photo fills its box: Image and SearchImage. */
+/** How a photo fills its box in Image. */
 export const fitSchema = z.enum(["cover", "contain"]);
 /**
  * A field's validation inside a Form, checked before anything is sent to the

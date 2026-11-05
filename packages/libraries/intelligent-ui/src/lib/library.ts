@@ -54,7 +54,7 @@ export const componentGroups = [
   },
   {
     name: "Media and data",
-    components: ["SearchImage", "Image", "Icon", "Table", "Chart", "Map", "MapMarker", "YouTube"],
+    components: ["Image", "Icon", "Table", "Chart", "YouTube"],
   },
   { name: "Play", components: ["Flashcard", "Celebration"] },
   {

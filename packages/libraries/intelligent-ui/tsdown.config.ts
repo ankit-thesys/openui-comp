@@ -10,6 +10,6 @@ export default defineConfig({
   target: "es2022",
   outDir: "dist",
   clean: true,
-  // maplibre-gl's and KaTeX's own sheets stay imports of those packages, loaded on first use.
+  // KaTeX's own sheet stays an import of that package, loaded on first use.
   external: [/\.css$/],
 });

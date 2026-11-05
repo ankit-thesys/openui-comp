@@ -22,7 +22,6 @@ import { Input } from "./Input";
 import { Label } from "./Label";
 import { Link } from "./Link";
 import { List, ListItem } from "./List";
-import { MapMarker, MapView } from "./Map";
 import { Markdown } from "./Markdown";
 import { MathBlock } from "./Math";
 import { Popover } from "./Popover";
@@ -30,7 +29,6 @@ import { Pressable } from "./Pressable";
 import { Quote } from "./Quote";
 import { RadioGroup } from "./RadioGroup";
 import { Row } from "./Row";
-import { SearchImage } from "./SearchImage";
 import { SegmentedControl } from "./SegmentedControl";
 import { Select } from "./Select";
 import { Slider } from "./Slider";
@@ -44,8 +42,8 @@ import { Title } from "./Title";
 import { YouTube } from "./YouTube";
 
 /**
- * Primitives the model arranges itself, plus a few widgets for what a model
- * cannot draw (a street map, a sandboxed HTML page). Layout is never fixed here.
+ * Primitives the model arranges itself, plus a widget for what a model
+ * cannot draw (a sandboxed HTML page). Layout is never fixed here.
  * Generic @functions let a page compute with its own state, so an answer can be
  * a working tool rather than a form sent back to the assistant.
  *
@@ -87,13 +85,10 @@ export const intelligentComponents = [
   DatePicker,
   Timer,
   Form,
-  SearchImage,
   Image,
   Icon,
   Table,
   Chart,
-  MapView,
-  MapMarker,
   YouTube,
   Flashcard,
   Celebration,

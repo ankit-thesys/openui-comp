@@ -21,7 +21,7 @@ export interface CarouselProps {
 /**
  * react-components supplies the carousel: scrolling, snapping, the arrows and
  * the edge fade. Items are bare frames rather than CarouselItem, which is a
- * fixed-width card, so the child (Flashcard, SearchImage, Card, ...) sets the
+ * fixed-width card, so the child (Flashcard, Image, Card, ...) sets the
  * look and one Carousel covers every kind.
  */
 export function Carousel({ items, itemWidth, gap }: CarouselProps) {
