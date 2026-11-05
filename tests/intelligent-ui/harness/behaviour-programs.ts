@@ -27,10 +27,9 @@ date = DatePicker($day, "Day", "2026-10-01", "2026-10-31")`,
   "behaviour-popover": `root = Col([Row([Text("Inflation adjusts nominal GDP"), Popover("the details", [Text("Hidden content", "sm"), Button("Inside", @Set($n, 1))])], 2), Button("Elsewhere", @Set($n, 2))])
 $n = 0`,
 
-  "behaviour-actions": `root = Col([copy, open, ask, plain, Row([add, reset], 2), Text("Count " + $count + ", name " + $name)], 3)
+  "behaviour-actions": `root = Col([open, ask, plain, Row([add, reset], 2), Text("Count " + $count + ", name " + $name)], 3)
 $count = 0
 $name = "Ada"
-copy = Button("Copy note", @CopyToClipboard("copied text"))
 open = Button("Open docs", @OpenUrl("https://example.com/docs"))
 ask = Button("Ask", @ToAssistant("Tell me more", {id: 7}))
 plain = Button("Just a label")

@@ -11,17 +11,13 @@ export type HostState = {
   renderErrors: string[];
   /** Problems with the page itself, such as an unknown program id. */
   hostErrors: string[];
-  /**
-   * Every action the Renderer handed to `onAction`, in order. `passedOn` is true when
-   * `runLibraryAction` returned null, so the host ran it itself (the README's pattern).
-   */
+  /** Every action the Renderer handed to `onAction`, in order. */
   actions: {
     type: string;
     params: unknown;
     humanFriendlyMessage: string;
     formState?: Record<string, unknown>;
     formName?: string;
-    passedOn: boolean;
   }[];
 };
 

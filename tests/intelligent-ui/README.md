@@ -41,8 +41,8 @@ fails the run. `harness/network.ts` answers every outside request, and fails ima
 
 - `specs/interactions.spec.ts`: forms and their rules, the input controls, Popover, the
   study tools, and the review fixes from #160;
-- `specs/actions.spec.ts`: `@CopyToClipboard`, `@OpenUrl`, `@ToAssistant`, `@Reset`, and
-  `runLibraryAction` passing every other action on to the host;
+- `specs/actions.spec.ts`: `@OpenUrl` and `@ToAssistant` reaching the host as written, `@Reset`,
+  and the prompt's shopping list (the library has no actions of its own since ce5fbf80);
 - `specs/streaming.spec.ts`: every program streamed in uneven chunks, with no console error;
 - `specs/functions.spec.ts`: the 59 `@functions` against `fixtures/function-answers.ts`, known answers
   taken from outside the library.

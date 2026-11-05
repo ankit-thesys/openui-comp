@@ -18,20 +18,24 @@ const run = (command: string, args: string[], cwd: string) => {
   };
 };
 
+// The root exports since ce5fbf80, in both module systems.
+const exports =
+  "Col additionalRules,componentGroups,examples,intelligentComponents,library,promptOptions";
+
 test.describe("the built package", () => {
   test("imports in plain Node", () => {
-    const script = `const m = await import("@openuidev/intelligent-ui-library"); console.log(m.library.toSpec().root, typeof m.runLibraryAction);`;
+    const script = `const m = await import("@openuidev/intelligent-ui-library"); console.log(m.library.toSpec().root, Object.keys(m).sort().join(","));`;
     expect(run(process.execPath, ["--input-type=module", "-e", script], testsDir)).toMatchObject({
       status: 0,
-      output: "Col function",
+      output: exports,
     });
   });
 
   test("requires in plain Node", () => {
-    const script = `const m = require("@openuidev/intelligent-ui-library"); console.log(m.library.toSpec().root, typeof m.runLibraryAction);`;
+    const script = `const m = require("@openuidev/intelligent-ui-library"); console.log(m.library.toSpec().root, Object.keys(m).sort().join(","));`;
     expect(run(process.execPath, ["-e", script], testsDir)).toMatchObject({
       status: 0,
-      output: "Col function",
+      output: exports,
     });
   });
 

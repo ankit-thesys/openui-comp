@@ -63,7 +63,6 @@ test.describe("forms", () => {
       type: "continue_conversation",
       humanFriendlyMessage: "Sign me up",
       params: { context: { source: "newsletter" } },
-      passedOn: true,
     });
     expect(Object.values(sent!.formState ?? {})).toEqual(
       expect.arrayContaining(["ada@example.com", 21]),

@@ -23,7 +23,7 @@ You are an AI assistant that responds using openui-lang, a declarative UI langua
 ## Component Signatures
 
 Arguments marked with ? are optional. Sub-components can be inline or referenced; prefer references for better streaming.
-Props typed `ActionExpression` accept one @step, or Action([@steps...]) for several. See the Action section for available steps (@ToAssistant, @OpenUrl, @Set, @Reset, @CopyToClipboard).
+Props typed `ActionExpression` accept one @step, or Action([@steps...]) for several. See the Action section for available steps (@ToAssistant, @OpenUrl, @Set, @Reset).
 Props marked `$binding<type>` accept a `$variable` reference for two-way binding.
 
 ### Layout
@@ -192,7 +192,6 @@ Available steps:
 - @OpenUrl(url: string) — Navigate to a URL
 - @Set(variable: $variable, value: any) — Set a $variable to a specific value
 - @Reset(variable: $variable) — Reset $variables to their declared defaults; pass several to reset each (e.g. @Reset($title, $priority) restores $title="" and $priority="medium")
-- @CopyToClipboard(text: string) — Copy text to the clipboard, e.g. a shopping list built with @Join
 
 Example — simple nav:
 ```
@@ -217,17 +216,17 @@ Always write the root = Col(...) statement first so the UI shell appears immedia
 
 ## Examples
 
-Example 1: A guest stepper that rescales a shopping list, with a checklist and a copy button:
+Example 1: A guest stepper that rescales a shopping list, with a checklist and a button that clears it:
 
 root = Col([title, card])
-card = Card([stepper, list, copy])
+card = Card([stepper, list, clear])
 $guests = 4
 $got = []
 title = Title("Pasta night for " + @Plural($guests, "guest"), "lg")
 stepper = Row([IconButton("minus", @Set($guests, @Clamp($guests - 1, 1, 20)), "Fewer"), Text($guests + "", "lg", null, "semibold"), IconButton("plus", @Set($guests, @Clamp($guests + 1, 1, 20)), "More")], 3)
 lines = @Each(base, "i", {name: i.name, qty: @Round(i.qty * $guests / 4) + i.unit})
 list = Col(@Each(lines, "l", Pressable([Row([Icon(@Includes($got, l.name) ? "check-circle" : "circle", "sm"), Text(l.qty + " " + l.name, "sm", null, null, false, @Includes($got, l.name))], 2)], @Set($got, @Toggle($got, l.name)), @Includes($got, l.name), 2)), 1)
-copy = Button("Copy list", @CopyToClipboard(@Join(@Each(lines, "l", l.qty + " " + l.name), "\n")), "outline", null, "sm", "copy")
+clear = Button("Clear ticks", @Set($got, []), "outline", null, "sm", "rotate-ccw", @Count($got) == 0)
 base = [{name: "spaghetti", qty: 400, unit: " g"}, {name: "tomatoes", qty: 6, unit: ""}, {name: "parmesan", qty: 80, unit: " g"}]
 
 Example 2: A composed trip answer: facts, day cards and a short form:

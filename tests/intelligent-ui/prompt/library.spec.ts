@@ -19,9 +19,10 @@ test.describe("the library's surface", () => {
     expect([...grouped].sort()).toEqual([...registered].sort());
   });
 
-  test("has 59 @functions and one action, CopyToClipboard", () => {
+  test("has 59 @functions and no actions of its own", () => {
     expect(Object.keys(library.functions ?? {})).toHaveLength(59);
-    expect(Object.keys(library.actions ?? {})).toEqual(["CopyToClipboard"]);
+    // ce5fbf80 removed CopyToClipboard: an app adds its own actions with library.extend.
+    expect(Object.keys(library.actions ?? {})).toEqual([]);
   });
 
   test("exports every definition, so a host can build its own library from them", () => {

@@ -1,5 +1,5 @@
 // Only the library's root exports, resolved through its package.json to the built `dist`.
-import { library, runLibraryAction } from "@openuidev/intelligent-ui-library";
+import { library } from "@openuidev/intelligent-ui-library";
 import { ThemeProvider } from "@openuidev/react-components";
 import { Renderer } from "@openuidev/react-lang";
 import { useState, version, type ReactNode } from "react";
@@ -77,15 +77,13 @@ function App() {
             state.renderErrors = errors.map((error) => `${error.code}: ${error.message}`);
           }}
           onAction={(event) => {
-            // The README's pattern: the library runs its own action, the host runs the rest.
-            const ran = runLibraryAction(event);
+            // The library defines no actions of its own (ce5fbf80), so every one reaches the host.
             state.actions.push({
               type: event.type,
               params: event.params,
               humanFriendlyMessage: event.humanFriendlyMessage,
               formState: event.formState,
               formName: event.formName,
-              passedOn: ran === null,
             });
           }}
         />
