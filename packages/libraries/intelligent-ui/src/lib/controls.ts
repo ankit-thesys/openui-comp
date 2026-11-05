@@ -14,7 +14,7 @@ import {
 } from "@openuidev/react-lang";
 import { useEffect, useId, useMemo, useRef } from "react";
 import { z } from "zod/v4";
-import { type Option, option, toOption } from "./schemas";
+import { option, toOption } from "./schemas";
 
 type Plan = Parameters<ReturnType<typeof useTriggerAction>>[2];
 
@@ -96,16 +96,11 @@ export function useFieldName(label: unknown, statementId?: string) {
 /** Option lists, shared by Select, SegmentedControl and RadioGroup. */
 export const options = z.array(option);
 export const optionList = (value: unknown) =>
-  Array.isArray(value) ? (value.flat() as Option[]).filter((o) => o != null).map(toOption) : [];
+  Array.isArray(value) ? value.flat().flatMap((o) => toOption(o) ?? []) : [];
 
 export const choice = z.union([
   z.string(),
   z.object({ value: z.string(), label: z.string(), description: z.string().optional() }),
 ]);
 export type Choice = { value: string; label: string; description?: string };
-export const choiceList = (value: unknown): Choice[] =>
-  Array.isArray(value)
-    ? (value.flat() as (string | Choice)[])
-        .filter((o) => o != null)
-        .map((o) => (typeof o === "string" ? { value: o, label: o } : o))
-    : [];
+export const choiceList = (value: unknown): Choice[] => optionList(value);
