@@ -23,7 +23,7 @@ tagSchemaId(length, "Length");
 
 export const radiusSchema = z.union([z.enum(["sm", "md", "lg", "xl", "full"]), z.number()]);
 tagSchemaId(radiusSchema, "Radius");
-/** How a photo fills its box: Image and SearchImage. */
+/** How a photo fills its box in Image. */
 export const fitSchema = z.enum(["cover", "contain"]);
 /**
  * A field's validation inside a Form, checked before anything is sent to the
@@ -45,7 +45,25 @@ tagSchemaId(rulesSchema, "Rules");
 
 export const option = z.union([z.string(), z.object({ value: z.string(), label: z.string() })]);
 export type Option = z.infer<typeof option>;
-export const toOption = (o: Option) => (typeof o === "string" ? { value: o, label: o } : o);
+/**
+ * One option as the controls use it. A model writes options loosely: a number, an object with only
+ * a label, a null value. Each comes out with a string value and label, so no control is handed a
+ * null value or a blank label; an option with neither is dropped.
+ */
+export function toOption(
+  o: unknown,
+): { value: string; label: string; description?: string } | null {
+  if (o == null) return null;
+  if (typeof o !== "object") return { value: String(o), label: String(o) };
+  const { value, label, description } = o as Record<string, unknown>;
+  const text = label ?? value;
+  if (text == null) return null;
+  return {
+    value: String(value ?? label),
+    label: String(text),
+    ...(typeof description === "string" && { description }),
+  };
+}
 
 export const align = z.enum(["start", "center", "end", "stretch"]);
 

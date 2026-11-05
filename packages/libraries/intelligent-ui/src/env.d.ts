@@ -1,2 +1,2 @@
-// The stylesheets of maplibre-gl and KaTeX, loaded with import() on first use.
+// KaTeX's stylesheet, loaded with import() on first use.
 declare module "*.css";
