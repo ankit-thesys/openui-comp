@@ -1,0 +1,114 @@
+# Intelligent UI library tests (fork only)
+
+Tests for `@openuidev/intelligent-ui-library` (ankit-thesys/openui-comp#196), planned in
+ankit-thesys/openui-comp#199. They live on the fork's `claude/intelligent-ui-tests` branch and are
+never merged upstream; the library package itself stays test-free.
+
+## Run
+
+```bash
+pnpm install
+pnpm --filter @openuidev/intelligent-ui-tests build:library
+pnpm --filter @openuidev/intelligent-ui-tests exec playwright install chromium
+pnpm --filter @openuidev/intelligent-ui-tests test
+```
+
+`IU_PROGRAMS=web-analytics,images` renders other gallery programs, and `IU_PROGRAMS=all` renders every
+one. `pnpm --filter @openuidev/intelligent-ui-tests host` serves the host page for a look by hand:
+open `/?program=recipe&theme=dark&provider=0`.
+
+## How it fits together
+
+The seam is the browser: the built package, from `dist`, in a Vite SPA with no CSS reset, driven by
+Playwright. The host imports only the package's root exports, through its `package.json`, so a broken
+export or a stale build fails here as it would in an app.
+
+There are three places to extend:
+
+- **`harness/matrix.ts`** is the host matrix. Each host (React version, theme, ThemeProvider or not,
+  width) is a Playwright project, so a failure names the host.
+- **`harness/programs.ts`** is the program list: the gallery (`fixtures/gallery.json`) and the
+  self-test programs, with the prompt's examples and model-written programs to come.
+- **`harness/checks.ts`** is the list of automatic failures. Each check reads one rendered program
+  and returns its problems; every check runs on every program.
+
+`specs/render.spec.ts` renders each selected program on each host and runs every check.
+`specs/self-test.spec.ts` feeds the checks broken programs, so a check that stops catching problems
+fails the run. `harness/network.ts` answers every outside request, and fails images on reserved
+`.invalid` hosts so the library's broken-image placeholder is tested; no run reaches the network. `host/mock-tools.ts` is the data the gallery's dashboards query.
+
+#203's specs drive the page the way a user does, by role, label and visible text:
+
+- `specs/interactions.spec.ts`: forms and their rules, the input controls, Popover, the
+  study tools, and the review fixes from #160;
+- `specs/actions.spec.ts`: `@OpenUrl` and `@ToAssistant` reaching the host as written, `@Reset`,
+  and the prompt's shopping list (the library has no actions of its own since ce5fbf80);
+- `specs/streaming.spec.ts`: every program streamed in uneven chunks, with no console error;
+- `specs/functions.spec.ts`: the 59 `@functions` against `fixtures/function-answers.ts`, known answers
+  taken from outside the library.
+
+Their small programs are in `harness/behaviour-programs.ts`. `IU_PORT_OFFSET=1000` moves the host
+ports, so a second checkout can run at the same time.
+
+`legacy/` holds #160's suites until the tickets in its README port them.
+
+## The rendering sweep (#201)
+
+`specs/sweep.spec.ts` renders every gallery program, every prompt example and every past
+regression on all 12 hosts: React 19 and 18; light and dark with react-components' ThemeProvider,
+and light with no provider; at 1280px and 390px. Each one goes through every check in `harness/checks.ts`; the page checks it
+adds (horizontal scroll, boxes sticking out of what they sit in, overlapping siblings, bad text
+values, broken images, empty drawings) are in
+`harness/page-checks.ts`. It also checks that every root inside ThemeProvider gets its palette, a
+`Col` root gets it with no provider, and a response keeps an app's own colours. `specs/layout.spec.ts` holds the layout checks ported from #160, and
+`specs/options.spec.ts` checks options written loosely (numbers, label-only objects, null values).
+
+`harness/sweep-reporter.ts` writes the pass/fail table to `sweep-report/sweep.md`, and to the job
+summary on GitHub Actions. `IU_REACT=18 pnpm host` serves the React 18 build by hand.
+
+## The prompt seam and the package (#202)
+
+`playwright.prompt.config.ts` runs `prompt/` in Node, with no browser or host:
+
+```bash
+pnpm --filter "@openuidev/cli..." run build
+pnpm --filter @openuidev/intelligent-ui-tests exec playwright test --config playwright.prompt.config.ts
+```
+
+- `prompt/prompt.spec.ts` runs `openui generate` on `prompt/entry.ts`, the README's one-line re-export. It checks that every component, `@function` and action is in the prompt, and that every example parses with a `Col` root and no errors, unresolved or orphaned nodes. It also checks that the CLI prints no warnings, and that the prompt matches `prompt/__snapshots__/prompt.txt`. After a deliberate prompt change, rerun it with `--update-snapshots` and review the diff. `IU_CLI` points the run at another CLI build.
+- `prompt/library.spec.ts` checks the library's counts (52 components in 6 groups, 59 `@functions`, one action) through the root exports. It also checks that the gallery parses and names every component.
+- `prompt/packaging.spec.ts` checks the built package in plain Node (import and require), with publint and attw. It checks that `npm pack` holds only `dist` and the README, and that the README's TypeScript samples compile against the published types under Bundler and NodeNext resolution.
+
+`.github/workflows/intelligent-ui-prompt.yml` runs these after a frozen install and a build. `specs/examples.spec.ts` renders the prompt's examples in the host, like the gallery.
+
+## Model programs (#205, #206)
+
+`models/prompts.json` holds the 33 user prompts the maintainer approved in #205, 10 of them marked
+for Opus; `models/prompts.md` is the same list to read. `models/generate.ts` sends the system prompt
+the CLI generates (the same `prompt/cli.ts` the prompt seam uses) with each prompt to
+`claude-sonnet-5-5`, and the Opus ones to `claude-opus-5-5` too, and saves each answer as
+`fixtures/models/<model>/<id>.json`: the id, area, prompt, model, date, effort, stop reason, token
+usage, the system prompt's hash and the program text as the model wrote it.
+
+It is a manual command and calls a paid API, so CI never runs it (it refuses when `CI` is set). Build
+the library and the CLI first, then:
+
+```bash
+pnpm --filter @openuidev/intelligent-ui-tests build:library
+pnpm --filter "@openuidev/cli..." run build
+pnpm --filter @openuidev/intelligent-ui-tests generate:models --dry-run
+ANTHROPIC_API_KEY=… pnpm --filter @openuidev/intelligent-ui-tests generate:models
+```
+
+- The key comes only from `ANTHROPIC_API_KEY`. The script never prints it or writes it anywhere, and
+  `.env` files are ignored here.
+- `--dry-run` lists the requests and estimates the cost without calling the API.
+- `--only forms-01,maps-01` and `--model sonnet|opus` narrow a run; `--effort` (default `medium`) and
+  `--concurrency` (default 4) tune it.
+- Fixtures that exist are kept, so a stopped run resumes where it left off; `--force` redoes them.
+- Failed requests retry with backoff when they can (rate limits, overload, server and network
+  errors); a refusal, a response cut off at `max_tokens` or an empty one is reported and not saved.
+  The run ends with the count saved, failed and parsing cleanly, and the tokens and cost.
+
+`prompt/models.spec.ts` checks the prompt list, that every fixture names its prompt and model and
+holds no key, and that the script refuses to run in CI.

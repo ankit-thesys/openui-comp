@@ -1,0 +1,8 @@
+.host-dist/
+test-results/
+playwright-report/
+sweep-report/
+
+# Secrets for the manual model run (models/generate.ts). Never commit them.
+.env
+.env.*
