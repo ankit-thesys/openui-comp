@@ -25,7 +25,7 @@ npx @openuidev/cli generate src/lib/intelligent-ui-library.ts --out src/generate
 Send that file as the system message, then render the model's response:
 
 ```tsx
-import { library, runLibraryAction } from "@openuidev/intelligent-ui-library";
+import { library } from "@openuidev/intelligent-ui-library";
 import { ThemeProvider } from "@openuidev/react-components";
 import { Renderer, type ActionEvent } from "@openuidev/react-lang";
 
@@ -38,14 +38,7 @@ export function IntelligentMessage({
 }) {
   return (
     <ThemeProvider mode="dark">
-      <Renderer
-        response={response}
-        library={library}
-        onAction={(event) => {
-          // The library's own action runs here; the rest are yours.
-          if (runLibraryAction(event) === null) onAction(event);
-        }}
-      />
+      <Renderer response={response} library={library} onAction={onAction} />
     </ThemeProvider>
   );
 }
@@ -61,17 +54,13 @@ theme's text sits on a dark page.
 
 ### Actions
 
-The `Renderer` hands every action a user takes to `onAction`. Most of them are yours to run:
+The `Renderer` hands every action a user takes to `onAction`, and your app runs them:
 `continue_conversation` sends a message back to the model, and `open_url` opens a link.
 
-The library adds one action of its own, `CopyToClipboard`. The model uses it for buttons like "Copy
-list". A library action carries no code, so the library exports `runLibraryAction` to run it. Call it
-first in `onAction`:
-
-- For `CopyToClipboard`, it copies the text and returns a promise of whether the copy worked.
-- For any other action, it returns `null` and does nothing, so pass the event to your own handler.
-
-Without `runLibraryAction`, a copy button does nothing.
+To give the model an action of your own, such as copying text, define it and add it to the library
+with `library.extend({ actions: { add: [yourAction] } })`. The generated system prompt then lists
+it, and its events reach `onAction` too. See
+[Actions](https://openui.com/docs/openui-lang/actions) in the OpenUI docs.
 
 ## Components
 
