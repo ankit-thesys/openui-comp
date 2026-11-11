@@ -5,6 +5,7 @@ import { createRoot, type Root } from "react-dom/client";
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
 import { library, ThemeProvider } from "../../packages/libraries/dashboard-next/src/index";
 import { CompareOverride, StateOverride } from "../../packages/libraries/dashboard-next/src/shared";
+import { metricCatalog } from "./fixtures/metrics";
 import { card, timeSeriesProgram, trendsCatalog, trendsFixtures } from "./fixtures/trends";
 
 let host: HTMLDivElement;
@@ -27,10 +28,15 @@ afterEach(async () => {
 });
 async function draw(children: ReactNode) {
   await act(async () => root.render(children));
-  // Recharts measures ResponsiveContainer with ResizeObserver after mounting.
-  await vi.waitFor(() => {
-    const containers = host.querySelectorAll(".recharts-responsive-container");
-    for (const container of containers) expect(container.querySelector("svg")).not.toBeNull();
+  // Recharts (ResponsiveContainer) and the panel grids (useWidth) measure with ResizeObserver
+  // after mounting. Wait inside act, so those state updates land in it: outside act they log
+  // "not wrapped in act" warnings, depending on when the observer fires.
+  await act(async () => {
+    await vi.waitFor(() => {
+      const containers = host.querySelectorAll(".recharts-responsive-container");
+      for (const container of containers) expect(container.querySelector("svg")).not.toBeNull();
+    });
+    await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
   });
 }
 const program = (response: string) => <Renderer library={library} response={response} />;
@@ -117,9 +123,10 @@ for (const mode of ["light", "dark"] as const) {
   ]) {
     for (const [state, copy] of [
       ["loading", "Loading"],
-      ["empty", "No data"],
-      ["error", "Didn’t load"],
-      ["no-results", "No results"],
+      // A Card shows each state's full title (his STATE_COPY); the short forms are for Kpi tiles.
+      ["empty", "No data for this period"],
+      ["error", "This data didn’t load"],
+      ["no-results", "No matching data"],
     ] as const) {
       test(`${component.split("(")[0]} ${state} through a Card in ${mode}`, async () => {
         await draw(
@@ -135,6 +142,10 @@ for (const mode of ["light", "dark"] as const) {
         expect(
           getComputedStyle(frame.querySelector(".openui-dashboard-state-content")!).visibility,
         ).toBe("hidden");
+        // Empty, error and no-results sit in a quiet well that marks the content area.
+        const well = getComputedStyle(frame.querySelector(".openui-dashboard-state-layer")!);
+        if (state === "loading") expect(well.backgroundColor).toBe("rgba(0, 0, 0, 0)");
+        else expect(well.backgroundColor).not.toBe("rgba(0, 0, 0, 0)");
       });
     }
   }
@@ -217,3 +228,47 @@ for (const mode of ["light", "dark"] as const) {
     expect(host.querySelector("table")?.textContent).toContain("—");
   });
 }
+
+test("Reference lines and Markers draw labelled chips on the plot", async () => {
+  await draw(
+    program(
+      card(
+        `Card("Conversion", [TimeSeries(["Jun", "Jul", "Aug", "Sep"], [Series("Paid", [18, 20, 19, 22])], "line", "percent", false, [Reference("Target", 21)], null, [Marker("Deploy v2.4", "Aug")])], "full")`,
+      ),
+    ),
+  );
+  // One horizontal target line and one vertical event line, each with its chip.
+  expect(host.querySelectorAll(".recharts-reference-line")).toHaveLength(2);
+  const chips = [...host.querySelectorAll(".recharts-reference-line text")].map(
+    (t) => t.textContent,
+  );
+  expect(chips).toEqual(["Target · 21%", "Deploy v2.4"]);
+});
+
+test("his Stat catalog entry puts the Stat beside its TimeSeries, and stacks them when narrow", async () => {
+  // His original Stat entry: Stat, then a TimeSeries, in one half-width Card.
+  const response = metricCatalog[1]!.variants[0]!.program;
+  host.style.width = "1200px";
+  await draw(program(response));
+  const body = host.querySelector<HTMLElement>(".openui-dashboard-card-body")!;
+  expect(body.textContent).toContain("18.4K");
+  expect(body.querySelector(".recharts-surface")).not.toBeNull();
+  // Wide: one grid. The legend shares the Stat's row, at its foot (the delta line), on the
+  // right; the plot spans the row below.
+  expect(getComputedStyle(body).display).toBe("grid");
+  const stat = body.querySelector<HTMLElement>(".openui-dashboard-stat")!;
+  const legend = body.querySelector<HTMLElement>(
+    ".openui-dashboard-chart > .openui-dashboard-legend",
+  )!;
+  const plot = body.querySelector<HTMLElement>(".openui-dashboard-chart-plot")!;
+  const statBox = stat.getBoundingClientRect();
+  const legendBox = legend.getBoundingClientRect();
+  expect(legendBox.top).toBeGreaterThanOrEqual(statBox.top);
+  expect(Math.abs(legendBox.bottom - statBox.bottom)).toBeLessThan(2);
+  expect(legendBox.left).toBeGreaterThan(statBox.right);
+  expect(plot.getBoundingClientRect().top).toBeGreaterThan(stat.getBoundingClientRect().bottom - 1);
+  // A narrow card (under 480px) stacks them.
+  host.style.width = "400px";
+  await draw(program(response));
+  expect(getComputedStyle(host.querySelector(".openui-dashboard-card-body")!).display).toBe("flex");
+});

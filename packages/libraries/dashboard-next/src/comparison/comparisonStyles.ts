@@ -12,19 +12,7 @@ export const comparisonStyles = css`
     gap: 6px;
     align-content: space-between;
   }
-  /* A ranked list that opens its card rises onto the card subtitle's line, so its sort toggle
-     sits beside the title, but not when the card head has its own controls there. One selector
-     per container: goober splits :is() lists at their commas. */
-  .openui-dashboard-card-body > .openui-dashboard-rank-panel:first-child,
-  .openui-dashboard-state-content > .openui-dashboard-rank-panel:first-child {
-    margin-top: -32px;
-  }
-  .openui-dashboard-card:has(.openui-dashboard-card-controls)
-    .openui-dashboard-card-body
-    > .openui-dashboard-rank-panel:first-child,
-  .openui-dashboard-card:has(.openui-dashboard-card-controls)
-    .openui-dashboard-state-content
-    > .openui-dashboard-rank-panel:first-child {
-    margin-top: 0;
-  }
+  /* His stylesheet raises a ranked list that opens its card onto the subtitle's line
+     (margin-top: -32px), then cancels it whenever the card has a .card-controls element. Every
+     Card renders that toolbar, so in his library the list never rises; it isn't ported. */
 `;

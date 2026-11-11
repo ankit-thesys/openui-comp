@@ -3,7 +3,6 @@ import { Renderer } from "@openuidev/react-lang";
 import { act, type ReactNode } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
-import { comparisonGroup } from "../../packages/libraries/dashboard-next/src/groups/comparison";
 import { library, ThemeProvider } from "../../packages/libraries/dashboard-next/src/index";
 import { CompareOverride, StateOverride } from "../../packages/libraries/dashboard-next/src/shared";
 import { comparisonFixtures } from "./fixtures/comparison";
@@ -294,26 +293,12 @@ for (const mode of ["light", "dark"] as const) {
   });
 }
 
-test("Comparison's Series and Reference copies drop out once Trends registers its own", () => {
-  const names = (group: { components: readonly { name: string }[] }) =>
-    group.components.map((component) => component.name);
-  expect(names(comparisonGroup(new Set(["TimeSeries", "Series", "Reference"])))).toEqual([
-    "Bars",
-    "Leaderboard",
-    "Dumbbell",
-    "Distribution",
-    "Intervals",
-  ]);
-  // Without Trends, as on this branch, Comparison brings them.
-  expect(names(comparisonGroup(new Set()))).toEqual([
-    "Bars",
-    "Leaderboard",
-    "Dumbbell",
-    "Distribution",
-    "Intervals",
-    "Series",
-    "Reference",
-  ]);
+test("Bars take the Series and Reference that Trends registers", () => {
+  // One registered Series: Bars' series argument and TimeSeries' name the same component.
+  const prompt = library.prompt();
+  expect(prompt.match(/^Series\(/gm)).toHaveLength(1);
+  expect(prompt).toMatch(/^Bars\(labels: string\[\], series: Series\[\],/m);
+  expect(prompt).toMatch(/references\?: Reference\[\]/);
 });
 
 test("Bars from a Query load, come back empty, fail, or are emptied by a filter, as a reader sees", async () => {

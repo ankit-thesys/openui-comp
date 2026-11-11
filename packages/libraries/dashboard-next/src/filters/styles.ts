@@ -480,7 +480,8 @@ export const filtersStyles = css`
       background 150ms,
       color 150ms;
   }
-  .openui-dashboard-cal-day:hover:not(:disabled):not([aria-pressed="true"]) {
+  /* :enabled for his :not(:disabled): goober breaks a selector with anything after a ")". */
+  .openui-dashboard-cal-day:enabled:hover:not([aria-pressed="true"]) {
     background: var(--openui-dashboard-surface-subtle);
   }
   .openui-dashboard-cal-day[aria-pressed="true"] {

@@ -74,6 +74,15 @@ test("a Card header shows its toolbar only when it has a control", async () => {
   } finally {
     button.remove();
   }
+  // A chart's view checkbox (an input) shows it too.
+  const input = document.createElement("input");
+  input.type = "checkbox";
+  toolbar.querySelector(".openui-dashboard-card-slot")!.append(input);
+  try {
+    expect(getComputedStyle(toolbar).display).toBe("flex");
+  } finally {
+    input.remove();
+  }
 });
 
 test("while the model writes, the tile and card it is on show loading", async () => {

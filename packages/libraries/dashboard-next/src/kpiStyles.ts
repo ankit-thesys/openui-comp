@@ -135,8 +135,13 @@ export const kpiStyles = css`
     justify-content: space-between;
     gap: 12px;
   }
-  .openui-dashboard-kpis:has(.openui-dashboard-kpi-spark) .openui-dashboard-kpi-main {
-    min-height: 44px;
+  /* His .kpis:has(.kpi-spark) .kpi-main, through a variable the strip sets: goober breaks a
+     selector with anything after a ")". */
+  .openui-dashboard-kpis:has(.openui-dashboard-kpi-spark) {
+    --openui-dashboard-kpi-main-min: 44px;
+  }
+  .openui-dashboard-kpis .openui-dashboard-kpi-main {
+    min-height: var(--openui-dashboard-kpi-main-min, auto);
   }
   .openui-dashboard-kpi-value {
     font-size: 26px;

@@ -3,10 +3,14 @@ import { join } from "node:path";
 import { expect, test } from "vitest";
 
 /*
- * A lint for the library's css-tag styles, not a test of their contents. goober splits every
- * selector at its commas, even inside :is(), :not() or :has(), and so turns
- * `:is(.a, .b).c > span` into a descendant selector and `:not(:has(a, b))` into an invalid one
- * the browser drops. Group tickets port more of his stylesheet, so this catches it at the source.
+ * A lint for the library's css-tag styles, not a test of their contents. goober mis-scopes two
+ * kinds of selector, and the browser then drops the rule or applies it to nothing:
+ * - a comma inside parentheses: it splits selectors at every comma, so `:is(.a, .b).c > span`
+ *   becomes a descendant selector and `:not(:has(a, b))` an invalid one;
+ * - anything after a ")": it inserts its class there, so `.a:has(.b) .c` compiles to
+ *   `.go1 .a:has(.b).go1 .c`, and `:not(:has(a))` to `:not(:has(a).go1 )`.
+ * So a functional pseudo-class (:has(), :not(), :nth-child()…) may only end a selector, and
+ * holds no comma. Group tickets port more of his stylesheet; this catches it at the source.
  */
 const src = join(import.meta.dirname, "../../packages/libraries/dashboard-next/src");
 
@@ -18,8 +22,8 @@ function styleFiles(dir: string): string[] {
   });
 }
 
-/** Selectors in a css`` block with a comma inside parentheses. */
-function commaInParens(file: string): string[] {
+/** Selectors in a css`` block that goober mis-scopes (see above). */
+function misScoped(file: string): string[] {
   const text = readFileSync(file, "utf8");
   const found: string[] = [];
   for (const block of text.matchAll(/css`([\s\S]*?)`/g)) {
@@ -28,21 +32,34 @@ function commaInParens(file: string): string[] {
       const selector = rule[1]!.trim();
       if (selector.startsWith("@")) continue;
       let depth = 0;
-      for (const char of selector) {
+      let part = "";
+      const flag = () =>
+        found.push(`${file.slice(src.length + 1)}: ${selector.replace(/\s+/g, " ")}`);
+      for (const char of `${selector},`) {
         if (char === "(") depth++;
         else if (char === ")") depth--;
-        else if (char === "," && depth > 0) {
-          found.push(`${file.slice(src.length + 1)}: ${selector.replace(/\s+/g, " ")}`);
+        if (char === "," && depth > 0) {
+          flag();
           break;
         }
+        if (char === "," && depth === 0) {
+          // One selector of a list: its only ")" may be its last character.
+          const text = part.trim();
+          const close = text.indexOf(")");
+          if (close !== -1 && close !== text.length - 1) {
+            flag();
+            break;
+          }
+          part = "";
+        } else part += char;
       }
     }
   }
   return found;
 }
 
-test("no css-tag selector puts a comma inside parentheses", () => {
+test("no css-tag selector is one goober mis-scopes", () => {
   const files = styleFiles(src);
   expect(files.length).toBeGreaterThan(0);
-  expect(files.flatMap(commaInParens)).toEqual([]);
+  expect(files.flatMap(misScoped)).toEqual([]);
 });

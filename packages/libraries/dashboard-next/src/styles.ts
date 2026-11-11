@@ -177,8 +177,10 @@ export const layoutStyles = css`
     position: relative;
     container-type: inline-size;
   }
+  /* Hidden until it holds a control (no filters, no chart switch), so the header keeps no
+     empty gap for it. */
   .openui-dashboard-card-controls {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     align-items: center;
     gap: 6px;
@@ -188,10 +190,12 @@ export const layoutStyles = css`
     display: contents;
   }
 
-  /* goober splits selectors at every comma, even inside :has() or :is(), so this
-     stays comma-free: one :not(:has()) per control type. */
-  .openui-dashboard-card-controls:not(:has(button)):not(:has(select)):not(:has(input)) {
-    display: none;
+  /* His :not(:has(button, select, input)), turned around: goober breaks a selector with a comma
+     inside parentheses, or with anything after a ")", so each :has() ends its own selector. */
+  .openui-dashboard-card-controls:has(button),
+  .openui-dashboard-card-controls:has(select),
+  .openui-dashboard-card-controls:has(input) {
+    display: flex;
   }
   @container (max-width: 520px) {
     .openui-dashboard-card-head {
@@ -249,10 +253,19 @@ export const layoutStyles = css`
     text-align: center;
   }
   /* Cards: empty and error sit in a quiet well that marks the content area. */
-  .openui-dashboard-state:not([data-compact]):not([data-state="loading"])
-    .openui-dashboard-state-layer {
+  /* His .state:not([data-compact]):not([data-state="loading"]) .state-layer, as the states that
+     draw a layer listed one by one (goober breaks a selector with anything after a ")"), then
+     compact tiles taken back out. */
+  .openui-dashboard-state[data-state="empty"] > .openui-dashboard-state-layer,
+  .openui-dashboard-state[data-state="no-results"] > .openui-dashboard-state-layer,
+  .openui-dashboard-state[data-state="error"] > .openui-dashboard-state-layer,
+  .openui-dashboard-state[data-state="invalid"] > .openui-dashboard-state-layer {
     border-radius: var(--openui-dashboard-radius-sm);
     background: color-mix(in srgb, var(--openui-dashboard-ink) 2.5%, transparent);
+  }
+  .openui-dashboard-state[data-compact] > .openui-dashboard-state-layer {
+    border-radius: 0;
+    background: none;
   }
   /* Icon tile: a small raised square on the well; error tints only the glyph. */
   .openui-dashboard-state-icon {

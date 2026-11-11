@@ -801,24 +801,22 @@ export const sharedStyles = css`
     grid-template-columns: auto minmax(0, 1fr);
     column-gap: var(--openui-dashboard-space-lg);
   }
-  .openui-dashboard-card-body:has(> .openui-dashboard-stat + .openui-dashboard-chart)
-    > .openui-dashboard-stat,
-  .openui-dashboard-state-content:has(> .openui-dashboard-stat + .openui-dashboard-chart)
-    > .openui-dashboard-stat {
+  .openui-dashboard-card-body > .openui-dashboard-stat:has(+ .openui-dashboard-chart),
+  .openui-dashboard-state-content > .openui-dashboard-stat:has(+ .openui-dashboard-chart) {
     grid-column: 1;
     grid-row: 1;
   }
-  .openui-dashboard-card-body:has(> .openui-dashboard-stat + .openui-dashboard-chart)
-    > .openui-dashboard-chart,
-  .openui-dashboard-state-content:has(> .openui-dashboard-stat + .openui-dashboard-chart)
-    > .openui-dashboard-chart {
+  .openui-dashboard-card-body > .openui-dashboard-stat + .openui-dashboard-chart,
+  .openui-dashboard-state-content > .openui-dashboard-stat + .openui-dashboard-chart {
     display: contents;
   }
-  .openui-dashboard-card-body:has(> .openui-dashboard-stat + .openui-dashboard-chart)
-    > .openui-dashboard-chart
+  .openui-dashboard-card-body
+    > .openui-dashboard-stat
+    + .openui-dashboard-chart
     > .openui-dashboard-legend,
-  .openui-dashboard-state-content:has(> .openui-dashboard-stat + .openui-dashboard-chart)
-    > .openui-dashboard-chart
+  .openui-dashboard-state-content
+    > .openui-dashboard-stat
+    + .openui-dashboard-chart
     > .openui-dashboard-legend {
     grid-column: 2;
     grid-row: 1;
@@ -827,11 +825,13 @@ export const sharedStyles = css`
     /* The subtitle's line box, so keys centre exactly on the delta line. */
     line-height: 1.4;
   }
-  .openui-dashboard-card-body:has(> .openui-dashboard-stat + .openui-dashboard-chart)
-    > .openui-dashboard-chart
+  .openui-dashboard-card-body
+    > .openui-dashboard-stat
+    + .openui-dashboard-chart
     > .openui-dashboard-chart-plot,
-  .openui-dashboard-state-content:has(> .openui-dashboard-stat + .openui-dashboard-chart)
-    > .openui-dashboard-chart
+  .openui-dashboard-state-content
+    > .openui-dashboard-stat
+    + .openui-dashboard-chart
     > .openui-dashboard-chart-plot {
     grid-column: 1 / -1;
     grid-row: 2;
@@ -841,17 +841,17 @@ export const sharedStyles = css`
     .openui-dashboard-state-content:has(> .openui-dashboard-stat + .openui-dashboard-chart) {
       display: flex;
     }
-    .openui-dashboard-card-body:has(> .openui-dashboard-stat + .openui-dashboard-chart)
-      > .openui-dashboard-chart,
-    .openui-dashboard-state-content:has(> .openui-dashboard-stat + .openui-dashboard-chart)
-      > .openui-dashboard-chart {
+    .openui-dashboard-card-body > .openui-dashboard-stat + .openui-dashboard-chart,
+    .openui-dashboard-state-content > .openui-dashboard-stat + .openui-dashboard-chart {
       display: flex;
     }
-    .openui-dashboard-card-body:has(> .openui-dashboard-stat + .openui-dashboard-chart)
-      > .openui-dashboard-chart
+    .openui-dashboard-card-body
+      > .openui-dashboard-stat
+      + .openui-dashboard-chart
       > .openui-dashboard-legend,
-    .openui-dashboard-state-content:has(> .openui-dashboard-stat + .openui-dashboard-chart)
-      > .openui-dashboard-chart
+    .openui-dashboard-state-content
+      > .openui-dashboard-stat
+      + .openui-dashboard-chart
       > .openui-dashboard-legend {
       justify-content: flex-start;
     }

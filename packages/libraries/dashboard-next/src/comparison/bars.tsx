@@ -16,7 +16,7 @@ import {
 } from "recharts";
 import { z } from "zod/v4";
 import { formatSchema, formatValue, isDurationFormat, type ValueFormat } from "../format";
-import { goodWhenSchema, numbersSchema } from "../schema";
+import { goodWhenSchema } from "../schema";
 import {
   Empty,
   Legend,
@@ -34,38 +34,11 @@ import {
   type TooltipRow,
 } from "../shared";
 import { MUTED_COLOR, seriesColor, textureOf, TEXTURES } from "../theme";
-const seriesSchema = z.object({
-  name: z.string(),
-  values: numbersSchema,
-  previous: numbersSchema.optional(),
-  mark: z.enum(["line", "area", "bar"]).optional(),
-  lows: numbersSchema.optional(),
-  highs: numbersSchema.optional(),
-});
-type SeriesProps = z.infer<typeof seriesSchema>;
-
-export const Series = defineComponent({
-  name: "Series",
-  props: seriesSchema,
-  description:
-    'One series; previous is the same points for the previous period. Use null for gaps. mark overrides the chart type to mix bars and a line in the same unit, e.g. Series("7-day average", avg, null, "line"). lows/highs shade a band such as a 95% interval: Series("Lift", lift, null, "line", lower, upper).',
-  component: () => null,
-});
-
-const referenceSchema = z.object({
-  label: z.string(),
-  value: z.number(),
-  axis: z.enum(["x", "y"]).optional(),
-});
-export type ReferenceProps = z.infer<typeof referenceSchema>;
-
-export const Reference = defineComponent({
-  name: "Reference",
-  props: referenceSchema,
-  description:
-    'A target or SLO line: Reference("Target", 99.5). axis "x" draws a vertical line (Scatter only), e.g. an average on the x measure.',
-  component: () => null,
-});
+// Series and Reference belong to the Trends group (#221): Bars takes the registered ones, so the
+// parser and prompt know them by name.
+import { Reference, Series, type ReferenceProps } from "../trends/charts";
+type SeriesProps = z.infer<typeof Series.props>;
+export { Reference, Series, type ReferenceProps };
 
 export const AXIS_TICK = { fill: "var(--openui-dashboard-ink-muted)", fontSize: 12 };
 
