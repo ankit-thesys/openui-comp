@@ -3,6 +3,7 @@ import { Renderer } from "@openuidev/react-lang";
 import { act, type ReactNode } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
+import { comparisonGroup } from "../../packages/libraries/dashboard-next/src/groups/comparison";
 import { library, ThemeProvider } from "../../packages/libraries/dashboard-next/src/index";
 import { CompareOverride, StateOverride } from "../../packages/libraries/dashboard-next/src/shared";
 import { comparisonFixtures } from "./fixtures/comparison";
@@ -127,9 +128,25 @@ for (const mode of ["light", "dark"] as const) {
         <CompareOverride value={true}>{render(program)}</CompareOverride>
       </ThemeProvider>,
     );
+    // Both categories get a previous bar: North's and South's.
     await expect.poll(() => rowCount(".recharts-bar-rectangle")).toBe(4);
     expect(host.textContent).toContain("Previous period");
     expect(host.textContent).toContain("$1,200");
+  });
+
+  test(`Bars tooltip reads each category's previous value from the keyboard in ${mode}`, async () => {
+    // Vertical bars: recharts' keyboard navigation steps through categories along the x axis
+    // only, so in horizontal Bars (categories down the y axis, his default) arrow keys stay on
+    // the first category, as in his library.
+    const program = card(
+      'Bars(["North", "South"], [Series("Sales", [1200, 2400], [1000, 2100])], "currency", "vertical")',
+    );
+    await draw(
+      <ThemeProvider mode={mode}>
+        <CompareOverride value={true}>{render(program)}</CompareOverride>
+      </ThemeProvider>,
+    );
+    await expect.poll(() => rowCount(".recharts-bar-rectangle")).toBe(4);
     // Keyboard focus on a category exposes its current and previous values in the tooltip.
     const chart = host.querySelector<HTMLElement>('.recharts-wrapper [tabindex="0"]')!;
     expect(chart).not.toBeNull();
@@ -276,3 +293,69 @@ for (const mode of ["light", "dark"] as const) {
     expect(host.textContent).toContain("-3%");
   });
 }
+
+test("Comparison's Series and Reference copies drop out once Trends registers its own", () => {
+  const names = (group: { components: readonly { name: string }[] }) =>
+    group.components.map((component) => component.name);
+  expect(names(comparisonGroup(new Set(["TimeSeries", "Series", "Reference"])))).toEqual([
+    "Bars",
+    "Leaderboard",
+    "Dumbbell",
+    "Distribution",
+    "Intervals",
+  ]);
+  // Without Trends, as on this branch, Comparison brings them.
+  expect(names(comparisonGroup(new Set()))).toEqual([
+    "Bars",
+    "Leaderboard",
+    "Dumbbell",
+    "Distribution",
+    "Intervals",
+    "Series",
+    "Reference",
+  ]);
+});
+
+test("Bars from a Query load, come back empty, fail, or are emptied by a filter, as a reader sees", async () => {
+  let respond!: (data: unknown) => void;
+  let fail!: (error: Error) => void;
+  const sales = (args: Record<string, unknown>) =>
+    new Promise((resolve, reject) => {
+      respond = resolve;
+      fail = reject;
+      void args;
+    });
+  const program = `$plan = "all"
+data = Query("sales", {plan: $plan}, {labels: [], values: []})
+root = Dashboard([FilterBar([ChipFilter("plan", [{value: "all", label: "All"}, {value: "team", label: "Team"}], $plan)]), Section("", [Row([Card("Sales", [Bars(data.labels, [Series("Sales", data.values)], "currency")], "full")])])])`;
+  await draw(<Renderer library={library} response={program} toolProvider={{ sales }} />);
+  const body = () => host.querySelector('[aria-label="Sales"] .openui-dashboard-card-body')!;
+  const state = () => body().querySelector("[data-state]")?.getAttribute("data-state");
+  // Fetching: a skeleton.
+  await expect.poll(state).toBe("loading");
+  // Nothing for the starting filters: "no data", not a filter problem.
+  await act(async () => respond({ labels: [], values: [] }));
+  await expect.poll(state).toBe("empty");
+  expect(body().textContent).toContain("No data for this period");
+  // The reader picks a plan that has nothing: the filters hid everything.
+  await act(async () =>
+    [...host.querySelectorAll<HTMLElement>('[role="radio"]')]
+      .find((node) => node.textContent === "Team")!
+      .click(),
+  );
+  await act(async () => respond({ labels: [], values: [] }));
+  await expect.poll(state).toBe("no-results");
+  expect(body().textContent).toContain("Try changing or clearing a filter.");
+  // Back to All, and the query fails: the data didn't load.
+  await act(async () =>
+    [...host.querySelectorAll<HTMLElement>('[role="radio"]')]
+      .find((node) => node.textContent === "All")!
+      .click(),
+  );
+  await act(async () => fail(new Error("Fixture data unavailable")));
+  await expect.poll(state).toBe("error");
+  expect(body().textContent).toContain("This data didn’t load");
+  // react-lang logs the failed query; that is the only console error this test allows.
+  expect(errors.mock.calls.map(([message]) => String(message))).toEqual(['Query "sales" failed:']);
+  errors.mockClear();
+});

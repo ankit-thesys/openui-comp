@@ -4,10 +4,21 @@ import { Intervals } from "../comparison/intervals";
 import { Leaderboard } from "../comparison/leaderboard";
 import { Distribution, Dumbbell } from "../comparison/specialized";
 import type { Group } from "./group";
+import { trends } from "./trends";
 
-// Bars needs these data nodes even when the trends group has not landed.
-// The copied Series and Reference definitions match the source API exactly.
-export const comparison: Group = {
-  components: [Bars, Leaderboard, Dumbbell, Distribution, Intervals, Series, Reference],
-  styles: [comparisonStyles],
-};
+// Bars takes Series and Reference, which the Trends group owns (#221). Until Trends registers
+// them, this group registers its copies (the same definitions as his charts.tsx); once it does,
+// the copies drop out, so each name is registered once.
+export function comparisonGroup(registeredByTrends: ReadonlySet<string>): Group {
+  const borrowed = [Series, Reference].filter(
+    (component) => !registeredByTrends.has(component.name),
+  );
+  return {
+    components: [Bars, Leaderboard, Dumbbell, Distribution, Intervals, ...borrowed],
+    styles: [comparisonStyles],
+  };
+}
+
+export const comparison = comparisonGroup(
+  new Set(trends.components.map((component) => component.name)),
+);
