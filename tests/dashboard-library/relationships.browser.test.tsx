@@ -323,9 +323,10 @@ for (const mode of ["light", "dark"] as const) {
   for (const name of ["Scatter", "Heatmap", "Cohorts"] as const) {
     for (const [state, copy] of [
       ["loading", "Loading"],
-      ["empty", "No data"],
-      ["error", "Didn’t load"],
-      ["no-results", "No results"],
+      // A Card shows each state's full title (his STATE_COPY); the short forms are for Kpi tiles.
+      ["empty", "No data for this period"],
+      ["error", "This data didn’t load"],
+      ["no-results", "No matching data"],
     ] as const) {
       test(`${name} Card shows ${state} in ${mode}`, async () => {
         await draw(
@@ -430,6 +431,11 @@ for (const name of ["Scatter", "Heatmap", "Cohorts"] as const) {
     expect(host.querySelector(".openui-dashboard-card-body")?.textContent).toContain(
       "This data didn’t load",
     );
+    // react-lang logs the failed query; that is the only console error this test allows.
+    expect(errors.mock.calls.map(([message]) => String(message))).toEqual([
+      'Query "relationships" failed:',
+    ]);
+    errors.mockClear();
   });
 }
 
@@ -440,3 +446,75 @@ test("grouped catalog points preserve all seven accounts", async () => {
   expect(host.querySelector(".openui-dashboard-legend")?.textContent).toContain("Business");
   expect(host.querySelector(".openui-dashboard-legend")?.textContent).toContain("Team");
 });
+
+// His ramps, as he wrote them (styles.css): each step's fill and the text ink that reads on it.
+const RAMPS = {
+  light: {
+    ink: "rgb(13, 13, 13)",
+    seq1: "rgb(245, 246, 255)",
+    seq9: "rgb(66, 41, 186)",
+    seqInk9: "rgb(255, 255, 255)",
+    div1: "rgb(179, 47, 91)",
+    div5: "rgb(231, 231, 231)",
+    div9: "rgb(90, 86, 199)",
+    poleInk: "rgb(255, 255, 255)",
+  },
+  dark: {
+    ink: "rgb(250, 250, 250)",
+    seq1: "rgb(27, 28, 52)",
+    seq9: "rgb(189, 195, 255)",
+    seqInk9: "rgb(13, 13, 13)",
+    div1: "rgb(235, 125, 152)",
+    div5: "rgb(58, 58, 60)",
+    div9: "rgb(149, 153, 249)",
+    poleInk: "rgb(13, 13, 13)",
+  },
+} as const;
+const paint = (cell: Element) => {
+  const style = getComputedStyle(cell);
+  return [style.backgroundColor, style.color];
+};
+
+for (const mode of ["light", "dark"] as const) {
+  const ramp = RAMPS[mode];
+  test(`Heatmap's sequential ramp runs light to dark with readable ink in ${mode}`, async () => {
+    await draw(
+      <ThemeProvider mode={mode}>
+        {renderProgram(program('Heatmap(["Mon"], ["Low", "High"], [[0, 100]], "number", true)'))}
+      </ThemeProvider>,
+    );
+    await expect.poll(() => gridCells().length).toBe(2);
+    const [low, high] = gridCells();
+    expect(paint(low!)).toEqual([ramp.seq1, ramp.ink]);
+    expect(paint(high!)).toEqual([ramp.seq9, ramp.seqInk9]);
+  });
+  test(`Heatmap with a midpoint uses the diverging ramp in ${mode}`, async () => {
+    await draw(
+      <ThemeProvider mode={mode}>
+        {renderProgram(
+          program('Heatmap(["Mon"], ["Down", "Flat", "Up"], [[-10, 0, 10]], "number", true, 0)'),
+        )}
+      </ThemeProvider>,
+    );
+    await expect.poll(() => gridCells().length).toBe(3);
+    const [down, flat, up] = gridCells();
+    expect(paint(down!)).toEqual([ramp.div1, ramp.poleInk]);
+    expect(paint(flat!)).toEqual([ramp.div5, ramp.ink]);
+    expect(paint(up!)).toEqual([ramp.div9, ramp.poleInk]);
+  });
+  test(`Cohorts shade retention on the sequential ramp in ${mode}`, async () => {
+    await draw(
+      <ThemeProvider mode={mode}>
+        {renderProgram(
+          program('Cohorts(["Jan", "Feb"], [100, 100], ["W0", "W1"], [[100, 80], [100, 20]])'),
+        )}
+      </ThemeProvider>,
+    );
+    await expect.poll(() => gridCells().length).toBeGreaterThan(0);
+    const shaded = gridCells().filter((cell) => paint(cell)[0] === ramp.seq9);
+    // The strongest week-1 retention takes the darkest step and its own ink.
+    expect(shaded.length).toBeGreaterThan(0);
+    expect(paint(shaded[0]!)[1]).toBe(ramp.seqInk9);
+    expect(gridCells().some((cell) => paint(cell)[0] === ramp.seq1)).toBe(true);
+  });
+}

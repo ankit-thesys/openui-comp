@@ -38,9 +38,14 @@ export const relationshipsStyles = css`
     transform: scale(1.18);
     box-shadow: 0 0 0 2px var(--openui-dashboard-surface);
   }
-  .openui-dashboard-cohort
-    td:not(.openui-dashboard-cohort-label):not(.openui-dashboard-cohort-size) {
+  /* His td:not(.cohort-label):not(.cohort-size), turned around (goober breaks a selector with
+     anything after a ")"): every cell 2px, then the label and size cells back to radius-sm. */
+  .openui-dashboard-cohort tr > td {
     border-radius: 2px;
+  }
+  .openui-dashboard-cohort tr > td.openui-dashboard-cohort-label,
+  .openui-dashboard-cohort tr > td.openui-dashboard-cohort-size {
+    border-radius: var(--openui-dashboard-radius-sm);
   }
   .openui-dashboard-cohort-all .openui-dashboard-cohort-label,
   .openui-dashboard-cohort-all .openui-dashboard-cohort-size {

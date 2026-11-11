@@ -1,24 +1,10 @@
 "use client";
 
 // Local copies of charts.tsx helpers; shared with the other chart ports after integration.
-import { defineComponent } from "@openuidev/react-lang";
 import { useId } from "react";
-import { z } from "zod/v4";
 
-const referenceSchema = z.object({
-  label: z.string(),
-  value: z.number(),
-  axis: z.enum(["x", "y"]).optional(),
-});
-export type ReferenceProps = z.infer<typeof referenceSchema>;
-
-export const Reference = defineComponent({
-  name: "Reference",
-  props: referenceSchema,
-  description:
-    'A target or SLO line: Reference("Target", 99.5). axis "x" draws a vertical line (Scatter only), e.g. an average on the x measure.',
-  component: () => null,
-});
+// Reference belongs to the Trends group, which registers it; Scatter takes that one.
+export { Reference, type ReferenceProps } from "../trends/charts";
 
 /** A reference line's label: an ink chip pinned to the line's start. */
 const CURSOR_CAP = 3;
