@@ -1,9 +1,19 @@
-import { Marker, Reference, Series, TimeSeries } from "../../trends/charts";
-import { SmallMultiples, StatusTimeline } from "../../trends/specialized";
-import { trendsStyles } from "../../trends/styles";
+import { trendsStyles } from "../../components/trends/styles";
 import type { Group } from "../group";
-
+import { MarkerComponent } from "./Marker";
+import { ReferenceComponent } from "./Reference";
+import { SeriesComponent } from "./Series";
+import { SmallMultiplesComponent } from "./SmallMultiples";
+import { StatusTimelineComponent } from "./StatusTimeline";
+import { TimeSeriesComponent } from "./TimeSeries";
 export const trends: Group = {
-  components: [TimeSeries, Series, Reference, Marker, SmallMultiples, StatusTimeline],
+  components: [
+    TimeSeriesComponent,
+    SeriesComponent,
+    ReferenceComponent,
+    MarkerComponent,
+    SmallMultiplesComponent,
+    StatusTimelineComponent,
+  ],
   styles: { trends: trendsStyles },
 };
