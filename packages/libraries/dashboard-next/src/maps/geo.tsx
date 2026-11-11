@@ -25,7 +25,8 @@ import {
 } from "../shared";
 import { MUTED_COLOR, sequentialColor, seriesColor } from "../theme";
 import { loadShapes, retryShapes, type Shape } from "./atlas";
-import { dotFill, ScatterMark } from "./scatterMark";
+// Shared with Scatter, as in his library (relations.tsx).
+import { dotFill, ScatterMark } from "../relationships/scatter";
 
 /* ---------- Region matching ---------- */
 

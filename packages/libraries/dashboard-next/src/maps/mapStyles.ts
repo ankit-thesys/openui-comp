@@ -67,9 +67,22 @@ export const mapStyles = css`
   .openui-dashboard-geo > .openui-dashboard-geo-body {
     flex: 1 1 auto;
   }
-  .openui-dashboard-card:has(.openui-dashboard-card-controls button) .openui-dashboard-geo-side,
-  .openui-dashboard-card:has(.openui-dashboard-card-controls input) .openui-dashboard-geo-side,
-  .openui-dashboard-card:has(.openui-dashboard-card-controls select) .openui-dashboard-geo-side {
-    margin-top: 0;
+  /* His .card:has(.card-controls :is(button, input, select)) .geo-side { margin-top: 0 }: the
+     list rises onto the subtitle's line unless the card head holds a control there. goober
+     breaks a selector with anything after a ")", so the card sets a variable the list reads. */
+  .openui-dashboard-card:has(.openui-dashboard-card-controls button),
+  .openui-dashboard-card:has(.openui-dashboard-card-controls input),
+  .openui-dashboard-card:has(.openui-dashboard-card-controls select) {
+    --openui-dashboard-geo-rise: 0px;
+  }
+  .openui-dashboard-card .openui-dashboard-geo-side {
+    margin-top: var(--openui-dashboard-geo-rise, -32px);
+  }
+  /* Narrow: the list sits under the map, never risen (his @container rule, restated at this
+     selector's weight). */
+  @container openui-dashboard (max-width: 720px) {
+    .openui-dashboard-card .openui-dashboard-geo-side {
+      margin-top: 0;
+    }
   }
 `;

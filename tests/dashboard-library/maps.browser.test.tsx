@@ -1,16 +1,11 @@
 // Use the public library from source so the host overrides share its contexts.
-import { defineComponent, Renderer } from "@openuidev/react-lang";
+import { Renderer } from "@openuidev/react-lang";
 import { act, type ReactNode } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
-import { z } from "zod/v4";
 import { library, ThemeProvider } from "../../packages/libraries/dashboard-next/src/index";
 import type { Shape } from "../../packages/libraries/dashboard-next/src/maps/atlas";
-import {
-  CompareOverride,
-  StateOverride,
-  useReportFilter,
-} from "../../packages/libraries/dashboard-next/src/shared";
+import { CompareOverride, StateOverride } from "../../packages/libraries/dashboard-next/src/shared";
 import { mapsFixtures } from "./fixtures/maps";
 
 // Keep real atlas geometry for rendering; intercept only the asset boundary for loading/failure.
@@ -52,6 +47,15 @@ afterEach(async () => {
 async function draw(children: ReactNode) {
   await act(async () => root.render(children));
 }
+/** Waits a frame at a time inside act, so async updates (an atlas import) commit before each check. */
+async function settle(check: () => void) {
+  await vi.waitFor(async () => {
+    await act(async () => {
+      await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+    });
+    check();
+  });
+}
 const card = (content: string) =>
   `root = Dashboard([Section("", [Row([Card("Places", [${content}], "full")])])])`;
 const dashboard = (response: string, isStreaming = false) => (
@@ -75,20 +79,6 @@ const geo =
   'GeoMap("world", ["US", "DE", "Atlantis"], [1200, 300, 100], "currency", [1000, 400, 100], "down")';
 const point =
   'PointMap("world", ["London", "Berlin", "Tokyo"], [51.51, 52.52, 35.68], [-0.13, 13.4, 139.69], [1200, 300, 100], "currency", "Cost", ["Office", "Office", "Store"], [1000, 400, 100], "down")';
-
-// A host filter added through the public library extension API; no other ticket is required.
-const HostFilter = defineComponent({
-  name: "HostFilter",
-  props: z.object({ value: z.string() }),
-  description: "Reports a host filter for an empty map.",
-  component: function HostFilterView({ props }) {
-    useReportFilter("places", props.value);
-    return null;
-  },
-});
-const filteredLibrary = library.extend({
-  components: { add: [{ component: HostFilter, slots: ["Dashboard.children"] }] },
-});
 
 for (const mode of ["light", "dark"] as const) {
   for (const fixture of mapsFixtures) {
@@ -241,32 +231,31 @@ for (const mode of ["light", "dark"] as const) {
       expect(map()).not.toBeNull();
     });
 
-    test(`${name} empty data reflects an active host filter in ${mode}`, async () => {
+    test(`${name} empty data reflects an active filter in ${mode}`, async () => {
       const empty =
         name === "GeoMap" ? 'GeoMap("world", [], [])' : 'PointMap("world", [], [], [], [])';
-      const scene = (value: string) => (
-        <ThemeProvider mode={mode}>
-          <Renderer
-            library={filteredLibrary}
-            response={card(empty).replace("Dashboard([", `Dashboard([HostFilter("${value}"), `)}
-          />
-        </ThemeProvider>
-      );
-      await draw(scene("all"));
-      expect(
+      // The dashboard's own FilterBar: picking a place that has nothing means the filters hid it.
+      const response = `$places = "all"\n${card(empty).replace(
+        "Dashboard([",
+        'Dashboard([FilterBar([ChipFilter("places", [{value: "all", label: "All places"}, {value: "none", label: "Nowhere"}], $places)]), ',
+      )}`;
+      const state = () =>
         host
           .querySelector(".openui-dashboard-card .openui-dashboard-empty")!
-          .getAttribute("data-state"),
-      ).toBe("empty");
-      await draw(scene("none"));
+          .getAttribute("data-state");
+      const chip = (label: string) =>
+        click(
+          [...host.querySelectorAll('[role="radio"]')].find((node) => node.textContent === label)!,
+        );
+      await draw(<ThemeProvider mode={mode}>{dashboard(response)}</ThemeProvider>);
+      expect(state()).toBe("empty");
+      await chip("Nowhere");
+      expect(state()).toBe("no-results");
       const emptyState = host.querySelector(".openui-dashboard-card .openui-dashboard-empty")!;
-      expect(emptyState.getAttribute("data-state")).toBe("no-results");
       expect(emptyState.textContent).toContain("No matching data");
       expect(emptyState.textContent).toContain("Try changing or clearing a filter.");
-      await draw(scene("all"));
-      expect(host.querySelector(".openui-dashboard-empty")!.getAttribute("data-state")).toBe(
-        "empty",
-      );
+      await chip("All places");
+      expect(state()).toBe("empty");
     });
 
     test(`${name} asset loading, failure and remount retry in ${mode}`, async () => {
@@ -294,7 +283,8 @@ for (const mode of ["light", "dark"] as const) {
           {dashboard(card(content))}
         </ThemeProvider>,
       );
-      expect(map()).not.toBeNull();
+      // The failed import was dropped, so this mount fetches the atlas again.
+      await settle(() => expect(map()).not.toBeNull());
       expect(rows()).toHaveLength(3);
     });
   }
