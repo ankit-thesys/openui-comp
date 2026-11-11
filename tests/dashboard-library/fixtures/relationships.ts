@@ -54,8 +54,8 @@ export const relationshipsCatalog: ComponentDoc[] = [
     components: ["Cohorts"],
     notes: {
       showValues:
-        "opens the header’s Values checkbox ticked; values are off until a viewer ticks it",
-      view: '"percent" (default) or "people": which reading the switch opens on',
+        "opens the header’s Show switch on view instead of None, so the cells print from the start",
+      view: '"percent" (default) or "people" (Count): what the cells print when showValues is on',
       cohorts: "row labels",
       sizes: "people in each cohort",
       periods: '"W0", "W1", …',
@@ -82,16 +82,16 @@ export const relationshipsCatalog: ComponentDoc[] = [
     name: "Heatmap",
     group: "Relationships",
     summary:
-      "Magnitude across two categorical axes; weekday by hour is the classic. A Values checkbox in the header prints the numbers, and a switch reads them as counts or shares.",
+      "Magnitude across two categorical axes; weekday by hour is the classic. A Show switch in the header prints the cells as a count or a share, or nothing.",
     components: ["Heatmap"],
     notes: {
       rows: "the row axis",
       columns: "the column axis",
       values: "values[r][c], null for no data",
       showValues:
-        "opens the header’s Values checkbox ticked; values are off until a viewer ticks it",
+        "opens the header’s Show switch on view instead of None, so the cells print from the start",
       midpoint: "a two-pole scale around this value, e.g. 0 for change",
-      view: '"count" (default), "total" or "row": counts, % of total or % of row; which reading the switch opens on',
+      view: '"count" (default), "total" or "row": the reading the grid colours by, and prints once showValues is on',
     },
     // The specimen is built by its controls (controls.ts); this program stays as the default.
     variants: [

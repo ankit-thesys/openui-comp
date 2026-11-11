@@ -12,7 +12,6 @@ import {
   TooltipCard,
   toStrings,
   useRowHover,
-  ViewCheck,
   ViewSwitch,
 } from "../shared";
 import { divergingColor, sequentialColor } from "../theme";
@@ -32,22 +31,24 @@ const cohortsSchema = z.object({
 type CohortView = "percent" | "people";
 const COHORT_VIEWS: { value: CohortView; label: string }[] = [
   { value: "percent", label: "Percent" },
-  { value: "people", label: "People" },
+  { value: "people", label: "Count" },
 ];
+type CohortShow = "none" | CohortView;
 
 export const Cohorts = defineComponent({
   name: "Cohorts",
   props: cohortsSchema,
   description:
-    'Retention grid: rows[i][j] is the % of cohort i active in period j; null for periods not reached. Periods start at "Week 0" or "Month 0". A switch shows cells as percent or people (size × rate); view "people" opens on people. A Values checkbox prints the numbers in the cells (showValues true opens it ticked).',
+    'Retention grid: rows[i][j] is the % of cohort i active in period j; null for periods not reached. Periods start at "Week 0" or "Month 0". A Show switch in the header prints the cells as Percent or Count (people: size × rate), or nothing (None, the default); showValues true opens it on view ("percent" or "people").',
   component: function CohortsView({ props }: ComponentRenderProps<z.infer<typeof cohortsSchema>>) {
     const hover = useRowHover();
-    // Percent retained, or the people that is (size × rate); colour always follows the rate.
-    const [viewChoice, setView] = useState<CohortView | null>(null);
-    const view: CohortView = viewChoice ?? props.view ?? "percent";
-    // Values are opt-in, as on Heatmap: the header checkbox prints them; showValues opens it ticked.
-    const [valuesChoice, setValuesOn] = useState<boolean | null>(null);
-    const valuesOn = valuesChoice ?? props.showValues ?? false;
+    // One Show switch, as on Heatmap: None (the default), Percent, or Count (people: size × rate).
+    // showValues opens on view (percent when not given). Colour always follows the rate.
+    const [showChoice, setShow] = useState<CohortShow | null>(null);
+    const showing: CohortShow =
+      showChoice ?? (props.showValues ? (props.view ?? "percent") : "none");
+    const view: CohortView = showing === "none" ? "percent" : showing;
+    const valuesOn = showing !== "none";
     const cohorts = toStrings(props.cohorts);
     const sizes = toNumbers(props.sizes);
     const periods = toStrings(props.periods);
@@ -188,21 +189,25 @@ export const Cohorts = defineComponent({
       // The kit tooltip on every cell, as on every other chart; the hovered cell takes an ink ring.
       <div ref={hover.ref} className="openui-dashboard-rows openui-dashboard-grid-hover">
         {/* People only makes sense for rates of a known size. */}
-        <ViewCheck label="Values" checked={valuesOn} onChange={setValuesOn} />
-        {sized ? (
-          <ViewSwitch
-            label="Show cells as"
-            options={COHORT_VIEWS}
-            value={view}
-            onChange={setView}
-          />
-        ) : null}
+        <ViewSwitch
+          label="Show in cells"
+          prefix="Show"
+          // Without cohort sizes there are no people to count, so only Percent.
+          options={[
+            { value: "none" as CohortShow, label: "None" },
+            ...(sized ? COHORT_VIEWS : COHORT_VIEWS.slice(0, 1)),
+          ]}
+          // Not in his source: without sizes, view "people" still prints percent, so the switch
+          // says so instead of showing no choice.
+          value={sized || showing === "none" ? showing : "percent"}
+          onChange={setShow}
+        />
         {/* The same colour key as Heatmap: what the ramp means, from the lowest retention after period 0 to the highest. */}
         {cells.length ? (
           <RampKey low={formatValue(min, format)} high={formatValue(max, format)} ramp="seq" />
         ) : null}
         <div className="openui-dashboard-cohort-wrap">
-          {/* Fixed layout, as on Heatmap: printing values (the Values checkbox) never resizes a column. */}
+          {/* Fixed layout, as on Heatmap: printing values (the Show switch) never resizes a column. */}
           <table className="openui-dashboard-cohort" style={{ tableLayout: "fixed" }}>
             <colgroup>
               <col
@@ -292,19 +297,23 @@ const HEATMAP_VIEWS: { value: HeatmapView; label: string }[] = [
   { value: "total", label: "% of total" },
   { value: "row", label: "% of row" },
 ];
+/** What the cells print: nothing (the default), or a reading. */
+type HeatmapShow = "none" | HeatmapView;
 
 export const Heatmap = defineComponent({
   name: "Heatmap",
   props: heatmapSchema,
   description:
-    "Magnitude across two categories (weekday × hour); values[r][c], null for no data. A Values checkbox in the header prints the numbers in the cells (showValues true opens it ticked). midpoint switches to a two-pole diverging scale around it, for values with a direction (change, variance vs plan, correlation): 0 for change.",
+    'Magnitude across two categories (weekday × hour); values[r][c], null for no data. A Show switch in the header prints the cells as Count, % of total or % of row (colouring by that reading), or nothing (None, the default); showValues true opens it on view ("count", "total" or "row"). midpoint switches to a two-pole diverging scale around it, for values with a direction (change, variance vs plan, correlation): 0 for change.',
   component: function HeatmapView({ props }: ComponentRenderProps<z.infer<typeof heatmapSchema>>) {
     const hover = useRowHover();
-    const [viewChoice, setView] = useState<HeatmapView | null>(null);
-    const view: HeatmapView = viewChoice ?? props.view ?? "count";
-    // Values are opt-in: a checkbox in the header prints them; showValues opens it ticked.
-    const [valuesChoice, setValuesOn] = useState<boolean | null>(null);
-    const valuesOn = valuesChoice ?? props.showValues ?? false;
+    // One Show switch: None (the default) prints nothing; Count, % of total or % of row prints that
+    // reading and colours by it. showValues opens on view (count when not given).
+    const [showChoice, setShow] = useState<HeatmapShow | null>(null);
+    const showing: HeatmapShow =
+      showChoice ?? (props.showValues ? (props.view ?? "count") : "none");
+    const view: HeatmapView = showing === "none" ? (props.view ?? "count") : showing;
+    const valuesOn = showing !== "none";
     const rowLabels = toStrings(props.rows);
     const columnLabels = toStrings(props.columns);
     const grid = (Array.isArray(props.values) ? props.values : []).map((row) => toNumbers(row));
@@ -352,15 +361,17 @@ export const Heatmap = defineComponent({
     return (
       // The kit tooltip on every cell, as on every other chart; the hovered cell takes an ink ring.
       <div ref={hover.ref} className="openui-dashboard-rows openui-dashboard-grid-hover">
-        <ViewCheck label="Values" checked={valuesOn} onChange={setValuesOn} />
-        {switchable ? (
-          <ViewSwitch
-            label="Show cells as"
-            options={HEATMAP_VIEWS}
-            value={view}
-            onChange={setView}
-          />
-        ) : null}
+        <ViewSwitch
+          label="Show in cells"
+          prefix="Show"
+          // A diverging grid has one reading, so it only prints its values or not.
+          options={[
+            { value: "none" as HeatmapShow, label: "None" },
+            ...(switchable ? HEATMAP_VIEWS : [{ value: "count" as HeatmapView, label: "Values" }]),
+          ]}
+          value={switchable ? showing : showing === "none" ? "none" : "count"}
+          onChange={setShow}
+        />
         <RampKey
           low={formatValue(midpoint === undefined ? min : midpoint - spread, format, {
             axis: true,

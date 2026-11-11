@@ -5,7 +5,7 @@ export const mapStyles = css`
     display: flex;
     flex-direction: column;
   }
-  .openui-dashboard-geo > .openui-dashboard-geo-legend {
+  .openui-dashboard-geo-map > .openui-dashboard-geo-legend {
     padding: var(--openui-dashboard-space-sm) 0;
     align-items: center;
   }
@@ -19,7 +19,14 @@ export const mapStyles = css`
     position: relative;
     flex: 2 1 340px;
     min-width: 0;
-    /* The column stretches to the list beside it; the map centres in it. */
+    /* The column stretches to the list beside it: the map centres in the spare height and its key
+       (colour or size) sits at the bottom, so the list runs the card's full height. */
+    display: flex;
+    flex-direction: column;
+  }
+  .openui-dashboard-geo-stage {
+    position: relative;
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;

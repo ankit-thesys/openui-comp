@@ -62,7 +62,7 @@ const dashboard = (response: string, isStreaming = false) => (
   <Renderer library={library} response={response} isStreaming={isStreaming} />
 );
 const rows = () => [...host.querySelectorAll<HTMLElement>(".openui-dashboard-rank-row")];
-const map = () => host.querySelector<SVGSVGElement>(".openui-dashboard-geo-map > svg")!;
+const map = () => host.querySelector<SVGSVGElement>(".openui-dashboard-geo-stage > svg")!;
 const names = () =>
   rows().map((row) => row.querySelector(".openui-dashboard-rank-name")!.textContent);
 async function click(element: Element) {
@@ -94,7 +94,28 @@ for (const mode of ["light", "dark"] as const) {
       expect(getComputedStyle(land).fill).toBe(
         mode === "light" ? "rgb(239, 239, 239)" : "rgb(35, 35, 35)",
       );
+      // The colour or size key sits under the map, inside the map column, so the ranked list
+      // beside it runs to the bottom of the card body.
+      const column = host.querySelector(".openui-dashboard-geo-map")!;
+      const key = column.querySelector(":scope > .openui-dashboard-geo-legend")!;
+      expect(key).not.toBeNull();
+      const list = host.querySelector(".openui-dashboard-geo-side")!.getBoundingClientRect();
+      expect(list.bottom).toBeCloseTo(key.getBoundingClientRect().bottom, 0);
+      expect(list.bottom).toBeCloseTo(
+        host.querySelector(".openui-dashboard-geo-body")!.getBoundingClientRect().bottom,
+        0,
+      );
       if (fixture.name === "GeoMap") {
+        // Regions with data carry the bars' dot texture, 6 screen pixels whatever the map's scale;
+        // regions without data stay plain.
+        const pattern = map().querySelector("pattern")!;
+        const scale = 760 / map().getBoundingClientRect().width;
+        expect(Number(pattern.getAttribute("width"))).toBeCloseTo(6 * scale, 1);
+        const textured = [...map().querySelectorAll(":scope > g > path")];
+        expect(textured).toHaveLength(10);
+        expect(textured.every((path) => path.getAttribute("fill") === `url(#${pattern.id})`)).toBe(
+          true,
+        );
         expect(names().slice(0, 3)).toEqual(["United States", "India", "United Kingdom"]);
         expect(rows()[0]!.textContent).toContain("+7.9%");
       } else {
@@ -297,6 +318,7 @@ test("US state aliases, top N and an initial share view", async () => {
   expect(names()).toEqual(["California", "Texas"]);
   expect(rows()[0]!.textContent).toContain("60%");
   expect(host.querySelector("[role=radio][aria-checked=true]")!.textContent).toBe("% of total");
+  expect(host.querySelector(".openui-dashboard-view-label")!.textContent).toBe("Show");
   expect(map().querySelectorAll(":scope > path")).toHaveLength(56);
 });
 

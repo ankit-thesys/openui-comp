@@ -522,8 +522,7 @@ export const filtersStyles = css`
     margin: 0;
     pointer-events: none;
   }
-  .openui-dashboard-multi-option input:checked + .openui-dashboard-checkbox,
-  .openui-dashboard-view-check input:checked + .openui-dashboard-checkbox {
+  .openui-dashboard-multi-option input:checked + .openui-dashboard-checkbox {
     border-color: transparent;
     background: var(--openui-dashboard-ink);
     color: var(--openui-dashboard-surface);

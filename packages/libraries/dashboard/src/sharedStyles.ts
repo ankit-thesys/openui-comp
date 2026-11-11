@@ -45,32 +45,18 @@ export const sharedStyles = css`
   .openui-dashboard-chart-top > .openui-dashboard-segmented {
     margin-left: auto;
   }
-  .openui-dashboard-view-check {
-    position: relative;
+  .openui-dashboard-view-switch {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    height: 28px;
+    gap: 8px;
+  }
+  .openui-dashboard-view-label {
     font-size: 12px;
-    color: var(--openui-dashboard-ink-secondary);
-    cursor: pointer;
+    color: var(--openui-dashboard-ink-muted);
     white-space: nowrap;
   }
-  .openui-dashboard-view-check:hover {
-    color: var(--openui-dashboard-ink);
-  }
-  .openui-dashboard-view-check input {
-    position: absolute;
-    opacity: 0;
-    width: 1px;
-    height: 1px;
-    margin: 0;
-    pointer-events: none;
-  }
-  .openui-dashboard-view-check input:focus-visible + .openui-dashboard-checkbox {
-    box-shadow:
-      0 0 0 2px var(--openui-dashboard-surface),
-      0 0 0 3.5px var(--openui-dashboard-ink);
+  .openui-dashboard-chart-top > .openui-dashboard-view-switch {
+    margin-left: auto;
   }
   .openui-dashboard-size-key {
     display: inline-flex;
@@ -793,11 +779,6 @@ export const sharedStyles = css`
       background 150ms,
       border-color 150ms,
       color 150ms;
-  }
-  .openui-dashboard-view-check input:checked + .openui-dashboard-checkbox {
-    border-color: transparent;
-    background: var(--openui-dashboard-ink);
-    color: var(--openui-dashboard-surface);
   }
   .openui-dashboard-chart {
     display: flex;

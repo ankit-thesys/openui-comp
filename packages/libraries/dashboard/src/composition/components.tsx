@@ -1001,7 +1001,13 @@ export const Funnel = defineComponent({
       <>
         {/* The switch goes to the card header's top right (ViewSwitch portals it there). */}
         {steps.length > 2 ? (
-          <ViewSwitch label="Rates" options={BASIS_OPTIONS} value={basis} onChange={setBasis} />
+          <ViewSwitch
+            label="Rates"
+            prefix="Rates"
+            options={BASIS_OPTIONS}
+            value={basis}
+            onChange={setBasis}
+          />
         ) : null}
         {legendEntries.length ? (
           <div className="openui-dashboard-chart-top">

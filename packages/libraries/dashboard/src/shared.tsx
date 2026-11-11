@@ -846,17 +846,20 @@ export function radioKeys<T extends string>(
  */
 export function ViewSwitch<T extends string>({
   label,
+  prefix,
   options,
   value,
   onChange,
 }: {
   label: string;
+  /** A short muted word before the switch, e.g. "Show" or "Rates", as filters prefix their label. */
+  prefix?: string;
   options: { value: T; label: string }[];
   value: T;
   onChange: (value: T) => void;
 }) {
   const slot = useContext(CardSlotContext);
-  const control = (
+  const segmented = (
     <div
       className="openui-dashboard-segmented openui-dashboard-segmented-sm"
       role="radiogroup"
@@ -877,51 +880,18 @@ export function ViewSwitch<T extends string>({
       ))}
     </div>
   );
+  const control = prefix ? (
+    <div className="openui-dashboard-view-switch">
+      <span className="openui-dashboard-view-label" aria-hidden>
+        {prefix}
+      </span>
+      {segmented}
+    </div>
+  ) : (
+    segmented
+  );
   // In a Card, the switch goes to the header's top right, with any filters the card has;
   // anywhere else it takes the chart's own top row.
-  return slot ? (
-    createPortal(control, slot)
-  ) : (
-    <div className="openui-dashboard-chart-top">{control}</div>
-  );
-}
-
-/**
- * A checkbox inside a chart, for a reading the viewer opts into (printing values on a grid). It goes to the
- * card header's top right beside any switch, in the kit's neutral checkbox; anywhere else, the chart's top row.
- */
-export function ViewCheck({
-  label,
-  checked,
-  onChange,
-}: {
-  label: string;
-  checked: boolean;
-  onChange: (checked: boolean) => void;
-}) {
-  const slot = useContext(CardSlotContext);
-  const control = (
-    <label className="openui-dashboard-view-check">
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={(event) => onChange(event.target.checked)}
-      />
-      <span className="openui-dashboard-checkbox" aria-hidden>
-        <svg viewBox="0 0 10 10" width="8" height="8">
-          <path
-            d="M2 5.2 4.1 7.2 8 3"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </span>
-      {label}
-    </label>
-  );
   return slot ? (
     createPortal(control, slot)
   ) : (

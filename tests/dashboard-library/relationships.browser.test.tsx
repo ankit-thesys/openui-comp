@@ -47,6 +47,8 @@ async function choose(text: string) {
   await click(radio!);
   expect(radio!.getAttribute("aria-checked")).toBe("true");
 }
+const radios = () => [...host.querySelectorAll('[role="radio"]')].map((radio) => radio.textContent);
+const checked = () => host.querySelector('[role="radio"][aria-checked="true"]')?.textContent;
 async function hoverCell(cell: Element) {
   const box = cell.getBoundingClientRect();
   await act(async () => {
@@ -197,10 +199,20 @@ for (const mode of ["light", "dark"] as const) {
     for (const text of ["Activity by hour", "Sessions · local time", "Mon", "Sun", "12a", "9p"]) {
       expect(host.textContent).toContain(text);
     }
-    const values = host.querySelector('.openui-dashboard-card-slot input[type="checkbox"]')!;
-    expect((values as HTMLInputElement).checked).toBe(false);
+    // One labelled Show switch in the card header: None until a viewer picks a reading.
+    const show = host.querySelector('.openui-dashboard-card-slot [aria-label="Show in cells"]')!;
+    expect(show.parentElement!.querySelector(".openui-dashboard-view-label")!.textContent).toBe(
+      "Show",
+    );
+    expect(radios()).toEqual(["None", "Count", "% of total", "% of row"]);
+    expect(checked()).toBe("None");
+    expect(host.querySelector('input[type="checkbox"]')).toBeNull();
     const before = gridCells()[0]!.getBoundingClientRect().width;
-    await click(values);
+    const height = host.querySelector(".openui-dashboard-card")!.getBoundingClientRect().height;
+    await choose("Count");
+    expect(host.querySelector(".openui-dashboard-card")!.getBoundingClientRect().height).toBe(
+      height,
+    );
     expect(gridCells()[0]!.textContent).toBe("12");
     expect(gridCells()[12]!.textContent).toBe("151");
     expect(gridCells()[0]!.getBoundingClientRect().width).toBeCloseTo(before, 1);
@@ -230,6 +242,8 @@ for (const mode of ["light", "dark"] as const) {
     expect(gridCells().map((cell) => cell.textContent)).toEqual(["25%", "75%", "100%", ""]);
     await choose("Count");
     expect(gridCells()[0]!.textContent).toBe("1");
+    await choose("None");
+    expect(gridCells().every((cell) => cell.textContent === "")).toBe(true);
   });
 
   test(`Heatmap diverges symmetrically around its midpoint in ${mode}`, async () => {
@@ -243,7 +257,9 @@ for (const mode of ["light", "dark"] as const) {
       </ThemeProvider>,
     );
     expect(gridCells().map((cell) => cell.textContent)).toEqual(["-10%", "0%", "10%"]);
-    expect(host.querySelector('[role="radiogroup"]')).toBeNull();
+    // A diverging grid has one reading: it prints its values or not.
+    expect(radios()).toEqual(["None", "Values"]);
+    expect(checked()).toBe("Values");
     const colors = gridCells().map((cell) => getComputedStyle(cell).backgroundColor);
     expect(new Set(colors).size).toBe(3);
     await hoverCell(gridCells()[0]!);
@@ -262,10 +278,12 @@ for (const mode of ["light", "dark"] as const) {
     expect(host.querySelectorAll('[aria-label="Not reached yet"]')).toHaveLength(15);
     expect(host.querySelector(".openui-dashboard-cohort-all")?.textContent).toContain("4,331");
     expect(gridCells().every((cell) => cell.textContent === "")).toBe(true);
-    await click(host.querySelector('input[type="checkbox"]')!);
+    expect(radios()).toEqual(["None", "Percent", "Count"]);
+    expect(checked()).toBe("None");
+    await choose("Percent");
     expect(gridCells()[0]!.textContent).toBe("100%");
     expect(gridCells()[1]!.textContent).toBe("42.8%");
-    await choose("People");
+    await choose("Count");
     expect(gridCells()[0]!.textContent).toBe("4,331");
     await hoverCell(gridCells()[1]!);
     for (const text of [
@@ -305,7 +323,7 @@ for (const mode of ["light", "dark"] as const) {
     expect(host.querySelector(".openui-dashboard-rowtip")?.textContent).toContain("100");
   });
 
-  test(`non-percent Cohorts uses its format without a people switch in ${mode}`, async () => {
+  test(`non-percent Cohorts uses its format without a Count option in ${mode}`, async () => {
     await draw(
       <ThemeProvider mode={mode}>
         {renderProgram(
@@ -316,7 +334,8 @@ for (const mode of ["light", "dark"] as const) {
       </ThemeProvider>,
     );
     expect(host.querySelector(".openui-dashboard-cohort-all")).toBeNull();
-    expect(host.querySelector('[role="radiogroup"]')).toBeNull();
+    expect(radios()).toEqual(["None", "Percent"]);
+    expect(checked()).toBe("Percent");
     expect(gridCells().map((cell) => cell.textContent)).toEqual(["$30.00", "$12.50"]);
   });
 
