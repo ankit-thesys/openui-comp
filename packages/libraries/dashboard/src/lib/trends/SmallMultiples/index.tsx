@@ -1,7 +1,9 @@
 "use client";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
+import type { SmallMultiplesProps } from "../../../components/trends/SmallMultiples";
 import { SmallMultiples } from "../../../components/trends/SmallMultiples";
 import { nodeList } from "../../../shared/values";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import type { SeriesSchemaProps } from "../Series/schema";
 import { smallMultiplesPropsSchema, type SmallMultiplesSchemaProps } from "./schema";
 
@@ -16,3 +18,8 @@ export const SmallMultiplesComponent = defineComponent({
     return <SmallMultiples {...props} series={nodeList<SeriesSchemaProps>(props.series)} />;
   },
 });
+
+// Every schema field reaches SmallMultiples.
+export type SmallMultiplesSchemaCovered = Covered<
+  SchemaCoverage<SmallMultiplesSchemaProps, SmallMultiplesProps>
+>;

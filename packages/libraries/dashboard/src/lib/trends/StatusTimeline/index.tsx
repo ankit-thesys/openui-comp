@@ -1,6 +1,8 @@
 "use client";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
+import type { StatusTimelineProps } from "../../../components/trends/StatusTimeline";
 import { StatusTimeline } from "../../../components/trends/StatusTimeline";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { statusTimelinePropsSchema, type StatusTimelineSchemaProps } from "./schema";
 
 export const StatusTimelineComponent = defineComponent({
@@ -14,3 +16,8 @@ export const StatusTimelineComponent = defineComponent({
     return <StatusTimeline {...props} />;
   },
 });
+
+// Every schema field reaches StatusTimeline.
+export type StatusTimelineSchemaCovered = Covered<
+  SchemaCoverage<StatusTimelineSchemaProps, StatusTimelineProps>
+>;

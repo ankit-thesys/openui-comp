@@ -1,6 +1,8 @@
 "use client";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
+import type { IntervalsProps } from "../../../components/comparison/Intervals";
 import { Intervals } from "../../../components/comparison/Intervals";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { intervalsPropsSchema, type IntervalsSchemaProps } from "./schema";
 
 export const IntervalsComponent = defineComponent({
@@ -14,3 +16,6 @@ export const IntervalsComponent = defineComponent({
 function IntervalsView({ props }: ComponentRenderProps<IntervalsSchemaProps>) {
   return <Intervals {...props} />;
 }
+
+// Every schema field reaches Intervals.
+export type IntervalsSchemaCovered = Covered<SchemaCoverage<IntervalsSchemaProps, IntervalsProps>>;

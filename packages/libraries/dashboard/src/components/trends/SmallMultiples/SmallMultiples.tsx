@@ -15,11 +15,11 @@ import {
 import { SrTable } from "../../../components/shared/SrTable";
 import { Empty } from "../../../components/shared/States";
 import { TooltipCard } from "../../../components/shared/TooltipCard";
+import { seriesColor } from "../../../shared/colors";
 import { formatValue } from "../../../shared/format";
 import { useWidth } from "../../../shared/hooks";
 import { niceStep } from "../../../shared/scales";
 import { toNumbers, toStrings } from "../../../shared/values";
-import { seriesColor } from "../../../theme";
 import { InkCursor } from "../../shared/InkCursor";
 
 import type { ValueFormat } from "../../../shared/format";

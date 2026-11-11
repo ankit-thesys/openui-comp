@@ -1,8 +1,10 @@
 "use client";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
 import { useMemo } from "react";
+import type { TimeSeriesProps } from "../../../components/trends/TimeSeries";
 import { TimeSeries } from "../../../components/trends/TimeSeries";
 import { nodeList } from "../../../shared/values";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import type { MarkerSchemaProps } from "../Marker/schema";
 import type { ReferenceSchemaProps } from "../Reference/schema";
 import type { SeriesSchemaProps } from "../Series/schema";
@@ -25,3 +27,8 @@ export const TimeSeriesComponent = defineComponent({
     );
   },
 });
+
+// Every schema field reaches TimeSeries.
+export type TimeSeriesSchemaCovered = Covered<
+  SchemaCoverage<TimeSeriesSchemaProps, TimeSeriesProps>
+>;

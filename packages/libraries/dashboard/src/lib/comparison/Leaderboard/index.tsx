@@ -1,6 +1,8 @@
 "use client";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
+import type { LeaderboardProps } from "../../../components/comparison/Leaderboard";
 import { Leaderboard } from "../../../components/comparison/Leaderboard";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { leaderboardPropsSchema, type LeaderboardSchemaProps } from "./schema";
 
 export const LeaderboardComponent = defineComponent({
@@ -14,3 +16,8 @@ export const LeaderboardComponent = defineComponent({
 function LeaderboardView({ props }: ComponentRenderProps<LeaderboardSchemaProps>) {
   return <Leaderboard {...props} />;
 }
+
+// Every schema field reaches Leaderboard.
+export type LeaderboardSchemaCovered = Covered<
+  SchemaCoverage<LeaderboardSchemaProps, LeaderboardProps>
+>;

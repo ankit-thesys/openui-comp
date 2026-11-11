@@ -22,6 +22,7 @@ export interface DistributionProps {
   format?: ValueFormat;
 }
 
+// The value column holds one number (the median); the range is drawn, and named in the tooltip.
 const DIST_COLUMNS = "minmax(110px, 0.8fr) 3fr 72px";
 
 export function Distribution(props: DistributionProps) {

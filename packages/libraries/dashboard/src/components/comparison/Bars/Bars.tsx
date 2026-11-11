@@ -44,8 +44,8 @@ import type { ValueFormat } from "../../../shared/format";
 import { formatValue, isDurationFormat } from "../../../shared/format";
 import { useWidth } from "../../../shared/hooks";
 import { unusableSeries } from "../../../shared/parts";
+import type { ReferenceProps, SeriesProps } from "../../../shared/trends";
 import { toStrings } from "../../../shared/values";
-import { type ReferenceProps, type SeriesProps } from "../comparisonData";
 
 export interface BarsProps {
   labels: string[];

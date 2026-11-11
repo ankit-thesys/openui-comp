@@ -1,9 +1,12 @@
 "use client";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
 import { useMemo } from "react";
+import type { BarsProps } from "../../../components/comparison/Bars";
 import { Bars } from "../../../components/comparison/Bars";
-import type { ReferenceProps, SeriesProps } from "../../../components/comparison/comparisonData";
 import { nodeList } from "../../../shared/values";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
+import type { ReferenceSchemaProps } from "../../trends/Reference/schema";
+import type { SeriesSchemaProps } from "../../trends/Series/schema";
 import { barsPropsSchema, type BarsSchemaProps } from "./schema";
 
 export const BarsComponent = defineComponent({
@@ -15,7 +18,10 @@ export const BarsComponent = defineComponent({
 });
 
 function BarsView({ props }: ComponentRenderProps<BarsSchemaProps>) {
-  const series = useMemo(() => nodeList<SeriesProps>(props.series), [props.series]);
-  const references = nodeList<ReferenceProps>(props.references);
+  const series = useMemo(() => nodeList<SeriesSchemaProps>(props.series), [props.series]);
+  const references = nodeList<ReferenceSchemaProps>(props.references);
   return <Bars {...props} series={series} references={references} />;
 }
+
+// Every schema field reaches Bars.
+export type BarsSchemaCovered = Covered<SchemaCoverage<BarsSchemaProps, BarsProps>>;
