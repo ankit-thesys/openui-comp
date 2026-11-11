@@ -7,3 +7,12 @@ export type Width = z.infer<typeof widthSchema>;
 
 export const widthClass = (width: Width | undefined | null, fallback: Width) =>
   `openui-dashboard-w-${width ?? fallback}`;
+
+/** Which direction of change is good news for a metric (drives delta colour). */
+export const goodWhenSchema = z.enum(["up", "down", "neutral"]);
+
+export const toneSchema = z.enum(["good", "bad", "warning", "info", "neutral"]);
+export type Tone = z.infer<typeof toneSchema>;
+
+/** A list of numbers, where gaps (not yet observed, not applicable) are null. */
+export const numbersSchema = z.array(z.number().nullable());

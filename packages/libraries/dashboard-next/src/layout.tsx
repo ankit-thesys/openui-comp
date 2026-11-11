@@ -13,7 +13,9 @@ import { widthClass, widthSchema, type Width } from "./schema";
 import {
   CardControlsContext,
   CardSlotContext,
+  CompareProvider,
   DashboardError,
+  FilterRegistryProvider,
   RefreshingContext,
   Sheen,
   StateFrame,
@@ -22,19 +24,24 @@ import {
 } from "./shared";
 
 import { DashboardTheme } from "./ThemeProvider";
+import {
+  cardContent,
+  cardControls,
+  contentStyles,
+  dashboardContent,
+  sectionContent,
+} from "./content";
+import { sharedStyles } from "./sharedStyles";
 import { layoutStyles } from "./styles";
 
 /* ---------- Card ---------- */
-
-// Content and controls are empty until their component tickets land.
-const cardContent = z.never();
 
 const cardSchema = z.object({
   title: z.string(),
   content: z.array(cardContent),
   width: widthSchema.optional(),
   subtitle: z.string().optional(),
-  controls: z.array(z.never()).optional(),
+  controls: z.array(cardControls).optional(),
 });
 
 export const Card = defineComponent({
@@ -286,7 +293,7 @@ function orphans(widths: Width[], halves: Width[]): Set<number> {
 
 const sectionSchema = z.object({
   title: z.string(),
-  rows: z.array(Row.ref),
+  rows: z.array(z.union([sectionContent, Row.ref])),
   description: z.string().optional(),
 });
 
@@ -313,7 +320,7 @@ export const Section = defineComponent({
 /* ---------- Dashboard (root) ---------- */
 
 const dashboardSchema = z.object({
-  children: z.array(Section.ref),
+  children: z.array(dashboardContent(Section.ref)),
 });
 
 export const Dashboard = defineComponent({
@@ -337,22 +344,28 @@ export const Dashboard = defineComponent({
       query.isLoading && !streaming && fetched.current === "done" && children.length > 0;
     return (
       <DashboardTheme>
-        <div className={`${layoutStyles} openui-dashboard-root openui-dashboard-container`}>
-          <div className="openui-dashboard-dashboard" aria-busy={refreshing || undefined}>
-            {query.errors.length && !streaming ? (
-              <p className="openui-dashboard-dashboard-notice" role="alert">
-                <span className="openui-dashboard-state-title">Some live data didn’t load</span>
-                <span className="openui-dashboard-state-hint">
-                  Cards that use it may be out of date.
-                </span>
-              </p>
-            ) : null}
-            {/* Finished with nothing to draw: every section was invalid. */}
-            <RefreshingContext.Provider value={refreshing}>
-              {!streaming && !children.length ? <DashboardError /> : renderNode(props.children)}
-            </RefreshingContext.Provider>
-          </div>
-        </div>
+        <CompareProvider>
+          <FilterRegistryProvider>
+            <div
+              className={`${layoutStyles} ${contentStyles} ${sharedStyles} openui-dashboard-root openui-dashboard-container`}
+            >
+              <div className="openui-dashboard-dashboard" aria-busy={refreshing || undefined}>
+                {query.errors.length && !streaming ? (
+                  <p className="openui-dashboard-dashboard-notice" role="alert">
+                    <span className="openui-dashboard-state-title">Some live data didn’t load</span>
+                    <span className="openui-dashboard-state-hint">
+                      Cards that use it may be out of date.
+                    </span>
+                  </p>
+                ) : null}
+                {/* Finished with nothing to draw: every section was invalid. */}
+                <RefreshingContext.Provider value={refreshing}>
+                  {!streaming && !children.length ? <DashboardError /> : renderNode(props.children)}
+                </RefreshingContext.Provider>
+              </div>
+            </div>
+          </FilterRegistryProvider>
+        </CompareProvider>
       </DashboardTheme>
     );
   },

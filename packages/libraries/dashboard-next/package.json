@@ -41,12 +41,15 @@
   },
   "peerDependencies": {
     "react": "catalog:",
-    "zod": "catalog:"
+    "zod": "catalog:",
+    "react-dom": "catalog:"
   },
   "devDependencies": {
     "@types/react": "catalog:",
     "react": "catalog:",
-    "zod": "catalog:"
+    "zod": "catalog:",
+    "react-dom": "catalog:",
+    "@types/react-dom": "catalog:"
   },
   "keywords": [
     "openui",
