@@ -6,23 +6,24 @@ import { groups } from "./registeredGroups";
 /*
  * The one place the dashboard's CSS is compiled. Rules reach the page in the order css() is
  * called, and equal-specificity rules rely on that order, so it is written out here instead of
- * being left to the order modules happen to be imported in. This is the order the port shipped
- * with; tests/dashboard-library/styleOrder.test.ts pins it and the bytes of every block.
+ * being left to the order modules happen to be imported in. It is the order of his stylesheet:
+ * layout, then the shared pieces, then each component's rules (a Kpi's gap must come after a
+ * Card's). tests/dashboard-library/styleOrder.test.ts pins it and the bytes of every block.
  */
 export const STYLE_ORDER = [
-  "comparison",
-  "composition",
+  "structure",
   "shared",
-  "filters",
-  "maps",
   "kpi",
   "stat",
-  "relationships",
-  "goal",
-  "keyValues",
+  "filters",
   "table",
+  "keyValues",
+  "goal",
   "trends",
-  "structure",
+  "comparison",
+  "composition",
+  "relationships",
+  "maps",
 ] as const;
 
 const blocks: Record<string, string> = Object.assign(

@@ -1,12 +1,12 @@
 # Preview comparison: dashboards-ui-library preview vs @openuidev/dashboard-library
 
-## dark: 13 pages, 195 programs, 395 units, 626985 values compared, 2096 different
+## light: 13 pages, 195 programs, 395 units, 626985 values compared, 0 different
 
 | Program                                               | Units | Values | Different | Causes |
 | ----------------------------------------------------- | ----: | -----: | --------: | ------ |
-| Retail sales                                          |    23 |  36073 |        68 | A      |
-| Marketing funnel                                      |    21 |  30708 |        66 | A      |
-| Product analytics                                     |    19 |  26059 |        66 | A      |
+| Retail sales                                          |    23 |  36073 |         0 |        |
+| Marketing funnel                                      |    21 |  30708 |         0 |        |
+| Product analytics                                     |    19 |  26059 |         0 |        |
 | Trends / TimeSeries / Single · Line                   |     1 |   1682 |         0 |        |
 | Trends / TimeSeries / Single · Area                   |     1 |   1682 |         0 |        |
 | Trends / TimeSeries / Single · Bars                   |     1 |   1681 |         0 |        |
@@ -110,7 +110,7 @@
 | Maps / PointMap / US                                  |     1 |   4656 |         0 |        |
 | Maps / PointMap / + Groups                            |     1 |   4942 |         0 |        |
 | Maps / PointMap / + Previous period                   |     1 |   5056 |         0 |        |
-| Structure / Dashboard                                 |     7 |   3262 |        19 | A      |
+| Structure / Dashboard                                 |     7 |   3262 |         0 |        |
 | Structure / Section                                   |     3 |    970 |         0 |        |
 | Structure / Section / + Title                         |     2 |    890 |         0 |        |
 | Structure / Section / + Description                   |     3 |   1010 |         0 |        |
@@ -133,46 +133,46 @@
 | Filters / CompareToggle / One                         |     1 |    327 |         0 |        |
 | Filters / CompareToggle / Several                     |     1 |    327 |         0 |        |
 | Filters / CompareToggle / + Start on                  |     1 |    367 |         0 |        |
-| Metrics / Kpis & Kpi / 1 · Number · None              |     2 |    373 |        11 | A      |
-| Metrics / Kpis & Kpi / 1 · Number · Sparkline         |     2 |    444 |        14 | A      |
-| Metrics / Kpis & Kpi / 1 · Number · Progress          |     2 |    541 |        17 | A      |
-| Metrics / Kpis & Kpi / 1 · Number · Split             |     2 |    588 |        20 | A      |
-| Metrics / Kpis & Kpi / 1 · Number · Status dots       |     2 |    549 |        28 | A      |
-| Metrics / Kpis & Kpi / 1 · Text · None                |     2 |    372 |        11 | A      |
-| Metrics / Kpis & Kpi / 2 · Number · None              |     3 |    659 |        19 | A      |
-| Metrics / Kpis & Kpi / 2 · Number · Sparkline         |     3 |    801 |        25 | A      |
-| Metrics / Kpis & Kpi / 2 · Number · Progress          |     3 |    995 |        31 | A      |
-| Metrics / Kpis & Kpi / 2 · Number · Split             |     3 |   1089 |        37 | A      |
-| Metrics / Kpis & Kpi / 2 · Number · Status dots       |     3 |   1011 |        53 | A      |
-| Metrics / Kpis & Kpi / 2 · Text · None                |     3 |    657 |        19 | A      |
-| Metrics / Kpis & Kpi / 3 · Number · None              |     4 |    945 |        27 | A      |
-| Metrics / Kpis & Kpi / 3 · Number · Sparkline         |     4 |   1158 |        36 | A      |
-| Metrics / Kpis & Kpi / 3 · Number · Progress          |     4 |   1449 |        45 | A      |
-| Metrics / Kpis & Kpi / 3 · Number · Split             |     4 |   1375 |        45 | A      |
-| Metrics / Kpis & Kpi / 3 · Number · Status dots       |     4 |   1473 |        78 | A      |
-| Metrics / Kpis & Kpi / 3 · Text · None                |     4 |    942 |        27 | A      |
-| Metrics / Kpis & Kpi / 4 · Number · None              |     5 |   1231 |        35 | A      |
-| Metrics / Kpis & Kpi / 4 · Number · Sparkline         |     5 |   1515 |        47 | A      |
-| Metrics / Kpis & Kpi / 4 · Number · Progress          |     5 |   1903 |        59 | A      |
-| Metrics / Kpis & Kpi / 4 · Number · Split             |     5 |   1661 |        53 | A      |
-| Metrics / Kpis & Kpi / 4 · Number · Status dots       |     5 |   1935 |       103 | A      |
-| Metrics / Kpis & Kpi / 4 · Text · None                |     5 |   1227 |        35 | A      |
-| Metrics / Kpis & Kpi / 5 · Number · None              |     6 |   1556 |        49 | A      |
-| Metrics / Kpis & Kpi / 5 · Number · Sparkline         |     6 |   1911 |        64 | A      |
-| Metrics / Kpis & Kpi / 5 · Number · Progress          |     6 |   2396 |        79 | A      |
-| Metrics / Kpis & Kpi / 5 · Number · Split             |     6 |   1986 |        67 | A      |
-| Metrics / Kpis & Kpi / 5 · Number · Status dots       |     6 |   2436 |       134 | A      |
-| Metrics / Kpis & Kpi / 5 · Text · None                |     6 |   1551 |        49 | A      |
-| Metrics / Kpis & Kpi / 6 · Number · None              |     7 |   1842 |        59 | A      |
-| Metrics / Kpis & Kpi / 6 · Number · Sparkline         |     7 |   2268 |        77 | A      |
-| Metrics / Kpis & Kpi / 6 · Number · Progress          |     7 |   2850 |        95 | A      |
-| Metrics / Kpis & Kpi / 6 · Number · Split             |     7 |   2535 |        89 | A      |
-| Metrics / Kpis & Kpi / 6 · Number · Status dots       |     7 |   2898 |       161 | A      |
-| Metrics / Kpis & Kpi / 6 · Text · None                |     7 |   1836 |        59 | A      |
+| Metrics / Kpis & Kpi / 1 · Number · None              |     2 |    373 |         0 |        |
+| Metrics / Kpis & Kpi / 1 · Number · Sparkline         |     2 |    444 |         0 |        |
+| Metrics / Kpis & Kpi / 1 · Number · Progress          |     2 |    541 |         0 |        |
+| Metrics / Kpis & Kpi / 1 · Number · Split             |     2 |    588 |         0 |        |
+| Metrics / Kpis & Kpi / 1 · Number · Status dots       |     2 |    549 |         0 |        |
+| Metrics / Kpis & Kpi / 1 · Text · None                |     2 |    372 |         0 |        |
+| Metrics / Kpis & Kpi / 2 · Number · None              |     3 |    659 |         0 |        |
+| Metrics / Kpis & Kpi / 2 · Number · Sparkline         |     3 |    801 |         0 |        |
+| Metrics / Kpis & Kpi / 2 · Number · Progress          |     3 |    995 |         0 |        |
+| Metrics / Kpis & Kpi / 2 · Number · Split             |     3 |   1089 |         0 |        |
+| Metrics / Kpis & Kpi / 2 · Number · Status dots       |     3 |   1011 |         0 |        |
+| Metrics / Kpis & Kpi / 2 · Text · None                |     3 |    657 |         0 |        |
+| Metrics / Kpis & Kpi / 3 · Number · None              |     4 |    945 |         0 |        |
+| Metrics / Kpis & Kpi / 3 · Number · Sparkline         |     4 |   1158 |         0 |        |
+| Metrics / Kpis & Kpi / 3 · Number · Progress          |     4 |   1449 |         0 |        |
+| Metrics / Kpis & Kpi / 3 · Number · Split             |     4 |   1375 |         0 |        |
+| Metrics / Kpis & Kpi / 3 · Number · Status dots       |     4 |   1473 |         0 |        |
+| Metrics / Kpis & Kpi / 3 · Text · None                |     4 |    942 |         0 |        |
+| Metrics / Kpis & Kpi / 4 · Number · None              |     5 |   1231 |         0 |        |
+| Metrics / Kpis & Kpi / 4 · Number · Sparkline         |     5 |   1515 |         0 |        |
+| Metrics / Kpis & Kpi / 4 · Number · Progress          |     5 |   1903 |         0 |        |
+| Metrics / Kpis & Kpi / 4 · Number · Split             |     5 |   1661 |         0 |        |
+| Metrics / Kpis & Kpi / 4 · Number · Status dots       |     5 |   1935 |         0 |        |
+| Metrics / Kpis & Kpi / 4 · Text · None                |     5 |   1227 |         0 |        |
+| Metrics / Kpis & Kpi / 5 · Number · None              |     6 |   1556 |         0 |        |
+| Metrics / Kpis & Kpi / 5 · Number · Sparkline         |     6 |   1911 |         0 |        |
+| Metrics / Kpis & Kpi / 5 · Number · Progress          |     6 |   2396 |         0 |        |
+| Metrics / Kpis & Kpi / 5 · Number · Split             |     6 |   1986 |         0 |        |
+| Metrics / Kpis & Kpi / 5 · Number · Status dots       |     6 |   2436 |         0 |        |
+| Metrics / Kpis & Kpi / 5 · Text · None                |     6 |   1551 |         0 |        |
+| Metrics / Kpis & Kpi / 6 · Number · None              |     7 |   1842 |         0 |        |
+| Metrics / Kpis & Kpi / 6 · Number · Sparkline         |     7 |   2268 |         0 |        |
+| Metrics / Kpis & Kpi / 6 · Number · Progress          |     7 |   2850 |         0 |        |
+| Metrics / Kpis & Kpi / 6 · Number · Split             |     7 |   2535 |         0 |        |
+| Metrics / Kpis & Kpi / 6 · Number · Status dots       |     7 |   2898 |         0 |        |
+| Metrics / Kpis & Kpi / 6 · Text · None                |     7 |   1836 |         0 |        |
 | Metrics / Kpis & Kpi / 6+ · Number · None             |     1 |   2342 |         0 |        |
 | Metrics / Kpis & Kpi / 6+ · Text · None               |     1 |   2374 |         0 |        |
-| Metrics / Kpis & Kpi / + Previous period              |     2 |    289 |         8 | A      |
-| Metrics / Kpis & Kpi / + Hint                         |     2 |    413 |        12 | A      |
+| Metrics / Kpis & Kpi / + Previous period              |     2 |    289 |         0 |        |
+| Metrics / Kpis & Kpi / + Hint                         |     2 |    413 |         0 |        |
 | Metrics / Stat / Higher                               |     1 |    489 |         0 |        |
 | Metrics / Stat / Lower                                |     1 |    489 |         0 |        |
 | Metrics / Stat / Neutral                              |     1 |    489 |         0 |        |
@@ -200,31 +200,13 @@
 | Tables / Table & Column / + Sparkline                 |     1 |   9878 |         0 |        |
 | Tables / Table & Column / + Status dots               |     1 |  12506 |         0 |        |
 
-### A. Real gap: 2096 differences in 42 programs
-
-A KPI card's gap is 12px in ours, 10px in the preview. kpiStyles.ts sets .openui-dashboard-kpi { gap: 10px }, but styles.ts's .openui-dashboard-card { gap: var(--openui-dashboard-space-sm) } has the same specificity and is inserted later, so it wins (the preview inserts .pdk-kpi after .pdk-card). Each KPI card is 4px taller, which moves its value, foot and visual down 2-4px and every unit below the strip by 4px per row.
-
-- Retail sales: `units › card 1 › style › gap`: preview `"10px"`, ours `"12px"`
-- Retail sales: `units › card 2 › style › gap`: preview `"10px"`, ours `"12px"`
-- Retail sales: `units › card 3 › style › gap`: preview `"10px"`, ours `"12px"`
-- Retail sales: `units › card 4 › style › gap`: preview `"10px"`, ours `"12px"`
-- Retail sales: `units › card 5 › style › gap`: preview `"10px"`, ours `"12px"`
-- Marketing funnel: `units › card 1 › style › gap`: preview `"10px"`, ours `"12px"`
-- Marketing funnel: `units › card 2 › style › gap`: preview `"10px"`, ours `"12px"`
-- Marketing funnel: `units › card 3 › style › gap`: preview `"10px"`, ours `"12px"`
-- Marketing funnel: `units › card 4 › style › gap`: preview `"10px"`, ours `"12px"`
-- Marketing funnel: `units › card 5 › style › gap`: preview `"10px"`, ours `"12px"`
-- Product analytics: `units › card 1 › style › gap`: preview `"10px"`, ours `"12px"`
-- Product analytics: `units › card 2 › style › gap`: preview `"10px"`, ours `"12px"`
-- …and 2084 more (positions and heights below it); all are in baseline.json.
-
-## light: 13 pages, 195 programs, 395 units, 626985 values compared, 2096 different
+## dark: 13 pages, 195 programs, 395 units, 626985 values compared, 0 different
 
 | Program                                               | Units | Values | Different | Causes |
 | ----------------------------------------------------- | ----: | -----: | --------: | ------ |
-| Retail sales                                          |    23 |  36073 |        68 | A      |
-| Marketing funnel                                      |    21 |  30708 |        66 | A      |
-| Product analytics                                     |    19 |  26059 |        66 | A      |
+| Retail sales                                          |    23 |  36073 |         0 |        |
+| Marketing funnel                                      |    21 |  30708 |         0 |        |
+| Product analytics                                     |    19 |  26059 |         0 |        |
 | Trends / TimeSeries / Single · Line                   |     1 |   1682 |         0 |        |
 | Trends / TimeSeries / Single · Area                   |     1 |   1682 |         0 |        |
 | Trends / TimeSeries / Single · Bars                   |     1 |   1681 |         0 |        |
@@ -328,7 +310,7 @@ A KPI card's gap is 12px in ours, 10px in the preview. kpiStyles.ts sets .openui
 | Maps / PointMap / US                                  |     1 |   4656 |         0 |        |
 | Maps / PointMap / + Groups                            |     1 |   4942 |         0 |        |
 | Maps / PointMap / + Previous period                   |     1 |   5056 |         0 |        |
-| Structure / Dashboard                                 |     7 |   3262 |        19 | A      |
+| Structure / Dashboard                                 |     7 |   3262 |         0 |        |
 | Structure / Section                                   |     3 |    970 |         0 |        |
 | Structure / Section / + Title                         |     2 |    890 |         0 |        |
 | Structure / Section / + Description                   |     3 |   1010 |         0 |        |
@@ -351,46 +333,46 @@ A KPI card's gap is 12px in ours, 10px in the preview. kpiStyles.ts sets .openui
 | Filters / CompareToggle / One                         |     1 |    327 |         0 |        |
 | Filters / CompareToggle / Several                     |     1 |    327 |         0 |        |
 | Filters / CompareToggle / + Start on                  |     1 |    367 |         0 |        |
-| Metrics / Kpis & Kpi / 1 · Number · None              |     2 |    373 |        11 | A      |
-| Metrics / Kpis & Kpi / 1 · Number · Sparkline         |     2 |    444 |        14 | A      |
-| Metrics / Kpis & Kpi / 1 · Number · Progress          |     2 |    541 |        17 | A      |
-| Metrics / Kpis & Kpi / 1 · Number · Split             |     2 |    588 |        20 | A      |
-| Metrics / Kpis & Kpi / 1 · Number · Status dots       |     2 |    549 |        28 | A      |
-| Metrics / Kpis & Kpi / 1 · Text · None                |     2 |    372 |        11 | A      |
-| Metrics / Kpis & Kpi / 2 · Number · None              |     3 |    659 |        19 | A      |
-| Metrics / Kpis & Kpi / 2 · Number · Sparkline         |     3 |    801 |        25 | A      |
-| Metrics / Kpis & Kpi / 2 · Number · Progress          |     3 |    995 |        31 | A      |
-| Metrics / Kpis & Kpi / 2 · Number · Split             |     3 |   1089 |        37 | A      |
-| Metrics / Kpis & Kpi / 2 · Number · Status dots       |     3 |   1011 |        53 | A      |
-| Metrics / Kpis & Kpi / 2 · Text · None                |     3 |    657 |        19 | A      |
-| Metrics / Kpis & Kpi / 3 · Number · None              |     4 |    945 |        27 | A      |
-| Metrics / Kpis & Kpi / 3 · Number · Sparkline         |     4 |   1158 |        36 | A      |
-| Metrics / Kpis & Kpi / 3 · Number · Progress          |     4 |   1449 |        45 | A      |
-| Metrics / Kpis & Kpi / 3 · Number · Split             |     4 |   1375 |        45 | A      |
-| Metrics / Kpis & Kpi / 3 · Number · Status dots       |     4 |   1473 |        78 | A      |
-| Metrics / Kpis & Kpi / 3 · Text · None                |     4 |    942 |        27 | A      |
-| Metrics / Kpis & Kpi / 4 · Number · None              |     5 |   1231 |        35 | A      |
-| Metrics / Kpis & Kpi / 4 · Number · Sparkline         |     5 |   1515 |        47 | A      |
-| Metrics / Kpis & Kpi / 4 · Number · Progress          |     5 |   1903 |        59 | A      |
-| Metrics / Kpis & Kpi / 4 · Number · Split             |     5 |   1661 |        53 | A      |
-| Metrics / Kpis & Kpi / 4 · Number · Status dots       |     5 |   1935 |       103 | A      |
-| Metrics / Kpis & Kpi / 4 · Text · None                |     5 |   1227 |        35 | A      |
-| Metrics / Kpis & Kpi / 5 · Number · None              |     6 |   1556 |        49 | A      |
-| Metrics / Kpis & Kpi / 5 · Number · Sparkline         |     6 |   1911 |        64 | A      |
-| Metrics / Kpis & Kpi / 5 · Number · Progress          |     6 |   2396 |        79 | A      |
-| Metrics / Kpis & Kpi / 5 · Number · Split             |     6 |   1986 |        67 | A      |
-| Metrics / Kpis & Kpi / 5 · Number · Status dots       |     6 |   2436 |       134 | A      |
-| Metrics / Kpis & Kpi / 5 · Text · None                |     6 |   1551 |        49 | A      |
-| Metrics / Kpis & Kpi / 6 · Number · None              |     7 |   1842 |        59 | A      |
-| Metrics / Kpis & Kpi / 6 · Number · Sparkline         |     7 |   2268 |        77 | A      |
-| Metrics / Kpis & Kpi / 6 · Number · Progress          |     7 |   2850 |        95 | A      |
-| Metrics / Kpis & Kpi / 6 · Number · Split             |     7 |   2535 |        89 | A      |
-| Metrics / Kpis & Kpi / 6 · Number · Status dots       |     7 |   2898 |       161 | A      |
-| Metrics / Kpis & Kpi / 6 · Text · None                |     7 |   1836 |        59 | A      |
+| Metrics / Kpis & Kpi / 1 · Number · None              |     2 |    373 |         0 |        |
+| Metrics / Kpis & Kpi / 1 · Number · Sparkline         |     2 |    444 |         0 |        |
+| Metrics / Kpis & Kpi / 1 · Number · Progress          |     2 |    541 |         0 |        |
+| Metrics / Kpis & Kpi / 1 · Number · Split             |     2 |    588 |         0 |        |
+| Metrics / Kpis & Kpi / 1 · Number · Status dots       |     2 |    549 |         0 |        |
+| Metrics / Kpis & Kpi / 1 · Text · None                |     2 |    372 |         0 |        |
+| Metrics / Kpis & Kpi / 2 · Number · None              |     3 |    659 |         0 |        |
+| Metrics / Kpis & Kpi / 2 · Number · Sparkline         |     3 |    801 |         0 |        |
+| Metrics / Kpis & Kpi / 2 · Number · Progress          |     3 |    995 |         0 |        |
+| Metrics / Kpis & Kpi / 2 · Number · Split             |     3 |   1089 |         0 |        |
+| Metrics / Kpis & Kpi / 2 · Number · Status dots       |     3 |   1011 |         0 |        |
+| Metrics / Kpis & Kpi / 2 · Text · None                |     3 |    657 |         0 |        |
+| Metrics / Kpis & Kpi / 3 · Number · None              |     4 |    945 |         0 |        |
+| Metrics / Kpis & Kpi / 3 · Number · Sparkline         |     4 |   1158 |         0 |        |
+| Metrics / Kpis & Kpi / 3 · Number · Progress          |     4 |   1449 |         0 |        |
+| Metrics / Kpis & Kpi / 3 · Number · Split             |     4 |   1375 |         0 |        |
+| Metrics / Kpis & Kpi / 3 · Number · Status dots       |     4 |   1473 |         0 |        |
+| Metrics / Kpis & Kpi / 3 · Text · None                |     4 |    942 |         0 |        |
+| Metrics / Kpis & Kpi / 4 · Number · None              |     5 |   1231 |         0 |        |
+| Metrics / Kpis & Kpi / 4 · Number · Sparkline         |     5 |   1515 |         0 |        |
+| Metrics / Kpis & Kpi / 4 · Number · Progress          |     5 |   1903 |         0 |        |
+| Metrics / Kpis & Kpi / 4 · Number · Split             |     5 |   1661 |         0 |        |
+| Metrics / Kpis & Kpi / 4 · Number · Status dots       |     5 |   1935 |         0 |        |
+| Metrics / Kpis & Kpi / 4 · Text · None                |     5 |   1227 |         0 |        |
+| Metrics / Kpis & Kpi / 5 · Number · None              |     6 |   1556 |         0 |        |
+| Metrics / Kpis & Kpi / 5 · Number · Sparkline         |     6 |   1911 |         0 |        |
+| Metrics / Kpis & Kpi / 5 · Number · Progress          |     6 |   2396 |         0 |        |
+| Metrics / Kpis & Kpi / 5 · Number · Split             |     6 |   1986 |         0 |        |
+| Metrics / Kpis & Kpi / 5 · Number · Status dots       |     6 |   2436 |         0 |        |
+| Metrics / Kpis & Kpi / 5 · Text · None                |     6 |   1551 |         0 |        |
+| Metrics / Kpis & Kpi / 6 · Number · None              |     7 |   1842 |         0 |        |
+| Metrics / Kpis & Kpi / 6 · Number · Sparkline         |     7 |   2268 |         0 |        |
+| Metrics / Kpis & Kpi / 6 · Number · Progress          |     7 |   2850 |         0 |        |
+| Metrics / Kpis & Kpi / 6 · Number · Split             |     7 |   2535 |         0 |        |
+| Metrics / Kpis & Kpi / 6 · Number · Status dots       |     7 |   2898 |         0 |        |
+| Metrics / Kpis & Kpi / 6 · Text · None                |     7 |   1836 |         0 |        |
 | Metrics / Kpis & Kpi / 6+ · Number · None             |     1 |   2342 |         0 |        |
 | Metrics / Kpis & Kpi / 6+ · Text · None               |     1 |   2374 |         0 |        |
-| Metrics / Kpis & Kpi / + Previous period              |     2 |    289 |         8 | A      |
-| Metrics / Kpis & Kpi / + Hint                         |     2 |    413 |        12 | A      |
+| Metrics / Kpis & Kpi / + Previous period              |     2 |    289 |         0 |        |
+| Metrics / Kpis & Kpi / + Hint                         |     2 |    413 |         0 |        |
 | Metrics / Stat / Higher                               |     1 |    489 |         0 |        |
 | Metrics / Stat / Lower                                |     1 |    489 |         0 |        |
 | Metrics / Stat / Neutral                              |     1 |    489 |         0 |        |
@@ -417,21 +399,3 @@ A KPI card's gap is 12px in ours, 10px in the preview. kpiStyles.ts sets .openui
 | Tables / Table & Column / + Date                      |     1 |  11349 |         0 |        |
 | Tables / Table & Column / + Sparkline                 |     1 |   9878 |         0 |        |
 | Tables / Table & Column / + Status dots               |     1 |  12506 |         0 |        |
-
-### A. Real gap: 2096 differences in 42 programs
-
-A KPI card's gap is 12px in ours, 10px in the preview. kpiStyles.ts sets .openui-dashboard-kpi { gap: 10px }, but styles.ts's .openui-dashboard-card { gap: var(--openui-dashboard-space-sm) } has the same specificity and is inserted later, so it wins (the preview inserts .pdk-kpi after .pdk-card). Each KPI card is 4px taller, which moves its value, foot and visual down 2-4px and every unit below the strip by 4px per row.
-
-- Retail sales: `units › card 1 › style › gap`: preview `"10px"`, ours `"12px"`
-- Retail sales: `units › card 2 › style › gap`: preview `"10px"`, ours `"12px"`
-- Retail sales: `units › card 3 › style › gap`: preview `"10px"`, ours `"12px"`
-- Retail sales: `units › card 4 › style › gap`: preview `"10px"`, ours `"12px"`
-- Retail sales: `units › card 5 › style › gap`: preview `"10px"`, ours `"12px"`
-- Marketing funnel: `units › card 1 › style › gap`: preview `"10px"`, ours `"12px"`
-- Marketing funnel: `units › card 2 › style › gap`: preview `"10px"`, ours `"12px"`
-- Marketing funnel: `units › card 3 › style › gap`: preview `"10px"`, ours `"12px"`
-- Marketing funnel: `units › card 4 › style › gap`: preview `"10px"`, ours `"12px"`
-- Marketing funnel: `units › card 5 › style › gap`: preview `"10px"`, ours `"12px"`
-- Product analytics: `units › card 1 › style › gap`: preview `"10px"`, ours `"12px"`
-- Product analytics: `units › card 2 › style › gap`: preview `"10px"`, ours `"12px"`
-- …and 2084 more (positions and heights below it); all are in baseline.json.
