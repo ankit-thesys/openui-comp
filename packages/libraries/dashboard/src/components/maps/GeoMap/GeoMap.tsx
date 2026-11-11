@@ -29,6 +29,7 @@ export interface GeoMapProps {
   limit?: number;
   view?: "count" | "total";
 }
+// ---------- GeoMap ----------
 export function GeoMap(props: GeoMapProps) {
   const region = props.region === "us" ? "us" : "world";
   const { shapes, failed } = useShapes(region);

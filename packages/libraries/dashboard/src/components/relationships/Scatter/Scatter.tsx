@@ -162,6 +162,7 @@ export interface ScatterProps {
   sizeLabel?: string;
   quadrants?: string[];
 }
+// ---------- Scatter ----------
 export function Scatter(props: ScatterProps) {
   const [active, setActive] = useState<string | null>(null);
   // The hovered dot: its position and area, for the guides and the ring around it.

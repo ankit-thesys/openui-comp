@@ -1,8 +1,9 @@
 "use client";
 import { defineComponent } from "@openuidev/react-lang";
-import { Funnel } from "../../../components/flow/Funnel";
+import { Funnel, type FunnelProps } from "../../../components/flow/Funnel";
 import { nodeList } from "../../../shared/values";
-import { funnelPropsSchema } from "./schema";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
+import { funnelPropsSchema, type FunnelSchemaProps } from "./schema";
 export const FunnelComponent = defineComponent({
   name: "Funnel",
   props: funnelPropsSchema,
@@ -15,3 +16,6 @@ export const FunnelComponent = defineComponent({
     />
   ),
 });
+
+// Every schema field reaches Funnel.
+export type FunnelSchemaCovered = Covered<SchemaCoverage<FunnelSchemaProps, FunnelProps>>;

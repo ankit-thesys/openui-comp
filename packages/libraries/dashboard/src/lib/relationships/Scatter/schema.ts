@@ -1,6 +1,6 @@
 import { z } from "zod/v4";
 import { formatSchema } from "../../../shared/format";
-import { Reference } from "../../../trends/charts";
+import { ReferenceComponent } from "../../trends/Reference";
 const pointSchema = z.object({
   label: z.string(),
   // null when a measure is missing: the point isn't drawn, and the chart names it under the plot.
@@ -16,7 +16,7 @@ export const scatterPropsSchema = z.object({
   yLabel: z.string(),
   xFormat: formatSchema.optional(),
   yFormat: formatSchema.optional(),
-  references: z.array(Reference.ref).optional(),
+  references: z.array(ReferenceComponent.ref).optional(),
   sizeLabel: z.string().optional(),
   quadrants: z.array(z.string()).optional(),
 });

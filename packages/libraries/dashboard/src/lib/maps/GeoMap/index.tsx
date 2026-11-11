@@ -1,6 +1,7 @@
 "use client";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { GeoMap } from "../../../components/maps/GeoMap";
+import { GeoMap, type GeoMapProps } from "../../../components/maps/GeoMap";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { geoMapPropsSchema, type GeoMapSchemaProps } from "./schema";
 export const GeoMapComponent = defineComponent({
   name: "GeoMap",
@@ -11,3 +12,6 @@ export const GeoMapComponent = defineComponent({
     return <GeoMap {...props} />;
   },
 });
+
+// Every schema field reaches GeoMap.
+export type GeoMapSchemaCovered = Covered<SchemaCoverage<GeoMapSchemaProps, GeoMapProps>>;

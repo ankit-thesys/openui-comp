@@ -32,6 +32,7 @@ export interface WaterfallProps {
   subtotals?: string[];
 }
 const WATERFALL_BAR = 16;
+// ---------- Waterfall: how a total moved ----------
 export function Waterfall(props: WaterfallProps) {
   const [chartRef, width] = useWidth<HTMLDivElement>();
   const wfTex = `wf${useId().replace(/:/g, "")}`;

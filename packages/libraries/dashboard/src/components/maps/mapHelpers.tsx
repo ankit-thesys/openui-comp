@@ -1,5 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
+// Through the old path on purpose: maps.browser.test.tsx mocks the loader there. #241 moves the
+// import to ../../shared/atlas together with that mock, when it removes the shim.
 import { loadShapes, retryShapes, type Shape } from "../../maps/atlas";
 import { Empty } from "../shared/States";
 /* ---------- Region matching ---------- */

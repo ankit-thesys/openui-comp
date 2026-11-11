@@ -24,6 +24,7 @@ export interface CohortsProps {
   view?: "percent" | "people";
   showValues?: boolean;
 }
+// ---------- Cohorts: retention grid ----------
 export function Cohorts(props: CohortsProps) {
   const hover = useRowHover();
   // One Show switch, as on Heatmap: None (the default), Percent, or Count (people: size × rate).

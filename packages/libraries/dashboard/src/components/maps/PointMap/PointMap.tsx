@@ -11,6 +11,7 @@ import { PartNote } from "../../shared/PartNote";
 import { PointLabels } from "../../shared/PointLabels";
 import { RankedList } from "../../shared/RankedList";
 import { useRowHover } from "../../shared/RowHover";
+// Shared with Scatter, as in his library (relations.tsx).
 import { dotFill, ScatterMark } from "../../shared/ScatterMark";
 import { SrTable } from "../../shared/SrTable";
 import { Empty } from "../../shared/States";
@@ -29,6 +30,7 @@ export interface PointMapProps {
   previous?: number[];
   goodWhen?: "up" | "down" | "neutral";
 }
+// ---------- PointMap: values at places ----------
 export function PointMap(props: PointMapProps) {
   const region = props.region === "us" ? "us" : "world";
   const { shapes, failed } = useShapes(region);

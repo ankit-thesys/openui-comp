@@ -1,7 +1,8 @@
 "use client";
 import { defineComponent } from "@openuidev/react-lang";
-import { SegmentedBar } from "../../../components/composition/SegmentedBar";
-import { segmentedBarPropsSchema } from "./schema";
+import { SegmentedBar, type SegmentedBarProps } from "../../../components/composition/SegmentedBar";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
+import { segmentedBarPropsSchema, type SegmentedBarSchemaProps } from "./schema";
 export const SegmentedBarComponent = defineComponent({
   name: "SegmentedBar",
   props: segmentedBarPropsSchema,
@@ -9,3 +10,8 @@ export const SegmentedBarComponent = defineComponent({
     "Part of a whole as one bar with a legend of values and shares; up to 8 parts. Inside a headline tile, use Kpi split instead.",
   component: ({ props }) => <SegmentedBar {...props} />,
 });
+
+// Every schema field reaches SegmentedBar.
+export type SegmentedBarSchemaCovered = Covered<
+  SchemaCoverage<SegmentedBarSchemaProps, SegmentedBarProps>
+>;

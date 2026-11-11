@@ -1,3 +1,4 @@
+"use client";
 import { useId, useState } from "react";
 import { Treemap as RechartsTreemap, ResponsiveContainer, Tooltip } from "recharts";
 import { PLOT_FLOOR, seriesColor } from "../../../shared/chartHelpers";

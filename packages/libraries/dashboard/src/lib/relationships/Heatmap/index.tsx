@@ -1,6 +1,7 @@
 "use client";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { Heatmap } from "../../../components/relationships/Heatmap";
+import { Heatmap, type HeatmapProps } from "../../../components/relationships/Heatmap";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { heatmapPropsSchema, type HeatmapSchemaProps } from "./schema";
 export const HeatmapComponent = defineComponent({
   name: "Heatmap",
@@ -11,3 +12,6 @@ export const HeatmapComponent = defineComponent({
     return <Heatmap {...props} />;
   },
 });
+
+// Every schema field reaches Heatmap.
+export type HeatmapSchemaCovered = Covered<SchemaCoverage<HeatmapSchemaProps, HeatmapProps>>;

@@ -1,7 +1,8 @@
 "use client";
 import { defineComponent } from "@openuidev/react-lang";
-import { Donut } from "../../../components/composition/Donut";
-import { donutPropsSchema } from "./schema";
+import { Donut, type DonutProps } from "../../../components/composition/Donut";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
+import { donutPropsSchema, type DonutSchemaProps } from "./schema";
 export const DonutComponent = defineComponent({
   name: "Donut",
   props: donutPropsSchema,
@@ -9,3 +10,6 @@ export const DonutComponent = defineComponent({
     "Part of a whole with the total as the headline, up to 8 parts; past 8, the smallest fold into Other. For a compact strip, use SegmentedBar.",
   component: ({ props }) => <Donut {...props} />,
 });
+
+// Every schema field reaches Donut.
+export type DonutSchemaCovered = Covered<SchemaCoverage<DonutSchemaProps, DonutProps>>;

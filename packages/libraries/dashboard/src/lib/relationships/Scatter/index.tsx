@@ -1,8 +1,9 @@
 "use client";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { Scatter } from "../../../components/relationships/Scatter";
+import { Scatter, type ScatterProps } from "../../../components/relationships/Scatter";
+import type { ReferenceProps } from "../../../shared/trends";
 import { nodeList } from "../../../shared/values";
-import type { ReferenceProps } from "../../../trends/charts";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { scatterPropsSchema, type ScatterSchemaProps } from "./schema";
 export const ScatterComponent = defineComponent({
   name: "Scatter",
@@ -13,3 +14,6 @@ export const ScatterComponent = defineComponent({
     return <Scatter {...props} references={nodeList<ReferenceProps>(props.references)} />;
   },
 });
+
+// Every schema field reaches Scatter.
+export type ScatterSchemaCovered = Covered<SchemaCoverage<ScatterSchemaProps, ScatterProps>>;

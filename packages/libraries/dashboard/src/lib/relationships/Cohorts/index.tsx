@@ -1,6 +1,7 @@
 "use client";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { Cohorts } from "../../../components/relationships/Cohorts";
+import { Cohorts, type CohortsProps } from "../../../components/relationships/Cohorts";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { cohortsPropsSchema, type CohortsSchemaProps } from "./schema";
 export const CohortsComponent = defineComponent({
   name: "Cohorts",
@@ -11,3 +12,6 @@ export const CohortsComponent = defineComponent({
     return <Cohorts {...props} />;
   },
 });
+
+// Every schema field reaches Cohorts.
+export type CohortsSchemaCovered = Covered<SchemaCoverage<CohortsSchemaProps, CohortsProps>>;

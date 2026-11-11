@@ -1,3 +1,5 @@
+// Rules Cohorts and Heatmap share: the grid, its hover and its cells. styles.ts joins them
+// with Cohorts' own rules, in their original order.
 export const relationshipsRules = [
   String.raw`  .openui-dashboard-grid-hover td {
     transition: transform 150ms;
@@ -17,16 +19,8 @@ export const relationshipsRules = [
   .openui-dashboard-cohort tr > td.openui-dashboard-cohort-size {
     border-radius: var(--openui-dashboard-radius-sm);
   }
-  .openui-dashboard-cohort-all .openui-dashboard-cohort-label,
-  .openui-dashboard-cohort-all .openui-dashboard-cohort-size {
-    font-weight: 600;
-    color: var(--openui-dashboard-ink);
-  }
-  .openui-dashboard-cohort tr.openui-dashboard-cohort-gap > td {
-    height: 8px;
-    padding: 0;
-  }
-  .openui-dashboard-card-body > .openui-dashboard-grid-hover {
+`,
+  String.raw`  .openui-dashboard-card-body > .openui-dashboard-grid-hover {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
@@ -77,11 +71,8 @@ export const relationshipsRules = [
     font-weight: 500;
     text-align: left;
   }
-  .openui-dashboard-cohort td.openui-dashboard-cohort-size {
-    text-align: left;
-    color: var(--openui-dashboard-ink-muted);
-  }
-  .openui-dashboard-cohort td.openui-dashboard-cohort-empty {
+`,
+  String.raw`  .openui-dashboard-cohort td.openui-dashboard-cohort-empty {
     /* Not reached yet: a barely-there fill (2% ink, half of W0's), so the grid stays whole while the triangle still reads. */
     background: color-mix(in srgb, var(--openui-dashboard-ink) 2%, transparent);
   }

@@ -26,6 +26,7 @@ export interface HeatmapProps {
   midpoint?: number;
   view?: "count" | "total" | "row";
 }
+// ---------- Heatmap: two categorical axes ----------
 export function Heatmap(props: HeatmapProps) {
   const hover = useRowHover();
   // One Show switch: None (the default) prints nothing; Count, % of total or % of row prints that

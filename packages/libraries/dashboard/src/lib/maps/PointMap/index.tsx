@@ -1,6 +1,7 @@
 "use client";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { PointMap } from "../../../components/maps/PointMap";
+import { PointMap, type PointMapProps } from "../../../components/maps/PointMap";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { pointMapPropsSchema, type PointMapSchemaProps } from "./schema";
 export const PointMapComponent = defineComponent({
   name: "PointMap",
@@ -11,3 +12,6 @@ export const PointMapComponent = defineComponent({
     return <PointMap {...props} />;
   },
 });
+
+// Every schema field reaches PointMap.
+export type PointMapSchemaCovered = Covered<SchemaCoverage<PointMapSchemaProps, PointMapProps>>;
