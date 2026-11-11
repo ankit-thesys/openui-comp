@@ -1,7 +1,7 @@
 import type { ComponentGroup } from "@openuidev/react-lang";
-import { FORMAT_PRESETS } from "./format";
-import { isRegistered } from "./groups";
-import { WIDTHS } from "./schema";
+import { FORMAT_PRESETS } from "../../shared/format";
+import { WIDTHS } from "../../shared/schema";
+import { isRegistered } from "../defineComponents";
 
 /**
  * His prompt groups and notes (library.ts), written out in full once. A group shows only the

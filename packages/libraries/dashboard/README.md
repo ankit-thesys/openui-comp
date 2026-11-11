@@ -80,11 +80,41 @@ The default series colours are ordered so that neighbouring series stay distingu
 
 ## Developing
 
-Each component group has a folder in `src/` and registers its components in `src/groups/<group>.ts`. The registry in `src/groups/index.ts` and the prompt notes in `src/prompt.ts` place components by name.
+```text
+src/
+  components/<group>/<Name>/  # plain React component, props, raw style fragments, index.ts
+  components/shared/<Name>/  # shared visual pieces
+  components/ThemeProvider/
+  lib/<group>/<Name>/         # schema.ts and index.tsx (OpenUI Lang definition)
+  lib/<group>/index.ts        # group definitions and style classes
+  lib/defineComponents.ts     # registry, slots and prompt order
+  lib/library.tsx             # createLibrary and shared schema names
+  lib/prompt-options/         # prompt groups and notes
+  shared/                    # contexts, Format and pure helpers
+```
 
-Styles use the `css` tag from `@openuidev/react-components`. Two rules keep its compiler from breaking a selector, and the test package lints for both:
+Definitions import components; components import shared code. Nothing imports upward into
+`lib/`, and `shared/` imports neither components nor definitions. Runtime adapters can live in
+`shared/` so visual components consume plain state. Groups awaiting migration still live in
+their original `src/` folders; their `lib/<group>/index.ts` registrations point there.
 
-- a functional pseudo-class (`:has()`, `:not()`, `:is()`, `:nth-child()`) may only end a selector;
-- never put a comma inside its parentheses. Write the alternatives as separate selectors.
+Card is the worked example: `components/structure/Card/Card.tsx` exports `Card` and its
+`CardProps` interface. It receives rendered children, controls and a streaming boolean, and owns
+the header slot, layout and DOM watcher that identifies the card being written.
+`lib/structure/Card/schema.ts` exports `cardPropsSchema` and its inferred `CardSchemaProps`.
+`lib/structure/Card/index.tsx` exports `CardComponent`: the unchanged OpenUI Lang name, schema
+and description, plus a render function that reads runtime state and resolves nodes into `Card`
+props. Components import neither zod nor `@openuidev/react-lang` nor `lib/`.
 
-The tests live in `tests/dashboard-library` at the repository root. See its README for how to run them.
+Each component's `<name>.styles.ts` exports raw `String.raw` fragments in `<name>Rules`.
+The group's assembler orders them and compiles once with `css(...)` from
+`@openuidev/react-components`. Keep selectors, declarations and complete responsive blocks in
+their original order: goober merges duplicate at-rule blocks into the first one's position.
+The dashboard's root classes are joined in `lib/styles.ts`: structure, shared, then group styles
+in their fixed order. Two selector rules are checked by the test package:
+
+- A functional pseudo-class (`:has()`, `:not()`, `:is()`, `:nth-child()`) may only end a selector.
+- Never put a comma inside its parentheses; write alternatives as separate selectors.
+
+Tests live in `tests/dashboard-library` at the repository root. Its boundary test checks the
+dependency direction. See its README for how to run the tests.

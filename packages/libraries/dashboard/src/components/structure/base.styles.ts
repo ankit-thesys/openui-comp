@@ -1,5 +1,6 @@
-import { css } from "@openuidev/react-components";
-export const layoutStyles = css`
+// Raw fragments compile together in structure/styles.ts to preserve the cascade.
+export const baseRules = [
+  String.raw`
   color: var(--openui-dashboard-ink);
   background: var(--openui-dashboard-page);
   font-family: inherit;
@@ -26,80 +27,8 @@ export const layoutStyles = css`
     background: color-mix(in srgb, var(--openui-dashboard-ink) 18%, transparent);
   }
 
-  .openui-dashboard-dashboard {
-    display: flex;
-    flex-direction: column;
-    gap: var(--openui-dashboard-space-xl);
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: var(--openui-dashboard-space-xl) var(--openui-dashboard-space-2xl) 48px;
-  }
-
-  .openui-dashboard-section {
-    display: flex;
-    flex-direction: column;
-    gap: var(--openui-dashboard-space-sm);
-  }
-
-  .openui-dashboard-section-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 8px 14px;
-    border-radius: var(--openui-dashboard-radius-md);
-    background: color-mix(in srgb, var(--openui-dashboard-ink) 3%, transparent);
-  }
-  .openui-dashboard-section-title {
-    margin: 0;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: -0.005em;
-  }
-  .openui-dashboard-section-description {
-    margin: 0;
-    font-size: 12px;
-    color: var(--openui-dashboard-ink-muted);
-    text-align: right;
-  }
-
-  .openui-dashboard-row {
-    display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: var(--openui-dashboard-space-md);
-  }
-  .openui-dashboard-cell {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-  }
-  .openui-dashboard-cell > * {
-    flex: 1 1 auto;
-  }
-
-  .openui-dashboard-cell > .openui-dashboard-card {
-    min-height: var(--openui-dashboard-row-h, auto);
-  }
-  .openui-dashboard-w-quarter {
-    grid-column: span 3;
-  }
-  .openui-dashboard-w-third {
-    grid-column: span 4;
-  }
-  .openui-dashboard-w-half {
-    grid-column: span 6;
-  }
-  .openui-dashboard-w-two-thirds {
-    grid-column: span 8;
-  }
-  .openui-dashboard-w-three-quarters {
-    grid-column: span 9;
-  }
-  .openui-dashboard-w-full {
-    grid-column: span 12;
-  }
-
-  @container openui-dashboard (width > 1100px) {
+`,
+  String.raw`  @container openui-dashboard (width > 1100px) {
     .openui-dashboard-cell[data-wide-span] {
       grid-column: span var(--openui-dashboard-wide-span);
     }
@@ -154,78 +83,8 @@ export const layoutStyles = css`
   }
   container: openui-dashboard / inline-size;
 
-  .openui-dashboard-card {
-    display: flex;
-    flex-direction: column;
-    gap: var(--openui-dashboard-space-sm);
-    min-width: 0;
-    padding: var(--openui-dashboard-space-lg) var(--openui-dashboard-space-xl);
-    border: 1px solid var(--openui-dashboard-border);
-    border-radius: var(--openui-dashboard-radius);
-    background: var(--openui-dashboard-surface);
-    box-shadow: var(--openui-dashboard-shadow);
-  }
-  .openui-dashboard-card-head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 8px 12px;
-  }
-
-  .openui-dashboard-card {
-    position: relative;
-    container-type: inline-size;
-  }
-  /* Hidden until it holds a control (no filters, no chart switch), so the header keeps no
-     empty gap for it. */
-  .openui-dashboard-card-controls {
-    display: none;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 6px;
-    margin-left: auto;
-  }
-  .openui-dashboard-card-slot {
-    display: contents;
-  }
-
-  /* His :not(:has(button, select, input)), turned around: goober breaks a selector with a comma
-     inside parentheses, or with anything after a ")", so each :has() ends its own selector. */
-  .openui-dashboard-card-controls:has(button),
-  .openui-dashboard-card-controls:has(select),
-  .openui-dashboard-card-controls:has(input) {
-    display: flex;
-  }
-  @container (max-width: 520px) {
-    .openui-dashboard-card-head {
-      flex-direction: column;
-    }
-    .openui-dashboard-card-controls {
-      margin-left: 0;
-    }
-  }
-  .openui-dashboard-card-title {
-    margin: 0;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.35;
-  }
-  .openui-dashboard-card-subtitle {
-    margin: 2px 0 0;
-    font-size: 12px;
-    line-height: 1.4;
-    color: var(--openui-dashboard-ink-muted);
-  }
-  .openui-dashboard-card-body {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    gap: var(--openui-dashboard-space-sm);
-    min-width: 0;
-  }
-
-  .openui-dashboard-state {
+`,
+  String.raw`  .openui-dashboard-state {
     position: relative;
     display: flex;
     flex: 1 1 auto;
@@ -463,38 +322,8 @@ export const layoutStyles = css`
     color: var(--openui-dashboard-warning);
   }
 
-  /* Live data failed somewhere: one quiet line above the sections. */
-  .openui-dashboard-dashboard-notice {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 4px 8px;
-    margin: 0;
-    padding: 10px 12px;
-    border-radius: var(--openui-dashboard-radius-sm);
-    background: color-mix(in srgb, var(--openui-dashboard-ink) 2.5%, transparent);
-    box-shadow: inset 2px 0 0 var(--openui-dashboard-bad-mark);
-  }
-
-  /* The whole dashboard couldn't be drawn. */
-  .openui-dashboard-dashboard-error {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    min-height: 360px;
-    padding: 24px;
-    border-radius: var(--openui-dashboard-radius-md);
-    background: var(--openui-dashboard-surface);
-    box-shadow: inset 0 0 0 1px var(--openui-dashboard-border);
-    text-align: center;
-  }
-  .openui-dashboard-dashboard-error .openui-dashboard-state-icon {
-    color: var(--openui-dashboard-warning-mark);
-  }
-
-  /* Loading: the skeleton holds still; the card's one shimmer does the moving. */
+`,
+  String.raw`  /* Loading: the skeleton holds still; the card's one shimmer does the moving. */
   /* Tones as shares of the ink: the line (or tile value bar) one step above the
    big block, so it reads as the heading placeholder. Dark needs a little more to show. */
 
@@ -531,4 +360,5 @@ export const layoutStyles = css`
     white-space: nowrap;
     border: 0;
   }
-`;
+`,
+] as const;

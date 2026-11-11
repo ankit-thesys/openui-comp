@@ -1,32 +1,5 @@
 import { z } from "zod/v4";
-import { comparison } from "./comparison";
-import { composition } from "./composition";
-import { filters } from "./filters";
-import type { Group } from "./group";
-import { maps } from "./maps";
-import { metrics } from "./metrics";
-import { relationships } from "./relationships";
-import { tables } from "./tables";
-import { trends } from "./trends";
-
-/*
- * The registry. Every group is imported here once, so a group ticket edits only its own file.
- * Which slot a component joins and where it sits in the prompt are his library's, written out
- * below by name: a component is used as soon as its group registers it.
- */
-const groups: Group[] = [
-  metrics,
-  filters,
-  tables,
-  trends,
-  comparison,
-  composition,
-  relationships,
-  maps,
-];
-
-export const groupComponents = groups.flatMap((group) => group.components);
-export const groupStyles = groups.flatMap((group) => group.styles).join(" ");
+import { groupComponents } from "./registeredGroups";
 
 const LAYOUT = ["Dashboard", "Section", "Row", "Card"];
 const byName = new Map(groupComponents.map((component) => [component.name, component]));

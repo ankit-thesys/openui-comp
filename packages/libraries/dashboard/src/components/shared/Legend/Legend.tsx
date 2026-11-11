@@ -1,8 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Symbols } from "recharts";
 import { useIsomorphicLayoutEffect } from "../../../shared/hooks";
+
+import type { LegendEntry } from "../../../shared/legend";
+export type { LegendEntry, MarkShape } from "../../../shared/legend";
 
 export type LegendMarkProps = { entry: LegendEntry };
 
@@ -12,20 +15,6 @@ export type LegendProps = {
 };
 
 /* ---------- Legend ---------- */
-
-export type MarkShape = "circle" | "square" | "triangle" | "diamond" | "cross" | "star" | "wye";
-
-export type LegendEntry = {
-  name: string;
-  color: string;
-  dashed?: boolean;
-  dotted?: boolean;
-  line?: boolean;
-  hidden?: boolean;
-  shape?: MarkShape;
-  /** The chart's own mark, drawn in place of the swatch (a dumbbell's ring, a connector's pill). */
-  mark?: ReactNode;
-};
 
 function LegendMark({ entry }: LegendMarkProps) {
   if (entry.mark !== undefined) return <>{entry.mark}</>;

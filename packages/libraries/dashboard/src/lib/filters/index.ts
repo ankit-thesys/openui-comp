@@ -7,9 +7,9 @@ import {
   PeriodPicker,
   SearchFilter,
   SelectFilter,
-} from "../filters/filters";
-import { filtersStyles } from "../filters/styles";
-import type { Group } from "./group";
+} from "../../filters/filters";
+import { filtersStyles } from "../../filters/styles";
+import type { Group } from "../group";
 
 export const filters: Group = {
   components: [
