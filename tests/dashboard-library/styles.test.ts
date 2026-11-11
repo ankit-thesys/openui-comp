@@ -18,7 +18,10 @@ function styleFiles(dir: string): string[] {
   return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const path = join(dir, entry.name);
     if (entry.isDirectory()) return styleFiles(path);
-    return /\.tsx?$/.test(entry.name) && readFileSync(path, "utf8").includes("css`") ? [path] : [];
+    return entry.name.endsWith(".styles.ts") ||
+      (/\.tsx?$/.test(entry.name) && readFileSync(path, "utf8").includes("css`"))
+      ? [path]
+      : [];
   });
 }
 
@@ -26,7 +29,7 @@ function styleFiles(dir: string): string[] {
 function misScoped(file: string): string[] {
   const text = readFileSync(file, "utf8");
   const found: string[] = [];
-  for (const block of text.matchAll(/css`([\s\S]*?)`/g)) {
+  for (const block of text.matchAll(/(?:css|String\.raw)`([\s\S]*?)`/g)) {
     const body = block[1]!.replace(/\/\*[\s\S]*?\*\//g, "");
     for (const rule of body.matchAll(/([^{};]+)\{/g)) {
       const selector = rule[1]!.trim();
