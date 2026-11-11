@@ -1,6 +1,7 @@
 "use client";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
 import { z } from "zod/v4";
+import { CHIP } from "../charts/helpers";
 import { formatSchema, formatValue } from "../format";
 import { goodWhenSchema } from "../schema";
 import {
@@ -18,7 +19,6 @@ import {
   toStrings,
   useRowHover,
 } from "../shared";
-import { CHIP } from "./bars";
 
 /* ---------- Intervals: estimates with confidence ranges ---------- */
 

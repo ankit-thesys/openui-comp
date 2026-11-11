@@ -14,6 +14,7 @@ import {
 } from "recharts";
 import { z } from "zod/v4";
 
+import { InkCursor } from "../charts/helpers";
 import { formatSchema, formatValue } from "../format";
 import {
   Empty,
@@ -27,7 +28,7 @@ import {
   useWidth,
 } from "../shared";
 import { seriesColor } from "../theme";
-import { InkCursor, Series } from "./charts";
+import { Series } from "./charts";
 
 /* ---------- SmallMultiples: one small chart per series, one shared scale ---------- */
 

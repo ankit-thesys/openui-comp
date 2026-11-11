@@ -1,43 +1,6 @@
 import { css } from "@openuidev/react-components";
 
 export const mapStyles = css`
-  .openui-dashboard-size-key {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 12px;
-    color: var(--openui-dashboard-ink-secondary);
-    white-space: nowrap;
-    font-variant-numeric: tabular-nums;
-  }
-  .openui-dashboard-chart-top > .openui-dashboard-legend + .openui-dashboard-size-key {
-    margin-left: auto;
-  }
-  .openui-dashboard-size-name {
-    color: var(--openui-dashboard-ink-muted);
-  }
-  .openui-dashboard-size-step {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  /* The size key's dots match the plot's: fill fading with size, a subtle outline, and a tiny solid centre. */
-  .openui-dashboard-size-dot {
-    flex: none;
-    border-radius: 50%;
-    border: 1px solid color-mix(in srgb, var(--openui-dashboard-dot) 50%, transparent);
-    background: radial-gradient(
-      circle,
-      var(--openui-dashboard-dot) 0 1.8px,
-      color-mix(
-          in srgb,
-          var(--openui-dashboard-dot) var(--openui-dashboard-dot-fill, 20%),
-          transparent
-        )
-        2px
-    );
-  }
-
   .openui-dashboard-geo {
     display: flex;
     flex-direction: column;

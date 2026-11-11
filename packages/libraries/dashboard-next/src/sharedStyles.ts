@@ -84,6 +84,34 @@ export const sharedStyles = css`
   .openui-dashboard-chart-top > .openui-dashboard-legend + .openui-dashboard-size-key {
     margin-left: auto;
   }
+  /* The size key (Scatter, PointMap): the measure's name and three graduated dots, which match
+     the plot's: fill fading with size, a subtle outline, and a tiny solid centre. */
+
+  .openui-dashboard-size-name {
+    color: var(--openui-dashboard-ink-muted);
+  }
+
+  .openui-dashboard-size-step {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .openui-dashboard-size-dot {
+    flex: none;
+    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, var(--openui-dashboard-dot) 50%, transparent);
+    background: radial-gradient(
+      circle,
+      var(--openui-dashboard-dot) 0 1.8px,
+      color-mix(
+          in srgb,
+          var(--openui-dashboard-dot) var(--openui-dashboard-dot-fill, 20%),
+          transparent
+        )
+        2px
+    );
+  }
   .openui-dashboard-legend-shape {
     flex: none;
     display: block;

@@ -1,29 +1,6 @@
 import { css } from "@openuidev/react-components";
 
 export const relationshipsStyles = css`
-  .openui-dashboard-size-name {
-    color: var(--openui-dashboard-ink-muted);
-  }
-  .openui-dashboard-size-step {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .openui-dashboard-size-dot {
-    flex: none;
-    border-radius: 50%;
-    border: 1px solid color-mix(in srgb, var(--openui-dashboard-dot) 50%, transparent);
-    background: radial-gradient(
-      circle,
-      var(--openui-dashboard-dot) 0 1.8px,
-      color-mix(
-          in srgb,
-          var(--openui-dashboard-dot) var(--openui-dashboard-dot-fill, 20%),
-          transparent
-        )
-        2px
-    );
-  }
   .openui-dashboard-axis-name {
     font-size: 12px;
     color: var(--openui-dashboard-ink-muted);

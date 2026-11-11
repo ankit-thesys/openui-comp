@@ -304,12 +304,9 @@ export const tableStyles = css`
   .openui-dashboard-table[data-totals] tbody tr:last-child td {
     border-bottom-color: transparent;
   }
-  /* The sideways stepper sits top right of the card, level with its title.
-   When the card has its own header controls there, it drops to the top of
-   the body instead, right-aligned above the table. */
-  .openui-dashboard-card {
-    position: relative;
-  }
+  /* The sideways stepper sits top right of the card (which the layout positions), level with its
+   title. When the card has its own header controls there, it drops to the top of the body
+   instead, right-aligned above the table. */
   .openui-dashboard-scroll-step.openui-dashboard-table-step {
     position: absolute;
     top: calc(var(--openui-dashboard-space-lg) - 2px);

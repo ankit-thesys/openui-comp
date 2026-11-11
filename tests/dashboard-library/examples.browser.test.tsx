@@ -46,6 +46,14 @@ const keyText = {
   ],
 };
 const headlines = { retail: "Revenue", marketing: "Spend", product: "Activation" };
+// Where each example draws its previous period once Compare is on: Retail and Product have
+// TimeSeries (a dashed previous line or area); Marketing has none, and marks the previous
+// period on its Funnel's steps instead.
+const previousMarks = {
+  retail: ".recharts-line path[stroke-dasharray], .recharts-area path[stroke-dasharray]",
+  marketing: ".openui-dashboard-funnel-prev",
+  product: ".recharts-line path[stroke-dasharray], .recharts-area path[stroke-dasharray]",
+};
 
 for (const mode of ["light", "dark"] as const) {
   for (const example of EXAMPLES) {
@@ -84,7 +92,7 @@ for (const mode of ["light", "dark"] as const) {
         expect(number()).not.toBe(initial);
       });
       // Compare is a dropdown with a portal. A chart legend must gain its Previous key,
-      // and the chart must actually draw the dashed previous series.
+      // and a chart must actually draw the previous period.
       const previousKeys = () =>
         [...host.querySelectorAll(".openui-dashboard-legend")].filter((node) =>
           node.textContent?.includes("Previous period"),
@@ -103,11 +111,7 @@ for (const mode of ["light", "dark"] as const) {
       await settle(() => {
         valid();
         expect(previousKeys().length).toBeGreaterThan(0);
-        expect(
-          host.querySelector(
-            ".recharts-line path[stroke-dasharray], .recharts-area path[stroke-dasharray]",
-          ),
-        ).not.toBeNull();
+        expect(host.querySelector(previousMarks[slug])).not.toBeNull();
       });
     });
   }

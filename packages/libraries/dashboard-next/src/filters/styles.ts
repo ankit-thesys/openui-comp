@@ -159,49 +159,6 @@ export const filtersStyles = css`
   .openui-dashboard-sheet-body > * + * {
     border-top: 1px solid var(--openui-dashboard-border);
   }
-
-  .openui-dashboard-segmented {
-    display: inline-flex;
-    padding: 3px;
-    border-radius: var(--openui-dashboard-radius-md);
-    background: var(--openui-dashboard-neutral-soft);
-  }
-  .openui-dashboard-segmented button {
-    height: 24px;
-    padding: 0 10px;
-    border: 0;
-    border-radius: var(--openui-dashboard-radius-sm);
-    background: transparent;
-    font: inherit;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--openui-dashboard-ink-secondary);
-    cursor: pointer;
-    transition:
-      background 150ms,
-      color 150ms,
-      box-shadow 150ms;
-  }
-  /* The small size, for switches inside a chart: concentric corners (8 outside = 6 inside + 2 padding). */
-  .openui-dashboard-segmented-sm {
-    padding: 2px;
-    border-radius: var(--openui-dashboard-radius-sm);
-  }
-  .openui-dashboard-segmented-sm button {
-    height: 24px;
-    padding: 0 9px;
-    font-size: 12px;
-    border-radius: calc(var(--openui-dashboard-radius-sm) - 2px);
-  } /* the header chips' size */
-  .openui-dashboard-segmented button:hover {
-    color: var(--openui-dashboard-ink);
-  }
-  .openui-dashboard-segmented button[aria-checked="true"] {
-    background: var(--openui-dashboard-surface);
-    color: var(--openui-dashboard-ink);
-    box-shadow: 0 0 0 1px var(--openui-dashboard-border-strong);
-  }
-
   .openui-dashboard-chips {
     display: inline-flex;
     flex-wrap: wrap;
@@ -303,14 +260,6 @@ export const filtersStyles = css`
   .openui-dashboard-segmented button:disabled {
     opacity: 0.5;
     cursor: default;
-  }
-  .openui-dashboard-filter-caret {
-    width: 6px;
-    height: 6px;
-    margin-left: 4px;
-    border-right: 1.5px solid var(--openui-dashboard-ink-muted);
-    border-bottom: 1.5px solid var(--openui-dashboard-ink-muted);
-    transform: translateY(-2px) rotate(45deg);
   }
   .openui-dashboard-calendar {
     flex: none;
@@ -572,20 +521,6 @@ export const filtersStyles = css`
     height: 1px;
     margin: 0;
     pointer-events: none;
-  }
-  .openui-dashboard-checkbox {
-    display: inline-grid;
-    place-items: center;
-    flex: none;
-    width: 14px;
-    height: 14px;
-    border: 1px solid var(--openui-dashboard-border-strong);
-    border-radius: 4px;
-    color: transparent;
-    transition:
-      background 150ms,
-      border-color 150ms,
-      color 150ms;
   }
   .openui-dashboard-multi-option input:checked + .openui-dashboard-checkbox,
   .openui-dashboard-view-check input:checked + .openui-dashboard-checkbox {

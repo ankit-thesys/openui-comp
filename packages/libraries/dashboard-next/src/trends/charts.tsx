@@ -710,16 +710,3 @@ export const TimeSeries = defineComponent({
     );
   },
 });
-
-export {
-  AXIS_TICK,
-  bandFor,
-  BAR_MIN,
-  CHIP,
-  CHIP_ROOM,
-  InkCursor,
-  minPlotWidth,
-  PLOT_FLOOR,
-  ReferenceChipLabel,
-  TextureTile,
-} from "../charts/helpers";

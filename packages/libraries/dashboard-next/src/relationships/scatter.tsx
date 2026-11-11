@@ -19,6 +19,7 @@ import {
   ZAxis,
 } from "recharts";
 import { z } from "zod/v4";
+import { CHIP_ROOM, InkCursor, PLOT_FLOOR, ReferenceChipLabel } from "../charts/helpers";
 import { formatSchema, formatValue } from "../format";
 import {
   Empty,
@@ -33,14 +34,7 @@ import {
   type MarkShape,
 } from "../shared";
 import { MUTED_COLOR, seriesColor } from "../theme";
-import {
-  CHIP_ROOM,
-  InkCursor,
-  PLOT_FLOOR,
-  Reference,
-  ReferenceChipLabel,
-  type ReferenceProps,
-} from "./chartHelpers";
+import { Reference, type ReferenceProps } from "../trends/charts";
 
 export type ScatterMarkProps = {
   cx?: number;

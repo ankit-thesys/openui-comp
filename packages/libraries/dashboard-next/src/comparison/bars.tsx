@@ -54,7 +54,6 @@ import {
 // Series and Reference belong to the Trends group (#221): Bars takes the registered ones, so the
 // parser and prompt know them by name.
 import { Reference, Series, type ReferenceProps, type SeriesProps } from "../trends/charts";
-export { Reference, Series, type ReferenceProps };
 
 /** The diverging palette's two poles, at full strength: ahead (cool) and behind (warm). */
 export const DIVERGING_POLES = {
@@ -442,16 +441,3 @@ export const Bars = defineComponent({
     );
   },
 });
-
-export {
-  AXIS_TICK,
-  bandFor,
-  BAR_MIN,
-  CHIP,
-  CHIP_ROOM,
-  InkCursor,
-  minPlotWidth,
-  PLOT_FLOOR,
-  ReferenceChipLabel,
-  TextureTile,
-} from "../charts/helpers";

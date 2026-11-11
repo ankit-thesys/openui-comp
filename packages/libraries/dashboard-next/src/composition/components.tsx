@@ -1985,12 +1985,3 @@ export const Flow = defineComponent({
     );
   },
 });
-
-export {
-  AXIS_TICK,
-  bandFor,
-  BAR_MIN,
-  InkCursor,
-  minPlotWidth,
-  TextureTile,
-} from "../charts/helpers";

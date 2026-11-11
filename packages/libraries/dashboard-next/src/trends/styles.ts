@@ -4,27 +4,6 @@ export const trendsStyles = css`
   .openui-dashboard-summary-edge {
     transform: translateY(1.5px);
   }
-  .openui-dashboard-chart {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    width: 100%;
-    min-width: 0;
-  }
-  .openui-dashboard-chart-plot {
-    flex: 1 1 auto;
-    height: 0;
-  }
-  .openui-dashboard-chart .recharts-cartesian-axis-tick-value {
-    fill: var(--openui-dashboard-ink-muted);
-    font-size: 12px;
-  }
-  .openui-dashboard-chart .recharts-surface:focus,
-  .openui-dashboard-chart .recharts-wrapper:focus,
-  .openui-dashboard-chart *:focus {
-    outline: none;
-  }
-
   .openui-dashboard-st {
     display: grid;
     gap: 10px;
