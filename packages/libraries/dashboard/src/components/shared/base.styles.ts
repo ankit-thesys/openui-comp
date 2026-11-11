@@ -1,5 +1,8 @@
 // Raw fragments are compiled together in shared/styles.ts to retain the original cascade.
+// These classes belong to the groups named beside each fragment, not to one shared piece; each
+// fragment can move to its group's styles once that group has its own folder.
 export const baseRules = [
+  // [0] chart header row (ViewSwitch and the chart groups)
   String.raw`
   .openui-dashboard-chart-top {
     display: flex;
@@ -9,6 +12,7 @@ export const baseRules = [
     min-height: 26px;
     margin-bottom: 10px;
   }`,
+  // [1] size key (Scatter, PointMap)
   String.raw`
   .openui-dashboard-size-key {
     display: inline-flex;
@@ -50,6 +54,7 @@ export const baseRules = [
         2px
     );
   }`,
+  // [2] bar textures .tex-0 to .tex-5
   String.raw`
   .openui-dashboard-tex-0 {
     background-image:
@@ -106,6 +111,7 @@ export const baseRules = [
       transparent 0.45px 4.5px
     );
   }`,
+  // [3] row baseline and chip (comparison intervals)
   String.raw`
   .openui-dashboard-row-baseline {
     position: absolute;
@@ -131,6 +137,7 @@ export const baseRules = [
     font-weight: 500;
     white-space: nowrap;
   }`,
+  // [4] tooltip dot (the chart groups)
   String.raw`
   .openui-dashboard-tip-dot {
     flex: none;
@@ -138,6 +145,7 @@ export const baseRules = [
     height: 8px;
     border-radius: 50%;
   }`,
+  // [5] filter caret and checkbox (filters), chart, and a stat above a chart (cards)
   String.raw`
   .openui-dashboard-filter-caret {
     width: 6px;

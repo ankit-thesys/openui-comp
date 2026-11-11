@@ -1,5 +1,6 @@
 // Raw fragments are compiled together in shared/styles.ts to retain the original cascade.
 export const rowHoverRules = [
+  // [0] hoverable rows and the row tooltip
   String.raw`
   .openui-dashboard-rows {
     position: relative;

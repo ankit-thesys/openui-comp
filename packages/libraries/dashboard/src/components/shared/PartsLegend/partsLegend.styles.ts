@@ -1,5 +1,6 @@
 // Raw fragments are compiled together in shared/styles.ts to retain the original cascade.
 export const partsLegendRules = [
+  // [0] parts legend
   String.raw`
   .openui-dashboard-parts-legend {
     columns: 240px;

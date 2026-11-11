@@ -1,5 +1,6 @@
 // Raw fragments are compiled together in shared/styles.ts to retain the original cascade.
 export const scrollAreaRules = [
+  // [0] scroll fill
   String.raw`
   .openui-dashboard-scroll-fill {
     flex: 1 1 auto;
@@ -10,6 +11,7 @@ export const scrollAreaRules = [
     flex: 1 1 0;
     min-height: 0;
   }`,
+  // [1] scroll area, fades and steps; also the filter menus' scrollbars
   String.raw`
   .openui-dashboard-scroll {
     position: relative;

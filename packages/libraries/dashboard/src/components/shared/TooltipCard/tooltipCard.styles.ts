@@ -1,5 +1,6 @@
 // Raw fragments are compiled together in shared/styles.ts to retain the original cascade.
 export const tooltipCardRules = [
+  // [0] tooltip card
   String.raw`
   .openui-dashboard-tooltip {
     min-width: 184px;

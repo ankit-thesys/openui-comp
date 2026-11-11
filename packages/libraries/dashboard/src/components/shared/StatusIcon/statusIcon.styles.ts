@@ -1,5 +1,6 @@
 // Raw fragments are compiled together in shared/styles.ts to retain the original cascade.
 export const statusIconRules = [
+  // [0] status icon and its tones
   String.raw`
   .openui-dashboard-status-icon {
     --openui-dashboard-status: var(--openui-dashboard-ink-muted);

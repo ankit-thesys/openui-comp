@@ -1,5 +1,6 @@
 // Raw fragments are compiled together in shared/styles.ts to retain the original cascade.
 export const viewSwitchRules = [
+  // [0] segmented control and its small size (ViewSwitch; filters reuse it)
   String.raw`
   .openui-dashboard-segmented {
     display: inline-flex;
@@ -33,6 +34,7 @@ export const viewSwitchRules = [
     font-size: 12px;
     border-radius: calc(var(--openui-dashboard-radius-sm) - 2px);
   }`,
+  // [1] view switch and its label in the chart header
   String.raw`
   .openui-dashboard-chart-top > .openui-dashboard-segmented {
     margin-left: auto;
@@ -50,6 +52,7 @@ export const viewSwitchRules = [
   .openui-dashboard-chart-top > .openui-dashboard-view-switch {
     margin-left: auto;
   }`,
+  // [2] segmented hover, checked and disabled
   String.raw`
   .openui-dashboard-segmented button:hover {
     color: var(--openui-dashboard-ink);
@@ -63,6 +66,7 @@ export const viewSwitchRules = [
     opacity: 0.5;
     cursor: default;
   }`,
+  // [3] segmented focus ring
   String.raw`
   .openui-dashboard-segmented button:focus-visible {
     outline: 2px solid var(--openui-dashboard-accent);

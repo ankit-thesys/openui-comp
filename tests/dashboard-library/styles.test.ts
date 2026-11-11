@@ -66,3 +66,15 @@ test("no css-tag selector is one goober mis-scopes", () => {
   expect(files.length).toBeGreaterThan(0);
   expect(files.flatMap(misScoped)).toEqual([]);
 });
+
+test("every template in a .styles.ts file is one the lint reads", () => {
+  // misScoped only reads css`` and String.raw`` blocks, so an untagged template would skip it.
+  const unread = styleFiles(src)
+    .filter((file) => file.endsWith(".styles.ts"))
+    .filter((file) => {
+      const text = readFileSync(file, "utf8");
+      const tagged = text.match(/(?:css|String\.raw)`[\s\S]*?`/g) ?? [];
+      return tagged.length === 0 || tagged.length * 2 !== (text.match(/`/g) ?? []).length;
+    });
+  expect(unread.map((file) => file.slice(src.length + 1))).toEqual([]);
+});

@@ -1,10 +1,12 @@
 // Raw fragments are compiled together in shared/styles.ts to retain the original cascade.
 export const legendRules = [
+  // [0] legend shape marks
   String.raw`
   .openui-dashboard-legend-shape {
     flex: none;
     display: block;
   }`,
+  // [1] legend, its overflow menu and swatches
   String.raw`
   .openui-dashboard-legend {
     position: relative;

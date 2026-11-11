@@ -1,5 +1,6 @@
 // Raw fragments are compiled together in shared/styles.ts to retain the original cascade.
 export const rowMarksRules = [
+  // [0] row grid and guide
   String.raw`
   .openui-dashboard-row-grid {
     position: absolute;
@@ -15,6 +16,7 @@ export const rowMarksRules = [
     height: 1px;
     background: var(--openui-dashboard-grid);
   }`,
+  // [1] tooltip marks
   String.raw`
   .openui-dashboard-tip-mark {
     flex: none;

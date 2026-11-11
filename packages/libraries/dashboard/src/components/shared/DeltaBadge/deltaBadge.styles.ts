@@ -1,5 +1,6 @@
 // Raw fragments are compiled together in shared/styles.ts to retain the original cascade.
 export const deltaBadgeRules = [
+  // [0] delta badge and its tones
   String.raw`
   .openui-dashboard-delta {
     display: inline-flex;

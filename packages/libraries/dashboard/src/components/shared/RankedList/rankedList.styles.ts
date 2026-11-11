@@ -1,5 +1,6 @@
 // Raw fragments are compiled together in shared/styles.ts to retain the original cascade.
 export const rankedListRules = [
+  // [0] rank panel and map side panel
   String.raw`
   .openui-dashboard-rank-panel {
     flex: 1 1 auto;
@@ -10,6 +11,7 @@ export const rankedListRules = [
     display: flex;
     flex-direction: column;
   }`,
+  // [1] map side panel head
   String.raw`
   .openui-dashboard-geo-side {
     position: relative;
@@ -27,6 +29,7 @@ export const rankedListRules = [
     gap: 8px;
     padding-bottom: 10px;
   }`,
+  // [2] ranked list rows, and their narrow-container layout
   String.raw`
   @container openui-dashboard (max-width: 720px) {
     .openui-dashboard-geo-side {

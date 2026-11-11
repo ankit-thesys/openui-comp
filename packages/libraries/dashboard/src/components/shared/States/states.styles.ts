@@ -1,5 +1,6 @@
 // Raw fragments are compiled together in shared/styles.ts to retain the original cascade.
 export const statesRules = [
+  // [0] empty and loading states
   String.raw`
   .openui-dashboard-empty {
     display: flex;

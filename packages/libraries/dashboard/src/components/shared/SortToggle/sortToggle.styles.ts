@@ -1,5 +1,6 @@
 // Raw fragments are compiled together in shared/styles.ts to retain the original cascade.
 export const sortToggleRules = [
+  // [0] sort toggle
   String.raw`
   .openui-dashboard-sort-toggle {
     display: inline-flex;
