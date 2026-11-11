@@ -1,13 +1,16 @@
 import { css } from "@openuidev/react-components";
 
 export const filtersStyles = css`
+  /* Popovers and the filter sheet are portalled to body, outside the dashboard root, so their
+     wrapper (which carries this class) gets the root's base styles here. On the root itself
+     these repeat what the layout styles already set. */
+  color: var(--openui-dashboard-ink);
+  font-feature-settings: "liga", "calt";
+  -webkit-font-smoothing: antialiased;
   & *,
   & *::before,
   & *::after {
     box-sizing: border-box;
-  }
-  .openui-dashboard-popover {
-    color: var(--openui-dashboard-ink);
   }
 
   .openui-dashboard-card-controls .openui-dashboard-chips {
@@ -325,6 +328,18 @@ export const filtersStyles = css`
     border-radius: var(--openui-dashboard-radius);
     background: var(--openui-dashboard-surface);
     box-shadow: var(--openui-dashboard-shadow-pop);
+  }
+  /* The standard scrollbar properties only where WebKit's pseudos are missing: setting them
+     makes Chrome ignore the pseudos. */
+  @supports not selector(::-webkit-scrollbar) {
+    .openui-dashboard-menu {
+      scrollbar-width: thin;
+      scrollbar-color: color-mix(in srgb, var(--openui-dashboard-ink) 10%, transparent) transparent;
+    }
+    .openui-dashboard-sheet {
+      scrollbar-width: thin;
+      scrollbar-color: color-mix(in srgb, var(--openui-dashboard-ink) 10%, transparent) transparent;
+    }
   }
   /* Date range: presets | a one-month calendar with a readout and Apply. */
   .openui-dashboard-range {

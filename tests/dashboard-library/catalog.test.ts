@@ -20,10 +20,10 @@ for (const fixture of [
   });
 }
 
-test("the prompt offers his slots: Stat in a Card, Kpis in a Section", () => {
+test("the prompt offers his slots: Stat in a Card, Kpis in a Section, a FilterBar first", () => {
   // The parser doesn't check which components sit in a slot; the prompt is what tells the model.
   const prompt = library.prompt();
   expect(prompt).toContain("Card(title: string, content: Stat[], ");
   expect(prompt).toContain("Section(title: string, rows: (Kpis | Row)[], ");
-  expect(prompt).toContain("Dashboard(children: Section[])");
+  expect(prompt).toContain("Dashboard(children: (FilterBar | Section)[])");
 });

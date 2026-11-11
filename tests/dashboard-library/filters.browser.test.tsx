@@ -120,8 +120,10 @@ for (const mode of ["light", "dark"] as const) {
   for (const [state, text] of [
     ["loading", "Loading"],
     ["empty", "No data"],
-    ["error", "Didn’t load"],
-    ["no-results", "No results"],
+    // A Card shows each state's full title (his STATE_COPY); "Didn’t load" and "No results"
+    // are the short forms for Kpi tiles.
+    ["error", "This data didn’t load"],
+    ["no-results", "No matching data"],
   ] as const) {
     test(`filter and dependent Card ${state} in ${mode}`, async () => {
       await draw(
@@ -219,4 +221,94 @@ test("Escape closes a portalled menu and returns focus to its trigger", async ()
   );
   expect(document.querySelector(".openui-dashboard-popover")).toBeNull();
   expect(document.activeElement).toBe(trigger);
+});
+
+test("a filter reloads the Query that reads its $variable", async () => {
+  const asked: unknown[] = [];
+  const metrics = async (args: Record<string, unknown>) => {
+    asked.push(args["plan"]);
+    return { value: args["plan"] === "team" ? 3400 : 1200 };
+  };
+  await draw(
+    <Renderer
+      library={library}
+      toolProvider={{ metrics }}
+      response={`$plan = "all"
+data = Query("metrics", {plan: $plan}, {value: 0})
+root = Dashboard([FilterBar([ChipFilter("plan", ${choices}, $plan)]), Section("", [Row([Card("Sales", [Stat(data.value, "currency")], "full")])])])`}
+    />,
+  );
+  const sales = () => host.querySelector('[aria-label="Sales"]')?.textContent;
+  await expect.poll(sales).toContain("$1,200");
+  await click([...host.querySelectorAll('[role="radio"]')].find((n) => n.textContent === "Team")!);
+  await expect.poll(sales).toContain("$3,400");
+  expect(asked).toContain("team");
+});
+
+const darkInk = "rgb(250, 250, 250)";
+test("a portalled menu carries the dark theme and the dashboard's base styles", async () => {
+  await draw(
+    <ThemeProvider mode="dark">
+      {render(program(`SelectFilter("plan", "Plan", ${choices}, $plan)`))}
+    </ThemeProvider>,
+  );
+  await click(host.querySelector(".openui-dashboard-filter-button")!);
+  const popover = document.querySelector<HTMLElement>(".openui-dashboard-popover")!;
+  expect(host.contains(popover)).toBe(false);
+  expect(getComputedStyle(popover).backgroundColor).toBe("rgb(21, 21, 21)");
+  expect(getComputedStyle(option("Team")).color).toBe(darkInk);
+  // Border-box, as inside the dashboard: the menu is exactly its set width.
+  expect(getComputedStyle(popover).boxSizing).toBe("border-box");
+  expect(popover.getBoundingClientRect().width).toBe(parseFloat(popover.style.width));
+});
+
+test("a narrow FilterBar opens a themed sheet whose filters still drive the cards", async () => {
+  host.style.width = "480px";
+  await draw(
+    <ThemeProvider mode="dark">
+      {render(program(`ChipFilter("plan", ${choices}, $plan)`))}
+    </ThemeProvider>,
+  );
+  const menu = host.querySelector<HTMLElement>(".openui-dashboard-filterbar-menu")!;
+  expect(getComputedStyle(menu).display).not.toBe("none");
+  await click(menu);
+  const sheet = document.querySelector<HTMLElement>('.openui-dashboard-sheet[role="dialog"]')!;
+  expect(host.contains(sheet)).toBe(false);
+  expect(getComputedStyle(sheet).color).toBe(darkInk);
+  await click([...sheet.querySelectorAll('[role="radio"]')].find((n) => n.textContent === "Team")!);
+  expect(host.querySelector('[aria-label="Sales"]')?.textContent).toContain("$3,400");
+  await click(sheet.querySelector('[aria-label="Close"]')!);
+  expect(document.querySelector(".openui-dashboard-sheet")).toBeNull();
+});
+
+test("arrow keys move through a menu and across the calendar", async () => {
+  await draw(
+    render(`root = Dashboard([FilterBar([DateRangeFilter("range", "2026-01-01..2026-01-10")])])`),
+  );
+  await click(host.querySelector(".openui-dashboard-filter-button")!);
+  const key = async (target: Element, name: string) =>
+    act(async () => {
+      target.dispatchEvent(new KeyboardEvent("keydown", { key: name, bubbles: true }));
+    });
+  // The presets are a menu: ArrowDown moves to the next one.
+  const presets = [
+    ...document.querySelectorAll<HTMLElement>(".openui-dashboard-range-presets [role='option']"),
+  ];
+  await act(async () => presets[0]!.focus());
+  await key(presets[0]!, "ArrowDown");
+  expect(document.activeElement).toBe(presets[1]);
+  // The calendar is a grid with one tab stop: arrows move it a day or a week.
+  const grid = document.querySelector<HTMLElement>(".openui-dashboard-cal-grid")!;
+  const stop = grid.querySelector<HTMLElement>('[tabindex="0"]')!;
+  await act(async () => stop.focus());
+  const day = stop.dataset["day"]!;
+  const shift = (by: number) => {
+    const [y, m, d] = day.split("-").map(Number);
+    const date = new Date(y!, m! - 1, d! + by);
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+  };
+  await key(stop, "ArrowRight");
+  expect((document.activeElement as HTMLElement).dataset["day"]).toBe(shift(1));
+  await key(document.activeElement!, "ArrowDown");
+  expect((document.activeElement as HTMLElement).dataset["day"]).toBe(shift(8));
 });
