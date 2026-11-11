@@ -1,6 +1,5 @@
-// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
-
-export const compositionStyles = String.raw`
+export const funnelRules = [
+  String.raw`
   .openui-dashboard-funnel {
     display: flex;
     flex-direction: column;
@@ -237,90 +236,5 @@ export const compositionStyles = String.raw`
     flex-basis: 0;
     min-width: 2px;
   }
-  .openui-dashboard-segbar {
-    display: flex;
-    gap: 2px;
-  }
-  .openui-dashboard-segbar-card {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  .openui-dashboard-card-body > .openui-dashboard-segbar-card {
-    flex: 1 1 auto;
-  }
-  .openui-dashboard-segbar-stage {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .openui-dashboard-seg {
-    display: flex;
-    flex-direction: column;
-    min-width: 2px;
-  }
-  .openui-dashboard-seg-bar {
-    height: 8px;
-  }
-  .openui-dashboard-seg:first-child .openui-dashboard-seg-bar {
-    border-radius: 4px 0 0 4px;
-  }
-  .openui-dashboard-seg:last-child .openui-dashboard-seg-bar {
-    border-radius: 0 4px 4px 0;
-  }
-  .openui-dashboard-seg-band {
-    display: block;
-    width: 100%;
-    height: 28px;
-    -webkit-mask-image: linear-gradient(to bottom, #000, transparent);
-    mask-image: linear-gradient(to bottom, #000, transparent);
-  }
-  .openui-dashboard-treemap-foot {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    margin-top: 12px;
-    font-size: 13px;
-  }
-  .openui-dashboard-treemap-key {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    min-width: 0;
-    color: var(--openui-dashboard-ink-muted);
-  }
-  .openui-dashboard-treemap-glyph {
-    flex: none;
-    width: 12px;
-    height: 12px;
-    border-radius: 3px;
-    background:
-      linear-gradient(var(--openui-dashboard-muted-mark), var(--openui-dashboard-muted-mark)) left
-        top / 6px 6px no-repeat,
-      color-mix(in srgb, var(--openui-dashboard-muted-mark) 30%, var(--openui-dashboard-surface));
-  }
-  .openui-dashboard-treemap-total {
-    display: inline-flex;
-    gap: 8px;
-    white-space: nowrap;
-    font-variant-numeric: tabular-nums;
-  }
-  .openui-dashboard-treemap-total span {
-    color: var(--openui-dashboard-ink-muted);
-  }
-  .openui-dashboard-treemap-total strong {
-    font-weight: 600;
-    color: var(--openui-dashboard-ink);
-  }
-  .openui-dashboard-seg {
-    transition: opacity 150ms;
-  }
-  .openui-dashboard-fade-parts[data-active] .openui-dashboard-seg:not([data-hover]) {
-    opacity: 0.35;
-  }
-  .openui-dashboard-treemap-cell {
-    transition: opacity 150ms;
-  }
-`;
+`,
+] as const;

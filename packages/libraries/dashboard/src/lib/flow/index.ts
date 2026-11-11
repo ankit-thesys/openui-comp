@@ -1,5 +1,4 @@
-import { Flow, Funnel } from "../../composition/components";
 import type { Group } from "../group";
-
-// Composition owns the stylesheet shared by these charts; attach it only once.
-export const flow: Group = { components: [Funnel, Flow], styles: {} };
+import { FlowComponent } from "./Flow";
+import { FunnelComponent } from "./Funnel";
+export const flow: Group = { components: [FunnelComponent, FlowComponent], styles: {} };

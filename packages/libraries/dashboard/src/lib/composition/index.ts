@@ -1,9 +1,10 @@
-import { Donut, SegmentedBar, Treemap, Waterfall } from "../../composition/components";
-import { compositionStyles } from "../../composition/styles";
+import { compositionStyles } from "../../components/composition/styles";
 import type { Group } from "../group";
-
-/** Composition (#223); Flow has its own registration and shares these styles. */
+import { DonutComponent } from "./Donut";
+import { SegmentedBarComponent } from "./SegmentedBar";
+import { TreemapComponent } from "./Treemap";
+import { WaterfallComponent } from "./Waterfall";
 export const composition: Group = {
-  components: [Donut, SegmentedBar, Treemap, Waterfall],
+  components: [DonutComponent, SegmentedBarComponent, TreemapComponent, WaterfallComponent],
   styles: { composition: compositionStyles },
 };
