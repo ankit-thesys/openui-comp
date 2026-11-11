@@ -1,0 +1,11 @@
+
+> @openuidev/react-ui-core@0.0.0-beta.0 lint:check /Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core
+> eslint src --ignore-pattern "**/__tests__/**"
+
+
+/Users/ankitdas/.codex/worktrees/2d0f/openui/packages/react-ui-core/src/components/ThemeProvider/ThemeProvider.tsx
+  164:9  warning  The 'userLightTheme' logical expression could make the dependencies of useMemo Hook (at line 203) change on every render. To fix this, wrap the initialization of 'userLightTheme' in its own useMemo() Hook  react-hooks/exhaustive-deps
+  164:9  warning  The 'userLightTheme' logical expression could make the dependencies of useMemo Hook (at line 209) change on every render. To fix this, wrap the initialization of 'userLightTheme' in its own useMemo() Hook  react-hooks/exhaustive-deps
+
+✖ 2 problems (0 errors, 2 warnings)
+

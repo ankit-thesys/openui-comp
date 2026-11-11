@@ -1,0 +1,18 @@
+{
+  "Button": {
+    "bytes": 8402,
+    "gzipBytes": 2465
+  },
+  "Input": {
+    "bytes": 4923,
+    "gzipBytes": 2117
+  },
+  "TextArea": {
+    "bytes": 4189,
+    "gzipBytes": 1978
+  },
+  "unused": {
+    "bytes": 23,
+    "gzipBytes": 43
+  }
+}

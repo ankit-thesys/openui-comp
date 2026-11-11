@@ -1,0 +1,36 @@
+plain/before/none
+plain/before/light
+plain/before/dark
+plain/before/custom-light
+plain/before/custom-dark
+plain/before: 5600 paired snapshots passed
+plain/after/none
+plain/after/light
+plain/after/dark
+plain/after/custom-light
+plain/after/custom-dark
+plain/after: 5600 paired snapshots passed
+tailwind3/before/none
+tailwind3/before/light
+tailwind3/before/dark
+tailwind3/before/custom-light
+tailwind3/before/custom-dark
+tailwind3/before: 5600 paired snapshots passed
+tailwind3/after/none
+tailwind3/after/light
+tailwind3/after/dark
+tailwind3/after/custom-light
+tailwind3/after/custom-dark
+tailwind3/after: 5600 paired snapshots passed
+tailwind4/before/none
+tailwind4/before/light
+tailwind4/before/dark
+tailwind4/before/custom-light
+tailwind4/before/custom-dark
+tailwind4/before: 5600 paired snapshots passed
+tailwind4/after/none
+tailwind4/after/light
+tailwind4/after/dark
+tailwind4/after/custom-light
+tailwind4/after/custom-dark
+tailwind4/after: 5600 paired snapshots passed
