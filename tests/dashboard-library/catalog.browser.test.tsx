@@ -3,6 +3,7 @@ import { Renderer } from "@openuidev/react-lang";
 import { act, type ReactNode } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
+import { catalogComponents } from "./catalogCoverage";
 import { catalogFixtures } from "./fixtures";
 import { metricsProgram } from "./fixtures/metrics";
 
@@ -97,3 +98,31 @@ test("while the model writes, the tile and card it is on show loading", async ()
   expect(host.querySelector(".openui-dashboard-sheen")).toBeNull();
   expect(host.textContent).toContain("18.4K");
 });
+
+for (const mode of ["light", "dark"] as const) {
+  test(`full catalog renders every registered component in ${mode}`, async () => {
+    const covered = new Set<string>();
+    for (const fixture of catalogFixtures) {
+      await draw(
+        <ThemeProvider mode={mode}>
+          <Renderer key={fixture.name} library={library} response={fixture.program} />
+        </ThemeProvider>,
+      );
+      // Flush each measurement in its own act so nested ResizeObservers can commit.
+      for (let frame = 0; frame < 3; frame++) {
+        await act(async () => {
+          await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+        });
+      }
+      expect(host.textContent, fixture.name).toContain(fixture.text);
+      expect(host.textContent, fixture.name).not.toContain("This card couldn't be drawn");
+      expect(host.querySelector('[data-state="invalid"]'), fixture.name).toBeNull();
+      expect(errors.mock.calls, fixture.name).toEqual([]);
+      for (const name of catalogComponents(fixture.program)) covered.add(name);
+    }
+    expect(
+      Object.keys(library.components).filter((name) => !covered.has(name)),
+      "Registered components missing from successfully rendered catalog fixtures",
+    ).toEqual([]);
+  }, 15000);
+}

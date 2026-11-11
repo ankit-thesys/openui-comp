@@ -1,6 +1,7 @@
 import { library } from "@openuidev/dashboard-library-next";
 import { createParser } from "@openuidev/react-lang";
 import { expect, test } from "vitest";
+import { catalogComponents, HIS_COMPONENTS } from "./catalogCoverage";
 import { catalogFixtures } from "./fixtures";
 import { kpis, metricsProgram } from "./fixtures/metrics";
 
@@ -77,4 +78,22 @@ test("each component is registered and listed once", () => {
     .filter((name): name is string => !!name);
   expect(signatures.length).toBeGreaterThan(0);
   expect(new Set(signatures).size).toBe(signatures.length);
+});
+
+test("every registered component appears in a valid catalog fixture", () => {
+  const covered = new Set(
+    catalogFixtures.flatMap((fixture) => [...catalogComponents(fixture.program)]),
+  );
+  const missing = Object.keys(library.components).filter((name) => !covered.has(name));
+  expect(missing, "Registered components missing from the catalog").toEqual([]);
+});
+
+test("the library registers all 41 of his components", () => {
+  const registered = Object.keys(library.components);
+  expect(HIS_COMPONENTS).toHaveLength(41);
+  expect(
+    HIS_COMPONENTS.filter((name) => !registered.includes(name)),
+    "Components still to port",
+  ).toEqual([]);
+  expect(registered).toHaveLength(41);
 });

@@ -18,6 +18,18 @@ import {
   YAxis,
 } from "recharts";
 import { z } from "zod/v4";
+import {
+  AXIS_TICK,
+  BarTexturePatterns,
+  CHIP,
+  InkCursor,
+  minPlotWidth,
+  PLOT_FLOOR,
+  seriesColor,
+  TextureTile,
+  wrappedLabelWidth,
+  WrappedTick,
+} from "../charts/helpers";
 import { formatSchema, formatValue, isRateFormat, type ValueFormat } from "../format";
 import { goodWhenSchema } from "../schema";
 import {
@@ -41,244 +53,11 @@ import {
   useWidth,
   ViewSwitch,
 } from "../shared";
-import { MUTED_COLOR, seriesColor as sharedSeriesColor, textureOf, TEXTURES } from "../theme";
-
-// The shared helper indexes a bounded palette; assert its string return for strict indexing.
-const seriesColor = (index: number) => sharedSeriesColor(index)!;
+import { MUTED_COLOR, textureOf } from "../theme";
 
 // Funnel's segments are Series, which the Trends group owns and registers.
 import { Series } from "../trends/charts";
-
-export const AXIS_TICK = { fill: "var(--openui-dashboard-ink-muted)", fontSize: 12 };
 const WATERFALL_BAR = 16;
-
-/**
- * No bar is drawn thinner than this. Past it, horizontal bars grow the chart
- * taller, and vertical bars give the plot a minimum width and scroll sideways
- * inside the card rather than shrink to slivers.
- */
-export const BAR_MIN = 6;
-
-/**
- * The band one category needs for `bars` side-by-side bars of BAR_MIN, 2px apart.
- * Recharts takes the category gap (a share of the band) from both sides, hence 1 - 2 × gap.
- */
-export const bandFor = (bars: number, gap: number) =>
-  (bars * BAR_MIN + Math.max(0, Math.ceil(bars) - 1) * 2) / (1 - 2 * gap);
-
-/**
- * Vertical bars: the plot width that keeps every bar at BAR_MIN, or 0 when the
- * card is already wide enough. `chrome` is the axis and margins beside the bars.
- */
-export function minPlotWidth(
-  width: number,
-  labels: number,
-  bars: number,
-  gap: number,
-  chrome = 64,
-) {
-  if (!width || !bars) return 0;
-  // One spare pixel per bar: Recharts rounds bar sizes down.
-  const need = Math.ceil(labels * bandFor(bars, gap) * ((BAR_MIN + 1) / BAR_MIN) + chrome);
-  return need > width ? need : 0;
-}
-
-/**
- * One texture tile (see TEXTURES): its size and turn, an optional base fill,
- * then its marks in `ink` at `opacity`. Dots sit on a 45° lattice; the line
- * textures are one 0.9px rule turned 45°, -45°, 90° or 0°; crosshatch is two.
- */
-export function TextureTile({
-  id,
-  index,
-  base,
-  baseOpacity,
-  ink,
-  opacity,
-}: {
-  id: string;
-  index: number;
-  base?: string;
-  baseOpacity?: string;
-  ink: string;
-  opacity: string;
-}) {
-  const kind = TEXTURES[textureOf(index)]!;
-  const size = kind === "dots" ? 6 : kind === "crosshatch" ? 5 : 4.5;
-  const turn = {
-    dots: 45,
-    slash: 45,
-    "back-slash": -45,
-    horizontal: 90,
-    crosshatch: 45,
-    vertical: 0,
-  }[kind]!;
-  const mark = { opacity };
-  return (
-    <pattern
-      id={id}
-      width={size}
-      height={size}
-      patternUnits="userSpaceOnUse"
-      patternTransform={turn ? `rotate(${turn})` : undefined}
-    >
-      {base ? (
-        <rect
-          width={size}
-          height={size}
-          fill={base}
-          style={baseOpacity ? { opacity: baseOpacity } : undefined}
-        />
-      ) : null}
-      {kind === "dots" ? (
-        <circle cx="1.8" cy="1.8" r="0.8" fill={ink} style={mark} />
-      ) : (
-        <line x1="0" y1="0" x2="0" y2={size} stroke={ink} strokeWidth="0.9" style={mark} />
-      )}
-      {kind === "crosshatch" ? (
-        <line x1="0" y1="0" x2={size} y2="0" stroke={ink} strokeWidth="0.9" style={mark} />
-      ) : null}
-    </pattern>
-  );
-}
-
-function BarTexturePatterns({
-  id,
-  count,
-  colors,
-}: {
-  id: string;
-  count: number;
-  colors?: string[];
-}) {
-  return (
-    <>
-      {Array.from({ length: colors?.length ?? count }, (_, i) => (
-        <TextureTile
-          key={i}
-          id={`${id}-tex-${i}`}
-          index={i}
-          base={colors?.[i] ?? seriesColor(i)}
-          ink="black"
-          opacity="var(--openui-dashboard-bar-ink)"
-        />
-      ))}
-    </>
-  );
-}
-
-/** A reference line's label: an ink chip pinned to the line's start. */
-const CURSOR_CAP = 3;
-
-/**
- * The one hover cursor for every cartesian chart: a 1px ink line with small
- * perpendicular caps at both ends. Recharts hands line charts the two end
- * points and bar charts the hovered band; for a band the line runs through
- * its centre, vertical for columns and horizontal for horizontal bars.
- */
-export function InkCursor(props: {
-  points?: { x: number; y: number }[];
-  x?: number;
-  y?: number;
-  width?: number;
-  height?: number;
-}) {
-  const { points, x, y, width, height } = props;
-  const fadeId = `openui-dashboard-cursor-${useId().replace(/:/g, "")}`;
-  let line: [number, number, number, number] | null = null;
-  if (points && points.length >= 2) line = [points[0]!.x, points[0]!.y, points[1]!.x, points[1]!.y];
-  else if (x != null && y != null && width != null && height != null)
-    line =
-      width > height
-        ? [x, y + height / 2, x + width, y + height / 2]
-        : [x + width / 2, y, x + width / 2, y + height];
-  if (!line) return null;
-  const [x1, y1, x2, y2] = line;
-  const vertical = Math.abs(x2 - x1) < Math.abs(y2 - y1);
-  const cap = (cx: number, cy: number) =>
-    vertical
-      ? `M${cx - CURSOR_CAP},${cy}H${cx + CURSOR_CAP}`
-      : `M${cx},${cy - CURSOR_CAP}V${cy + CURSOR_CAP}`;
-  // Full ink at the middle, fading to 20% at both ends (caps included).
-  return (
-    <g pointerEvents="none">
-      <defs>
-        <linearGradient id={fadeId} gradientUnits="userSpaceOnUse" x1={x1} y1={y1} x2={x2} y2={y2}>
-          <stop offset="0%" stopColor="var(--openui-dashboard-ink)" stopOpacity={0.2} />
-          <stop offset="50%" stopColor="var(--openui-dashboard-ink)" stopOpacity={1} />
-          <stop offset="100%" stopColor="var(--openui-dashboard-ink)" stopOpacity={0.2} />
-        </linearGradient>
-      </defs>
-      <path
-        d={`M${x1},${y1}L${x2},${y2}${cap(x1, y1)}${cap(x2, y2)}`}
-        fill="none"
-        stroke={`url(#${fadeId})`}
-        strokeWidth={1}
-      />
-    </g>
-  );
-}
-function wrappedLabelWidth(label: string) {
-  const words = label.split(" ");
-  const half = Math.ceil(words.length / 2);
-  const lines =
-    words.length > 1 ? [words.slice(0, half).join(" "), words.slice(half).join(" ")] : words;
-  return Math.max(...lines.map((line) => line.length)) * 6.4;
-}
-
-/** An x-axis tick that wraps a multi-word label onto two lines instead of colliding. */
-function WrappedTick({
-  x,
-  y,
-  payload,
-  angled,
-  band,
-}: {
-  x?: number;
-  y?: number;
-  payload?: { value: string };
-  angled?: boolean;
-  band?: number;
-}) {
-  if (angled) {
-    return (
-      <text
-        x={x}
-        y={y}
-        dy={10}
-        textAnchor="end"
-        fill="var(--openui-dashboard-ink-muted)"
-        fontSize={11}
-        transform={`rotate(-35 ${x} ${y})`}
-      >
-        {payload?.value}
-      </text>
-    );
-  }
-  const text = String(payload?.value ?? "");
-  const words = text.split(" ");
-  // Split onto two lines only when the label doesn't fit its column on one.
-  const fits = !band || text.length * 6.4 <= band - 6;
-  const lines =
-    !fits && words.length > 1
-      ? [
-          words.slice(0, Math.ceil(words.length / 2)).join(" "),
-          words.slice(Math.ceil(words.length / 2)).join(" "),
-        ]
-      : [text];
-  return (
-    <text x={x} y={y} textAnchor="middle" fill="var(--openui-dashboard-ink-muted)" fontSize={11}>
-      {lines.map((line, i) => (
-        <tspan key={i} x={x} dy={i === 0 ? 12 : 13}>
-          {line}
-        </tspan>
-      ))}
-    </text>
-  );
-}
-
-const CHIP = { height: 18, radius: 5, fontSize: 11 } as const;
-const PLOT_FLOOR = 200;
 const donutSchema = z.object({
   labels: z.array(z.string()),
   values: z.array(z.number()),
@@ -2206,3 +1985,12 @@ export const Flow = defineComponent({
     );
   },
 });
+
+export {
+  AXIS_TICK,
+  bandFor,
+  BAR_MIN,
+  InkCursor,
+  minPlotWidth,
+  TextureTile,
+} from "../charts/helpers";
