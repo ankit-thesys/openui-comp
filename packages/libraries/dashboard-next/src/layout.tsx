@@ -6,7 +6,7 @@ import {
   useRendererQuery,
   type ComponentRenderProps,
 } from "@openuidev/react-lang";
-import { useLayoutEffect, useRef, useState, type CSSProperties, type RefObject } from "react";
+import { useRef, useState, type CSSProperties, type RefObject } from "react";
 import { z } from "zod/v4";
 
 import { widthClass, widthSchema, type Width } from "./schema";
@@ -19,18 +19,23 @@ import {
   RefreshingContext,
   Sheen,
   StateFrame,
+  useIsomorphicLayoutEffect,
   useViewState,
   type ViewState,
 } from "./shared";
 
 import { DashboardTheme } from "./ThemeProvider";
+// Style sheets are written in import order. His stylesheet runs layout, then the shared pieces,
+// then each component's rules, and equal-specificity rules rely on that, so keep these first.
 import {
-  cardContent,
-  cardControls,
-  contentStyles,
-  dashboardContent,
-  sectionContent,
-} from "./content";
+  CARD_CONTENT,
+  CARD_CONTROLS,
+  DASHBOARD_CHILDREN,
+  groupStyles,
+  oneOf,
+  refs,
+  SECTION_ROWS,
+} from "./groups";
 import { sharedStyles } from "./sharedStyles";
 import { layoutStyles } from "./styles";
 
@@ -38,10 +43,10 @@ import { layoutStyles } from "./styles";
 
 const cardSchema = z.object({
   title: z.string(),
-  content: z.array(cardContent),
+  content: z.array(oneOf(refs(CARD_CONTENT))),
   width: widthSchema.optional(),
   subtitle: z.string().optional(),
-  controls: z.array(cardControls).optional(),
+  controls: z.array(oneOf(refs(CARD_CONTROLS))).optional(),
 });
 
 export const Card = defineComponent({
@@ -115,7 +120,7 @@ export const Card = defineComponent({
  */
 function useBeingWritten(ref: RefObject<HTMLElement | null>, streaming: boolean) {
   const [last, setLast] = useState(true);
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const card = ref.current;
     if (!streaming || !card) return;
     const root = card.closest(".openui-dashboard-dashboard") ?? card.parentElement;
@@ -293,7 +298,7 @@ function orphans(widths: Width[], halves: Width[]): Set<number> {
 
 const sectionSchema = z.object({
   title: z.string(),
-  rows: z.array(z.union([sectionContent, Row.ref])),
+  rows: z.array(oneOf([...refs(SECTION_ROWS), Row.ref as z.ZodType])),
   description: z.string().optional(),
 });
 
@@ -320,7 +325,7 @@ export const Section = defineComponent({
 /* ---------- Dashboard (root) ---------- */
 
 const dashboardSchema = z.object({
-  children: z.array(dashboardContent(Section.ref)),
+  children: z.array(oneOf([...refs(DASHBOARD_CHILDREN), Section.ref as z.ZodType])),
 });
 
 export const Dashboard = defineComponent({
@@ -347,7 +352,7 @@ export const Dashboard = defineComponent({
         <CompareProvider>
           <FilterRegistryProvider>
             <div
-              className={`${layoutStyles} ${contentStyles} ${sharedStyles} openui-dashboard-root openui-dashboard-container`}
+              className={`${layoutStyles} ${sharedStyles} ${groupStyles} openui-dashboard-root openui-dashboard-container`}
             >
               <div className="openui-dashboard-dashboard" aria-busy={refreshing || undefined}>
                 {query.errors.length && !streaming ? (

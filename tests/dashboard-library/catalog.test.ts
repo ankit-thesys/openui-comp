@@ -1,18 +1,15 @@
 import { library } from "@openuidev/dashboard-library-next";
 import { createParser } from "@openuidev/react-lang";
 import { expect, test } from "vitest";
-import { kpis, metricFixtures, metricsProgram } from "./catalog.fixtures";
+import { catalogFixtures } from "./fixtures";
+import { kpis, metricsProgram } from "./fixtures/metrics";
 
 const parser = createParser(library.toJSONSchema(), "Dashboard");
+
 for (const fixture of [
-  ...metricFixtures,
+  ...catalogFixtures,
   { name: "compact Kpis", program: kpis(8) },
   { name: "lead strip and Stat", program: metricsProgram },
-  {
-    name: "Kpis inside Card",
-    program:
-      'root = Dashboard([Section("", [Row([Card("Summary", [Kpis([Kpi("Users", 1284)])])])])])',
-  },
 ]) {
   test(`catalog program ${fixture.name} parses without dropped nodes`, () => {
     const result = parser.parse(fixture.program);
@@ -22,3 +19,11 @@ for (const fixture of [
     expect(result.meta.unresolved).toEqual([]);
   });
 }
+
+test("the prompt offers his slots: Stat in a Card, Kpis in a Section", () => {
+  // The parser doesn't check which components sit in a slot; the prompt is what tells the model.
+  const prompt = library.prompt();
+  expect(prompt).toContain("Card(title: string, content: Stat[], ");
+  expect(prompt).toContain("Section(title: string, rows: (Kpis | Row)[], ");
+  expect(prompt).toContain("Dashboard(children: Section[])");
+});

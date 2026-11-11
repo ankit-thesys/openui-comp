@@ -15,4 +15,6 @@ The provider owns dashboard tokens (`--openui-dashboard-*`). Token override keys
 
 Only `library` and `ThemeProvider` are public exports. The internal theme context also carries a portal class for components added in subsequent tickets. Styles use the react-components `css` tag; no stylesheet import is needed.
 
-Card content and controls currently accept empty arrays: their component unions will expand as subsequent tickets register the visuals and filters. Empty cards faithfully display the source's invalid-definition state. Layout descriptions and argument order are retained from dashboards-ui-library, including references to these future components.
+Components come in groups, one file each in `src/groups/`. A group ticket fills in its own file and nothing else: `src/groups/index.ts` imports every group and, by component name, puts each component in his slots (Card content, Card controls, Section rows, Dashboard children) and in his prompt order. `src/prompt.ts` holds his prompt groups and notes in full; it shows only registered components and holds back notes that name components not yet registered, so the prompt becomes his word for word once every group has landed.
+
+Selectors in the `css` tag never put a comma inside parentheses (`:is(a, b)`, `:not(:has(a, b))`): goober splits selectors at every comma, which breaks them. List the alternatives as separate selectors.

@@ -164,6 +164,7 @@ export function formatValue(
             style: "currency",
             currency: f.currency,
             notation: "compact",
+            minimumFractionDigits: 0,
             maximumFractionDigits: 1,
           }).format(value)
         : nf({
@@ -177,6 +178,9 @@ export function formatValue(
         style: "currency",
         currency: f.currency,
         notation: "compact",
+        // Pinned: engines before the 2023 Intl change pad compact currency to the
+        // currency's 2 digits ($12.50K, $4.90M); newer ones, like plain compact, don't.
+        minimumFractionDigits: 0,
         maximumFractionDigits: compactDigits(value, f.decimals),
       }).format(value);
       break;

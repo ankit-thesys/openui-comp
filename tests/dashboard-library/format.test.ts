@@ -1,3 +1,4 @@
+import { describe, expect, test } from "vitest";
 import {
   columnDecimals,
   computeDelta,
@@ -8,11 +9,11 @@ import {
   isRatioFormat,
   padDecimals,
   type ValueFormat,
-} from "@openuidev/dashboard-library-next";
-import { describe, expect, test } from "vitest";
+} from "../../packages/libraries/dashboard-next/src/format";
 
-// Literal expectations from the source's documented en-US rules; never derive
-// an expected string through the formatter being tested.
+// Format is internal (the package exports only library and ThemeProvider), so these unit tests
+// import it from source. Literal expectations from the source's documented en-US rules; never
+// derive an expected string through the formatter being tested.
 describe("Format presets and overrides", () => {
   test.each<[number, ValueFormat, string]>([
     [1284.25, "number", "1,284.25"],
@@ -38,6 +39,12 @@ describe("Format presets and overrides", () => {
     [4210000000, "compact", "4.21B"],
     [12499, { type: "compact", decimals: 2 }, "12.5K"],
     [12499, { type: "currency-compact", decimals: 2 }, "$12.5K"],
+    // Compact currency drops trailing zeros on every engine: V8 before the 2023 Intl change
+    // (Node 22) padded it to the currency's 2 digits ($12.50K, $12.0K, $4.90M).
+    [12000, "currency-compact", "$12K"],
+    [12904, "currency-compact", "$12.9K"],
+    [4900000, "currency-compact", "$4.9M"],
+    [950, "currency-compact", "$950"],
     [0.0321, "percent", "<0.1%"],
     [99.999, "percent", "99.999%"],
     [-0.01, "percent", "-<0.1%"],
@@ -68,6 +75,7 @@ describe("Format presets and overrides", () => {
   test.each<[number, ValueFormat, string]>([
     [12904, "number", "12.9K"],
     [12904, "currency", "$12.9K"],
+    [12000, "currency", "$12K"],
     [1284, "currency-precise", "$1,284"],
     [238, "duration", "4m"],
     [5400, "duration", "1.5h"],

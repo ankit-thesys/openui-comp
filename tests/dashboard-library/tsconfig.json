@@ -9,15 +9,7 @@
       "@vitest/browser/providers/playwright",
       "node"
     ],
-    "lib": [
-      "ES2023",
-      "DOM",
-      "DOM.Iterable",
-      "ES2023.Intl"
-    ]
+    "lib": ["ES2023", "DOM", "DOM.Iterable", "ES2023.Intl"]
   },
-  "include": [
-    "*.ts",
-    "*.tsx"
-  ]
+  "include": ["*.ts", "*.tsx"]
 }

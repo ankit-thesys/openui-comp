@@ -1,14 +1,28 @@
 import { library, ThemeProvider } from "@openuidev/dashboard-library-next";
 import { ThemeProvider as ComponentsThemeProvider } from "@openuidev/react-components";
 import { Renderer } from "@openuidev/react-lang";
-import { cdp } from "@vitest/browser/context";
+import { cdp, commands } from "@vitest/browser/context";
 import { act, version, type ReactNode } from "react";
 import { createRoot, hydrateRoot, type Root } from "react-dom/client";
-// The browser build by name: the React 18 alias points at the package folder, past its "browser" field.
-import { renderToString } from "react-dom/server.browser";
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
 
 declare const __REACT_MAJOR__: string;
+
+/** A tree the server renders and the browser hydrates: a program, optionally in a provider. */
+type ServerTree = {
+  program: string;
+  provider?: boolean;
+  mode?: "light" | "dark";
+  lightTheme?: Record<string, string>;
+};
+declare module "@vitest/browser/context" {
+  interface BrowserCommands {
+    serverRender: (
+      react: string,
+      trees: ServerTree[],
+    ) => Promise<{ html: string[]; stderr: string }>;
+  }
+}
 
 const program = `root = Dashboard([
   Section("Revenue", [Row([
@@ -152,44 +166,71 @@ test("dashboards in two client-rendered React roots keep their own themes", asyn
   expect(token(roots(second.host)[0]!)).toBe("#141414");
 });
 
-/**
- * Server-renders a tree and hydrates it as its own React root. React 18's server renderer warns
- * about every useLayoutEffect, even ones a real server (no window) never calls; here it runs in
- * the browser, so that warning alone is accepted, from the server step only. Hydration must
- * still log nothing.
- */
-async function hydrated(tree: ReactNode) {
-  const element = document.createElement("div");
-  element.innerHTML = renderToString(tree);
-  const serverOnly = /useLayoutEffect does nothing on the server/;
-  expect(errors.mock.calls.filter(([message]) => !serverOnly.test(String(message)))).toEqual([]);
-  errors.mockClear();
-  document.body.append(element);
-  let hydratedRoot!: Root;
-  await act(async () => {
-    hydratedRoot = hydrateRoot(element, tree);
-  });
-  extraRoots.push({ host: element, root: hydratedRoot });
-  return element;
+// Every layout effect runs here: a Kpis strip with a trend, and a Card with a Stat.
+const metricsProgram = `root = Dashboard([
+  Section("", [Kpis([Kpi("Revenue", 412600, "currency-compact", 398200, "up", null, [356, 368, 384, 398, 412])])]),
+  Section("Activity", [Row([Card("Weekly active users", [Stat(18420, "compact", 17210)], "full")])])
+])`;
+
+function clientTree(tree: ServerTree) {
+  return tree.provider ? (
+    <ThemeProvider mode={tree.mode} lightTheme={tree.lightTheme}>
+      {dashboard(tree.program)}
+    </ThemeProvider>
+  ) : (
+    dashboard(tree.program)
+  );
 }
 
-test("a server-rendered dashboard hydrates without a mismatch", async () => {
-  const element = await hydrated(<ThemeProvider mode="dark">{dashboard()}</ThemeProvider>);
-  expect(token(roots(element)[0]!)).toBe("#141414");
+/**
+ * Server-renders trees in Node, as a server would (no window), on this project's React, then
+ * hydrates each as its own React root. Neither step may log anything.
+ */
+async function hydrated(...trees: ServerTree[]) {
+  const server = await commands.serverRender(__REACT_MAJOR__, trees);
+  expect(server.stderr).toBe("");
+  const warnings = vi.spyOn(console, "warn");
+  const elements: HTMLElement[] = [];
+  try {
+    for (const [i, tree] of trees.entries()) {
+      const element = document.createElement("div");
+      element.innerHTML = server.html[i]!;
+      document.body.append(element);
+      let hydratedRoot!: Root;
+      await act(async () => {
+        hydratedRoot = hydrateRoot(element, clientTree(tree));
+      });
+      extraRoots.push({ host: element, root: hydratedRoot });
+      elements.push(element);
+    }
+    expect(warnings.mock.calls).toEqual([]);
+  } finally {
+    warnings.mockRestore();
+  }
+  return elements;
+}
+
+test("a server-rendered dashboard hydrates without a warning", async () => {
+  const [layout, metrics] = await hydrated(
+    { program, provider: true, mode: "dark" },
+    { program: metricsProgram, provider: true },
+  );
+  expect(token(roots(layout)[0]!)).toBe("#141414");
+  expect(metrics!.textContent).toContain("$412.6K");
+  expect(metrics!.textContent).toContain("18.4K");
 });
 
 test("dashboards in two hydrated React roots keep their own themes", async () => {
-  // Server ids follow tree position, so two hydrated roots start from the same useId.
-  const light = await hydrated(
-    <ThemeProvider lightTheme={{ page: "#123456" }}>{dashboard()}</ThemeProvider>,
+  // Server ids follow tree position, so hydrated roots start from the same useId.
+  const [light, dark, plain] = await hydrated(
+    { program, provider: true, lightTheme: { page: "#123456" } },
+    { program, provider: true, mode: "dark" },
+    // A dashboard with no provider applies a theme itself.
+    { program },
   );
-  const dark = await hydrated(<ThemeProvider mode="dark">{dashboard()}</ThemeProvider>);
   expect(token(roots(light)[0]!)).toBe("#123456");
   expect(token(roots(dark)[0]!)).toBe("#141414");
-  // So do two dashboards with no provider, each applying a theme itself.
-  const plain = await hydrated(dashboard());
   expect(token(roots(plain)[0]!)).toBe("#ffffff");
-  expect(token(roots(dark)[0]!)).toBe("#141414");
 });
 
 test("an inline lightTheme keeps its style tag across re-renders", async () => {

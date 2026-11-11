@@ -1,15 +1,16 @@
-import {
-  CompareOverride,
-  library,
-  StateOverride,
-  ThemeProvider,
-  type ViewState,
-} from "@openuidev/dashboard-library-next";
+// The host extras (StateOverride, CompareOverride) are internal, so this file renders the library
+// from source too: one copy of the shared contexts for the overrides to reach.
 import { Renderer } from "@openuidev/react-lang";
 import { act, type ReactNode } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
-import { kpis, metricFixtures, metricsProgram } from "./catalog.fixtures";
+import { library, ThemeProvider } from "../../packages/libraries/dashboard-next/src/index";
+import {
+  CompareOverride,
+  StateOverride,
+  type ViewState,
+} from "../../packages/libraries/dashboard-next/src/shared";
+import { kpis, metricsProgram } from "./fixtures/metrics";
 
 let host: HTMLDivElement;
 let root: Root;
@@ -85,13 +86,6 @@ for (const mode of ["light", "dark"] as const) {
       expect(
         getComputedStyle(card.querySelector(".openui-dashboard-state-content")!).visibility,
       ).toBe("hidden");
-    });
-  }
-  for (const fixture of metricFixtures) {
-    test(`catalog ${fixture.name} in ${mode}`, async () => {
-      await draw(<ThemeProvider mode={mode}>{renderProgram(fixture.program)}</ThemeProvider>);
-      expect(host.textContent).toContain(fixture.text);
-      expect(host.querySelector("[data-state=invalid]")).toBeNull();
     });
   }
 }

@@ -1,23 +1,5 @@
 // Copied from preview/src/catalog.ts in dashboards-ui-library-src.
-export type Variant = { title: string; note?: string; program: string };
-
-export type ComponentDoc = {
-  slug: string;
-  name: string;
-  group: string;
-  summary: string;
-  /**
-   * The kit components this entry documents. Its Props panel is generated
-   * from their library signatures: call shape, every argument in order, and
-   * its type, so it can't fall behind the schema.
-   */
-  components: string[];
-  /** A short note per argument, keyed "arg" (or "Component.arg" when the entry documents several). Types come from the schema. */
-  notes: Record<string, string>;
-  variants: Variant[];
-  /** What the example tabs choose, for entries without controls ("Options", "Region"); every control row is titled. */
-  variantsLabel?: string;
-};
+import type { ComponentDoc, RenderFixture } from "./catalog";
 
 const card = (inner: string) => `root = Dashboard([Section("", [Row([${inner}])])])`;
 export const KPI_SET = [
@@ -84,7 +66,7 @@ export const metricCatalog: ComponentDoc[] = [
 
 // The Stat catalog includes a TimeSeries. Preserve that entry above verbatim;
 // render its Stat alone until the trends ticket provides TimeSeries and Series.
-export const metricFixtures = [
+export const metricFixtures: RenderFixture[] = [
   { name: "Kpis", program: metricCatalog[0]!.variants[0]!.program, text: "$412.6K" },
   {
     name: "Kpi",

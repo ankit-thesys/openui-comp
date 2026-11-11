@@ -188,7 +188,9 @@ export const layoutStyles = css`
     display: contents;
   }
 
-  .openui-dashboard-card-controls:not(:has(button, select, input)) {
+  /* goober splits selectors at every comma, even inside :has() or :is(), so this
+     stays comma-free: one :not(:has()) per control type. */
+  .openui-dashboard-card-controls:not(:has(button)):not(:has(select)):not(:has(input)) {
     display: none;
   }
   @container (max-width: 520px) {

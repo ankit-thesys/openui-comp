@@ -1,7 +1,7 @@
 "use client";
 
 import { defineComponent, useIsStreaming, type ComponentRenderProps } from "@openuidev/react-lang";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { z } from "zod/v4";
 
 import { formatSchema, formatValue } from "./format";
@@ -18,6 +18,7 @@ import {
   StatusIcon,
   toNumbers,
   useCompare,
+  useIsomorphicLayoutEffect,
   useViewState,
 } from "./shared";
 import { MUTED_COLOR, seriesColor, textureOf } from "./theme";
@@ -327,7 +328,7 @@ export const Kpis = defineComponent({
     const compact = items.length > MAX_PER_ROW;
     const [cols, setCols] = useState(() => Math.max(1, Math.min(items.length || 1, 4)));
     // Measured before paint, so the strip never shows its first guess of columns and then jumps.
-    useLayoutEffect(() => {
+    useIsomorphicLayoutEffect(() => {
       const el = strip.current;
       if (!el) return;
       const update = () => {

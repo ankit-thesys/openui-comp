@@ -29,6 +29,14 @@ import {
 
 import { MUTED_COLOR } from "./theme";
 
+/**
+ * useLayoutEffect in the browser, useEffect on the server. React 18's server renderer warns
+ * about every useLayoutEffect; these effects only measure or watch the DOM, so on the server
+ * there is nothing for them to do either way.
+ */
+export const useIsomorphicLayoutEffect =
+  typeof window === "undefined" ? useEffect : useLayoutEffect;
+
 /* ---------- Comparison state ---------- */
 
 type CompareState = {
@@ -116,7 +124,7 @@ export function nodeList<T>(nodes: unknown): T[] {
 export function useWidth<T extends HTMLElement = HTMLDivElement>() {
   const [el, setEl] = useState<T | null>(null);
   const [width, setWidth] = useState(0);
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (!el) return;
     setWidth(el.getBoundingClientRect().width);
     const observer = new ResizeObserver(([entry]) => entry && setWidth(entry.contentRect.width));
@@ -383,7 +391,7 @@ export function Legend({
   const [open, setOpen] = useState(false);
   const signature = shown.map((entry) => entry.name).join("|");
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const el = row.current;
     if (!el) return;
     const measure = () => {

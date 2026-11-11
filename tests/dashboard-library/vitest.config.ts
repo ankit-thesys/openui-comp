@@ -1,5 +1,7 @@
+import { spawnSync } from "node:child_process";
 import { createRequire } from "node:module";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "vitest/config";
 
 const require = createRequire(import.meta.url);
@@ -15,6 +17,20 @@ const react18: { find: RegExp; replacement: string }[] = [
   { find: /^react-dom(\/.*)?$/, replacement: `${dir("react-dom-18")}$1` },
   { find: /^react(\/.*)?$/, replacement: `${dir("react-18")}$1` },
 ];
+
+/**
+ * Server-renders dashboard trees in a separate Node process (ssr/render.mjs), as a real server
+ * does, with no window, on the project's React. Returns the HTML for each tree and whatever the
+ * server render printed to stderr, which the hydration tests expect to be nothing.
+ */
+const serverRender = (_context: unknown, react: string, specs: unknown[]) => {
+  const script = fileURLToPath(new URL("./ssr/render.mjs", import.meta.url));
+  const run = spawnSync(process.execPath, [script, react, JSON.stringify(specs)], {
+    encoding: "utf8",
+  });
+  if (run.status !== 0) throw new Error(`server render failed:\n${run.stderr}`);
+  return { html: JSON.parse(run.stdout) as string[], stderr: run.stderr };
+};
 
 const browser = (react: "18" | "19") => ({
   // Each React gets its own pre-bundled deps; a shared cache would mix the two copies.
@@ -45,6 +61,7 @@ const browser = (react: "18" | "19") => ({
       provider: "playwright" as const,
       instances: [{ browser: "chromium" as const }],
       headless: true,
+      commands: { serverRender },
     },
   },
 });

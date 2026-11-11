@@ -1,4 +1,6 @@
 import { css } from "@openuidev/react-components";
+// goober splits every selector at its commas, even inside :is(), :not() or :has(), so no
+// selector here puts a comma inside parentheses: list the alternatives as separate selectors.
 export const sharedStyles = css`
   .openui-dashboard-segmented {
     display: inline-flex;
@@ -70,6 +72,15 @@ export const sharedStyles = css`
       0 0 0 2px var(--openui-dashboard-surface),
       0 0 0 3.5px var(--openui-dashboard-ink);
   }
+  .openui-dashboard-size-key {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    color: var(--openui-dashboard-ink-secondary);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
   .openui-dashboard-chart-top > .openui-dashboard-legend + .openui-dashboard-size-key {
     margin-left: auto;
   }
@@ -84,6 +95,10 @@ export const sharedStyles = css`
     background: var(--openui-dashboard-surface);
     color: var(--openui-dashboard-ink);
     box-shadow: 0 0 0 1px var(--openui-dashboard-border-strong);
+  }
+  .openui-dashboard-segmented button:disabled {
+    opacity: 0.5;
+    cursor: default;
   }
   .openui-dashboard-status-icon {
     --openui-dashboard-status: var(--openui-dashboard-ink-muted);
@@ -120,28 +135,28 @@ export const sharedStyles = css`
       var(--openui-dashboard-status, var(--openui-dashboard-ink-muted))
     );
   }
-  :is(.openui-dashboard-status-icon, .openui-dashboard-status-shape).openui-dashboard-status-warning
-    > span {
+  .openui-dashboard-status-icon.openui-dashboard-status-warning > span,
+  .openui-dashboard-status-shape.openui-dashboard-status-warning > span {
     width: 0.42em;
     height: 0.37em;
     border-radius: 0;
     clip-path: polygon(50% 0, 100% 100%, 0 100%);
   }
-  :is(.openui-dashboard-status-icon, .openui-dashboard-status-shape).openui-dashboard-status-bad
-    > span {
+  .openui-dashboard-status-icon.openui-dashboard-status-bad > span,
+  .openui-dashboard-status-shape.openui-dashboard-status-bad > span {
     width: 0.4em;
     height: 0.4em;
     border-radius: 0;
     clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
   }
-  :is(.openui-dashboard-status-icon, .openui-dashboard-status-shape).openui-dashboard-status-info
-    > span {
+  .openui-dashboard-status-icon.openui-dashboard-status-info > span,
+  .openui-dashboard-status-shape.openui-dashboard-status-info > span {
     width: 0.3em;
     height: 0.3em;
     border-radius: 0.06em;
   }
-  :is(.openui-dashboard-status-icon, .openui-dashboard-status-shape).openui-dashboard-status-neutral
-    > span {
+  .openui-dashboard-status-icon.openui-dashboard-status-neutral > span,
+  .openui-dashboard-status-shape.openui-dashboard-status-neutral > span {
     width: 0.42em;
     height: 0.12em;
     border-radius: 0.06em;
@@ -780,29 +795,29 @@ export const sharedStyles = css`
   /* A card with a stat above its chart puts the legend on the stat's delta
    line, right-aligned: the chart wrapper dissolves so the legend can share
    the stat's row while the plot spans the row below. Narrow cards stack. */
-  :is(.openui-dashboard-card-body, .openui-dashboard-state-content):has(
-    > .openui-dashboard-stat + .openui-dashboard-chart
-  ) {
+  .openui-dashboard-card-body:has(> .openui-dashboard-stat + .openui-dashboard-chart),
+  .openui-dashboard-state-content:has(> .openui-dashboard-stat + .openui-dashboard-chart) {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
     column-gap: var(--openui-dashboard-space-lg);
   }
-  :is(.openui-dashboard-card-body, .openui-dashboard-state-content):has(
-      > .openui-dashboard-stat + .openui-dashboard-chart
-    )
+  .openui-dashboard-card-body:has(> .openui-dashboard-stat + .openui-dashboard-chart)
+    > .openui-dashboard-stat,
+  .openui-dashboard-state-content:has(> .openui-dashboard-stat + .openui-dashboard-chart)
     > .openui-dashboard-stat {
     grid-column: 1;
     grid-row: 1;
   }
-  :is(.openui-dashboard-card-body, .openui-dashboard-state-content):has(
-      > .openui-dashboard-stat + .openui-dashboard-chart
-    )
+  .openui-dashboard-card-body:has(> .openui-dashboard-stat + .openui-dashboard-chart)
+    > .openui-dashboard-chart,
+  .openui-dashboard-state-content:has(> .openui-dashboard-stat + .openui-dashboard-chart)
     > .openui-dashboard-chart {
     display: contents;
   }
-  :is(.openui-dashboard-card-body, .openui-dashboard-state-content):has(
-      > .openui-dashboard-stat + .openui-dashboard-chart
-    )
+  .openui-dashboard-card-body:has(> .openui-dashboard-stat + .openui-dashboard-chart)
+    > .openui-dashboard-chart
+    > .openui-dashboard-legend,
+  .openui-dashboard-state-content:has(> .openui-dashboard-stat + .openui-dashboard-chart)
     > .openui-dashboard-chart
     > .openui-dashboard-legend {
     grid-column: 2;
@@ -812,29 +827,30 @@ export const sharedStyles = css`
     /* The subtitle's line box, so keys centre exactly on the delta line. */
     line-height: 1.4;
   }
-  :is(.openui-dashboard-card-body, .openui-dashboard-state-content):has(
-      > .openui-dashboard-stat + .openui-dashboard-chart
-    )
+  .openui-dashboard-card-body:has(> .openui-dashboard-stat + .openui-dashboard-chart)
+    > .openui-dashboard-chart
+    > .openui-dashboard-chart-plot,
+  .openui-dashboard-state-content:has(> .openui-dashboard-stat + .openui-dashboard-chart)
     > .openui-dashboard-chart
     > .openui-dashboard-chart-plot {
     grid-column: 1 / -1;
     grid-row: 2;
   }
   @container (max-width: 480px) {
-    :is(.openui-dashboard-card-body, .openui-dashboard-state-content):has(
-      > .openui-dashboard-stat + .openui-dashboard-chart
-    ) {
+    .openui-dashboard-card-body:has(> .openui-dashboard-stat + .openui-dashboard-chart),
+    .openui-dashboard-state-content:has(> .openui-dashboard-stat + .openui-dashboard-chart) {
       display: flex;
     }
-    :is(.openui-dashboard-card-body, .openui-dashboard-state-content):has(
-        > .openui-dashboard-stat + .openui-dashboard-chart
-      )
+    .openui-dashboard-card-body:has(> .openui-dashboard-stat + .openui-dashboard-chart)
+      > .openui-dashboard-chart,
+    .openui-dashboard-state-content:has(> .openui-dashboard-stat + .openui-dashboard-chart)
       > .openui-dashboard-chart {
       display: flex;
     }
-    :is(.openui-dashboard-card-body, .openui-dashboard-state-content):has(
-        > .openui-dashboard-stat + .openui-dashboard-chart
-      )
+    .openui-dashboard-card-body:has(> .openui-dashboard-stat + .openui-dashboard-chart)
+      > .openui-dashboard-chart
+      > .openui-dashboard-legend,
+    .openui-dashboard-state-content:has(> .openui-dashboard-stat + .openui-dashboard-chart)
       > .openui-dashboard-chart
       > .openui-dashboard-legend {
       justify-content: flex-start;
@@ -843,5 +859,11 @@ export const sharedStyles = css`
   .openui-dashboard-segmented button:focus-visible {
     outline: 2px solid var(--openui-dashboard-accent);
     outline-offset: 1px;
+  }
+  /* A ramp's colour key above its grid (Heatmap, Cohorts), 10px over the first row like every legend.
+     After the legend rules: the key is a legend too, and this must win. */
+  .openui-dashboard-ramp-key {
+    align-items: center;
+    margin-bottom: 10px;
   }
 `;
