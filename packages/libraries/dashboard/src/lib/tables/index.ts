@@ -1,9 +1,10 @@
-import { Column, Table } from "../../tables/table";
-import { tableStyles } from "../../tables/tableStyles";
+import { tableStyles } from "../../components/tables/styles";
 import type { Group } from "../group";
+import { ColumnComponent } from "./Column";
+import { TableComponent } from "./Table";
 
-/** Tables, KeyValues and Goal (#220). */
+/** Table and Column. */
 export const tables: Group = {
-  components: [Table, Column],
+  components: [TableComponent, ColumnComponent],
   styles: { table: tableStyles },
 };

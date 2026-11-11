@@ -1,5 +1,5 @@
-// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
-export const tableStyles = String.raw`
+export const tableRules = [
+  String.raw`
   .openui-dashboard-table-wrap {
     overflow-x: auto;
     margin: 0 calc(-1 * var(--openui-dashboard-space-xl));
@@ -444,4 +444,5 @@ export const tableStyles = String.raw`
       scrollbar-color: color-mix(in srgb, var(--openui-dashboard-ink) 10%, transparent) transparent;
     }
   }
-`;
+`,
+] as const;
