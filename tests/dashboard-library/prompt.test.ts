@@ -1,4 +1,4 @@
-import { library } from "@openuidev/dashboard-library-next";
+import { library } from "@openuidev/dashboard-library";
 import { expect, test } from "vitest";
 
 test("layout library prompt", () => {

@@ -1,4 +1,4 @@
-import { library } from "@openuidev/dashboard-library-next";
+import { library } from "@openuidev/dashboard-library";
 import { Renderer } from "@openuidev/react-lang";
 import { act, type ReactNode } from "react";
 import { createRoot, type Root } from "react-dom/client";
@@ -7,7 +7,7 @@ import {
   Empty,
   FilterRegistryProvider,
   useReportFilter,
-} from "../../packages/libraries/dashboard-next/src/shared";
+} from "../../packages/libraries/dashboard/src/shared";
 
 let host: HTMLDivElement;
 let root: Root;

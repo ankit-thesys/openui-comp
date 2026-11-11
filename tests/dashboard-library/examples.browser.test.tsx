@@ -1,4 +1,4 @@
-import { library, ThemeProvider } from "@openuidev/dashboard-library-next";
+import { library, ThemeProvider } from "@openuidev/dashboard-library";
 import { Renderer } from "@openuidev/react-lang";
 import { act } from "react";
 import { createRoot, type Root } from "react-dom/client";

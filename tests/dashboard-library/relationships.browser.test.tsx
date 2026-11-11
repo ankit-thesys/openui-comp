@@ -3,12 +3,12 @@ import { Renderer } from "@openuidev/react-lang";
 import { act, createContext, useContext, type ReactNode } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
-import { library, ThemeProvider } from "../../packages/libraries/dashboard-next/src/index";
+import { library, ThemeProvider } from "../../packages/libraries/dashboard/src/index";
 import {
   CompareOverride,
   StateOverride,
   useReportFilter,
-} from "../../packages/libraries/dashboard-next/src/shared";
+} from "../../packages/libraries/dashboard/src/shared";
 import { accountPoints, card, relationshipsFixtures } from "./fixtures/relationships";
 
 let host: HTMLDivElement;

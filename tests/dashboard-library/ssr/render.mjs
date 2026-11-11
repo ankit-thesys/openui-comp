@@ -26,7 +26,7 @@ if (react === "18") {
 const { createElement } = await import("react");
 const { renderToString } = await import("react-dom/server");
 const { Renderer } = await import("@openuidev/react-lang");
-const { library, ThemeProvider } = await import("@openuidev/dashboard-library-next");
+const { library, ThemeProvider } = await import("@openuidev/dashboard-library");
 
 const html = specs.map((spec) => {
   const dashboard = createElement(Renderer, { library, response: spec.program });

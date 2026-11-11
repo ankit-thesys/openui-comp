@@ -509,34 +509,6 @@ importers:
       '@openuidev/react-lang':
         specifier: workspace:>=1.0.1 <2.0.0
         version: link:../../react-lang
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
-      lucide-react:
-        specifier: ^0.562.0
-        version: 0.562.0(react@19.2.4)
-      remark-gfm:
-        specifier: ^4.0.1
-        version: 4.0.1
-    devDependencies:
-      '@types/react':
-        specifier: 'catalog:'
-        version: 19.2.17
-      react:
-        specifier: 'catalog:'
-        version: 19.2.4
-      zod:
-        specifier: 'catalog:'
-        version: 4.4.3
-
-  packages/libraries/dashboard-next:
-    dependencies:
-      '@openuidev/react-components':
-        specifier: workspace:>=0.0.1 <0.1.0
-        version: link:../../react-components
-      '@openuidev/react-lang':
-        specifier: workspace:>=1.0.1 <2.0.0
-        version: link:../../react-lang
       d3-geo:
         specifier: ^3.1.2
         version: 3.1.2
@@ -1241,9 +1213,9 @@ importers:
 
   tests/dashboard-library:
     dependencies:
-      '@openuidev/dashboard-library-next':
+      '@openuidev/dashboard-library':
         specifier: workspace:*
-        version: link:../../packages/libraries/dashboard-next
+        version: link:../../packages/libraries/dashboard
       '@openuidev/react-components':
         specifier: workspace:*
         version: link:../../packages/react-components
@@ -5836,9 +5808,6 @@ packages:
   '@types/d3-format@3.0.4':
     resolution: {integrity: sha512-fALi2aI6shfg7vM5KiR1wNJnZ7r6UuggVqtDA+xiEdPZQwy/trcQaHnwShLuLdta2rTymCNpxYTiMZX/e09F4g==}
 
-  '@types/d3-geo@3.1.0':
-    resolution: {integrity: sha512-856sckF0oP/diXtS4jNsiQw/UuK5fQG8l/a9VVLeSouf1/PPbBE1i1W852zVwKwYCBkFJJB7nCFTbk6UMEXBOQ==}
-
   '@types/d3-geo@3.1.1':
     resolution: {integrity: sha512-65Emv9fQiQQqphLlRkuQ5ypPsOmWPhtBGCMv61JDPEPMvsx+gzhGf74yw1a78xFKPj6zw4AgQICJoQv0vK9M2w==}
 
@@ -7238,10 +7207,6 @@ packages:
 
   d3-format@3.1.2:
     resolution: {integrity: sha512-AJDdYOdnyRDV5b6ArilzCPPwc1ejkHcoyFarqlPqT7zRYjhavcT3uSrqcMvsgh2CgoPbK3RCwyHaVyxYcP2Arg==}
-    engines: {node: '>=12'}
-
-  d3-geo@3.1.1:
-    resolution: {integrity: sha512-637ln3gXKXOwhalDzinUgY83KzNWZRKbYubaG+fGVuc/dxO64RRljtCTnf5ecMyE1RIdtqpkVcq0IbtU2S8j2Q==}
     engines: {node: '>=12'}
 
   d3-geo@3.1.2:
@@ -16756,10 +16721,6 @@ snapshots:
 
   '@types/d3-format@3.0.4': {}
 
-  '@types/d3-geo@3.1.0':
-    dependencies:
-      '@types/geojson': 7946.0.16
-
   '@types/d3-geo@3.1.1':
     dependencies:
       '@types/geojson': 7946.0.16
@@ -16821,7 +16782,7 @@ snapshots:
       '@types/d3-fetch': 3.0.7
       '@types/d3-force': 3.0.10
       '@types/d3-format': 3.0.4
-      '@types/d3-geo': 3.1.0
+      '@types/d3-geo': 3.1.1
       '@types/d3-hierarchy': 3.1.7
       '@types/d3-interpolate': 3.0.4
       '@types/d3-path': 3.1.1
@@ -18435,10 +18396,6 @@ snapshots:
 
   d3-format@3.1.2: {}
 
-  d3-geo@3.1.1:
-    dependencies:
-      d3-array: 3.2.4
-
   d3-geo@3.1.2:
     dependencies:
       d3-array: 3.2.4
@@ -18530,7 +18487,7 @@ snapshots:
       d3-fetch: 3.0.1
       d3-force: 3.0.0
       d3-format: 3.1.2
-      d3-geo: 3.1.1
+      d3-geo: 3.1.2
       d3-hierarchy: 3.1.2
       d3-interpolate: 3.0.1
       d3-path: 3.1.0

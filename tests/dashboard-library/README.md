@@ -5,7 +5,7 @@ This private workspace package keeps tests outside the shipped component library
 Build dependencies and the library before running tests:
 
 ```sh
-pnpm --filter '@openuidev/dashboard-library-next...' --workspace-concurrency=1 run build
+pnpm --filter '@openuidev/dashboard-library...' --workspace-concurrency=1 run build
 pnpm --filter @openuidev/dashboard-library-tests test:node
 pnpm --filter @openuidev/dashboard-library-tests exec playwright install chromium
 pnpm --filter @openuidev/dashboard-library-tests test:browser

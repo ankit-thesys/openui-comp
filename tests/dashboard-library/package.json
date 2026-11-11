@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@openuidev/dashboard-library-next": "workspace:*",
+    "@openuidev/dashboard-library": "workspace:*",
     "@openuidev/react-lang": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:",

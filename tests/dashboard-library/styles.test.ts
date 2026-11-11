@@ -12,7 +12,7 @@ import { expect, test } from "vitest";
  * So a functional pseudo-class (:has(), :not(), :nth-child()…) may only end a selector, and
  * holds no comma. Group tickets port more of his stylesheet; this catches it at the source.
  */
-const src = join(import.meta.dirname, "../../packages/libraries/dashboard-next/src");
+const src = join(import.meta.dirname, "../../packages/libraries/dashboard/src");
 
 function styleFiles(dir: string): string[] {
   return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {

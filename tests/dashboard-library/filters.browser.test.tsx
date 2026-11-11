@@ -2,8 +2,8 @@ import { Renderer } from "@openuidev/react-lang";
 import { act, type ReactNode } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
-import { library, ThemeProvider } from "../../packages/libraries/dashboard-next/src/index";
-import { StateOverride } from "../../packages/libraries/dashboard-next/src/shared";
+import { library, ThemeProvider } from "../../packages/libraries/dashboard/src/index";
+import { StateOverride } from "../../packages/libraries/dashboard/src/shared";
 import { filtersFixtures } from "./fixtures/filters";
 
 let host: HTMLDivElement;

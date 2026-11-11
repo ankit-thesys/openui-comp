@@ -1,4 +1,4 @@
-import { library } from "@openuidev/dashboard-library-next";
+import { library } from "@openuidev/dashboard-library";
 import { createParser } from "@openuidev/react-lang";
 
 /** His complete registration list (dashboards-ui-library/src/library.ts). */

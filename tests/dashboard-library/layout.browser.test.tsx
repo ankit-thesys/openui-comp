@@ -1,4 +1,4 @@
-import { library, ThemeProvider } from "@openuidev/dashboard-library-next";
+import { library, ThemeProvider } from "@openuidev/dashboard-library";
 import { ThemeProvider as ComponentsThemeProvider } from "@openuidev/react-components";
 import { Renderer } from "@openuidev/react-lang";
 import { cdp, commands } from "@vitest/browser/context";

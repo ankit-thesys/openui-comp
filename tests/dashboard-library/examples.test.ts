@@ -1,4 +1,4 @@
-import { library } from "@openuidev/dashboard-library-next";
+import { library } from "@openuidev/dashboard-library";
 import { createParser } from "@openuidev/react-lang";
 import { expect, test } from "vitest";
 import { EXAMPLES } from "./fixtures/examples";

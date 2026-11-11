@@ -9,7 +9,7 @@ import {
   isRatioFormat,
   padDecimals,
   type ValueFormat,
-} from "../../packages/libraries/dashboard-next/src/format";
+} from "../../packages/libraries/dashboard/src/format";
 
 // Format is internal (the package exports only library and ThemeProvider), so these unit tests
 // import it from source. Literal expectations from the source's documented en-US rules; never

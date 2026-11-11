@@ -3,16 +3,16 @@ import { Renderer } from "@openuidev/react-lang";
 import { act, type ReactNode } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
-import { library, ThemeProvider } from "../../packages/libraries/dashboard-next/src/index";
-import type { Shape } from "../../packages/libraries/dashboard-next/src/maps/atlas";
-import { CompareOverride, StateOverride } from "../../packages/libraries/dashboard-next/src/shared";
+import { library, ThemeProvider } from "../../packages/libraries/dashboard/src/index";
+import type { Shape } from "../../packages/libraries/dashboard/src/maps/atlas";
+import { CompareOverride, StateOverride } from "../../packages/libraries/dashboard/src/shared";
 import { mapsFixtures } from "./fixtures/maps";
 
 // Keep real atlas geometry for rendering; intercept only the asset boundary for loading/failure.
 const atlasControl = vi.hoisted(() => ({ load: null as null | (() => Promise<Shape[]>) }));
-vi.mock("../../packages/libraries/dashboard-next/src/maps/atlas", async (importOriginal) => {
+vi.mock("../../packages/libraries/dashboard/src/maps/atlas", async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import("../../packages/libraries/dashboard-next/src/maps/atlas")>();
+    await importOriginal<typeof import("../../packages/libraries/dashboard/src/maps/atlas")>();
   return {
     ...actual,
     loadShapes: (region: "world" | "us") => atlasControl.load?.() ?? actual.loadShapes(region),
@@ -27,8 +27,8 @@ beforeEach(async () => {
   atlasControl.load = null;
   // Resolve the real assets before drawing, keeping their asynchronous updates inside act.
   const actual = await vi.importActual<
-    typeof import("../../packages/libraries/dashboard-next/src/maps/atlas")
-  >("../../packages/libraries/dashboard-next/src/maps/atlas");
+    typeof import("../../packages/libraries/dashboard/src/maps/atlas")
+  >("../../packages/libraries/dashboard/src/maps/atlas");
   await Promise.all([actual.loadShapes("world"), actual.loadShapes("us")]);
   host = document.createElement("div");
   host.style.width = "1200px";

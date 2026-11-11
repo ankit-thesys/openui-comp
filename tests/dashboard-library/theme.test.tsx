@@ -1,4 +1,4 @@
-import { library, ThemeProvider } from "@openuidev/dashboard-library-next";
+import { library, ThemeProvider } from "@openuidev/dashboard-library";
 import { Renderer } from "@openuidev/react-lang";
 import { renderToString } from "react-dom/server";
 import { afterEach, expect, test, vi } from "vitest";
