@@ -19,7 +19,7 @@ import {
 } from "recharts";
 import { z } from "zod/v4";
 import { formatSchema, formatValue, isRateFormat, type ValueFormat } from "../format";
-import { goodWhenSchema, numbersSchema } from "../schema";
+import { goodWhenSchema } from "../schema";
 import {
   columnFormatter,
   Empty,
@@ -46,24 +46,8 @@ import { MUTED_COLOR, seriesColor as sharedSeriesColor, textureOf, TEXTURES } fr
 // The shared helper indexes a bounded palette; assert its string return for strict indexing.
 const seriesColor = (index: number) => sharedSeriesColor(index)!;
 
-// Local copy of the Series reference used by Funnel. The trends group owns its registration
-// once available; composition supplies the identical definition until then.
-const seriesSchema = z.object({
-  name: z.string(),
-  values: numbersSchema,
-  previous: numbersSchema.optional(),
-  mark: z.enum(["line", "area", "bar"]).optional(),
-  lows: numbersSchema.optional(),
-  highs: numbersSchema.optional(),
-});
-
-export const Series = defineComponent({
-  name: "Series",
-  props: seriesSchema,
-  description:
-    'One series; previous is the same points for the previous period. Use null for gaps. mark overrides the chart type to mix bars and a line in the same unit, e.g. Series("7-day average", avg, null, "line"). lows/highs shade a band such as a 95% interval: Series("Lift", lift, null, "line", lower, upper).',
-  component: () => null,
-});
+// Funnel's segments are Series, which the Trends group owns and registers.
+import { Series } from "../trends/charts";
 
 export const AXIS_TICK = { fill: "var(--openui-dashboard-ink-muted)", fontSize: 12 };
 const WATERFALL_BAR = 16;

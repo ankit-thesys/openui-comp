@@ -28,6 +28,20 @@ afterEach(async () => {
 async function draw(children: ReactNode) {
   await act(async () => root.render(children));
 }
+/**
+ * Waits for the charts to measure. ResizeObserver (recharts' ResponsiveContainer, useWidth)
+ * updates state when it fires; waiting inside act keeps those updates in it, where outside
+ * they log "not wrapped in act" warnings depending on timing.
+ */
+async function settle(check: () => void) {
+  // One frame at a time inside act, so React commits each measurement before the next check.
+  await vi.waitFor(async () => {
+    await act(async () => {
+      await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+    });
+    check();
+  });
+}
 const card = (inner: string) =>
   `root = Dashboard([Section("", [Row([Card("Composition", [${inner}], "full")])])])`;
 const render = (inner: string) => <Renderer library={library} response={card(inner)} />;
@@ -79,7 +93,7 @@ const examples = [
     program:
       'Flow([{from: "Search", to: "Signed up", value: 600}, {from: "Search", to: "Exited", value: 400}], "compact")',
     text: ["Search", "Signed up", "Exited", "600", "400", "60%"],
-    marks: ".recharts-sankey-node",
+    marks: ".recharts-sankey-nodes > .recharts-layer",
     count: 3,
     empty: "Flow([])",
   },
@@ -100,7 +114,7 @@ for (const mode of ["light", "dark"] as const) {
   for (const example of examples) {
     test(`${example.name} values and marks in ${mode}`, async () => {
       await draw(<ThemeProvider mode={mode}>{render(example.program)}</ThemeProvider>);
-      await vi.waitFor(() => {
+      await settle(() => {
         expect(host.querySelectorAll(example.marks)).toHaveLength(example.count);
       });
       for (const text of example.text) expect(host.textContent).toContain(text);
@@ -175,15 +189,13 @@ for (const mode of ["light", "dark"] as const) {
         <CompareOverride value={true}>{render(program)}</CompareOverride>
       </ThemeProvider>,
     );
-    await vi.waitFor(() =>
-      expect(host.querySelector(".openui-dashboard-funnel-shape")).not.toBeNull(),
-    );
+    await settle(() => expect(host.querySelector(".openui-dashboard-funnel-shape")).not.toBeNull());
     expect(host.querySelectorAll(".openui-dashboard-funnel-heads > div")).toHaveLength(3);
     expect(
       host.querySelector(".openui-dashboard-funnel-plot svg g[stroke-dasharray]"),
     ).not.toBeNull();
     host.style.width = "300px";
-    await vi.waitFor(() =>
+    await settle(() =>
       expect(host.querySelectorAll(".openui-dashboard-funnel-step")).toHaveLength(3),
     );
   });
@@ -232,12 +244,14 @@ test("Flow skips back links and nonpositive links with a readable note", async (
       'Flow([{from: "Entry", to: "Converted", value: 12}, {from: "Converted", to: "Entry", value: 2}, {from: "Entry", to: "Exited", value: 0}])',
     ),
   );
-  await vi.waitFor(() => expect(host.querySelectorAll(".recharts-sankey-node")).toHaveLength(2));
+  await settle(() =>
+    expect(host.querySelectorAll(".recharts-sankey-nodes > .recharts-layer")).toHaveLength(2),
+  );
   expect(host.textContent).toContain(
     "1 link not drawn, it loops back to an earlier step: Converted → Entry",
   );
   expect(host.textContent).toContain("1 link not drawn, zero or below or unnamed: Entry → Exited");
-  expect(host.querySelectorAll(".recharts-sankey-link")).toHaveLength(1);
+  expect(host.querySelectorAll(".recharts-sankey-links > .recharts-layer")).toHaveLength(1);
 });
 
 test("split Funnel draws one band per segment per step and suppresses previous", async () => {

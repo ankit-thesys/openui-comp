@@ -117,7 +117,8 @@ export const compositionStyles = css`
     display: flex;
     flex-direction: column;
   }
-  .openui-dashboard-funnel-steps > div:not(:first-child) > .openui-dashboard-funnel-link {
+  /* * + div for his div:not(:first-child): goober breaks a selector with anything after a ")". */
+  .openui-dashboard-funnel-steps > * + div > .openui-dashboard-funnel-link {
     flex: 1 1 auto;
   }
   .openui-dashboard-funnel-gap svg {
