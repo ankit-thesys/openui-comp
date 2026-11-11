@@ -1,4 +1,9 @@
-import { emptyGroup, type Group } from "./group";
+import { Marker, Reference, Series, TimeSeries } from "../trends/charts";
+import { SmallMultiples, StatusTimeline } from "../trends/specialized";
+import { trendsStyles } from "../trends/styles";
+import type { Group } from "./group";
 
-/** Trends (#221): filled in by that ticket. */
-export const trends: Group = emptyGroup;
+export const trends: Group = {
+  components: [TimeSeries, Series, Reference, Marker, SmallMultiples, StatusTimeline],
+  styles: [trendsStyles],
+};
