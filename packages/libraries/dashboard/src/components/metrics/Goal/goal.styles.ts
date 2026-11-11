@@ -1,5 +1,5 @@
-// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
-export const goalStyles = String.raw`
+export const goalRules = [
+  String.raw`
   .openui-dashboard-goal-track {
     transition: transform 150ms;
   }
@@ -105,4 +105,5 @@ export const goalStyles = String.raw`
     font-size: 12px;
     color: var(--openui-dashboard-ink-muted);
   }
-`;
+`,
+] as const;

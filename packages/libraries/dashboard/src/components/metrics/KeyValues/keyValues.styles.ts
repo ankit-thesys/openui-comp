@@ -1,5 +1,5 @@
-// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
-export const keyValuesStyles = String.raw`
+export const keyValuesRules = [
+  String.raw`
   .openui-dashboard-kv {
     display: flex;
     flex-direction: column;
@@ -28,4 +28,5 @@ export const keyValuesStyles = String.raw`
     font-weight: 600;
     font-variant-numeric: tabular-nums;
   }
-`;
+`,
+] as const;

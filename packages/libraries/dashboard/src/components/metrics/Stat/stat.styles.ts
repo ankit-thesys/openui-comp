@@ -1,5 +1,5 @@
-// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
-export const statStyles = String.raw`
+export const statRules = [
+  String.raw`
   .openui-dashboard-stat {
     padding: var(--openui-dashboard-space-xs) 0;
   }
@@ -11,4 +11,5 @@ export const statStyles = String.raw`
     line-height: 1.15;
     font-variant-numeric: tabular-nums;
   }
-`;
+`,
+] as const;
