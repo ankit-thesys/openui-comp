@@ -1,6 +1,5 @@
-// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
-
-export const mapStyles = String.raw`
+export const mapsRules = [
+  String.raw`
   .openui-dashboard-geo {
     display: flex;
     flex-direction: column;
@@ -55,4 +54,5 @@ export const mapStyles = String.raw`
       margin-top: 0;
     }
   }
-`;
+`,
+] as const;

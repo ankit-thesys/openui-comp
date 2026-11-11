@@ -1,10 +1,12 @@
-import { Cohorts, Heatmap } from "../../relationships/grids";
-import { Scatter } from "../../relationships/scatter";
-import { relationshipsStyles } from "../../relationships/styles";
+import { scatterRules } from "../../components/relationships/Scatter/scatter.styles";
+import { relationshipsRules } from "../../components/relationships/relationships.styles";
 import type { Group } from "../group";
-
-/** Relationships (#224). Scatter's references use the Reference Trends registers. */
+import { CohortsComponent } from "./Cohorts";
+import { HeatmapComponent } from "./Heatmap";
+import { ScatterComponent } from "./Scatter";
 export const relationships: Group = {
-  components: [Scatter, Heatmap, Cohorts],
-  styles: { relationships: relationshipsStyles },
+  components: [ScatterComponent, HeatmapComponent, CohortsComponent],
+  styles: {
+    relationships: [...scatterRules, ...relationshipsRules].join(""),
+  },
 };

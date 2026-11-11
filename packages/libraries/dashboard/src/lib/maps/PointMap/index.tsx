@@ -1,0 +1,13 @@
+"use client";
+import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
+import { PointMap } from "../../../components/maps/PointMap";
+import { pointMapPropsSchema, type PointMapSchemaProps } from "./schema";
+export const PointMapComponent = defineComponent({
+  name: "PointMap",
+  props: pointMapPropsSchema,
+  description:
+    'Values at places (stores, cities, offices, data centres) as circles sized by value (area, not radius) on a world or US map, with a ranked list beside it. lats/lons in degrees. valueLabel names the measure ("Headcount"). groups gives each place a type, drawn as its own colour and shape. previous adds each place\'s change, coloured by goodWhen. The 8 biggest places label themselves. For values by country or US state, use GeoMap; give it width two-thirds or full.',
+  component: function PointMapView({ props }: ComponentRenderProps<PointMapSchemaProps>) {
+    return <PointMap {...props} />;
+  },
+});

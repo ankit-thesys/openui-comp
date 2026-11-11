@@ -1,12 +1,5 @@
-// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
-
-export const relationshipsStyles = String.raw`
-  .openui-dashboard-axis-name {
-    font-size: 12px;
-    color: var(--openui-dashboard-ink-muted);
-    margin-bottom: 4px;
-  }
-  .openui-dashboard-grid-hover td {
+export const relationshipsRules = [
+  String.raw`  .openui-dashboard-grid-hover td {
     transition: transform 150ms;
   }
   .openui-dashboard-grid-hover td[data-hover] {
@@ -98,4 +91,5 @@ export const relationshipsStyles = String.raw`
       scrollbar-color: color-mix(in srgb, var(--openui-dashboard-ink) 10%, transparent) transparent;
     }
   }
-`;
+`,
+] as const;

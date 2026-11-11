@@ -1,9 +1,8 @@
-import { GeoMap, PointMap } from "../../maps/geo";
-import { mapStyles } from "../../maps/mapStyles";
+import { mapsRules } from "../../components/maps/maps.styles";
 import type { Group } from "../group";
-
-/** Maps (#225). */
+import { GeoMapComponent } from "./GeoMap";
+import { PointMapComponent } from "./PointMap";
 export const maps: Group = {
-  components: [GeoMap, PointMap],
-  styles: { maps: mapStyles },
+  components: [GeoMapComponent, PointMapComponent],
+  styles: { maps: mapsRules.join("") },
 };
