@@ -2,6 +2,7 @@ packages:
   - "packages/*"
   - "packages/libraries/*"
   - "docs/"
+  - "tests/dashboard-library"
   - "!templates/**"
 
 # Centralized dependency versions shared across packages.

@@ -1,0 +1,31 @@
+{
+  "name": "@openuidev/dashboard-library-tests",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:node": "vitest run --project node",
+    "test:browser": "vitest run --project browser-react-19 --project browser-react-18",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@openuidev/dashboard-library": "workspace:*",
+    "@openuidev/react-lang": "workspace:*",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "zod": "catalog:",
+    "@openuidev/react-components": "workspace:*"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4",
+    "@vitest/browser": "^3.2.4",
+    "playwright": "^1.56.1",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "typescript": "catalog:",
+    "react-18": "npm:react@18.3.1",
+    "react-dom-18": "npm:react-dom@18.3.1",
+    "@types/node": "catalog:"
+  }
+}
