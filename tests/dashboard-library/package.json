@@ -7,7 +7,8 @@
     "test": "vitest run",
     "test:node": "vitest run --project node",
     "test:browser": "vitest run --project browser-react-19 --project browser-react-18",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "compare": "node compare/run.mjs"
   },
   "dependencies": {
     "@openuidev/dashboard-library": "workspace:*",
@@ -26,6 +27,7 @@
     "typescript": "catalog:",
     "react-18": "npm:react@18.3.1",
     "react-dom-18": "npm:react-dom@18.3.1",
-    "@types/node": "catalog:"
+    "@types/node": "catalog:",
+    "vite": "6.4.3"
   }
 }
