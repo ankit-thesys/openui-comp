@@ -9,5 +9,5 @@ import type { Group } from "../group";
 /** Tables, KeyValues and Goal (#220). */
 export const tables: Group = {
   components: [Table, Column, KeyValues, Goal],
-  styles: [tableStyles, keyValuesStyles, goalStyles],
+  styles: { table: tableStyles, keyValues: keyValuesStyles, goal: goalStyles },
 };

@@ -22,5 +22,5 @@ export const filters: Group = {
     SearchFilter,
     CompareToggle,
   ],
-  styles: [filtersStyles],
+  styles: { filters: filtersStyles },
 };

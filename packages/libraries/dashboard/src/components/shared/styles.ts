@@ -1,4 +1,3 @@
-import { css } from "@openuidev/react-components";
 import { baseRules } from "./base.styles";
 import { deltaBadgeRules } from "./DeltaBadge/deltaBadge.styles";
 import { legendRules } from "./Legend/legend.styles";
@@ -46,4 +45,5 @@ export const sharedStyleRules = [
   rampKeyRules[0],
 ] as const;
 
-export const sharedStyles = css(sharedStyleRules.join(""));
+/** Raw CSS: compiled once, in a fixed order, by lib/styles.ts. */
+export const sharedStyles = sharedStyleRules.join("");

@@ -1,4 +1,3 @@
-import { css } from "@openuidev/react-components";
 import { baseRules } from "./base.styles";
 import { cardRules } from "./Card/card.styles";
 import { dashboardRules } from "./Dashboard/dashboard.styles";
@@ -17,4 +16,5 @@ export const structureStyleRules = [
   dashboardRules[1],
   baseRules[3],
 ] as const;
-export const structureStyles = css(structureStyleRules.join(""));
+/** Raw CSS: compiled once, in a fixed order, by lib/styles.ts. */
+export const structureStyles = structureStyleRules.join("");

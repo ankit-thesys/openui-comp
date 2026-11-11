@@ -1,5 +1,5 @@
-import { css } from "@openuidev/react-components";
-export const goalStyles = css`
+// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
+export const goalStyles = String.raw`
   .openui-dashboard-goal-track {
     transition: transform 150ms;
   }

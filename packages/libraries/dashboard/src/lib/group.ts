@@ -9,8 +9,11 @@ import type { DefinedComponent } from "@openuidev/react-lang";
 export type Group = {
   /** The group's components, in any order: the prompt follows his library's order. Each has its own props schema. */
   components: readonly DefinedComponent<any>[];
-  /** Class names from the css tag, applied on the dashboard root. */
-  styles: readonly string[];
+  /**
+   * The group's raw CSS blocks, by block name. lib/styles.ts compiles every block once, in the
+   * fixed order of STYLE_ORDER, so a block's name must be listed there.
+   */
+  styles: Readonly<Record<string, string>>;
 };
 
-export const emptyGroup: Group = { components: [], styles: [] };
+export const emptyGroup: Group = { components: [], styles: {} };

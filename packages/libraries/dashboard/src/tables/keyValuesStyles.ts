@@ -1,5 +1,5 @@
-import { css } from "@openuidev/react-components";
-export const keyValuesStyles = css`
+// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
+export const keyValuesStyles = String.raw`
   .openui-dashboard-kv {
     display: flex;
     flex-direction: column;

@@ -1,6 +1,6 @@
-import { css } from "@openuidev/react-components";
+// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
 
-export const mapStyles = css`
+export const mapStyles = String.raw`
   .openui-dashboard-geo {
     display: flex;
     flex-direction: column;

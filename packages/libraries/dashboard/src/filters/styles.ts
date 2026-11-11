@@ -1,6 +1,6 @@
-import { css } from "@openuidev/react-components";
+// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
 
-export const filtersStyles = css`
+export const filtersStyles = String.raw`
   /* Popovers and the filter sheet are portalled to body, outside the dashboard root, so their
      wrapper (which carries this class) gets the root's base styles here. On the root itself
      these repeat what the layout styles already set. */

@@ -1,5 +1,5 @@
-import { css } from "@openuidev/react-components";
-export const kpiStyles = css`
+// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
+export const kpiStyles = String.raw`
   .openui-dashboard-kpis {
     border: 1px solid var(--openui-dashboard-border);
     border-radius: var(--openui-dashboard-radius);

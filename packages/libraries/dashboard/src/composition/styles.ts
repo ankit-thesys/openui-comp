@@ -1,6 +1,6 @@
-import { css } from "@openuidev/react-components";
+// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
 
-export const compositionStyles = css`
+export const compositionStyles = String.raw`
   .openui-dashboard-funnel {
     display: flex;
     flex-direction: column;

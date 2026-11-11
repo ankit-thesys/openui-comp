@@ -6,5 +6,5 @@ import type { Group } from "../group";
 /** Relationships (#224). Scatter's references use the Reference Trends registers. */
 export const relationships: Group = {
   components: [Scatter, Heatmap, Cohorts],
-  styles: [relationshipsStyles],
+  styles: { relationships: relationshipsStyles },
 };

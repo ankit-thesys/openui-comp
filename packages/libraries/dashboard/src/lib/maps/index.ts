@@ -5,5 +5,5 @@ import type { Group } from "../group";
 /** Maps (#225). */
 export const maps: Group = {
   components: [GeoMap, PointMap],
-  styles: [mapStyles],
+  styles: { maps: mapStyles },
 };

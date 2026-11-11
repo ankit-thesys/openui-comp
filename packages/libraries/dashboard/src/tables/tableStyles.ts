@@ -1,5 +1,5 @@
-import { css } from "@openuidev/react-components";
-export const tableStyles = css`
+// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
+export const tableStyles = String.raw`
   .openui-dashboard-table-wrap {
     overflow-x: auto;
     margin: 0 calc(-1 * var(--openui-dashboard-space-xl));

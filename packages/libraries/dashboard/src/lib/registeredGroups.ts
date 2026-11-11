@@ -26,4 +26,3 @@ export const groups: Group[] = [
 ];
 
 export const groupComponents = groups.flatMap((group) => group.components);
-export const groupStyles = groups.flatMap((group) => group.styles).join(" ");

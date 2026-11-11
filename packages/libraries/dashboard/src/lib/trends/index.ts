@@ -5,5 +5,5 @@ import type { Group } from "../group";
 
 export const trends: Group = {
   components: [TimeSeries, Series, Reference, Marker, SmallMultiples, StatusTimeline],
-  styles: [trendsStyles],
+  styles: { trends: trendsStyles },
 };

@@ -1,5 +1,5 @@
-import { css } from "@openuidev/react-components";
-export const statStyles = css`
+// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
+export const statStyles = String.raw`
   .openui-dashboard-stat {
     padding: var(--openui-dashboard-space-xs) 0;
   }

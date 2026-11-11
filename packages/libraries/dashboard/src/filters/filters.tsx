@@ -22,9 +22,8 @@ import { z } from "zod/v4";
 
 import { radioKeys, ScrollArea, useCompare, useReportFilter } from "../shared";
 
-import { sharedStyles } from "../sharedStyles";
+import { useStyleClasses } from "../shared/styleClasses";
 import { ThemeContext } from "../ThemeProvider";
-import { filtersStyles } from "./styles";
 
 const optionSchema = z.object({ value: z.string(), label: z.string().optional() });
 type Option = z.infer<typeof optionSchema>;
@@ -248,6 +247,7 @@ function Popover({
 }) {
   const [open, setOpen] = useState(false);
   const theme = useContext(ThemeContext);
+  const portalStyles = useStyleClasses("filters", "shared");
   const [position, setPosition] = useState({ top: 0, left: 0 });
   const ref = useRef<HTMLDivElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
@@ -357,9 +357,7 @@ function Popover({
       </button>
       {open && !disabled
         ? createPortal(
-            <div
-              className={`${theme?.portalThemeClassName ?? ""} ${filtersStyles} ${sharedStyles}`}
-            >
+            <div className={`${theme?.portalThemeClassName ?? ""} ${portalStyles}`}>
               <div
                 className="openui-dashboard-popover"
                 id={id}
@@ -1054,6 +1052,7 @@ export const FilterBar = defineComponent({
     renderNode,
   }: ComponentRenderProps<z.infer<typeof filterBarSchema>>) {
     const theme = useContext(ThemeContext);
+    const portalStyles = useStyleClasses("filters", "shared");
     const filters = Array.isArray(props.filters) ? props.filters : [];
     // Compare and Search are actions on the bar's right: Compare, then Search
     // last. Everything else filters, on the left, in the order written.
@@ -1116,7 +1115,7 @@ export const FilterBar = defineComponent({
         {open
           ? createPortal(
               <div
-                className={`openui-dashboard-root ${theme?.portalThemeClassName ?? ""} ${filtersStyles} ${sharedStyles}`}
+                className={`openui-dashboard-root ${theme?.portalThemeClassName ?? ""} ${portalStyles}`}
               >
                 <div className="openui-dashboard-sheet-scrim" onClick={() => setOpen(false)} />
                 <div

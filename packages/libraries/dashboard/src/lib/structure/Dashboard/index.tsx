@@ -8,7 +8,7 @@ import {
 } from "@openuidev/react-lang";
 import { useRef } from "react";
 import { Dashboard } from "../../../components/structure/Dashboard";
-import { dashboardStyles } from "../../styles";
+import { styleClasses } from "../../styles";
 import { dashboardPropsSchema, type DashboardSchemaProps } from "./schema";
 
 export const DashboardComponent = defineComponent({
@@ -32,7 +32,7 @@ function DashboardView({ props, renderNode }: ComponentRenderProps<DashboardSche
     query.isLoading && !streaming && fetched.current === "done" && children.length > 0;
   return (
     <Dashboard
-      className={dashboardStyles}
+      styleClasses={styleClasses}
       refreshing={refreshing}
       hasErrors={Boolean(query.errors.length && !streaming)}
       empty={!streaming && !children.length}

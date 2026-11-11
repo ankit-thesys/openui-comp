@@ -1,5 +1,5 @@
-import { css } from "@openuidev/react-components";
-export const comparisonStyles = css`
+// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
+export const comparisonStyles = String.raw`
   .openui-dashboard-rowchart {
     flex: 1 1 auto;
     display: flex;

@@ -6,5 +6,5 @@ import type { Group } from "../group";
 /** The Kpis strip and Stat (#218). */
 export const metrics: Group = {
   components: [Kpis, Kpi, Stat],
-  styles: [kpiStyles, statStyles],
+  styles: { kpi: kpiStyles, stat: statStyles },
 };

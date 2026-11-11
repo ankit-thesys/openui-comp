@@ -1,6 +1,6 @@
-import { css } from "@openuidev/react-components";
+// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
 
-export const relationshipsStyles = css`
+export const relationshipsStyles = String.raw`
   .openui-dashboard-axis-name {
     font-size: 12px;
     color: var(--openui-dashboard-ink-muted);

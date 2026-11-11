@@ -1,6 +1,6 @@
-import { css } from "@openuidev/react-components";
+// Raw CSS: compiled once, in a fixed order, by lib/styles.ts.
 
-export const trendsStyles = css`
+export const trendsStyles = String.raw`
   .openui-dashboard-summary-edge {
     transform: translateY(1.5px);
   }
