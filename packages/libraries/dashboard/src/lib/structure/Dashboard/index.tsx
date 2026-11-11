@@ -7,7 +7,8 @@ import {
   type ComponentRenderProps,
 } from "@openuidev/react-lang";
 import { useRef } from "react";
-import { Dashboard } from "../../../components/structure/Dashboard";
+import { Dashboard, type DashboardProps } from "../../../components/structure/Dashboard";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { styleClasses } from "../../styles";
 import { dashboardPropsSchema, type DashboardSchemaProps } from "./schema";
 
@@ -41,3 +42,6 @@ function DashboardView({ props, renderNode }: ComponentRenderProps<DashboardSche
     </Dashboard>
   );
 }
+
+// Every schema field reaches Dashboard.
+export type DashboardSchemaCovered = Covered<SchemaCoverage<DashboardSchemaProps, DashboardProps>>;

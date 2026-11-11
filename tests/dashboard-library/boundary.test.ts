@@ -5,9 +5,14 @@ import { expect, test } from "vitest";
 
 const src = resolve(import.meta.dirname, "../../packages/libraries/dashboard/src");
 
-// Explicit exceptions to the dependency direction, expressed as "source -> import".
-// Keep empty: runtime adapters belong in lib/ or shared/, outside the plain components.
-const exceptions: readonly string[] = [];
+// Explicit exceptions to the dependency direction, expressed as "source -> import". Runtime
+// adapters belong in lib/ or shared/, outside the plain components; a shared module may read the
+// OpenUI Lang runtime only to hand Query or streaming state to visuals as plain values, and each
+// such module is listed here (#231).
+const exceptions: readonly string[] = [
+  // useQueryState: streaming, Query loading and Query failure, for the shared empty states.
+  "shared/queryState.ts -> @openuidev/react-lang",
+];
 
 function sourceFiles(dir: string): string[] {
   return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
@@ -78,8 +83,9 @@ for (const area of ["components", "shared"]) {
           : resolve(specifier);
         const forbidden =
           under(target, join(src, "lib")) ||
+          isPackage(specifier, "@openuidev/react-lang") ||
           (area === "components"
-            ? isPackage(specifier, "@openuidev/react-lang") || isPackage(specifier, "zod")
+            ? isPackage(specifier, "zod")
             : under(target, join(src, "components")));
         const edge = `${relative(src, file)} -> ${specifier}`;
         return forbidden && !exceptions.includes(edge) ? [edge] : [];
@@ -88,3 +94,23 @@ for (const area of ["components", "shared"]) {
     expect(violations).toEqual([]);
   });
 }
+
+// A definition passes each prop explicitly, so a field whose type drifts from the component's
+// props fails the build. A field added to the schema and never passed on would not; the
+// SchemaCovered type (lib/schemaCoverage.ts) catches that, so every definition declares one.
+test("every OpenUI Lang definition checks its schema reaches its component", () => {
+  const definitions = sourceFiles(join(src, "lib")).filter((file) =>
+    /[\\/]lib[\\/][^\\/]+[\\/][A-Z][^\\/]*[\\/]index\.tsx$/.test(file),
+  );
+  expect(definitions.length).toBeGreaterThan(0);
+  const missing = definitions
+    .filter((file) => readFileSync(file, "utf8").includes("defineComponent("))
+    .filter(
+      (file) =>
+        !/export type \w+SchemaCovered = Covered<\s*SchemaCoverage</.test(
+          readFileSync(file, "utf8"),
+        ),
+    )
+    .map((file) => relative(src, file));
+  expect(missing).toEqual([]);
+});

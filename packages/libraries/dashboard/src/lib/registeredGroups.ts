@@ -11,7 +11,7 @@ import { trends } from "./trends";
 
 /** Non-Structure registrations initialize before Structure's slot schemas.
  * Kept separate from defineComponents to avoid a registry -> Structure -> registry cycle.
- * This order also preserves the original group's stylesheet order.
+ * Stylesheet order is not set here: lib/styles.ts compiles every block in STYLE_ORDER.
  */
 export const groups: Group[] = [
   metrics,

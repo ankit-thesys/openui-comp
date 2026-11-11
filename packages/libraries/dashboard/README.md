@@ -82,39 +82,75 @@ The default series colours are ordered so that neighbouring series stay distingu
 
 ```text
 src/
-  components/<group>/<Name>/  # plain React component, props, raw style fragments, index.ts
-  components/shared/<Name>/  # shared visual pieces
+  components/<group>/<Name>/  # plain React component, its props interface, <name>.styles.ts, index.ts
+  components/<group>/styles.ts  # joins the group's raw fragments, in their original order
+  components/shared/<Name>/   # shared visual pieces
   components/ThemeProvider/
   lib/<group>/<Name>/         # schema.ts and index.tsx (OpenUI Lang definition)
-  lib/<group>/index.ts        # group definitions and style classes
-  lib/defineComponents.ts     # registry, slots and prompt order
+  lib/<group>/index.ts        # the group's registration: its definitions and raw style blocks
+  lib/group.ts                # the Group type
+  lib/registeredGroups.ts     # every group but Structure, imported once
+  lib/slots.ts                # which slot each component joins, and the prompt order
+  lib/defineComponents.ts     # Structure plus every group: the full component list
+  lib/schemaCoverage.ts       # compile-time check that a schema reaches its component
+  lib/styles.ts               # compiles every style block once, in STYLE_ORDER
   lib/library.tsx             # createLibrary and shared schema names
   lib/prompt-options/         # prompt groups and notes
-  shared/                    # contexts, Format and pure helpers
+  shared/                     # contexts, Format, pure helpers, runtime adapters
 ```
 
 Definitions import components; components import shared code. Nothing imports upward into
-`lib/`, and `shared/` imports neither components nor definitions. Runtime adapters can live in
-`shared/` so visual components consume plain state. Groups awaiting migration still live in
-their original `src/` folders; their `lib/<group>/index.ts` registrations point there.
+`lib/`, `shared/` imports neither components nor definitions, and neither components nor
+`shared/` import `@openuidev/react-lang`. The one exception is a runtime adapter in `shared/`
+that hands Query or streaming state to visuals as plain values (`shared/queryState.ts`); each
+such module is listed in the boundary test. Groups awaiting migration still live in their
+original `src/` folders; their `lib/<group>/index.ts` registrations point there.
 
-Card is the worked example: `components/structure/Card/Card.tsx` exports `Card` and its
+Card is the worked example. `components/structure/Card/Card.tsx` exports `Card` and its
 `CardProps` interface. It receives rendered children, controls and a streaming boolean, and owns
 the header slot, layout and DOM watcher that identifies the card being written.
 `lib/structure/Card/schema.ts` exports `cardPropsSchema` and its inferred `CardSchemaProps`.
 `lib/structure/Card/index.tsx` exports `CardComponent`: the unchanged OpenUI Lang name, schema
-and description, plus a render function that reads runtime state and resolves nodes into `Card`
-props. Components import neither zod nor `@openuidev/react-lang` nor `lib/`.
+and description, plus a render function that reads runtime state (`useIsStreaming`,
+`renderNode`, child nodes) and passes each prop to `Card` by name. Components import neither zod
+nor `@openuidev/react-lang` nor `lib/`.
 
-Each component's `<name>.styles.ts` exports raw `String.raw` fragments in `<name>Rules`.
-The group's assembler orders them and compiles once with `css(...)` from
-`@openuidev/react-components`. Keep selectors, declarations and complete responsive blocks in
-their original order: goober merges duplicate at-rule blocks into the first one's position.
-The dashboard's root classes are joined in `lib/styles.ts`: structure, shared, then group styles
-in their fixed order. Two selector rules are checked by the test package:
+Passing each prop by name makes a field whose type drifts from the props interface fail the
+build. A field added to the schema and never passed on would not, so every definition also
+declares, once:
+
+```ts
+export type CardSchemaCovered = Covered<SchemaCoverage<CardSchemaProps, CardProps, "content">>;
+```
+
+Every schema field must be a prop of the component or be named as one the definition uses
+itself (here `content`, rendered into children). A leftover field fails the build with its
+name, and the boundary test checks each definition declares the type.
+
+### Styles
+
+Each component's `<name>.styles.ts` exports raw CSS, as `String.raw` fragments in `<name>Rules`;
+nothing calls `css()` there. The group's `styles.ts` joins its fragments into one raw block in
+their original order, and `lib/<group>/index.ts` registers it by block name in `styles`.
+`lib/styles.ts` is the only place CSS is compiled: it calls `css()` once per block, in the
+fixed order of `STYLE_ORDER`, because rules reach the page in the order `css()` runs and rules
+of equal specificity rely on it. A new block's name must be added to `STYLE_ORDER`.
+
+- Splitting a block into fragments must keep its text byte for byte: goober names a block's
+  class from a hash of its text, and `styleOrder.test.ts` pins every block's class and order.
+- Keep selectors, declarations and complete responsive blocks in their original order: goober
+  merges duplicate at-rule blocks into the first one's position.
+
+The Dashboard puts every block's class on its root. Something rendered outside the root, in a
+portal on `document.body`, reads the classes it needs with `useStyleClasses("filters",
+"shared")` (`shared/styleClasses.ts`), together with the theme's portal class. A portal into a
+card's header slot is inside the root and needs neither.
+
+Two selector rules are checked by the test package:
 
 - A functional pseudo-class (`:has()`, `:not()`, `:is()`, `:nth-child()`) may only end a selector.
 - Never put a comma inside its parentheses; write alternatives as separate selectors.
 
 Tests live in `tests/dashboard-library` at the repository root. Its boundary test checks the
-dependency direction. See its README for how to run the tests.
+dependency direction and each definition's schema check; `styleOrder.test.ts` pins the CSS. See
+its README for how to run the tests.

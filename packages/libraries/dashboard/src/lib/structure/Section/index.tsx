@@ -1,7 +1,8 @@
 "use client";
 
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { Section } from "../../../components/structure/Section";
+import { Section, type SectionProps } from "../../../components/structure/Section";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { sectionPropsSchema, type SectionSchemaProps } from "./schema";
 
 export const SectionComponent = defineComponent({
@@ -19,3 +20,8 @@ function SectionView({ props, renderNode }: ComponentRenderProps<SectionSchemaPr
     </Section>
   );
 }
+
+// Every schema field reaches Section (rows are rendered into children).
+export type SectionSchemaCovered = Covered<
+  SchemaCoverage<SectionSchemaProps, SectionProps, "rows">
+>;

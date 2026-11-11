@@ -1,7 +1,8 @@
 "use client";
 
 import { defineComponent, useIsStreaming, type ComponentRenderProps } from "@openuidev/react-lang";
-import { Card } from "../../../components/structure/Card";
+import { Card, type CardProps } from "../../../components/structure/Card";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { cardPropsSchema, type CardSchemaProps } from "./schema";
 
 export const CardComponent = defineComponent({
@@ -30,3 +31,6 @@ function CardView({ props, renderNode }: ComponentRenderProps<CardSchemaProps>) 
     </Card>
   );
 }
+
+// Every schema field reaches Card (content is rendered into children).
+export type CardSchemaCovered = Covered<SchemaCoverage<CardSchemaProps, CardProps, "content">>;

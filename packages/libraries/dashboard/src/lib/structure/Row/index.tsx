@@ -1,9 +1,10 @@
 "use client";
 
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { Row } from "../../../components/structure/Row";
+import { Row, type RowProps } from "../../../components/structure/Row";
 import type { RowHeight } from "../../../components/structure/Row/Row";
 import type { Width } from "../../../shared/schema";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { rowPropsSchema, type RowSchemaProps } from "./schema";
 
 export const RowComponent = defineComponent({
@@ -48,3 +49,6 @@ function RowView({ props, renderNode }: ComponentRenderProps<RowSchemaProps>) {
     />
   );
 }
+
+// Every schema field reaches Row.
+export type RowSchemaCovered = Covered<SchemaCoverage<RowSchemaProps, RowProps>>;
