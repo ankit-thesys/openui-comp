@@ -10,6 +10,21 @@ export const layoutStyles = css`
   & *::after {
     box-sizing: border-box;
   }
+  /* Scrollbars: thin, quiet, no track. */
+  & ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  & ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  & ::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--openui-dashboard-ink) 10%, transparent);
+  }
+  & ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--openui-dashboard-ink) 18%, transparent);
+  }
 
   .openui-dashboard-dashboard {
     display: flex;
@@ -159,6 +174,7 @@ export const layoutStyles = css`
   }
 
   .openui-dashboard-card {
+    position: relative;
     container-type: inline-size;
   }
   .openui-dashboard-card-controls {
@@ -312,11 +328,9 @@ export const layoutStyles = css`
       background-position: -110% 0;
     }
   }
-  @media (prefers-reduced-motion: reduce) {
-    .openui-dashboard-skel {
-      animation: none;
-    }
-  }
+  /* The skeleton's reduced-motion rule sits with the sheen's and the spinner's below: goober merges
+     @media blocks with the same query into the first one, so they share one block placed
+     after every base rule it overrides. */
   /* A card whose content hasn't arrived (or was all invalid) still holds a card's height. */
   .openui-dashboard-state:has(> .openui-dashboard-state-content:empty) {
     min-height: 200px;
@@ -399,6 +413,9 @@ export const layoutStyles = css`
     }
   }
   @media (prefers-reduced-motion: reduce) {
+    .openui-dashboard-skel {
+      animation: none;
+    }
     .openui-dashboard-refresh svg {
       animation-duration: 2.4s;
     }

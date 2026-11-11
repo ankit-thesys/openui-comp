@@ -3,7 +3,12 @@
   "compilerOptions": {
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "types": ["vitest/globals", "@vitest/browser/context"]
+    "types": [
+      "vitest/globals",
+      "@vitest/browser/context",
+      "@vitest/browser/providers/playwright",
+      "node"
+    ]
   },
   "include": ["*.ts", "*.tsx"]
 }

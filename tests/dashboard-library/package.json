@@ -6,7 +6,7 @@
   "scripts": {
     "test": "vitest run",
     "test:node": "vitest run --project node",
-    "test:browser": "vitest run --project browser",
+    "test:browser": "vitest run --project browser-react-19 --project browser-react-18",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -14,7 +14,8 @@
     "@openuidev/react-lang": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "zod": "catalog:"
+    "zod": "catalog:",
+    "@openuidev/react-components": "workspace:*"
   },
   "devDependencies": {
     "vitest": "^3.2.4",
@@ -22,6 +23,9 @@
     "playwright": "^1.56.1",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "react-18": "npm:react@18.3.1",
+    "react-dom-18": "npm:react-dom@18.3.1",
+    "@types/node": "catalog:"
   }
 }
