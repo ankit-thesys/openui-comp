@@ -177,13 +177,11 @@ root = Dashboard([FilterBar([CompareToggle("Previous period", false, [{value: "p
 export const filtersFixtures: RenderFixture[] = filterCatalog.flatMap((entry) =>
   entry.variants.map((variant) => ({
     name: `${entry.name}: ${variant.title}`,
-    program:
-      entry.name === "SearchFilter"
-        ? `$q = ""\nroot = Dashboard([FilterBar([SearchFilter("q", "Search campaigns", $q)]), Section("", [Row([Card("Campaigns", [Stat(6)])])])])`
-        : variant.program,
+    // Every entry's program as his catalog writes it (SearchFilter's Table landed with #220).
+    program: variant.program,
     text:
       entry.name === "SearchFilter"
-        ? "Campaigns"
+        ? "Brand search"
         : entry.name === "PeriodPicker" && variant.title === "2 options"
           ? "Month to date"
           : entry.name === "PeriodPicker" || entry.name === "FilterBar"

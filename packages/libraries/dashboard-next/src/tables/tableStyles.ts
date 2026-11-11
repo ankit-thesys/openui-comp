@@ -279,8 +279,9 @@ export const tableStyles = css`
   .openui-dashboard-table tbody tr.openui-dashboard-table-group:hover td:first-child {
     background: color-mix(in srgb, var(--openui-dashboard-ink) 3%, var(--openui-dashboard-surface));
   }
-  /* The row above a group band drops its rule, so the band reads on its own. */
-  .openui-dashboard-table tbody tr:has(+ tr.openui-dashboard-table-group) td {
+  /* The row above a group band drops its rule, so the band reads on its own (Table marks it:
+     goober can't scope his tr:has(+ tr.table-group) td). */
+  .openui-dashboard-table tbody tr[data-before-group] td {
     border-bottom-color: transparent;
   }
   /* 4px of air under the header rule and above the totals band: spacer rows,
@@ -290,7 +291,7 @@ export const tableStyles = css`
     display: block;
     height: 4px;
   }
-  .openui-dashboard-table:has(tfoot) tbody::after {
+  .openui-dashboard-table[data-totals] tbody::after {
     content: "";
     display: block;
     height: 4px;
@@ -300,7 +301,7 @@ export const tableStyles = css`
     flex-wrap: nowrap;
   }
   /* The totals band follows the last row directly, with no rule above it. */
-  .openui-dashboard-table:has(tfoot) tbody tr:last-child td {
+  .openui-dashboard-table[data-totals] tbody tr:last-child td {
     border-bottom-color: transparent;
   }
   /* The sideways stepper sits top right of the card, level with its title.
@@ -318,7 +319,10 @@ export const tableStyles = css`
     transform: none;
     box-shadow: none;
   }
-  .openui-dashboard-card:has(.openui-dashboard-card-controls)
+  /* His .card:has(.card-controls) .scroll-step.table-step: every Card renders that toolbar, so it
+     always applied; written without the :has(), which goober can't scope. */
+  .openui-dashboard-card
+    .openui-dashboard-card-body
     .openui-dashboard-scroll-step.openui-dashboard-table-step {
     position: static;
     align-self: flex-end;

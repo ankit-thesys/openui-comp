@@ -491,7 +491,11 @@ export const Table = defineComponent({
           ref={setWrap}
           data-more={more ? "" : undefined}
         >
-          <table className="openui-dashboard-table">
+          <table
+            className="openui-dashboard-table"
+            // A totals row follows, for the stylesheet: his .table:has(tfoot), which goober can't scope.
+            data-totals={props.totals && columns.some((column) => column.total) ? "" : undefined}
+          >
             <thead>
               <tr>
                 {columns.map((column, c) => (
@@ -554,7 +558,17 @@ export const Table = defineComponent({
                       </td>
                     </tr>
                   ) : null}
-                  <tr>
+                  <tr
+                    // Marks the row a group band follows, for the stylesheet: his
+                    // tr:has(+ tr.table-group) td, which goober can't scope.
+                    data-before-group={
+                      groupColumn &&
+                      i < visible.length - 1 &&
+                      groupOf(visible[i + 1]!) !== groupOf(row)
+                        ? ""
+                        : undefined
+                    }
+                  >
                     {columns.map((column, c) => (
                       <td key={c} className={numeric(column) ? "openui-dashboard-num" : undefined}>
                         {c === 0 ? (

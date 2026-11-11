@@ -1,22 +1,11 @@
 // Use the public source entry so the internal host overrides and filter reporter share its
 // contexts, as in metrics.browser.test.tsx. Every specimen still renders through library/Renderer.
-import {
-  defineComponent,
-  reactive,
-  Renderer,
-  useStateField,
-  type ComponentRenderProps,
-} from "@openuidev/react-lang";
+import { Renderer } from "@openuidev/react-lang";
 import { act, type ReactNode } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
-import { z } from "zod/v4";
 import { library, ThemeProvider } from "../../packages/libraries/dashboard-next/src/index";
-import {
-  CompareOverride,
-  StateOverride,
-  useReportFilter,
-} from "../../packages/libraries/dashboard-next/src/shared";
+import { CompareOverride, StateOverride } from "../../packages/libraries/dashboard-next/src/shared";
 import { tablesCatalog } from "./fixtures/tables";
 
 let host: HTMLDivElement;
@@ -45,6 +34,14 @@ async function click(selector: string) {
   expect(button).not.toBeNull();
   await act(async () => button.click());
 }
+/** Picks a ChipFilter option by its label. */
+async function chip(label: string) {
+  const option = [...host.querySelectorAll<HTMLElement>('[role="radio"]')].find(
+    (node) => node.textContent === label,
+  )!;
+  expect(option).toBeDefined();
+  await act(async () => option.click());
+}
 const card = (content: string) =>
   `root = Dashboard([Section("", [Row([Card("Details", [${content}], "full")])])])`;
 const dashboard = (response: string) => <Renderer library={library} response={response} />;
@@ -52,31 +49,9 @@ const catalog = (index: number) => dashboard(tablesCatalog[index]!.variants[0]!.
 const tableRows = () => [...host.querySelectorAll<HTMLTableRowElement>("tbody tr")];
 const firstCells = () => tableRows().map((row) => row.cells[0]?.textContent);
 
-// #219 owns the real filters. This host-only filter exercises the same reactive binding and
-// shared filter registry without registering or implementing another ticket's components.
-const filterSchema = z.object({ value: reactive(z.string()) });
-const TestRegionFilter = defineComponent({
-  name: "TestRegionFilter",
-  props: filterSchema,
-  description: "Test host's region filter",
-  component: function TestRegionFilterView({
-    props,
-  }: ComponentRenderProps<z.infer<typeof filterSchema>>) {
-    const field = useStateField("region", props.value);
-    useReportFilter("region", field.value);
-    return (
-      <button type="button" onClick={() => field.setValue(field.value === "all" ? "eu" : "all")}>
-        {field.value === "all" ? "Only Europe" : "All regions"}
-      </button>
-    );
-  },
-});
-const queryLibrary = library.extend({
-  components: { add: [{ component: TestRegionFilter, slots: ["Dashboard.children"] }] },
-});
 const queryProgram = (filter = false) => `$region = "all"
 data = Query("accounts", {region: $region}, {rows: []})
-root = Dashboard([${filter ? "TestRegionFilter($region), " : ""}Section("", [Row([Card("Accounts", [Table([Column("Account", data.rows.name, "primary"), Column("Revenue", data.rows.revenue, "number", "currency")])], "full")])])])`;
+root = Dashboard([${filter ? 'FilterBar([ChipFilter("region", [{value: "all", label: "All regions"}, {value: "eu", label: "Europe"}], $region)]), ' : ""}Section("", [Row([Card("Accounts", [Table([Column("Account", data.rows.name, "primary"), Column("Revenue", data.rows.revenue, "number", "currency")])], "full")])])])`;
 
 for (const mode of ["light", "dark"] as const) {
   const themed = (children: ReactNode) => <ThemeProvider mode={mode}>{children}</ThemeProvider>;
@@ -150,8 +125,22 @@ for (const mode of ["light", "dark"] as const) {
     expect(rows[0]?.querySelector(".openui-dashboard-delta-good")).not.toBeNull();
     expect(rows[1]?.querySelector(".openui-dashboard-delta-bad")).not.toBeNull();
     expect(rows[2]?.querySelector(".openui-dashboard-delta-neutral")).not.toBeNull();
-    expect(rows[3]?.textContent).toBe("Unknown—");
-    expect(rows[4]?.textContent).toBe("Owner—");
+    expect(rows[rows.length - 1]?.textContent).toBe("Owner—");
+  });
+
+  // His KeyValues allows value null and shows "—" for it, but lang-core's validator rejects null
+  // in any required field ("null-required") and drops the row. Expected to fail until lang-core
+  // honours a schema that allows null; then drop .fails.
+  test.fails(`KeyValues shows a null value as — in ${mode}`, async () => {
+    await draw(
+      themed(
+        dashboard(
+          card(`KeyValues([{label: "Unknown", value: null}, {label: "Owner", value: ""}])`),
+        ),
+      ),
+    );
+    const rows = host.querySelectorAll(".openui-dashboard-kv-row");
+    expect(rows[0]?.textContent).toBe("Unknown—");
   });
 
   test(`catalog Goal draws targets, pace and limit overrun in ${mode}`, async () => {
@@ -293,6 +282,11 @@ for (const mode of ["light", "dark"] as const) {
     expect(empty().textContent).toContain("This data didn’t load");
     expect(empty().textContent).toContain("Try fetching the data again.");
     expect(host.querySelector("[data-state=invalid]")).toBeNull();
+    // react-lang logs the failed query; that is the only console error this test allows.
+    const logged = errors.mock.calls.map(([message]) => String(message));
+    expect(logged.length).toBeGreaterThan(0);
+    expect(logged.every((message) => message === 'Query "accounts" failed:')).toBe(true);
+    errors.mockClear();
   });
 
   test(`a filter hiding all Query rows draws no results inside Card in ${mode}`, async () => {
@@ -301,22 +295,19 @@ for (const mode of ["light", "dark"] as const) {
     }));
     await draw(
       themed(
-        <Renderer
-          library={queryLibrary}
-          response={queryProgram(true)}
-          toolProvider={{ accounts }}
-        />,
+        <Renderer library={library} response={queryProgram(true)} toolProvider={{ accounts }} />,
       ),
     );
     await expect.poll(() => host.querySelector("tbody")?.textContent).toContain("Acme");
     expect(host.textContent).toContain("$12,400");
-    await click("button");
+    // The reader picks a region with nothing in it, through the dashboard's own FilterBar.
+    await chip("Europe");
     const empty = () => host.querySelector(".openui-dashboard-card .openui-dashboard-empty")!;
     await expect.poll(() => empty()?.getAttribute("data-state")).toBe("no-results");
     expect(empty().textContent).toContain("No matching data");
     expect(empty().textContent).toContain("Try changing or clearing a filter.");
     expect(accounts).toHaveBeenLastCalledWith({ region: "eu" });
-    await click("button");
+    await chip("All regions");
     await expect.poll(() => host.querySelector("tbody")?.textContent).toContain("Acme");
     expect(host.querySelector(".openui-dashboard-empty")).toBeNull();
     expect(accounts).toHaveBeenLastCalledWith({ region: "all" });
@@ -352,8 +343,12 @@ test("Table sorts, pages, groups, searches and totals the matching rows", async 
   expect(firstCells()).toEqual(["Bravo", "Alpha"]);
   expect(host.querySelector("tfoot")?.textContent).toBe("Total$502.5");
   expect(host.querySelector("nav")).toBeNull();
+  // A fresh, unsorted Table: groups follow first appearance (Echo is Team), each with its count.
+  // His Table keeps its page and sort across search and grouping changes, so start anew.
+  await draw(<></>);
   await draw(dashboard(table("", "Plan")));
-  expect(host.querySelector(".openui-dashboard-group-label")?.textContent).toBe("Enterprise2");
+  expect(host.querySelector(".openui-dashboard-group-label")?.textContent).toBe("Team3");
+  expect(firstCells()).toEqual(["Team3", "Echo", "Delta"]); // The band, then its rows.
   expect(
     tableRows().filter((row) => !row.classList.contains("openui-dashboard-table-group")),
   ).toHaveLength(2);
@@ -439,4 +434,26 @@ test("long Table pagination keeps endpoints and gaps around the current page", a
   expect(host.querySelectorAll(".openui-dashboard-pager-gap")).toHaveLength(2);
   expect(host.querySelector('[aria-current="page"]')?.textContent).toBe("15");
   expect(host.querySelector("nav")?.getAttribute("aria-label")).toBe("Rows 15–15 of 20");
+});
+
+test("a group band and the totals row each drop the rule of the row above them", async () => {
+  await draw(
+    dashboard(
+      card(`Table([
+        Column("Account", ["Echo", "Delta", "Alpha", "Bravo"], "primary"),
+        Column("Revenue", [20, 10, 40, 30], "number", "currency", null, null, "sum"),
+        Column("Plan", ["Team", "Team", "Enterprise", "Enterprise"], "chip")
+      ], 10, true, "", "Plan")`),
+    ),
+  );
+  const body = [...host.querySelectorAll<HTMLTableRowElement>("tbody tr")];
+  const rule = (row: HTMLTableRowElement) => getComputedStyle(row.cells[0]!).borderBottomColor;
+  // Team band, Echo, Delta, Enterprise band, Alpha, Bravo, then the totals row.
+  const delta = body.find((row) => row.textContent?.startsWith("Delta"))!;
+  const echo = body.find((row) => row.textContent?.startsWith("Echo"))!;
+  const bravo = body.at(-1)!;
+  expect(rule(delta)).toBe("rgba(0, 0, 0, 0)"); // A band follows.
+  expect(rule(echo)).not.toBe("rgba(0, 0, 0, 0)");
+  expect(rule(bravo)).toBe("rgba(0, 0, 0, 0)"); // The totals row follows.
+  expect(host.querySelector("tfoot")?.textContent).toContain("$100");
 });
