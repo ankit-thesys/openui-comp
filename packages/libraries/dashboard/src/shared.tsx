@@ -1,12 +1,22 @@
 "use client";
 
+import { CardSlotContext } from "./shared/cardSlot";
+import { useActiveFilters } from "./shared/filterRegistry";
+import { useIsomorphicLayoutEffect } from "./shared/hooks";
+import { type PlacedLabel } from "./shared/labels";
+import { columnFormatter, deltaDecimals } from "./shared/scales";
 import {
-  createContext,
+  RefreshingContext,
+  STATE_COPY,
+  useViewState,
+  type MessageState,
+  type ViewState,
+} from "./shared/viewState";
+
+import {
   useContext,
   useEffect,
   useId,
-  useLayoutEffect,
-  useMemo,
   useRef,
   useState,
   type CSSProperties,
@@ -18,198 +28,11 @@ import {
 import { useIsQueryLoading, useIsStreaming, useRendererQuery } from "@openuidev/react-lang";
 import { createPortal } from "react-dom";
 import { Symbols } from "recharts";
-import {
-  columnDecimals,
-  computeDelta,
-  deltaTone,
-  formatValue,
-  padDecimals,
-  type ValueFormat,
-} from "./format";
+import { computeDelta, deltaTone, formatValue, padDecimals, type ValueFormat } from "./format";
 
 import { MUTED_COLOR } from "./theme";
 
-/**
- * useLayoutEffect in the browser, useEffect on the server. React 18's server renderer warns
- * about every useLayoutEffect; these effects only measure or watch the DOM, so on the server
- * there is nothing for them to do either way.
- */
-export const useIsomorphicLayoutEffect =
-  typeof window === "undefined" ? useEffect : useLayoutEffect;
-
-/* ---------- Comparison state ---------- */
-
-type CompareState = {
-  enabled: boolean;
-  setEnabled: (enabled: boolean) => void;
-  /** What the previous period is called in legends and tooltips. */
-  label: string;
-  setLabel: (label: string) => void;
-};
-
-const CompareOverrideContext = createContext<boolean | null>(null);
-
-/**
- * Turns compare on (or off) for every dashboard below it, without a
- * CompareToggle in the program: for previews, or hosts that compare by
- * default. null leaves each dashboard's own toggle in charge.
- */
-export function CompareOverride({
-  value,
-  children,
-}: {
-  value: boolean | null;
-  children: ReactNode;
-}) {
-  return (
-    <CompareOverrideContext.Provider value={value}>{children}</CompareOverrideContext.Provider>
-  );
-}
-
-const CompareContext = createContext<CompareState>({
-  enabled: false,
-  setEnabled: () => {},
-  label: "Previous period",
-  setLabel: () => {},
-});
-
-/**
- * Holds the "compare to previous period" switch for a whole dashboard. It's
- * presentation only (the previous-period data is already in the program), so
- * it lives in React rather than in OpenUI state.
- */
-export function CompareProvider({ children }: { children: ReactNode }) {
-  const forced = useContext(CompareOverrideContext);
-  const [state, setEnabled] = useState(false);
-  const [label, setLabel] = useState("Previous period");
-  // A host override wins over the dashboard's own toggle.
-  const enabled = forced ?? state;
-  const value = useMemo(() => ({ enabled, setEnabled, label, setLabel }), [enabled, label]);
-  return <CompareContext.Provider value={value}>{children}</CompareContext.Provider>;
-}
-
-export const useCompare = () => useContext(CompareContext);
-
-/* ---------- Helpers ---------- */
-
-export function toNumbers(values: unknown): (number | null)[] {
-  if (!Array.isArray(values)) return [];
-  return values.map((value) =>
-    typeof value === "number" && Number.isFinite(value) ? value : null,
-  );
-}
-
-export function toStrings(values: unknown): string[] {
-  if (!Array.isArray(values)) return [];
-  return values.map((value) => (value === null || value === undefined ? "" : String(value)));
-}
-
-/** Props of a child component node (e.g. a Series inside a chart). */
-export function nodeProps<T>(node: unknown): T | null {
-  if (!node || typeof node !== "object") return null;
-  const props = (node as { props?: unknown }).props;
-  return props && typeof props === "object" ? (props as T) : null;
-}
-
-export function nodeList<T>(nodes: unknown): T[] {
-  if (!Array.isArray(nodes)) return [];
-  return nodes.map((node) => nodeProps<T>(node)).filter((props): props is T => props !== null);
-}
-
-/**
- * The rendered width of an element, kept current as it resizes. A callback ref, so an element that
- * mounts late (after an empty or streaming render) is still measured; measured before paint, so a
- * chart sized from it never draws at a placeholder size first and then jumps.
- */
-export function useWidth<T extends HTMLElement = HTMLDivElement>() {
-  const [el, setEl] = useState<T | null>(null);
-  const [width, setWidth] = useState(0);
-  useIsomorphicLayoutEffect(() => {
-    if (!el) return;
-    setWidth(el.getBoundingClientRect().width);
-    const observer = new ResizeObserver(([entry]) => entry && setWidth(entry.contentRect.width));
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [el]);
-  return [setEl, width] as const;
-}
-
-/* ---------- Fold the smallest into Other ---------- */
-
-/**
- * Past `max` items, the names of the `keep` largest by `size` (ties go to the one given first); the
- * rest fold into Other, so a chart never carries more hues than can be told apart. null when all fit.
- */
-export function keepLargest<T>(
-  items: T[],
-  name: (item: T) => string,
-  size: (item: T) => number,
-  max = 8,
-  keep = max - 1,
-): Set<string> | null {
-  if (items.length <= max) return null;
-  return new Set(
-    [...items]
-      .sort((a, b) => size(b) - size(a))
-      .slice(0, keep)
-      .map(name),
-  );
-}
-
-/** Parts past `max`: the kept parts in their given order, and what the rest add up to (0 when nothing folds). */
-export function foldParts<T extends { label: string; value: number }>(
-  parts: T[],
-  max = 8,
-  keep = max - 1,
-): { kept: T[]; other: number } {
-  const keepSet = keepLargest(
-    parts,
-    (part) => part.label,
-    (part) => part.value,
-    max,
-    keep,
-  );
-  if (!keepSet) return { kept: parts, other: 0 };
-  return {
-    kept: parts.filter((part) => keepSet.has(part.label)),
-    other: parts
-      .filter((part) => !keepSet.has(part.label))
-      .reduce((sum, part) => sum + part.value, 0),
-  };
-}
-
 /* ---------- DOM-drawn scales ---------- */
-
-/** A 1, 2, 2.5 or 5 × 10ⁿ step close to `raw`. */
-export function niceStep(raw: number) {
-  const power = 10 ** Math.floor(Math.log10(raw));
-  const unit = raw / power;
-  return (unit <= 1 ? 1 : unit <= 2 ? 2 : unit <= 2.5 ? 2.5 : unit <= 5 ? 5 : 10) * power;
-}
-
-/**
- * Round ticks and a domain that ends on them, for scales drawn in HTML rows. `pad` is the share of the
- * span kept clear at each end; data that can't go below zero gets no negative ticks unless `zeroFloor` is off.
- */
-export function niceScale(
-  values: number[],
-  {
-    ticks = 4,
-    pad = 0.02,
-    zeroFloor = true,
-  }: { ticks?: number; pad?: number; zeroFloor?: boolean } = {},
-) {
-  const lo = Math.min(...values);
-  const hi = Math.max(...values);
-  const span = hi - lo || Math.abs(hi) || 1;
-  const step = niceStep(span / ticks);
-  const floor = Math.floor((lo - span * pad) / step) * step;
-  const min = zeroFloor && lo >= 0 ? Math.max(0, floor) : floor;
-  const max = Math.ceil((hi + span * pad) / step) * step;
-  const x = (value: number) => `${((value - min) / (max - min || 1)) * 100}%`;
-  const list = Array.from({ length: Math.round((max - min) / step) + 1 }, (_, i) => min + i * step);
-  return { min, max, x, ticks: list };
-}
 
 /** The tick row under a DOM-drawn scale, aligned with the track column. */
 export function ScaleAxis({
@@ -287,35 +110,6 @@ export function DeltaBadge({
       {delta.text}
     </span>
   );
-}
-
-/** Decimals for a column of changes, so +7% and +7.9% read +7.0% and +7.9%. */
-export function deltaDecimals(
-  pairs: { current: number | null | undefined; previous: number | null | undefined }[],
-  format?: ValueFormat | null,
-) {
-  const texts = pairs
-    .map((p) =>
-      typeof p.current === "number" && typeof p.previous === "number"
-        ? computeDelta(p.current, p.previous, format)?.text
-        : undefined,
-    )
-    .filter((t): t is string => !!t)
-    .map((t) => t.replace(/^[+-]/, ""));
-  return columnDecimals(texts);
-}
-
-/** Formats a column of values to one shared number of decimals. */
-export function columnFormatter(
-  values: (number | null | undefined)[],
-  format?: ValueFormat | null,
-) {
-  const decimals = columnDecimals(
-    values
-      .filter((v): v is number => typeof v === "number")
-      .map((v) => formatValue(Math.abs(v), format)),
-  );
-  return (value: number | null | undefined) => padDecimals(formatValue(value, format), decimals);
 }
 
 /* ---------- Legend ---------- */
@@ -1343,126 +1137,9 @@ export function StatusIcon({
   );
 }
 
-/* ---------- View states ---------- */
-
-/**
- * Every state a card (or Kpi tile) can be in, besides showing its data:
- *
- *   loading     the model is still writing it (or a host says so): a still line
- *               and block under one shimmer across the whole card. The same
- *               however it's triggered: while streaming, the component's shape
- *               isn't known until its data arrives, so the skeleton never guesses one.
- *   refreshing  live data is being fetched again: the content stays, under a shimmer, with a loader on the corner
- *   empty       nothing exists for this period
- *   no-results  the filters narrowed it to nothing
- *   error       its data didn't load
- *   invalid     the model's definition of it was missing or wrong, so it couldn't be drawn
- *   partial     drawn, but part of it (one series) couldn't be: the rest shows with a note
- *
- * The dashboard itself can also fail as a whole (DashboardError).
- */
-export type ViewState =
-  "loading" | "refreshing" | "empty" | "no-results" | "error" | "invalid" | "partial";
-
-const ViewStateContext = createContext<ViewState | null>(null);
-
-/**
- * Forces every card and tile below it into one state, for previews and for
- * hosts that know a dashboard is loading or has failed. null renders normally.
- */
-export function StateOverride({
-  value,
-  children,
-}: {
-  value: ViewState | null;
-  children: ReactNode;
-}) {
-  return <ViewStateContext.Provider value={value}>{children}</ViewStateContext.Provider>;
-}
-
-export function useViewState(): ViewState | null {
-  return useContext(ViewStateContext);
-}
-
 /** The one shimmer that sweeps across a whole card (or tile) while the model writes it or its data refetches. */
 export function Sheen() {
   return <span className="openui-dashboard-sheen" aria-hidden />;
-}
-
-/** True while the dashboard's live data refetches: every card shows the refresh loader. */
-export const RefreshingContext = createContext(false);
-
-/* Filters report whether they narrow the data, so an empty component can tell
-   "nothing exists" from "the filters hid everything". */
-
-type FilterEntry = { active: boolean };
-type FilterRegistry = {
-  set: (key: string, entry: FilterEntry | null) => void;
-  entries: Map<string, FilterEntry>;
-  /** Each filter name's starting value, kept by the first copy to render it: the phone sheet mounts a second copy later. */
-  baselines: Map<string, string>;
-};
-/* Two contexts: the registry itself never changes identity (so filters' effects
-   don't re-run when it updates), and a version that bumps when any filter turns
-   on or off, which is what empty components re-render on. */
-const FilterRegistryContext = createContext<FilterRegistry | null>(null);
-const FilterVersionContext = createContext(0);
-/** True inside a card's header controls: those switch the view, they don't filter it. */
-export const CardControlsContext = createContext(false);
-/** The card header's slot for a chart's own view switch, so it sits top right, level with the title. */
-export const CardSlotContext = createContext<HTMLElement | null>(null);
-
-export function FilterRegistryProvider({ children }: { children: ReactNode }) {
-  const [version, setVersion] = useState(0);
-  const registry = useMemo<FilterRegistry>(() => {
-    const entries = new Map<string, FilterEntry>();
-    return {
-      entries,
-      baselines: new Map<string, string>(),
-      set: (key, entry) => {
-        const before = entries.get(key);
-        if (entry) entries.set(key, entry);
-        else entries.delete(key);
-        if ((before?.active ?? false) !== (entry?.active ?? false)) setVersion((v) => v + 1);
-      },
-    };
-  }, []);
-  return (
-    <FilterRegistryContext.Provider value={registry}>
-      <FilterVersionContext.Provider value={version}>{children}</FilterVersionContext.Provider>
-    </FilterRegistryContext.Provider>
-  );
-}
-
-/**
- * Called by each filter with its current value. The first value it renders with
- * is the program's default, so a filter is active once it moves off it.
- */
-export function useReportFilter(name: string, value: unknown) {
-  const registry = useContext(FilterRegistryContext);
-  const inCard = useContext(CardControlsContext);
-  // One entry per rendered copy (the bar and the phone sheet each render the filter),
-  // judged against one shared starting value, so closing the sheet can't erase the bar's state.
-  const key = `${name}#${useId()}`;
-  const serialized = JSON.stringify(value ?? null);
-  const initial = useRef(serialized);
-  if (registry && !inCard && !registry.baselines.has(name))
-    registry.baselines.set(name, initial.current);
-  const baseline = registry && !inCard ? registry.baselines.get(name)! : initial.current;
-  const active = serialized !== baseline;
-  useEffect(() => {
-    if (!registry || inCard) return;
-    registry.set(key, { active });
-  }, [registry, inCard, key, active]);
-  useEffect(() => () => registry?.set(key, null), [registry, key]);
-}
-
-/** Whether any filter narrows the data. */
-export function useActiveFilters(): { active: boolean } {
-  const registry = useContext(FilterRegistryContext);
-  useContext(FilterVersionContext); // re-render when a filter turns on or off
-  if (!registry) return { active: false };
-  return { active: [...registry.entries.values()].some((entry) => entry.active) };
 }
 
 /** An empty plot: axes with a flat dashed line where the data would be. */
@@ -1554,34 +1231,12 @@ const NoteIcon = () => (
   </svg>
 );
 
-/** What each resting state says: a card gets a title and the next step; a tile gets the title alone. */
-export const STATE_COPY = {
-  empty: { title: "No data for this period", tile: "No data", hint: "Try a longer date range." },
-  "no-results": {
-    title: "No matching data",
-    tile: "No results",
-    hint: "Try changing or clearing a filter.",
-  },
-  error: {
-    title: "This data didn’t load",
-    tile: "Didn’t load",
-    hint: "Try fetching the data again.",
-  },
-  invalid: {
-    title: "This card couldn’t be drawn",
-    tile: "Couldn’t show",
-    hint: "Part of its definition is missing. Ask for it again.",
-  },
-} as const;
-
 const STATE_ICON = {
   empty: EmptyIcon,
   "no-results": NoResultsIcon,
   error: ErrorIcon,
   invalid: InvalidIcon,
 } as const;
-
-export type MessageState = keyof typeof STATE_COPY;
 
 /** The icon, title and hint of a resting state. */
 function StateMessage({
@@ -1666,56 +1321,6 @@ export function Empty({
   );
 }
 
-/* ---------- Point labels that don't collide ---------- */
-
-let measureCtx: CanvasRenderingContext2D | null | undefined;
-/** A label's width in px at the kit's font: measured on a canvas, estimated where there is none. */
-export function textWidth(text: string, fontSize = 11) {
-  if (measureCtx === undefined)
-    measureCtx =
-      typeof document === "undefined" ? null : document.createElement("canvas").getContext("2d");
-  if (!measureCtx) return text.length * fontSize * 0.58;
-  measureCtx.font = `${fontSize}px ${getComputedStyle(document.body).fontFamily || "sans-serif"}`;
-  return measureCtx.measureText(text).width;
-}
-
-export type PointLabel = { key: string | number; x: number; y: number; r: number; text: string };
-export type PlacedLabel = PointLabel & { lx: number; ly: number; moved: boolean };
-
-/**
- * Places point labels without overlap: in the order given (most important first), each tries
- * above its dot, then below, then steps further up and down a line at a time. A label that had
- * to move gets a leader line back to its dot. Labels that find no room are left out.
- */
-export function placeLabels(
-  points: PointLabel[],
-  fontSize = 11,
-  bounds?: { x: number; y: number; width: number; height: number },
-): PlacedLabel[] {
-  const h = fontSize + 3;
-  const placed: { x0: number; x1: number; y0: number; y1: number }[] = [];
-  const out: PlacedLabel[] = [];
-  const hits = (b: { x0: number; x1: number; y0: number; y1: number }) =>
-    placed.some((p) => b.x0 < p.x1 + 2 && p.x0 < b.x1 + 2 && b.y0 < p.y1 && p.y0 < b.y1);
-  for (const point of points) {
-    const w = textWidth(point.text, fontSize);
-    const above = point.y - point.r - 6; // baseline just over the dot
-    const below = point.y + point.r + h;
-    const tries = [above, below, above - h, below + h, above - 2 * h, below + 2 * h];
-    for (const [n, ly] of tries.entries()) {
-      let lx = point.x;
-      if (bounds) lx = Math.min(Math.max(lx, bounds.x + w / 2), bounds.x + bounds.width - w / 2);
-      const box = { x0: lx - w / 2, x1: lx + w / 2, y0: ly - fontSize, y1: ly + 3 };
-      if (bounds && (box.y0 < bounds.y - 4 || box.y1 > bounds.y + bounds.height + 4)) continue;
-      if (hits(box)) continue;
-      placed.push(box);
-      out.push({ ...point, lx, ly, moved: n > 1 });
-      break;
-    }
-  }
-  return out;
-}
-
 /** Draws placed labels on a surface halo, with a hairline leader for any that moved off their dot. */
 export function PointLabels({
   labels,
@@ -1772,13 +1377,6 @@ export function PartNote({ children }: { children: ReactNode }) {
       <span>{children}</span>
     </p>
   );
-}
-
-/** Names of series with no usable number at all: they draw nothing, so they get a note. */
-export function unusableSeries(series: { name?: string; values?: unknown }[]): string[] {
-  return series
-    .filter((s) => !toNumbers(s.values).some((v) => typeof v === "number" && Number.isFinite(v)))
-    .map((s, i) => s.name || `Series ${i + 1}`);
 }
 
 export function seriesNote(names: string[]) {
@@ -1909,3 +1507,21 @@ export function StateFrame({
     </div>
   );
 }
+
+export * from "./shared/hooks";
+
+export * from "./shared/values";
+
+export * from "./shared/scales";
+
+export * from "./shared/parts";
+
+export * from "./shared/labels";
+
+export * from "./shared/compare";
+
+export * from "./shared/cardSlot";
+
+export * from "./shared/filterRegistry";
+
+export * from "./shared/viewState";
