@@ -1,0 +1,222 @@
+import { Renderer } from "@openuidev/react-lang";
+import { act, type ReactNode } from "react";
+import { createRoot, type Root } from "react-dom/client";
+import { afterEach, beforeEach, expect, test, vi } from "vitest";
+import { library, ThemeProvider } from "../../packages/libraries/dashboard-next/src/index";
+import { StateOverride } from "../../packages/libraries/dashboard-next/src/shared";
+import { filtersFixtures } from "./fixtures/filters";
+
+let host: HTMLDivElement;
+let root: Root;
+let errors: ReturnType<typeof vi.spyOn>;
+beforeEach(() => {
+  (globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
+  host = document.createElement("div");
+  host.style.width = "1200px";
+  document.body.append(host);
+  root = createRoot(host);
+  errors = vi.spyOn(console, "error");
+});
+afterEach(async () => {
+  await act(async () => root.unmount());
+  host.remove();
+  const calls = [...errors.mock.calls];
+  errors.mockRestore();
+  expect(calls).toEqual([]);
+});
+async function draw(children: ReactNode) {
+  await act(async () => root.render(children));
+}
+async function click(element: Element) {
+  await act(async () => (element as HTMLElement).click());
+}
+const render = (program: string, streaming = false) => (
+  <Renderer library={library} response={program} isStreaming={streaming} />
+);
+const option = (text: string) =>
+  [...document.querySelectorAll('[role="option"]')].find((node) => node.textContent === text)!;
+const choices = '[{value: "all", label: "All"}, {value: "team", label: "Team"}]';
+const program = (filter: string, variable = '$plan = "all"') => `${variable}
+values = {all: 1200, team: 3400}
+root = Dashboard([FilterBar([${filter}]), Section("", [Kpis([Kpi("Revenue", values[$plan], "currency", 1000, "up", null, [1, 2, 3], [1, 1, 2])]), Row([Card("Sales", [Stat(values[$plan], "currency", 1000)], "full")])])`;
+
+for (const mode of ["light", "dark"] as const) {
+  for (const fixture of filtersFixtures) {
+    test(`${fixture.name} catalog in ${mode}`, async () => {
+      await draw(<ThemeProvider mode={mode}>{render(fixture.program)}</ThemeProvider>);
+      expect(host.textContent).toContain(fixture.text);
+      expect(host.querySelector('[data-state="invalid"]')).toBeNull();
+    });
+  }
+  for (const kind of ["PeriodPicker", "ChipFilter", "SelectFilter"] as const) {
+    test(`${kind} updates dependent Kpi and Card in ${mode}`, async () => {
+      const filter =
+        kind === "SelectFilter"
+          ? `SelectFilter("plan", "Plan", ${choices}, $plan)`
+          : `${kind}("plan", ${choices}, $plan)`;
+      await draw(<ThemeProvider mode={mode}>{render(program(filter))}</ThemeProvider>);
+      expect(host.querySelector('[aria-label="Revenue"]')?.textContent).toContain("$1,200");
+      if (kind === "SelectFilter") {
+        await click(host.querySelector(".openui-dashboard-filter-button")!);
+        expect(document.querySelectorAll('[role="option"]')).toHaveLength(2);
+        await click(option("Team"));
+      } else {
+        expect(host.querySelectorAll('[role="radio"]')).toHaveLength(2);
+        await click(host.querySelectorAll('[role="radio"]')[1]!);
+      }
+      expect(host.querySelector('[aria-label="Revenue"]')?.textContent).toContain("$3,400");
+      expect(host.querySelector('[aria-label="Sales"]')?.textContent).toContain("$3,400");
+    });
+  }
+  test(`CompareToggle turns previous sparkline on and off in ${mode}`, async () => {
+    await draw(<ThemeProvider mode={mode}>{render(program("CompareToggle()"))}</ThemeProvider>);
+    expect(host.querySelectorAll(".openui-dashboard-kpi-spark polyline")).toHaveLength(1);
+    await click(host.querySelector(".openui-dashboard-filter-button")!);
+    await click(option("Previous period"));
+    expect(host.querySelectorAll(".openui-dashboard-kpi-spark polyline")).toHaveLength(2);
+    await click(host.querySelector(".openui-dashboard-filter-button")!);
+    await click(option("None"));
+    expect(host.querySelectorAll(".openui-dashboard-kpi-spark polyline")).toHaveLength(1);
+  });
+  test(`calendar is themed and applies a custom range in ${mode}`, async () => {
+    const response =
+      'root = Dashboard([FilterBar([DateRangeFilter("range", "2026-01-01..2026-01-10")])])';
+    await draw(<ThemeProvider mode={mode}>{render(response)}</ThemeProvider>);
+    expect(host.textContent).toContain("Jan 1 – Jan 10, 2026");
+    await click(host.querySelector(".openui-dashboard-filter-button")!);
+    const panel = document.querySelector(".openui-dashboard-popover")!;
+    expect(host.contains(panel)).toBe(false);
+    expect(panel.parentElement?.className).toContain("-portal");
+    expect(getComputedStyle(panel).backgroundColor).toBe(
+      getComputedStyle(host.querySelector(".openui-dashboard-filter-button")!).backgroundColor,
+    );
+    expect(panel.querySelectorAll(".openui-dashboard-cal-day")).toHaveLength(31);
+    expect(panel.querySelectorAll('[role="option"]')).toHaveLength(5);
+    await click(panel.querySelector('[data-day="2026-01-02"]')!);
+    await click(panel.querySelector('[data-day="2026-01-05"]')!);
+    await click(panel.querySelector(".openui-dashboard-button-primary")!);
+    expect(host.textContent).toContain("Jan 2 – Jan 5, 2026");
+    expect(document.querySelector(".openui-dashboard-popover")).toBeNull();
+  });
+  test(`multi-select keeps the last choice and restores all in ${mode}`, async () => {
+    await draw(
+      <ThemeProvider mode={mode}>
+        {render(`root = Dashboard([FilterBar([MultiSelectFilter("plans", "Plan", ${choices})])])`)}
+      </ThemeProvider>,
+    );
+    await click(host.querySelector(".openui-dashboard-filter-button")!);
+    const inputs = [
+      ...document.querySelectorAll<HTMLInputElement>(".openui-dashboard-multi input"),
+    ];
+    expect(inputs).toHaveLength(2);
+    expect(inputs.every((input) => input.checked)).toBe(true);
+    await click(inputs[0]!);
+    expect(inputs[1]!.disabled).toBe(true);
+    expect(host.textContent).toContain("Team");
+    await click(document.querySelector(".openui-dashboard-multi-foot button")!);
+    expect(inputs.every((input) => input.checked)).toBe(true);
+    expect(host.textContent).toContain("All");
+  });
+  for (const [state, text] of [
+    ["loading", "Loading"],
+    ["empty", "No data"],
+    ["error", "Didn’t load"],
+    ["no-results", "No results"],
+  ] as const) {
+    test(`filter and dependent Card ${state} in ${mode}`, async () => {
+      await draw(
+        <ThemeProvider mode={mode}>
+          <StateOverride value={state}>
+            {render(program(`ChipFilter("plan", ${choices}, $plan)`))}
+          </StateOverride>
+        </ThemeProvider>,
+      );
+      expect(
+        host.querySelector(".openui-dashboard-card-body .openui-dashboard-state-layer")
+          ?.textContent,
+      ).toContain(text);
+      expect(host.querySelectorAll('[role="radio"]')).toHaveLength(2);
+    });
+  }
+}
+
+test("Card header controls switch data and keyboard arrows select chips", async () => {
+  await draw(
+    render(`$plan = "all"
+values = {all: 1200, team: 3400}
+root = Dashboard([Section("", [Row([Card("Sales", [Stat(values[$plan], "currency")], "full", null, [ChipFilter("plan", ${choices}, $plan), SelectFilter("plan", "Plan", ${choices}, $plan)])])])])`),
+  );
+  await act(async () =>
+    host
+      .querySelector('[role="radio"]')!
+      .dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true })),
+  );
+  expect(host.querySelector(".openui-dashboard-card-body")?.textContent).toContain("$3,400");
+});
+
+test("streaming locks filters", async () => {
+  await draw(
+    render(
+      program(
+        `PeriodPicker("plan", ${choices}, $plan), ChipFilter("plan", ${choices}, $plan), SelectFilter("plan", "Plan", ${choices}, $plan), DateRangeFilter("range"), MultiSelectFilter("multi", "Plan", ${choices}), SearchFilter("q"), CompareToggle()`,
+      ),
+      true,
+    ),
+  );
+  const controls = [
+    ...host.querySelectorAll<HTMLButtonElement | HTMLInputElement>(
+      ".openui-dashboard-filterbar-items button, .openui-dashboard-filterbar-items input",
+    ),
+  ];
+  expect(controls.length).toBeGreaterThan(7);
+  expect(controls.every((control) => control.disabled)).toBe(true);
+});
+
+test("SearchFilter writes its variable and clears the dependent value", async () => {
+  await draw(
+    render(`$q = ""
+root = Dashboard([FilterBar([SearchFilter("q", "Search campaigns", $q)]), Section("", [Kpis([Kpi("Query", $q)])])])`),
+  );
+  const input = host.querySelector<HTMLInputElement>('input[type="search"]')!;
+  expect(input.getAttribute("aria-label")).toBe("Search campaigns");
+  await act(async () => {
+    Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value")!.set!.call(
+      input,
+      "Revenue",
+    );
+    input.dispatchEvent(new Event("input", { bubbles: true }));
+  });
+  expect(host.querySelector('[aria-label="Query"]')?.textContent).toContain("Revenue");
+  await click(host.querySelector('[aria-label="Clear search"]')!);
+  expect(input.value).toBe("");
+  expect(document.activeElement).toBe(input);
+});
+
+test("Compare choices use their bound Previous data and name the delta", async () => {
+  await draw(
+    render(`$compare = "off"
+previous = {off: 80, prev: 80, yoy: 50}
+root = Dashboard([FilterBar([CompareToggle(null, false, [{value: "prev", label: "Last month"}, {value: "yoy", label: "Last year"}], "compare", $compare)]), Section("", [Row([Card("Revenue", [Stat(100, "currency", previous[$compare], "up")])])])])`),
+  );
+  await click(host.querySelector(".openui-dashboard-filter-button")!);
+  await click(option("Last year"));
+  expect(host.querySelector(".openui-dashboard-card-body")?.textContent).toContain("+100%");
+  expect(host.querySelector(".openui-dashboard-card-body")?.textContent?.toLowerCase()).toContain(
+    "last year",
+  );
+  await click(host.querySelector(".openui-dashboard-filter-button")!);
+  await click(option("Last month"));
+  expect(host.querySelector(".openui-dashboard-card-body")?.textContent).toContain("+25%");
+});
+
+test("Escape closes a portalled menu and returns focus to its trigger", async () => {
+  await draw(render(program(`SelectFilter("plan", "Plan", ${choices}, $plan)`)));
+  const trigger = host.querySelector<HTMLButtonElement>(".openui-dashboard-filter-button")!;
+  await click(trigger);
+  expect(document.activeElement?.getAttribute("role")).toBe("option");
+  await act(async () =>
+    document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape", bubbles: true })),
+  );
+  expect(document.querySelector(".openui-dashboard-popover")).toBeNull();
+  expect(document.activeElement).toBe(trigger);
+});

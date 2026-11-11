@@ -1,4 +1,26 @@
-import { emptyGroup, type Group } from "./group";
+import {
+  ChipFilter,
+  CompareToggle,
+  DateRangeFilter,
+  FilterBar,
+  MultiSelectFilter,
+  PeriodPicker,
+  SearchFilter,
+  SelectFilter,
+} from "../filters/filters";
+import { filtersStyles } from "../filters/styles";
+import type { Group } from "./group";
 
-/** Filters and Compare mode (#219): filled in by that ticket. */
-export const filters: Group = emptyGroup;
+export const filters: Group = {
+  components: [
+    FilterBar,
+    PeriodPicker,
+    DateRangeFilter,
+    ChipFilter,
+    SelectFilter,
+    MultiSelectFilter,
+    SearchFilter,
+    CompareToggle,
+  ],
+  styles: [filtersStyles],
+};
