@@ -4,6 +4,8 @@ import { ScrollArea } from "../../shared/ScrollArea";
 import type { Option } from "../options";
 import { Popover } from "../Popover";
 
+/* ---------- MultiSelectFilter: pick several values ---------- */
+
 export interface MultiSelectFilterProps {
   name: string;
   value?: string[];

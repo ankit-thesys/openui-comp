@@ -2,6 +2,8 @@
 import { useRef } from "react";
 import { useReportFilter } from "../../../shared/filterRegistry";
 
+/* ---------- SearchFilter: free-text search ---------- */
+
 export interface SearchFilterProps {
   name: string;
   value?: string;

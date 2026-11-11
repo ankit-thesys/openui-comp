@@ -18,6 +18,8 @@ import { Sparkline } from "../../shared/Sparkline";
 import { Empty } from "../../shared/States";
 import { StatusIcon } from "../../shared/StatusIcon";
 
+/* ---------- Table ---------- */
+
 export interface TableColumn {
   label: string;
   values: (string | number | null | (number | null)[] | (string | null)[])[];

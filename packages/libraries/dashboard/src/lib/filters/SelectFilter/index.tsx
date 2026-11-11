@@ -6,7 +6,8 @@ import {
   type ComponentRenderProps,
 } from "@openuidev/react-lang";
 import { options } from "../../../components/filters/options";
-import { SelectFilter } from "../../../components/filters/SelectFilter";
+import { SelectFilter, type SelectFilterProps } from "../../../components/filters/SelectFilter";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { selectFilterPropsSchema, type SelectFilterSchemaProps } from "./schema";
 export const SelectFilterComponent = defineComponent({
   name: "SelectFilter",
@@ -28,3 +29,8 @@ function SelectFilterView({ props }: ComponentRenderProps<SelectFilterSchemaProp
     />
   );
 }
+
+// Every schema field reaches SelectFilter.
+export type SelectFilterSchemaCovered = Covered<
+  SchemaCoverage<SelectFilterSchemaProps, SelectFilterProps>
+>;

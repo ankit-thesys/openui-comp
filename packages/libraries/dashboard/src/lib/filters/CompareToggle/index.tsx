@@ -5,8 +5,9 @@ import {
   useStateField,
   type ComponentRenderProps,
 } from "@openuidev/react-lang";
-import { CompareToggle } from "../../../components/filters/CompareToggle";
+import { CompareToggle, type CompareToggleProps } from "../../../components/filters/CompareToggle";
 import { options } from "../../../components/filters/options";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { compareTogglePropsSchema, type CompareToggleSchemaProps } from "./schema";
 export const CompareToggleComponent = defineComponent({
   name: "CompareToggle",
@@ -28,3 +29,8 @@ function CompareToggleView({ props }: ComponentRenderProps<CompareToggleSchemaPr
     />
   );
 }
+
+// Every schema field reaches CompareToggle (name binds the $variable here).
+export type CompareToggleSchemaCovered = Covered<
+  SchemaCoverage<CompareToggleSchemaProps, CompareToggleProps, "name">
+>;

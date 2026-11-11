@@ -14,6 +14,8 @@ import { Sparkline } from "../../shared/Sparkline";
 import { Sheen, StateFrame } from "../../shared/States";
 import { StatusIcon } from "../../shared/StatusIcon";
 
+/* ---------- Kpi: the stat tile ---------- */
+
 export interface KpiProps {
   label: string;
   value?: number | string | null;

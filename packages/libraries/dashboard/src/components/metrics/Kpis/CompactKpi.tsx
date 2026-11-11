@@ -1,10 +1,10 @@
 "use client";
-import { formatValue } from "../../shared/format";
-import { useViewState } from "../../shared/viewState";
-import { DeltaBadge } from "../shared/DeltaBadge";
-import { Sheen, StateFrame } from "../shared/States";
-import { StatusIcon } from "../shared/StatusIcon";
-import type { KpiProps } from "./Kpi";
+import { formatValue } from "../../../shared/format";
+import { useViewState } from "../../../shared/viewState";
+import { DeltaBadge } from "../../shared/DeltaBadge";
+import { Sheen, StateFrame } from "../../shared/States";
+import { StatusIcon } from "../../shared/StatusIcon";
+import type { KpiProps } from "../Kpi";
 /**
  * One compact item (strips past six tiles): value on top, label and change
  * below. Takes the same states as a full tile; while one shows, the change is

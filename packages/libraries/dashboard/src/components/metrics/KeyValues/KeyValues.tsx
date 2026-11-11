@@ -4,6 +4,8 @@ import { formatValue, type ValueFormat } from "../../../shared/format";
 import { DeltaBadge } from "../../shared/DeltaBadge";
 import { Empty } from "../../shared/States";
 
+/* ---------- KeyValues ---------- */
+
 export interface KeyValuesProps {
   rows: {
     label: string;

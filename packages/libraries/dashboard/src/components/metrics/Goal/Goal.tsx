@@ -6,6 +6,8 @@ import { TickMark } from "../../shared/RowMarks";
 import { StatusIcon } from "../../shared/StatusIcon";
 import { TooltipCard } from "../../shared/TooltipCard";
 
+/* ---------- Goal ---------- */
+
 export interface GoalProps {
   label: string;
   value: number;

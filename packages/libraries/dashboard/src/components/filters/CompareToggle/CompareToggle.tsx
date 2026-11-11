@@ -4,10 +4,12 @@ import { useCompare } from "../../../shared/compare";
 import { Check, menuNav } from "../OptionList";
 import type { Option } from "../options";
 import { Popover } from "../Popover";
+
+/* ---------- CompareToggle: previous-period overlays ---------- */
+
 const COMPARE_OFF = "off";
 
 export interface CompareToggleProps {
-  name?: string;
   value?: string;
   onChange: (value: string) => void;
   streaming: boolean;

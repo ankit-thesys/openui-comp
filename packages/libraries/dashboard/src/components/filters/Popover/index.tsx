@@ -11,6 +11,9 @@ import {
 import { createPortal } from "react-dom";
 import { useStyleClasses } from "../../../shared/styleClasses";
 import { ThemeContext } from "../../ThemeProvider";
+
+/* ---------- Shared popover for richer filters ---------- */
+
 export const FOCUSABLE =
   'button:not(:disabled), input:not(:disabled), select:not(:disabled), [tabindex]:not([tabindex="-1"])';
 

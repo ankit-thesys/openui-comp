@@ -6,7 +6,8 @@ import {
   type ComponentRenderProps,
 } from "@openuidev/react-lang";
 import { options } from "../../../components/filters/options";
-import { PeriodPicker } from "../../../components/filters/PeriodPicker";
+import { PeriodPicker, type PeriodPickerProps } from "../../../components/filters/PeriodPicker";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { periodPickerPropsSchema, type PeriodPickerSchemaProps } from "./schema";
 export const PeriodPickerComponent = defineComponent({
   name: "PeriodPicker",
@@ -28,3 +29,8 @@ function PeriodPickerView({ props }: ComponentRenderProps<PeriodPickerSchemaProp
     />
   );
 }
+
+// Every schema field reaches PeriodPicker (name binds the $variable here).
+export type PeriodPickerSchemaCovered = Covered<
+  SchemaCoverage<PeriodPickerSchemaProps, PeriodPickerProps, "name">
+>;

@@ -3,6 +3,9 @@ import { formatRange, isoDay } from "../dateRange";
 import type { Option } from "../options";
 import { Popover } from "../Popover";
 import { RangePanel } from "../RangePanel";
+
+/* ---------- DateRangeFilter: presets plus a custom range ---------- */
+
 const DEFAULT_PRESETS: Option[] = [
   { value: "7d", label: "Last 7 days" },
   { value: "30d", label: "Last 30 days" },
@@ -34,7 +37,6 @@ const CalendarIcon = () => (
 );
 
 export interface DateRangeFilterProps {
-  name: string;
   value?: string;
   onChange: (value: string) => void;
   streaming: boolean;

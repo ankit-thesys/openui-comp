@@ -4,6 +4,8 @@ import { useCompare } from "../../../shared/compare";
 import { formatValue, type ValueFormat } from "../../../shared/format";
 import { DeltaBadge } from "../../shared/DeltaBadge";
 
+/* ---------- Stat: a headline number inside a Card ---------- */
+
 export interface StatProps {
   value: number | null;
   format?: ValueFormat;

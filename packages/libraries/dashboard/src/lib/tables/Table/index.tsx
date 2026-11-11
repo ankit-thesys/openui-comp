@@ -2,8 +2,9 @@
 
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
 import { useMemo } from "react";
-import { Table } from "../../../components/tables/Table";
+import { Table, type TableProps } from "../../../components/tables/Table";
 import { nodeList } from "../../../shared/values";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import type { ColumnSchemaProps } from "../Column/schema";
 import { tablePropsSchema, type TableSchemaProps } from "./schema";
 
@@ -25,3 +26,6 @@ export const TableComponent = defineComponent({
     return <Table {...props} columns={columns} />;
   },
 });
+
+// Every schema field reaches Table (columns are read from the Column nodes).
+export type TableSchemaCovered = Covered<SchemaCoverage<TableSchemaProps, TableProps>>;

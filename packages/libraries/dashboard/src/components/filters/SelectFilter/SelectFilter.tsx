@@ -5,6 +5,8 @@ import { Check, menuNav } from "../OptionList";
 import type { Option } from "../options";
 import { Popover } from "../Popover";
 
+/* ---------- SelectFilter: a dropdown for longer lists ---------- */
+
 export interface SelectFilterProps {
   name: string;
   value?: string;

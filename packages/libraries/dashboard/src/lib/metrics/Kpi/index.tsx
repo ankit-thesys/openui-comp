@@ -1,7 +1,8 @@
 "use client";
 
 import { defineComponent, useIsStreaming, type ComponentRenderProps } from "@openuidev/react-lang";
-import { Kpi } from "../../../components/metrics/Kpi";
+import { Kpi, type KpiProps } from "../../../components/metrics/Kpi";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { kpiPropsSchema, type KpiSchemaProps } from "./schema";
 
 export const KpiComponent = defineComponent({
@@ -16,3 +17,6 @@ function KpiView({ props }: ComponentRenderProps<KpiSchemaProps>) {
   const streaming = useIsStreaming();
   return <Kpi {...props} streaming={streaming} />;
 }
+
+// Every schema field reaches Kpi.
+export type KpiSchemaCovered = Covered<SchemaCoverage<KpiSchemaProps, KpiProps>>;

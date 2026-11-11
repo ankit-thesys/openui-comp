@@ -1,6 +1,7 @@
 "use client";
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { FilterBar } from "../../../components/filters/FilterBar";
+import { FilterBar, type FilterBarProps } from "../../../components/filters/FilterBar";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { filterBarPropsSchema, type FilterBarSchemaProps } from "./schema";
 export const FilterBarComponent = defineComponent({
   name: "FilterBar",
@@ -57,3 +58,8 @@ function FilterBarView({ props, renderNode }: ComponentRenderProps<FilterBarSche
     />
   );
 }
+
+// Every schema field reaches FilterBar (filters are sorted into sections and rendered here).
+export type FilterBarSchemaCovered = Covered<
+  SchemaCoverage<FilterBarSchemaProps, FilterBarProps, "filters">
+>;

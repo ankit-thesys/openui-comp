@@ -3,6 +3,9 @@ import { Fragment, useContext, useEffect, useState, type ReactNode } from "react
 import { createPortal } from "react-dom";
 import { useStyleClasses } from "../../../shared/styleClasses";
 import { ThemeContext } from "../../ThemeProvider";
+
+/* ---------- FilterBar ---------- */
+
 export interface FilterBarProps {
   groups: { clustered: boolean; children: ReactNode }[];
   others: ReactNode;

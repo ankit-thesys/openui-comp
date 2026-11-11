@@ -3,6 +3,8 @@ import { useReportFilter } from "../../../shared/filterRegistry";
 import { radioKeys } from "../../shared/ViewSwitch";
 import type { Option } from "../options";
 
+/* ---------- ChipFilter: quick filters as pills ---------- */
+
 export interface ChipFilterProps {
   name: string;
   value?: string;

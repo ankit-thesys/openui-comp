@@ -2,8 +2,9 @@
 import { radioKeys } from "../../shared/ViewSwitch";
 import type { Option } from "../options";
 
+/* ---------- PeriodPicker: the quick date-range filter ---------- */
+
 export interface PeriodPickerProps {
-  name: string;
   value?: string;
   onChange: (value: string) => void;
   streaming: boolean;

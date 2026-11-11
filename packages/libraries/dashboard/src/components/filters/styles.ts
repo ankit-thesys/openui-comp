@@ -6,6 +6,7 @@ import { multiSelectFilterRules } from "./MultiSelectFilter/multiSelectFilter.st
 import { optionListRules } from "./OptionList/optionList.styles";
 import { popoverRules } from "./Popover/popover.styles";
 import { rangeCalendarRules } from "./RangeCalendar/rangeCalendar.styles";
+import { rangePanelRules } from "./RangePanel/rangePanel.styles";
 import { searchFilterRules } from "./SearchFilter/searchFilter.styles";
 
 // Original filters block order, including intact responsive blocks.
@@ -45,18 +46,19 @@ export const filtersStyleRules = [
   filtersRules[8],
   filtersRules[9],
   filtersRules[10],
-  rangeCalendarRules[0],
+  dateRangeFilterRules[0],
   popoverRules[1],
   filtersRules[11],
-  dateRangeFilterRules[0],
-  dateRangeFilterRules[1],
+  rangePanelRules[0],
+  rangePanelRules[1],
   optionListRules[0],
   filtersRules[12],
   multiSelectFilterRules[0],
   filtersRules[13],
   optionListRules[1],
   optionListRules[2],
-  dateRangeFilterRules[2],
+  rangePanelRules[2],
+  rangeCalendarRules[0],
   rangeCalendarRules[1],
   rangeCalendarRules[2],
   rangeCalendarRules[3],
@@ -75,11 +77,10 @@ export const filtersStyleRules = [
   rangeCalendarRules[16],
   rangeCalendarRules[17],
   rangeCalendarRules[18],
-  rangeCalendarRules[19],
-  dateRangeFilterRules[3],
-  dateRangeFilterRules[4],
-  dateRangeFilterRules[5],
-  dateRangeFilterRules[6],
+  rangePanelRules[3],
+  rangePanelRules[4],
+  rangePanelRules[5],
+  rangePanelRules[6],
   multiSelectFilterRules[1],
   multiSelectFilterRules[2],
   multiSelectFilterRules[3],
@@ -108,7 +109,7 @@ export const filtersStyleRules = [
   filtersRules[14],
   multiSelectFilterRules[10],
   filterBarRules[17],
-  dateRangeFilterRules[7],
+  rangePanelRules[7],
 ] as const;
 
 export const filtersStyles = filtersStyleRules.join("");

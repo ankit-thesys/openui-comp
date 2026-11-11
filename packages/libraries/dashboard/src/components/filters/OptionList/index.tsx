@@ -1,5 +1,8 @@
 "use client";
 import type { KeyboardEvent as ReactKeyboardEvent } from "react";
+
+/* ---------- Menu primitives shared by the dropdown filters ---------- */
+
 export const Check = () => (
   <svg className="openui-dashboard-menu-check" viewBox="0 0 12 12" aria-hidden>
     <path

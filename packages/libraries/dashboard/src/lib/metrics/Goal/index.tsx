@@ -1,7 +1,8 @@
 "use client";
 
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { Goal } from "../../../components/metrics/Goal";
+import { Goal, type GoalProps } from "../../../components/metrics/Goal";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { goalPropsSchema, type GoalSchemaProps } from "./schema";
 
 export const GoalComponent = defineComponent({
@@ -15,3 +16,6 @@ export const GoalComponent = defineComponent({
 function GoalView({ props }: ComponentRenderProps<GoalSchemaProps>) {
   return <Goal {...props} />;
 }
+
+// Every schema field reaches Goal.
+export type GoalSchemaCovered = Covered<SchemaCoverage<GoalSchemaProps, GoalProps>>;

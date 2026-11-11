@@ -1,7 +1,8 @@
 "use client";
 
 import { defineComponent, type ComponentRenderProps } from "@openuidev/react-lang";
-import { KeyValues } from "../../../components/metrics/KeyValues";
+import { KeyValues, type KeyValuesProps } from "../../../components/metrics/KeyValues";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { keyValuesPropsSchema, type KeyValuesSchemaProps } from "./schema";
 
 export const KeyValuesComponent = defineComponent({
@@ -15,3 +16,6 @@ export const KeyValuesComponent = defineComponent({
 function KeyValuesView({ props }: ComponentRenderProps<KeyValuesSchemaProps>) {
   return <KeyValues {...props} />;
 }
+
+// Every schema field reaches KeyValues.
+export type KeyValuesSchemaCovered = Covered<SchemaCoverage<KeyValuesSchemaProps, KeyValuesProps>>;

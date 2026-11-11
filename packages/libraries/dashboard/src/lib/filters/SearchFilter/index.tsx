@@ -5,7 +5,8 @@ import {
   useStateField,
   type ComponentRenderProps,
 } from "@openuidev/react-lang";
-import { SearchFilter } from "../../../components/filters/SearchFilter";
+import { SearchFilter, type SearchFilterProps } from "../../../components/filters/SearchFilter";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { searchFilterPropsSchema, type SearchFilterSchemaProps } from "./schema";
 export const SearchFilterComponent = defineComponent({
   name: "SearchFilter",
@@ -20,3 +21,8 @@ function SearchFilterView({ props }: ComponentRenderProps<SearchFilterSchemaProp
     <SearchFilter {...props} value={field.value} onChange={field.setValue} streaming={streaming} />
   );
 }
+
+// Every schema field reaches SearchFilter.
+export type SearchFilterSchemaCovered = Covered<
+  SchemaCoverage<SearchFilterSchemaProps, SearchFilterProps>
+>;

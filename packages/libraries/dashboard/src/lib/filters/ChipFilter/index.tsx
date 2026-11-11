@@ -5,8 +5,9 @@ import {
   useStateField,
   type ComponentRenderProps,
 } from "@openuidev/react-lang";
-import { ChipFilter } from "../../../components/filters/ChipFilter";
+import { ChipFilter, type ChipFilterProps } from "../../../components/filters/ChipFilter";
 import { options } from "../../../components/filters/options";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { chipFilterPropsSchema, type ChipFilterSchemaProps } from "./schema";
 export const ChipFilterComponent = defineComponent({
   name: "ChipFilter",
@@ -28,3 +29,8 @@ function ChipFilterView({ props }: ComponentRenderProps<ChipFilterSchemaProps>) 
     />
   );
 }
+
+// Every schema field reaches ChipFilter.
+export type ChipFilterSchemaCovered = Covered<
+  SchemaCoverage<ChipFilterSchemaProps, ChipFilterProps>
+>;

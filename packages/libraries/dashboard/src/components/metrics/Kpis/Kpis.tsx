@@ -2,8 +2,10 @@
 
 import { useRef, useState, type ReactNode } from "react";
 import { useIsomorphicLayoutEffect } from "../../../shared/hooks";
-import { CompactKpi } from "../CompactKpi";
 import type { KpiProps } from "../Kpi";
+import { CompactKpi } from "./CompactKpi";
+
+/* ---------- Kpis: the strip of stat tiles ---------- */
 
 export interface KpisProps {
   items: ReactNode[];

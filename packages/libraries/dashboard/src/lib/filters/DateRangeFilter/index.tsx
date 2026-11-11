@@ -5,8 +5,12 @@ import {
   useStateField,
   type ComponentRenderProps,
 } from "@openuidev/react-lang";
-import { DateRangeFilter } from "../../../components/filters/DateRangeFilter";
+import {
+  DateRangeFilter,
+  type DateRangeFilterProps,
+} from "../../../components/filters/DateRangeFilter";
 import { options } from "../../../components/filters/options";
+import type { Covered, SchemaCoverage } from "../../schemaCoverage";
 import { dateRangeFilterPropsSchema, type DateRangeFilterSchemaProps } from "./schema";
 export const DateRangeFilterComponent = defineComponent({
   name: "DateRangeFilter",
@@ -28,3 +32,8 @@ function DateRangeFilterView({ props }: ComponentRenderProps<DateRangeFilterSche
     />
   );
 }
+
+// Every schema field reaches DateRangeFilter (name binds the $variable here).
+export type DateRangeFilterSchemaCovered = Covered<
+  SchemaCoverage<DateRangeFilterSchemaProps, DateRangeFilterProps, "name">
+>;
