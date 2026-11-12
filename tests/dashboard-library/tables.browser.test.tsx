@@ -12,7 +12,9 @@ import { tablesCatalog } from "./fixtures/tables";
 let host: HTMLDivElement;
 let root: Root;
 let errors: ReturnType<typeof vi.spyOn>;
+let expectRendererReport = false;
 beforeEach(() => {
+  expectRendererReport = false;
   (globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
   host = document.createElement("div");
   host.style.width = "1200px";
@@ -25,7 +27,11 @@ afterEach(async () => {
   host.remove();
   const calls = [...errors.mock.calls];
   errors.mockRestore();
-  expect(calls).toEqual([]);
+  // The Renderer reports a program's errors with one console.error. A test that feeds it a
+  // broken program or a failing query on purpose says so; any other console.error fails the test.
+  const isReport = (call: unknown[]) => String(call[0]).startsWith("[openui] Rendered with");
+  expect(calls.filter((call) => !isReport(call))).toEqual([]);
+  expect(calls.some(isReport)).toBe(expectRendererReport);
 });
 async function draw(children: ReactNode) {
   await act(async () => root.render(children));
@@ -111,6 +117,7 @@ for (const mode of ["light", "dark"] as const) {
   }
 
   test(`KeyValues respects GoodWhen, neutral and missing values in ${mode}`, async () => {
+    expectRendererReport = true;
     await draw(
       themed(
         dashboard(
@@ -135,6 +142,7 @@ for (const mode of ["light", "dark"] as const) {
   // in any required field ("null-required") and drops the row. Expected to fail until lang-core
   // honours a schema that allows null; then drop .fails.
   test.fails(`KeyValues shows a null value as — in ${mode}`, async () => {
+    expectRendererReport = true;
     await draw(
       themed(
         dashboard(
@@ -285,10 +293,17 @@ for (const mode of ["light", "dark"] as const) {
     expect(empty().textContent).toContain("This data didn’t load");
     expect(empty().textContent).toContain("Try fetching the data again.");
     expect(host.querySelector("[data-state=invalid]")).toBeNull();
-    // react-lang logs the failed query; that is the only console error this test allows.
+    // react-lang logs the failed query, and the Renderer reports it among the program's errors;
+    // those are the only console errors this test allows.
     const logged = errors.mock.calls.map(([message]) => String(message));
-    expect(logged.length).toBeGreaterThan(0);
-    expect(logged.every((message) => message === 'Query "accounts" failed:')).toBe(true);
+    expect(logged).toContain('Query "accounts" failed:');
+    expect(
+      logged.every(
+        (message) =>
+          message === 'Query "accounts" failed:' ||
+          message.startsWith("[openui] Rendered with 1 error"),
+      ),
+    ).toBe(true);
     errors.mockClear();
   });
 

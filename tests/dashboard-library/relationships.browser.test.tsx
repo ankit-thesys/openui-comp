@@ -12,7 +12,9 @@ import { accountPoints, card, relationshipsFixtures } from "./fixtures/relations
 let host: HTMLDivElement;
 let root: Root;
 let errors: ReturnType<typeof vi.spyOn>;
+let expectRendererReport = false;
 beforeEach(() => {
+  expectRendererReport = false;
   (globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
   host = document.createElement("div");
   host.style.width = "1200px";
@@ -25,7 +27,11 @@ afterEach(async () => {
   host.remove();
   const calls = [...errors.mock.calls];
   errors.mockRestore();
-  expect(calls).toEqual([]);
+  // The Renderer reports a program's errors with one console.error. A test that feeds it a
+  // broken program or a failing query on purpose says so; any other console.error fails the test.
+  const isReport = (call: unknown[]) => String(call[0]).startsWith("[openui] Rendered with");
+  expect(calls.filter((call) => !isReport(call))).toEqual([]);
+  expect(calls.some(isReport)).toBe(expectRendererReport);
 });
 async function draw(children: ReactNode) {
   await act(async () => root.render(children));
@@ -448,9 +454,13 @@ for (const name of ["Scatter", "Heatmap", "Cohorts"] as const) {
     expect(host.querySelector(".openui-dashboard-card-body")?.textContent).toContain(
       "This data didn’t load",
     );
-    // react-lang logs the failed query; that is the only console error this test allows.
+    // react-lang logs the failed query, and the Renderer reports it once more among the program's
+    // errors; those are the only console errors this test allows.
     expect(errors.mock.calls.map(([message]) => String(message))).toEqual([
       'Query "relationships" failed:',
+      expect.stringContaining(
+        'query/tool-error: Query "relationships" failed: Fixture unavailable',
+      ),
     ]);
     errors.mockClear();
   });

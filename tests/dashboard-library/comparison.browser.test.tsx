@@ -341,7 +341,11 @@ root = Dashboard([FilterBar([ChipFilter("plan", [{value: "all", label: "All"}, {
   await act(async () => fail(new Error("Fixture data unavailable")));
   await expect.poll(state).toBe("error");
   expect(body().textContent).toContain("This data didn’t load");
-  // react-lang logs the failed query; that is the only console error this test allows.
-  expect(errors.mock.calls.map(([message]) => String(message))).toEqual(['Query "sales" failed:']);
+  // react-lang logs the failed query, and the Renderer reports it once more among the program's
+  // errors; those are the only console errors this test allows.
+  expect(errors.mock.calls.map(([message]) => String(message))).toEqual([
+    'Query "sales" failed:',
+    expect.stringContaining("[openui] Rendered with 1 error"),
+  ]);
   errors.mockClear();
 });
