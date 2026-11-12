@@ -355,3 +355,12 @@ test("maps keep supplied changes with Compare mode off, as in the source", async
     6,
   );
 });
+
+// Live-test finding: without a previous value the tooltip labelled its one number "Now".
+test("GeoMap's tooltip names the value plainly when there is no previous", async () => {
+  await draw(dashboard(card('GeoMap("world", ["US", "DE"], [1200, 300], "currency")')));
+  await hover(rows()[0]!);
+  const tip = host.querySelector(".openui-dashboard-tooltip")!.textContent;
+  expect(tip).toContain("Value$1,200");
+  expect(tip).not.toContain("Now");
+});

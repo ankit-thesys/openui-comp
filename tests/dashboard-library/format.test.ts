@@ -2,6 +2,7 @@ import { describe, expect, test } from "vitest";
 import {
   columnDecimals,
   computeDelta,
+  dateLabels,
   deltaTone,
   formatDateText,
   formatValue,
@@ -9,6 +10,7 @@ import {
   isRateFormat,
   isRatioFormat,
   padDecimals,
+  parseDateText,
   type ValueFormat,
 } from "../../packages/libraries/dashboard/src/shared/format";
 
@@ -111,6 +113,10 @@ describe("Previous values and GoodWhen", () => {
     [0.031, 0.029, "ratio", { text: "+0.2 pts", direction: "up" }],
     [99.74, 99.71, "percent", { text: "+0.03 pts", direction: "up" }],
     [7.4, 7.4, "percent", { text: "0 pts", direction: "flat" }],
+    // A margin written as a number with a "%" suffix is a rate too: 8.7% → 10.6% is +1.9 points, not +21.8%.
+    [10.6, 8.7, { type: "number", suffix: "%" }, { text: "+1.9 pts", direction: "up" }],
+    [10.6, 8.7, { type: "number", suffix: " %" }, { text: "+1.9 pts", direction: "up" }],
+    [10.6, 8.7, { type: "number", suffix: " pts" }, { text: "+21.8%", direction: "up" }],
     [-48000, 12000, "currency", { text: "-$60,000", direction: "down" }],
     [12000, -48000, "currency", { text: "+$60,000", direction: "up" }],
     [-12, -12, "number", { text: "0", direction: "flat" }],
@@ -198,5 +204,50 @@ describe("formatDateText", () => {
     }
     expect(formatDateText(1712000000)).toBeNull();
     expect(formatDateText(null)).toBeNull();
+  });
+});
+
+describe("dates from data sources (live demo findings)", () => {
+  const thisYear = new Date().getFullYear();
+  test("the en-US toLocaleString() shape reads as its day; other locale shapes stay text", () => {
+    expect(formatDateText("10/01/2026, 12:00:00 AM")).toBe(
+      thisYear === 2026 ? "Oct 1" : "Oct 1, 2026",
+    );
+    expect(formatDateText("1/2/2012, 3:04:05 PM")).toBe("Jan 2, 2012");
+    expect(formatDateText("1/2/2012 3:04 PM")).toBe("Jan 2, 2012");
+    expect(parseDateText("10/01/2026, 12:00:00 AM")).toMatchObject({ unit: "day", time: false });
+    expect(parseDateText("10/01/2026, 9:30:00 PM")).toMatchObject({ unit: "day", time: true });
+    // No AM/PM: day-first or month-first can't be told apart, so it stays as written.
+    for (const text of [
+      "10/01/2026",
+      "01.10.2026, 00:00:00",
+      "13/01/2026, 12:00:00 AM",
+      "02/30/2026, 12:00:00 AM",
+      "10/01/2026, 13:00:00 PM",
+    ]) {
+      expect(formatDateText(text)).toBeNull();
+    }
+  });
+  test("a year and month reads as a month only where a whole set is months", () => {
+    expect(formatDateText("2025-11")).toBeNull();
+    expect(formatDateText("2025-11", { months: true })).toBe("Nov 2025");
+    expect(parseDateText("2025-13", { months: true })).toBeNull();
+  });
+  test("chart labels: days, months, the year only when needed, times only when days repeat", () => {
+    const days = dateLabels(["2025-05-12", "2025-05-13", "2025-05-14"])!;
+    expect(["2025-05-12", "2025-05-14"].map(days)).toEqual(["May 12, 2025", "May 14, 2025"]);
+    const current = dateLabels([`${thisYear}-05-12`, `${thisYear}-05-13`])!;
+    expect(current(`${thisYear}-05-13`)).toBe("May 13");
+    const months = dateLabels(["2025-11", "2025-12", "2026-01"])!;
+    expect(["2025-11", "2026-01"].map(months)).toEqual(["Nov 2025", "Jan 2026"]);
+    const hours = dateLabels(["2025-05-12T09:00:00", "2025-05-12T13:30:00"])!;
+    expect(hours("2025-05-12T13:30:00")).toBe("May 12, 2025, 1:30 PM");
+    const us = dateLabels(["10/01/2025, 12:00:00 AM", "10/02/2025, 12:00:00 AM"])!;
+    expect(us("10/02/2025, 12:00:00 AM")).toBe("Oct 2, 2025");
+    // Any label that isn't a date, or a mix of days and months, leaves every label as written.
+    expect(dateLabels(["Jan", "Feb"])).toBeNull();
+    expect(dateLabels(["2025-05-12", "Total"])).toBeNull();
+    expect(dateLabels(["2025-05-12", "2025-06"])).toBeNull();
+    expect(dateLabels([])).toBeNull();
   });
 });

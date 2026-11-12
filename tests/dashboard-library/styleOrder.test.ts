@@ -11,12 +11,12 @@ import { STYLE_ORDER, styleClasses } from "../../packages/libraries/dashboard/sr
  * A restructure must not change them; a deliberate CSS change updates the block's class here.
  */
 const SHIPPED = [
-  ["structure", "go3927328040"],
+  ["structure", "go3579381241"],
   ["shared", "go1947732956"],
   ["kpi", "go528443158"],
   ["stat", "go546751485"],
   ["filters", "go2198865133"],
-  ["table", "go826755159"],
+  ["table", "go78354859"],
   ["keyValues", "go4128638916"],
   ["goal", "go1547323890"],
   ["trends", "go443410021"],

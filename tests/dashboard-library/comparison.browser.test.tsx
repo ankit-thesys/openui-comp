@@ -349,3 +349,16 @@ root = Dashboard([FilterBar([ChipFilter($plan, [{value: "all", label: "All"}, {v
   ]);
   errors.mockClear();
 });
+
+// Live-test finding: without a previous value the tooltip labelled its one number "Now".
+test("Leaderboard's tooltip names the value plainly when there is no previous", async () => {
+  await draw(render(card('Leaderboard(["Low", "High"], [100, 300], "number")')));
+  const high = [...host.querySelectorAll<HTMLElement>(".openui-dashboard-rank-row")].find((row) =>
+    row.textContent?.includes("High"),
+  )!;
+  await hover(high);
+  await expect
+    .poll(() => host.querySelector(".openui-dashboard-tooltip")?.textContent)
+    .toContain("Value300");
+  expect(host.querySelector(".openui-dashboard-tooltip")!.textContent).not.toContain("Now");
+});
