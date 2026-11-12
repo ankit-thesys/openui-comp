@@ -1,11 +1,11 @@
 # Preview comparison: dashboards-ui-library preview vs @openuidev/dashboard-library
 
-## light: 13 pages, 195 programs, 395 units, 626985 values compared, 0 different
+## light: 13 pages, 201 programs, 401 units, 640974 values compared, 0 different
 
 | Program                                               | Units | Values | Different | Causes |
 | ----------------------------------------------------- | ----: | -----: | --------: | ------ |
-| Retail sales                                          |    23 |  36073 |         0 |        |
-| Marketing funnel                                      |    21 |  30708 |         0 |        |
+| Retail sales                                          |    23 |  36153 |         0 |        |
+| Marketing funnel                                      |    21 |  30788 |         0 |        |
 | Product analytics                                     |    19 |  26059 |         0 |        |
 | Trends / TimeSeries / Single · Line                   |     1 |   1682 |         0 |        |
 | Trends / TimeSeries / Single · Area                   |     1 |   1682 |         0 |        |
@@ -26,6 +26,7 @@
 | Trends / TimeSeries / + Previous period               |     1 |   1762 |         0 |        |
 | Trends / SmallMultiples / Line                        |     1 |   6022 |         0 |        |
 | Trends / SmallMultiples / Area                        |     1 |   6022 |         0 |        |
+| Trends / SmallMultiples / + Previous period           |     1 |   6154 |         0 |        |
 | Trends / StatusTimeline                               |     1 |   9004 |         0 |        |
 | Trends / StatusTimeline / + Period labels             |     1 |   8998 |         0 |        |
 | Comparison / Bars / Single · Horizontal               |     1 |   1091 |         0 |        |
@@ -58,6 +59,7 @@
 | Composition / Donut / 7                               |     1 |   2149 |         0 |        |
 | Composition / Donut / 8                               |     1 |   2392 |         0 |        |
 | Composition / Donut / 8+                              |     1 |   2392 |         0 |        |
+| Composition / Donut / + Previous period               |     1 |    691 |         0 |        |
 | Composition / SegmentedBar / 1                        |     1 |    774 |         0 |        |
 | Composition / SegmentedBar / 2                        |     1 |   1106 |         0 |        |
 | Composition / SegmentedBar / 3                        |     1 |   1438 |         0 |        |
@@ -67,8 +69,10 @@
 | Composition / SegmentedBar / 7                        |     1 |   2764 |         0 |        |
 | Composition / SegmentedBar / 8                        |     1 |   3096 |         0 |        |
 | Composition / SegmentedBar / 8+                       |     1 |   3092 |         0 |        |
+| Composition / SegmentedBar / + Previous period        |     1 |    774 |         0 |        |
 | Composition / Treemap / Flat                          |     1 |   1831 |         0 |        |
 | Composition / Treemap / Grouped                       |     1 |   2839 |         0 |        |
+| Composition / Treemap / + Previous period             |     1 |   1831 |         0 |        |
 | Composition / Waterfall / Higher                      |     1 |   1339 |         0 |        |
 | Composition / Waterfall / Lower                       |     1 |   1339 |         0 |        |
 | Composition / Waterfall / Neutral                     |     1 |   1338 |         0 |        |
@@ -89,6 +93,7 @@
 | Flow / Funnel / + Segments                            |     1 |   1692 |         0 |        |
 | Flow / Flow / Two stages                              |     1 |   1549 |         0 |        |
 | Flow / Flow / Journey                                 |     1 |   2048 |         0 |        |
+| Flow / Flow / + Previous period                       |     1 |   1549 |         0 |        |
 | Relationships / Scatter / Sized                       |     1 |   2175 |         0 |        |
 | Relationships / Scatter / Grouped                     |     1 |   1731 |         0 |        |
 | Relationships / Scatter / 10+                         |     1 |   5816 |         0 |        |
@@ -185,27 +190,28 @@
 | Metrics / Goal / Limit                                |     1 |   1478 |         0 |        |
 | Metrics / Goal / + Pace                               |     1 |   1142 |         0 |        |
 | Metrics / Goal / + Overrun                            |     1 |   1712 |         0 |        |
-| Tables / Table & Column                               |     1 |  10653 |         0 |        |
-| Tables / Table & Column / + Paged                     |     1 |   5733 |         0 |        |
+| Metrics / Goal / + Previous period                    |     1 |   1790 |         0 |        |
+| Tables / Table & Column                               |     1 |  10733 |         0 |        |
+| Tables / Table & Column / + Paged                     |     1 |   5813 |         0 |        |
 | Tables / Table & Column / + Totals                    |     1 |  10329 |         0 |        |
-| Tables / Table & Column / + Grouped                   |     1 |  11645 |         0 |        |
-| Tables / Table & Column / + Status                    |     1 |   9009 |         0 |        |
-| Tables / Table & Column / + Channel                   |     1 |   9069 |         0 |        |
-| Tables / Table & Column / + Person                    |     1 |  12403 |         0 |        |
-| Tables / Table & Column / + Link                      |     1 |  12067 |         0 |        |
-| Tables / Table & Column / + Bar                       |     1 |   9201 |         0 |        |
-| Tables / Table & Column / + Delta                     |     1 |   9537 |         0 |        |
-| Tables / Table & Column / + Progress                  |     1 |  12895 |         0 |        |
-| Tables / Table & Column / + Date                      |     1 |  11349 |         0 |        |
-| Tables / Table & Column / + Sparkline                 |     1 |   9878 |         0 |        |
-| Tables / Table & Column / + Status dots               |     1 |  12506 |         0 |        |
+| Tables / Table & Column / + Grouped                   |     1 |  11725 |         0 |        |
+| Tables / Table & Column / + Status                    |     1 |   9089 |         0 |        |
+| Tables / Table & Column / + Channel                   |     1 |   9149 |         0 |        |
+| Tables / Table & Column / + Person                    |     1 |  12483 |         0 |        |
+| Tables / Table & Column / + Link                      |     1 |  12147 |         0 |        |
+| Tables / Table & Column / + Bar                       |     1 |   9281 |         0 |        |
+| Tables / Table & Column / + Delta                     |     1 |   9617 |         0 |        |
+| Tables / Table & Column / + Progress                  |     1 |  12975 |         0 |        |
+| Tables / Table & Column / + Date                      |     1 |  11429 |         0 |        |
+| Tables / Table & Column / + Sparkline                 |     1 |   9958 |         0 |        |
+| Tables / Table & Column / + Status dots               |     1 |  12586 |         0 |        |
 
-## dark: 13 pages, 195 programs, 395 units, 626985 values compared, 0 different
+## dark: 13 pages, 201 programs, 401 units, 640974 values compared, 0 different
 
 | Program                                               | Units | Values | Different | Causes |
 | ----------------------------------------------------- | ----: | -----: | --------: | ------ |
-| Retail sales                                          |    23 |  36073 |         0 |        |
-| Marketing funnel                                      |    21 |  30708 |         0 |        |
+| Retail sales                                          |    23 |  36153 |         0 |        |
+| Marketing funnel                                      |    21 |  30788 |         0 |        |
 | Product analytics                                     |    19 |  26059 |         0 |        |
 | Trends / TimeSeries / Single · Line                   |     1 |   1682 |         0 |        |
 | Trends / TimeSeries / Single · Area                   |     1 |   1682 |         0 |        |
@@ -226,6 +232,7 @@
 | Trends / TimeSeries / + Previous period               |     1 |   1762 |         0 |        |
 | Trends / SmallMultiples / Line                        |     1 |   6022 |         0 |        |
 | Trends / SmallMultiples / Area                        |     1 |   6022 |         0 |        |
+| Trends / SmallMultiples / + Previous period           |     1 |   6154 |         0 |        |
 | Trends / StatusTimeline                               |     1 |   9004 |         0 |        |
 | Trends / StatusTimeline / + Period labels             |     1 |   8998 |         0 |        |
 | Comparison / Bars / Single · Horizontal               |     1 |   1091 |         0 |        |
@@ -258,6 +265,7 @@
 | Composition / Donut / 7                               |     1 |   2149 |         0 |        |
 | Composition / Donut / 8                               |     1 |   2392 |         0 |        |
 | Composition / Donut / 8+                              |     1 |   2392 |         0 |        |
+| Composition / Donut / + Previous period               |     1 |    691 |         0 |        |
 | Composition / SegmentedBar / 1                        |     1 |    774 |         0 |        |
 | Composition / SegmentedBar / 2                        |     1 |   1106 |         0 |        |
 | Composition / SegmentedBar / 3                        |     1 |   1438 |         0 |        |
@@ -267,8 +275,10 @@
 | Composition / SegmentedBar / 7                        |     1 |   2764 |         0 |        |
 | Composition / SegmentedBar / 8                        |     1 |   3096 |         0 |        |
 | Composition / SegmentedBar / 8+                       |     1 |   3092 |         0 |        |
+| Composition / SegmentedBar / + Previous period        |     1 |    774 |         0 |        |
 | Composition / Treemap / Flat                          |     1 |   1831 |         0 |        |
 | Composition / Treemap / Grouped                       |     1 |   2839 |         0 |        |
+| Composition / Treemap / + Previous period             |     1 |   1831 |         0 |        |
 | Composition / Waterfall / Higher                      |     1 |   1339 |         0 |        |
 | Composition / Waterfall / Lower                       |     1 |   1339 |         0 |        |
 | Composition / Waterfall / Neutral                     |     1 |   1338 |         0 |        |
@@ -289,6 +299,7 @@
 | Flow / Funnel / + Segments                            |     1 |   1692 |         0 |        |
 | Flow / Flow / Two stages                              |     1 |   1549 |         0 |        |
 | Flow / Flow / Journey                                 |     1 |   2048 |         0 |        |
+| Flow / Flow / + Previous period                       |     1 |   1549 |         0 |        |
 | Relationships / Scatter / Sized                       |     1 |   2175 |         0 |        |
 | Relationships / Scatter / Grouped                     |     1 |   1731 |         0 |        |
 | Relationships / Scatter / 10+                         |     1 |   5816 |         0 |        |
@@ -385,17 +396,18 @@
 | Metrics / Goal / Limit                                |     1 |   1478 |         0 |        |
 | Metrics / Goal / + Pace                               |     1 |   1142 |         0 |        |
 | Metrics / Goal / + Overrun                            |     1 |   1712 |         0 |        |
-| Tables / Table & Column                               |     1 |  10653 |         0 |        |
-| Tables / Table & Column / + Paged                     |     1 |   5733 |         0 |        |
+| Metrics / Goal / + Previous period                    |     1 |   1790 |         0 |        |
+| Tables / Table & Column                               |     1 |  10733 |         0 |        |
+| Tables / Table & Column / + Paged                     |     1 |   5813 |         0 |        |
 | Tables / Table & Column / + Totals                    |     1 |  10329 |         0 |        |
-| Tables / Table & Column / + Grouped                   |     1 |  11645 |         0 |        |
-| Tables / Table & Column / + Status                    |     1 |   9009 |         0 |        |
-| Tables / Table & Column / + Channel                   |     1 |   9069 |         0 |        |
-| Tables / Table & Column / + Person                    |     1 |  12403 |         0 |        |
-| Tables / Table & Column / + Link                      |     1 |  12067 |         0 |        |
-| Tables / Table & Column / + Bar                       |     1 |   9201 |         0 |        |
-| Tables / Table & Column / + Delta                     |     1 |   9537 |         0 |        |
-| Tables / Table & Column / + Progress                  |     1 |  12895 |         0 |        |
-| Tables / Table & Column / + Date                      |     1 |  11349 |         0 |        |
-| Tables / Table & Column / + Sparkline                 |     1 |   9878 |         0 |        |
-| Tables / Table & Column / + Status dots               |     1 |  12506 |         0 |        |
+| Tables / Table & Column / + Grouped                   |     1 |  11725 |         0 |        |
+| Tables / Table & Column / + Status                    |     1 |   9089 |         0 |        |
+| Tables / Table & Column / + Channel                   |     1 |   9149 |         0 |        |
+| Tables / Table & Column / + Person                    |     1 |  12483 |         0 |        |
+| Tables / Table & Column / + Link                      |     1 |  12147 |         0 |        |
+| Tables / Table & Column / + Bar                       |     1 |   9281 |         0 |        |
+| Tables / Table & Column / + Delta                     |     1 |   9617 |         0 |        |
+| Tables / Table & Column / + Progress                  |     1 |  12975 |         0 |        |
+| Tables / Table & Column / + Date                      |     1 |  11429 |         0 |        |
+| Tables / Table & Column / + Sparkline                 |     1 |   9958 |         0 |        |
+| Tables / Table & Column / + Status dots               |     1 |  12586 |         0 |        |
