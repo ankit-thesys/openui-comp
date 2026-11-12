@@ -18,8 +18,8 @@ export function SrTable({ caption, head, rows }: SrTableProps) {
       <caption>{caption}</caption>
       <thead>
         <tr>
-          {head.map((label) => (
-            <th key={label} scope="col">
+          {head.map((label, keyIndex) => (
+            <th key={`${keyIndex}-${label}`} scope="col">
               {label}
             </th>
           ))}

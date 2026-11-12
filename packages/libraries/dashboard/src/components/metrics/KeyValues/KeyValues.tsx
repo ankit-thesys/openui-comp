@@ -21,8 +21,8 @@ export function KeyValues(props: KeyValuesProps) {
   if (!rows.length) return <Empty />;
   return (
     <dl className="openui-dashboard-kv">
-      {rows.map((row) => (
-        <div key={row.label} className="openui-dashboard-kv-row">
+      {rows.map((row, keyIndex) => (
+        <div key={`${keyIndex}-${row.label}`} className="openui-dashboard-kv-row">
           <dt>{row.label}</dt>
           {/* Change first, value last: values sit flush right in one column. */}
           <dd>

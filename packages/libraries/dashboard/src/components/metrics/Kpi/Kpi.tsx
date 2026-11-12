@@ -101,15 +101,15 @@ function SplitBar({ parts }: { parts: { label: string; value: number }[] }) {
       <div className="openui-dashboard-kpi-split-bar">
         {all.map((part, i) => (
           <span
-            key={part.label}
+            key={`${i}-${part.label}`}
             className={`openui-dashboard-tex-${textureOf(i)}`}
             style={{ flexGrow: part.value, backgroundColor: part.color }}
           />
         ))}
       </div>
       <div className="openui-dashboard-kpi-split-legend">
-        {all.map((part) => (
-          <span key={part.label}>
+        {all.map((part, keyIndex) => (
+          <span key={`${keyIndex}-${part.label}`}>
             <i style={{ background: part.color }} />
             {part.label} {share(part.value)}
           </span>

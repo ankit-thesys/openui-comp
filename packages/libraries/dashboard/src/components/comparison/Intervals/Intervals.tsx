@@ -118,7 +118,7 @@ export function Intervals(props: IntervalsProps) {
         className="openui-dashboard-rows openui-dashboard-rowchart-rows"
         style={{ marginTop: 1 }}
       >
-        {drawn.map(({ label, estimate, low, high }) => {
+        {drawn.map(({ label, estimate, low, high }, keyIndex) => {
           const { name, color } = verdict(low, high);
           const tip = () => (
             <TooltipCard
@@ -145,7 +145,7 @@ export function Intervals(props: IntervalsProps) {
           );
           return (
             <div
-              key={label}
+              key={`${keyIndex}-${label}`}
               className="openui-dashboard-hrow"
               {...hover.rowProps(label, tip)}
               style={{

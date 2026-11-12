@@ -30,9 +30,9 @@ export function PartsLegend({ parts, format, sharesGiven, active, onHover }: Par
   );
   return (
     <div className="openui-dashboard-parts-legend">
-      {parts.map((part) => (
+      {parts.map((part, keyIndex) => (
         <div
-          key={part.label}
+          key={`${keyIndex}-${part.label}`}
           data-hover={active === part.label ? "" : undefined}
           onMouseEnter={() => onHover?.(part.label)}
           onMouseLeave={() => onHover?.(null)}

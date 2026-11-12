@@ -60,7 +60,7 @@ export function StatusTimeline(props: StatusTimelineProps) {
               ? STATUS[tipState as keyof typeof STATUS]
               : null;
           return (
-            <div key={label} className="openui-dashboard-st-row">
+            <div key={`${r}-${label}`} className="openui-dashboard-st-row">
               <span className="openui-dashboard-st-label" title={label}>
                 {label}
               </span>
