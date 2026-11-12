@@ -544,3 +544,21 @@ for (const mode of ["light", "dark"] as const) {
     expect(host.querySelector("tfoot")).toBeNull();
   });
 }
+
+// Version numbers and numbered names sort the way people read them, digit runs as numbers.
+test("Table sorts text naturally: 4.9.0 before 4.10.0, item 2 before item 10", async () => {
+  await draw(
+    dashboard(
+      card(`Table([
+        Column("Version", ["4.17.0", "4.9.0", "4.10.0", "4.2.0"], "primary"),
+        Column("Item", ["item 10", "item 2", "item 1", "item 20"], "text")
+      ], 10)`),
+    ),
+  );
+  await click("th:nth-child(1) button");
+  expect(firstCells()).toEqual(["4.2.0", "4.9.0", "4.10.0", "4.17.0"]);
+  await click("th:nth-child(2) button");
+  expect([...host.querySelectorAll("tbody tr")].map((row) => row.children[1]?.textContent)).toEqual(
+    ["item 1", "item 2", "item 10", "item 20"],
+  );
+});

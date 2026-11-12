@@ -18,6 +18,10 @@ import { Sparkline } from "../../shared/Sparkline";
 import { Empty } from "../../shared/States";
 import { StatusIcon } from "../../shared/StatusIcon";
 
+// Text sorts the way people read it: digit runs as numbers, so 4.9.0 comes before 4.10.0
+// and "item 2" before "item 10". Same-shaped dates (2026-04-02) still sort by date.
+const NATURAL: Intl.CollatorOptions = { numeric: true };
+
 /* ---------- Table ---------- */
 
 export interface TableColumn {
@@ -153,13 +157,13 @@ export function Table(props: TableProps) {
         // A chip column holds lists: order by the first tag.
         if (Array.isArray(x) || Array.isArray(y)) {
           const first = (v: unknown) => String((Array.isArray(v) ? v[0] : v) ?? "");
-          const result = first(x).localeCompare(first(y));
+          const result = first(x).localeCompare(first(y), undefined, NATURAL);
           return sort.desc ? -result : result;
         }
         const result =
           typeof x === "number" && typeof y === "number"
             ? x - y
-            : String(x).localeCompare(String(y));
+            : String(x).localeCompare(String(y), undefined, NATURAL);
         return sort.desc ? -result : result;
       });
     }
