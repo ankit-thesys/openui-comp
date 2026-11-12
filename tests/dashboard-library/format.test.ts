@@ -170,8 +170,30 @@ describe("formatDateText", () => {
     );
     expect(formatDateText("2026-04-01 21:01:20+05:30")).not.toBeNull();
   });
+  test("reads every shape APIs send, the same in every browser", () => {
+    // A space for "T" and an offset without a colon are normalised before parsing.
+    expect(formatDateText("2012-04-23 12:00:00")).toBe("Apr 23, 2012");
+    expect(formatDateText("2012-04-23T12:00:00-0000")).toBe(formatDateText("2012-04-23T12:00:00Z"));
+    expect(formatDateText(" 2012-04-23 ")).toBe("Apr 23, 2012");
+  });
+  test("an impossible day stays as written instead of rolling over", () => {
+    for (const text of ["2026-02-30", "2026-02-29", "2026-04-31", "2026-13-01", "2026-00-10"]) {
+      expect(formatDateText(text)).toBeNull();
+    }
+    expect(formatDateText("2024-02-29")).toBe("Feb 29, 2024");
+  });
   test("leaves everything else alone", () => {
-    for (const text of ["4.18.1", "MIT", "2026-04", "20260401", "Apr 2", "", "lodash/lodash"]) {
+    for (const text of [
+      "4.18.1",
+      "MIT",
+      "2026-04",
+      "20260401",
+      "Apr 2",
+      "",
+      "lodash/lodash",
+      "2026/04/01",
+      "2026-04-01T25:00:00",
+    ]) {
       expect(formatDateText(text)).toBeNull();
     }
     expect(formatDateText(1712000000)).toBeNull();

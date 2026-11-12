@@ -323,13 +323,31 @@ const ISO_DATE =
 
 /**
  * The day an ISO date or timestamp names, or null for any other text. A bare date reads as local
- * midnight, so it shows the day it says in every time zone.
+ * midnight, so it shows the day it says in every time zone. An impossible day (2026-02-30) is
+ * null rather than rolled over to the next month.
  */
 export function parseIsoDate(value: unknown): Date | null {
-  if (typeof value !== "string" || !ISO_DATE.test(value.trim())) return null;
+  if (typeof value !== "string") return null;
   const text = value.trim();
-  const day = new Date(text.length === 10 ? `${text}T00:00:00` : text);
-  return Number.isNaN(day.getTime()) ? null : day;
+  if (!ISO_DATE.test(text)) return null;
+  // The strict shape every browser parses: "T" between date and time, a colon in the offset.
+  const iso =
+    text.length === 10
+      ? `${text}T00:00:00`
+      : text.replace(" ", "T").replace(/([+-]\d{2})(\d{2})$/, "$1:$2");
+  const day = new Date(iso);
+  if (Number.isNaN(day.getTime())) return null;
+  // Date rolls an impossible day over (2026-02-30 to Mar 2); a real one reads back the same.
+  const [year, month, date] = text.slice(0, 10).split("-").map(Number) as [number, number, number];
+  const calendar = new Date(Date.UTC(year, month - 1, date));
+  if (
+    calendar.getUTCFullYear() !== year ||
+    calendar.getUTCMonth() !== month - 1 ||
+    calendar.getUTCDate() !== date
+  ) {
+    return null;
+  }
+  return day;
 }
 
 /** "Apr 2" this year, "Apr 23, 2012" before it: how a Table date column reads. */
