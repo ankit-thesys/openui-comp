@@ -1,7 +1,7 @@
 import { library } from "@openuidev/dashboard-library";
 import { createParser } from "@openuidev/react-lang";
 import { expect, test } from "vitest";
-import { catalogComponents, HIS_COMPONENTS } from "./catalogCoverage";
+import { catalogComponents, HIS_COMPONENTS, NOT_IN_SCHEMA } from "./catalogCoverage";
 import { catalogFixtures } from "./fixtures";
 import { kpis, metricsProgram } from "./fixtures/metrics";
 
@@ -88,12 +88,13 @@ test("every registered component appears in a valid catalog fixture", () => {
   expect(missing, "Registered components missing from the catalog").toEqual([]);
 });
 
-test("the library registers all 41 of his components", () => {
+test("the library registers all 41 of his components, but those left out of the schema", () => {
   const registered = Object.keys(library.components);
   expect(HIS_COMPONENTS).toHaveLength(41);
   expect(
-    HIS_COMPONENTS.filter((name) => !registered.includes(name)),
+    HIS_COMPONENTS.filter((name) => !registered.includes(name) && !NOT_IN_SCHEMA.includes(name)),
     "Components still to port",
   ).toEqual([]);
-  expect(registered).toHaveLength(41);
+  expect(NOT_IN_SCHEMA.filter((name) => registered.includes(name))).toEqual([]);
+  expect(registered).toHaveLength(41 - NOT_IN_SCHEMA.length);
 });

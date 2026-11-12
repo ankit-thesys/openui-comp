@@ -1,3 +1,4 @@
+import { inSchema } from "../catalogCoverage";
 // Copied from preview/src/examples.ts in dashboards-ui-library-src.
 // Only the generator has strict indexed-access annotations; the dashboard programs are verbatim.
 /**
@@ -530,7 +531,7 @@ const product = (() => {
   return { labels, au, k, sg, span };
 })();
 
-export const EXAMPLES: Example[] = [
+const HIS_EXAMPLES: Example[] = [
   {
     slug: "retail",
     title: "Retail sales",
@@ -595,3 +596,9 @@ s4 = Section("Features", [Row([Card("Adoption vs retention impact", [Scatter([{l
 s5 = Section("Detail", [Row([Card("Feature adoption", [Table([Column("Feature", ["Dashboards", "Templates", "Alerts", "Mobile app", "Scheduled emails", "SQL mode", "Comments"], "primary"), Column("Stage", ["GA", "GA", "GA", "Beta", "GA", "Beta", "Alpha"], "badge", null, {"GA": "good", "Beta": "info", "Alpha": "warning"}), Column("Weekly users", [12400, 7600, 4800, 3400, 3100, 2900, 1800], "bar", "compact"), Column("Adoption", [68, 52, 31, 22, 24, 18, 14], "number", "percent"), Column("Δ WoW", [1.8, 0.4, 2.1, 4.2, -0.6, 3.1, 1.1], "delta", "percent"), Column("Trend", [[11.2, 11.6, 11.9, 12.1, 12.2, 12.4], [7.1, 7.2, 7.4, 7.4, 7.5, 7.6], [4.1, 4.2, 4.4, 4.5, 4.7, 4.8], [2.6, 2.8, 3.0, 3.1, 3.2, 3.4], [3.2, 3.2, 3.1, 3.1, 3.0, 3.1], [2.2, 2.4, 2.5, 2.7, 2.8, 2.9], [1.5, 1.6, 1.6, 1.7, 1.7, 1.8]], "sparkline")], 7)], "full", "Thousands of weekly users")])])`,
   },
 ];
+
+/** His examples as the schema reads them today: calls to components left out of it are removed. */
+export const EXAMPLES: Example[] = HIS_EXAMPLES.map((example) => ({
+  ...example,
+  source: inSchema(example.source),
+}));
