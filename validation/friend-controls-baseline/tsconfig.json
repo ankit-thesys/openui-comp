@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    // DOM.Iterable is needed for Array.from(NodeList/HTMLCollection) to yield
+    // Element rather than unknown.
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["node"],
+    // `validation/` is not a pnpm workspace member, so it has no node_modules.
+    // Point type resolution at the install that packages/react-ui already has,
+    // mirroring what vitest.config.ts does at runtime. Nothing shared is edited.
+    "baseUrl": ".",
+    "typeRoots": ["../../packages/react-ui/node_modules/@types", "../../node_modules/@types"],
+    "paths": {
+      // React itself ships no types; map to @types/react, which react-ui has.
+      "react": ["../../packages/react-ui/node_modules/@types/react"],
+      "react/*": ["../../packages/react-ui/node_modules/@types/react/*"],
+      "react-dom": ["../../packages/react-ui/node_modules/@types/react-dom"],
+      "react-dom/*": ["../../packages/react-ui/node_modules/@types/react-dom/*"],
+      "react-day-picker": ["../../packages/react-ui/node_modules/react-day-picker"],
+      "react-day-picker/*": ["../../packages/react-ui/node_modules/react-day-picker/*"],
+      "@storybook/test": ["../../packages/react-ui/node_modules/@storybook/test"],
+      "@radix-ui/*": ["../../packages/react-ui/node_modules/@radix-ui/*"],
+      "vitest": ["../../packages/react-ui/node_modules/vitest"],
+      "vitest/*": ["../../packages/react-ui/node_modules/vitest/*"],
+      "vite": ["../../packages/react-ui/node_modules/vite"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["consumer/dist", "node_modules"]
+}
