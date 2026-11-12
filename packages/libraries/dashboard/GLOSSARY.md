@@ -21,11 +21,11 @@ How much of a Row a Card takes. The Widths in one Row add up to a full row.
 _Avoid_: card size, span
 
 **Previous value**:
-The same measure for the comparison period, given beside the current value so the dashboard can show the change.
+The same measure for the comparison period, given beside the current value so the dashboard can show the change. It can also mark progress at the same point last period or show a part’s change in share, in points.
 _Avoid_: baseline, prior
 
 **Compare mode**:
-The dashboard-wide switch that shows Previous values alongside current ones.
+The dashboard-wide switch that shows Previous values alongside current ones, as marks or tooltip comparisons. Flow compares only when every drawn link has a Previous value.
 _Avoid_: comparison toggle, diff mode
 
 ### Layout

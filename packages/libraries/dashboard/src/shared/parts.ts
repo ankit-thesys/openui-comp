@@ -49,3 +49,28 @@ export function unusableSeries(series: { name?: string; values?: unknown }[]): s
     .filter((s) => !toNumbers(s.values).some((v) => typeof v === "number" && Number.isFinite(v)))
     .map((s, i) => s.name || `Series ${i + 1}`);
 }
+
+/**
+ * Part-to-whole charts with compare on: each shown part's share last period, in the unit its share is shown in now
+ * (percent of the whole, or the value itself when values are already shares). Other takes the parts folded into it.
+ */
+export function previousShareOf(labels: string[], previous: unknown, sharesGiven: boolean) {
+  const before = toNumbers(previous);
+  const byLabel = new Map<string, number>();
+  labels.forEach((label, i) => {
+    const value = before[i];
+    if (typeof value === "number" && value > 0) byLabel.set(label, value);
+  });
+  const total = [...byLabel.values()].reduce((sum, value) => sum + value, 0);
+  return (label: string, shown: string[]): number | null => {
+    if (!total) return null;
+    const raw =
+      label === "Other"
+        ? labels
+            .filter((l) => !shown.includes(l))
+            .reduce((sum, l) => sum + (byLabel.get(l) ?? 0), 0)
+        : byLabel.get(label);
+    if (raw === undefined) return null;
+    return sharesGiven ? raw : (raw / total) * 100;
+  };
+}

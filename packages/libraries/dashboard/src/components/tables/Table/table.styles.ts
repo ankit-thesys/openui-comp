@@ -10,6 +10,31 @@ export const tableRules = [
   .openui-dashboard-table-wrap::-webkit-scrollbar {
     display: none;
   }
+  /* A table with a totals row fills its card: the spacer row above the totals takes the spare height
+     (every other row keeps its own height), so the totals sit on the card's bottom edge. */
+  .openui-dashboard-table-wrap:has(.openui-dashboard-table-spacer) {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .openui-dashboard-table:has(.openui-dashboard-table-spacer) {
+    flex: 1 1 auto;
+    --openui-dashboard-table-row-height: 1px;
+  }
+  /* goober cannot scope a selector after :has(). Inherit the row height only in tables
+     with a spacer, and let the spacer keep its automatic height to absorb the spare room. */
+  .openui-dashboard-table tr {
+    height: var(--openui-dashboard-table-row-height, auto);
+  }
+  .openui-dashboard-table .openui-dashboard-table-spacer {
+    height: auto;
+  }
+  .openui-dashboard-table-spacer td {
+    padding: 0;
+    border: 0;
+    background: none;
+    pointer-events: none;
+  }
   .openui-dashboard-table {
     width: 100%;
     border-collapse: separate;

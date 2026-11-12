@@ -98,6 +98,17 @@ export const goalRules = [
     border-radius: 2px;
     background: var(--openui-dashboard-ink);
   }
+  /* Last period at this point: the pace tick's shape in the previous period's grey, so the two never read alike. */
+  .openui-dashboard-goal-prev {
+    position: absolute;
+    top: -3px;
+    bottom: -3px;
+    width: 2px;
+    margin-left: -1px;
+    border-radius: 2px;
+    background: var(--openui-dashboard-ink-muted);
+    opacity: 0.7;
+  }
   .openui-dashboard-goal-foot {
     display: flex;
     align-items: center;

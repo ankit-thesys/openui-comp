@@ -270,3 +270,159 @@ test("split Funnel draws one band per segment per step and suppresses previous",
   expect(host.textContent).not.toContain("Previous period");
   expect(host.querySelector("[data-state=invalid]")).toBeNull();
 });
+
+/** Recharts uses item mouse-enter for pies, treemaps and Sankey, and row charts use mousemove. */
+async function hoverMark(mark: Element) {
+  const box = mark.getBoundingClientRect();
+  await act(async () => {
+    mark.dispatchEvent(
+      new MouseEvent("mouseover", { bubbles: true, clientX: box.left + 2, clientY: box.top + 2 }),
+    );
+    mark.dispatchEvent(
+      new MouseEvent("mousemove", { bubbles: true, clientX: box.left + 2, clientY: box.top + 2 }),
+    );
+    await new Promise(requestAnimationFrame);
+  });
+  await expect.poll(() => host.querySelector(".openui-dashboard-tooltip")).not.toBeNull();
+}
+
+for (const mode of ["light", "dark"] as const) {
+  for (const [name, inner, mark] of [
+    [
+      "Donut",
+      'Donut(["A", "B"], [60, 40], "currency", "Revenue", [40, 60])',
+      ".recharts-pie-sector",
+    ],
+    [
+      "SegmentedBar",
+      'SegmentedBar(["A", "B"], [60, 40], "currency", [40, 60])',
+      ".openui-dashboard-seg",
+    ],
+    [
+      "Treemap",
+      'Treemap(["A", "B"], [60, 40], null, "currency", [40, 60])',
+      ".openui-dashboard-treemap-cell",
+    ],
+  ] as const) {
+    test(`${name} compares share in points with a dashed previous row in ${mode}`, async () => {
+      const view = (enabled: boolean) => (
+        <ThemeProvider mode={mode}>
+          <CompareOverride value={enabled}>{render(inner)}</CompareOverride>
+        </ThemeProvider>
+      );
+      await draw(view(false));
+      await settle(() => expect(host.querySelector(mark)).not.toBeNull());
+      await hoverMark(host.querySelector(mark)!);
+      expect(host.querySelector(".openui-dashboard-tooltip")?.textContent).toContain("60%");
+      expect(host.querySelector(".openui-dashboard-tooltip .openui-dashboard-delta")).toBeNull();
+      const count = host.querySelectorAll(mark).length;
+      await draw(view(true));
+      await hoverMark(host.querySelector(mark)!);
+      const tip = host.querySelector(".openui-dashboard-tooltip")!;
+      const rows = tip.querySelectorAll(".openui-dashboard-tooltip-row");
+      const share = rows[name === "Treemap" ? 1 : 0]!;
+      expect(share.textContent).toBe("Share+20 pts60%");
+      expect(share.querySelector(".openui-dashboard-delta-good")).not.toBeNull();
+      expect(rows[rows.length - 1]?.textContent).toBe("Previous period40%");
+      expect(rows[rows.length - 1]?.querySelector(".openui-dashboard-legend-line")).not.toBeNull();
+      expect(host.querySelectorAll(mark)).toHaveLength(count);
+      await draw(view(false));
+      await hoverMark(host.querySelector(mark)!);
+      expect(host.querySelector(".openui-dashboard-tooltip")?.textContent).not.toContain(
+        "Previous period",
+      );
+    });
+  }
+
+  for (const name of ["Donut", "SegmentedBar"] as const) {
+    test(`${name} compares folded Other and already-given shares in ${mode}`, async () => {
+      // Nine shares total 100 now and before. H and I fold: 10 now, 20 before.
+      const args = name === "Donut" ? ', "percent", null' : ', "percent"';
+      await draw(
+        <ThemeProvider mode={mode}>
+          <CompareOverride value={true}>
+            {render(
+              `${name}(["A", "B", "C", "D", "E", "F", "G", "H", "I"], [30, 20, 10, 10, 10, 5, 5, 5, 5]${args}, [20, 20, 10, 10, 10, 5, 5, 10, 10])`,
+            )}
+          </CompareOverride>
+        </ThemeProvider>,
+      );
+      const selector = name === "Donut" ? ".recharts-pie-sector" : ".openui-dashboard-seg";
+      await settle(() =>
+        expect(host.querySelectorAll(selector)).toHaveLength(name === "Donut" ? 16 : 8),
+      );
+      await hoverMark(host.querySelectorAll(selector)[7]!);
+      const tip = host.querySelector(".openui-dashboard-tooltip")!;
+      expect(tip.querySelector(".openui-dashboard-tooltip-title")?.textContent).toBe("Other");
+      expect(tip.textContent).toContain("Share-10 pts10%");
+      expect(tip.textContent).toContain("Previous period20%");
+    });
+  }
+
+  test(`Flow compares links and steps, with fewer lost good, in ${mode}`, async () => {
+    const inner =
+      'Flow([{from: "Entry", to: "Converted", value: 60, previous: 40}, {from: "Entry", to: "Exited", value: 40, previous: 80}], "number")';
+    const view = (enabled: boolean) => (
+      <ThemeProvider mode={mode}>
+        <CompareOverride value={enabled}>{render(inner)}</CompareOverride>
+      </ThemeProvider>
+    );
+    await draw(view(true));
+    await settle(() =>
+      expect(host.querySelectorAll(".recharts-sankey-links > .recharts-layer")).toHaveLength(2),
+    );
+    const links = () => host.querySelectorAll(".recharts-sankey-links > .recharts-layer");
+    await hoverMark(links()[1]!);
+    let tip = host.querySelector(".openui-dashboard-tooltip")!;
+    expect(tip.querySelector(".openui-dashboard-tooltip-title")?.textContent).toBe(
+      "Entry → Exited",
+    );
+    let rows = tip.querySelectorAll(".openui-dashboard-tooltip-row");
+    expect(rows[0]?.textContent).toBe("Entry-16.7%100");
+    expect(rows[1]?.textContent).toBe("To Exited-50%40%40");
+    expect(rows[1]?.querySelector(".openui-dashboard-delta-good")).not.toBeNull();
+    expect(tip.textContent).toContain("Change vs previous period");
+    await hoverMark(host.querySelector(".recharts-sankey-nodes > .recharts-layer")!);
+    tip = host.querySelector(".openui-dashboard-tooltip")!;
+    rows = tip.querySelectorAll(".openui-dashboard-tooltip-row");
+    expect([...rows].map((row) => row.textContent)).toEqual([
+      "Entered-16.7%100",
+      "Moved on+50%60%60",
+      "Lost-50%40%40",
+    ]);
+    expect(rows[2]?.querySelector(".openui-dashboard-delta-good")).not.toBeNull();
+    expect(tip.textContent).toContain("100% of everyone who entered");
+    await draw(view(false));
+    await hoverMark(links()[1]!);
+    expect(host.querySelector(".openui-dashboard-tooltip .openui-dashboard-delta")).toBeNull();
+    expect(host.querySelector(".openui-dashboard-tooltip")?.textContent).not.toContain("Change vs");
+  });
+
+  for (const previous of ["", ", previous: 0"]) {
+    test(`Flow requires previous on every link (${previous || "missing"}) in ${mode}`, async () => {
+      await draw(
+        <ThemeProvider mode={mode}>
+          <CompareOverride value={true}>
+            {render(
+              `Flow([{from: "Entry", to: "Converted", value: 60, previous: 40}, {from: "Entry", to: "Exited", value: 40${previous}}], "number")`,
+            )}
+          </CompareOverride>
+        </ThemeProvider>,
+      );
+      await settle(() =>
+        expect(host.querySelectorAll(".recharts-sankey-links > .recharts-layer")).toHaveLength(2),
+      );
+      await hoverMark(host.querySelectorAll(".recharts-sankey-links > .recharts-layer")[0]!);
+      const tip = host.querySelector(".openui-dashboard-tooltip")!;
+      if (previous) {
+        expect(tip.textContent).toContain("+50%");
+        expect(tip.textContent).toContain("Change vs previous period");
+      } else {
+        expect(tip.querySelector(".openui-dashboard-delta")).toBeNull();
+        expect(tip.textContent).not.toContain("Change vs");
+        await hoverMark(host.querySelector(".recharts-sankey-nodes > .recharts-layer")!);
+        expect(host.querySelector(".openui-dashboard-tooltip .openui-dashboard-delta")).toBeNull();
+      }
+    });
+  }
+}

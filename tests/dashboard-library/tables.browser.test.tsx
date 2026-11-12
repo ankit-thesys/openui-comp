@@ -47,7 +47,9 @@ const card = (content: string) =>
   `root = Dashboard([Section("", [Row([Card("Details", [${content}], "full")])])])`;
 const dashboard = (response: string) => <Renderer library={library} response={response} />;
 const catalog = (index: number) => dashboard(tablesCatalog[index]!.variants[0]!.program);
-const tableRows = () => [...host.querySelectorAll<HTMLTableRowElement>("tbody tr")];
+const tableRows = () => [
+  ...host.querySelectorAll<HTMLTableRowElement>("tbody tr:not(.openui-dashboard-table-spacer)"),
+];
 const firstCells = () => tableRows().map((row) => row.cells[0]?.textContent);
 
 const queryProgram = (filter = false) => `$region = "all"
@@ -437,7 +439,7 @@ test("long Table pagination keeps endpoints and gaps around the current page", a
   expect(host.querySelector("nav")?.getAttribute("aria-label")).toBe("Rows 15–15 of 20");
 });
 
-test("a group band and the totals row each drop the rule of the row above them", async () => {
+test("a group band drops the rule above it and the totals spacer has no border", async () => {
   await draw(
     dashboard(
       card(`Table([
@@ -447,14 +449,72 @@ test("a group band and the totals row each drop the rule of the row above them",
       ], 10, true, "", "Plan")`),
     ),
   );
-  const body = [...host.querySelectorAll<HTMLTableRowElement>("tbody tr")];
+  const body = [
+    ...host.querySelectorAll<HTMLTableRowElement>("tbody tr:not(.openui-dashboard-table-spacer)"),
+  ];
   const rule = (row: HTMLTableRowElement) => getComputedStyle(row.cells[0]!).borderBottomColor;
-  // Team band, Echo, Delta, Enterprise band, Alpha, Bravo, then the totals row.
+  // Team band, Echo, Delta, Enterprise band, Alpha, Bravo, then the spacer and totals.
   const delta = body.find((row) => row.textContent?.startsWith("Delta"))!;
   const echo = body.find((row) => row.textContent?.startsWith("Echo"))!;
   const bravo = body.at(-1)!;
+  const spacer = host.querySelector<HTMLTableRowElement>(".openui-dashboard-table-spacer")!;
   expect(rule(delta)).toBe("rgba(0, 0, 0, 0)"); // A band follows.
   expect(rule(echo)).not.toBe("rgba(0, 0, 0, 0)");
-  expect(rule(bravo)).toBe("rgba(0, 0, 0, 0)"); // The totals row follows.
+  expect(rule(bravo)).not.toBe("rgba(0, 0, 0, 0)"); // The spacer now follows.
+  expect(getComputedStyle(spacer.cells[0]!).borderBottomWidth).toBe("0px");
   expect(host.querySelector("tfoot")?.textContent).toContain("$100");
 });
+
+for (const mode of ["light", "dark"] as const) {
+  test(`Table spacer pins totals to the bottom without stretching data rows in ${mode}`, async () => {
+    const content = (totals: boolean, aggregate = true) =>
+      card(`Table([
+      Column("Account", ["Acme", "Beta"], "primary"),
+      Column("Revenue", [60, 40], "number", "currency", null, null, ${aggregate ? '"sum"' : "null"})
+    ], 10, ${totals})`);
+    const view = (totals: boolean, aggregate = true) => (
+      <ThemeProvider mode={mode}>{dashboard(content(totals, aggregate))}</ThemeProvider>
+    );
+    await draw(view(false));
+    const heights = tableRows().map((row) => row.getBoundingClientRect().height);
+    expect(heights.every((height) => height > 0)).toBe(true);
+    expect(host.querySelector(".openui-dashboard-table-spacer")).toBeNull();
+    await draw(view(true));
+    const cardElement = host.querySelector<HTMLElement>(".openui-dashboard-card")!;
+    cardElement.style.height = "600px";
+    await act(async () => {
+      await new Promise(requestAnimationFrame);
+    });
+    const spacer = host.querySelector<HTMLTableRowElement>(".openui-dashboard-table-spacer")!;
+    expect(spacer.getAttribute("aria-hidden")).toBe("true");
+    expect(spacer.cells).toHaveLength(1);
+    expect(spacer.cells[0]?.colSpan).toBe(2);
+    expect(spacer.textContent).toBe("");
+    expect(spacer.getBoundingClientRect().height).toBeGreaterThan(300);
+    const footer = host.querySelector("tfoot")!;
+    const wrap = host.querySelector(".openui-dashboard-table-wrap")!;
+    const body = wrap.parentElement!;
+    expect(
+      Math.abs(footer.getBoundingClientRect().bottom - body.getBoundingClientRect().bottom),
+    ).toBeLessThan(1);
+    expect(
+      Math.abs(footer.getBoundingClientRect().bottom - wrap.getBoundingClientRect().bottom),
+    ).toBeLessThan(1);
+    tableRows().forEach((row, i) =>
+      expect(row.getBoundingClientRect().height).toBeCloseTo(heights[i]!, 0),
+    );
+    const oldSpacerHeight = spacer.getBoundingClientRect().height;
+    cardElement.style.height = "800px";
+    await act(async () => {
+      await new Promise(requestAnimationFrame);
+    });
+    expect(spacer.getBoundingClientRect().height - oldSpacerHeight).toBeCloseTo(200, 0);
+    tableRows().forEach((row, i) =>
+      expect(row.getBoundingClientRect().height).toBeCloseTo(heights[i]!, 0),
+    );
+    expect(footer.textContent).toBe("Total$100");
+    await draw(view(true, false));
+    expect(host.querySelector(".openui-dashboard-table-spacer")).toBeNull();
+    expect(host.querySelector("tfoot")).toBeNull();
+  });
+}

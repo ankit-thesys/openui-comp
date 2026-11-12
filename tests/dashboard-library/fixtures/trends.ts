@@ -47,7 +47,8 @@ export const trendsCatalog: ComponentDoc[] = [
     components: ["SmallMultiples"],
     notes: {
       labels: "the shared time axis",
-      series: "one panel each",
+      series:
+        "one panel each; a Series’ previous draws a grey dashed line in its panel while compare is on",
       type: "default area",
       columns: "fix the grid; default fits panels of about 180px",
     },

@@ -545,6 +545,12 @@ export function Table(props: TableProps) {
                 </tr>
               </Fragment>
             ))}
+            {/* With a totals row, this empty row takes the card's spare height, so the totals sit at the bottom. */}
+            {props.totals && columns.some((column) => column.total) ? (
+              <tr className="openui-dashboard-table-spacer" aria-hidden>
+                <td colSpan={columns.length} />
+              </tr>
+            ) : null}
           </tbody>
           {props.totals && columns.some((column) => column.total) ? (
             <tfoot>

@@ -62,6 +62,8 @@ export const tablesCatalog: ComponentDoc[] = [
       'Progress toward a target. pace (0–1) marks how far through the period you are, so the bar reads ahead or behind. goodWhen "down" turns the target into a ceiling. Stack several in one Card.',
     components: ["Goal"],
     notes: {
+      previous:
+        "where it stood at this point last period: a grey tick on the track while compare is on",
       pace: "0 to 1, how far through the period you are",
       goodWhen: '"down" makes the target a ceiling',
     },

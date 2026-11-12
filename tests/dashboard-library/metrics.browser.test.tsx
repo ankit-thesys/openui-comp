@@ -116,3 +116,56 @@ for (const state of [
     ).toHaveLength(hidden ? 0 : 8);
   });
 }
+
+for (const mode of ["light", "dark"] as const) {
+  test(`Goal previous ticks follow Compare, scale and clamp in ${mode}`, async () => {
+    const response = `root = Dashboard([Section("", [Row([Card("Targets", [
+      Goal("Sales", 60, 100, "number", 0.5, null, 40),
+      Goal("Passed", 200, 100, "number", 0.5, null, 150),
+      Goal("Beyond", 60, 100, "number", null, null, 120),
+      Goal("Negative", 60, 100, "number", null, null, -10),
+      Goal("No target", 5, 0, "number", null, null, 3),
+      Goal("No previous", 60, 100)
+    ], "full")])])])`;
+    const view = (enabled: boolean) => (
+      <ThemeProvider mode={mode}>
+        <CompareOverride value={enabled}>{renderProgram(response)}</CompareOverride>
+      </ThemeProvider>
+    );
+    await draw(view(false));
+    expect(host.querySelector(".openui-dashboard-goal-prev")).toBeNull();
+    await draw(view(true));
+    const ticks = [...host.querySelectorAll<HTMLElement>(".openui-dashboard-goal-prev")];
+    expect(ticks.map((tick) => tick.style.left)).toEqual(["40%", "75%", "100%", "0%"]);
+    const pace = host.querySelector<HTMLElement>(".openui-dashboard-goal-pace")!;
+    expect(pace.style.left).toBe("50%");
+    expect(getComputedStyle(ticks[0]!).backgroundColor).not.toBe(
+      getComputedStyle(pace).backgroundColor,
+    );
+    expect(getComputedStyle(ticks[0]!).opacity).toBe("0.7");
+    const hoverTrack = async () => {
+      const track = host.querySelector(".openui-dashboard-goal-track")!;
+      const box = track.getBoundingClientRect();
+      await act(async () => {
+        track.dispatchEvent(
+          new MouseEvent("mousemove", {
+            bubbles: true,
+            clientX: box.left + 10,
+            clientY: box.top + 2,
+          }),
+        );
+        await new Promise(requestAnimationFrame);
+      });
+    };
+    await hoverTrack();
+    expect(host.querySelector(".openui-dashboard-tooltip")?.textContent).toContain(
+      "Previous period40",
+    );
+    await draw(view(false));
+    await hoverTrack();
+    expect(host.querySelector(".openui-dashboard-goal-prev")).toBeNull();
+    expect(host.querySelector(".openui-dashboard-tooltip")?.textContent).not.toContain(
+      "Previous period",
+    );
+  });
+}

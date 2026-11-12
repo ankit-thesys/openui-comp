@@ -5,5 +5,6 @@ export const treemapPropsSchema = z.object({
   values: z.array(z.number()),
   groups: z.array(z.string()).optional(),
   format: formatSchema.optional(),
+  previous: z.array(z.number()).optional(),
 });
 export type TreemapSchemaProps = z.infer<typeof treemapPropsSchema>;

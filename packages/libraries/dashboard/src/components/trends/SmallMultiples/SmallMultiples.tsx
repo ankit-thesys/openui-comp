@@ -1,4 +1,7 @@
 "use client";
+import { MUTED_COLOR } from "../../../shared/colors";
+import { useCompare } from "../../../shared/compare";
+import { Legend } from "../../shared/Legend";
 
 import { useId } from "react";
 import {
@@ -25,7 +28,7 @@ import { InkCursor } from "../../shared/InkCursor";
 import type { ValueFormat } from "../../../shared/format";
 export interface SmallMultiplesProps {
   labels: string[];
-  series: { name: string; values: unknown }[];
+  series: { name: string; values: unknown; previous?: unknown }[];
   type?: "line" | "area";
   format?: ValueFormat;
   columns?: number;
@@ -34,11 +37,17 @@ export interface SmallMultiplesProps {
 export function SmallMultiples(props: SmallMultiplesProps) {
   const id = useId().replace(/:/g, "");
   const [gridRef, width] = useWidth();
+  const compare = useCompare();
   const labels = toStrings(props.labels);
   const series = props.series;
   if (!labels.length || !series.length) return <Empty />;
   const type = props.type ?? "area";
-  const values = series.flatMap((s) => toNumbers(s.values)).filter((v): v is number => v !== null);
+  // The previous period, as on TimeSeries: a grey dashed line in every panel while compare is on.
+  const hasPrevious = series.some((s) => toNumbers(s.previous).some((v) => v !== null));
+  const showPrevious = compare.enabled && hasPrevious;
+  const values = series
+    .flatMap((s) => [...toNumbers(s.values), ...(showPrevious ? toNumbers(s.previous) : [])])
+    .filter((v): v is number => v !== null);
   if (!values.length) return <Empty />;
   // One scale for every panel, so heights compare across the grid. Areas
   // start at zero; lines zoom to the data.
@@ -56,6 +65,15 @@ export function SmallMultiples(props: SmallMultiplesProps) {
 
   return (
     <div style={{ display: "grid", gap: 12 }}>
+      {/* Keyed only when there is a previous period; kept in place (hidden) while compare is off, so nothing moves. */}
+      {hasPrevious ? (
+        <div
+          style={{ visibility: showPrevious ? undefined : "hidden" }}
+          aria-hidden={!showPrevious || undefined}
+        >
+          <Legend entries={[{ name: compare.label, color: MUTED_COLOR, dashed: true }]} />
+        </div>
+      ) : null}
       <SrTable
         caption="Small multiples data"
         head={["Period", ...series.map((s) => s.name)]}
@@ -74,7 +92,12 @@ export function SmallMultiples(props: SmallMultiplesProps) {
             {row.map((s, k) => {
               const i = r * cols + k;
               const points = toNumbers(s.values);
-              const rows = labels.map((label, j) => ({ label, v: points[j] ?? null }));
+              const before = toNumbers(s.previous);
+              const rows = labels.map((label, j) => ({
+                label,
+                v: points[j] ?? null,
+                p: showPrevious ? (before[j] ?? null) : null,
+              }));
               const last = [...points].reverse().find((v): v is number => v !== null);
               return (
                 <div key={`${s.name}-${i}`} className="openui-dashboard-sm-cell">
@@ -171,19 +194,50 @@ export function SmallMultiples(props: SmallMultiplesProps) {
                           wrapperStyle={{ zIndex: 5 }}
                           cursor={<InkCursor />}
                           content={({ active, payload, label }) => {
-                            const value = active
-                              ? (payload?.[0]?.value as number | undefined)
+                            const row = active
+                              ? (payload?.[0]?.payload as
+                                  { v: number | null; p: number | null } | undefined)
                               : undefined;
-                            if (value === undefined) return null;
+                            if (!row || row.v === null) return null;
                             return (
                               <TooltipCard
                                 title={String(label)}
-                                rows={[{ name: s.name, color, value }]}
+                                rows={[
+                                  {
+                                    name: s.name,
+                                    color,
+                                    value: row.v,
+                                    previous: showPrevious ? row.p : null,
+                                  },
+                                  ...(showPrevious && row.p !== null
+                                    ? [
+                                        {
+                                          name: compare.label,
+                                          color: MUTED_COLOR,
+                                          value: row.p,
+                                          dashed: true,
+                                        },
+                                      ]
+                                    : []),
+                                ]}
                                 format={props.format}
                               />
                             );
                           }}
                         />
+                        {showPrevious ? (
+                          <Line
+                            dataKey="p"
+                            type="monotone"
+                            stroke={MUTED_COLOR}
+                            strokeWidth={1.5}
+                            strokeDasharray="4 4"
+                            dot={false}
+                            activeDot={false}
+                            connectNulls={false}
+                            isAnimationActive={false}
+                          />
+                        ) : null}
                         {type === "line" ? (
                           <Line
                             dataKey="v"

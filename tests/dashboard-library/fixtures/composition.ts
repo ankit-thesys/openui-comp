@@ -12,6 +12,8 @@ export const compositionCatalog: ComponentDoc[] = [
       "Part of a whole with the total as the headline, up to eight parts; past eight, the smallest fold into a grey Other. For a compact strip of the same parts, use SegmentedBar.",
     components: ["Donut"],
     notes: {
+      previous:
+        "last period’s values, same order; with compare on, each part’s change in share shows in its tooltip, in points",
       labels: "up to eight; past that the smallest fold into a grey Other",
       centerLabel: "under the total",
     },
@@ -33,6 +35,8 @@ export const compositionCatalog: ComponentDoc[] = [
       "Part of a whole as one proportional bar with a legend of values and shares, up to eight parts before folding into Other.",
     components: ["SegmentedBar"],
     notes: {
+      previous:
+        "last period’s values, same order; with compare on, each part’s change in share shows in its tooltip, in points",
       labels: "up to eight; more fold into Other",
     },
     variants: [
@@ -89,7 +93,8 @@ export const compositionCatalog: ComponentDoc[] = [
       'A Sankey of a quantity moving between stages. Entry nodes take categorical colours, later steps the primary hue, and nodes named "Dropped", "Exited" or "Churned" draw grey. Keep to about four columns and fifteen nodes.',
     components: ["Flow"],
     notes: {
-      links: "one per move between two nodes",
+      links:
+        "one per move between two nodes; previous on every link adds each link’s and step’s change to the tooltips while compare is on",
     },
     variantsLabel: "Shape",
     variants: [
@@ -139,6 +144,8 @@ export const compositionCatalog: ComponentDoc[] = [
       "Part to whole with many parts, or a hierarchy: area is size. Grouped, colour follows the parent; flat, one hue.",
     components: ["Treemap"],
     notes: {
+      previous:
+        "last period’s values, same order; with compare on, each item’s change in share shows in its tooltip, in points",
       values: "area is size",
       groups: "a parent per item; colour follows it",
     },

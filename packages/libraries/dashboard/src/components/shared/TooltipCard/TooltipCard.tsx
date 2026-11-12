@@ -31,6 +31,8 @@ export type TooltipRow = {
   mark?: ReactNode;
   /** This row's own format, when it counts something other than the card's measure (a cohort's size). */
   format?: ValueFormat | null;
+  /** This row's own direction of good news, when it differs from the card's (a step's losses: fewer is better). */
+  goodWhen?: GoodWhen;
 };
 
 export function TooltipCard({
@@ -66,8 +68,8 @@ export function TooltipCard({
                 <DeltaBadge
                   current={row.value}
                   previous={row.previous}
-                  format={format}
-                  goodWhen={goodWhen}
+                  format={row.format === undefined ? format : row.format}
+                  goodWhen={row.goodWhen ?? goodWhen}
                   inline
                 />
               ) : null}

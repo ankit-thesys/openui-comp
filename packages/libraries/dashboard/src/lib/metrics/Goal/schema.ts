@@ -9,5 +9,6 @@ export const goalPropsSchema = z.object({
   format: formatSchema.optional(),
   pace: z.number().optional(),
   goodWhen: goodWhenSchema.optional(),
+  previous: z.number().optional(),
 });
 export type GoalSchemaProps = z.infer<typeof goalPropsSchema>;

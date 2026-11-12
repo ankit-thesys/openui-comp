@@ -1,4 +1,6 @@
 "use client";
+import { MUTED_COLOR } from "../../../shared/colors";
+import { useCompare } from "../../../shared/compare";
 
 import { formatValue, type ValueFormat } from "../../../shared/format";
 import { useRowHover } from "../../shared/RowHover";
@@ -15,10 +17,14 @@ export interface GoalProps {
   format?: ValueFormat;
   pace?: number;
   goodWhen?: "up" | "down" | "neutral";
+  previous?: number;
 }
 
 export function Goal(props: GoalProps) {
   const hover = useRowHover();
+  const compare = useCompare();
+  // Where it stood at this point last period: a grey tick, only while compare is on.
+  const previous = compare.enabled && typeof props.previous === "number" ? props.previous : null;
   const noTarget = !(props.target > 0);
   const progress = noTarget ? (props.value > 0 ? 1 : 0) : props.value / props.target;
   const ceiling = props.goodWhen === "down";
@@ -36,7 +42,10 @@ export function Goal(props: GoalProps) {
   // Past its target or limit, the track rescales to the value: a tick marks
   // the target, and the part beyond it is the overrun, in a second texture.
   const passed = !noTarget && props.value > props.target;
+  // The track always spans the target; past it, the value. A previous tick past both sits at the end.
   const scale = passed ? props.value : props.target;
+  const previousAt =
+    previous !== null && scale > 0 ? Math.max(0, Math.min(1, previous / scale)) : null;
   const within = noTarget ? progress : Math.max(0, Math.min(props.value, props.target)) / scale;
   const beyond = passed ? (props.value - props.target) / scale : 0;
   const paceAt = pace !== null && !noTarget ? (pace * props.target) / scale : null;
@@ -77,6 +86,16 @@ export function Goal(props: GoalProps) {
               },
             ]
           : []),
+        ...(previous !== null
+          ? [
+              {
+                name: compare.label,
+                color: MUTED_COLOR,
+                value: previous,
+                mark: <TickMark color={MUTED_COLOR} />,
+              },
+            ]
+          : []),
       ]}
     />
   );
@@ -114,6 +133,9 @@ export function Goal(props: GoalProps) {
         ) : null}
         {paceAt !== null ? (
           <span className="openui-dashboard-goal-pace" style={{ left: `${paceAt * 100}%` }} />
+        ) : null}
+        {previousAt !== null ? (
+          <span className="openui-dashboard-goal-prev" style={{ left: `${previousAt * 100}%` }} />
         ) : null}
       </div>
       <div className="openui-dashboard-goal-foot">

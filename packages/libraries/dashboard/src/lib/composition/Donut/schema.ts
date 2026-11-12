@@ -5,5 +5,6 @@ export const donutPropsSchema = z.object({
   values: z.array(z.number()),
   format: formatSchema.optional(),
   centerLabel: z.string().optional(),
+  previous: z.array(z.number()).optional(),
 });
 export type DonutSchemaProps = z.infer<typeof donutPropsSchema>;

@@ -3,9 +3,10 @@ import { useId, useState } from "react";
 import { Cell, Pie, PieChart, Tooltip } from "recharts";
 import { seriesColor } from "../../../shared/chartHelpers";
 import { MUTED_COLOR } from "../../../shared/colors";
+import { useCompare } from "../../../shared/compare";
 import { formatValue, isRateFormat, type ValueFormat } from "../../../shared/format";
 import { useWidth } from "../../../shared/hooks";
-import { foldParts } from "../../../shared/parts";
+import { foldParts, previousShareOf } from "../../../shared/parts";
 import { toNumbers, toStrings } from "../../../shared/values";
 import { partsNote } from "../../shared/PartNote";
 import { PartsLegend } from "../../shared/PartsLegend";
@@ -13,15 +14,18 @@ import { ScrollArea } from "../../shared/ScrollArea";
 import { Empty } from "../../shared/States";
 import { TextureTile } from "../../shared/TextureTile";
 import { TooltipCard } from "../../shared/TooltipCard";
+import { shareRows } from "../../shared/TooltipCard/shareRows";
 export interface DonutProps {
   labels: string[];
   values: number[];
   format?: ValueFormat;
   centerLabel?: string;
+  previous?: number[];
 }
 const MAX_SLICES = 8;
 export function Donut(props: DonutProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const compare = useCompare();
   const patternId = useId().replace(/:/g, "");
   const [areaRef, areaWidth] = useWidth<HTMLDivElement>();
   const labels = toStrings(props.labels);
@@ -41,6 +45,9 @@ export function Donut(props: DonutProps) {
     ...(other > 0 ? [{ label: "Other", value: other, color: MUTED_COLOR }] : []),
   ];
   const total = slices.reduce((sum, slice) => sum + slice.value, 0);
+  // Mix shift: last period's share of each slice, only while compare is on.
+  const shareBefore = previousShareOf(labels, compare.enabled ? props.previous : null, sharesGiven);
+  const shown = slices.map((slice) => slice.label);
   const k = areaWidth ? Math.min(1.2, areaWidth / 280) : 1;
   // A 4px gap between slices, measured along the thin outer arcs; the band
   // shares the same angle so the two rings stay radially aligned.
@@ -176,13 +183,12 @@ export function Donut(props: DonutProps) {
                         ? slice.label
                         : `${slice.label} · ${formatValue(slice.value, props.format)}`
                     }
-                    rows={[
-                      {
-                        name: "Share",
-                        color: slice.color,
-                        value: sharesGiven ? slice.value : (slice.value / total) * 100,
-                      },
-                    ]}
+                    rows={shareRows(
+                      slice.color,
+                      sharesGiven ? slice.value : (slice.value / total) * 100,
+                      shareBefore(slice.label, shown),
+                      compare.label,
+                    )}
                     format={sharesGiven ? props.format : "percent"}
                   />
                 );

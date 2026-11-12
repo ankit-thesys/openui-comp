@@ -7,7 +7,7 @@ export const DonutComponent = defineComponent({
   name: "Donut",
   props: donutPropsSchema,
   description:
-    "Part of a whole with the total as the headline, up to 8 parts; past 8, the smallest fold into Other. For a compact strip, use SegmentedBar.",
+    "Part of a whole with the total as the headline, up to 8 parts; past 8, the smallest fold into Other. previous (last period's values, same order) adds each part's change in share, in points, to its tooltip while compare is on. For a compact strip, use SegmentedBar.",
   component: ({ props }) => <Donut {...props} />,
 });
 

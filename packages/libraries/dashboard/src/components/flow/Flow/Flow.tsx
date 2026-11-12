@@ -3,6 +3,7 @@ import { useId, useMemo, useState } from "react";
 import { ResponsiveContainer, Sankey, Tooltip } from "recharts";
 import { seriesColor } from "../../../shared/chartHelpers";
 import { MUTED_COLOR, textureOf } from "../../../shared/colors";
+import { useCompare } from "../../../shared/compare";
 import { formatValue, type ValueFormat } from "../../../shared/format";
 import { columnFormatter } from "../../../shared/scales";
 import { PartNote } from "../../shared/PartNote";
@@ -11,7 +12,7 @@ import { Empty } from "../../shared/States";
 import { TextureTile } from "../../shared/TextureTile";
 import { TooltipCard } from "../../shared/TooltipCard";
 export interface FlowProps {
-  links: { from: string; to: string; value: number }[];
+  links: { from: string; to: string; value: number; previous?: number }[];
   format?: ValueFormat;
 }
 /** Nodes whose names say "this is where people left" are drawn muted. */
@@ -24,6 +25,7 @@ export function Flow(props: FlowProps) {
   const [hoveredLink, setHoveredLink] = useState<number | null>(null);
   const [hoveredNode, setHoveredNode] = useState<number | null>(null);
   const flowId = `fl${useId().replace(/:/g, "")}`;
+  const compare = useCompare();
   const data = useMemo(() => {
     const given = (Array.isArray(props.links) ? props.links : []).filter(Boolean);
     const unusable: string[] = [];
@@ -37,7 +39,7 @@ export function Flow(props: FlowProps) {
       seen.add(from);
       return [...(next.get(from) ?? [])].some((step) => reaches(step, to, seen));
     };
-    const kept: { from: string; to: string; value: number }[] = [];
+    const kept: { from: string; to: string; value: number; previous?: number }[] = [];
     for (const link of given) {
       const tag = `${link.from || "?"} → ${link.to || "?"}`;
       if (!link.from || !link.to || typeof link.value !== "number" || !(link.value > 0)) {
@@ -62,6 +64,7 @@ export function Flow(props: FlowProps) {
       source: indexOf(link.from),
       target: indexOf(link.to),
       value: link.value,
+      previous: typeof link.previous === "number" ? link.previous : null,
     }));
     const inbound = names.map((_, n) =>
       links.filter((link) => link.target === n).reduce((sum, link) => sum + link.value, 0),
@@ -69,6 +72,12 @@ export function Flow(props: FlowProps) {
     const outbound = names.map((_, n) =>
       links.filter((link) => link.source === n).reduce((sum, link) => sum + link.value, 0),
     );
+    // Last period's volumes, only when every link carries one: a partial previous would compare unlike totals.
+    const comparable = links.length > 0 && links.every((link) => link.previous !== null);
+    const sumPrev = (keep: (link: (typeof links)[number]) => boolean) =>
+      links.filter(keep).reduce((sum, link) => sum + (link.previous ?? 0), 0);
+    const inboundPrev = names.map((_, n) => sumPrev((link) => link.target === n));
+    const outboundPrev = names.map((_, n) => sumPrev((link) => link.source === n));
     // Columns by longest path from an entry, so the height can follow the busiest column.
     const depth = names.map(() => 0);
     for (let pass = 0; pass < names.length; pass++)
@@ -82,6 +91,9 @@ export function Flow(props: FlowProps) {
       links,
       inbound,
       outbound,
+      comparable,
+      inboundPrev,
+      outboundPrev,
       depth,
       last,
       busiest: Math.max(1, ...perColumn.values()),
@@ -118,6 +130,10 @@ export function Flow(props: FlowProps) {
     );
   const format = props.format ?? "number";
   const isEntry = (index: number) => data.inbound[index]! === 0;
+  // Compare: each link's and step's change against last period, in the tooltips only (two flows drawn over each other can't be read).
+  const showPrevious = compare.enabled && data.comparable;
+  const prevValueOf = (index: number) =>
+    showPrevious ? Math.max(data.inboundPrev[index]!, data.outboundPrev[index]!) : null;
   const valueOf = (index: number) => Math.max(data.inbound[index]!, data.outbound[index]!);
   // Shares are of everyone who entered: the sum of the entry nodes.
   const entered =
@@ -361,6 +377,8 @@ export function Flow(props: FlowProps) {
                   const from = data.nodes.findIndex((node) => node.name === inner.source!.name);
                   const to = data.nodes.findIndex((node) => node.name === inner.target!.name);
                   const moved = inner.value ?? 0;
+                  const link = data.links.find((l) => l.source === from && l.target === to);
+                  const toLoss = LOSS.test(inner.target.name);
                   return (
                     <TooltipCard
                       title={`${inner.source.name} → ${inner.target.name}`}
@@ -370,14 +388,18 @@ export function Flow(props: FlowProps) {
                           name: inner.source.name,
                           color: nodeColor(from, inner.source.name),
                           value: valueOf(from),
+                          previous: prevValueOf(from),
                         },
                         {
                           name: `To ${inner.target.name}`,
                           color: nodeColor(to, inner.target.name),
                           share: pct(moved, valueOf(from)),
                           value: moved,
+                          previous: showPrevious ? (link?.previous ?? null) : null,
+                          goodWhen: toLoss ? "down" : undefined,
                         },
                       ]}
+                      note={showPrevious ? `Change vs ${compare.label.toLowerCase()}` : undefined}
                     />
                   );
                 }
@@ -389,6 +411,13 @@ export function Flow(props: FlowProps) {
                 const lost = lostFrom(index);
                 const base = valueOf(index);
                 const onward = data.outbound[index]! - lost;
+                const lostPrev = showPrevious
+                  ? data.links
+                      .filter((l) => l.source === index && LOSS.test(data.nodes[l.target]!.name))
+                      .reduce((sum, l) => sum + (l.previous ?? 0), 0)
+                  : null;
+                const onwardPrev =
+                  showPrevious && lostPrev !== null ? data.outboundPrev[index]! - lostPrev : null;
                 return (
                   <TooltipCard
                     title={name}
@@ -398,6 +427,7 @@ export function Flow(props: FlowProps) {
                         name: isEntry(index) ? "Entered" : "In",
                         color: nodeColor(index, name),
                         value: base,
+                        previous: prevValueOf(index),
                       },
                       ...(onward > 0
                         ? [
@@ -406,9 +436,11 @@ export function Flow(props: FlowProps) {
                               color: seriesColor(0),
                               share: pct(onward, base),
                               value: onward,
+                              previous: onwardPrev,
                             },
                           ]
                         : []),
+                      // Fewer lost is the good news.
                       ...(lost > 0
                         ? [
                             {
@@ -416,6 +448,8 @@ export function Flow(props: FlowProps) {
                               color: MUTED_COLOR,
                               share: pct(lost, base),
                               value: lost,
+                              previous: lostPrev,
+                              goodWhen: "down" as const,
                             },
                           ]
                         : []),

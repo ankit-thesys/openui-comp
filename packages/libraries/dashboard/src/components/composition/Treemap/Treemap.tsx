@@ -3,9 +3,10 @@ import { useId, useState } from "react";
 import { Treemap as RechartsTreemap, ResponsiveContainer, Tooltip } from "recharts";
 import { PLOT_FLOOR, seriesColor } from "../../../shared/chartHelpers";
 import { MUTED_COLOR } from "../../../shared/colors";
+import { useCompare } from "../../../shared/compare";
 import type { ValueFormat } from "../../../shared/format";
 import { formatValue } from "../../../shared/format";
-import { keepLargest } from "../../../shared/parts";
+import { keepLargest, previousShareOf } from "../../../shared/parts";
 import { toNumbers, toStrings } from "../../../shared/values";
 import { Legend } from "../../shared/Legend";
 import { partsNote } from "../../shared/PartNote";
@@ -19,6 +20,7 @@ export interface TreemapProps {
   values: number[];
   groups?: string[];
   format?: ValueFormat;
+  previous?: number[];
 }
 type TreeLeaf = { name: string; value: number; color: string; group?: string; texture: number };
 
@@ -140,7 +142,10 @@ function TreemapCell(props: {
 export function Treemap(props: TreemapProps) {
   const treemapId = `tm${useId().replace(/:/g, "")}`;
   const [activeTile, setActiveTile] = useState<string | null>(null);
+  const compare = useCompare();
   const labels = toStrings(props.labels);
+  // Mix shift: last period's share of each item (items never fold, only groups), while compare is on.
+  const shareBefore = previousShareOf(labels, compare.enabled ? props.previous : null, false);
   const values = toNumbers(props.values);
   const groups = props.groups ? toStrings(props.groups) : null;
   const dropped = labels.filter((_, i) => !((values[i] ?? 0) > 0));
@@ -218,9 +223,21 @@ export function Treemap(props: TreemapProps) {
                         name: "Share",
                         color: "transparent",
                         value: (leaf.value / total) * 100,
+                        previous: shareBefore(leaf.name, labels),
                         format: "percent",
                         mark: <span className="openui-dashboard-tip-dot" />,
                       },
+                      ...(shareBefore(leaf.name, labels) !== null
+                        ? [
+                            {
+                              name: compare.label,
+                              color: MUTED_COLOR,
+                              value: shareBefore(leaf.name, labels),
+                              format: "percent" as const,
+                              dashed: true,
+                            },
+                          ]
+                        : []),
                     ]}
                     format={props.format}
                   />

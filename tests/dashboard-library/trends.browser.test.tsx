@@ -273,3 +273,78 @@ test("his Stat catalog entry puts the Stat beside its TimeSeries, and stacks the
   await draw(program(response));
   expect(getComputedStyle(host.querySelector(".openui-dashboard-card-body")!).display).toBe("flex");
 });
+
+for (const mode of ["light", "dark"] as const) {
+  for (const type of ["line", "area"] as const) {
+    test(`SmallMultiples previous lines, tooltip and reserved key in ${type}, ${mode}`, async () => {
+      const response = card(
+        `Card("Regions", [SmallMultiples(["Jun", "Jul"], [Series("East", [18, 20], [16, 17]), Series("West", [12, 14], [10, 11])], "${type}", "percent", 2)], "full")`,
+      );
+      const view = (enabled: boolean) => (
+        <ThemeProvider mode={mode}>
+          <CompareOverride value={enabled}>{program(response)}</CompareOverride>
+        </ThemeProvider>
+      );
+      await draw(view(false));
+      const key = () => host.querySelector(".openui-dashboard-legend")!;
+      expect(getComputedStyle(key()).visibility).toBe("hidden");
+      expect(key().parentElement?.getAttribute("aria-hidden")).toBe("true");
+      const scaleLabels = () =>
+        [...host.querySelectorAll(".recharts-reference-line text")].map(
+          (label) => label.textContent,
+        );
+      expect(scaleLabels()).toEqual(type === "line" ? ["12%", "20%"] : ["0%", "20%"]);
+      const keyBox = key().getBoundingClientRect();
+      const panelBox = host.querySelector(".openui-dashboard-sm-cell")!.getBoundingClientRect();
+      expect(host.querySelectorAll('.recharts-line-curve[stroke-dasharray="4 4"]')).toHaveLength(0);
+      await draw(view(true));
+      const previous = host.querySelectorAll('.recharts-line-curve[stroke-dasharray="4 4"]');
+      expect(previous).toHaveLength(2);
+      // Line panels include last period's lower value on their one shared scale.
+      expect(scaleLabels()).toEqual(type === "line" ? ["10%", "20%"] : ["0%", "20%"]);
+      for (const line of previous) {
+        expect(line.getAttribute("stroke")).toBe("var(--openui-dashboard-muted-mark)");
+        expect(line.getAttribute("stroke-width")).toBe("1.5");
+      }
+      expect(host.querySelectorAll(".openui-dashboard-legend-item")).toHaveLength(1);
+      expect(key().textContent).toBe("Previous period");
+      expect(getComputedStyle(key()).visibility).toBe("visible");
+      expect(key().getBoundingClientRect().height).toBe(keyBox.height);
+      expect(host.querySelector(".openui-dashboard-sm-cell")!.getBoundingClientRect().top).toBe(
+        panelBox.top,
+      );
+      const chart = host.querySelector(".recharts-wrapper")!;
+      await act(async () =>
+        chart.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true })),
+      );
+      await expect
+        .poll(() => host.querySelector(".openui-dashboard-tooltip")?.textContent)
+        .toContain("+2 pts");
+      const tip = host.querySelector(".openui-dashboard-tooltip")!;
+      expect(tip.textContent).toContain("18%");
+      expect(tip.textContent).toContain("Previous period16%");
+      expect(tip.querySelector(".openui-dashboard-legend-line")).not.toBeNull();
+      await draw(view(false));
+      expect(getComputedStyle(key()).visibility).toBe("hidden");
+      expect(host.querySelectorAll('.recharts-line-curve[stroke-dasharray="4 4"]')).toHaveLength(0);
+      expect(host.querySelector(".openui-dashboard-sm-cell")!.getBoundingClientRect().top).toBe(
+        panelBox.top,
+      );
+    });
+  }
+  test(`SmallMultiples without previous has no reserved key in ${mode}`, async () => {
+    await draw(
+      <ThemeProvider mode={mode}>
+        <CompareOverride value={true}>
+          {program(
+            card(
+              'Card("Regions", [SmallMultiples(["Jun", "Jul"], [Series("East", [18, 20])])], "full")',
+            ),
+          )}
+        </CompareOverride>
+      </ThemeProvider>,
+    );
+    expect(host.querySelector(".openui-dashboard-legend")).toBeNull();
+    expect(host.querySelector(".recharts-line-curve[stroke-dasharray]")).toBeNull();
+  });
+}

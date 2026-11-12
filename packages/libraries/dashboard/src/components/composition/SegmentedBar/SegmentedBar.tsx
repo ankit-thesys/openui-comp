@@ -2,8 +2,9 @@
 import { useId, useState } from "react";
 import { seriesColor } from "../../../shared/chartHelpers";
 import { MUTED_COLOR } from "../../../shared/colors";
+import { useCompare } from "../../../shared/compare";
 import { formatValue, isRateFormat, type ValueFormat } from "../../../shared/format";
-import { foldParts } from "../../../shared/parts";
+import { foldParts, previousShareOf } from "../../../shared/parts";
 import { columnFormatter } from "../../../shared/scales";
 import { toNumbers, toStrings } from "../../../shared/values";
 import { partsNote } from "../../shared/PartNote";
@@ -12,16 +13,19 @@ import { useRowHover } from "../../shared/RowHover";
 import { Empty } from "../../shared/States";
 import { TextureTile } from "../../shared/TextureTile";
 import { TooltipCard } from "../../shared/TooltipCard";
+import { shareRows } from "../../shared/TooltipCard/shareRows";
 export interface SegmentedBarProps {
   labels: string[];
   values: number[];
   format?: ValueFormat;
+  previous?: number[];
 }
 export function SegmentedBar(props: SegmentedBarProps) {
   const bandId = `seg${useId().replace(/:/g, "")}`;
   // Hovering a part (or its legend row) fades the others, as on the Donut.
   const hover = useRowHover();
   const [legendHover, setLegendHover] = useState<string | null>(null);
+  const compare = useCompare();
   const labels = toStrings(props.labels);
   const values = toNumbers(props.values).map((value) => value ?? 0);
   let parts = labels
@@ -40,6 +44,9 @@ export function SegmentedBar(props: SegmentedBarProps) {
     parts.map((part) => part.value),
     props.format,
   );
+  // Mix shift: last period's share of each part, only while compare is on.
+  const shareBefore = previousShareOf(labels, compare.enabled ? props.previous : null, sharesGiven);
+  const shown = parts.map((part) => part.label);
   return (
     <div
       className="openui-dashboard-fade-parts openui-dashboard-segbar-card"
@@ -65,13 +72,12 @@ export function SegmentedBar(props: SegmentedBarProps) {
               {...hover.rowProps(part.label, () => (
                 <TooltipCard
                   title={sharesGiven ? part.label : `${part.label} · ${valueText(part.value)}`}
-                  rows={[
-                    {
-                      name: "Share",
-                      color: color(part, i),
-                      value: sharesGiven ? part.value : (part.value / total) * 100,
-                    },
-                  ]}
+                  rows={shareRows(
+                    color(part, i),
+                    sharesGiven ? part.value : (part.value / total) * 100,
+                    shareBefore(part.label, shown),
+                    compare.label,
+                  )}
                   format={sharesGiven ? props.format : "percent"}
                 />
               ))}
