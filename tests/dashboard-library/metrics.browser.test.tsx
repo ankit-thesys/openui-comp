@@ -182,3 +182,21 @@ test("repeated and empty labels draw every row without duplicate keys", async ()
   expect(host.querySelectorAll(".openui-dashboard-kv-row")).toHaveLength(3);
   expect(host.querySelectorAll(".openui-dashboard-kpi-cell")).toHaveLength(2);
 });
+
+// Dates from an API (2012-04-23T16:37:11.912Z) read as a day in KeyValues and a Kpi's text
+// value, the way a Table date column shows them; the full value stays in the tooltip.
+test("KeyValues and Kpi text read ISO dates as a day and keep the full value on hover", async () => {
+  await draw(
+    renderProgram(
+      `root = Dashboard([Section("", [Kpis([Kpi("First published", "2012-04-23")]), Row([Card("Package", [KeyValues([{label: "First published", value: "2012-04-23"}, {label: "Last push", value: "2012-04-23T12:00:00"}, {label: "Latest version", value: "4.18.1"}])], "full")])])])`,
+    ),
+  );
+  const values = [...host.querySelectorAll(".openui-dashboard-kv-value")];
+  expect(values.map((value) => value.textContent)).toEqual([
+    "Apr 23, 2012",
+    "Apr 23, 2012",
+    "4.18.1",
+  ]);
+  expect(values[1]?.getAttribute("title")).toBe("2012-04-23T12:00:00");
+  expect(host.querySelector(".openui-dashboard-kpi-text-value")?.textContent).toBe("Apr 23, 2012");
+});

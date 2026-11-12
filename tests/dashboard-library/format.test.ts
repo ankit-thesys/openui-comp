@@ -3,6 +3,7 @@ import {
   columnDecimals,
   computeDelta,
   deltaTone,
+  formatDateText,
   formatValue,
   isDurationFormat,
   isRateFormat,
@@ -150,4 +151,30 @@ test("format classifiers and aligned column decimals", () => {
   expect(padDecimals("35%", 1)).toBe("35.0%");
   expect(padDecimals("+$1.2K", 2)).toBe("+$1.20K");
   expect(padDecimals("—", 2)).toBe("—");
+});
+
+describe("formatDateText", () => {
+  const thisYear = new Date().getFullYear();
+  test("reads ISO dates and timestamps as a short day", () => {
+    // A bare date is local midnight, so it is the day it says in every time zone.
+    expect(formatDateText("2012-04-23")).toBe("Apr 23, 2012");
+    expect(formatDateText(`${thisYear}-04-02`)).toBe("Apr 2");
+    // A timestamp is an instant: it reads as that instant's local day.
+    const stamp = "2012-04-23T16:37:11.912Z";
+    expect(formatDateText(stamp)).toBe(
+      new Date(stamp).toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      }),
+    );
+    expect(formatDateText("2026-04-01 21:01:20+05:30")).not.toBeNull();
+  });
+  test("leaves everything else alone", () => {
+    for (const text of ["4.18.1", "MIT", "2026-04", "20260401", "Apr 2", "", "lodash/lodash"]) {
+      expect(formatDateText(text)).toBeNull();
+    }
+    expect(formatDateText(1712000000)).toBeNull();
+    expect(formatDateText(null)).toBeNull();
+  });
 });

@@ -314,3 +314,36 @@ export function padDecimals(text: string, decimals: number): string {
     (_, whole: string, frac = "") => `${whole}.${frac.padEnd(decimals, "0")}`,
   );
 }
+
+/* ---------- Dates ---------- */
+
+// A date or timestamp as APIs return it: 2026-04-01, 2026-04-01T21:01:20.458Z, 2026-04-01 21:01:20+05:30.
+const ISO_DATE =
+  /^\d{4}-\d{2}-\d{2}(?:[T ]\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?(?:Z|[+-]\d{2}:?\d{2})?)?$/;
+
+/**
+ * The day an ISO date or timestamp names, or null for any other text. A bare date reads as local
+ * midnight, so it shows the day it says in every time zone.
+ */
+export function parseIsoDate(value: unknown): Date | null {
+  if (typeof value !== "string" || !ISO_DATE.test(value.trim())) return null;
+  const text = value.trim();
+  const day = new Date(text.length === 10 ? `${text}T00:00:00` : text);
+  return Number.isNaN(day.getTime()) ? null : day;
+}
+
+/** "Apr 2" this year, "Apr 23, 2012" before it: how a Table date column reads. */
+export function formatDay(day: Date): string {
+  const sameYear = day.getFullYear() === new Date().getFullYear();
+  return day.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: sameYear ? undefined : "numeric",
+  });
+}
+
+/** An ISO date or timestamp as a short day, or null for any other text (a version, a name). */
+export function formatDateText(value: unknown): string | null {
+  const day = parseIsoDate(value);
+  return day ? formatDay(day) : null;
+}

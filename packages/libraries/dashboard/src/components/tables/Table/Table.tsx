@@ -4,9 +4,11 @@ import { Fragment, useMemo, useState } from "react";
 import {
   columnDecimals,
   deltaTone,
+  formatDay,
   formatValue,
   isRateFormat,
   padDecimals,
+  parseIsoDate,
   type ValueFormat,
 } from "../../../shared/format";
 import { useIsomorphicLayoutEffect } from "../../../shared/hooks";
@@ -273,21 +275,9 @@ export function Table(props: TableProps) {
         );
       }
       case "date": {
-        const day =
-          typeof value === "string"
-            ? new Date(value.length === 10 ? `${value}T00:00:00` : value)
-            : null;
-        if (!day || Number.isNaN(day.getTime())) return String(value);
-        const sameYear = day.getFullYear() === new Date().getFullYear();
-        return (
-          <time dateTime={String(value)}>
-            {day.toLocaleDateString("en-US", {
-              month: "short",
-              day: "numeric",
-              year: sameYear ? undefined : "numeric",
-            })}
-          </time>
-        );
+        const day = parseIsoDate(value);
+        if (!day) return String(value);
+        return <time dateTime={String(value)}>{formatDay(day)}</time>;
       }
       case "link": {
         const href = /^https?:\/\//.test(String(value)) ? String(value) : `https://${value}`;
