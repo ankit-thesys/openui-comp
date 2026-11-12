@@ -132,10 +132,22 @@ function noteText(note: Note): string | null {
 }
 
 /**
- * Rules beyond the component notes. The dashboard's rules are written as notes on its component
- * groups, which `library.prompt()` and the library's spec already carry, so there are none here.
+ * Rules for generating a dashboard, beyond the notes on each component group. The base
+ * openui-lang prompt is written for any library and names components this one doesn't have
+ * (Button, Select, forms); these rules say what a dashboard is made of instead, and cover the
+ * mistakes that make a card come out empty.
  */
-export const additionalRules: string[] = [];
+export const additionalRules: string[] = [
+  "Dashboard holds an optional FilterBar first, then Sections. A Section holds Kpis strips and Rows. A Row holds Cards. Every chart, map, Table, Stat, Goal and KeyValues goes inside a Card's content, never straight into a Row or a Section.",
+  "Use only the components listed under Component Signatures. This library has no Button, Select, SelectItem, Input, Form, FormControl, Tabs or text and markdown blocks, whatever other sections of these instructions mention. A choice the reader makes is a filter: PeriodPicker, DateRangeFilter, ChipFilter, SelectFilter, MultiSelectFilter, SearchFilter or CompareToggle. Words that explain a number go in a Card's subtitle or a Section's description.",
+  "A dashboard only shows data. Never write a Mutation, a form or a refresh button.",
+  "Arrays that go together have the same length and order: labels with values, a Series' values with its previous, every Column of one Table. Never write null for a value a component requires, such as a KeyValues row's value: leave that row or item out.",
+  "Previous values are the same measure for the period before, in the same unit. When you don't have them, leave them out: never repeat the current values or invent a change.",
+  "Without a data tool, write realistic, professional data into the program, and use only PeriodPicker, ChipFilter, SelectFilter and CompareToggle as filters. Give the data an entry for every option value, the default included, and read each number the filter changes from it: data[$period].revenue. DateRangeFilter and MultiSelectFilter need a data tool, because written values can't follow a free date range or several choices at once. SearchFilter only searches a Table: pass its $variable as that Table's search.",
+  "With a data tool, load every number with Query. Pass each filter's $variable in the arguments of every Query it should change. Give each Query the default {rows: []}, never made-up numbers, and read its columns with a pluck: sales.rows.revenue. Sum or count rows with the built-in functions for headline numbers: @Sum(sales.rows.revenue).",
+  'A Goal needs a target above 0. For a limit of zero, such as critical bugs or failed checks, show the count as a Kpi with goodWhen "down".',
+  "Write the statements in this order: root, $variables, Queries, the FilterBar and Sections, then written-in data last.",
+];
 
 export { examples } from "./examples";
 
