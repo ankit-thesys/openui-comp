@@ -54,6 +54,9 @@ catalogs:
     eslint-plugin-unused-imports:
       specifier: ^4.4.1
       version: 4.4.1
+    goober:
+      specifier: 2.1.19
+      version: 2.1.19
     jsdom:
       specifier: ^26.1.0
       version: 26.1.0
@@ -906,6 +909,9 @@ importers:
       date-fns:
         specifier: ^4.1.0
         version: 4.4.0
+      goober:
+        specifier: 'catalog:'
+        version: 2.1.19(csstype@3.2.3)
       lodash-es:
         specifier: ^4.17.21
         version: 4.18.1
@@ -1103,6 +1109,9 @@ importers:
       '@langchain/core':
         specifier: ^1.2.3
         version: 1.2.3(@opentelemetry/api@1.9.1)(@opentelemetry/sdk-trace-base@2.10.0(@opentelemetry/api@1.9.1))(openai@7.20.0(@aws-sdk/credential-provider-node@3.972.73)(@smithy/signature-v4@5.6.11)(ws@8.21.1)(zod@4.4.3))(ws@8.21.1)
+      '@modelcontextprotocol/sdk':
+        specifier: ^1.27.1
+        version: 1.30.0(@cfworker/json-schema@4.1.1)(zod@4.4.3)
       ai:
         specifier: ^7.0.10
         version: 7.0.10(zod@4.4.3)
