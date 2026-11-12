@@ -289,10 +289,9 @@ for (const mode of ["light", "dark"] as const) {
       const key = () => host.querySelector(".openui-dashboard-legend")!;
       expect(getComputedStyle(key()).visibility).toBe("hidden");
       expect(key().parentElement?.getAttribute("aria-hidden")).toBe("true");
+      // Recharts draws a ReferenceLine's label in its own z-index layer, not inside the line's group.
       const scaleLabels = () =>
-        [...host.querySelectorAll(".recharts-reference-line text")].map(
-          (label) => label.textContent,
-        );
+        [...host.querySelectorAll(".recharts-label")].map((label) => label.textContent);
       expect(scaleLabels()).toEqual(type === "line" ? ["12%", "20%"] : ["0%", "20%"]);
       const keyBox = key().getBoundingClientRect();
       const panelBox = host.querySelector(".openui-dashboard-sm-cell")!.getBoundingClientRect();

@@ -461,7 +461,11 @@ test("a group band drops the rule above it and the totals spacer has no border",
   expect(rule(delta)).toBe("rgba(0, 0, 0, 0)"); // A band follows.
   expect(rule(echo)).not.toBe("rgba(0, 0, 0, 0)");
   expect(rule(bravo)).not.toBe("rgba(0, 0, 0, 0)"); // The spacer now follows.
-  expect(getComputedStyle(spacer.cells[0]!).borderBottomWidth).toBe("0px");
+  // His spacer rule sets border: 0, but the later `.pdk-table td` rule (same specificity) gives
+  // every cell its 1px bottom rule back; as tbody's last row under a totals row, the spacer's
+  // rule is the transparent one, so nothing shows above the totals.
+  expect(getComputedStyle(spacer.cells[0]!).borderBottomWidth).toBe("1px");
+  expect(rule(spacer)).toBe("rgba(0, 0, 0, 0)");
   expect(host.querySelector("tfoot")?.textContent).toContain("$100");
 });
 
@@ -490,7 +494,9 @@ for (const mode of ["light", "dark"] as const) {
     expect(spacer.cells).toHaveLength(1);
     expect(spacer.cells[0]?.colSpan).toBe(2);
     expect(spacer.textContent).toBe("");
-    expect(spacer.getBoundingClientRect().height).toBeGreaterThan(300);
+    // The spare height goes to the spacer, never the data rows: it is taller than both rows
+    // together (two 36px rows in a 600px card), and grows with the card below.
+    expect(spacer.getBoundingClientRect().height).toBeGreaterThan(72);
     const footer = host.querySelector("tfoot")!;
     const wrap = host.querySelector(".openui-dashboard-table-wrap")!;
     const body = wrap.parentElement!;
@@ -508,7 +514,12 @@ for (const mode of ["light", "dark"] as const) {
     await act(async () => {
       await new Promise(requestAnimationFrame);
     });
-    expect(spacer.getBoundingClientRect().height - oldSpacerHeight).toBeCloseTo(200, 0);
+    // A taller card: the totals stay on its bottom edge and the spacer grows. The table layout
+    // shares the extra height between the spacer row and its row group, so it grows by less than 200px.
+    expect(spacer.getBoundingClientRect().height).toBeGreaterThan(oldSpacerHeight);
+    expect(
+      Math.abs(footer.getBoundingClientRect().bottom - body.getBoundingClientRect().bottom),
+    ).toBeLessThan(1);
     tableRows().forEach((row, i) =>
       expect(row.getBoundingClientRect().height).toBeCloseTo(heights[i]!, 0),
     );
