@@ -88,7 +88,7 @@ The chat is assistant-ui's `Thread` and `ThreadList` from its shadcn registry, i
 
 ## The component library
 
-`src/library.ts` exports `library` from `@openuidev/dashboard-library`: 46 dashboard components, from the `Dashboard` root, sections, card rows and filters to metrics, charts and tables. `npm run generate` writes its specification to `src/generated/spec.json`, which the server builds dashboards from, so it never loads React components; the browser renders dashboards with the library itself. `src/lib/openui.ts` passes the library's examples and rules to the model that builds them, with this app's own preamble.
+`src/library.ts` exports `library` from `@openuidev/dashboard-library`: 45 dashboard components, from the `Dashboard` root, its filter bar, sections, rows and cards to metrics, charts, maps and tables. `npm run generate` writes its specification to `src/generated/spec.json`, which the server builds dashboards from, so it never loads React components; the browser renders dashboards with the library itself. `src/lib/openui.ts` passes the library's examples and rules to the model that builds them, with this app's own preamble.
 
 ## The server
 
