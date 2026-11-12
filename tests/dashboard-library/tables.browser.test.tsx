@@ -587,3 +587,47 @@ test("Table search matches shown dates, numbers and chip tags", async () => {
   expect(await rows("777")).toEqual([]); // only in a sparkline: nothing a reader can see
   expect(await rows("initech")).toEqual(["Initech"]);
 });
+
+// Live data doesn't always match a column's type: a boolean badge column (a release's
+// prerelease flag) or an object. Search reads them safely; a boolean matches the word its badge
+// shows. Before, a boolean cell threw on every keystroke and the table stopped filtering.
+test("Table search handles boolean and other non-text cells", async () => {
+  const table = (search: string) =>
+    card(`Table([
+      Column("Tag", ["v16.4.6", "v16.5.0-canary.48", "v16.4.5"], "primary"),
+      Column("Pre-release", [false, true, false], "badge", null, {true: "warning", false: "good"}),
+      Column("Meta", [{a: 1}, {b: 2}, {c: 3}], "text")
+    ], 10, false, "${search}")`);
+  const rows = async (search: string) => {
+    await draw(dashboard(table(search)));
+    return firstCells();
+  };
+  expect(await rows("v16.4")).toEqual(["v16.4.6", "v16.4.5"]);
+  expect(await rows("canary")).toEqual(["v16.5.0-canary.48"]);
+  expect(await rows("true")).toEqual(["v16.5.0-canary.48"]);
+});
+
+// A number matches exactly as its cell shows it, padding and sign included: a column pads every
+// value to one precision (780.80M beside 1.25M) and a delta reads "+11.4 pts".
+test("Table search matches numbers exactly as their cells show them", async () => {
+  const table = (search: string) =>
+    card(`Table([
+      Column("Package", ["react", "lit"], "primary"),
+      Column("Avg", [780800000, 1250000], "number", "compact"),
+      Column("Change", [11.4, -2.25], "delta", "percent")
+    ], 10, false, "${search}")`);
+  const rows = async (search: string) => {
+    await draw(dashboard(table(search)));
+    return firstCells();
+  };
+  await draw(dashboard(table("")));
+  const shown = [...host.querySelectorAll("tbody tr")].map((row) => [
+    row.children[1]?.textContent,
+    row.children[2]?.textContent,
+  ]);
+  expect(shown[0]).toEqual(["780.80M", "+11.4 pts"]);
+  expect(await rows("780.80M")).toEqual(["react"]); // padded, as shown
+  expect(await rows("780.8M")).toEqual(["react"]); // and unpadded
+  expect(await rows("+11.4 pts")).toEqual(["react"]); // a delta as shown
+  expect(await rows("-2.25")).toEqual(["lit"]);
+});

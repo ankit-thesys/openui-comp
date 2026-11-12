@@ -27,20 +27,28 @@ const NATURAL: Intl.CollatorOptions = { numeric: true };
 /**
  * What a search matches in a cell: its value and the text a reader sees. A number matches as
  * written (12400) and as the column shows it ($12,400; 12.4K); a date column's value matches as
- * shown (Jul 8, 2020) and as written (2020-07-08); a chip list matches each tag. Sparklines and
- * states draw marks, not words, so they have nothing to find.
+ * shown (Jul 8, 2020) and as written (2020-07-08); a chip list matches each tag; a boolean matches
+ * the true or false its badge shows. Sparklines and states draw marks, not words, so they have
+ * nothing to find, and neither does any other value. Data comes from a model or a live API, so
+ * the value is checked here rather than trusted to match the column's type.
  */
-function searchText(column: TableColumn, value: TableColumn["values"][number] | undefined): string {
+function searchText(
+  column: TableColumn,
+  value: unknown,
+  shown: (column: TableColumn, value: number) => string,
+): string {
   if (value === null || value === undefined) return "";
   if (column.kind === "sparkline" || column.kind === "states") return "";
   if (Array.isArray(value)) return value.filter((tag) => typeof tag === "string").join(" ");
   if (typeof value === "number") {
-    const shown =
+    const plain =
       column.kind === "delta" || column.kind === "progress"
         ? formatValue(value, column.format ?? "percent")
         : formatValue(value, column.format);
-    return `${value} ${shown}`;
+    return `${value} ${plain} ${shown(column, value)}`;
   }
+  if (typeof value === "boolean") return String(value);
+  if (typeof value !== "string") return "";
   const day = column.kind === "date" ? parseIsoDate(value) : null;
   return day ? `${value} ${formatDay(day)}` : value;
 }
@@ -102,6 +110,17 @@ const deltaNumber = (value: number, format?: ValueFormat | null) =>
     ? formatValue(value, { type: "number", decimals: 1 })
     : formatValue(value, format ?? "percent");
 
+/** A delta cell's text: "+11.4 pts" for a rate, "+11.4%" otherwise, to the column's precision. */
+function deltaText(value: number, format?: ValueFormat | null, decimals = 0): string {
+  const rate = isRateFormat(format);
+  // The same rules as every other delta (computeDelta): hundredths under 0.1, flat only under 0.005.
+  const small = Math.abs(value) > 0 && Math.abs(value) < 0.1;
+  const number = small
+    ? formatValue(value, { type: rate ? "number" : "percent", decimals: 2 })
+    : padDecimals(deltaNumber(value, format), decimals);
+  return rate ? `${value > 0 ? "+" : ""}${number} pts` : `${value > 0 ? "+" : ""}${number}`;
+}
+
 function DeltaCell({
   value,
   format,
@@ -113,13 +132,7 @@ function DeltaCell({
   goodWhen?: GoodWhen;
   decimals?: number;
 }) {
-  const rate = isRateFormat(format);
-  // The same rules as every other delta (computeDelta): hundredths under 0.1, flat only under 0.005.
-  const small = Math.abs(value) > 0 && Math.abs(value) < 0.1;
-  const number = small
-    ? formatValue(value, { type: rate ? "number" : "percent", decimals: 2 })
-    : padDecimals(deltaNumber(value, format), decimals);
-  const text = rate ? `${value > 0 ? "+" : ""}${number} pts` : `${value > 0 ? "+" : ""}${number}`;
+  const text = deltaText(value, format, decimals);
   const direction = Math.abs(value) < 0.005 ? "flat" : value > 0 ? "up" : "down";
   const tone = deltaTone(direction, goodWhen ?? "up");
   return (
@@ -157,14 +170,49 @@ export function Table(props: TableProps) {
   const [page, setPage] = useState(0);
   const pageSize = props.pageSize ?? 10;
 
+  // Per-column numbers, worked out once per data change rather than once per cell:
+  // the largest value (bar cells), the delta precision, and formatters to one precision.
+  const perColumn = useMemo(
+    () =>
+      new Map(
+        columns.map((column) => {
+          const numbers = column.values.filter((v): v is number => typeof v === "number");
+          const formatters = new Map<string, (value: number | null | undefined) => string>();
+          return [
+            column,
+            {
+              max: numbers.reduce((top, v) => Math.max(top, v), 0),
+              deltaPlaces: columnDecimals(
+                numbers.map((v) => deltaNumber(Math.abs(v), column.format)),
+              ),
+              fmt: (fallback?: ValueFormat) => {
+                const key =
+                  typeof fallback === "string" ? fallback : JSON.stringify(fallback ?? "");
+                if (!formatters.has(key))
+                  formatters.set(key, columnFormatter(numbers, column.format ?? fallback));
+                return formatters.get(key)!;
+              },
+            },
+          ] as const;
+        }),
+      ),
+    [columns],
+  );
   const query = typeof props.search === "string" ? props.search.trim().toLowerCase() : "";
   const order = useMemo(() => {
+    // A number's text exactly as its cell shows it, for search.
+    const shownNumber = (column: TableColumn, value: number) => {
+      const stats = perColumn.get(column);
+      if (!stats) return "";
+      if (column.kind === "delta") return deltaText(value, column.format, stats.deltaPlaces);
+      return stats.fmt(column.kind === "progress" ? "percent" : undefined)(value);
+    };
     let indexes = Array.from({ length: rowCount }, (_, i) => i);
     // A search (from a SearchFilter) keeps rows where any cell matches what it shows or holds.
     if (query)
       indexes = indexes.filter((row) =>
         columns.some((column) =>
-          searchText(column, column.values[row]).toLowerCase().includes(query),
+          searchText(column, column.values[row], shownNumber).toLowerCase().includes(query),
         ),
       );
     if (sort) {
@@ -206,35 +254,7 @@ export function Table(props: TableProps) {
       );
     }
     return indexes;
-  }, [columns, rowCount, sort, query, props.groupBy]);
-  // Per-column numbers, worked out once per data change rather than once per cell:
-  // the largest value (bar cells), the delta precision, and formatters to one precision.
-  const perColumn = useMemo(
-    () =>
-      new Map(
-        columns.map((column) => {
-          const numbers = column.values.filter((v): v is number => typeof v === "number");
-          const formatters = new Map<string, (value: number | null | undefined) => string>();
-          return [
-            column,
-            {
-              max: numbers.reduce((top, v) => Math.max(top, v), 0),
-              deltaPlaces: columnDecimals(
-                numbers.map((v) => deltaNumber(Math.abs(v), column.format)),
-              ),
-              fmt: (fallback?: ValueFormat) => {
-                const key =
-                  typeof fallback === "string" ? fallback : JSON.stringify(fallback ?? "");
-                if (!formatters.has(key))
-                  formatters.set(key, columnFormatter(numbers, column.format ?? fallback));
-                return formatters.get(key)!;
-              },
-            },
-          ] as const;
-        }),
-      ),
-    [columns],
-  );
+  }, [columns, rowCount, sort, query, props.groupBy, perColumn]);
   const groupColumn = props.groupBy
     ? columns.find((column) => column.label === props.groupBy)
     : undefined;
