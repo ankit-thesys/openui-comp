@@ -66,7 +66,7 @@ export function SegmentedBar(props: SegmentedBarProps) {
         >
           {parts.map((part, i) => (
             <span
-              key={part.label}
+              key={`${i}-${part.label}`}
               className="openui-dashboard-seg"
               style={{ width: `${(part.value / total) * 100}%` }}
               {...hover.rowProps(part.label, () => (

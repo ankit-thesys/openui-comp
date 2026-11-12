@@ -63,8 +63,8 @@ export function Kpis(props: KpisProps) {
       <div className="openui-dashboard-kpis openui-dashboard-kpis-compact" ref={strip}>
         {rows.map((row, r) => (
           <div key={r} className="openui-dashboard-kpis-row">
-            {row.map((fact) => (
-              <div key={fact.label} className="openui-dashboard-kpi-cell">
+            {row.map((fact, keyIndex) => (
+              <div key={`${keyIndex}-${fact.label}`} className="openui-dashboard-kpi-cell">
                 <CompactKpi fact={fact} streaming={props.streaming} />
               </div>
             ))}

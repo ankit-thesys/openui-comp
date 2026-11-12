@@ -249,10 +249,10 @@ export function Waterfall(props: WaterfallProps) {
               isAnimationActive={false}
               shape={ConnectedBar}
             >
-              {rows.map((row) => (
+              {rows.map((row, keyIndex) => (
                 // Textured like every bar: total dots, an increase slash (rising), a decrease back-slash (falling).
                 <Cell
-                  key={row.label}
+                  key={`${keyIndex}-${row.label}`}
                   fill={`url(#${wfTex}-tex-${row.kind === "total" ? 0 : row.kind === "up" ? 1 : 2})`}
                 />
               ))}

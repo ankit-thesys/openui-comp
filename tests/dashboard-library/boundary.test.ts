@@ -121,3 +121,50 @@ test("every OpenUI Lang definition checks its schema reaches its component", () 
     .map((file) => relative(src, file));
   expect(missing).toEqual([]);
 });
+
+/** Imports and re-exports that run: `import type` and `export type` are left out. */
+function runtimeImports(file: string): string[] {
+  const source = ts.createSourceFile(
+    file,
+    readFileSync(file, "utf8"),
+    ts.ScriptTarget.Latest,
+    true,
+  );
+  return source.statements.flatMap((node) => {
+    if (ts.isImportDeclaration(node) && !node.importClause?.isTypeOnly) {
+      return ts.isStringLiteralLike(node.moduleSpecifier) ? [node.moduleSpecifier.text] : [];
+    }
+    if (ts.isExportDeclaration(node) && !node.isTypeOnly && node.moduleSpecifier) {
+      return ts.isStringLiteralLike(node.moduleSpecifier) ? [node.moduleSpecifier.text] : [];
+    }
+    return [];
+  });
+}
+
+// A server route imports promptOptions to build a prompt (the assistant-ui-dashboards example
+// does). Next.js runs it where React has no createContext, so the modules behind the prompt
+// pieces, and the package entry's path to them, load no component or react-lang code.
+test("promptOptions, examples and additionalRules load no component code", () => {
+  const promptDir = join(src, "lib", "prompt-options");
+  expect(runtimeImports(join(promptDir, "promptOptions.ts"))).toEqual(["./examples"]);
+  expect(runtimeImports(join(promptDir, "examples.ts"))).toEqual([]);
+
+  const entry = ts.createSourceFile(
+    "index.ts",
+    readFileSync(join(src, "index.ts"), "utf8"),
+    ts.ScriptTarget.Latest,
+    true,
+  );
+  const from: Record<string, string> = {};
+  for (const node of entry.statements) {
+    if (!ts.isExportDeclaration(node) || !node.moduleSpecifier) continue;
+    if (!ts.isStringLiteralLike(node.moduleSpecifier) || !node.exportClause) continue;
+    if (!ts.isNamedExports(node.exportClause)) continue;
+    for (const element of node.exportClause.elements) {
+      from[element.name.text] = node.moduleSpecifier.text;
+    }
+  }
+  expect(from["promptOptions"]).toBe("./lib/prompt-options/promptOptions");
+  expect(from["additionalRules"]).toBe("./lib/prompt-options/promptOptions");
+  expect(from["examples"]).toBe("./lib/prompt-options/examples");
+});

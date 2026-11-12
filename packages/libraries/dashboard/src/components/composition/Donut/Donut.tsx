@@ -137,7 +137,7 @@ export function Donut(props: DonutProps) {
             >
               {slices.map((slice, i) => (
                 <Cell
-                  key={slice.label}
+                  key={`${i}-${slice.label}`}
                   fill={`url(#${patternId}-band-${i})`}
                   mask={`url(#${patternId}-bandmask)`}
                   fillOpacity={activeIndex === null || activeIndex === i ? 1 : 0.35}
@@ -162,7 +162,7 @@ export function Donut(props: DonutProps) {
             >
               {slices.map((slice, i) => (
                 <Cell
-                  key={slice.label}
+                  key={`${i}-${slice.label}`}
                   fill={slice.color}
                   fillOpacity={activeIndex === null || activeIndex === i ? 1 : 0.35}
                 />

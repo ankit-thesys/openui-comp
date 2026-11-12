@@ -169,3 +169,16 @@ for (const mode of ["light", "dark"] as const) {
     );
   });
 }
+
+// A generated program can repeat a label or leave one empty (a list of topics under one heading,
+// two Kpis both called "Total"). Every row still draws, and React sees no duplicate keys: the
+// afterEach fails on any console.error, React's duplicate-key warning included.
+test("repeated and empty labels draw every row without duplicate keys", async () => {
+  await draw(
+    renderProgram(
+      `root = Dashboard([Section("", [Kpis([Kpi("Total", 12, "number"), Kpi("Total", 30, "number")]), Row([Card("Topics", [KeyValues([{label: "Topics", value: "blog"}, {label: "", value: "browser"}, {label: "", value: "compiler"}])], "half"), Card("Mix", [Donut(["Web", "Web", "Mobile"], [40, 35, 25], "number", "Total")], "half")])])])`,
+    ),
+  );
+  expect(host.querySelectorAll(".openui-dashboard-kv-row")).toHaveLength(3);
+  expect(host.querySelectorAll(".openui-dashboard-kpi-cell")).toHaveLength(2);
+});

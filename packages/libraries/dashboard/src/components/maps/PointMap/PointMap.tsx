@@ -191,7 +191,7 @@ export function PointMap(props: PointMapProps) {
                   const r = radius(point.value);
                   return (
                     <g
-                      key={point.label}
+                      key={`${point.i}-${point.label}`}
                       onMouseEnter={() => setHover(point.i)}
                       style={{ transition: "opacity 150ms" }}
                     >

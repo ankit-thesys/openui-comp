@@ -22,17 +22,19 @@ breakdown = Section("Where tickets come from", [Row([Card("Tickets by product ar
 detail = Section("Detail", [Row([Card("Agents", [Table([Column("Agent", ["Priya", "Marco", "Aiko", "Sam"], "primary"), Column("Resolved", [31, 27, 22, 16], "number", "number"), Column("Satisfaction", [97.1, 94.8, 93.2, 90.4], "number", "percent"), Column("Status", ["On track", "On track", "On track", "Behind"], "badge", null, {"On track": "good", "Behind": "warning"})])], "full")])])`;
 
 /**
- * Live data: every number comes from a Query, and the period filter's $variable is in the
- * arguments of each Query it changes. The tool names stand in for the host's own.
+ * Live data: every number comes from a Query, the period filter's $variable is in the
+ * arguments of each Query it changes, and the SearchFilter's $variable is the Table's search.
+ * The tool names stand in for the host's own.
  */
 const LIVE_EXAMPLE = `root = Dashboard([filters, lead, trends, detail])
 $period = "30d"
+$q = ""
 byDay = Query("sales_by_day", {period: $period}, {rows: []})
 byChannel = Query("sales_by_channel", {period: $period}, {rows: []})
-filters = FilterBar([PeriodPicker("period", [{value: "7d", label: "7D"}, {value: "30d", label: "30D"}, {value: "90d", label: "90D"}], $period), CompareToggle("Previous period")])
+filters = FilterBar([PeriodPicker("period", [{value: "7d", label: "7D"}, {value: "30d", label: "30D"}, {value: "90d", label: "90D"}], $period), CompareToggle("Previous period"), SearchFilter("q", "Search channels…", $q)])
 lead = Section("", [Kpis([Kpi("Revenue", @Sum(byDay.rows.revenue), "currency-compact", @Sum(byDay.rows.previous_revenue)), Kpi("Orders", @Sum(byDay.rows.orders), "number", @Sum(byDay.rows.previous_orders))])])
 trends = Section("Trends", [Row([Card("Revenue by day", [TimeSeries(byDay.rows.day, [Series("Revenue", byDay.rows.revenue, byDay.rows.previous_revenue)], "area", "currency-compact")], "two-thirds", "USD"), Card("Revenue by channel", [Leaderboard(byChannel.rows.channel, byChannel.rows.revenue, "currency-compact", byChannel.rows.previous_revenue)], "third", "USD")])])
-detail = Section("Detail", [Row([Card("Channels", [Table([Column("Channel", byChannel.rows.channel, "primary"), Column("Revenue", byChannel.rows.revenue, "number", "currency"), Column("Orders", byChannel.rows.orders, "number", "number")])], "full")])])`;
+detail = Section("Detail", [Row([Card("Channels", [Table([Column("Channel", byChannel.rows.channel, "primary"), Column("Revenue", byChannel.rows.revenue, "number", "currency"), Column("Orders", byChannel.rows.orders, "number", "number")], 10, false, $q)], "full")])])`;
 
 /**
  * One list, live data first. The prompt builder appends `examples` and `toolExamples` alike, and

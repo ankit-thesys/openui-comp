@@ -115,7 +115,7 @@ src/
   lib/schemaCoverage.ts       # compile-time check that a schema reaches its component
   lib/styles.ts               # compiles every style block once, in STYLE_ORDER
   lib/library.tsx             # createLibrary and shared schema names
-  lib/prompt-options/         # prompt groups and notes
+  lib/prompt-options/         # prompt groups and notes; promptOptions.ts loads no component code
   shared/                     # contexts, Format, pure helpers, runtime adapters
 ```
 

@@ -154,7 +154,7 @@ export function Dumbbell(props: DumbbellProps) {
           );
           return (
             <div
-              key={label}
+              key={`${i}-${label}`}
               className="openui-dashboard-hrow"
               {...hover.rowProps(label, tip)}
               style={{
