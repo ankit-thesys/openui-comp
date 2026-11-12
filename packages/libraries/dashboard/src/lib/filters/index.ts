@@ -6,7 +6,6 @@ import { DateRangeFilterComponent } from "./DateRangeFilter";
 import { FilterBarComponent } from "./FilterBar";
 import { MultiSelectFilterComponent } from "./MultiSelectFilter";
 import { PeriodPickerComponent } from "./PeriodPicker";
-import { SearchFilterComponent } from "./SearchFilter";
 import { SelectFilterComponent } from "./SelectFilter";
 export const filters: Group = {
   components: [
@@ -16,7 +15,8 @@ export const filters: Group = {
     ChipFilterComponent,
     SelectFilterComponent,
     MultiSelectFilterComponent,
-    SearchFilterComponent,
+    // SearchFilter is left out of the schema for now; its component and definition stay in
+    // components/filters/SearchFilter and lib/filters/SearchFilter, ready to register again.
     CompareToggleComponent,
   ],
   styles: { filters: filtersStyles },

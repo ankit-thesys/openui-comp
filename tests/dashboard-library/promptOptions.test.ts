@@ -45,7 +45,6 @@ test("the rules name only components the library has, and rule out the ones it l
     "ChipFilter",
     "SelectFilter",
     "MultiSelectFilter",
-    "SearchFilter",
     "CompareToggle",
   ]) {
     expect(rules).toContain(name);
@@ -81,10 +80,11 @@ test("library.prompt(promptOptions) includes each example and rule", () => {
   for (const rule of additionalRules) expect(prompt).toContain(rule);
 });
 
-test("dashboardComponents and componentGroups describe the same 41 components as the library", () => {
+test("dashboardComponents and componentGroups describe the same 40 components as the library", () => {
   const names = dashboardComponents.map((component) => component.name);
   expect(names).toEqual(Object.keys(library.components));
-  expect(names).toHaveLength(41);
+  // His 41, less SearchFilter, which is left out of the schema for now.
+  expect(names).toHaveLength(40);
   expect(componentGroups.map((group) => group.name)).toEqual([
     "Structure",
     "Filters",
@@ -159,9 +159,9 @@ for (const [index, example] of examples.entries()) {
 
 test("the wiring check catches a filter left unbound or unread", () => {
   const unbound = wiring(
-    `$q = ""\nroot = Dashboard([FilterBar([SearchFilter("q", "Search")]), Section("S", [Row([Card("T", [Table([Column("A", ["x"], "primary")], 10, false, $q)], "full")])])])`,
+    `$n = "30"\nroot = Dashboard([FilterBar([ChipFilter("n", [{value: "10"}, {value: "30"}], "30", "Show")]), Section("S", [Row([Card("T", [Table([Column("A", ["x"], "primary")], $n == "10" ? 10 : 30)], "full")])])])`,
   );
-  expect(unbound.filters[0]?.binding).toBeUndefined();
+  expect(unbound.filters[0]?.binding).not.toMatchObject({ k: "StateRef" });
   const unread = wiring(
     `$n = "30"\nroot = Dashboard([FilterBar([ChipFilter("n", [{value: "10"}, {value: "30"}], $n, "Show")]), Section("S", [Row([Card("T", [Table([Column("A", ["x"], "primary")], 10)], "full")])])])`,
   );

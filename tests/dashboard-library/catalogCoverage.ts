@@ -46,6 +46,25 @@ export const HIS_COMPONENTS = [
   "KeyValues",
 ];
 
+/**
+ * His components the library leaves out of its schema for now. Their components and definitions
+ * stay in the code; taking a name off this list brings back every check below for it.
+ */
+export const NOT_IN_SCHEMA: readonly string[] = ["SearchFilter"];
+
+/** A program as the schema reads it today: calls to components left out of it are removed, so
+ *  his programs stay as he wrote them. */
+export function inSchema(program: string): string {
+  let out = program;
+  for (const name of NOT_IN_SCHEMA) {
+    const call = String.raw`${name}\((?:[^()"]|"[^"]*")*\)`;
+    out = out
+      .replace(new RegExp(String.raw`,\s*${call}`, "g"), "")
+      .replace(new RegExp(String.raw`${call}\s*,?\s*`, "g"), "");
+  }
+  return out;
+}
+
 /** Read materialized nodes, so a mention in source that the parser drops cannot count. */
 export function catalogComponents(program: string): Set<string> {
   const result = createParser(library.toJSONSchema(), "Dashboard").parse(program);

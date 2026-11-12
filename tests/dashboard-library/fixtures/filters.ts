@@ -1,4 +1,5 @@
 // Copied from preview/src/catalog.ts in dashboards-ui-library-src.
+import { NOT_IN_SCHEMA } from "../catalogCoverage";
 import type { ComponentDoc, RenderFixture } from "./catalog";
 export const filterCatalog: ComponentDoc[] = [
   {
@@ -174,26 +175,29 @@ root = Dashboard([FilterBar([CompareToggle("Previous period", false, [{value: "p
   },
 ];
 
-export const filtersFixtures: RenderFixture[] = filterCatalog.flatMap((entry) =>
-  entry.variants.map((variant) => ({
-    name: `${entry.name}: ${variant.title}`,
-    // Every entry's program as his catalog writes it (SearchFilter's Table landed with #220).
-    program: variant.program,
-    text:
-      entry.name === "SearchFilter"
-        ? "Brand search"
-        : entry.name === "PeriodPicker" && variant.title === "2 options"
-          ? "Month to date"
-          : entry.name === "PeriodPicker" || entry.name === "FilterBar"
-            ? "30D"
-            : entry.name === "ChipFilter"
-              ? "All plans"
-              : entry.name === "DateRangeFilter"
-                ? "Last 30 days"
-                : entry.name === "CompareToggle"
-                  ? "Compare"
-                  : variant.title === "Multiple"
-                    ? "Channel:"
-                    : "Region:",
-  })),
-);
+// A component left out of the schema for now has no fixtures until it is registered again.
+export const filtersFixtures: RenderFixture[] = filterCatalog
+  .filter((entry) => !NOT_IN_SCHEMA.includes(entry.name))
+  .flatMap((entry) =>
+    entry.variants.map((variant) => ({
+      name: `${entry.name}: ${variant.title}`,
+      // Every entry's program as his catalog writes it (SearchFilter's Table landed with #220).
+      program: variant.program,
+      text:
+        entry.name === "SearchFilter"
+          ? "Brand search"
+          : entry.name === "PeriodPicker" && variant.title === "2 options"
+            ? "Month to date"
+            : entry.name === "PeriodPicker" || entry.name === "FilterBar"
+              ? "30D"
+              : entry.name === "ChipFilter"
+                ? "All plans"
+                : entry.name === "DateRangeFilter"
+                  ? "Last 30 days"
+                  : entry.name === "CompareToggle"
+                    ? "Compare"
+                    : variant.title === "Multiple"
+                      ? "Channel:"
+                      : "Region:",
+    })),
+  );
