@@ -28,8 +28,8 @@ export function Dashboard({ program }: { program: string }) {
 const systemPrompt = library.prompt();
 ```
 
-`promptOptions` adds two short example programs to the prompt. Pass it whole, or take its parts
-and add your own preamble:
+`promptOptions` adds three short example programs and the dashboard's generation rules to the
+prompt. Pass it whole, or take its parts and add your own preamble:
 
 ```ts
 import { library, promptOptions } from "@openuidev/dashboard-library";
@@ -43,9 +43,9 @@ const yours = library.prompt({
 });
 ```
 
-The dashboard's rules are notes on its component groups, which the prompt always carries, so
-`additionalRules` is empty. `componentGroups` and `dashboardComponents` are exported for building
-the dashboard's components into another library.
+`additionalRules` says what a dashboard is made of and covers the mistakes that leave a card
+empty; the notes on each component group are always in the prompt. `componentGroups` and
+`dashboardComponents` are exported for building the dashboard's components into another library.
 
 No stylesheet import is needed.
 
