@@ -3,6 +3,7 @@ import {
   columnDecimals,
   computeDelta,
   deltaTone,
+  formatDateText,
   formatValue,
   isDurationFormat,
   isRateFormat,
@@ -150,4 +151,52 @@ test("format classifiers and aligned column decimals", () => {
   expect(padDecimals("35%", 1)).toBe("35.0%");
   expect(padDecimals("+$1.2K", 2)).toBe("+$1.20K");
   expect(padDecimals("—", 2)).toBe("—");
+});
+
+describe("formatDateText", () => {
+  const thisYear = new Date().getFullYear();
+  test("reads ISO dates and timestamps as a short day", () => {
+    // A bare date is local midnight, so it is the day it says in every time zone.
+    expect(formatDateText("2012-04-23")).toBe("Apr 23, 2012");
+    expect(formatDateText(`${thisYear}-04-02`)).toBe("Apr 2");
+    // A timestamp is an instant: it reads as that instant's local day.
+    const stamp = "2012-04-23T16:37:11.912Z";
+    expect(formatDateText(stamp)).toBe(
+      new Date(stamp).toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      }),
+    );
+    expect(formatDateText("2026-04-01 21:01:20+05:30")).not.toBeNull();
+  });
+  test("reads every shape APIs send, the same in every browser", () => {
+    // A space for "T" and an offset without a colon are normalised before parsing.
+    expect(formatDateText("2012-04-23 12:00:00")).toBe("Apr 23, 2012");
+    expect(formatDateText("2012-04-23T12:00:00-0000")).toBe(formatDateText("2012-04-23T12:00:00Z"));
+    expect(formatDateText(" 2012-04-23 ")).toBe("Apr 23, 2012");
+  });
+  test("an impossible day stays as written instead of rolling over", () => {
+    for (const text of ["2026-02-30", "2026-02-29", "2026-04-31", "2026-13-01", "2026-00-10"]) {
+      expect(formatDateText(text)).toBeNull();
+    }
+    expect(formatDateText("2024-02-29")).toBe("Feb 29, 2024");
+  });
+  test("leaves everything else alone", () => {
+    for (const text of [
+      "4.18.1",
+      "MIT",
+      "2026-04",
+      "20260401",
+      "Apr 2",
+      "",
+      "lodash/lodash",
+      "2026/04/01",
+      "2026-04-01T25:00:00",
+    ]) {
+      expect(formatDateText(text)).toBeNull();
+    }
+    expect(formatDateText(1712000000)).toBeNull();
+    expect(formatDateText(null)).toBeNull();
+  });
 });
