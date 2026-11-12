@@ -1,6 +1,6 @@
 "use client";
 
-import { computeDelta, deltaTone, padDecimals, type ValueFormat } from "../../../format";
+import { computeDelta, deltaTone, padDecimals, type ValueFormat } from "../../../shared/format";
 
 export type DeltaBadgeProps = {
   current: number | null | undefined;

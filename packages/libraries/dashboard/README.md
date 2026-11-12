@@ -82,6 +82,7 @@ The default series colours are ordered so that neighbouring series stay distingu
 
 ```text
 src/
+  index.ts                    # public exports: library and ThemeProvider
   components/<group>/<Name>/  # plain React component, its props interface, <name>.styles.ts, index.ts
   components/<group>/styles.ts  # joins the group's raw fragments, in their original order
   components/shared/<Name>/   # shared visual pieces
@@ -102,9 +103,8 @@ src/
 Definitions import components; components import shared code. Nothing imports upward into
 `lib/`, `shared/` imports neither components nor definitions, and neither components nor
 `shared/` import `@openuidev/react-lang`. The one exception is a runtime adapter in `shared/`
-that hands Query or streaming state to visuals as plain values (`shared/queryState.ts`); each
-such module is listed in the boundary test. Groups awaiting migration still live in their
-original `src/` folders; their `lib/<group>/index.ts` registrations point there.
+that hands Query or streaming state to visuals as plain values (`shared/queryState.ts`); the
+boundary test lists this exception and checks all three folders recursively.
 
 Card is the worked example. `components/structure/Card/Card.tsx` exports `Card` and its
 `CardProps` interface. It receives rendered children, controls and a streaming boolean, and owns
@@ -130,8 +130,9 @@ name, and the boundary test checks each definition declares the type.
 ### Styles
 
 Each component's `<name>.styles.ts` exports raw CSS, as `String.raw` fragments in `<name>Rules`;
-nothing calls `css()` there. The group's `styles.ts` joins its fragments into one raw block in
-their original order, and `lib/<group>/index.ts` registers it by block name in `styles`.
+nothing calls `css()` there. The group's `styles.ts` joins its fragments into raw blocks in
+their original order, and `lib/<group>/index.ts` registers them by block name in `styles`.
+Flow has no separate style block.
 `lib/styles.ts` is the only place CSS is compiled: it calls `css()` once per block, in the
 fixed order of `STYLE_ORDER`, because rules reach the page in the order `css()` runs and rules
 of equal specificity rely on it. A new block's name must be added to `STYLE_ORDER`.
@@ -154,3 +155,6 @@ Two selector rules are checked by the test package:
 Tests live in `tests/dashboard-library` at the repository root. Its boundary test checks the
 dependency direction and each definition's schema check; `styleOrder.test.ts` pins the CSS. See
 its README for how to run the tests.
+
+See [source-map.md](docs/source-map.md) to copy a fix from dashboards-ui-library. Run
+`pnpm compare` in `tests/dashboard-library` to compare both previews in light and dark.

@@ -1,6 +1,6 @@
 "use client";
 
-import { formatValue, type ValueFormat } from "../../../format";
+import { formatValue, type ValueFormat } from "../../../shared/format";
 
 export type ScaleAxisProps = {
   ticks: number[];

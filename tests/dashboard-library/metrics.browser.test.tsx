@@ -5,11 +5,11 @@ import { act, type ReactNode } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
 import { library, ThemeProvider } from "../../packages/libraries/dashboard/src/index";
+import { CompareOverride } from "../../packages/libraries/dashboard/src/shared/compare";
 import {
-  CompareOverride,
   StateOverride,
   type ViewState,
-} from "../../packages/libraries/dashboard/src/shared";
+} from "../../packages/libraries/dashboard/src/shared/viewState";
 import { kpis, metricsProgram } from "./fixtures/metrics";
 
 let host: HTMLDivElement;

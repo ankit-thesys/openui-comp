@@ -4,7 +4,8 @@ import { act, type ReactNode } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
 import { library, ThemeProvider } from "../../packages/libraries/dashboard/src/index";
-import { CompareOverride, StateOverride } from "../../packages/libraries/dashboard/src/shared";
+import { CompareOverride } from "../../packages/libraries/dashboard/src/shared/compare";
+import { StateOverride } from "../../packages/libraries/dashboard/src/shared/viewState";
 import { metricCatalog } from "./fixtures/metrics";
 import { card, timeSeriesProgram, trendsCatalog, trendsFixtures } from "./fixtures/trends";
 

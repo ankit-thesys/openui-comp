@@ -1,9 +1,9 @@
 "use client";
 
-import { type ValueFormat } from "../../../format";
 import { Row, seriesColor } from "../../../shared/chartHelpers";
-import { MUTED_COLOR } from "../../../theme";
-import { type SeriesProps } from "../../../trends/charts";
+import { MUTED_COLOR } from "../../../shared/colors";
+import { type ValueFormat } from "../../../shared/format";
+import { type SeriesProps } from "../../../shared/trends";
 import { type GoodWhen } from "../DeltaBadge";
 import { TooltipCard, type TooltipRow } from "../TooltipCard";
 

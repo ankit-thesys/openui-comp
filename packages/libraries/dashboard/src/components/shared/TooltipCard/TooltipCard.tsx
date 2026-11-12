@@ -1,7 +1,7 @@
 "use client";
 
 import { type ReactNode } from "react";
-import { formatValue, type ValueFormat } from "../../../format";
+import { formatValue, type ValueFormat } from "../../../shared/format";
 import { type GoodWhen } from "../DeltaBadge";
 import { DeltaBadge } from "../DeltaBadge/DeltaBadge";
 

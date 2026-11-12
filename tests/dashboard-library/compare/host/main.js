@@ -8,7 +8,7 @@ import { Renderer } from "@openuidev/react-lang";
 import { createElement as h } from "react";
 import { createRoot } from "react-dom/client";
 import { library, ThemeProvider } from "../../../../packages/libraries/dashboard/src/index";
-import { CompareOverride } from "../../../../packages/libraries/dashboard/src/shared";
+import { CompareOverride } from "../../../../packages/libraries/dashboard/src/shared/compare";
 
 let root = null;
 const frame = () => new Promise((resolve) => requestAnimationFrame(() => resolve()));

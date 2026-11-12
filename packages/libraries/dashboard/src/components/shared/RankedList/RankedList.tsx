@@ -1,7 +1,7 @@
 "use client";
 
 import { type ReactNode } from "react";
-import { type ValueFormat } from "../../../format";
+import { type ValueFormat } from "../../../shared/format";
 import { columnFormatter, deltaDecimals } from "../../../shared/scales";
 import { type GoodWhen } from "../DeltaBadge";
 import { DeltaBadge } from "../DeltaBadge/DeltaBadge";

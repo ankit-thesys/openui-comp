@@ -1,6 +1,6 @@
 "use client";
 
-import { type ValueFormat } from "../../../format";
+import { type ValueFormat } from "../../../shared/format";
 import { columnFormatter } from "../../../shared/scales";
 
 export type PartsLegendProps = {

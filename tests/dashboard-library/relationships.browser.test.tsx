@@ -4,11 +4,9 @@ import { act, createContext, useContext, type ReactNode } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, beforeEach, expect, test, vi } from "vitest";
 import { library, ThemeProvider } from "../../packages/libraries/dashboard/src/index";
-import {
-  CompareOverride,
-  StateOverride,
-  useReportFilter,
-} from "../../packages/libraries/dashboard/src/shared";
+import { CompareOverride } from "../../packages/libraries/dashboard/src/shared/compare";
+import { useReportFilter } from "../../packages/libraries/dashboard/src/shared/filterRegistry";
+import { StateOverride } from "../../packages/libraries/dashboard/src/shared/viewState";
 import { accountPoints, card, relationshipsFixtures } from "./fixtures/relationships";
 
 let host: HTMLDivElement;

@@ -72,7 +72,7 @@ function under(path: string, dir: string): boolean {
 const isPackage = (specifier: string, name: string) =>
   specifier === name || specifier.startsWith(`${name}/`);
 
-for (const area of ["components", "shared"]) {
+for (const area of ["lib", "components", "shared"]) {
   test(`${area} imports only allowed dependencies`, () => {
     const files = sourceFiles(join(src, area));
     expect(files.length).toBeGreaterThan(0);
@@ -82,11 +82,18 @@ for (const area of ["components", "shared"]) {
           ? resolve(dirname(file), specifier)
           : resolve(specifier);
         const forbidden =
-          under(target, join(src, "lib")) ||
-          isPackage(specifier, "@openuidev/react-lang") ||
-          (area === "components"
-            ? isPackage(specifier, "zod")
-            : under(target, join(src, "components")));
+          (specifier.startsWith(".") &&
+            ![
+              ...(area === "lib"
+                ? ["lib", "components"]
+                : area === "components"
+                  ? ["components"]
+                  : []),
+              "shared",
+            ].some((allowed) => under(target, join(src, allowed)))) ||
+          isPackage(specifier, "@openuidev/dashboard-library") ||
+          (area !== "lib" && isPackage(specifier, "@openuidev/react-lang")) ||
+          (area === "components" && isPackage(specifier, "zod"));
         const edge = `${relative(src, file)} -> ${specifier}`;
         return forbidden && !exceptions.includes(edge) ? [edge] : [];
       }),

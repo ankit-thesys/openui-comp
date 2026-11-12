@@ -1,10 +1,10 @@
 "use client";
 
 import { z } from "zod/v4";
-import { formatValue, type ValueFormat } from "../format";
-import { MUTED_COLOR, seriesColor as themeSeriesColor } from "../theme";
-import { type ReferenceProps, type SeriesProps } from "../trends/charts";
+import { MUTED_COLOR, seriesColor as themeSeriesColor } from "./colors";
+import { formatValue, type ValueFormat } from "./format";
 import { type LegendEntry } from "./legend";
+import { type ReferenceProps, type SeriesProps } from "./trends";
 import { toNumbers } from "./values";
 
 export const seriesColor = (index: number): string => themeSeriesColor(index) ?? MUTED_COLOR;

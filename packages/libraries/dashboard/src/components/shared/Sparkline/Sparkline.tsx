@@ -1,7 +1,7 @@
 "use client";
 
 import { useId } from "react";
-import { MUTED_COLOR } from "../../../theme";
+import { MUTED_COLOR } from "../../../shared/colors";
 
 export type SparklineProps = {
   values: (number | null)[];

@@ -1,6 +1,6 @@
 "use client";
 
-import { textureOf, TEXTURES } from "../../../theme";
+import { textureOf, TEXTURES } from "../../../shared/colors";
 
 export type TextureTileProps = {
   id: string;
