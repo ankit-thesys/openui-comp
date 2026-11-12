@@ -144,7 +144,8 @@ of equal specificity rely on it. A new block's name must be added to `STYLE_ORDE
 
 The Dashboard puts every block's class on its root. Something rendered outside the root, in a
 portal on `document.body`, reads the classes it needs with `useStyleClasses("filters",
-"shared")` (`shared/styleClasses.ts`), together with the theme's portal class. A portal into a
+"shared")` (`shared/styleClasses.ts`), and puts the theme's `style` from `ThemeContext` on its
+own root to carry the theme's tokens. A portal into a
 card's header slot is inside the root and needs neither.
 
 Two selector rules are checked by the test package:

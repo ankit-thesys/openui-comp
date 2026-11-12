@@ -86,7 +86,9 @@ for (const mode of ["light", "dark"] as const) {
     await click(host.querySelector(".openui-dashboard-filter-button")!);
     const panel = document.querySelector(".openui-dashboard-popover")!;
     expect(host.contains(panel)).toBe(false);
-    expect(panel.parentElement?.className).toContain("-portal");
+    expect(getComputedStyle(panel).getPropertyValue("--openui-dashboard-page").trim()).toBe(
+      mode === "light" ? "#ffffff" : "#141414",
+    );
     expect(getComputedStyle(panel).backgroundColor).toBe(
       getComputedStyle(host.querySelector(".openui-dashboard-filter-button")!).backgroundColor,
     );
@@ -260,6 +262,18 @@ test("a portalled menu carries the dark theme and the dashboard's base styles", 
   // Border-box, as inside the dashboard: the menu is exactly its set width.
   expect(getComputedStyle(popover).boxSizing).toBe("border-box");
   expect(popover.getBoundingClientRect().width).toBe(parseFloat(popover.style.width));
+});
+
+test("a portalled menu carries the provider's overrides", async () => {
+  await draw(
+    <ThemeProvider mode="dark" darkTheme={{ surface: "#234567" }}>
+      {render(program(`SelectFilter("plan", "Plan", ${choices}, $plan)`))}
+    </ThemeProvider>,
+  );
+  await click(host.querySelector(".openui-dashboard-filter-button")!);
+  const popover = document.querySelector<HTMLElement>(".openui-dashboard-popover")!;
+  expect(getComputedStyle(popover).backgroundColor).toBe("rgb(35, 69, 103)");
+  expect(getComputedStyle(popover).colorScheme).toBe("dark");
 });
 
 test("a narrow FilterBar opens a themed sheet whose filters still drive the cards", async () => {

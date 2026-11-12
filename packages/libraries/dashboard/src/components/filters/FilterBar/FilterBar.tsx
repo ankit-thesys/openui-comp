@@ -69,9 +69,7 @@ export function FilterBar(props: FilterBarProps) {
       </div>
       {open
         ? createPortal(
-            <div
-              className={`openui-dashboard-root ${theme?.portalThemeClassName ?? ""} ${portalStyles}`}
-            >
+            <div className={`openui-dashboard-root ${portalStyles}`} style={theme?.style}>
               <div className="openui-dashboard-sheet-scrim" onClick={() => setOpen(false)} />
               <div
                 className="openui-dashboard-sheet"
