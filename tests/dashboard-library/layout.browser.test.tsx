@@ -87,9 +87,6 @@ function spans() {
     (cell) => getComputedStyle(cell).gridColumnStart,
   );
 }
-function themeStyles() {
-  return [...document.head.querySelectorAll("style[data-openui-dashboard-theme]")];
-}
 
 test("runs on the React version of its project", () => {
   expect(version.split(".")[0]).toBe(__REACT_MAJOR__);
@@ -233,42 +230,14 @@ test("dashboards in two hydrated React roots keep their own themes", async () =>
   expect(token(roots(plain)[0]!)).toBe("#ffffff");
 });
 
-test("an inline lightTheme keeps its style tag across re-renders", async () => {
+test("a changed override updates the dashboard's tokens", async () => {
   const draft = (page: string) => (
     <ThemeProvider lightTheme={{ page }}>{dashboard()}</ThemeProvider>
   );
   await draw(draft("#123456"));
-  const [style] = themeStyles();
-  expect(themeStyles()).toHaveLength(1);
-  // A new but equal theme object: the same tag stays in place.
-  await draw(draft("#123456"));
-  expect(themeStyles()).toEqual([style]);
-  expect(style!.isConnected).toBe(true);
-  // A changed value replaces it.
+  expect(token(roots()[0]!)).toBe("#123456");
   await draw(draft("#654321"));
-  expect(themeStyles()).toHaveLength(1);
-  expect(themeStyles()[0]).not.toBe(style);
   expect(token(roots()[0]!)).toBe("#654321");
-});
-
-test("the portal class carries the provider's tokens", async () => {
-  await draw(
-    <ThemeProvider mode="dark" darkTheme={{ surface: "#234567" }}>
-      {dashboard()}
-    </ThemeProvider>,
-  );
-  const scope = host.querySelector("[data-dashboard-mode]")!.className;
-  // A portal renders outside the provider's subtree, e.g. straight into body.
-  const portal = document.createElement("div");
-  portal.className = `${scope}-portal`;
-  document.body.append(portal);
-  try {
-    expect(token(portal)).toBe("#141414");
-    expect(token(portal, "surface")).toBe("#234567");
-    expect(getComputedStyle(portal).colorScheme).toBe("dark");
-  } finally {
-    portal.remove();
-  }
 });
 
 /* ---------- Widths ---------- */

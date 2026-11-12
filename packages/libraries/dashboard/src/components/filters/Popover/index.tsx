@@ -142,7 +142,7 @@ export function Popover({
       </button>
       {open && !disabled
         ? createPortal(
-            <div className={`${theme?.portalThemeClassName ?? ""} ${portalStyles}`}>
+            <div className={portalStyles} style={theme?.style}>
               <div
                 className="openui-dashboard-popover"
                 id={id}
