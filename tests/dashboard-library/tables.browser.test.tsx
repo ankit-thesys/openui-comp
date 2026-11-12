@@ -562,3 +562,28 @@ test("Table sorts text naturally: 4.9.0 before 4.10.0, item 2 before item 10", a
     ["item 1", "item 2", "item 10", "item 20"],
   );
 });
+
+// Search matches what a cell shows as well as what it holds: dates as shown, numbers as written
+// and as formatted, and each tag of a chip list. A sparkline's numbers are marks, not text.
+test("Table search matches shown dates, numbers and chip tags", async () => {
+  const table = (search: string) =>
+    card(`Table([
+      Column("Account", ["Acme", "Globex", "Initech"], "primary"),
+      Column("Since", ["2020-07-08", "2021-03-15", "2019-11-02"], "date"),
+      Column("MRR", [12400, 9800, 3150], "number", "currency"),
+      Column("Tags", [["react", "ui"], ["vue"], ["svelte", "ui"]], "chip"),
+      Column("Trend", [[777, 2, 3], [4, 5, 6], [7, 8, 9]], "sparkline")
+    ], 10, false, "${search}")`);
+  const rows = async (search: string) => {
+    await draw(dashboard(table(search)));
+    return firstCells();
+  };
+  expect(await rows("Jul 8")).toEqual(["Acme"]); // the date as the column shows it
+  expect(await rows("2021-03")).toEqual(["Globex"]); // and as written
+  expect(await rows("$12,400")).toEqual(["Acme"]); // a number as the column shows it
+  expect(await rows("9800")).toEqual(["Globex"]); // and as written
+  expect(await rows("react")).toEqual(["Acme"]); // one tag of a chip list
+  expect(await rows("ui")).toEqual(["Acme", "Initech"]);
+  expect(await rows("777")).toEqual([]); // only in a sparkline: nothing a reader can see
+  expect(await rows("initech")).toEqual(["Initech"]);
+});

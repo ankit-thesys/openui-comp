@@ -24,6 +24,27 @@ import { StatusIcon } from "../../shared/StatusIcon";
 // and "item 2" before "item 10". Same-shaped dates (2026-04-02) still sort by date.
 const NATURAL: Intl.CollatorOptions = { numeric: true };
 
+/**
+ * What a search matches in a cell: its value and the text a reader sees. A number matches as
+ * written (12400) and as the column shows it ($12,400; 12.4K); a date column's value matches as
+ * shown (Jul 8, 2020) and as written (2020-07-08); a chip list matches each tag. Sparklines and
+ * states draw marks, not words, so they have nothing to find.
+ */
+function searchText(column: TableColumn, value: TableColumn["values"][number] | undefined): string {
+  if (value === null || value === undefined) return "";
+  if (column.kind === "sparkline" || column.kind === "states") return "";
+  if (Array.isArray(value)) return value.filter((tag) => typeof tag === "string").join(" ");
+  if (typeof value === "number") {
+    const shown =
+      column.kind === "delta" || column.kind === "progress"
+        ? formatValue(value, column.format ?? "percent")
+        : formatValue(value, column.format);
+    return `${value} ${shown}`;
+  }
+  const day = column.kind === "date" ? parseIsoDate(value) : null;
+  return day ? `${value} ${formatDay(day)}` : value;
+}
+
 /* ---------- Table ---------- */
 
 export interface TableColumn {
@@ -139,13 +160,11 @@ export function Table(props: TableProps) {
   const query = typeof props.search === "string" ? props.search.trim().toLowerCase() : "";
   const order = useMemo(() => {
     let indexes = Array.from({ length: rowCount }, (_, i) => i);
-    // A search (from a SearchFilter) keeps rows where any text cell matches.
+    // A search (from a SearchFilter) keeps rows where any cell matches what it shows or holds.
     if (query)
       indexes = indexes.filter((row) =>
-        columns.some(
-          (column) =>
-            typeof column.values[row] === "string" &&
-            (column.values[row] as string).toLowerCase().includes(query),
+        columns.some((column) =>
+          searchText(column, column.values[row]).toLowerCase().includes(query),
         ),
       );
     if (sort) {
