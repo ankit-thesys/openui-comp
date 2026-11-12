@@ -11,7 +11,7 @@ import {
   type ValueFormat,
 } from "../../packages/libraries/dashboard/src/shared/format";
 
-// Format is internal (the package exports only library and ThemeProvider), so these unit tests
+// Format is internal (the package exports the library, its theme and its prompt pieces), so these unit tests
 // import it from source. Literal expectations from the source's documented en-US rules; never
 // derive an expected string through the formatter being tested.
 describe("Format presets and overrides", () => {

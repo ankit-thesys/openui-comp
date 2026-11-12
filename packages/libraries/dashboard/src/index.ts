@@ -1,2 +1,9 @@
-export { ThemeProvider } from "./components/ThemeProvider";
-export { library } from "./lib/library";
+export { ThemeProvider, type ThemeProviderProps } from "./components/ThemeProvider";
+export {
+  additionalRules,
+  componentGroups,
+  dashboardComponents,
+  examples,
+  library,
+  promptOptions,
+} from "./lib/library";

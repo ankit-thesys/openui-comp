@@ -1,7 +1,8 @@
-import type { ComponentGroup } from "@openuidev/react-lang";
+import type { ComponentGroup, PromptOptions } from "@openuidev/react-lang";
 import { FORMAT_PRESETS } from "../../shared/format";
 import { WIDTHS } from "../../shared/schema";
 import { isRegistered } from "../defineComponents";
+import { examples } from "./examples";
 
 /**
  * His prompt groups and notes (library.ts), written out in full once. A group shows only the
@@ -129,6 +130,25 @@ function noteText(note: Note): string | null {
   if (typeof note === "function") return note();
   return all(note.needs) ? note.text : null;
 }
+
+/**
+ * Rules beyond the component notes. The dashboard's rules are written as notes on its component
+ * groups, which `library.prompt()` and the library's spec already carry, so there are none here.
+ */
+export const additionalRules: string[] = [];
+
+export { examples } from "./examples";
+
+/**
+ * Prompt options for the dashboard library: pass to `library.prompt(promptOptions)`, or spread
+ * `examples` and `additionalRules` into your own options beside your own preamble.
+ */
+export const promptOptions: PromptOptions = {
+  preamble: "You are generating an openui-lang dashboard.",
+  examples,
+  additionalRules,
+  bindings: true,
+};
 
 /** The prompt groups for the components registered so far. */
 export function promptGroups(): ComponentGroup[] {

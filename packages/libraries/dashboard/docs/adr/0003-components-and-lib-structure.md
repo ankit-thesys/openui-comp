@@ -27,7 +27,7 @@ src/
 - **Strict boundary where it is cheap.** Components take plain props and do not import `@openuidev/react-lang`. The parts that need live OpenUI Lang state (filters writing variables, Query loading states, streaming, Compare mode) receive it from the `lib/` definition as props or context.
 - **Dependency direction.** `lib/` imports components and shared code; components import components and shared code; shared code imports neither. Only `shared/queryState.ts` may import `@openuidev/react-lang` outside `lib/`. The boundary test checks every folder recursively. Each `lib/<group>/index.ts` registers definitions and raw style blocks; `registeredGroups.ts` gathers the nine non-Structure groups before `defineComponents.ts` assembles the full registry.
 - **CSS rules are unchanged.** Each component gets its own styles file holding its part of his selectors. Class names stay plain strings; there is no `names` object and no one-class-per-element rewrite.
-- **Exports are unchanged:** `library` and `ThemeProvider`. The plain components stay internal.
+- **Exports:** `library`, `ThemeProvider` and the prompt pieces the published package already had (`promptOptions`, `examples`, `additionalRules`, `componentGroups`, `dashboardComponents`). The plain components stay internal.
 
 ## Considered and rejected
 
