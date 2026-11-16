@@ -18,9 +18,9 @@ const run = (command: string, args: string[], cwd: string) => {
   };
 };
 
-// The root exports since ce5fbf80, in both module systems.
+// The root exports, in both module systems: the same as dashboard-library's, plus ThemeProvider.
 const exports =
-  "Col additionalRules,componentGroups,examples,intelligentComponents,library,promptOptions";
+  "Col ThemeProvider,additionalRules,componentGroups,examples,intelligentComponents,library,promptOptions";
 
 test.describe("the built package", () => {
   test("imports in plain Node", () => {

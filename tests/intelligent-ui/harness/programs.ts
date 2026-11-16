@@ -88,7 +88,7 @@ const themeRoots: Program[] = [
   { id: "sqrt-negative", code: `root = Col([Text("Root"), Text(@Sqrt(-1))])` },
   {
     id: "svg-label",
-    code: `root = Col([Svg([Rect(10, 10, 80, 80, "surface", "ink", 2)], "0 0 100 100", null, null, "A square"), Svg([Circle(50, 50, 20, "chart1")], "0 0 100 100")])`,
+    code: `root = Col([Svg([Rect(10, 10, 80, 80, "surface", "ink", 2)], "0 0 100 100", "A square"), Svg([Circle(50, 50, 20, "chart1")], "0 0 100 100")])`,
   },
   {
     id: "theme-confetti",
@@ -142,7 +142,7 @@ root = RadioGroup($pick, [{value: "a", label: "One", description: "The first"}, 
   },
   {
     id: "layout-text-in-svg",
-    code: `root = Svg([Circle(50, 50, 30), Text("A caption for the drawing")], "0 0 100 100", 120, 120)`,
+    code: `root = Svg([Circle(50, 50, 30), Text("A caption for the drawing")], "0 0 100 100", null, 120, 120)`,
   },
   { id: "layout-badge-in-text", code: `root = Text(["Status: ", Badge("Live", "success")])` },
 ].map((entry) => ({ ...entry, set: "layout" as const, section: "layout", title: entry.id }));

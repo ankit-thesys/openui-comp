@@ -173,6 +173,9 @@ const specDifferences = compareSpec(pinnedSpec, library.spec).filter(
       at,
     ) &&
     !/\/(Svg|G)\/(signature|properties\/children(\/.*)?)$/.test(at) &&
+    // One argument order across the library: Card's gap before padding, Polyline's fill before
+    // stroke, and Svg's label third.
+    !/\/(Card|Polyline|Svg)\/(signature|properties)$/.test(at) &&
     !/\/Form\/description$/.test(at) &&
     at !== "/componentGroups",
 );
