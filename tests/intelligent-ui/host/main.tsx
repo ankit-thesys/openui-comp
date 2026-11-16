@@ -16,7 +16,7 @@ import { demoTools } from "./mock-tools";
  * - `program`: an id from harness/programs.ts;
  * - `theme`: `light` or `dark`;
  * - `provider`: `0` leaves out ThemeProvider, so the page has no theme of its own;
- * - `custom`: `1` gives ThemeProvider an app's own success colour;
+ * - `custom`: `1` gives ThemeProvider an app's own success colour and first chart colour;
  * - `components`: `dark` wraps the page in a dark react-components ThemeProvider, which the library
  *   ignores;
  * - `nest`: `1` puts a second library ThemeProvider with no mode inside the first, which takes the
@@ -45,8 +45,8 @@ const state: HostState = {
 };
 window.__iu = state;
 
-/** An app's own success colour, which a response has to keep. */
-const customSuccess = { textSuccessPrimary: "rgb(1, 2, 3)" };
+/** An app's own success colour and first chart colour, which a response has to keep. */
+const customSuccess = { textSuccessPrimary: "rgb(1, 2, 3)", intelligentChart1: "rgb(4, 5, 6)" };
 
 function Themed({ children }: { children: ReactNode }) {
   const theme = custom ? customSuccess : undefined;

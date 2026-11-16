@@ -88,6 +88,40 @@ test.describe("theme", () => {
     expect(await badgeColours(page)).toEqual(palette.light);
   });
 
+  // Series 1 to 4 take chart colours 1 to 4 in order, as in the original app, and an app's
+  // intelligentChart1 reaches the chart.
+  // react-components' charts give each series its colour as --color-tk-<i> on the chart.
+  const barFills = (page: Page) =>
+    page.evaluate(() => {
+      const chart = document.querySelector<HTMLElement>("#host [data-openui-chart]");
+      if (!chart) return [];
+      return [0, 1, 2, 3].map((i) => chart.style.getPropertyValue(`--color-tk-${i}`).trim());
+    });
+  test("chart series take the theme's chart colours in order", async ({ page }) => {
+    const rendered = await render(page, host(), "theme-chart");
+    expect(await failures(rendered)).toEqual([]);
+    expect(await barFills(page)).toEqual(["#0285ff", "#00a67d", "#8b5cf6", "#f4a340"]);
+  });
+  test("an app's chart colour reaches the chart", async ({ page }) => {
+    test.skip(!host().provider, "only a page with ThemeProvider has colours of its own");
+    await render(page, host(), "theme-chart", { custom: "1" });
+    expect((await barFills(page))[0]).toBe("rgb(4, 5, 6)");
+  });
+
+  // The confetti is portaled to body, outside the provider's scope, and keeps its theme.
+  test("the confetti keeps the theme's chart colours", async ({ page }) => {
+    test.skip(!host().provider, "only a page with ThemeProvider has colours of its own");
+    await render(page, host(), "theme-confetti", { custom: "1" });
+    await page.getByRole("button", { name: "Win" }).click();
+    const pieces = page.locator(".openui-intelligent-celebration-piece");
+    await expect(pieces.first()).toBeAttached();
+    const colours = await pieces.evaluateAll((all) =>
+      all.map((piece) => getComputedStyle(piece).backgroundColor),
+    );
+    expect(colours).toContain("rgb(4, 5, 6)");
+    expect(colours).toContain("rgb(0, 166, 125)");
+  });
+
   // A nested library ThemeProvider with no mode takes its parent's.
   test("a nested ThemeProvider takes its parent's mode", async ({ page }) => {
     test.skip(!host().provider, "only a page with ThemeProvider has a parent to follow");

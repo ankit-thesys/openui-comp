@@ -61,6 +61,14 @@ const themeRoots: Program[] = [
   { id: "theme-root-card", code: `root = Card([${themeContent}])` },
   { id: "theme-root-row", code: `root = Row([${themeContent}])` },
   { id: "theme-root-box", code: `root = Box([${themeContent}])` },
+  {
+    id: "theme-chart",
+    code: `root = Col([Chart("bar", [{m: "Jan", a: 3, b: 2, c: 4, d: 1}, {m: "Feb", a: 4, b: 3, c: 2, d: 5}], "m", ["a", "b", "c", "d"])])`,
+  },
+  {
+    id: "theme-confetti",
+    code: `root = Col([Button("Win", @Set($won, true)), Celebration($won)])\n$won = false`,
+  },
 ].map((entry) => ({ ...entry, set: "theme" as const, section: "theme", title: entry.id }));
 
 /** Bugs earlier review rounds found, as the programs that showed them, so they stay fixed. */
