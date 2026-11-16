@@ -142,6 +142,25 @@ test.describe("theme", () => {
     expect(colours.text).toBe(colours.expected);
   });
 
+  // Reopening a finished chat restores its state after the first render, so the condition turns
+  // true with no one acting. That isn't a win to celebrate.
+  test("restoring a finished answer doesn't replay the confetti", async ({ page }) => {
+    // The burst is over in about two seconds, so watch for it appearing at all.
+    await page.addInitScript(() => {
+      const w = window as Window & { __confetti?: number };
+      w.__confetti = 0;
+      new MutationObserver(() => {
+        if (document.querySelector(".openui-intelligent-celebration")) w.__confetti! += 1;
+      }).observe(document, { childList: true, subtree: true });
+    });
+    const rendered = await render(page, host(), "theme-confetti", { restore: "1" });
+    expect(await failures(rendered)).toEqual([]);
+    await page.waitForTimeout(300);
+    expect(await page.evaluate(() => (window as Window & { __confetti?: number }).__confetti)).toBe(
+      0,
+    );
+  });
+
   // A nested library ThemeProvider with no mode takes its parent's.
   test("a nested ThemeProvider takes its parent's mode", async ({ page }) => {
     test.skip(!host().provider, "only a page with ThemeProvider has a parent to follow");

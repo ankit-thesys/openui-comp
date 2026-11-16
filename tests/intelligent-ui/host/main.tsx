@@ -19,6 +19,8 @@ import { demoTools } from "./mock-tools";
  * - `custom`: `1` gives ThemeProvider an app's own success colour and first chart colour;
  * - `components`: `dark` wraps the page in a dark react-components ThemeProvider, which the library
  *   ignores;
+ * - `restore`: `1` passes `initialState` with `$won: true`, as an app does when it reopens a saved
+ *   chat; the Renderer applies it after the first render;
  * - `nest`: `1` puts a second library ThemeProvider with no mode inside the first, which takes the
  *   first one's mode;
  * - `stream`: `1` starts with no response and lets the test feed one in through
@@ -32,6 +34,7 @@ const stream = params.get("stream") === "1";
 const custom = params.get("custom") === "1";
 const components = params.get("components") === "dark";
 const nest = params.get("nest") === "1";
+const restore = params.get("restore") === "1";
 const program = programs.find((entry) => entry.id === id);
 
 const state: HostState = {
@@ -73,6 +76,7 @@ function App() {
           response={stream ? streamed.response : (program?.code ?? null)}
           isStreaming={streamed.streaming}
           library={library}
+          initialState={restore ? { $won: true } : undefined}
           toolProvider={demoTools}
           onParseResult={(result) => {
             state.parse = result && {
