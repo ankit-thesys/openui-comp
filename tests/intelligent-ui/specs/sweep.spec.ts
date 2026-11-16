@@ -309,6 +309,68 @@ test.describe("review fixes", () => {
     });
   }
 
+  // The library sets its own font, so an answer doesn't take the page's (Times in a page with
+  // none): Text, Title and Button all use the library's font.
+  test("answers use the library's font, not the page's", async ({ page }) => {
+    const rendered = await render(page, host(), "theme-confetti");
+    expect(await failures(rendered)).toEqual([]);
+    await page.addStyleTag({ content: 'body { font-family: "Times New Roman", serif; }' });
+    const fonts = await page.evaluate(() => {
+      const scope = document.querySelector("[data-openui-intelligent-mode]")!;
+      const probe = document.createElement("span");
+      probe.style.fontFamily =
+        'var(--openui-intelligent-font, var(--openui-font-body, "Inter", sans-serif))';
+      scope.appendChild(probe);
+      const expected = getComputedStyle(probe).fontFamily;
+      probe.remove();
+      const button = document.querySelector("#host button")!;
+      return {
+        expected,
+        button: getComputedStyle(button).fontFamily,
+        scope: getComputedStyle(scope).fontFamily,
+      };
+    });
+    expect(fonts.expected).not.toMatch(/Times/);
+    expect(fonts.scope).toBe(fonts.expected);
+    expect(fonts.button).toBe(fonts.expected);
+  });
+
+  // A library ThemeProvider with no mode follows a react-components ThemeProvider around the app.
+  test("a library ThemeProvider without a mode follows the app's react-components mode", async ({
+    page,
+  }) => {
+    test.skip(!host().provider || host().theme !== "light", "a light page with a library provider");
+    const rendered = await render(page, host(), "theme-root-col", {
+      components: "dark",
+      kitmode: "none",
+    });
+    expect(await failures(rendered)).toEqual([]);
+    expect(await badgeColours(page)).toEqual(palette.dark);
+  });
+
+  // The Select menu and the Popover panel open outside the answer and share one canvas colour.
+  test("a Select menu and a Popover panel share the canvas colour", async ({ page }) => {
+    test.skip(!host().provider, "only a page with ThemeProvider has portals to theme");
+    const rendered = await render(page, host(), "theme-portals");
+    expect(await failures(rendered)).toEqual([]);
+    const backgroundOf = (selector: string) =>
+      page.evaluate((s) => getComputedStyle(document.querySelector(s)!).backgroundColor, selector);
+    await page.getByRole("button", { name: "the details" }).click();
+    await expect(page.getByText("Inside the panel")).toBeVisible();
+    const panel = await page.evaluate(() => {
+      let el: Element | null = [...document.querySelectorAll("*")].find(
+        (e) => e.children.length === 0 && e.textContent?.trim() === "Inside the panel",
+      )!;
+      while (el && getComputedStyle(el).backgroundColor === "rgba(0, 0, 0, 0)")
+        el = el.parentElement;
+      return el ? getComputedStyle(el).backgroundColor : "none";
+    });
+    await page.keyboard.press("Escape");
+    await page.getByRole("combobox").click();
+    await expect(page.getByRole("option").first()).toBeVisible();
+    expect(await backgroundOf(".openui-select-content")).toBe(panel);
+  });
+
   // A negative number is an expected input: null, and nothing reported to the app's onError.
   test("@Sqrt of a negative number is null without an error", async ({ page }) => {
     const rendered = await render(page, host(), "sqrt-negative");

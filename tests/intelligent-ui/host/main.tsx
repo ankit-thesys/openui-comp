@@ -21,6 +21,7 @@ import { demoTools } from "./mock-tools";
  *   success colour for each mode;
  * - `components`: `dark` wraps the page in a dark react-components ThemeProvider. A library
  *   ThemeProvider ignores it; without one, a Col root takes its mode;
+ * - `kitmode`: `none` gives the page's library ThemeProvider no mode, so it takes its default;
  * - `restore`: `1` passes `initialState` with `$won: true`, as an app does when it reopens a saved
  *   chat; the Renderer applies it after the first render;
  * - `nest`: `1` puts a second library ThemeProvider with no mode inside the first, which takes the
@@ -37,6 +38,7 @@ const custom = params.get("custom");
 const components = params.get("components") === "dark";
 const nest = params.get("nest");
 const restore = params.get("restore") === "1";
+const kitMode = params.get("kitmode") === "none" ? undefined : mode;
 const program = programs.find((entry) => entry.id === id);
 
 const state: HostState = {
@@ -75,7 +77,7 @@ function Themed({ children }: { children: ReactNode }) {
       children
     );
   const page = provider ? (
-    <ThemeProvider mode={mode} {...themes()}>
+    <ThemeProvider mode={kitMode} {...themes()}>
       {inner}
     </ThemeProvider>
   ) : (
