@@ -278,6 +278,37 @@ test.describe("review fixes", () => {
     await expect(page.getByText("Inside the panel")).toBeVisible();
   });
 
+  // A control anywhere in the trigger (in a list, in a Row, in a Pressable) shows as text too.
+  test("controls in a list or layout trigger don't nest in the trigger", async ({ page }) => {
+    const rendered = await render(page, host(), "popover-list-trigger");
+    expect(await failures(rendered)).toEqual([]);
+    expect(
+      await page.locator("#host button :is(button, a, input, textarea, [role=checkbox])").count(),
+    ).toBe(0);
+    await page.getByRole("button", { name: "Open" }).click();
+    await expect(page.getByText("One", { exact: true })).toBeVisible();
+  });
+
+  // A long word with nowhere to break (a URL, an email) stays inside a phone's width: a Button
+  // wraps it, a Select's value and its menu end in an ellipsis, a field label breaks it.
+  for (const id of ["long-text-controls", "long-text-wrapped"]) {
+    test(`a long unbroken word stays inside the page (${id})`, async ({ page }) => {
+      const rendered = await render(page, host(), id);
+      expect(await failures(rendered)).toEqual([]);
+      await page.getByRole("combobox").first().click();
+      await expect(page.getByRole("option").first()).toBeVisible();
+      const { width, right } = await page.evaluate(() => ({
+        width: document.documentElement.clientWidth,
+        right: Math.max(
+          ...[...document.querySelectorAll("[role=option]")].map(
+            (option) => option.getBoundingClientRect().right,
+          ),
+        ),
+      }));
+      expect(right).toBeLessThanOrEqual(width);
+    });
+  }
+
   // A negative number is an expected input: null, and nothing reported to the app's onError.
   test("@Sqrt of a negative number is null without an error", async ({ page }) => {
     const rendered = await render(page, host(), "sqrt-negative");
