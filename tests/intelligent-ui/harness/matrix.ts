@@ -1,7 +1,7 @@
 /**
  * The host matrix: every way the host page is set up. Each entry is one Playwright project, so a
  * report names the host a failure happened on. It is every combination of a React version, a
- * theme, react-components' ThemeProvider or not, and a phone or desktop width. A page without a
+ * theme, the library's ThemeProvider or not, and a phone or desktop width. A page without a
  * provider has no dark mode, so it is light only. None of the hosts has a CSS reset (see
  * host/index.html).
  */
@@ -9,7 +9,7 @@ export type Host = {
   /** React major the host is built with. Each version is its own build, served on its own port. */
   react: "19" | "18";
   theme: "light" | "dark";
-  /** Whether react-components' ThemeProvider wraps the page. Without it, a Col root themes itself. */
+  /** Whether the library's ThemeProvider wraps the page. Without it, a Col root themes itself. */
   provider: boolean;
   width: number;
 };

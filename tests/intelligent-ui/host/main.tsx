@@ -1,6 +1,6 @@
 // Only the library's root exports, resolved through its package.json to the built `dist`.
-import { library } from "@openuidev/intelligent-ui-library";
-import { ThemeProvider } from "@openuidev/react-components";
+import { library, ThemeProvider } from "@openuidev/intelligent-ui-library";
+import { ThemeProvider as ComponentsThemeProvider } from "@openuidev/react-components";
 import { Renderer } from "@openuidev/react-lang";
 import { useState, version, type ReactNode } from "react";
 import { createRoot } from "react-dom/client";
@@ -9,7 +9,7 @@ import type { HostState } from "../harness/state";
 import { demoTools } from "./mock-tools";
 
 /**
- * The page an app gives the library: react-components' ThemeProvider for the mode, and a Renderer.
+ * The page an app gives the library: the library's ThemeProvider for the mode, and a Renderer.
  * Everything about it is chosen by the query string, so one build serves the whole host matrix (see
  * harness/matrix.ts):
  *
@@ -17,6 +17,10 @@ import { demoTools } from "./mock-tools";
  * - `theme`: `light` or `dark`;
  * - `provider`: `0` leaves out ThemeProvider, so the page has no theme of its own;
  * - `custom`: `1` gives ThemeProvider an app's own success colour;
+ * - `components`: `dark` wraps the page in a dark react-components ThemeProvider, which the library
+ *   ignores;
+ * - `nest`: `1` puts a second library ThemeProvider with no mode inside the first, which takes the
+ *   first one's mode;
  * - `stream`: `1` starts with no response and lets the test feed one in through
  *   `window.__iuStream`, as a chat streams the model's answer.
  */
@@ -26,6 +30,8 @@ const mode = params.get("theme") === "dark" ? "dark" : "light";
 const provider = params.get("provider") !== "0";
 const stream = params.get("stream") === "1";
 const custom = params.get("custom") === "1";
+const components = params.get("components") === "dark";
+const nest = params.get("nest") === "1";
 const program = programs.find((entry) => entry.id === id);
 
 const state: HostState = {
@@ -43,13 +49,16 @@ window.__iu = state;
 const customSuccess = { textSuccessPrimary: "rgb(1, 2, 3)" };
 
 function Themed({ children }: { children: ReactNode }) {
-  if (!provider) return <>{children}</>;
   const theme = custom ? customSuccess : undefined;
-  return (
+  const inner = nest ? <ThemeProvider>{children}</ThemeProvider> : children;
+  const page = provider ? (
     <ThemeProvider mode={mode} lightTheme={theme} darkTheme={theme}>
-      {children}
+      {inner}
     </ThemeProvider>
+  ) : (
+    inner
   );
+  return components ? <ComponentsThemeProvider mode="dark">{page}</ComponentsThemeProvider> : page;
 }
 
 function App() {

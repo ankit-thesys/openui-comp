@@ -25,8 +25,7 @@ npx @openuidev/cli generate src/lib/intelligent-ui-library.ts --out src/generate
 Send that file as the system message, then render the model's response:
 
 ```tsx
-import { library } from "@openuidev/intelligent-ui-library";
-import { ThemeProvider } from "@openuidev/react-components";
+import { library, ThemeProvider } from "@openuidev/intelligent-ui-library";
 import { Renderer, type ActionEvent } from "@openuidev/react-lang";
 
 export function IntelligentMessage({
@@ -44,7 +43,7 @@ export function IntelligentMessage({
 }
 ```
 
-`ThemeProvider` from `@openuidev/react-components` is optional. It sets the mode (light by default)
+`ThemeProvider` is optional. It sets the mode (light by default)
 and takes `lightTheme` and `darkTheme` overrides. Without it, a response with a `Col` root uses the
 light default theme.
 

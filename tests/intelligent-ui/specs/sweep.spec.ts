@@ -79,4 +79,20 @@ test.describe("theme", () => {
     expect(await failures(rendered)).toEqual([]);
     expect((await badgeColours(page)).Good).toMatch(/^rgb\(1, 2, 3\) on /);
   });
+
+  // The library themes itself: a react-components ThemeProvider around the app doesn't reach it.
+  test("an app's react-components ThemeProvider is ignored", async ({ page }) => {
+    test.skip(host().provider || host().theme !== "light", "a light page with no library provider");
+    const rendered = await render(page, host(), "theme-root-col", { components: "dark" });
+    expect(await failures(rendered)).toEqual([]);
+    expect(await badgeColours(page)).toEqual(palette.light);
+  });
+
+  // A nested library ThemeProvider with no mode takes its parent's.
+  test("a nested ThemeProvider takes its parent's mode", async ({ page }) => {
+    test.skip(!host().provider, "only a page with ThemeProvider has a parent to follow");
+    const rendered = await render(page, host(), "theme-root-card", { nest: "1" });
+    expect(await failures(rendered)).toEqual([]);
+    expect(await badgeColours(page)).toEqual(palette[host().theme]);
+  });
 });
