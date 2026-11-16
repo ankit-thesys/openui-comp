@@ -70,6 +70,15 @@ const themeRoots: Program[] = [
     code: `root = Col([Popover("the details", [Text("Inside the panel")]), Select($size, [{label: "Small"}, {label: "Large"}], "Size")])\n$size = ""`,
   },
   {
+    id: "popover-button",
+    code: `root = Col([Popover(Button("More"), [Text("Inside the panel")]), Popover(IconButton("info"), [Text("Second panel")])])`,
+  },
+  { id: "sqrt-negative", code: `root = Col([Text("Root"), Text(@Sqrt(-1))])` },
+  {
+    id: "svg-label",
+    code: `root = Col([Svg([Rect(10, 10, 80, 80, "surface", "ink", 2)], "0 0 100 100", "A square"), Svg([Circle(50, 50, 20, "chart1")], "0 0 100 100")])`,
+  },
+  {
     id: "theme-confetti",
     code: `root = Col([Button("Win", @Set($won, true)), Celebration($won)])\n$won = false`,
   },

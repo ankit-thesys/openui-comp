@@ -80,12 +80,21 @@ test.describe("theme", () => {
     expect((await badgeColours(page)).Good).toMatch(/^rgb\(1, 2, 3\) on /);
   });
 
-  // The library themes itself: a react-components ThemeProvider around the app doesn't reach it.
-  test("an app's react-components ThemeProvider is ignored", async ({ page }) => {
+  // With no library provider, a Col root takes the mode of a react-components ThemeProvider around
+  // the app: a light answer on a dark app had dark text on the app's dark page.
+  test("without a library provider, a Col root follows the app's react-components mode", async ({
+    page,
+  }) => {
     test.skip(host().provider || host().theme !== "light", "a light page with no library provider");
     const rendered = await render(page, host(), "theme-root-col", { components: "dark" });
     expect(await failures(rendered)).toEqual([]);
-    expect(await badgeColours(page)).toEqual(palette.light);
+    expect(await badgeColours(page)).toEqual(palette.dark);
+    const mode = await page.evaluate(() =>
+      document
+        .querySelector("[data-openui-intelligent-mode]")
+        ?.getAttribute("data-openui-intelligent-mode"),
+    );
+    expect(mode).toBe("dark");
   });
 
   // Series 1 to 4 take chart colours 1 to 4 in order, as in the original app, and an app's
@@ -237,11 +246,55 @@ test.describe("theme", () => {
     expect(menu.node.scheme).toBe(host().theme);
   });
 
+  // A nested provider with no overrides changes nothing: its parent's react-components key and
+  // chart colour still apply inside it, instead of resetting to the defaults.
+  test("a nested ThemeProvider keeps its parent's overrides", async ({ page }) => {
+    test.skip(!host().provider, "only a page with ThemeProvider has a parent");
+    let rendered = await render(page, host(), "theme-root-col", { custom: "1", nest: "1" });
+    expect(await failures(rendered)).toEqual([]);
+    expect((await badgeColours(page)).Good).toMatch(/^rgb\(1, 2, 3\) on /);
+    rendered = await render(page, host(), "theme-chart", { custom: "1", nest: "1" });
+    expect(await failures(rendered)).toEqual([]);
+    expect((await barFills(page))[0]).toBe("rgb(4, 5, 6)");
+  });
+
   // A nested library ThemeProvider with no mode takes its parent's.
   test("a nested ThemeProvider takes its parent's mode", async ({ page }) => {
     test.skip(!host().provider, "only a page with ThemeProvider has a parent to follow");
     const rendered = await render(page, host(), "theme-root-card", { nest: "1" });
     expect(await failures(rendered)).toEqual([]);
     expect(await badgeColours(page)).toEqual(palette[host().theme]);
+  });
+});
+
+test.describe("review fixes", () => {
+  // The trigger is a button already: a Button or IconButton given as the trigger shows its label
+  // or icon, so there is no button inside a button (a React error, and broken SSR hydration).
+  test("a Button as a Popover trigger doesn't nest a button", async ({ page }) => {
+    const rendered = await render(page, host(), "popover-button");
+    expect(await failures(rendered)).toEqual([]);
+    expect(await page.locator("#host button button").count()).toBe(0);
+    await page.getByRole("button", { name: "More" }).click();
+    await expect(page.getByText("Inside the panel")).toBeVisible();
+  });
+
+  // A negative number is an expected input: null, and nothing reported to the app's onError.
+  test("@Sqrt of a negative number is null without an error", async ({ page }) => {
+    const rendered = await render(page, host(), "sqrt-negative");
+    expect(await failures(rendered)).toEqual([]);
+    expect(
+      await page.evaluate(
+        () => (window as Window & { __iu?: { renderErrors: string[] } }).__iu?.renderErrors,
+      ),
+    ).toEqual([]);
+  });
+
+  // A labelled drawing is an image with that name; an unlabelled one is hidden from screen readers.
+  test("an Svg's label names it for screen readers", async ({ page }) => {
+    const rendered = await render(page, host(), "svg-label");
+    expect(await failures(rendered)).toEqual([]);
+    await expect(page.getByRole("img", { name: "A square" })).toBeVisible();
+    expect(await page.locator("#host svg[role='img']:not([aria-label])").count()).toBe(0);
+    expect(await page.locator("#host svg[aria-hidden='true']").count()).toBeGreaterThan(0);
   });
 });

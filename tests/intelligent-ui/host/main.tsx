@@ -19,8 +19,8 @@ import { demoTools } from "./mock-tools";
  * - `custom`: `1` gives ThemeProvider an app's own success colour and first chart colour as both
  *   lightTheme and darkTheme; `light` passes them as lightTheme only; `split` passes a different
  *   success colour for each mode;
- * - `components`: `dark` wraps the page in a dark react-components ThemeProvider, which the library
- *   ignores;
+ * - `components`: `dark` wraps the page in a dark react-components ThemeProvider. A library
+ *   ThemeProvider ignores it; without one, a Col root takes its mode;
  * - `restore`: `1` passes `initialState` with `$won: true`, as an app does when it reopens a saved
  *   chat; the Renderer applies it after the first render;
  * - `nest`: `1` puts a second library ThemeProvider with no mode inside the first, which takes the
