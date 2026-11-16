@@ -99,8 +99,6 @@ export const tokens = {
   chart4: "var(--openui-intelligent-chart-4, #f4a340)",
   chart5: "var(--openui-intelligent-chart-5, #e46d91)",
   chart6: "var(--openui-intelligent-chart-6, #4b9ca6)",
-  mapWater:
-    "var(--openui-intelligent-map-water, color-mix(in oklab, #4fb3d9 45%, var(--openui-intelligent-canvas, var(--openui-foreground, oklch(0.994 0 89.876)))))",
   spaceTight: "var(--openui-intelligent-space-tight, 4px)",
   spaceInner: "var(--openui-intelligent-space-inner, 8px)",
   spaceGroup: "var(--openui-intelligent-space-group, 12px)",
@@ -113,7 +111,6 @@ export const tokens = {
   radiusMd: "var(--openui-intelligent-radius-md, 10px)",
   radiusLg: "var(--openui-intelligent-radius-lg, 12px)",
   radiusXl: "var(--openui-intelligent-radius-xl, 14px)",
-  radius2xl: "var(--openui-intelligent-radius-2xl, 20px)",
   photoEmpty:
     "var(--openui-intelligent-photo-empty, var(--openui-intelligent-surface, color-mix(in srgb, var(--openui-intelligent-ink, var(--openui-text-neutral-primary, oklch(0.097 0 0))) 4%, transparent)))",
   photoEmptyIcon:

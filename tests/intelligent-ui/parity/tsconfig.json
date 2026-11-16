@@ -1,0 +1,8 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "allowJs": false
+  },
+  "include": ["*.ts", "harness/entry.tsx", "harness/target.library.tsx"]
+}

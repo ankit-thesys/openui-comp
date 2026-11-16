@@ -1,0 +1,62 @@
+# Fork only: the Intelligent UI library's test run (ankit-thesys/openui-comp#199). Never merged upstream.
+name: Intelligent UI tests
+
+on:
+  push:
+    branches: [claude/intelligent-ui-tests]
+  pull_request:
+    # PRs into #196, and the ticket branches (#201-#204) into this test branch.
+    branches: [claude/intelligent-kit-v2, claude/intelligent-ui-tests]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: intelligent-ui-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  render:
+    name: Render in the Vite host
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: tests/intelligent-ui
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build the library and what it depends on
+        run: pnpm build:library
+
+      - name: Typecheck the tests against the built types
+        run: pnpm typecheck
+
+      - name: Install Chromium
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Render
+        run: pnpm test
+
+      - name: Upload the report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: intelligent-ui-playwright-report
+          path: |
+            tests/intelligent-ui/playwright-report
+            tests/intelligent-ui/test-results
+            tests/intelligent-ui/sweep-report
+          retention-days: 14

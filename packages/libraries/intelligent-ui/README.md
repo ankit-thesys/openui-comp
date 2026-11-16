@@ -25,42 +25,25 @@ npx @openuidev/cli generate src/lib/intelligent-ui-library.ts --out src/generate
 Send that file as the system message, then render the model's response:
 
 ```tsx
-import { library } from "@openuidev/intelligent-ui-library";
-import { ThemeProvider } from "@openuidev/react-components";
-import { Renderer, type ActionEvent } from "@openuidev/react-lang";
+import { ThemeProvider, library } from "@openuidev/intelligent-ui-library";
+import { Renderer } from "@openuidev/react-lang";
 
-export function IntelligentMessage({
-  response,
-  onAction,
-}: {
-  response: string;
-  onAction: (event: ActionEvent) => void;
-}) {
+export function IntelligentMessage({ response }: { response: string }) {
   return (
     <ThemeProvider mode="dark">
-      <Renderer response={response} library={library} onAction={onAction} />
+      <Renderer response={response} library={library} />
     </ThemeProvider>
   );
 }
 ```
 
-`ThemeProvider` from `@openuidev/react-components` is optional. It sets the mode (light by default)
-and takes `lightTheme` and `darkTheme` overrides. Without it, a response with a `Col` root uses the
-light default theme.
+`ThemeProvider` is optional. It sets the mode and takes `lightTheme` and `darkTheme` overrides.
+Without a mode it follows a react-components `ThemeProvider` around your app, or light without
+one. In an OpenUI chat (`@openuidev/react-ui`), wrap the chat in `ThemeProvider` with the chat's
+mode: the library can't read react-ui's theme.
 
-`ThemeProvider` sets the theme's colour variables but doesn't paint your page. Give the page the
-theme's background, for example `body { background: var(--openui-background); }`, so a dark
-theme's text sits on a dark page.
-
-### Actions
-
-The `Renderer` hands every action a user takes to `onAction`, and your app runs them:
-`continue_conversation` sends a message back to the model, and `open_url` opens a link.
-
-To give the model an action of your own, such as copying text, define it and add it to the library
-with `library.extend({ actions: { add: [yourAction] } })`. The generated system prompt then lists
-it, and its events reach `onAction` too. See
-[Actions](https://openui.com/docs/openui-lang/actions) in the OpenUI docs.
+`promptOptions` holds the generation rules and examples. To build your own options, spread its
+`examples` and `additionalRules`, which are also exported on their own.
 
 ## Components
 
@@ -75,5 +58,4 @@ it, and its events reach `onAction` too. See
 | Play           | `Flashcard`, `Celebration`                                                                                                                                |
 | Drawing        | `Svg`, `G`, `Circle`, `Ellipse`, `Rect`, `Line`, `Path`, `Polyline`, `Polygon`, `SvgText`, `HtmlView`                                                     |
 
-The library also has 59 `@functions` that let an answer compute with its own state. The generated
-system prompt lists them all.
+59 `@functions` let an answer compute with its own state; the generated system prompt lists them.

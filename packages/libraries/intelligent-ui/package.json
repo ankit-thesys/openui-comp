@@ -1,7 +1,7 @@
 {
   "name": "@openuidev/intelligent-ui-library",
   "version": "0.0.1",
-  "description": "OpenUI Intelligent UI component library: primitives a model arranges itself, with maps, drawing and generic @functions",
+  "description": "OpenUI Intelligent UI component library: layout, text, inputs, media, drawing and @functions a model composes into interactive answers",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -35,8 +35,9 @@
     "ci": "pnpm run lint:check && pnpm run format:check && pnpm run typecheck"
   },
   "dependencies": {
+    "@openuidev/lang-core": "workspace:>=1.1.1",
     "@openuidev/react-components": "workspace:>=0.0.1 <0.1.0",
-    "@openuidev/react-lang": "workspace:>=1.0.1 <2.0.0",
+    "@openuidev/react-lang": "workspace:>=1.1.1",
     "clsx": "^2.1.1",
     "katex": "^0.16.44",
     "lucide-react": "^0.562.0"
@@ -61,7 +62,6 @@
     "ai",
     "component-library",
     "openui-lang",
-    "maps",
     "llm"
   ],
   "homepage": "https://openui.com",

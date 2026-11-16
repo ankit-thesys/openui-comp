@@ -1,0 +1,2071 @@
+[
+ {
+  "program": "gdp-explained",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|Real GDP increases by 10%",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "gdp-explained",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|Nominal GDP rises; real GDP is unchanged",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "gdp-explained",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|Both measures stay the same",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "gdp-explained",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|Real GDP increases by 10%",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "gdp-explained",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|Nominal GDP rises; real GDP is unchanged",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "gdp-explained",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|Both measures stay the same",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "gdp-explained",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|Real GDP increases by 10%",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "gdp-explained",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|Nominal GDP rises; real GDP is unchanged",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "gdp-explained",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|Both measures stay the same",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "clt",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|The population becomes normal",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "clt",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|The sample means form a narrower bell shape",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "clt",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|Every mean becomes exactly the same",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "clt",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|The population becomes normal",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "clt",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|The sample means form a narrower bell shape",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "clt",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|Every mean becomes exactly the same",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "clt",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|The population becomes normal",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "clt",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|The sample means form a narrower bell shape",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "clt",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|Every mean becomes exactly the same",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|Lombard Street",
+  "source": {
+   "added": [
+    "11:10",
+    "30",
+    "Landmarks",
+    "Lombard",
+    "Street",
+    "Walk",
+    "block",
+    "brick",
+    "crooked",
+    "down",
+    "hydrangeas.",
+    "of",
+    "switchbacks"
+   ],
+   "removed": [
+    "1898",
+    "45",
+    "9:00",
+    "Building",
+    "Coffee",
+    "Ferry",
+    "Food",
+    "bay.",
+    "hall",
+    "in",
+    "market",
+    "on",
+    "pastries",
+    "the"
+   ]
+  },
+  "kit": {
+   "added": [
+    "11:10",
+    "30",
+    "Landmarks",
+    "Lombard",
+    "Street",
+    "Walk",
+    "block",
+    "brick",
+    "crooked",
+    "down",
+    "hydrangeas.",
+    "of",
+    "switchbacks"
+   ],
+   "removed": [
+    "1898",
+    "45",
+    "9:00",
+    "Building",
+    "Coffee",
+    "Ferry",
+    "Food",
+    "Map",
+    "The",
+    "are",
+    "are",
+    "bay.",
+    "hall",
+    "in",
+    "market",
+    "on",
+    "pastries",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "the",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|Golden Gate Park",
+  "source": {
+   "added": [
+    "3:55",
+    "60",
+    "Conservatory",
+    "Flowers.",
+    "Garden",
+    "Gate",
+    "Golden",
+    "Japanese",
+    "PM",
+    "Park",
+    "Parks",
+    "Tea",
+    "The",
+    "of"
+   ],
+   "removed": [
+    "1898",
+    "45",
+    "9:00",
+    "AM",
+    "Building",
+    "Coffee",
+    "Ferry",
+    "Food",
+    "bay.",
+    "hall",
+    "in",
+    "market",
+    "on",
+    "pastries",
+    "the"
+   ]
+  },
+  "kit": {
+   "added": [],
+   "removed": [
+    "Map",
+    "The",
+    "are",
+    "are",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-state",
+  "subject": "button|Golden Gate Park",
+  "source": "pressed",
+  "kit": ""
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|Directions",
+  "source": {
+   "added": [],
+   "removed": []
+  },
+  "kit": {
+   "added": [],
+   "removed": [
+    "Map",
+    "The",
+    "are",
+    "are",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "radio|Relaxed",
+  "source": {
+   "added": [
+    "100",
+    "10:20",
+    "11.2",
+    "11:40",
+    "12:40",
+    "3:30",
+    "40",
+    "50",
+    "5:30",
+    "60",
+    "7:10",
+    "80",
+    "80"
+   ],
+   "removed": [
+    "10:05",
+    "11:10",
+    "12:00",
+    "1:20",
+    "30",
+    "30",
+    "3:55",
+    "45",
+    "45",
+    "45",
+    "5:15",
+    "75",
+    "9.1"
+   ]
+  },
+  "kit": {
+   "added": [
+    "100",
+    "10:20",
+    "11.2",
+    "11:40",
+    "12:40",
+    "3:30",
+    "40",
+    "50",
+    "5:30",
+    "60",
+    "7:10",
+    "80",
+    "80"
+   ],
+   "removed": [
+    "10:05",
+    "11:10",
+    "12:00",
+    "1:20",
+    "30",
+    "30",
+    "3:55",
+    "45",
+    "45",
+    "45",
+    "5:15",
+    "75",
+    "9.1",
+    "Map",
+    "The",
+    "are",
+    "are",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-state",
+  "subject": "radio|Relaxed",
+  "source": "checked",
+  "kit": ""
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "radio|Balanced",
+  "source": {
+   "added": [],
+   "removed": []
+  },
+  "kit": {
+   "added": [],
+   "removed": [
+    "Map",
+    "The",
+    "are",
+    "are",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-state",
+  "subject": "radio|Balanced",
+  "source": "checked",
+  "kit": "pressed"
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "radio|Packed",
+  "source": {
+   "added": [
+    "10:50",
+    "11:35",
+    "12:40",
+    "1:30",
+    "25",
+    "25",
+    "2:45",
+    "35",
+    "35",
+    "35",
+    "3:50",
+    "55",
+    "7.6",
+    "9:55",
+    "AM"
+   ],
+   "removed": [
+    "10:05",
+    "11:10",
+    "12:00",
+    "1:20",
+    "2:20",
+    "30",
+    "3:55",
+    "40",
+    "45",
+    "5:15",
+    "60",
+    "60",
+    "75",
+    "9.1",
+    "PM"
+   ]
+  },
+  "kit": {
+   "added": [
+    "10:50",
+    "11:35",
+    "12:40",
+    "1:30",
+    "25",
+    "25",
+    "2:45",
+    "35",
+    "35",
+    "35",
+    "3:50",
+    "55",
+    "7.6",
+    "9:55",
+    "AM"
+   ],
+   "removed": [
+    "10:05",
+    "11:10",
+    "12:00",
+    "1:20",
+    "2:20",
+    "30",
+    "3:55",
+    "40",
+    "45",
+    "5:15",
+    "60",
+    "60",
+    "75",
+    "9.1",
+    "Map",
+    "PM",
+    "The",
+    "are",
+    "are",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|9:00 AM45 minFerry BuildingCoffee and pastries in the 1898 market hall on the ba",
+  "source": {
+   "added": [],
+   "removed": []
+  },
+  "kit": {
+   "added": [],
+   "removed": [
+    "Map",
+    "The",
+    "are",
+    "are",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-state",
+  "subject": "button|9:00 AM45 minFerry BuildingCoffee and pastries in the 1898 market hall on the ba",
+  "source": "pressed",
+  "kit": ""
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|10:05 AM45 minCoit TowerClimb Telegraph Hill for Depression-era murals and a 360",
+  "source": {
+   "added": [
+    "10:05",
+    "360°",
+    "Climb",
+    "Coit",
+    "Depression-era",
+    "Hill",
+    "Telegraph",
+    "Tower",
+    "Views",
+    "a",
+    "for",
+    "murals",
+    "view."
+   ],
+   "removed": [
+    "1898",
+    "9:00",
+    "Building",
+    "Coffee",
+    "Ferry",
+    "Food",
+    "bay.",
+    "hall",
+    "in",
+    "market",
+    "on",
+    "pastries",
+    "the",
+    "the"
+   ]
+  },
+  "kit": {
+   "added": [
+    "10:05",
+    "360°",
+    "Climb",
+    "Coit",
+    "Depression-era",
+    "Hill",
+    "Telegraph",
+    "Tower",
+    "Views",
+    "a",
+    "for",
+    "murals",
+    "view."
+   ],
+   "removed": [
+    "1898",
+    "9:00",
+    "Building",
+    "Coffee",
+    "Ferry",
+    "Food",
+    "Map",
+    "The",
+    "are",
+    "are",
+    "bay.",
+    "hall",
+    "in",
+    "market",
+    "on",
+    "pastries",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "the",
+    "the",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-state",
+  "subject": "button|10:05 AM45 minCoit TowerClimb Telegraph Hill for Depression-era murals and a 360",
+  "source": "pressed",
+  "kit": ""
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|11:10 AM30 minLombard StreetWalk down the crooked block of brick switchbacks and",
+  "source": {
+   "added": [
+    "11:10",
+    "30",
+    "Landmarks",
+    "Lombard",
+    "Street",
+    "Walk",
+    "block",
+    "brick",
+    "crooked",
+    "down",
+    "hydrangeas.",
+    "of",
+    "switchbacks"
+   ],
+   "removed": [
+    "1898",
+    "45",
+    "9:00",
+    "Building",
+    "Coffee",
+    "Ferry",
+    "Food",
+    "bay.",
+    "hall",
+    "in",
+    "market",
+    "on",
+    "pastries",
+    "the"
+   ]
+  },
+  "kit": {
+   "added": [
+    "11:10",
+    "30",
+    "Landmarks",
+    "Lombard",
+    "Street",
+    "Walk",
+    "block",
+    "brick",
+    "crooked",
+    "down",
+    "hydrangeas.",
+    "of",
+    "switchbacks"
+   ],
+   "removed": [
+    "1898",
+    "45",
+    "9:00",
+    "Building",
+    "Coffee",
+    "Ferry",
+    "Food",
+    "Map",
+    "The",
+    "are",
+    "are",
+    "bay.",
+    "hall",
+    "in",
+    "market",
+    "on",
+    "pastries",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "the",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-state",
+  "subject": "button|11:10 AM30 minLombard StreetWalk down the crooked block of brick switchbacks and",
+  "source": "pressed",
+  "kit": ""
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|12:00 PM60 minFisherman's WharfSea lions at Pier 39 and clam chowder in a sourdo",
+  "source": {
+   "added": [
+    "12:00",
+    "39",
+    "60",
+    "Fisherman's",
+    "PM",
+    "Pier",
+    "Sea",
+    "Wharf",
+    "a",
+    "at",
+    "bowl.",
+    "chowder",
+    "clam",
+    "lions",
+    "sourdough"
+   ],
+   "removed": [
+    "1898",
+    "45",
+    "9:00",
+    "AM",
+    "Building",
+    "Coffee",
+    "Ferry",
+    "bay.",
+    "hall",
+    "market",
+    "on",
+    "pastries",
+    "the",
+    "the"
+   ]
+  },
+  "kit": {
+   "added": [
+    "12:00",
+    "39",
+    "60",
+    "Fisherman's",
+    "PM",
+    "Pier",
+    "Sea",
+    "Wharf",
+    "a",
+    "at",
+    "bowl.",
+    "chowder",
+    "clam",
+    "lions",
+    "sourdough"
+   ],
+   "removed": [
+    "1898",
+    "45",
+    "9:00",
+    "AM",
+    "Building",
+    "Coffee",
+    "Ferry",
+    "Map",
+    "The",
+    "are",
+    "are",
+    "bay.",
+    "hall",
+    "market",
+    "on",
+    "pastries",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "the",
+    "the",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-state",
+  "subject": "button|12:00 PM60 minFisherman's WharfSea lions at Pier 39 and clam chowder in a sourdo",
+  "source": "pressed",
+  "kit": ""
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|1:20 PM40 minPalace of Fine ArtsA Roman-style rotunda reflected in a quiet lagoo",
+  "source": {
+   "added": [
+    "1:20",
+    "40",
+    "A",
+    "Arts",
+    "Fine",
+    "Landmarks",
+    "PM",
+    "Palace",
+    "Roman-style",
+    "a",
+    "lagoon.",
+    "of",
+    "quiet",
+    "reflected",
+    "rotunda"
+   ],
+   "removed": [
+    "1898",
+    "45",
+    "9:00",
+    "AM",
+    "Building",
+    "Coffee",
+    "Ferry",
+    "Food",
+    "and",
+    "bay.",
+    "hall",
+    "market",
+    "on",
+    "pastries",
+    "the",
+    "the"
+   ]
+  },
+  "kit": {
+   "added": [
+    "1:20",
+    "40",
+    "A",
+    "Arts",
+    "Fine",
+    "Landmarks",
+    "PM",
+    "Palace",
+    "Roman-style",
+    "a",
+    "lagoon.",
+    "of",
+    "quiet",
+    "reflected",
+    "rotunda"
+   ],
+   "removed": [
+    "1898",
+    "45",
+    "9:00",
+    "AM",
+    "Building",
+    "Coffee",
+    "Ferry",
+    "Food",
+    "Map",
+    "The",
+    "and",
+    "are",
+    "are",
+    "bay.",
+    "hall",
+    "market",
+    "on",
+    "pastries",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "the",
+    "the",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|2:20 PM75 minGolden Gate BridgeWalk out to the first tower for the classic view ",
+  "source": {
+   "added": [
+    "2:20",
+    "75",
+    "Bridge",
+    "Gate",
+    "Golden",
+    "PM",
+    "Views",
+    "Walk",
+    "at",
+    "back",
+    "city.",
+    "classic",
+    "first",
+    "for",
+    "out",
+    "the",
+    "to",
+    "tower",
+    "view"
+   ],
+   "removed": [
+    "1898",
+    "45",
+    "9:00",
+    "AM",
+    "Building",
+    "Coffee",
+    "Ferry",
+    "Food",
+    "and",
+    "bay.",
+    "hall",
+    "in",
+    "market",
+    "on",
+    "pastries"
+   ]
+  },
+  "kit": {
+   "added": [
+    "2:20",
+    "75",
+    "Bridge",
+    "Gate",
+    "Golden",
+    "PM",
+    "Views",
+    "Walk",
+    "at",
+    "back",
+    "city.",
+    "classic",
+    "first",
+    "for",
+    "out",
+    "the",
+    "to",
+    "tower",
+    "view"
+   ],
+   "removed": [
+    "1898",
+    "45",
+    "9:00",
+    "AM",
+    "Building",
+    "Coffee",
+    "Ferry",
+    "Food",
+    "Map",
+    "The",
+    "and",
+    "are",
+    "are",
+    "bay.",
+    "hall",
+    "in",
+    "market",
+    "on",
+    "pastries",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "route",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|Plan a second day",
+  "source": {
+   "added": [],
+   "removed": []
+  },
+  "kit": {
+   "added": [],
+   "removed": [
+    "Map",
+    "The",
+    "are",
+    "are",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|Seattle",
+  "source": {
+   "added": [],
+   "removed": []
+  },
+  "kit": {
+   "added": [],
+   "removed": [
+    "Map",
+    "The",
+    "are",
+    "are",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|Astoria",
+  "source": {
+   "added": [],
+   "removed": []
+  },
+  "kit": {
+   "added": [],
+   "removed": [
+    "Map",
+    "The",
+    "are",
+    "are",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|Multnomah Falls",
+  "source": {
+   "added": [],
+   "removed": []
+  },
+  "kit": {
+   "added": [],
+   "removed": [
+    "Map",
+    "The",
+    "are",
+    "are",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "combobox|Filter places",
+  "source": {
+   "added": [
+    "City",
+    "Map",
+    "The",
+    "are",
+    "are",
+    "loading.",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ],
+   "removed": [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "8",
+    "9",
+    "All",
+    "Angeles",
+    "Astoria",
+    "Beach",
+    "Beach",
+    "Cannon",
+    "Falls",
+    "Forest",
+    "Hoh",
+    "Mount",
+    "Multnomah",
+    "Port",
+    "Rain",
+    "Rainier",
+    "Ruby",
+    "loaded."
+   ]
+  },
+  "kit": {
+   "added": [
+    "City",
+    "loading."
+   ],
+   "removed": [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "8",
+    "9",
+    "All",
+    "Angeles",
+    "Astoria",
+    "Beach",
+    "Beach",
+    "Cannon",
+    "Falls",
+    "Forest",
+    "Hoh",
+    "Mount",
+    "Multnomah",
+    "Port",
+    "Rain",
+    "Rainier",
+    "Ruby",
+    "loaded.",
+    "places"
+   ]
+  }
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|About this map",
+  "source": {
+   "added": [
+    "(OSRM",
+    "+",
+    "/",
+    "Drag",
+    "OpenStreetMap,",
+    "Select",
+    "The",
+    "a",
+    "an",
+    "and",
+    "and",
+    "directions.",
+    "driving",
+    "explore",
+    "follows",
+    "highlight",
+    "is",
+    "it",
+    "it.",
+    "line",
+    "not",
+    "overview,",
+    "place",
+    "profile);",
+    "streets",
+    "to",
+    "to",
+    "to",
+    "turn-by-turn",
+    "use",
+    "zoom.",
+    "−"
+   ],
+   "removed": []
+  },
+  "kit": {
+   "added": [
+    "(OSRM",
+    "+",
+    "/",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "Angeles",
+    "Astoria",
+    "Beach",
+    "Beach",
+    "Cannon",
+    "Drag",
+    "Falls",
+    "Forest",
+    "Hoh",
+    "Mount",
+    "Multnomah",
+    "OpenStreetMap,",
+    "Port",
+    "Portland",
+    "Rain",
+    "Rainier",
+    "Ruby",
+    "Seattle",
+    "Select",
+    "a",
+    "an",
+    "and",
+    "and",
+    "directions.",
+    "driving",
+    "explore",
+    "follows",
+    "highlight",
+    "is",
+    "it",
+    "it.",
+    "line",
+    "not",
+    "overview,",
+    "place",
+    "profile);",
+    "streets",
+    "to",
+    "to",
+    "to",
+    "turn-by-turn",
+    "use",
+    "zoom.",
+    "−"
+   ],
+   "removed": [
+    "Map",
+    "are",
+    "are",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|1SeattleArrive · overnight in SeattlePike Place Market, the waterfront and the S",
+  "source": {
+   "added": [],
+   "removed": []
+  },
+  "kit": {
+   "added": [],
+   "removed": [
+    "Map",
+    "The",
+    "are",
+    "are",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-state",
+  "subject": "button|2Ferry to the Olympic Peninsula2.5 h with the ferry · overnight in Port AngelesT",
+  "source": "pressed",
+  "kit": ""
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|3Hoh Rain Forest2 h · overnight in ForksWalk the Hall of Mosses under moss-drape",
+  "source": {
+   "added": [],
+   "removed": []
+  },
+  "kit": {
+   "added": [],
+   "removed": [
+    "Map",
+    "The",
+    "are",
+    "are",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-state",
+  "subject": "button|3Hoh Rain Forest2 h · overnight in ForksWalk the Hall of Mosses under moss-drape",
+  "source": "pressed",
+  "kit": ""
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|4The wild coast1 h · overnight in KalalochSea stacks, driftwood and tide pools a",
+  "source": {
+   "added": [],
+   "removed": []
+  },
+  "kit": {
+   "added": [],
+   "removed": [
+    "Map",
+    "The",
+    "are",
+    "are",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-state",
+  "subject": "button|4The wild coast1 h · overnight in KalalochSea stacks, driftwood and tide pools a",
+  "source": "pressed",
+  "kit": ""
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-state",
+  "subject": "button|5South to Astoria3.5 h · overnight in AstoriaCross the Columbia at its mouth and",
+  "source": "pressed",
+  "kit": ""
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|6Cannon Beach40 min · overnight in Cannon BeachHaystack Rock at low tide, then t",
+  "source": {
+   "added": [],
+   "removed": []
+  },
+  "kit": {
+   "added": [],
+   "removed": [
+    "Map",
+    "The",
+    "are",
+    "are",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-state",
+  "subject": "button|6Cannon Beach40 min · overnight in Cannon BeachHaystack Rock at low tide, then t",
+  "source": "pressed",
+  "kit": ""
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-state",
+  "subject": "button|7Portland1.5 h · overnight in PortlandFood carts, Powell's Books and the Japanes",
+  "source": "pressed",
+  "kit": ""
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-state",
+  "subject": "button|8Columbia River Gorge1 h each way · overnight in PortlandMultnomah Falls and the",
+  "source": "pressed",
+  "kit": ""
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|9Mount Rainier3.5 h · overnight in AshfordWildflower meadows and glacier views o",
+  "source": {
+   "added": [],
+   "removed": []
+  },
+  "kit": {
+   "added": [],
+   "removed": [
+    "Map",
+    "The",
+    "are",
+    "are",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-state",
+  "subject": "button|9Mount Rainier3.5 h · overnight in AshfordWildflower meadows and glacier views o",
+  "source": "pressed",
+  "kit": ""
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|10Back to Seattle2.5 hA last morning hike, then return the car in Seattle.",
+  "source": {
+   "added": [],
+   "removed": []
+  },
+  "kit": {
+   "added": [],
+   "removed": [
+    "Map",
+    "The",
+    "are",
+    "are",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "roadtrip",
+  "mode": "functional",
+  "kind": "use-state",
+  "subject": "button|10Back to Seattle2.5 hA last morning hike, then return the car in Seattle.",
+  "source": "pressed",
+  "kit": "checked"
+ },
+ {
+  "program": "room",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|Calm and restful",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|Warm and cozy",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|Light and airy",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|A bold statement",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|North facing, cool light",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|South facing, warm sun",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|East or west, changing",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|Little daylight",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|Grey",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|Blue",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|Green",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|Brown leather",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|White or cream",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|Calm and restful",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|Warm and cozy",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|Light and airy",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|A bold statement",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|North facing, cool light",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|South facing, warm sun",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|East or west, changing",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|Little daylight",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|Grey",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|Blue",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|Green",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|Brown leather",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|White or cream",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|Calm and restful",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|Warm and cozy",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|Light and airy",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|A bold statement",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|North facing, cool light",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|South facing, warm sun",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|East or west, changing",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|Little daylight",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|Grey",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|Blue",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|Green",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|Brown leather",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "room",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|White or cream",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "inputs",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|Hot / tropical",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "inputs",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|Mild / mixed weather",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "inputs",
+  "mode": "light-1280",
+  "kind": "control-radius",
+  "subject": "radio|Cold / rainy",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "inputs",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|Hot / tropical",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "inputs",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|Mild / mixed weather",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "inputs",
+  "mode": "dark-1280",
+  "kind": "control-radius",
+  "subject": "radio|Cold / rainy",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "inputs",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|Hot / tropical",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "inputs",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|Mild / mixed weather",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "inputs",
+  "mode": "light-390",
+  "kind": "control-radius",
+  "subject": "radio|Cold / rainy",
+  "source": 50,
+  "kit": 0
+ },
+ {
+  "program": "map",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|Coit Tower",
+  "source": {
+   "added": [
+    "Coit",
+    "Tower"
+   ],
+   "removed": [
+    "Building",
+    "Ferry"
+   ]
+  },
+  "kit": {
+   "added": [
+    "2",
+    "Arts",
+    "Bridge",
+    "Coit",
+    "Coit",
+    "Fine",
+    "Gate",
+    "Golden",
+    "Palace",
+    "Tower",
+    "Tower",
+    "of",
+    "☕",
+    "🌉",
+    "🏛️"
+   ],
+   "removed": []
+  }
+ },
+ {
+  "program": "map",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|Golden Gate Bridge",
+  "source": {
+   "added": [
+    "Bridge",
+    "Gate",
+    "Golden"
+   ],
+   "removed": [
+    "Building",
+    "Ferry"
+   ]
+  },
+  "kit": {
+   "added": [
+    "2",
+    "Arts",
+    "Bridge",
+    "Bridge",
+    "Coit",
+    "Fine",
+    "Gate",
+    "Gate",
+    "Golden",
+    "Golden",
+    "Palace",
+    "Tower",
+    "of",
+    "☕",
+    "🌉",
+    "🏛️"
+   ],
+   "removed": []
+  }
+ },
+ {
+  "program": "map",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "combobox|Filter places",
+  "source": {
+   "added": [
+    "Food",
+    "loading."
+   ],
+   "removed": [
+    "2",
+    "All",
+    "Arts",
+    "Bridge",
+    "Coit",
+    "Fine",
+    "Gate",
+    "Golden",
+    "Palace",
+    "Tower",
+    "loaded.",
+    "of",
+    "places",
+    "🌉",
+    "🏛️"
+   ]
+  },
+  "kit": {
+   "added": [
+    "Food",
+    "loading."
+   ],
+   "removed": [
+    "All",
+    "Map",
+    "The",
+    "are",
+    "are",
+    "loaded.",
+    "places",
+    "places",
+    "shown.",
+    "still",
+    "temporarily",
+    "tiles",
+    "unavailable."
+   ]
+  }
+ },
+ {
+  "program": "map",
+  "mode": "functional",
+  "kind": "use-result",
+  "subject": "button|Show every place",
+  "source": {
+   "added": [],
+   "removed": []
+  },
+  "kit": {
+   "added": [
+    "2",
+    "Arts",
+    "Bridge",
+    "Building",
+    "Coit",
+    "Ferry",
+    "Fine",
+    "Gate",
+    "Golden",
+    "Palace",
+    "Tower",
+    "of",
+    "☕",
+    "🌉",
+    "🏛️"
+   ],
+   "removed": []
+  }
+ }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "id": "forms-01",
+    "area": "Forms and inputs",
+    "prompt": "I'm running a summer soccer camp for kids aged 6 to 12. Make a sign-up form: child's name, date of birth, parent's email, T-shirt size, any allergies or medical notes, and a box they must tick to agree to the photo policy.",
+    "opus": true
+  },
+  {
+    "id": "forms-02",
+    "area": "Forms and inputs",
+    "prompt": "Help me pick a bike. Ask what my budget is, what I'll mostly ride on (road, gravel, trails or around town), how tall I am, and whether I want electric. Then I'll send it to you.",
+    "opus": false
+  },
+  {
+    "id": "forms-03",
+    "area": "Forms and inputs",
+    "prompt": "Three of us share a $2,450 a month rent. The bedrooms are 14, 11 and 9 square metres. Split the rent fairly by room size, let us change the sizes, and show each share to the cent so it adds up exactly.",
+    "opus": false
+  },
+  {
+    "id": "forms-04",
+    "area": "Forms and inputs",
+    "prompt": "Make me a to-do list for moving apartments. I want to add tasks, tick them off, delete them, and see how many are left, with a button to copy what is left as a list. Start it with a few obvious ones.",
+    "opus": false
+  },
+  {
+    "id": "forms-05",
+    "area": "Forms and inputs",
+    "prompt": "I want to leave feedback on my hotel stay: a 1 to 5 rating, which things were good (room, staff, breakfast, location, wifi), a comment of up to 500 characters, and whether they may contact me. Send it when I'm done.",
+    "opus": false
+  },
+  {
+    "id": "forms-06",
+    "area": "Forms and inputs",
+    "prompt": "I'll paste the names for our 5-a-side football night, separated by commas. Clean them up, drop duplicates and shuffle them into teams of 5. Here they are: sam, Priya ,  jo, Mateo, ana, sam, Kofi, lena, Raj, tom, Mei, Oskar, jo, Beatriz",
+    "opus": false
+  },
+  {
+    "id": "charts-01",
+    "area": "Charts and data",
+    "prompt": "Here's my spending for the first half of the year. Rent was 1,400 every month. Groceries: 420, 395, 450, 410, 470, 430. Transport: 160, 150, 175, 140, 190, 165. Eating out: 210, 180, 260, 240, 300, 280. Subscriptions: 45 each month. Show me where my money goes, how each month stacks up, a heatmap by category and month, and how June compares with May.",
+    "opus": true
+  },
+  {
+    "id": "charts-02",
+    "area": "Charts and data",
+    "prompt": "Compare five years of running costs for a Tesla Model 3 and a Toyota Corolla if I drive 15,000 km a year. Let me change the yearly distance, the petrol price and the electricity price.",
+    "opus": false
+  },
+  {
+    "id": "charts-03",
+    "area": "Charts and data",
+    "prompt": "Mortgage calculator: a $450,000 house, 20% down, 6.2% interest. Show the monthly payment and the total interest over 30 years, and let me compare it with a 15-year loan.",
+    "opus": true
+  },
+  {
+    "id": "charts-04",
+    "area": "Charts and data",
+    "prompt": "These are my 5k times this season: 31:10, 30:42, 29:55, 30:20, 29:01, 28:47, 28:30, 28:55, 27:58. Am I getting faster? Show the trend with a moving average, my best and average time, and how my times spread out.",
+    "opus": false
+  },
+  {
+    "id": "charts-05",
+    "area": "Charts and data",
+    "prompt": "My daughter was born on 14 March 2025. How old is she in months and weeks today, and when are her checkups at 2, 4, 6, 9, 12, 15 and 18 months? Mark which ones are already past.",
+    "opus": false
+  },
+  {
+    "id": "maps-01",
+    "area": "Maps and routes",
+    "prompt": "Plan a one-day walking route in Kyoto that takes in Fushimi Inari, Kiyomizu-dera, Gion and the Philosopher's Path, with roughly how long each walk between them takes.",
+    "opus": true
+  },
+  {
+    "id": "maps-02",
+    "area": "Maps and routes",
+    "prompt": "Find me 8 good coffee shops in Melbourne's CBD, grouped as laptop-friendly, specialty or brunch, on a map I can click to see the details of each one, with a button that opens the place in Google Maps.",
+    "opus": false
+  },
+  {
+    "id": "maps-03",
+    "area": "Maps and routes",
+    "prompt": "We're driving from San Francisco to Los Angeles along Highway 1 over three days. Where should we stay each night, and what's worth stopping for each day?",
+    "opus": false
+  },
+  {
+    "id": "maps-04",
+    "area": "Maps and routes",
+    "prompt": "Where were the seven wonders of the ancient world? Put them on a map and tell me which one still stands.",
+    "opus": false
+  },
+  {
+    "id": "drawing-01",
+    "area": "Drawing and Svg",
+    "prompt": "How do I tie a bowline knot? Show me step by step with a drawing for each step.",
+    "opus": true
+  },
+  {
+    "id": "drawing-02",
+    "area": "Drawing and Svg",
+    "prompt": "Explain how a four-stroke car engine works, with a diagram I can step through intake, compression, power and exhaust.",
+    "opus": true
+  },
+  {
+    "id": "drawing-03",
+    "area": "Drawing and Svg",
+    "prompt": "Draw my living room to scale: 5 m by 4 m, a 2.2 m sofa against one long wall, the TV opposite, a 1.2 m round dining table in a corner and the door on a short wall. Can an armchair fit? Let me slide it around.",
+    "opus": false
+  },
+  {
+    "id": "drawing-04",
+    "area": "Drawing and Svg",
+    "prompt": "Show me why the moon has phases, with the sun, Earth and moon drawn, and a slider for the day of the month.",
+    "opus": false
+  },
+  {
+    "id": "learning-01",
+    "area": "Flashcards, quizzes and steps",
+    "prompt": "Make me flashcards for 15 common Spanish verbs, with an example sentence on the back, a way to shuffle them, and a button that picks one at random for me to practise.",
+    "opus": false
+  },
+  {
+    "id": "learning-02",
+    "area": "Flashcards, quizzes and steps",
+    "prompt": "Quiz me on world capitals: 10 multiple-choice questions, show my score as I go, and celebrate if I get them all right.",
+    "opus": true
+  },
+  {
+    "id": "learning-03",
+    "area": "Flashcards, quizzes and steps",
+    "prompt": "Teach me the quadratic formula and give me three practice problems where I can type my answers and check them.",
+    "opus": false
+  },
+  {
+    "id": "learning-04",
+    "area": "Flashcards, quizzes and steps",
+    "prompt": "Walk me through making sourdough bread over two days, with a timer for each rest and fold, the clock time each step is due if I start now, and let me tick off each step.",
+    "opus": false
+  },
+  {
+    "id": "learning-05",
+    "area": "Flashcards, quizzes and steps",
+    "prompt": "I'm learning Python. Explain list comprehensions with a few examples, link a good video if you know one, and end with a short quiz.",
+    "opus": false
+  },
+  {
+    "id": "games-01",
+    "area": "Small games",
+    "prompt": "Let's play tic-tac-toe, me against the page.",
+    "opus": true
+  },
+  {
+    "id": "games-02",
+    "area": "Small games",
+    "prompt": "Make a snake game I can play with the arrow keys.",
+    "opus": false
+  },
+  {
+    "id": "games-03",
+    "area": "Small games",
+    "prompt": "Number guessing game: pick a number from 1 to 100, tell me higher or lower after each guess, and count my guesses.",
+    "opus": false
+  },
+  {
+    "id": "edge-01",
+    "area": "Edge cases",
+    "prompt": "Show me the full text of all ten amendments in the US Bill of Rights, with a one-line plain-English note under each.",
+    "opus": false
+  },
+  {
+    "id": "edge-02",
+    "area": "Edge cases",
+    "prompt": "Build me an expense tracker for this month. I haven't spent anything yet, so start it empty, but give me totals, a chart by category and a daily chart that fill in as I add entries, and let me look at just a date range.",
+    "opus": true
+  },
+  {
+    "id": "edge-03",
+    "area": "Edge cases",
+    "prompt": "List all 50 US states with their capital, population and the year they joined the union. Let me filter by region, sort by any column, and page through them 10 at a time.",
+    "opus": true
+  },
+  {
+    "id": "edge-04",
+    "area": "Edge cases",
+    "prompt": "Show me the whole periodic table, all 118 elements, laid out like the real thing, and let me tap an element for its details.",
+    "opus": false
+  },
+  {
+    "id": "edge-05",
+    "area": "Edge cases",
+    "prompt": "Make a card for guests with our wifi. The network is TheVeryLongNetworkNameForOurHouseOnMapleStreet_5GHz_Extended and the password is Xk9#mQ2$vL8@pR4!nW6^tY1&zB3*hJ7%cD5. Add copy buttons for both.",
+    "opus": false
+  },
+  {
+    "id": "edge-06",
+    "area": "Edge cases",
+    "prompt": "My dog Rex is lost. Make a poster using his photo at https://example.invalid/photos/rex-golden-retriever.jpg. He's a 4-year-old golden retriever with a red collar, last seen near Riverside Park on Tuesday evening. My number is 555-0142.",
+    "opus": false
+  }
+]

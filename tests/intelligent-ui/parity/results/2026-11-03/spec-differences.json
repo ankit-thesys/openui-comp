@@ -1,0 +1,429 @@
+{
+ "names": {
+  "components": {
+   "onlySource": [],
+   "onlyLibrary": []
+  },
+  "functions": {
+   "onlySource": [],
+   "onlyLibrary": []
+  },
+  "actions": {
+   "onlySource": [],
+   "onlyLibrary": []
+  }
+ },
+ "specDifferences": [
+  {
+   "path": "/components/Grid/description",
+   "source": "Equal columns (default 2). With minChildWidth (px), columns drop on narrow screens.",
+   "kit": "Equal columns, 1 to 12 (default 2). With minChildWidth (px), columns drop on narrow screens."
+  },
+  {
+   "path": "/components/Divider/description",
+   "source": "",
+   "kit": "A thin horizontal rule between blocks."
+  },
+  {
+   "path": "/components/Button/description",
+   "source": "icon is a lucide name.",
+   "kit": "icon is a lucide name. Without an action it sends its label to the assistant."
+  },
+  {
+   "path": "/components/IconButton/description",
+   "source": "Round icon-only button; label is read aloud.",
+   "kit": "Round icon-only button; label is read aloud. Needs an action."
+  },
+  {
+   "path": "/components/Pressable/description",
+   "source": "Makes any content clickable, such as a tile or a swatch.",
+   "kit": "Makes any content clickable, such as a tile or a swatch. Needs an action."
+  },
+  {
+   "path": "/components/Input/description",
+   "source": "Text or number field; a number field stores numbers.",
+   "kit": "Text or number field; a number field stores numbers, and null when emptied."
+  },
+  {
+   "path": "/components/TextArea/description",
+   "source": "",
+   "kit": "Multi-line text field; rows is 2 to 20 (default 3)."
+  },
+  {
+   "path": "/components/Checkbox/description",
+   "source": "lineThrough strikes the label when checked, for to-do lists.",
+   "kit": "lineThrough strikes the label when checked, for to-do lists. rules takes only required."
+  },
+  {
+   "path": "/components/DatePicker/description",
+   "source": "Dates are \"YYYY-MM-DD\".",
+   "kit": "Dates, min and max are \"YYYY-MM-DD\". rules takes only required."
+  },
+  {
+   "path": "/components/SearchImage/description",
+   "source": "A real photo the app finds for query; it needs no URL and no tool. Name the exact thing in 2 to 4 words: \"Belém Tower Lisbon\", \"iPhone 17\", \"pastel de nata\". Use one for every place, dish, product or thing with a look.",
+   "kit": "A real photo the app finds for query; it needs no URL and no tool. Name the exact thing in 2 to 4 words: \"Belém Tower Lisbon\", \"iPhone 17\", \"pastel de nata\". Use one for every place, dish, product or thing with a look. aspectRatio is 0.2 to 5 (default 1.5)."
+  },
+  {
+   "path": "/components/Image/description",
+   "source": "Photo from a URL the user or a tool gave; if it fails, a photo is found for alt.",
+   "kit": "Photo from a URL the user or a tool gave; if it fails, a photo is found for alt. aspectRatio is 0.2 to 5 (default 1.5)."
+  },
+  {
+   "path": "/components/Chart/signature",
+   "source": "Chart(type: \"bar\" | \"line\" | \"area\" | \"pie\" | \"donut\" | \"scatter\", data: Record<string, string | number>[], x?: string, series?: string[], format?: \"number\" | \"currency\" | \"percent\", currency?: string, stacked?: boolean, height?: number)",
+   "kit": "Chart(type: \"bar\" | \"line\" | \"area\" | \"pie\" | \"donut\" | \"scatter\", data: Record<string, string | number>[], x?: string, series?: string[], format?: \"number\" | \"percent\", stacked?: boolean, height?: number)"
+  },
+  {
+   "path": "/components/Chart/description",
+   "source": "Rows of data; x is the category key (a number key for scatter), series the value keys (default: every number key). percent values are like 45; currency is a code like \"EUR\".",
+   "kit": "Rows of data; x is the category key (a number key for scatter), series the value keys (default: every number key). format applies to pie and donut only: \"percent\" shows each slice as a share of the total, \"number\" its value. stacked stacks bar and area series. height sets the plot height in px; pie and donut ignore it and size themselves."
+  },
+  {
+   "path": "/components/MapMarker/description",
+   "source": "A place on a Map; icon is one emoji, else the pin shows its number.",
+   "kit": "A place on a Map; icon is one emoji, else the pin shows its number. category groups markers under a filter on the map."
+  },
+  {
+   "path": "/components/Circle/description",
+   "source": "",
+   "kit": "fill defaults to the text color; with only a stroke it stays unfilled."
+  },
+  {
+   "path": "/components/Ellipse/description",
+   "source": "",
+   "kit": "fill defaults to the text color; with only a stroke it stays unfilled."
+  },
+  {
+   "path": "/components/Rect/description",
+   "source": "",
+   "kit": "rx rounds the corners; fill defaults to the text color, and with only a stroke it stays unfilled."
+  },
+  {
+   "path": "/components/Line/description",
+   "source": "",
+   "kit": "Stroked in the text color, 2 wide, unless stroke and strokeWidth are set."
+  },
+  {
+   "path": "/components/Path/description",
+   "source": "",
+   "kit": "d is SVG path data only (M, L, C, A, Z...), else nothing draws; unfilled unless fill is set."
+  },
+  {
+   "path": "/components/Polygon/description",
+   "source": "",
+   "kit": "Closed shape; points like \"0,0 10,5 20,0\". fill defaults to the text color; with only a stroke it stays unfilled."
+  },
+  {
+   "path": "/components/G/description",
+   "source": "Group; transform like \"rotate(30 50 50)\" or \"translate(10 0)\".",
+   "kit": "Group; transform like \"rotate(30 50 50)\" or \"translate(10 0)\"; one with the wrong number of arguments is dropped."
+  },
+  {
+   "path": "/components/SvgText/description",
+   "source": "",
+   "kit": "A text label at x, y; anchor sets which end sits on x."
+  },
+  {
+   "path": "/functions/FormatDate/description",
+   "source": "A date as text: \"date\" Oct 9, 2026 (default), \"short\" Oct 9, \"long\" Friday, October 9, 2026, \"weekday\" Fri, \"month\" Oct 2026, \"time\" 9:30 PM, \"datetime\", \"iso\" 2026-10-09. Dates are \"YYYY-MM-DD\", ISO or a timestamp",
+   "kit": "A date as text: \"date\" Oct 9, 2026 (default), \"short\" Oct 9, \"long\" Friday, October 9, 2026, \"weekday\" Fri, \"month\" Oct 2026, \"time\" 9:30 PM, \"datetime\", \"iso\" 2026-10-09. Dates are \"YYYY-MM-DD\", ISO or a timestamp; \"time\" and \"datetime\" need a timestamp or an ISO date-time, as a plain date has no time"
+  },
+  {
+   "path": "/functions/Pivot/description",
+   "source": "One row per rowKey value with a column per colKey value holding agg of field, for stacked or grouped charts",
+   "kit": "One row per rowKey value, under key, with a column per colKey value holding agg of field, for stacked or grouped charts"
+  },
+  {
+   "path": "/functions/Between/description",
+   "source": "Rows whose field is from min to max, both included; compares numbers, or text such as \"YYYY-MM-DD\" dates. Leave min or max null for an open end",
+   "kit": "Rows whose field is from min to max, both included; compares numbers, dates by day (\"YYYY-MM-DD\", ISO or a timestamp), or text. Leave min or max null for an open end"
+  },
+  {
+   "path": "/functions/Histogram/signature",
+   "source": "Histogram(values: number[], bins: number, min?: number, max?: number) → {key: string, value: number, start: number, end: number}[]",
+   "kit": "Histogram(values: number[], bins: number, min?: number, max?: number) → {key: string, value: number}[]"
+  },
+  {
+   "path": "/functions/Histogram/description",
+   "source": "Counts numbers into equal-width bins (value is the count); min and max fix the range, default the data's",
+   "kit": "Counts numbers into equal-width bins as {key, value} rows: key is the bin's start, value the count; min and max fix the range, default the data's"
+  },
+  {
+   "path": "/schema/required",
+   "source": [
+    "Col",
+    "Row",
+    "Box",
+    "Grid",
+    "Card",
+    "Carousel",
+    "Popover",
+    "Divider",
+    "Spacer",
+    "Title",
+    "Text",
+    "Caption",
+    "Label",
+    "Badge",
+    "Link",
+    "List",
+    "ListItem",
+    "Markdown",
+    "Quote",
+    "Code",
+    "Math",
+    "Button",
+    "IconButton",
+    "Pressable",
+    "Input",
+    "TextArea",
+    "Select",
+    "SegmentedControl",
+    "Slider",
+    "Checkbox",
+    "RadioGroup",
+    "DatePicker",
+    "Timer",
+    "Form",
+    "SearchImage",
+    "Image",
+    "Icon",
+    "Table",
+    "Chart",
+    "Map",
+    "MapMarker",
+    "YouTube",
+    "Flashcard",
+    "Celebration",
+    "Svg",
+    "Circle",
+    "Ellipse",
+    "Rect",
+    "Line",
+    "Path",
+    "Polyline",
+    "Polygon",
+    "G",
+    "SvgText",
+    "HtmlView"
+   ],
+   "kit": [
+    "Col",
+    "Row",
+    "Box",
+    "Grid",
+    "Card",
+    "Carousel",
+    "Popover",
+    "Divider",
+    "Spacer",
+    "Title",
+    "Text",
+    "Caption",
+    "Label",
+    "Badge",
+    "Link",
+    "List",
+    "ListItem",
+    "Markdown",
+    "Quote",
+    "Code",
+    "Math",
+    "Button",
+    "IconButton",
+    "Pressable",
+    "Input",
+    "TextArea",
+    "Select",
+    "SegmentedControl",
+    "Slider",
+    "Checkbox",
+    "RadioGroup",
+    "DatePicker",
+    "Timer",
+    "Form",
+    "SearchImage",
+    "Image",
+    "Icon",
+    "Table",
+    "Chart",
+    "Map",
+    "MapMarker",
+    "YouTube",
+    "Flashcard",
+    "Celebration",
+    "Svg",
+    "Circle",
+    "Ellipse",
+    "Rect",
+    "Line",
+    "Path",
+    "Polyline",
+    "Polygon",
+    "SvgText",
+    "G",
+    "HtmlView"
+   ]
+  },
+  {
+   "path": "/schema/$defs/Grid/description",
+   "source": "Equal columns (default 2). With minChildWidth (px), columns drop on narrow screens.",
+   "kit": "Equal columns, 1 to 12 (default 2). With minChildWidth (px), columns drop on narrow screens."
+  },
+  {
+   "path": "/schema/$defs/Divider/description",
+   "kit": "A thin horizontal rule between blocks."
+  },
+  {
+   "path": "/schema/$defs/Button/description",
+   "source": "icon is a lucide name.",
+   "kit": "icon is a lucide name. Without an action it sends its label to the assistant."
+  },
+  {
+   "path": "/schema/$defs/IconButton/description",
+   "source": "Round icon-only button; label is read aloud.",
+   "kit": "Round icon-only button; label is read aloud. Needs an action."
+  },
+  {
+   "path": "/schema/$defs/Pressable/description",
+   "source": "Makes any content clickable, such as a tile or a swatch.",
+   "kit": "Makes any content clickable, such as a tile or a swatch. Needs an action."
+  },
+  {
+   "path": "/schema/$defs/Input/description",
+   "source": "Text or number field; a number field stores numbers.",
+   "kit": "Text or number field; a number field stores numbers, and null when emptied."
+  },
+  {
+   "path": "/schema/$defs/TextArea/description",
+   "kit": "Multi-line text field; rows is 2 to 20 (default 3)."
+  },
+  {
+   "path": "/schema/$defs/Checkbox/description",
+   "source": "lineThrough strikes the label when checked, for to-do lists.",
+   "kit": "lineThrough strikes the label when checked, for to-do lists. rules takes only required."
+  },
+  {
+   "path": "/schema/$defs/DatePicker/description",
+   "source": "Dates are \"YYYY-MM-DD\".",
+   "kit": "Dates, min and max are \"YYYY-MM-DD\". rules takes only required."
+  },
+  {
+   "path": "/schema/$defs/SearchImage/description",
+   "source": "A real photo the app finds for query; it needs no URL and no tool. Name the exact thing in 2 to 4 words: \"Belém Tower Lisbon\", \"iPhone 17\", \"pastel de nata\". Use one for every place, dish, product or thing with a look.",
+   "kit": "A real photo the app finds for query; it needs no URL and no tool. Name the exact thing in 2 to 4 words: \"Belém Tower Lisbon\", \"iPhone 17\", \"pastel de nata\". Use one for every place, dish, product or thing with a look. aspectRatio is 0.2 to 5 (default 1.5)."
+  },
+  {
+   "path": "/schema/$defs/Image/description",
+   "source": "Photo from a URL the user or a tool gave; if it fails, a photo is found for alt.",
+   "kit": "Photo from a URL the user or a tool gave; if it fails, a photo is found for alt. aspectRatio is 0.2 to 5 (default 1.5)."
+  },
+  {
+   "path": "/schema/$defs/Chart/properties/format/enum",
+   "source": [
+    "number",
+    "currency",
+    "percent"
+   ],
+   "kit": [
+    "number",
+    "percent"
+   ]
+  },
+  {
+   "path": "/schema/$defs/Chart/properties/currency",
+   "source": {
+    "type": "string"
+   }
+  },
+  {
+   "path": "/schema/$defs/Chart/description",
+   "source": "Rows of data; x is the category key (a number key for scatter), series the value keys (default: every number key). percent values are like 45; currency is a code like \"EUR\".",
+   "kit": "Rows of data; x is the category key (a number key for scatter), series the value keys (default: every number key). format applies to pie and donut only: \"percent\" shows each slice as a share of the total, \"number\" its value. stacked stacks bar and area series. height sets the plot height in px; pie and donut ignore it and size themselves."
+  },
+  {
+   "path": "/schema/$defs/MapMarker/description",
+   "source": "A place on a Map; icon is one emoji, else the pin shows its number.",
+   "kit": "A place on a Map; icon is one emoji, else the pin shows its number. category groups markers under a filter on the map."
+  },
+  {
+   "path": "/schema/$defs/Circle/description",
+   "kit": "fill defaults to the text color; with only a stroke it stays unfilled."
+  },
+  {
+   "path": "/schema/$defs/Ellipse/description",
+   "kit": "fill defaults to the text color; with only a stroke it stays unfilled."
+  },
+  {
+   "path": "/schema/$defs/Rect/description",
+   "kit": "rx rounds the corners; fill defaults to the text color, and with only a stroke it stays unfilled."
+  },
+  {
+   "path": "/schema/$defs/Line/description",
+   "kit": "Stroked in the text color, 2 wide, unless stroke and strokeWidth are set."
+  },
+  {
+   "path": "/schema/$defs/Path/description",
+   "kit": "d is SVG path data only (M, L, C, A, Z...), else nothing draws; unfilled unless fill is set."
+  },
+  {
+   "path": "/schema/$defs/Polygon/description",
+   "kit": "Closed shape; points like \"0,0 10,5 20,0\". fill defaults to the text color; with only a stroke it stays unfilled."
+  },
+  {
+   "path": "/schema/$defs/G/description",
+   "source": "Group; transform like \"rotate(30 50 50)\" or \"translate(10 0)\".",
+   "kit": "Group; transform like \"rotate(30 50 50)\" or \"translate(10 0)\"; one with the wrong number of arguments is dropped."
+  },
+  {
+   "path": "/schema/$defs/SvgText/description",
+   "kit": "A text label at x, y; anchor sets which end sits on x."
+  },
+  {
+   "path": "/schema/functions/FormatDate/description",
+   "source": "A date as text: \"date\" Oct 9, 2026 (default), \"short\" Oct 9, \"long\" Friday, October 9, 2026, \"weekday\" Fri, \"month\" Oct 2026, \"time\" 9:30 PM, \"datetime\", \"iso\" 2026-10-09. Dates are \"YYYY-MM-DD\", ISO or a timestamp",
+   "kit": "A date as text: \"date\" Oct 9, 2026 (default), \"short\" Oct 9, \"long\" Friday, October 9, 2026, \"weekday\" Fri, \"month\" Oct 2026, \"time\" 9:30 PM, \"datetime\", \"iso\" 2026-10-09. Dates are \"YYYY-MM-DD\", ISO or a timestamp; \"time\" and \"datetime\" need a timestamp or an ISO date-time, as a plain date has no time"
+  },
+  {
+   "path": "/schema/functions/Pivot/description",
+   "source": "One row per rowKey value with a column per colKey value holding agg of field, for stacked or grouped charts",
+   "kit": "One row per rowKey value, under key, with a column per colKey value holding agg of field, for stacked or grouped charts"
+  },
+  {
+   "path": "/schema/functions/Between/description",
+   "source": "Rows whose field is from min to max, both included; compares numbers, or text such as \"YYYY-MM-DD\" dates. Leave min or max null for an open end",
+   "kit": "Rows whose field is from min to max, both included; compares numbers, dates by day (\"YYYY-MM-DD\", ISO or a timestamp), or text. Leave min or max null for an open end"
+  },
+  {
+   "path": "/schema/functions/Histogram/description",
+   "source": "Counts numbers into equal-width bins (value is the count); min and max fix the range, default the data's",
+   "kit": "Counts numbers into equal-width bins as {key, value} rows: key is the bin's start, value the count; min and max fix the range, default the data's"
+  },
+  {
+   "path": "/schema/functions/Histogram/returns/items/properties/start",
+   "source": {
+    "type": "number"
+   }
+  },
+  {
+   "path": "/schema/functions/Histogram/returns/items/properties/end",
+   "source": {
+    "type": "number"
+   }
+  },
+  {
+   "path": "/schema/functions/Histogram/returns/items/required",
+   "source": [
+    "key",
+    "value",
+    "start",
+    "end"
+   ],
+   "kit": [
+    "key",
+    "value"
+   ]
+  }
+ ]
+}

@@ -27,8 +27,9 @@ export const Select = defineComponent({
     const rules = useFieldRules(name, props.rules, value);
     return (
       <Field label={props.label} required={rules.required} error={rules.error}>
+        {/* Always a string, so Radix keeps it controlled: "" shows the placeholder. */}
         <RCSelect
-          value={value || undefined}
+          value={value}
           onValueChange={(next: string) => {
             // Radix emits "" only from the hidden native <select> it adds inside
             // a <form>, never from a choice, so "" must not wipe the value.
@@ -47,7 +48,7 @@ export const Select = defineComponent({
           >
             <SelectValue placeholder={props.placeholder ?? "Choose…"} />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className={clsx(fieldStyles.menu, fieldNames.menu)}>
             {optionList(props.options).map((o, i) => (
               <SelectItem key={`${o.value}-${i}`} value={o.value}>
                 {o.label}

@@ -1,5 +1,6 @@
 "use client";
 
+import { useTheme } from "@openuidev/react-components";
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
@@ -24,12 +25,31 @@ const CONFETTI = [
 
 /** Bursts confetti over the page when its condition turns true. */
 export function Celebration({ when, paused }: CelebrationProps) {
+  // The confetti is portaled to body, outside the ThemeProvider's scope, so it carries the
+  // provider's portal class to keep the theme's chart colours.
+  const { portalThemeClassName } = useTheme();
   const [burst, setBurst] = useState(0);
   const was = useRef<boolean | null>(null);
+  // Celebrate what the user just did: only after a click or key press since this mounted. Reopening
+  // a finished chat remounts the answer with its condition false until the saved state is restored;
+  // without this, the restore read as false → true and replayed the burst. The click that reopened
+  // the chat came before this mounted, so it doesn't count.
+  const acted = useRef(false);
+  useEffect(() => {
+    const act = () => {
+      acted.current = true;
+    };
+    document.addEventListener("pointerdown", act, true);
+    document.addEventListener("keydown", act, true);
+    return () => {
+      document.removeEventListener("pointerdown", act, true);
+      document.removeEventListener("keydown", act, true);
+    };
+  }, []);
   useEffect(() => {
     if (paused) return;
     const now = when === true;
-    if (was.current === false && now) setBurst((n) => n + 1);
+    if (was.current === false && now && acted.current) setBurst((n) => n + 1);
     was.current = now;
   }, [when, paused]);
   useEffect(() => {
@@ -39,7 +59,11 @@ export function Celebration({ when, paused }: CelebrationProps) {
   }, [burst]);
   if (!burst || typeof document === "undefined") return null;
   return createPortal(
-    <div className={clsx(celebrationStyles.root, names.root)} aria-hidden key={burst}>
+    <div
+      className={clsx(celebrationStyles.root, names.root, portalThemeClassName)}
+      aria-hidden
+      key={burst}
+    >
       {Array.from({ length: 70 }, (_, i) => (
         <i
           key={i}
