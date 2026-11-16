@@ -16,13 +16,15 @@ import { demoTools } from "./mock-tools";
  * - `program`: an id from harness/programs.ts;
  * - `theme`: `light` or `dark`;
  * - `provider`: `0` leaves out ThemeProvider, so the page has no theme of its own;
- * - `custom`: `1` gives ThemeProvider an app's own success colour and first chart colour;
+ * - `custom`: `1` gives ThemeProvider an app's own success colour and first chart colour as both
+ *   lightTheme and darkTheme; `light` passes them as lightTheme only; `split` passes a different
+ *   success colour for each mode;
  * - `components`: `dark` wraps the page in a dark react-components ThemeProvider, which the library
  *   ignores;
  * - `restore`: `1` passes `initialState` with `$won: true`, as an app does when it reopens a saved
  *   chat; the Renderer applies it after the first render;
  * - `nest`: `1` puts a second library ThemeProvider with no mode inside the first, which takes the
- *   first one's mode;
+ *   first one's mode; `flip` gives the second one the other mode;
  * - `stream`: `1` starts with no response and lets the test feed one in through
  *   `window.__iuStream`, as a chat streams the model's answer.
  */
@@ -31,9 +33,9 @@ const id = params.get("program") ?? "";
 const mode = params.get("theme") === "dark" ? "dark" : "light";
 const provider = params.get("provider") !== "0";
 const stream = params.get("stream") === "1";
-const custom = params.get("custom") === "1";
+const custom = params.get("custom");
 const components = params.get("components") === "dark";
-const nest = params.get("nest") === "1";
+const nest = params.get("nest");
 const restore = params.get("restore") === "1";
 const program = programs.find((entry) => entry.id === id);
 
@@ -51,11 +53,29 @@ window.__iu = state;
 /** An app's own success colour and first chart colour, which a response has to keep. */
 const customSuccess = { textSuccessPrimary: "rgb(1, 2, 3)", intelligentChart1: "rgb(4, 5, 6)" };
 
+/** For `custom=split`: a success colour for each mode. */
+const splitLight = { textSuccessPrimary: "rgb(1, 2, 3)" };
+const splitDark = { textSuccessPrimary: "rgb(7, 8, 9)" };
+
+function themes() {
+  if (custom === "1") return { lightTheme: customSuccess, darkTheme: customSuccess };
+  if (custom === "light") return { lightTheme: customSuccess };
+  if (custom === "split") return { lightTheme: splitLight, darkTheme: splitDark };
+  return {};
+}
+
 function Themed({ children }: { children: ReactNode }) {
-  const theme = custom ? customSuccess : undefined;
-  const inner = nest ? <ThemeProvider>{children}</ThemeProvider> : children;
+  const other = mode === "dark" ? "light" : "dark";
+  const inner =
+    nest === "1" ? (
+      <ThemeProvider>{children}</ThemeProvider>
+    ) : nest === "flip" ? (
+      <ThemeProvider mode={other}>{children}</ThemeProvider>
+    ) : (
+      children
+    );
   const page = provider ? (
-    <ThemeProvider mode={mode} lightTheme={theme} darkTheme={theme}>
+    <ThemeProvider mode={mode} {...themes()}>
       {inner}
     </ThemeProvider>
   ) : (

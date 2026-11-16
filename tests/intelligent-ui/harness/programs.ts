@@ -66,6 +66,10 @@ const themeRoots: Program[] = [
     code: `root = Col([Chart("bar", [{m: "Jan", a: 3, b: 2, c: 4, d: 1}, {m: "Feb", a: 4, b: 3, c: 2, d: 5}], "m", ["a", "b", "c", "d"])])`,
   },
   {
+    id: "theme-portals",
+    code: `root = Col([Popover("the details", [Text("Inside the panel")]), Select($size, [{label: "Small"}, {label: "Large"}], "Size")])\n$size = ""`,
+  },
+  {
     id: "theme-confetti",
     code: `root = Col([Button("Win", @Set($won, true)), Celebration($won)])\n$won = false`,
   },

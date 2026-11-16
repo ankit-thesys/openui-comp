@@ -161,6 +161,82 @@ test.describe("theme", () => {
     );
   });
 
+  // Only a Col, the library's root, wraps itself; a Card, Row or Box root with no provider doesn't.
+  test("with no provider, only a Col root wraps itself in a theme", async ({ page }) => {
+    test.skip(host().provider, "a page with no library provider");
+    const scopes = () =>
+      page.evaluate(() => document.querySelectorAll("[data-openui-intelligent-mode]").length);
+    await render(page, host(), "theme-root-col");
+    expect(await scopes()).toBe(1);
+    await render(page, host(), "theme-root-card");
+    expect(await scopes()).toBe(0);
+  });
+
+  // An app may have a react-components ThemeProvider and the library's: the library's wins.
+  test("the library's provider wins inside a react-components ThemeProvider", async ({ page }) => {
+    test.skip(!host().provider, "a page with the library's provider");
+    const rendered = await render(page, host(), "theme-root-col", { components: "dark" });
+    expect(await failures(rendered)).toEqual([]);
+    expect(await badgeColours(page)).toEqual(palette[host().theme]);
+  });
+
+  test("a nested ThemeProvider with a mode of its own uses it", async ({ page }) => {
+    test.skip(!host().provider, "only a page with ThemeProvider has a parent");
+    const rendered = await render(page, host(), "theme-root-card", { nest: "flip" });
+    expect(await failures(rendered)).toEqual([]);
+    expect(await badgeColours(page)).toEqual(palette[host().theme === "dark" ? "light" : "dark"]);
+  });
+
+  test("lightTheme alone applies in both modes", async ({ page }) => {
+    test.skip(!host().provider, "only a page with ThemeProvider takes overrides");
+    await render(page, host(), "theme-root-col", { custom: "light" });
+    expect((await badgeColours(page)).Good).toMatch(/^rgb\(1, 2, 3\) on /);
+  });
+
+  test("darkTheme replaces lightTheme in dark mode", async ({ page }) => {
+    test.skip(!host().provider, "only a page with ThemeProvider takes overrides");
+    await render(page, host(), "theme-root-col", { custom: "split" });
+    const expected = host().theme === "dark" ? "rgb(7, 8, 9)" : "rgb(1, 2, 3)";
+    expect((await badgeColours(page)).Good.startsWith(`${expected} on `)).toBe(true);
+  });
+
+  // A Popover panel and a Select menu render outside the response, so they carry its theme on
+  // the provider's portal class: the same mode, the same colours and the library's variables.
+  test("menus and popovers that open outside the response keep its theme", async ({ page }) => {
+    test.skip(!host().provider, "only a page with ThemeProvider has a mode to carry");
+    const rendered = await render(page, host(), "theme-portals");
+    expect(await failures(rendered)).toEqual([]);
+    const themeOf = (text: string) =>
+      page.evaluate((label) => {
+        const scope = document.querySelector<HTMLElement>("[data-openui-intelligent-mode]")!;
+        const node = [...document.body.querySelectorAll<HTMLElement>("*")].find(
+          (el) => el.children.length === 0 && el.textContent?.trim() === label,
+        )!;
+        const read = (el: Element) => {
+          const style = getComputedStyle(el);
+          return {
+            scheme: style.colorScheme,
+            text: style.getPropertyValue("--openui-text-neutral-primary").trim(),
+            radius: style.getPropertyValue("--openui-intelligent-radius-lg").trim(),
+          };
+        };
+        return { outside: !scope.contains(node), node: read(node), scope: read(scope) };
+      }, text);
+
+    await page.getByRole("button", { name: "the details" }).click();
+    const panel = await themeOf("Inside the panel");
+    expect(panel.outside).toBe(true);
+    expect(panel.node).toEqual(panel.scope);
+    expect(panel.node.scheme).toBe(host().theme);
+    await page.keyboard.press("Escape");
+
+    await page.getByRole("combobox").click();
+    const menu = await themeOf("Large");
+    expect(menu.outside).toBe(true);
+    expect(menu.node).toEqual(menu.scope);
+    expect(menu.node.scheme).toBe(host().theme);
+  });
+
   // A nested library ThemeProvider with no mode takes its parent's.
   test("a nested ThemeProvider takes its parent's mode", async ({ page }) => {
     test.skip(!host().provider, "only a page with ThemeProvider has a parent to follow");
