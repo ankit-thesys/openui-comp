@@ -122,6 +122,26 @@ test.describe("theme", () => {
     expect(colours).toContain("rgb(0, 166, 125)");
   });
 
+  // Text sets no colour of its own. It takes the library's theme, not the page's: a page whose
+  // text is red (say, white in an app's dark mode) doesn't reach a response.
+  test("text takes the library's colour, not the page's", async ({ page }) => {
+    await render(page, host(), "theme-root-col");
+    await page.addStyleTag({ content: "body { color: rgb(255, 0, 0); }" });
+    const colours = await page.evaluate(() => {
+      const text = [...document.querySelectorAll("#host *")].find(
+        (el) => el.children.length === 0 && el.textContent === "Body",
+      ) as HTMLElement;
+      const probe = document.createElement("span");
+      probe.style.color = "var(--openui-text-neutral-primary)";
+      text.parentElement!.appendChild(probe);
+      const expected = getComputedStyle(probe).color;
+      probe.remove();
+      return { text: getComputedStyle(text).color, expected };
+    });
+    expect(colours.text).not.toBe("rgb(255, 0, 0)");
+    expect(colours.text).toBe(colours.expected);
+  });
+
   // A nested library ThemeProvider with no mode takes its parent's.
   test("a nested ThemeProvider takes its parent's mode", async ({ page }) => {
     test.skip(!host().provider, "only a page with ThemeProvider has a parent to follow");
