@@ -1,6 +1,6 @@
 # Spec: flat styles pilot for `@openuidev/react-components`
 
-Status: draft, not started. Source of every decision: [ADR 0001](../adr/0001-flat-styles.md) (Q-numbers below refer to it).
+Status: ready for implementation (sharpened 2026-10-28; open points resolved), not started. Source of every decision: [ADR 0001](../adr/0001-flat-styles.md) (Q-numbers below refer to it).
 Base: fork branch `codex/react-components-chart-selectors` (#72, head `5e09b37c`). Delivered as one new draft PR stacked on #72.
 
 ## 1. Problem
@@ -42,9 +42,13 @@ Out (later PRs):
 | Root             | `openui-<component>`             | `openui-button`                                               |
 | Part             | `openui-<component>-<part>`      | `openui-button-icon`, `openui-tabs-trigger`                   |
 | Modifier         | `openui-<block>--<axis>-<value>` | `openui-button--variant-primary`, `openui-button--size-small` |
-| Boolean modifier | `openui-<block>--<flag>`         | `openui-tabs-list--with-icon`                                 |
+| Boolean modifier | `openui-<block>--<flag>`         | `openui-tabs-list--scrollable`                                |
 
 - `<component>` is the kebab-case of the exported React name; sub-components and portal content are family parts.
+- A modifier's axis is the kebab-case prop name and its value the kebab-case prop value (`TabsList variant="iconTitle"` → `openui-tabs-list--variant-icon-title`). Axis names are never invented; a prop that reads badly as an axis is renamed instead.
+- Every axis emits its current value, defaults included (`<Button>` carries `openui-button--variant-primary openui-button--size-medium`).
+- A boolean prop emits `--<kebab(prop)>` only when `true`.
+- Terms follow [the package glossary](../../GLOSSARY.md).
 - Regex the test enforces: `^openui(-[a-z0-9]+)+(--[a-z0-9]+(-[a-z0-9]+)*)?$`, and the block before `--` must itself be a documented root or part name.
 
 ### 4.2 States (Q18)
@@ -55,19 +59,26 @@ Runtime state uses existing attributes; no state classes. Consumers write e.g. `
 
 - Default mode: library rules are unlayered and weigh (0,1,0) (base) or (0,2,0) (one state). `#_goober` is first in `<head>`, so any consumer rule of equal or greater weight wins.
 - Layer mode (`<ThemeProvider cssLayer="openui">`): rules sit in `@layer openui`; any unlayered consumer CSS wins regardless of weight or order.
-- Exceptions: listed `!important` declarations; components on the allowlist (§8).
+- Exceptions: listed `!important` declarations; the Tabs indicator's inline `width` and `transform`, set by JavaScript (its colour and height stay overridable through `openui-tabs-indicator`); components on the allowlist (§8).
+- Markdown prose (generated `p`, headings, lists, blockquotes, `hr`, `strong`) is styled at zero weight, so any consumer rule wins, e.g. `.openui-markdown-renderer p { … }`. Elements the renderer replaces (code, link, code block, table) and the root carry stable classes.
 
 ### 4.4 Tailwind (Q10, Q22a)
 
 - Tailwind 3.4 / 4.x resets do not affect pilot components (verified).
 - Known conflict: Tailwind ≤3.3 preflight `[type='button'] { background-color: transparent }` clears button backgrounds.
 - Default mode + Tailwind 4: utilities on our elements need `!` (e.g. `!bg-red-500`) or the stable class.
-- Layer mode + Tailwind 4 recipe, utilities win normally:
+- Layer mode + Tailwind 4: utilities win normally when the consumer puts these two tags first in `<head>` (or first in their server-rendered head):
 
-  ```css
-  @layer theme, base, openui, components, utilities;
-  @import "tailwindcss";
+  ```html
+  <style>
+    @layer theme, base, openui, components, utilities;
+  </style>
+  <style id="_goober"></style>
   ```
+
+  The library tag must contain one space: Goober 2.1.19 writes into the tag's first text node, and an empty tag crashes the first style registration (found while implementing #78).
+
+  Layer priority follows where a layer first appears in the document. Writing the statement in the app's CSS file is not enough: `#_goober` sits above it, so `openui` would be declared first and lose to Tailwind's `base` (verified in Chromium against Tailwind 4.1). The library reuses the consumer's `#_goober` (Q23) and emits no layer statement of its own (Goober cannot emit one).
 
 ### 4.5 Private surface (Q14, Q24, Q34)
 
@@ -80,21 +91,25 @@ Every rule a pilot style factory emits must be one of:
 1. `.goX` (0,1,0).
 2. `.goX` + exactly one of: pseudo-class (`:hover`, `:focus-visible`, `:active`, `:disabled`, `:first-child`, `:last-child`, `:checked`, `:placeholder-shown`, `:focus-within`), attribute selector (`[data-state=…]`, `[aria-…]`, `[data-orientation=…]`, `[data-highlighted]`), or pseudo-element (`::before`, `::after`, `::placeholder`) — weight at most (0,2,0) (pseudo-elements add (0,0,1)).
 3. `.goX + .goX` (sibling spacing).
-4. Zero-weight foreign-content rule: `:where(.goX) <type selectors or combinators>` — only for content we do not render.
+4. Zero-weight rule: `:where(.goX) <type selectors, combinators, structural pseudo-classes>` — only for foreign content and markdown prose.
 5. Any of the above inside `@media`, `@container` or `@keyframes` (keyframe bodies exempt).
 
 Patterns and how to convert them:
 
-| Current shape                                        | Pilot shape                                                                                                                                                            |
-| ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `&.openui-button-base-primary { … }`                 | separate `variants.primary` factory entry, applied with `names.variant.primary`                                                                                        |
-| `.root .part { … }`                                  | `parts.part` entry on the part element                                                                                                                                 |
-| `.root.variant .part { color }`                      | root variant sets `--_openui-<c>-<part>-color`; part reads `color: var(--_openui-<c>-<part>-color, <default>)`                                                         |
-| `.root.variant .part { display/layout }`             | part modifier class `openui-<c>-<part>--<axis>-<value>` set in TSX                                                                                                     |
-| `&:hover:not(:disabled)`                             | `&:hover {…}` then `&:disabled {…}` in the same entry; disabled restates the resting values it must win on                                                             |
-| `& svg { … }` on consumer icons                      | wrap icon slot in our own `<span class="openui-button-icon">`; `svg` gets `width:1em;height:1em` via `:where(.goX) svg` only if the slot cannot do it with `font-size` |
-| markdown `p`, `h1`–`h6`, `li`, `a`, `code`, `table`… | `react-markdown` `components` map renders each with its own part class (`openui-markdown-renderer-paragraph`, …)                                                       |
-| `.katex …`, consumer children                        | `:where(.goX) …` zero-weight                                                                                                                                           |
+| Current shape                                                                                                                                                           | Pilot shape                                                                                                                                                                                      |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `&.openui-button-base-primary { … }`                                                                                                                                    | separate `variants.primary` factory entry, applied with `names.variant.primary`                                                                                                                  |
+| `.root .part { … }`                                                                                                                                                     | `parts.part` entry on the part element                                                                                                                                                           |
+| `.root.variant .part { color }`                                                                                                                                         | root variant sets `--_openui-<c>-<part>-color`; part reads `color: var(--_openui-<c>-<part>-color, <default>)`                                                                                   |
+| `.root.variant .part { display/layout }`                                                                                                                                | part modifier class `openui-<c>-<part>--<axis>-<value>` set in TSX                                                                                                                               |
+| `&:hover:not(:disabled)`                                                                                                                                                | `&:hover {…}` then `&:disabled {…}` in the same entry; disabled restates the resting values it must win on                                                                                       |
+| `& svg { … }` on consumer icons                                                                                                                                         | wrap icon slot in our own `<span class="openui-button-icon">`; `svg` gets `width:1em;height:1em` via `:where(.goX) svg` only if the slot cannot do it with `font-size`                           |
+| markdown prose: `p`, `h1`–`h6`, `ul`/`ol`/`li`, `blockquote`, `hr`, `strong`, and structural rules such as `p:has(+ p)`, `hr + *`, `blockquote > *:first-child::before` | zero-weight prose rules `:where(.goX) p`, `:where(.goX) blockquote > :first-child::before`, … (Tailwind Typography's approach); structure kept as written                                        |
+| markdown elements the renderer replaces: `code`, `a`, code block, tables                                                                                                | stable part classes, as today (`openui-markdown-renderer-code`, `-link`, …)                                                                                                                      |
+| consumer children, third-party output (syntax highlighter tokens)                                                                                                       | `:where(.goX) …` zero-weight                                                                                                                                                                     |
+| list variant → trigger parts (`--icon-title .openui-tabs-trigger-icon { width: 24px }`, `align-items`, radius)                                                          | TabsList modifier sets `--_openui-tabs-trigger-*` variables; trigger parts read them. No React context, no trigger modifiers                                                                     |
+| size → part, shape × size (IconButton)                                                                                                                                  | size modifier sets `--_openui-icon-button-icon-size` / `--_openui-icon-button-radius`; icon part and square shape read them. `3-extra-small` sets `radius-s` explicitly (today's fallback value) |
+| Tabs `clear` root variant → parts                                                                                                                                       | folded into each part's base styles (`clear` is the only and always-applied variant); `openui-tabs--variant-clear` still emitted                                                                 |
 
 ## 6. Design
 
@@ -113,7 +128,7 @@ export const names = {
     tertiary: "openui-button--variant-tertiary",
   },
   size: { "extra-small": "openui-button--size-extra-small" /* … */ },
-  tone: { destructive: "openui-button--tone-destructive" },
+  tone: { default: "openui-button--tone-default", destructive: "openui-button--tone-destructive" },
 } as const;
 
 export const buttonStyles = (css: StyleCss) => ({
@@ -178,22 +193,22 @@ export function useStyles<T>(factory: (css: StyleCss) => T): T {
 
 ### 6.4 `#_goober` prepend (Q3, Q23)
 
-In `src/index.ts` (already in `sideEffects`), before any style registration:
+In `src/styles/defaults.ts`, right after it prepends the `<style data-openui-layer-order>` tag and before its own `css` call. It cannot live in `src/index.ts`: `index.ts` imports `defaults.ts` first, and that module's `css` call would already have created `#_goober` at the end of `<head>` before any `index.ts` code runs.
 
 ```ts
-if (typeof document !== "undefined" && !document.getElementById("_goober")) {
+if (!document.getElementById("_goober")) {
   const sheet = document.createElement("style");
   sheet.id = "_goober";
-  document.head.prepend(sheet);
+  order.after(sheet); // `order` is the layer-order tag defaults.ts just prepended
 }
 ```
 
-- Never moves an existing `#_goober`.
-- Must stay after the existing `defaults.ts` layer-order tag so `@layer openui-defaults;` is still the first layer declaration. Verify ordering in the browser test.
+- Never moves an existing `#_goober` (Q23).
+- `@layer openui-defaults;` stays the first layer declaration; `#_goober` comes before all app CSS. Verify both in the browser test.
 
 ### 6.5 SSR (Q32a, Q32c)
 
-- Copy `src/utils/componentStyles.ts`, its export, the `test` script and `test/componentStyles.test.mjs` from #73 (`dbc88701`). #73 itself is untouched.
+- Copy `src/utils/componentStyles.ts`, its export and `test/componentStyles.test.ts` (ported from #73's `node --test` file to vitest) from #73 (`dbc88701`). #73 itself is untouched.
 - Update the test and README for render-time registration: render first, then `getComponentStyles()`, then `<style id="_goober">` first in `<head>`.
 - Streaming stays uncertified; README states FOUC (no crash) and points to the upcoming streaming PR.
 
@@ -201,37 +216,41 @@ if (typeof document !== "undefined" && !document.getElementById("_goober")) {
 
 Pilot renames (final names decided while converting; the table in the README is generated from `names`):
 
-| Old                                                                                                       | New                                                              |
-| --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `openui-button-root`                                                                                      | `openui-button`                                                  |
-| `openui-button-base-{primary,secondary,tertiary}`                                                         | `openui-button--variant-{…}`                                     |
-| `openui-button-base-destructive-{…}`                                                                      | `openui-button--variant-{…}` + `openui-button--tone-destructive` |
-| `openui-button-base-{extra-small,small,medium,large}`                                                     | `openui-button--size-{…}`                                        |
-| `openui-tabs-tabs`, `openui-tabs-trigger-styled`, `openui-tabs-list-styled`, `openui-tabs-content-styled` | removed (were Goober-class carriers)                             |
-| `openui-tabs-list--title` etc.                                                                            | `openui-tabs-list--layout-title`, `--layout-icon-title`, …       |
-| `openui-markdown-renderer-card`, `-card-sunk`                                                             | `openui-markdown-renderer--variant-card`, `--variant-sunk`       |
+| Old                                                                                                       | New                                                                                                                   |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `openui-button-root`                                                                                      | `openui-button`                                                                                                       |
+| `openui-button-base-{primary,secondary,tertiary}`                                                         | `openui-button--variant-{…}`                                                                                          |
+| `buttonType="destructive"` prop and `openui-button-base-destructive-{…}`                                  | `tone="destructive"`; `openui-button--variant-{…}` + `openui-button--tone-destructive`                                |
+| `openui-button-base-{extra-small,small,medium,large}`                                                     | `openui-button--size-{…}`                                                                                             |
+| `openui-tabs-tabs`, `openui-tabs-trigger-styled`, `openui-tabs-list-styled`, `openui-tabs-content-styled` | removed (were Goober-class carriers)                                                                                  |
+| `openui-tabs-list--title` etc.                                                                            | `openui-tabs-list--variant-title`, `--variant-icon-title`, …                                                          |
+| `openui-markdown-renderer-card`, `-card-sunk`; `variant` had no default                                   | `openui-markdown-renderer--variant-card`, `--variant-sunk`; `variant` defaults to `clear` (`--variant-clear`)         |
+| IconButton `appearance="destructive"` prop                                                                | `tone="destructive"`; `openui-icon-button--tone-destructive`                                                          |
+| `openui-tabs-container`, `openui-tabs-list-container` (wrapper around the tablist)                        | `openui-tabs-list-container` (part; the tablist is the TabsList root because it receives `className`, `style`, `ref`) |
 
-Internal files that reference pilot classes or components and must be updated in the same PR: `Buttons/Buttons.tsx`, `Buttons/buttons.styles.ts`, `CodeBlock/CodeBlock.tsx`, `SectionBlock/FoldableSection.tsx`, `EditableTable/EditableTable.tsx`, `Carousel/Carousel.tsx`, `InlineMarkdownRenderer/*`, `Table/ScrollableTable.tsx`, `Sources/ListedSources.tsx`, `ImageGallery/*`, `TextContentWrapper/TextContentWrapper.tsx`, `CardHeader/CardHeader.tsx`. Changes there are limited to class-name references; their own styles stay as they are (allowlisted).
+Dead rules removed (listed in the PR as intentional changes): the Tabs scroll buttons' `left/right: 2px` (the button is statically positioned), and `.openui-code-block-syntax-highlighter:first-child { margin-top: 0 !important }` (the copy button always precedes the highlighter). The other four `!important` declarations stay (Q12).
+
+Class references outside the pilot folders: only `InlineMarkdownRenderer/inlineMarkdown.styles.ts:9` and `:18` (`.openui-markdown-renderer`). Other components only import the pilot components; they change only where they pass a renamed prop (`buttonType`/`appearance` → `tone`). Their own styles stay as they are (allowlisted).
 
 The chat kit (#54) is checked for references to renamed classes and rebuilt; it is not modified in this PR.
 
 ### 6.7 `"use client"` (Q31)
 
 - Add the directive to every module under `src/components/**` that exports a component, plus `useStyles.ts`.
-- tsdown/rolldown may drop module directives in `unbundle` mode; the test asserts the first statement of each built component module in `dist/**/*.mjs` and `*.cjs` is `"use client"`. If the bundler strips it, fix through tsdown's documented options only; no custom post-processing script without raising it first.
+- Verified with tsdown 0.21.10 and the existing config: the directive survives into both `dist/**/*.mjs` and `*.cjs` (Modal and two ThemeProvider hooks already ship it). The test asserts it stays the first statement of every built component module.
 
 ## 7. Tests (Q16, Q25, Q32a)
 
-All under `packages/react-components/test/`, run by `pnpm --filter @openuidev/react-components test` after build. No new dependencies; Playwright is already a workspace dev dependency — confirm before use, otherwise raise it.
+All under `packages/react-components/test/`, at three seams: the public package in Chromium (main seam), the public package server-rendered in Node, and the built `dist` files. Tests use only public exports. Unit tests use vitest, like the sibling packages, and run with `pnpm --filter @openuidev/react-components test` after build. The package gets a sibling-style `ci` script (`typecheck && test && lint:check && format:check`), so the existing `build-js.yml` step (`pnpm --filter "./packages/**" run ci`) covers it; it has none today. Browser tests run in one separate `build-js.yml` job that installs Chromium and runs `test:browser`, keeping the shared `ci` step fast. Browser tests use `@playwright/test` (new devDependency of this package, pinned to the 1.56 line used in the lab) with a package `playwright.config.ts`; the CI workflow installs Chromium and runs `test:browser`. No other new dependencies.
 
-| Test                       | Checks                                                                                                                                                                                                                                                           |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `selectors.test.mjs`       | Imports every style factory from `dist`, runs it with plain `css` and with the layered `css`, extracts CSS, parses each selector with a small hand-written tokenizer and fails on anything outside §5. Allowlisted modules are skipped and listed in the output. |
-| `names.test.mjs`           | Every `names` value matches §4.1; no duplicates across modules; every name appears in the generated selector reference; no public token in `defaults.ts` starts with `--_`.                                                                                      |
-| `directives.test.mjs`      | `"use client"` is the first statement of every built component module.                                                                                                                                                                                           |
-| `componentStyles.test.mjs` | From #73, updated: render, then collect; output is stable across calls; every `go*` class in markup is in the sheet.                                                                                                                                             |
-| `overrides.spec` (browser) | For each pilot component and part: consumer CSS before the library, after the library, in layer mode, Tailwind 4 with and without the recipe; `[data-state]` overrides on Tabs; markdown parts; `<html class>` rewrite leaves styles intact.                     |
-| `ssr-nojs.spec` (browser)  | Server HTML + collected CSS, JS disabled: pilot components styled; consumer override in a later `<link>` wins.                                                                                                                                                   |
+| Test                       | Checks                                                                                                                                                                                                                                                                                                                                                                          |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `selectors.test.ts`        | Server-renders each pilot component across every prop combination, with and without `<ThemeProvider cssLayer>`, collects the sheet with the public `getComponentStyles()`, and fails on any selector outside §5 (small hand-written selector check). Never imports style factories or `useStyles`, so those stay internal (Q34). Allowlisted modules are reported, not checked. |
+| `names.test.ts`            | Every `names` value matches §4.1; no duplicates across modules; every name appears in the generated selector reference; no public token in `defaults.ts` starts with `--_`.                                                                                                                                                                                                     |
+| `directives.test.ts`       | `"use client"` is the first statement of every built component module.                                                                                                                                                                                                                                                                                                          |
+| `componentStyles.test.ts`  | From #73, updated: render, then collect; output is stable across calls; every `go*` class in markup is in the sheet.                                                                                                                                                                                                                                                            |
+| `overrides.spec` (browser) | For each pilot component and part: consumer CSS before the library, after the library, in layer mode, Tailwind 4 with and without the two-tag recipe (and the failing "statement in app CSS" placement as a documented negative case); `[data-state]` overrides on Tabs; markdown prose and parts; `<html class>` rewrite leaves styles intact.                                 |
+| `ssr-nojs.spec` (browser)  | Server HTML + collected CSS, JS disabled: pilot components styled; consumer override in a later `<link>` wins.                                                                                                                                                                                                                                                                  |
 
 Allowlist: `test/flat-allowlist.json`, an array of source paths not yet migrated. The test fails if a listed file is already compliant (forces removal) or if an unlisted file is non-compliant. Release gate: empty list (Q25).
 
@@ -242,7 +261,7 @@ Every test file starts with a comment block explaining what it guards, how to ru
 `packages/react-components/README.md`:
 
 - Replace "Stable selectors" … "Selector conversion status" (current lines ~92–288) with a short "Styling and overrides" section: grammar, states, override guarantee, load order and `#_goober`, Tailwind notes and recipe, `cssLayer`, known conflicts, `!important` exceptions, components still on the allowlist ("always unlayered, old names").
-- Link to `docs/selectors.md` (generated from `names` by a script under `scripts/`, checked by `names.test.mjs`; the script is documented at its top and in `test/README.md`).
+- Link to `docs/reference/selectors.md` (generated from `names` by a script under `scripts/`, checked by `names.test.ts`; the script is documented at its top and in `test/README.md`).
 - Update "Server-rendered styles" for render-then-collect and the streaming caveat.
 - Add the pilot rows of the react-ui migration table.
 
@@ -255,22 +274,21 @@ Every test file starts with a comment block explaining what it guards, how to ru
 - [ ] No pilot module calls `document.documentElement.classList.add` or registers CSS at import.
 - [ ] Rewriting `<html class>` leaves pilot components styled.
 - [ ] JS-off SSR render of pilot components is styled.
-- [ ] Visual parity: pilot components render identically to #72 in light and dark (screenshot diff in the existing browser harness), except intentional changes listed in the PR.
+- [ ] Visual parity (gate): a computed-style snapshot of every block, for every prop combination and state in light and dark, matches #72 except intentional changes listed in the PR. Screenshots of the same fixtures are attached to the PR for review only.
+- [ ] Every existing bench passes against the pilot: the browser harness (hydration, Radix/portal interactions, theme switching, react-ui parity), the nested-vs-flat override bench, the Tailwind 3.3/3.4/4.1 reset matrix, the SSR no-JS check and the #41 stable-selector suites (updated for renamed pilot classes only).
 - [ ] README and generated reference match `names`.
 - [ ] #42, #67–#72 and #73 heads unchanged.
 
 ## 10. Risks and open points
 
-| Risk / question                                                                                                          | Plan                                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `destructive × variant` is a compound today (`.base-destructive-primary`).                                               | Model `buttonType` as a `tone` axis that only sets private variables the variant entries read; verify all six combinations visually. |
-| Disabled must beat hover without `:not()`.                                                                               | Order `&:disabled` after `&:hover` in the same entry and restate overridden values; test hover on a disabled button.                 |
-| Some Tabs part rules may depend on Radix-generated DOM we do not class.                                                  | Prefer Radix `data-*` attributes on the element itself; fall back to a part modifier class.                                          |
-| Markdown via `react-markdown` component map changes DOM props for consumers using `MarkDownRenderer` children overrides. | Merge our `className` with any incoming one; test custom component overrides still work.                                             |
-| `"use client"` stripped by tsdown in unbundle mode.                                                                      | Check first; if stripped, use tsdown's documented banner/directive handling; otherwise raise before adding a script.                 |
-| `#_goober` prepend vs `defaults.ts` layer-order tag ordering.                                                            | Browser test asserts `@layer openui-defaults;` is first and `#_goober` precedes app CSS.                                             |
-| Render-time registration inserts CSS during render (React 19 concurrent rendering).                                      | Same model as Goober `styled`; verify no hydration warnings in the existing hydration suite.                                         |
-| Playwright availability in the package.                                                                                  | Confirm workspace dev dependency; if absent, run browser tests from the existing scratch harness and raise adding it.                |
+| Risk / question                                                                                                                              | Plan                                                                                                                                                                                                                                        |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `destructive × variant` is a compound today (`.base-destructive-primary`); the prop is renamed `buttonType` → `tone` (`normal` → `default`). | `tone` only sets private variables the variant entries read; verify all six combinations with the computed-style gate.                                                                                                                      |
+| Disabled must beat hover without `:not()`.                                                                                                   | Order `&:disabled` after `&:hover` in the same entry and restate overridden values; test hover on a disabled button.                                                                                                                        |
+| Tabs state on parts.                                                                                                                         | Radix sets `data-state` on trigger and content, `data-orientation` on root/list/trigger/content, `data-disabled` on disabled triggers; no current rule styles a trigger part from trigger state, so state rules stay on the trigger itself. |
+| Prose rules are zero weight, so a consumer's broad rule (`.app p { margin: 0 }`) now also reaches markdown paragraphs.                       | Intended (Tailwind Typography behaves the same); called out in the README.                                                                                                                                                                  |
+| `#_goober` placement.                                                                                                                        | Inserted by `defaults.ts` right after its layer-order tag (§6.4); browser test asserts `@layer openui-defaults;` is first, `#_goober` precedes app CSS, and the layer-mode recipe works.                                                    |
+| Render-time registration inserts CSS during render (React 19 concurrent rendering).                                                          | Same model as Goober `styled`; verify no hydration warnings in the existing hydration suite.                                                                                                                                                |
 
 ## 11. Delivery
 
