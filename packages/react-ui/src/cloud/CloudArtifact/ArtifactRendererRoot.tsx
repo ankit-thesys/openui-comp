@@ -40,16 +40,23 @@ import {
   Content,
   Error as ErrorSlot,
   Loading,
+  Pending,
   Preview,
   PreviewDescription,
   PreviewLoader,
   PreviewTitle,
   RegionProvider,
 } from "./slots";
+import { useQueryResultCache } from "./useQueryResultCache";
 
 /** Props every artifact renderer takes. */
 export interface ArtifactRendererBaseProps {
-  /** The tool's result, unchanged. The renderer reads the artifact from it. */
+  /**
+   * The tool's result, unchanged. The renderer reads the artifact from it.
+   *
+   * Without `response`, `id` or `content`, the renderer is pending: the tool call that makes the
+   * artifact is still running, and the `Pending` slot shows. Unmount it if the call ends without a result.
+   */
   response?: string | null;
   /** Instead of `response`, the artifact's id. */
   id?: string;
@@ -146,6 +153,9 @@ export function ArtifactRendererRoot({
   const reference = useMemo(() => parseArtifactReference(response), [response]);
   const id = idProp ?? reference?.id ?? null;
   const ownStorage = content !== undefined;
+  // No artifact yet: the tool call that makes it hasn't returned. A response
+  // without a reference (even "") is a result, so it's an error instead.
+  const isPending = !idProp && response == null && !ownStorage;
   const stream = useArtifactStream({ id, version: reference?.version, content });
 
   // A delete from `useArtifactList` reaches every renderer showing the artifact.
@@ -220,7 +230,13 @@ export function ArtifactRendererRoot({
   // ── Errors and retry ──
   // The artifact's own error is the stream's, as is, so it keeps its identity
   // across renders. It wins over a failed data tool.
-  const artifactError = !id && !ownStorage ? NO_ID_ERROR : isDeleted ? DELETED_ERROR : stream.error;
+  const artifactError = isPending
+    ? null
+    : !id && !ownStorage
+      ? NO_ID_ERROR
+      : isDeleted
+        ? DELETED_ERROR
+        : stream.error;
   const [failedTool, failedMessage] = Object.entries(toolErrors)[0] ?? [];
   const error = useMemo<ArtifactError | OpenUIError | null>(
     () =>
@@ -276,6 +292,10 @@ export function ArtifactRendererRoot({
   const open = useCallback(() => setOpen(true), [setOpen]);
   const close = useCallback(() => setOpen(false), [setOpen]);
 
+  // A reopened dashboard shows its last results while its queries run.
+  const showsContent = !preview || (isOpen && renderInHtmlElement !== null);
+  const queryResultCache = useQueryResultCache({ toolProvider, storage, requestRef, showsContent });
+
   // ── State for useArtifactRenderer() ──
   const isStreaming = stream.isStreaming;
   const isFetching = inFlight > 0;
@@ -285,9 +305,10 @@ export function ArtifactRendererRoot({
     () => ({
       id,
       title,
+      isPending,
       isStreaming,
       isFetching,
-      isLoading: isStreaming || isFetching,
+      isLoading: isPending || isStreaming || isFetching,
       error,
       retry,
       isOpen,
@@ -295,7 +316,7 @@ export function ArtifactRendererRoot({
       close,
       preview,
     }),
-    [id, title, isStreaming, isFetching, error, retry, isOpen, open, close, preview],
+    [id, title, isPending, isStreaming, isFetching, error, retry, isOpen, open, close, preview],
   );
 
   const program = isDeleted ? null : stream.program;
@@ -306,7 +327,8 @@ export function ArtifactRendererRoot({
         renderContent({
           program,
           isStreaming,
-          toolProvider: interpreter ? toolProvider : undefined,
+          toolProvider:
+            interpreter && !queryResultCache.refreshing ? queryResultCache.toolProvider : undefined,
           rendererKey,
           onError: handleRendererErrors,
         }),
@@ -315,7 +337,8 @@ export function ArtifactRendererRoot({
       program,
       isStreaming,
       interpreter,
-      toolProvider,
+      queryResultCache.refreshing,
+      queryResultCache.toolProvider,
       rendererKey,
       handleRendererErrors,
       renderContent,
@@ -363,6 +386,7 @@ export const slots = {
   ChromeActions,
   CloseButton,
   Content,
+  Pending,
   Loading,
   Error: ErrorSlot,
 };

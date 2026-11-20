@@ -34,6 +34,7 @@ const EXAMPLE_LOGOS: Record<string, string> = {
     "https://raw.githubusercontent.com/vercel/eve/main/.github/assets/eve.svg",
   "app-frameworks/angular": "/integration-logos/angular.svg",
   "app-frameworks/fastapi": "/integration-logos/fastapi.svg",
+  "app-frameworks/lynx": "/integration-logos/lynx.svg",
   "app-frameworks/react-native": "/integration-logos/react.svg",
   "app-frameworks/svelte": "/integration-logos/svelte.svg",
   "app-frameworks/vue": "/integration-logos/vue.svg",
@@ -55,6 +56,7 @@ const DARK_LOGOS = new Set([
   "agent-frameworks/vercel-ai-sdk",
   "agent-frameworks/vercel-eve",
   "app-frameworks/angular",
+  "app-frameworks/lynx",
   "design-systems/shadcn",
   "harnesses/grok-build",
   "harnesses/pi",
@@ -114,19 +116,6 @@ export const REPO_EXAMPLES: RepoExample[] = catalog.examples.flatMap((example) =
 
 /** Integrations listed on the integrations page that have no example in this repo. */
 const EXTERNAL_INTEGRATIONS: RepoExample[] = [
-  {
-    name: "lynx",
-    title: "Lynx",
-    description:
-      "Streaming OpenUI Lang rendered as cross-platform ReactLynx interfaces with @lynx-js/genui.",
-    category: "app-frameworks",
-    sourceUrl: "https://github.com/lynx-family/lynx-stack/tree/main/packages/genui/openui",
-    logo: "/integration-logos/lynx.svg",
-    logoIsDark: true,
-    runnable: false,
-    firstParty: true,
-    featured: true,
-  },
   {
     name: "openui-channels",
     title: "Slack, Teams, Telegram & WhatsApp",
@@ -503,6 +492,19 @@ const EXTERNAL_INTEGRATIONS: RepoExample[] = [
     category: "miscellaneous",
     sourceUrl: "https://github.com/agentscope-ai/QwenPaw/tree/main/plugins/bundle/qwenpaw-openui",
     logo: "https://github.com/agentscope-ai.png",
+    logoIsDark: false,
+    runnable: false,
+    firstParty: false,
+  },
+  {
+    name: "fleet-prime",
+    title: "Fleet Prime",
+    description:
+      "A local browser workspace for Prime Agent where the agent builds dashboards and inline UI in OpenUI Lang from the session's files, commands, and results.",
+    category: "miscellaneous",
+    sourceUrl: "https://github.com/Qredence/fleet-prime-agent",
+    guideUrl: "https://docs.qredence.ai/fleet-prime-agent/introduction",
+    logo: "https://github.com/Qredence.png",
     logoIsDark: false,
     runnable: false,
     firstParty: false,

@@ -1,14 +1,8 @@
 import { BASE_URL, blog, source } from "@/lib/source";
-import { integrations } from "./(home)/integrations/data";
 
 const STATIC_PATHS = [
   "/",
   "/dashboards",
-  "/openui-vs-json",
-  "/compare",
-  "/lab",
-  "/integrations",
-  "/chat",
   "/demo/f1-dashboard",
   "/demo/trip-planner/planner",
   "/demo/intelligent-ui",
@@ -54,11 +48,5 @@ export default async function sitemap() {
     changeFrequency: "weekly" as const,
   }));
 
-  const integrationRoutes = integrations.map((integration) => ({
-    url: `${BASE_URL}/integrations/${integration.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-  }));
-
-  return [...staticRoutes, ...integrationRoutes, ...docsRoutes, ...blogRoutes];
+  return [...staticRoutes, ...docsRoutes, ...blogRoutes];
 }

@@ -1,23 +1,17 @@
-import {
-  createDemosPausedResponse,
-  DEMOS_DISABLED,
-  IN_APP_DEMO_API_PATHS,
-  isProxiedDemoSlug,
-} from "@/lib/demos-offline";
+import { createDemosPausedResponse, DEMOS_DISABLED, isProxiedDemoSlug } from "@/lib/demos-offline";
 import { isMarkdownPreferred, rewritePath } from "fumadocs-core/negotiation";
 import { type NextRequest, NextResponse } from "next/server";
 
 const { rewrite: rewriteLLM } = rewritePath("/docs{/*path}", "/llms.mdx/docs{/*path}");
 
-const IN_APP_DEMO_APIS = new Set<string>(IN_APP_DEMO_API_PATHS);
+// IndexNow checks site ownership by fetching /<key>.txt. The key lives in an env var, not in the
+// repo, so only this site and the search engines know it.
+const indexNowKey = process.env.INDEXNOW_KEY;
 
 /** While the hosted demos are offline, stop every request that would spend credits. */
 function pausedDemoResponse(request: NextRequest): NextResponse | Response | undefined {
-  const { pathname } = request.nextUrl;
-  if (IN_APP_DEMO_APIS.has(pathname)) return createDemosPausedResponse();
-
   // /demo/<slug>/... for the demos proxied from their own Vercel projects.
-  const [, section, slug, ...rest] = pathname.split("/");
+  const [, section, slug, ...rest] = request.nextUrl.pathname.split("/");
   if (section !== "demo" || !slug || !isProxiedDemoSlug(slug)) return undefined;
   if (rest[0] === "api") return createDemosPausedResponse();
   // Leave build assets alone; every page shows the notice, at the same URL.
@@ -26,6 +20,10 @@ function pausedDemoResponse(request: NextRequest): NextResponse | Response | und
 }
 
 export default function proxy(request: NextRequest) {
+  if (indexNowKey && request.nextUrl.pathname === `/${indexNowKey}.txt`) {
+    return new Response(indexNowKey, { headers: { "Content-Type": "text/plain; charset=utf-8" } });
+  }
+
   if (DEMOS_DISABLED) {
     const paused = pausedDemoResponse(request);
     if (paused) return paused;
