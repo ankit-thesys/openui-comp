@@ -34,8 +34,13 @@ function EditableTableRenderer({ props }: ComponentRenderProps<EditableTableProp
   const toRows = useCallback(
     (data: EditableTableData): EditableTableRow[] =>
       data.map((row) => {
+        // While streaming, a row can arrive before its `values` array does.
+        // Indexing straight into it threw "Cannot read properties of null
+        // (reading '0')" on every streamed render; an absent array simply means
+        // no cell values have arrived yet.
+        const rowValues = row.values ?? [];
         const valuesMap = columnKeys.reduce((acc: Record<string, any>, key, index) => {
-          acc[key] = row.values[index];
+          acc[key] = rowValues[index];
           return acc;
         }, {});
         return { ...valuesMap, id: row.id };

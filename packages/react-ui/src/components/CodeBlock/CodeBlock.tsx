@@ -17,9 +17,22 @@ export const CodeBlock = ({ language, codeString, theme }: CodeBlockProps) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(codeString);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1000);
+    // The clipboard write can reject: an insecure context, a denied permission,
+    // or simply a document that is not focused. Previously the promise was
+    // neither awaited nor caught and `copied` was set unconditionally, so the
+    // button reported "Copied to clipboard" when nothing had been copied, and
+    // the rejection surfaced as an unhandled promise rejection.
+    const clipboard = navigator.clipboard;
+    if (!clipboard) return;
+    clipboard.writeText(codeString).then(
+      () => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1000);
+      },
+      () => {
+        setCopied(false);
+      },
+    );
   };
 
   return (
