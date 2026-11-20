@@ -1,0 +1,58 @@
+{
+  "_about": "Container-driven layout and computed theme colours, captured in a real browser. Neither is observable server-side: layout needs a ResizeObserver and a layout engine, and ThemeProvider injects its tokens from an effect. Reproduce with the commands in README.md.",
+  "baselineSha": "9d73d17d2bbac565672a85e78f6eb7740cb0d9ca",
+  "browser": "Chromium (Claude desktop built-in browser pane)",
+  "fixture": "fixtures/browser/responsive.tsx — served at /responsive.html",
+
+  "pieChartLegendBreakpoint": {
+    "_claim": "PieChart/types.ts documents the stacked legend as 'side by side from 400px wide, below the chart when narrower'. Measured below; the flip happens at exactly 400px.",
+    "measurements": [
+      { "widthProp": 320, "legendLayout": "column", "chartSvgWidth": 300 },
+      { "widthProp": 380, "legendLayout": "column", "chartSvgWidth": 300 },
+      { "widthProp": 400, "legendLayout": "row", "chartSvgWidth": 190 },
+      { "widthProp": 560, "legendLayout": "row", "chartSvgWidth": 270 },
+      { "widthProp": 720, "legendLayout": "row", "chartSvgWidth": 300 }
+    ],
+    "verdict": "Matches the documented behaviour exactly at the 400px boundary."
+  },
+
+  "heatmapFollowsContainer": {
+    "_claim": "HeatmapChart with NO width prop sizes itself from its container.",
+    "measurements": [
+      { "containerWidth": 320, "svgWidth": 320, "cellWidth": 43, "cells": 18 },
+      { "containerWidth": 380, "svgWidth": 380, "cellWidth": 53, "cells": 18 },
+      { "containerWidth": 400, "svgWidth": 400, "cellWidth": 56, "cells": 18 },
+      { "containerWidth": 560, "svgWidth": 560, "cellWidth": 83, "cells": 18 },
+      { "containerWidth": 720, "svgWidth": 720, "cellWidth": 109, "cells": 18 }
+    ],
+    "verdict": "SVG width tracks the container 1:1; cells scale proportionally and the cell COUNT stays 18 (3 series x 6 categories) at every width."
+  },
+
+  "computedThemeColours": {
+    "_about": "The same AreaChart/BarChart/HeatmapChart under ThemeProvider mode=light vs mode=dark. Series fills are IDENTICAL across modes — the default chart palette is not theme-derived; only chrome (ticks, legend text) changes.",
+    "light": {
+      "tickColor": "oklch(0.097 0 0 / 0.6)",
+      "legendLabelColor": "oklch(0.097 0 0)",
+      "barChartSeriesFill": "rgb(33, 150, 243)",
+      "heatmapCellFill": "rgb(66, 165, 245)"
+    },
+    "dark": {
+      "tickColor": "oklch(0.985 0 89.876 / 0.6)",
+      "legendLabelColor": "oklch(0.985 0 89.876)",
+      "barChartSeriesFill": "rgb(33, 150, 243)",
+      "heatmapCellFill": "rgb(66, 165, 245)"
+    },
+    "note": "ThemeProvider emits CSS custom properties only; it paints no page surface. A consumer must supply one, or dark-mode text renders near-white on the browser's default white page. The fixture sets `background: var(--openui-background)` for exactly this reason — see fixtures/browser/main.tsx."
+  },
+
+  "pieChartHeightOverflow": {
+    "_about": "Evidence for DEFECT-002. PieChart given height={240}.",
+    "measurements": [
+      { "widthProp": 320, "renderedContainerHeight": 240, "pieDrawnHeight": 270, "overflowBelowContainerPx": 45 },
+      { "widthProp": 380, "renderedContainerHeight": 240, "pieDrawnHeight": 270, "overflowBelowContainerPx": 45 },
+      { "widthProp": 400, "renderedContainerHeight": 296, "pieDrawnHeight": 171, "overflowBelowContainerPx": -62 },
+      { "widthProp": 560, "renderedContainerHeight": 296, "pieDrawnHeight": 243, "overflowBelowContainerPx": -26 },
+      { "widthProp": 720, "renderedContainerHeight": 296, "pieDrawnHeight": 270, "overflowBelowContainerPx": -13 }
+    ]
+  }
+}
