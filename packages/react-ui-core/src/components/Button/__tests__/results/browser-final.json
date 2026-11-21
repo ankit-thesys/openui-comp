@@ -1,0 +1,49 @@
+{
+  "browser": "156.0.8078.47",
+  "cases": [
+    {
+      "framework": "plain",
+      "order": "before",
+      "compared": 5600,
+      "status": "passed"
+    },
+    {
+      "framework": "plain",
+      "order": "after",
+      "compared": 5600,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "before",
+      "compared": 5600,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind3",
+      "order": "after",
+      "compared": 5600,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "before",
+      "compared": 5600,
+      "status": "passed"
+    },
+    {
+      "framework": "tailwind4",
+      "order": "after",
+      "compared": 5600,
+      "status": "passed"
+    }
+  ],
+  "samples": 33600,
+  "buildHashes": {
+    "baseline": "2b1fee6eadfa079c171aa6c0797d7bb36ca2efa9a14c6b222bfe88e8e35d9b40",
+    "runtime": "019616f13fb5dbbec87ce65e013f3f052a0648b7cdb5eb37a83568956d4fdb53"
+  },
+  "fixtureSha256": "ec4a923faf9d23158fc24440e1f7edb60fd478b8724be71f00945ac43fbd360d",
+  "runnerSha256": "b2bb29f6d5438b115f72f48ab59e98afe1615250ed48e038e17eaa20a6ab4716",
+  "themes": ["none", "light", "dark", "custom-light", "custom-dark"]
+}

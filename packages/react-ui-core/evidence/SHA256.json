@@ -1,0 +1,15 @@
+{
+  "README.md": "36c165a751ff08fe43b41a69e16350c940e7306c6dde6759c328e198e8349102",
+  "attw.log": "3b5f091d8f66dc8b9599e676ead658d1ea7192b96fbb5d7fc62dba5ccd877aef",
+  "baseline-setup-failure.log": "050c43437a19a616aaac831535d17dfc0ae11bd5b0119b1bb1eefb05b7814040",
+  "browser-host-styles.tar.gz": "38cb0a56a1fddce8a04429c7a6ffcb2284f515edf46c570ed70fa3366a6f50c1",
+  "browser.json": "610724d3a33f4d71620cbd25fd186d389ba82b21bd262bc26b06a87a4090dc21",
+  "browser.log": "5498da5e895ab892d715aef7a062d744d7904b5e6005c60fe8bf6a2ec4af1531",
+  "core-first-slice.tgz": "76a48b1e439e02a0d5641edfb177334c6419237c142dd700496a1ef4c0b52796",
+  "final-artifact.json": "8c789ca1cfad0f04b0e759fbd04c2b9d4e402edb418f7f0c1fa4bf973de65c61",
+  "lint.log": "5de8d33c56ae9d1c8061f565527658ad22876113fb314606e0f3d3707ed4e5a3",
+  "package-tests.log": "ed8a80abea31b40920e859e52796224d721e0ecb4d17a9d85ee5a913ab47af46",
+  "packed-component-tests.tap": "48821d315a4820f34193200e6ed2f1c44e44b68fa0bd5526ce5043aaca5f253f",
+  "publint.log": "c73459b80ae4e45d1520da07b4164d79d831c2956d89de4cadadbe62285d789b",
+  "strict-consumer.tap": "94425157b0a20cb7fc6774bc369af1617f6a2a05c9bd344e0f01ed290d9c2a32"
+}
