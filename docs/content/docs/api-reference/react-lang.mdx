@@ -532,20 +532,6 @@ function useDataSources(id: string | undefined): {
   >;
 } | null;
 // Its return type is exported as DataSources; one query is DataSourceQuery, one prop PropDataSources.
-// Every query in the program, as useDataSources gives them, and every component with the queries
-// it reads: for a list of a dashboard's sources and for "what else reads this". Exported as
-// DataSourceIndex.
-function useDataSourceIndex(): {
-  queries: DataSourceQuery[];
-  components: {
-    /** Its statement name, or its component id (`lead.1`). */
-    id: string;
-    typeName: string;
-    /** Its props as parsed; literal ones are plain values. */
-    props: Record<string, unknown>;
-    queries: string[];
-  }[];
-};
 function useGetFieldValue(): (formName: string | undefined, name: string) => any;
 function useSetFieldValue(): (
   formName: string | undefined,
