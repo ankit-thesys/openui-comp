@@ -78,6 +78,7 @@ export * from "./components/Citation";
 export * from "./components/CodeBlock";
 export * from "./components/CompositeCardBlock";
 export * from "./components/ContextCardBlock";
+export * from "./components/DataSourcesPanel";
 export * from "./components/DatePicker";
 export * from "./components/DotMatrixLoader";
 export * from "./components/EditableTable";
