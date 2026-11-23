@@ -14,12 +14,10 @@ import {
   type ReactNode,
   type RefObject,
 } from "react";
-import { DataSourcesPanel } from "../../components/DataSourcesPanel";
-import { collectSources, humanize } from "../../components/DataSourcesPanel/describe";
-import type {
-  DataSourcesComponent,
-  DataSourcesPanelProps,
-} from "../../components/DataSourcesPanel/types";
+import { DataSourcesPanel } from "../DataSourcesPanel";
+import { dockNames, dockStyles } from "../DataSourcesPanel/dataSourcesPanel.styles";
+import { collectSources, humanize } from "../DataSourcesPanel/describe";
+import type { DataSourcesComponent, DataSourcesPanelProps } from "../DataSourcesPanel/types";
 import { ProvenanceContext, useArtifactProvenance, useProvenanceIndex } from "./contexts";
 
 /** What an app can tell the default Sources panel, through the `Provenance` slot's props. */
@@ -66,6 +64,11 @@ function shortText(element: Element | null | undefined) {
 
 const INTERACTIVE = "button, a, input, select, textarea, [role=combobox], [role=menu]";
 
+const unmark = (el: Element) => {
+  el.removeAttribute("data-openui-inspectable");
+  el.removeAttribute("data-openui-frame");
+};
+
 /** Marks each component's root on the dashboard while inspecting, and finds one by id. */
 function useInspectables(rootRef: RefObject<HTMLDivElement | null>, active: boolean) {
   const elements = useRef(new Map<string, Element>());
@@ -82,9 +85,14 @@ function useInspectables(rootRef: RefObject<HTMLDivElement | null>, active: bool
         if (target && target.element === el && !found.has(target.id)) found.set(target.id, el);
       }
       for (const [id, el] of elements.current) {
-        if (found.get(id) !== el) el.removeAttribute("data-openui-inspectable");
+        if (found.get(id) !== el) unmark(el);
       }
       for (const [id, el] of found) el.setAttribute("data-openui-inspectable", id);
+      // A component frames itself only when it holds no other component and no marked number.
+      for (const el of found.values()) {
+        const holds = el.querySelector("[data-openui-inspectable], [data-openui-prop]");
+        el.toggleAttribute("data-openui-frame", !holds);
+      }
       elements.current = found;
     };
     scan();
@@ -98,7 +106,7 @@ function useInspectables(rootRef: RefObject<HTMLDivElement | null>, active: bool
     return () => {
       observer.disconnect();
       if (timer) clearTimeout(timer);
-      for (const el of elements.current.values()) el.removeAttribute("data-openui-inspectable");
+      for (const el of elements.current.values()) unmark(el);
       elements.current = new Map();
     };
   }, [rootRef, active]);
@@ -116,7 +124,11 @@ function HoverTip({ setterRef }: { setterRef: RefObject<((tip: Tip | null) => vo
   }, [setterRef]);
   if (!tip) return null;
   return (
-    <div className="openui-data-sources-tip" role="tooltip" style={{ left: tip.x, top: tip.y }}>
+    <div
+      className={`${dockStyles.tip} ${dockNames.tip}`}
+      role="tooltip"
+      style={{ left: tip.x, top: tip.y }}
+    >
       {tip.text}
     </div>
   );
@@ -191,7 +203,7 @@ export function SourcesWorkspace({ children }: { children: ReactNode }) {
     <SourcesDockContext.Provider value={dock}>
       <div
         ref={rootRef}
-        className="openui-data-sources-workspace"
+        className={`${dockStyles.workspace} ${dockNames.workspace}`}
         data-inspecting={inspecting || undefined}
         onClick={onClick}
       >
@@ -201,7 +213,7 @@ export function SourcesWorkspace({ children }: { children: ReactNode }) {
           <div
             role="toolbar"
             aria-label="Selected value actions"
-            className="openui-data-sources-chip"
+            className={`${dockStyles.chip} ${dockNames.chip}`}
             style={{
               left: Math.min(chip.x, window.innerWidth - 140),
               top: Math.max(8, chip.y - 48),
@@ -332,7 +344,7 @@ function DefaultSourcesDock() {
     <>
       <div
         ref={slotRef}
-        className="openui-data-sources-slot"
+        className={`${dockStyles.slot} ${dockNames.slot}`}
         data-open={isInspecting}
         aria-hidden={!isInspecting}
       >

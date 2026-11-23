@@ -14,6 +14,7 @@ import {
   X,
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { block, panelStyles, partClass } from "./dataSourcesPanel.styles";
 import {
   callKey,
   collectSources,
@@ -33,8 +34,7 @@ import {
 } from "./describe";
 import type { DataSourcesComponent, DataSourcesPanelProps, ScriptCall } from "./types";
 
-const block = "openui-data-sources-panel";
-const cx = (element: string) => `${block}__${element}`;
+const cx = partClass;
 
 type View =
   | { kind: "list" }
@@ -218,7 +218,7 @@ export function DataSourcesPanel({
   useEffect(() => {
     const frame = requestAnimationFrame(() =>
       panelRef.current
-        ?.querySelector<HTMLElement>(`.${cx("search")} input, [data-heading]`)
+        ?.querySelector<HTMLElement>(`.${block}__search input, [data-heading]`)
         ?.focus({ preventScroll: true }),
     );
     return () => cancelAnimationFrame(frame);
@@ -736,7 +736,11 @@ export function DataSourcesPanel({
 
   const atList = view.kind === "list" || (view.kind === "element" && !selection);
   return (
-    <aside ref={panelRef} className={clsx(block, className)} aria-label="Sources panel">
+    <aside
+      ref={panelRef}
+      className={clsx(panelStyles.root, block, className)}
+      aria-label="Sources panel"
+    >
       <header className={cx("header")}>
         {atList ? (
           <span>Sources</span>

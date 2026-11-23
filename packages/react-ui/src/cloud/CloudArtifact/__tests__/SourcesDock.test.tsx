@@ -6,7 +6,7 @@ import {
   dashboardLibrary,
   dashboardProgram,
   interpreter,
-} from "../../../components/DataSourcesPanel/stories/fixtures";
+} from "../../DataSourcesPanel/stories/fixtures";
 import { LiveArtifactRenderer } from "../ArtifactRenderer";
 
 (globalThis as unknown as { IS_REACT_ACT_ENVIRONMENT: boolean }).IS_REACT_ACT_ENVIRONMENT = true;

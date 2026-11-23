@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { LiveArtifactRenderer } from "../../../cloud";
+import { LiveArtifactRenderer } from "../../CloudArtifact/ArtifactRenderer";
 import { DataSourcesPanel } from "../DataSourcesPanel";
 import type { DataSourcesPanelProps, DataSourcesSelection } from "../types";
 import {
